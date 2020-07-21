@@ -7,9 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAL-Inventarium.Android", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAL-Inventarium.iOS", "UAL-Inventarium\UAL-Inventarium.iOS\UAL-Inventarium.iOS.csproj", "{5E9B530B-1A2C-4D7C-8DD7-9A14F89514F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UAL-Inventarium", "UAL-Inventarium\UAL-Inventarium\UAL-Inventarium.csproj", "{D6579F16-399F-4E7F-8A8C-9D17A7D3450C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UAL-InventariumDB", "UAL-InventariumDB\UAL-InventariumDB.csproj", "{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UALInventarium", "UAL-Inventarium\UAL-Inventarium\UALInventarium.csproj", "{D6579F16-399F-4E7F-8A8C-9D17A7D3450C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,18 +73,6 @@ Global
 		{D6579F16-399F-4E7F-8A8C-9D17A7D3450C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{D6579F16-399F-4E7F-8A8C-9D17A7D3450C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{D6579F16-399F-4E7F-8A8C-9D17A7D3450C}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Release|iPhone.Build.0 = Release|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{6D436FE4-E58B-43D2-AD1F-7C3E5833DCAF}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

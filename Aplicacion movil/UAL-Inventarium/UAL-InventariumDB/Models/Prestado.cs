@@ -9,6 +9,7 @@ namespace UAL_InventariumDB.Models
     public class Prestado
 {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idPrestado { get; set; }
         [Required]
         public string retiradoPor { get; set; }

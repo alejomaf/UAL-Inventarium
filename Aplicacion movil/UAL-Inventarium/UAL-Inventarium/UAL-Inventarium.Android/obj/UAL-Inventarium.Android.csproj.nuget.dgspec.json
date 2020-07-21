@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium.csproj": {
-                "projectPath": "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium.csproj"
+              "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UALInventarium.csproj": {
+                "projectPath": "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UALInventarium.csproj"
               }
             }
           }
@@ -74,12 +74,12 @@
         }
       }
     },
-    "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium.csproj": {
+    "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UALInventarium.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium.csproj",
-        "projectName": "UAL-Inventarium",
-        "projectPath": "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium.csproj",
+        "projectUniqueName": "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UALInventarium.csproj",
+        "projectName": "UALInventarium",
+        "projectPath": "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\UALInventarium.csproj",
         "packagesPath": "C:\\Users\\alejo\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\alejo\\GitHub\\UAL-Inventarium\\Aplicacion movil\\UAL-Inventarium\\UAL-Inventarium\\UAL-Inventarium\\obj\\",
         "projectStyle": "PackageReference",
@@ -112,6 +112,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.5, )"
@@ -137,6 +141,14 @@
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.1, )"
+            },
+            "System.Runtime.Numerics": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",

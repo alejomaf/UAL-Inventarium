@@ -1,20 +1,26 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using UAL_Inventarium.Services;
-using UAL_Inventarium.Views;
+using UALInventarium.Services;
+using UALInventarium.Views;
+using UALInventarium.Data;
+using System.Diagnostics;
+using UALInventarium.ViewModels;
 
-namespace UAL_Inventarium
+namespace UALInventarium
 {
     public partial class App : Application
     {
-
+        public static UALContext Repository;
         public App()
         {
             InitializeComponent();
-
-            DependencyService.Register<MockDataStore>();
-            MainPage = new MainPage();
+            Repository = new UALContext ();
+            
+            MainPage = new LoginUAL() 
+            {
+                BindingContext = new LoginViewModel()
+            };
         }
 
         protected override void OnStart()

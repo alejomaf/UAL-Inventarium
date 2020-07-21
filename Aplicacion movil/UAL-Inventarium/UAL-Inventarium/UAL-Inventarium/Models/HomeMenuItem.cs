@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UAL_Inventarium.Models
+namespace UALInventarium.Models
 {
     public enum MenuItemType
     {

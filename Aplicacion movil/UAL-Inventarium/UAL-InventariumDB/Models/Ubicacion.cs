@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace UAL_InventariumDB.Models
@@ -8,6 +9,7 @@ namespace UAL_InventariumDB.Models
     public class Ubicacion
 {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idUbicacion { get; set; }
 
         [Required]

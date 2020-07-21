@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace UAL_Inventarium.Models
+namespace UALInventarium.Models
 {
     public class Item
     {

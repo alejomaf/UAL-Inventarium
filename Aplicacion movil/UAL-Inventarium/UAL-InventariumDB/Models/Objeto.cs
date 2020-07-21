@@ -9,6 +9,7 @@ namespace UAL_InventariumDB.Models
     class Objeto
 {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idObjeto { get; set; }
 
         [Required]

@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("UAL-Inventarium.Views.MainPage.xaml", "Views/MainPage.xaml", typeof(global::UAL_Inventarium.Views.MainPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("UALInventarium.Views.MainPage.xaml", "Views/MainPage.xaml", typeof(global::UALInventarium.Views.MainPage))]
 
-namespace UAL_Inventarium.Views {
+namespace UALInventarium.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\MainPage.xaml")]

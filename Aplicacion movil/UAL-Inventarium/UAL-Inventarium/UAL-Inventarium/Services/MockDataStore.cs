@@ -2,59 +2,51 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using UAL_Inventarium.Models;
+using UALInventarium.Models;
 
-namespace UAL_Inventarium.Services
+namespace UALInventarium.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Usuario>
     {
-        readonly List<Item> items;
+        readonly List<Usuario> Usuarios;
 
         public MockDataStore()
         {
-            items = new List<Item>()
-            {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
-            };
+            Usuarios = new List<Usuario>();
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddUsuarioAsync(Usuario usuario)
         {
-            items.Add(item);
+            Usuarios.Add(usuario);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateUsuarioAsync(Usuario Usuario)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            var oldUsuario = Usuarios.Where((Usuario arg) => arg.nombre == Usuario.nombre).FirstOrDefault();
+            Usuarios.Remove(oldUsuario);
+            Usuarios.Add(Usuario);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteUsuarioAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            var oldUsuario = Usuarios.Where((Usuario arg) => arg.correoElectronico == id).FirstOrDefault();
+            Usuarios.Remove(oldUsuario);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Usuario> GetUsuarioAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(Usuarios.FirstOrDefault(s => s.correoElectronico == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Usuario>> GetUsuariosAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(Usuarios);
         }
     }
 }

@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace UAL_Inventarium.Services
+namespace UALInventarium.Services
 {
     public interface IDataStore<T>
     {
-        Task<bool> AddItemAsync(T item);
-        Task<bool> UpdateItemAsync(T item);
-        Task<bool> DeleteItemAsync(string id);
-        Task<T> GetItemAsync(string id);
-        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<bool> AddUsuarioAsync(T item);
+        Task<bool> UpdateUsuarioAsync(T item);
+        Task<bool> DeleteUsuarioAsync(string id);
+        Task<T> GetUsuarioAsync(string id);
+        Task<IEnumerable<T>> GetUsuariosAsync(bool forceRefresh = false);
     }
 }

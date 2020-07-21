@@ -1,8 +1,8 @@
 ﻿using System;
 
-using UAL_Inventarium.Models;
+using UALInventarium.Models;
 
-namespace UAL_Inventarium.ViewModels
+namespace UALInventarium.ViewModels
 {
     public class ItemDetailViewModel : BaseViewModel
     {

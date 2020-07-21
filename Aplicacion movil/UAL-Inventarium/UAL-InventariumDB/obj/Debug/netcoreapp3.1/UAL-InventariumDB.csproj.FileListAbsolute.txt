@@ -42,7 +42,6 @@ C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inven
 C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-InventariumDB\bin\Debug\netcoreapp3.1\UAL-InventariumDB.runtimeconfig.dev.json
 C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-InventariumDB\bin\Debug\netcoreapp3.1\UAL-InventariumDB.dll
 C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-InventariumDB\bin\Debug\netcoreapp3.1\UAL-InventariumDB.pdb
-C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-InventariumDB\obj\Debug\netcoreapp3.1\UAL-InventariumDB.csproj.CoreCompileInputs.cache
 C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-InventariumDB\obj\Debug\netcoreapp3.1\UAL-InventariumDB.dll
 C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-InventariumDB\obj\Debug\netcoreapp3.1\UAL-InventariumDB.pdb
 C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-InventariumDB\obj\Debug\netcoreapp3.1\UAL-InventariumDB.genruntimeconfig.cache

@@ -5,28 +5,29 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-using UAL_Inventarium.Models;
-using UAL_Inventarium.Views;
+using UALInventarium.Models;
+using UALInventarium.Views;
+using UALInventarium.Data;
 
-namespace UAL_Inventarium.ViewModels
+namespace UALInventarium.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Usuario> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public ItemsViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            //Items = new ObservableCollection<Item>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            /*MessagingCenter.Subscribe<NewItemPage, Usuario>(this, "AddItem", async (obj, item) =>
             {
-                var newItem = item as Item;
-                Items.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
-            });
+                var newItem = item as Usuario;
+                //Items.Add(newItem);
+                await App.Repository.AddUsuarioAsync(newItem);
+            });*/
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -36,7 +37,7 @@ namespace UAL_Inventarium.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await DataStore.GetUsuariosAsync(true);
                 foreach (var item in items)
                 {
                     Items.Add(item);

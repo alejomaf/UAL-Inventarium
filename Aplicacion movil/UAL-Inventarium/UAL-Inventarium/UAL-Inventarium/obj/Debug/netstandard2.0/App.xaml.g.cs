@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("UAL-Inventarium.App.xaml", "App.xaml", typeof(global::UAL_Inventarium.App))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("UALInventarium.App.xaml", "App.xaml", typeof(global::UALInventarium.App))]
 
-namespace UAL_Inventarium {
+namespace UALInventarium {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("App.xaml")]

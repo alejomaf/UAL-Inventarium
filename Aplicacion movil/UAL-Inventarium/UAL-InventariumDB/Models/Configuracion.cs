@@ -9,6 +9,7 @@ namespace UAL_InventariumDB.Models
     public class Configuracion
 {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idConfiguracion { get; set; }
 
         [Required]

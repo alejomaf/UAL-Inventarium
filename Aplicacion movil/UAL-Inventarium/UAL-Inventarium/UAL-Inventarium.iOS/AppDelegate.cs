@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 using Foundation;
 using UIKit;
 
-namespace UAL_Inventarium.iOS
+namespace UALInventarium.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -23,6 +24,7 @@ namespace UAL_Inventarium.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);

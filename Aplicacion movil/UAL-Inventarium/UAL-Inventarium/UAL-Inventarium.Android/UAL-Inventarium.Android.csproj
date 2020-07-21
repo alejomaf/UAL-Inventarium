@@ -103,10 +103,15 @@
     <AndroidResource Include="Resources\drawable\xamarin_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\UAL-Inventarium\UAL-Inventarium.csproj">
-      <Project>{88564929-DD73-41FA-84C7-E4EBE66839A9}</Project>
-      <Name>UAL-Inventarium</Name>
+    <ProjectReference Include="..\UAL-Inventarium\UALInventarium.csproj">
+      <Project>{D6579F16-399F-4E7F-8A8C-9D17A7D3450C}</Project>
+      <Name>UALInventarium</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionUALInventariumAndroidHideInfoBar="True" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

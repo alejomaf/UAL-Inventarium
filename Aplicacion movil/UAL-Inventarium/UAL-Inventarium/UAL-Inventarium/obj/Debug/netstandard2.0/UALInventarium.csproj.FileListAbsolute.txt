@@ -1,0 +1,15 @@
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\UALInventarium.csprojAssemblyReference.cache
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\Views\LoginUAL.xaml.g.cs
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\UALInventarium.AssemblyInfoInputs.cache
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\UALInventarium.AssemblyInfo.cs
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\UALInventarium.dll
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\ref\UALInventarium.dll
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\UALInventarium.pdb
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\bin\Debug\netstandard2.0\UALInventarium.deps.json
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\bin\Debug\netstandard2.0\UALInventarium.dll
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\bin\Debug\netstandard2.0\ref\UALInventarium.dll
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\bin\Debug\netstandard2.0\UALInventarium.pdb
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\UALInventarium.csproj.CoreCompileInputs.cache
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\UAL-Inventarium\UAL-Inventarium\obj\Debug\netstandard2.0\XamlC.stamp

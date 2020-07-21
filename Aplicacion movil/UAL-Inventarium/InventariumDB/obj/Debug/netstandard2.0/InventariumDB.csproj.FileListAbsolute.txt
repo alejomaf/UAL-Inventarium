@@ -1,0 +1,6 @@
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\InventariumDB\bin\Debug\netstandard2.0\InventariumDB.deps.json
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\InventariumDB\bin\Debug\netstandard2.0\InventariumDB.dll
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\InventariumDB\obj\Debug\netstandard2.0\InventariumDB.csprojAssemblyReference.cache
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\InventariumDB\obj\Debug\netstandard2.0\InventariumDB.AssemblyInfoInputs.cache
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\InventariumDB\obj\Debug\netstandard2.0\InventariumDB.AssemblyInfo.cs
+C:\Users\alejo\GitHub\UAL-Inventarium\Aplicacion movil\UAL-Inventarium\InventariumDB\obj\Debug\netstandard2.0\InventariumDB.csproj.CoreCompileInputs.cache
