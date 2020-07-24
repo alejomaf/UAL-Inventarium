@@ -2,7 +2,7 @@ version: '3'
 
 services:
   db:
-    image: UALSql
+    image: ualsql
     environment:
       MYSQL_ROOT_PASSWORD: UALInventarium20$
       MYSQL_DATABASE: UALInventarium
@@ -18,6 +18,6 @@ services:
     volumes:
       - ./php/:/var/www/html/
     ports:
-      - "8100:80"
+      - "8080:80"
     stdin_open: true
     tty: true

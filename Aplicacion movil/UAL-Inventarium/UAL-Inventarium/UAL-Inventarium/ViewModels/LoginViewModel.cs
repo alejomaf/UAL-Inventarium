@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
 using UALInventarium.Data;
+using UALInventarium.Models;
 using UALInventarium.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -22,7 +23,7 @@ namespace UALInventarium.ViewModels
             {
                 return new Command(async () =>
                 {
-                    var usuario = DataStore.GetUsuarioAsync.(email);
+                    Usuario usuario = App.Repository.GetUsuarioAsync.(email);
                     if (usuario != null) if (usuario.contrasena == password) {
                             Application.Current.MainPage = new MainPage() {BindingContext=new MainViewModel(usuario) };
                 });
