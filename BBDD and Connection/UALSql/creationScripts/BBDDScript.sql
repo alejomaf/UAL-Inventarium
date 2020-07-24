@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS `UALInventarium`.`Objeto` (
   `GrupoObjetos_idGrupoObjetos` INT NOT NULL,
   `Ubicacion_idUbicacion` INT NOT NULL,
   `disponible` TINYINT NOT NULL,
-  `elminado` TINYINT NULL,
+  `eliminado` TINYINT NULL,
   PRIMARY KEY (`idObjeto`, `GrupoObjetos_idGrupoObjetos`, `Ubicacion_idUbicacion`),
   INDEX `fk_Objeto_GrupoObjetos1_idx` (`GrupoObjetos_idGrupoObjetos` ASC),
   INDEX `fk_Objeto_Ubicacion1_idx` (`Ubicacion_idUbicacion` ASC),
@@ -110,6 +110,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `UALInventarium`.`Prestado` (
   `idPrestado` INT NOT NULL AUTO_INCREMENT,
+  `solicitado` DATE NULL,
   `retiradoPor` VARCHAR(45) NULL,
   `fechaSalida` DATE NULL,
   `fechaEntrega` DATE NULL,

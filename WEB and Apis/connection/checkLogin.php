@@ -19,13 +19,13 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
 
 }else{
-    header("Location: ../apis/logout.php");
+    exec("php ../apis/logout.php");
     exit();
 }
 
 
 }else{
-    header("Location: ../apis/logout.php");
+    exec("php ../apis/logout.php");
     exit();
 }
 ?>

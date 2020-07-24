@@ -40,35 +40,12 @@ if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         if($plataforma==0){
 
-            echo    
-'<pre style="word-wrap: break-word; white-space: pre-wrap;">
-[
-    {
-        "idUsuario": '.$row["idUsuario"].'",
-        "name": "'.$row["nombre"].'",
-        "correoElectronico": "'.$row["correoElectronico"].'",
-        "rango": '.$row["rango"].',
-        "departamento": '.$row["departamento"].',
-        "telefono": '.$row["telefono"].'
-    }
-]
-</pre>';   
+            echo $row["idUsuario"].'/'.$row["nombre"].'/'.$row["correoElectronico"].'/'.$row["rango"].'/'.$row["departamento"].'/'.$row["telefono"].';';
 
         }else{
 
-            echo    
-'<pre style="word-wrap: break-word; white-space: pre-wrap;">
-[
-    {
-        "idUsuario": '.$row["idUsuario"].'",
-        "name": "'.$row["nombre"].'",
-        "correoElectronico": "'.$row["correoElectronico"].'",
-        "rango": '.$row["rango"].',
-        "departamento": '.$row["departamento"].',
-        "telefono": '.$row["telefono"].'
-    }
-]
-</pre>';       
+            echo $row["idUsuario"].'/'.$row["nombre"].'/'.$row["correoElectronico"].'/'.$row["rango"].'/'.$row["departamento"].'/'.$row["telefono"].';';
+               
     }
 }
 }
