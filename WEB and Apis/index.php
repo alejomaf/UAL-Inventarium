@@ -20,7 +20,6 @@ if(isset($_SESSION["email"])&&isset($_SESSION["password"])){
 
 
 
-
 <!--INICIAR SESION-->
 
 <form action="apis/login.php" method="post">
@@ -161,6 +160,148 @@ if ($result->num_rows > 0) {
 ?>
 </select>
 <input type="submit" value="Crear préstamo">
+</form>
+
+<!--ELIMINAR USUARIO-->
+
+<form action="apis/eliminacion/eliminarUsuario.php" method="post">
+Usuario:  <select name="idUsuario">
+<?php
+$sql = "SELECT * FROM usuario;";
+$result = $conn->query($sql);
+echo $conn->error;
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+
+        echo "<option value=".$row["idUsuario"].">".$row["nombre"]."-".$row["correoElectronico"]."</option>";
+    }
+}
+?>
+</select>
+<input type="submit" value="Eliminar usuario">
+</form>
+
+<!--ELIMINAR UBICACION-->
+
+<form action="apis/eliminacion/eliminarUbicacion.php" method="post">
+Ubicación:  <select name="idUbicacion">
+<?php
+$sql = "SELECT * FROM ubicacion;";
+$result = $conn->query($sql);
+echo $conn->error;
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+
+        echo "<option value=".$row["idUbicacion"].">".$row["ubicacion"]."-".$row["planta"]."-".$row["edificio"]."</option>";
+    }
+}
+?>
+</select>
+<input type="submit" value="Eliminar ubicación">
+</form>
+
+<!--ELIMINAR PRESTAMO-->
+
+<form action="apis/eliminacion/eliminarPrestamo.php" method="post">
+Préstamo:  <select name="idPrestamo">
+<?php
+$sql = "SELECT * FROM prestado;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+
+        $sql2 = "SELECT * FROM grupoobjetos WHERE idGrupoObjetos=".$row["Objeto_GrupoObjetos_idGrupoObjetos"].";";
+        $result2 = $conn->query($sql2);
+        if ($result2->num_rows > 0) {
+            while($row2 = $result2->fetch_assoc()) {$nombreObjeto=$row2["nombre"];}}
+
+        $sql3 = "SELECT * FROM usuario WHERE idUsuario=".$row["Usuario_idUsuario"].";";
+        $result3 = $conn->query($sql3);
+        if ($result3->num_rows > 0) {
+        while($row3 = $result3->fetch_assoc()) {$nombreUsuario=$row3["nombre"]."-".$row3["correoElectronico"];}}
+
+
+        echo "<option value=".$row["idPrestado"].">".$nombreObjeto." ha sido prestada por ".$nombreUsuario." a ".$row["retiradoPor"]."</option>";
+    }
+}
+?>
+</select>
+<input type="submit" value="Eliminar préstamo">
+</form>
+
+<!--ELIMINAR CONFIGURACIÓN-->
+
+<form action="apis/eliminacion/eliminarConfiguracion.php" method="post">
+Configuracion:  <select name="idConfiguracion">
+<?php
+$sql = "SELECT * FROM configuracion;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+
+        $sql2 = "SELECT * FROM objeto WHERE idObjeto=".$row["Objeto_idObjeto"].";";
+        $result2 = $conn->query($sql2);
+        if ($result2->num_rows > 0) {
+            while($row2 = $result2->fetch_assoc()) {
+
+                $sql3 = "SELECT * FROM grupoobjetos WHERE idGrupoObjetos=".$row2["GrupoObjetos_idGrupoObjetos"].";";
+                $result3 = $conn->query($sql3);
+                if ($result3->num_rows > 0) {
+                while($row3 = $result3->fetch_assoc()) {$nombreObjeto=$row3["nombre"];}}
+            }
+        }
+        echo "<option value=".$row["idConfiguracion"].">".$nombreObjeto."-".$row["ip"]."-".$row["mac"]."</option>";
+    }
+}
+?>
+</select>
+<input type="submit" value="Eliminar configuración">
+</form>
+
+<!--ELIMINAR OBJETO-->
+
+<form action="apis/eliminacion/eliminarObjeto.php" method="post">
+Objeto:  <select name="idObjeto">
+<?php
+$sql = "SELECT * FROM objeto;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+
+        $sql3 = "SELECT * FROM grupoobjetos WHERE idGrupoObjetos=".$row["GrupoObjetos_idGrupoObjetos"].";";
+                $result3 = $conn->query($sql3);
+                if ($result3->num_rows > 0) {
+                while($row3 = $result3->fetch_assoc()) {$nombreObjeto=$row3["nombre"];}}
+
+        if($row["codigo"]==-1) $codigo=""; else $codigo=" - ".$row["codigo"];
+        echo "<option value=".$row["idObjeto"].">".$nombreObjeto.$codigo."</option>";
+    }
+}
+?>
+</select>
+<input type="submit" value="Eliminar objeto">
+</form>
+
+<!--ELIMINAR GRUPO DE OBJETOS-->
+
+<form action="apis/eliminacion/eliminarGrupoDeObjetos.php" method="post">
+Grupo de objetos:  <select name="idGrupoObjetos">
+<?php
+$sql = "SELECT * FROM grupoobjetos;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+
+        $sql3 = "SELECT * FROM objeto WHERE GrupoObjetos_idGrupoObjetos=".$row["idGrupoObjetos"].";";
+                $result3 = $conn->query($sql3);
+                $numObjetos=$result3->num_rows; 
+
+        echo "<option value=".$row["idGrupoObjetos"].">".$row["nombre"]." - ".$numObjetos."</option>";
+    }
+}
+?>
+</select>
+<input type="submit" value="Eliminar grupo de objetos">
 </form>
 
 

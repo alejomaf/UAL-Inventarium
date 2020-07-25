@@ -1,6 +1,6 @@
 <?php
 
-include "../connection/connection.php";
+include "connection.php";
 
 
 if(isset($_SESSION['email']) && $_SESSION['email'] != ''&&isset($_SESSION['password']) && $_SESSION['password'] != '') {
