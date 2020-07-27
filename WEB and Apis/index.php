@@ -466,7 +466,7 @@ if ($result->num_rows > 0) {
 
 <!--MODIFICAR CONFIGURACION-->
 
-<form action="apis/crearConfiguracion.php" method="post">
+<form action="apis/modificacion/modificarConfiguracion.php" method="post">
 Configuracion:  <select name="idConfiguracion">
 <?php
 $sql = "SELECT * FROM configuracion;";
@@ -496,7 +496,8 @@ Boca: <input type="text" name="boca">
 Armario: <input type="text" name="armario">
 Usuario: <input type="text" name="usuario">
 Contrasena: <input type="text" name="contrasena">
-Objeto:  <select name="objeto">
+Objeto:  <select name="idObjeto">
+<option value="">No modificar</option>
 <?php
 $sql = "SELECT * FROM objeto;";
 $result = $conn->query($sql);
@@ -518,11 +519,36 @@ if ($result->num_rows > 0) {
 </form>
 
 <!--MODIFICAR PRÉSTAMO-->
+<form action="apis/modificacion/modificarPrestamo.php" method="post">
+Préstamo:  <select name="idPrestado">
+<?php
+$sql = "SELECT * FROM prestado;";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
 
-<form action="apis/crearPrestamo.php" method="post">
+        $sql2 = "SELECT * FROM grupoobjetos WHERE idGrupoObjetos=".$row["Objeto_GrupoObjetos_idGrupoObjetos"].";";
+        $result2 = $conn->query($sql2);
+        if ($result2->num_rows > 0) {
+            while($row2 = $result2->fetch_assoc()) {$nombreObjeto=$row2["nombre"];}}
+
+        $sql3 = "SELECT * FROM usuario WHERE idUsuario=".$row["Usuario_idUsuario"].";";
+        $result3 = $conn->query($sql3);
+        if ($result3->num_rows > 0) {
+        while($row3 = $result3->fetch_assoc()) {$nombreUsuario=$row3["nombre"]."-".$row3["correoElectronico"];}}
+
+
+        echo "<option value=".$row["idPrestado"].">".$nombreObjeto." ha sido prestada por ".$nombreUsuario." a ".$row["retiradoPor"]."</option>";
+    }
+}
+?>
+</select>
 Retirado por: <input type="text" name="retiradoPor">
+Fecha de salida: <input type="date" name="fechaSalida">
+Fecha de entrega: <input type="date" name="fechaEntrega">
 Fecha estimada de entrega: <input type="date" name="fechaEstimadaEntrega">
-Prestado por:  <select name="usuario">
+Prestado por:  <select name="idUsuario">
+<option value="">No modificar</option>
 <?php
 $sql = "SELECT * FROM usuario;";
 $result = $conn->query($sql);
@@ -534,7 +560,8 @@ if ($result->num_rows > 0) {
 }
 ?>
 </select>
-Objeto:  <select name="objeto">
+Objeto:  <select name="idObjeto">
+<option value="">No modificar</option>
 <?php
 $sql = "SELECT * FROM objeto;";
 $result = $conn->query($sql);
@@ -552,7 +579,7 @@ if ($result->num_rows > 0) {
 }
 ?>
 </select>
-<input type="submit" value="Crear préstamo">
+<input type="submit" value="Modificar préstamo">
 </form>
 
 </html>
