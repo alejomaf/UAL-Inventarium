@@ -39,12 +39,13 @@ Contraseña: <input type="password" name="password">
 
 <!--BUSCAR USUARIOS-->
 
-<form action="apis/buscarUsuario.php" method="post">
+<form action="apis/busqueda/buscarUsuario.php" method="post">
 Nombre: <input type="text" name="name">
+Contraseña: <input type="text" name="password">
 Email: <input type="text" name="email">
 Departamento: <input type="text" name="department">
 Rango: <input type="text" name="rank">
-<input type="hidden" value=0 name="plataforma">
+Teléfono: <input type="text" name="phone">
 <input type="submit" value="Buscar usuarios">
 </form>
 
