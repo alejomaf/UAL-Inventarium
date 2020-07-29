@@ -37,6 +37,7 @@ Contraseña: <input type="password" name="password">
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 
+<a style="font-size:50px">Búsqueda</a><br>
 <!--BUSCAR USUARIOS-->
 
 <form action="apis/busqueda/buscarUsuario.php" method="post">
@@ -120,9 +121,11 @@ Objeto_idObjeto: <input type="text" name="Objeto_idObjeto">
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
 
+<a style="font-size:50px">Creación</a><br>
+
 <!--CREAR UBICACION-->
 
-<form action="apis/crearUbicacion.php" method="post">
+<form action="apis/creacion/crearUbicacion.php" method="post">
 Ubicación: <input type="text" name="location">
 Planta: <input type="text" name="floor">
 Edificio: <input type="text" name="building">
@@ -131,7 +134,7 @@ Edificio: <input type="text" name="building">
 
 <!--CREAR GRUPO DE OBJETOS-->
 
-<form action="apis/crearGrupoDeObjetos.php" method="post">
+<form action="apis/creacion/crearGrupoDeObjetos.php" method="post">
 Cantidad: <input type="text" name="cantidad">
 Nombre: <input type="text" name="nombre">
 Imagen: <input type="text" name="imagen">
@@ -143,7 +146,7 @@ Cantidad disponible: <input type="text" name="cantidadDisponible">
 
 <!--CREAR OBJETO-->
 
-<form action="apis/crearObjeto.php" method="post">
+<form action="apis/creacion/crearObjeto.php" method="post">
 Mejoras del equipo: <input type="text" name="mejorasEquipo">
 Código: <input type="text" name="codigo">
 Grupo objetos:  <select name="grupoObjetos">
@@ -176,7 +179,7 @@ if ($result->num_rows > 0) {
 
 <!--CREAR CONFIGURACION-->
 
-<form action="apis/crearConfiguracion.php" method="post">
+<form action="apis/creacion/crearConfiguracion.php" method="post">
 IP: <input type="text" name="ip">
 MAC: <input type="text" name="mac">
 Boca: <input type="text" name="boca">
@@ -206,7 +209,7 @@ if ($result->num_rows > 0) {
 
 <!--CREAR PRÉSTAMO-->
 
-<form action="apis/crearPrestamo.php" method="post">
+<form action="apis/creacion/crearPrestamo.php" method="post">
 Retirado por: <input type="text" name="retiradoPor">
 Fecha estimada de entrega: <input type="date" name="fechaEstimadaEntrega">
 Prestado por:  <select name="usuario">
@@ -249,7 +252,7 @@ if ($result->num_rows > 0) {
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
-
+<a style="font-size:50px">Eliminación</a><br>
 <!--ELIMINAR USUARIO-->
 
 <form action="apis/eliminacion/eliminarUsuario.php" method="post">
@@ -399,7 +402,7 @@ if ($result->num_rows > 0) {
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 -->
-
+<a style="font-size:50px">Modificación</a><br>
 
 <!--MODIFICAR UBICACION-->
 

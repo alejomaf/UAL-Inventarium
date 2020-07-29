@@ -1,11 +1,7 @@
 <?php
 //----------COMPROBACIÓN DEL USUARIO CONECTADO----------\\
-
-if(isset($_POST["emailU"])&&isset($_POST["passwordU"])){
-    $GLOBALS["emailU"]=$_POST["emailU"];
-    $GLOBALS["passwordU"]=$_POST["passwordU"];
-}
 include "../../connection/checkLogin.php";
+include "../utilities/eliminaciones.php";
 //-------------------------------------------------------\\
 
 $idUbicacion=$_POST["idUbicacion"];
@@ -25,7 +21,5 @@ $sql2 = "SELECT * FROM objeto WHERE Ubicacion_idUbicacion=".$idUbicacion.";";
             exit();
         }
 
-$sql="DELETE FROM ubicacion WHERE idUbicacion=".$idUbicacion.";";
-$conn->query($sql);
-
+eliminarDatos("ubicacion", "idUbicacion", $idUbicacion, $conn);
 ?>

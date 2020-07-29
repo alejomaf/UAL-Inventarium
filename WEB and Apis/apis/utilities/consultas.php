@@ -25,7 +25,8 @@ function anadirAConsultaNumero($nombre, $valor){
     }
 }
 function mostrarDatos($tabla, $busqueda, $conn){
-
+global $busqueda;
+if($busqueda==null||$busqueda=="") exit();
 $sql = "SELECT * FROM {$tabla} WHERE {$busqueda};";
 $result = $conn->query($sql);
 

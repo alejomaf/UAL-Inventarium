@@ -1,6 +1,6 @@
 <html>
 
-<form action="apis/registration.php" method="post">
+<form action="apis/creacion/registration.php" method="post">
 Name: <input type="text" name="name">
 Contraseña: <input type="password" name="password">
 Email: <input type="email" name="email">
