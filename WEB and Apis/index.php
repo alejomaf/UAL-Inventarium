@@ -49,6 +49,69 @@ Teléfono: <input type="text" name="phone">
 <input type="submit" value="Buscar usuarios">
 </form>
 
+<!--BUSCAR UBICACION-->
+
+<form action="apis/busqueda/buscarUbicacion.php" method="post">
+Ubicacion: <input type="text" name="ubicacion">
+Planta: <input type="text" name="planta">
+Edificio: <input type="text" name="edificio">
+<input type="submit" value="Buscar ubicación">
+</form>
+
+<!--BUSCAR PRESTAMO-->
+
+<form action="apis/busqueda/buscarPrestamo.php" method="post">
+Retirado por: <input type="text" name="retiradoPor">
+Fecha de salida: <input type="date" name="fechaSalida">
+Fecha de entrega: <input type="date" name="fechaEntrega">
+ID del objeto: <input type="text" name="Objeto_idObjeto">
+Fecha estimada de entrega: <input type="date" name="fechaEstimadaEntrega">
+ID del usuario: <input type="text" name="Usuario_idUsuario">
+ID del grupo de objetos: <input type="text" name="Objeto_GrupoObjetos_idGrupoObjetos">
+ID de la ubicacion: <input type="text" name="Objeto_Ubicacion_idUbicacion">
+Fecha de solicitud: <input type="date" name="solicitado">
+<input type="submit" value="Buscar prestamo">
+</form>
+
+<!--BUSCAR OBJETO-->
+
+<form action="apis/busqueda/buscarObjeto.php" method="post">
+Mejoras en el equipo: <input type="text" name="mejorasEquipo">
+Código: <input type="text" name="codigo">
+ID del grupo de objetos: <input type="text" name="GrupoObjetos_idGrupoObjetos">
+ID de la ubicación: <input type="text" name="Ubicacion_idUbicacion">
+Disponible: <input type="text" name="disponible">
+Eliminado: <input type="text" name="eliminado">
+
+<input type="submit" value="Buscar objeto">
+</form>
+
+<!--BUSCAR GRUPO DE OBJETOS-->
+
+<form action="apis/busqueda/buscarGrupoDeObjetos.php" method="post">
+Nombre: <input type="text" name="nombre">
+Cantidad: <input type="text" name="cantidad">
+Imagen: <input type="text" name="imagen">
+Marca: <input type="text" name="marca">
+Modelo: <input type="text" name="modelo">
+Cantidad disponible: <input type="text" name="cantidadDisponible">
+
+<input type="submit" value="Buscar grupo de objetos">
+</form>
+
+<!--BUSCAR CONFIGURACION-->
+
+<form action="apis/busqueda/buscarConfiguracion.php" method="post">
+IP: <input type="text" name="ip">
+MAC: <input type="text" name="mac">
+Boca: <input type="text" name="boca">
+Armario: <input type="text" name="armario">
+Usuario: <input type="text" name="usuario">
+Contrasena: <input type="text" name="contrasena">
+Objeto_idObjeto: <input type="text" name="Objeto_idObjeto">
+
+<input type="submit" value="Buscar configuracion">
+</form>
 <!--
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 ///////////////////////////////////////////////////\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\

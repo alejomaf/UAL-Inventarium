@@ -7,9 +7,9 @@ if(isset($_SESSION['email']) && $_SESSION['email'] != ''&&isset($_SESSION['passw
 
     $email=$_SESSION['email'];
     $password=$_SESSION['password'];
-}else if(isset($GLOBALS["emailU"]) && $GLOBALS["emailU"] != ''&&isset($GLOBALS["passwordU"]) && $GLOBALS["passwordU"] != ''){
-    $email=$GLOBALS["emailU"];
-    $password=$GLOBALS["passwordU"];
+}else if(isset($_POST["emailU"]) && $_POST["emailU"] != ''&&isset($_POST["passwordU"]) && $_POST["passwordU"] != ''){
+    $email=$_POST["emailU"];
+    $password=$_POST["passwordU"];
 }
 
 if(isset($email)&&isset($password)){
