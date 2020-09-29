@@ -17,18 +17,18 @@ namespace UALInventarium.ViewModels
         {
 
         }
-        public ICommand login
+        /*public ICommand login
         {
             get
             {
-                return new Command(async () =>
+                /*return new Command(async () =>
                 {
                     Usuario usuario = App.Repository.GetUsuarioAsync.(email);
                     if (usuario != null) if (usuario.contrasena == password) {
                             Application.Current.MainPage = new MainPage() {BindingContext=new MainViewModel(usuario) };
                 });
             }
-        }
+        }*/
 
         public string email { get; set; }
         public string password { get; set; }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include "scripts/head.html";?>
+<?php include "parts/head.html";?>
 
 <body>
 <div class="container">
@@ -10,12 +10,13 @@
 
         <div class="form-group">
             <label>Correo electrónico</label>
-            <input type="email" id="email" class="form-control">
+            <input type="email" id="email" name="email" class="form-control">
         </div>
         <div class="form-group">
             <label>Contraseña</label>
-            <input type="password" id="password" class="form-control">
+            <input type="password" id="password" name="password" class="form-control">
         </div>
+        <input type="hidden" id="plataforma" name="plataforma" value=0 class="form-control">
         <div class="form-group">
             <input type="checkbox" class="form-check-input" id="mantenerSesion">
             <label class="form-check-label" for="exampleCheck1">Mantener sesión iniciada</label>

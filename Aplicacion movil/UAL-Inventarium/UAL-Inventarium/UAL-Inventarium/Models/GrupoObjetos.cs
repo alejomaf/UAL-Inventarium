@@ -12,7 +12,7 @@ namespace UALInventarium.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int idGrupoObjetos { get; set; }
-    
+
         [Required]
 
         public int cantidad { get; set; }

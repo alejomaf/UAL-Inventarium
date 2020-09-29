@@ -18,11 +18,12 @@ if ($result->num_rows > 0) {
         if($plataforma==0){
             $_SESSION['email']=$row["correoElectronico"];
             $_SESSION['password']=$row["contrasena"];
-            header("Location: ../index.php");
+            $_SESSION['rango']=$row["rango"];
+            header("Location: ../user.php");
         }else{
             echo $row["idUsuario"].'/'.$row["nombre"].'/'.$row["correoElectronico"].'/'.$row["rango"].'/'.$row["departamento"].'/'.$row["telefono"].';';
         }
-        }else echo "usuarioIncorrecto";
+        }else header("Location: login.php");
 
     }
 }else echo "noExiste";
