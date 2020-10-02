@@ -88,7 +88,6 @@ function anadirGrupoObjeto(texto, accion){
 }
 
 async function principalGroupObject(){
-    //Hacer método en la clase main
     objetosGroup=await descomponerGroupObject();
 }
 

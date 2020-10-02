@@ -1,10 +1,5 @@
 <script src="http://localhost/UALInventarium/parts/scriptParts/addObject1.js"></script>
 
-<div class="page-content p-5" id="content">
-  <!-- Toggle button -->
-  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
-
-
 <h2 class="display-4 text-white">+Añadir objeto</h2>
   <p class="lead text-white mb-0">Selecciona el tipo de objeto para añadir, son obligatorios llenar los campos con este símbolo *</p>
 <div class="separator"></div>
@@ -31,8 +26,8 @@
   <input id="botonEscritoGroupObject" disabled type="text" placeholder="Objeto" name="nombreAuxiliar" class="form-control" required>
   <input id="botonValorGroupObject" type="hidden" name="nombre" required>
   </div>
-
-    <?php include "parts/selectObjectGroup.php";?>
+  
+    <?php include "selectObjectGroup.php";?>
 
     <div id="postSeleccion" style="display:none" class="form-row">
     <div class="col-md-4 mb-3">
@@ -46,7 +41,7 @@
     <input id="botonEscrito" disabled type="text" placeholder="Ubicación" name="ubicacionAuxiliar" class="form-control" required>
     <input id="botonValor" type="hidden" name="ubicacion" required>
     </div>
-    <?php include "parts/selectUbication.php";?>
+    <?php include "selectUbication.php";?>
     <div class="col-md-12 mb-3">
       <label>Marca</label>
       <input type="text" id="marcaDelObjeto" name="marca" placeholder="Marca del objeto" class="form-control">
@@ -84,7 +79,6 @@
 <div class="form-row">
 <div type="hidden" id="codigoDelInventario" class="col-md-12 mb-3">
 
-</div>
 </div>
 
 <div class="media d-flex justify-content-center">
