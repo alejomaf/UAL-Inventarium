@@ -7,7 +7,7 @@
     <div class="alert alert-secondary" id="alertaCreacion" role="alert">
       Escribe el nombre del objeto antes de crearlo
     </div>
-    <li class="list-group-item list-group-item-action list-group-item-primary" onclick="if(grupoDeObjetos.value==''){ $('.alertaCreacion').alert(); return;} crearObjeto(); modalGroupObject.style.display = 'none';botonObjectGroup.value=grupoDeObjetos.value">Crea un nuevo objeto</li>
+    <li class="list-group-item list-group-item-action list-group-item-primary" onclick="if(grupoDeObjetos.value==''){ $('.alertaCreacion').alert(); return;} crearSeleccionarObjeto(-1); modalGroupObject.style.display = 'none';">Crea un nuevo objeto</li>
     <ul id="botonesGroupObject" class="list-group">
 </ul>
   </div>
@@ -21,29 +21,6 @@ var cuadroObjectGroup=document.getElementById("botonesGroupObject");
 var botonObjectGroup=document.getElementById("botonEscritoGroupObject");
 var botonValorGroupObject=document.getElementById("botonValorGroupObject");
 var objetosGroup=[];
-
-/**
-    Definicion de atributos al empezar
- */
-
-async function cogerAtributosGroupObject(){
-
-await $.post("apis/busqueda/buscarGrupoDeObjetos.php",
-{
-    nombre:"%"
-},
-function(data,status){
-    responseGroupObject=data;
-});
-
-}
-
-async function descomponerGroupObject(){
-    await cogerAtributosGroupObject();
-    objeto= await JSON.parse(responseGroupObject);
-
-    return objeto;
-}
 
 
 async function cargarGrupoObjetos(){
@@ -73,7 +50,7 @@ async function cargarGrupoObjetos(){
     gobjetos.sort();
 
     for(i=0; i< gobjetos.length;i++){
-        anadirGrupoObjeto(gobjetos[i],"botonValorGroupObject.setAttribute('value','"+gobjetosid[gobjetos[i]]+"');botonEscritoGroupObject.setAttribute('value','"+gobjetos[i]+"');modalGroupObject.style.display = 'none'; seleccionarObjeto(); botonObjectGroup.value='"+gobjetos[i]+"';");
+        anadirGrupoObjeto(gobjetos[i],"botonObjectGroup.value='"+gobjetos[i]+"';modalGroupObject.style.display = 'none'; crearSeleccionarObjeto('"+gobjetosid[gobjetos[i]]+"'); botonObjectGroup.value='"+gobjetos[i]+"';");
     }
 }
 
@@ -88,11 +65,10 @@ function anadirGrupoObjeto(texto, accion){
 }
 
 async function principalGroupObject(){
-    objetosGroup=await descomponerGroupObject();
+    objetosGroup=await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {nombre:"%"});
 }
 
 principalGroupObject();
-
 
 $( "#grupoDeObjetos" ).keyup(function() {
   cargarGrupoObjetos();

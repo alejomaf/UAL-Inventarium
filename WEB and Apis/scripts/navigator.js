@@ -1,11 +1,16 @@
-var redireccionPagina=document.getElementById("content");
+window.addEventListener("hashchange",cargarPagina);
+window.addEventListener("load",cargarPagina);
 
-window.onhashchange = function () {
+var aux=0;
+
+function cargarPagina(){
+    var spl=(location.hash).split("-");
+    if(spl.length==1)
     switch(location.hash){
         case "#anadirObjeto":
-            cambiarObjeto("parts/addObject.php");
+            cambiarObjeto("parts/addObject/mainAddObject.php");
             break;
-        case "#objetos":
+        case "#gobjetos":
             cambiarObjeto("parts/objects.php");
             break;
         case "#solicitudes":
@@ -17,8 +22,15 @@ window.onhashchange = function () {
         case "#panelAdministrador":
             break;
         default: break;
+    }else{
+        switch(spl[0]){
+            case "#gobjetos":
+            aux= parseInt(spl[1]);
+            cambiarObjeto("parts/object.php");
+            break;
+        }
     }
-};
+}
 
 function cambiarObjeto(objeto){
     $("#variableArea").empty();

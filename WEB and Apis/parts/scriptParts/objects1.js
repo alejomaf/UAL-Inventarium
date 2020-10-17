@@ -1,26 +1,5 @@
-var objetosGroup=[];
-
-async function cogerAtributosGroupObject(){
-
-await $.post("apis/busqueda/buscarGrupoDeObjetos.php",
-{
-    nombre:"%"
-},
-function(data,status){
-    responseGroupObject=data;
-});
-
-}
-
-async function descomponerGroupObject(){
-    await cogerAtributosGroupObject();
-    objeto= await JSON.parse(responseGroupObject);
-
-    return objeto;
-}
-
 async function cargarGrupoObjetos(){
-    //cuadroObjectGroup.innerHTML="";
+    objetosGroup=await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {nombre: "%"});
 
     for(i=0;i<objetosGroup.length;i++){
 
@@ -30,18 +9,16 @@ async function cargarGrupoObjetos(){
         anadirGrupoObjeto(objetosGroup[i],1);
       }
     }
-
-    /**for(i=0; i< gobjetos.length;i++){
-        anadirGrupoObjeto(gobjetos[i],"botonValorGroupObject.setAttribute('value','"+gobjetosid[gobjetos[i]]+"');botonEscritoGroupObject.setAttribute('value','"+gobjetos[i]+"');modalGroupObject.style.display = 'none'; seleccionarObjeto(); botonObjectGroup.value='"+gobjetos[i]+"';");
-    }*/
 }
 
 function anadirGrupoObjeto(grupoObjeto, tipo){
   var marcoAuxiliar=$("#marco").clone();
-  $("#nombreGrupoObjeto").text(grupoObjeto.nombre);
-  $("#imagen").attr("src",grupoObjeto.imagen);
 
-  if(grupoObjeto.marca!=""||grupoObjeto.marca==null) $("#marca").text("Marca: "+grupoObjeto.marca); else $("#marca").remove();
+  $("#marco").attr("onclick","location.hash='#gobjetos-"+grupoObjeto.idGrupoObjetos+"'");
+  $("#nombreGrupoObjeto").text(grupoObjeto.nombre);
+  $("#imagen").attr("src","images/objects/"+grupoObjeto.imagen);
+
+  if(grupoObjeto.marca!="") $("#marca").text("Marca: "+grupoObjeto.marca); else $("#marca").remove();
   if(grupoObjeto.modelo!="") $("#modelo").text("Modelo: "+grupoObjeto.modelo); else $("#modelo").remove();
 
 
@@ -52,14 +29,10 @@ function anadirGrupoObjeto(grupoObjeto, tipo){
   else $("#tipo").text("Fungible");
 
   
-  $("#marco").clone().appendTo("#variableArea");
-  //$("#marco").clone(marcoAuxiliar);
+  $("#marco").clone().appendTo("#insideContainer");
+
   $("#copiar").children("#marco").remove();
   $("#copiar").append(marcoAuxiliar);
 }
 
-async function principalGroupObject(){
-    objetosGroup=await descomponerGroupObject();
-    
-    cargarGrupoObjetos();
-}
+cargarGrupoObjetos();

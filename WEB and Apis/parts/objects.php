@@ -1,8 +1,7 @@
-<script src="http://localhost/UALInventarium/parts/scriptParts/objects1.js"></script>
-
 <!-- ADD TO THE CONTAINTER THE CARDS-->
 <div id="copiar" style="display:none">
-<div style="cursor:pointer;" id="marco" class="card" style="width: 18rem;">
+<div style="cursor:pointer;" id="marco" class="col-auto mb-3" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
   <img id="imagen" class="card-img-top" src="" alt="Card image cap">
   <div class="card-body">
     <h5 id="nombreGrupoObjeto" class="card-title">Card title</h5>
@@ -20,5 +19,8 @@
   <li id="tipo" class="list-group-item">Vestibulum at eros</li>
 </div>
 </div>
+</div>
 
-<script src="http://localhost/UALInventarium/parts/scriptParts/objects2.js"></script>
+<div class="container-fluid mt-4"><div id="insideContainer" class="row"></div></div>
+
+<script src="http://localhost/UALInventarium/parts/scriptParts/objects1.js"></script>

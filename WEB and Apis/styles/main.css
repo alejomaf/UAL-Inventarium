@@ -8,7 +8,7 @@
 
 .vertical-nav {
     min-width: 17rem;
-    width: 17rem;
+    width: 17vh;
     height: 100vh;
     position: fixed;
     top: 0;
@@ -21,6 +21,7 @@
     width: calc(100% - 17rem);
     margin-left: 17rem;
     transition: all 0.4s;
+    min-height: 100vh;
   }
   
   /* for toggle behavior */
@@ -36,17 +37,22 @@
   
   @media (max-width: 768px) {
     #sidebar {
-      margin-left: -17rem;
+      margin-left: -100%;
     }
     #sidebar.active {
+      width: 100%;
       margin-left: 0;
     }
     #content {
+      margin-left: 0rem;
       width: 100%;
-      margin: 0;
+      /*calc(100% + 17rem);*/
+      height: 100%;
+      min-height: 100vh;
     }
     #content.active {
-      margin-left: 17rem;
+      visibility: hidden;
+      margin-left: 0rem;
       width: calc(100% - 17rem);
     }
   }

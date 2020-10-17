@@ -3,10 +3,21 @@
 echo '
 
 <div class="vertical-nav bg-white" id="sidebar">
+<div class="px-3 mb-4 mr-10">
+<button type="button" class="btn close" 
+                data-dismiss="alert" aria-label="Close"> 
+                  
+                <span aria-hidden="true">×</span> 
+            </button> 
+</div>
     <div class="py-4 px-3 mb-4 bg-light">
-      <div class="media d-flex justify-content-center"><img src="http://localhost/UALInventarium/images/role/technician.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+      <div class="media d-flex justify-content-center">
+      
+      <img src="http://localhost/UALInventarium/images/role/technician.png" alt="..." width="65" class="mr-3 rounded-circle img-thumbnail shadow-sm">
         
+      
       </div>
+      
       <div class="media d-flex justify-content-center">
       <div class="media-body">
           <h5 class="m-0">'.$_SESSION["email"].'</h5>
@@ -25,7 +36,7 @@ echo '
               </a>
       </li>
       <li class="nav-item">
-        <a href="#objetos" class="nav-link text-dark font-italic">
+        <a href="#gobjetos" class="nav-link text-dark font-italic">
                   <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
                   Objetos
               </a>

@@ -7,7 +7,7 @@ include "../utilities/consultas.php";
 
 $busqueda="";
 
-
+anadirAConsultaNumero("idGrupoObjetos","idGrupoObjetos");
 anadirAConsultaNumero("cantidad","cantidad");
 anadirAConsultaTexto("nombre","nombre");
 anadirAConsultaTexto("imagen","imagen");
