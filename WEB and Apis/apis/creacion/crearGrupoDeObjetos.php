@@ -49,6 +49,9 @@ if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded.";
   // if everything is ok, try to upload file
   } else {
+    $temp = explode(".", $_FILES["fileToUpload"]["name"]);
+    $newfilename = round(microtime(true)) . '.' . end($temp);
+    $target_file = $target_dir . $newfilename;
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         $imagen=$_FILES["fileToUpload"]["name"];
       echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
@@ -57,7 +60,7 @@ if ($uploadOk == 0) {
     }
   }
 
-$sql="INSERT INTO grupoobjetos(cantidad, nombre, imagen, marca, modelo, cantidadDisponible,tipo) VALUES ('".$cantidad."','".$nombre."','".$imagen."','".$marca."','".$modelo."','".$cantidadDisponible."','".$tipo."');";
+$sql="INSERT INTO grupoobjetos(cantidad, nombre, imagen, marca, modelo, cantidadDisponible,tipo) VALUES ('".$cantidad."','".$nombre."','".$target_file."','".$marca."','".$modelo."','".$cantidadDisponible."','".$tipo."');";
 
 $conn->query($sql);
 echo $conn->error;

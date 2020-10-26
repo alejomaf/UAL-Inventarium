@@ -11,11 +11,12 @@ $sql = "SELECT * FROM usuario WHERE correoElectronico='".$email."'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-
+    
     while($row = $result->fetch_assoc()) {
         if($row["contrasena"]==$password){
 
         if($plataforma==0){
+            $_SESSION['idUsuario']=$row["idUsuario"];
             $_SESSION['email']=$row["correoElectronico"];
             $_SESSION['password']=$row["contrasena"];
             $_SESSION['rango']=$row["rango"];

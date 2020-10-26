@@ -1,25 +1,26 @@
-<div class="card rounded" style="width: 25rem;">
+<div class="card border rounded mb-3 mx-4 px-3 py-3" style="background-color:#FDF7FF; width:22rem">
 <form id="pasarDatos">  
-<img class="card-img-top" src="images/essentials/uploadImage.png" alt="Card image cap">
+<div style="width: 20rem;">
+<img class="card-img-top" src="images/essentials/uploadImage.png" alt="Card image cap"></div>
   <div class="card-body">
-    <div class="col-md-12 mb-3">
+    <div class="form-group">
     <div class="alert alert-warning">
         <a>Debes subir una imagen del objeto obligatoriamente</a>.
       </div>
-      <label>Imagen del objeto*</label>
+      <label class="font-weight-bold">Imagen del objeto*</label>
       <input type="file" id="fotoDelObjeto" name="fileToUpload" class="form-control-file" required>
     </div>
-    <div class="col-md-12 mb-3">
-      <label>Marca</label>
+    <div class="form-group">
+      <label class="font-weight-bold">Marca</label>
       <input type="text" id="marcaDelObjeto" name="marca" placeholder="Marca del objeto" class="form-control">
     </div>
-    <div class="col-md-12 mb-3">
-      <label>Modelo</label>
+    <div class="form-group">
+      <label class="font-weight-bold">Modelo</label>
       <input type="text" id="modeloDelObjeto" name="modelo" placeholder="Modelo del objeto" class="form-control">
     </div>
   </div>
   <div class="align-content-center">
-  <button id="Crear grupo de objetos" type="button" onclick="cogerImagen();"class="btn btn-primary">Crear grupo de objetos</button>
+  <button id="Crear grupo de objetos" type="button" onclick="cogerImagen();"class="btn btn-block btn-primary">Crear grupo de objetos</button>
   </div>
 </form>
 </div>

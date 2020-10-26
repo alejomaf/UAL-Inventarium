@@ -50,7 +50,7 @@ async function cargarGrupoObjetos(){
     gobjetos.sort();
 
     for(i=0; i< gobjetos.length;i++){
-        anadirGrupoObjeto(gobjetos[i],"botonObjectGroup.value='"+gobjetos[i]+"';modalGroupObject.style.display = 'none'; crearSeleccionarObjeto('"+gobjetosid[gobjetos[i]]+"'); botonObjectGroup.value='"+gobjetos[i]+"';");
+        anadirGrupoObjeto(gobjetos[i],"botonObjectGroup.value='"+gobjetos[i]+"';modalGroupObject.style.display = 'none'; crearSeleccionarObjeto('"+gobjetosid[gobjetos[i]]+"'); botonValorGroupObject.value='"+gobjetos[i]+"';");
     }
 }
 

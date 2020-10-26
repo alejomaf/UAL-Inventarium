@@ -13,8 +13,9 @@ async function cargarGrupoObjetos(){
 
 function anadirGrupoObjeto(grupoObjeto, tipo){
   var marcoAuxiliar=$("#marco").clone();
-
-  $("#marco").attr("onclick","location.hash='#gobjetos-"+grupoObjeto.idGrupoObjetos+"'");
+  
+  $("#linkGrupoObjeto").attr("onclick","location.hash='#gobjetos-"+grupoObjeto.idGrupoObjetos+"';");
+  $("#modificarGrupoDeObjetos").attr("onclick","showModal('"+grupoObjeto.idGrupoObjetos+"');"); 
   $("#nombreGrupoObjeto").text(grupoObjeto.nombre);
   $("#imagen").attr("src","images/objects/"+grupoObjeto.imagen);
 

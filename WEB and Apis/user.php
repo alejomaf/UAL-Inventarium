@@ -2,7 +2,7 @@
 <?php include "parts/head.html";?>
 
 <body>
-<?php include "scripts/insertNavBar.php"?>
+<?php include "parts/verticalNavBar.php"?>
 
 <?php include "parts/container.php"?>
 
