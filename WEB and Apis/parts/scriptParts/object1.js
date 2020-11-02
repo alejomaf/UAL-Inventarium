@@ -1,4 +1,5 @@
 var objetoT;
+var nombreGrupoObjeto;
 
 async function cargarGrupoObjetos(){
   await cargarGrupoObjeto();
@@ -7,7 +8,7 @@ async function cargarGrupoObjetos(){
 
     if(objetos==null) return;
     for(i=0;i<objetos.length;i++){
-      if(objetos[i].codigo==0){
+      if(objetos[i].tipo==0){
         await anadirGrupoObjeto(objetos[i],0);
       }else{
         await anadirGrupoObjeto(objetos[i],1);
@@ -16,36 +17,28 @@ async function cargarGrupoObjetos(){
 }
 
 async function anadirGrupoObjeto(objeto, tipo){
-  var marcoAuxiliar=$("#marco").clone();
-
+  var valores=[];
+  var titulo=[];
   ubicacion=(await realizarConsulta("apis/busqueda/buscarUbicacion.php",{idUbicacion: objeto.Ubicacion_idUbicacion}))[0];
 
-  $("#ubicacion").text("Edificio: "+ubicacion.edificio+" | Planta: "+ubicacion.planta+" | Ubicacion: "+ubicacion.ubicacion);
+  valores.push("Edificio: "+ubicacion.edificio+" | Planta: "+ubicacion.planta+" | Ubicacion: "+ubicacion.ubicacion);
+  
+  titulo.push(nombreGrupoObjeto+" con id "+objeto.idObjeto);
+  titulo.push("location.hash='objeto-"+objeto.idObjeto+"';")
 
   if(tipo!=0){
-    $("#nombreObjeto").text("Fungible "+objeto.idObjeto)
-    $("#codigo").remove();
-  }else{
-    $("#nombreObjeto").text("Inventario "+objeto.idObjeto);
-    $("#codigo").text("Código: "+objeto.codigo);
+    valores.push("Código: "+objeto.codigo);
   }
-  $("#modificarObjeto").attr("onclick","showModal("+objeto.idObjeto+");"); 
-  if(objetoT==1) $("#codigo").remove();
 
-  if(objeto.mejorasEquipo!="") $("#mejoras").text("Mejoras del equipo: "+objeto.mejorasEquipo); else $("#mejoras").remove();
+  if(objeto.mejorasEquipo!="") valores.push("Mejoras del equipo: "+objeto.mejorasEquipo);
 
-  $("#solicitudObjeto").attr("onclick","showModal2("+objeto.idObjeto+");");
+  insertCard($("#insideContainer"), null, titulo, valores, {"Modificar":"showModal("+objeto.idObjeto+");","Solicitud":"showModal2("+objeto.idObjeto+");"},null);
   
-
-  $("#marco").clone().appendTo("#insideContainer");
-  
-  $("#copiar").children("#marco").remove();
-  $("#copiar").append(marcoAuxiliar);
 }
 
 async function cargarGrupoObjeto(){
   grupoObjeto=(await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php",{idGrupoObjetos: aux}))[0];
-  
+  nombreGrupoObjeto = await grupoObjeto.nombre;
   objetoT=grupoObjeto.tipo;
   
   $("#nombreGrupoObjeto").text(grupoObjeto.nombre);

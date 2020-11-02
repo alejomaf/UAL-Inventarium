@@ -3,7 +3,9 @@
         <div class="card-body">
         <div id="myBtnGroupObject" class="col-md-12 mb-3">
         <label class="font-weight-bold">Seleccionar el objeto*</label>
+        <div onclick="$('#myModalGroupObject').modal('show');">
         <input id="botonEscritoGroupObject" disabled type="text" placeholder="Objeto" name="nombreAuxiliar" class="form-control" required>
+        </div>
         <input id="botonValorGroupObject" type="hidden" name="nombre" required>
         </div>
         <?php include "../selectObjectGroup.php";?>

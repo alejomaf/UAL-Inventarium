@@ -4,7 +4,7 @@ global $conn;
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "UALInventarium";
+$dbname = "ualinventarium";
 
 // Create connection
 $conn= new mysqli($servername, $username, $password, $dbname);

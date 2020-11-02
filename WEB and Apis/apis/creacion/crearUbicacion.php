@@ -1,7 +1,7 @@
 <?php
 
 //----------COMPROBACIÓN DEL USUARIO CONECTADO----------\\
-include "../connection/checkLogin.php";
+include "../../connection/connection.php";
 //-------------------------------------------------------\\
 
 $location=$_POST["location"];
@@ -14,5 +14,4 @@ $sql="INSERT INTO ubicacion(ubicacion, planta, edificio) VALUES ('".$location."'
 
 $conn->query($sql);
 $conn->error;
-header("Location: ../index.php");
 ?>

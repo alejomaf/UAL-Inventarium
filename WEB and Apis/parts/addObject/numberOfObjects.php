@@ -9,7 +9,7 @@
           <span class="glyphicon glyphicon-minus"></span>
           </button>
       </span>
-      <input type="text" id="quantity" name="quantity" class="form-control input-number text-align-center" value="1" min="1" max="50">
+      <input type="text" id="quantity" disabled name="quantity" class="form-control input-number text-align-center" value="1" min="1" max="50">
       <span class="input-group-btn">
           <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
           +    
@@ -24,7 +24,7 @@
     <div class="alert alert-warning">
         <a>Debes añadir una ubicación al objeto obligatoriamente</a>.
       </div>
-    <button id="botonEscrito" type="button" class="btn btn-block btn-secondary" placeholder="Ubicación"required>Seleccionar ubicación</button>
+    <button id="botonEscrito" type="button" class="btn btn-block btn-secondary" onclick="cargarEdificios(); $('#myModal').modal('show');" placeholder="Ubicación"required>Seleccionar ubicación</button>
     <input id="botonValor" type="hidden" name="ubicacion" required>
     </div>
     <?php include "../selectUbication.php";?>

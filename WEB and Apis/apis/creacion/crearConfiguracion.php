@@ -1,7 +1,7 @@
 <?php
 
 //----------COMPROBACIÓN DEL USUARIO CONECTADO----------\\
-include "../connection/checkLogin.php";
+include "../../connection/connection.php";
 //-------------------------------------------------------\\
 
 $ip=$_POST["ip"];
@@ -17,5 +17,4 @@ $sql="INSERT INTO configuracion(ip, mac, boca, armario, usuario, contrasena, Obj
 
 $conn->query($sql);
 $conn->error;
-header("Location: ../index.php");
 ?>

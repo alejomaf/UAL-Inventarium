@@ -8,19 +8,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema ualinventarium
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema ualinventarium
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `ualinventarium` DEFAULT CHARACTER SET utf8 ;
+USE `ualinventarium` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`GrupoObjetos`
+-- Table `ualinventarium`.`GrupoObjetos`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`GrupoObjetos` (
+CREATE TABLE IF NOT EXISTS `ualinventarium`.`grupoObjetos` (
   `idGrupoObjetos` INT NOT NULL AUTO_INCREMENT,
   `cantidad` INT NULL,
   `nombre` VARCHAR(45) NULL,
@@ -34,9 +34,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Ubicacion`
+-- Table `ualinventarium`.`Ubicacion`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Ubicacion` (
+CREATE TABLE IF NOT EXISTS `ualinventarium`.`ubicacion` (
   `idUbicacion` INT NOT NULL AUTO_INCREMENT,
   `ubicacion` VARCHAR(45) NOT NULL,
   `planta` VARCHAR(45) NOT NULL,
@@ -46,36 +46,36 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Objeto`
+-- Table `ualinventarium`.`Objeto`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Objeto` (
+CREATE TABLE IF NOT EXISTS `ualinventarium`.`objeto` (
   `idObjeto` INT NOT NULL AUTO_INCREMENT,
   `mejorasEquipo` VARCHAR(45) NULL,
   `codigo` INT NULL,
   `GrupoObjetos_idGrupoObjetos` INT NOT NULL,
   `Ubicacion_idUbicacion` INT NOT NULL,
   `disponible` TINYINT NOT NULL,
-  `elminado` TINYINT NULL,
+  `eliminado` TINYINT NULL,
   PRIMARY KEY (`idObjeto`, `GrupoObjetos_idGrupoObjetos`, `Ubicacion_idUbicacion`),
-  INDEX `fk_Objeto_GrupoObjetos1_idx` (`GrupoObjetos_idGrupoObjetos` ASC) VISIBLE,
-  INDEX `fk_Objeto_Ubicacion1_idx` (`Ubicacion_idUbicacion` ASC) VISIBLE,
+  INDEX `fk_Objeto_GrupoObjetos1_idx` (`GrupoObjetos_idGrupoObjetos` ASC) ,
+  INDEX `fk_Objeto_Ubicacion1_idx` (`Ubicacion_idUbicacion` ASC) ,
   CONSTRAINT `fk_Objeto_GrupoObjetos1`
     FOREIGN KEY (`GrupoObjetos_idGrupoObjetos`)
-    REFERENCES `mydb`.`GrupoObjetos` (`idGrupoObjetos`)
+    REFERENCES `ualinventarium`.`grupoObjetos` (`idGrupoObjetos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Objeto_Ubicacion1`
     FOREIGN KEY (`Ubicacion_idUbicacion`)
-    REFERENCES `mydb`.`Ubicacion` (`idUbicacion`)
+    REFERENCES `ualinventarium`.`ubicacion` (`idUbicacion`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Configuracion`
+-- Table `ualinventarium`.`Configuracion`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Configuracion` (
+CREATE TABLE IF NOT EXISTS `ualinventarium`.`configuracion` (
   `idConfiguracion` INT NOT NULL AUTO_INCREMENT,
   `ip` VARCHAR(45) NULL,
   `mac` VARCHAR(45) NULL,
@@ -85,19 +85,19 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Configuracion` (
   `contrasena` VARCHAR(45) NULL,
   `Objeto_idObjeto` INT NOT NULL,
   PRIMARY KEY (`idConfiguracion`),
-  INDEX `fk_Configuracion_Objeto1_idx` (`Objeto_idObjeto` ASC) VISIBLE,
+  INDEX `fk_Configuracion_Objeto1_idx` (`Objeto_idObjeto` ASC) ,
   CONSTRAINT `fk_Configuracion_Objeto1`
     FOREIGN KEY (`Objeto_idObjeto`)
-    REFERENCES `mydb`.`Objeto` (`idObjeto`)
+    REFERENCES `ualinventarium`.`objeto` (`idObjeto`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Usuario`
+-- Table `ualinventarium`.`Usuario`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+CREATE TABLE IF NOT EXISTS `ualinventarium`.`usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   `contrasena` VARCHAR(45) NULL,
@@ -110,9 +110,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Prestado`
+-- Table `ualinventarium`.`Prestado`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Prestado` (
+CREATE TABLE IF NOT EXISTS `ualinventarium`.`prestado` (
   `idPrestado` INT NOT NULL AUTO_INCREMENT,
   `retiradoPor` VARCHAR(45) NULL,
   `fechaSalida` DATE NULL,
@@ -125,16 +125,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Prestado` (
   `solicitado` DATE NULL,
   `estado` TINYINT NULL,
   PRIMARY KEY (`idPrestado`, `Usuario_idUsuario`),
-  INDEX `fk_Prestado_Usuario1_idx` (`Usuario_idUsuario` ASC) VISIBLE,
-  INDEX `fk_Prestado_Objeto1_idx` (`Objeto_idObjeto` ASC, `Objeto_GrupoObjetos_idGrupoObjetos` ASC, `Objeto_Ubicacion_idUbicacion` ASC) VISIBLE,
+  INDEX `fk_Prestado_Usuario1_idx` (`Usuario_idUsuario` ASC) ,
+  INDEX `fk_Prestado_Objeto1_idx` (`Objeto_idObjeto` ASC, `Objeto_GrupoObjetos_idGrupoObjetos` ASC, `Objeto_Ubicacion_idUbicacion` ASC) ,
   CONSTRAINT `fk_Prestado_Usuario1`
     FOREIGN KEY (`Usuario_idUsuario`)
-    REFERENCES `mydb`.`Usuario` (`idUsuario`)
+    REFERENCES `ualinventarium`.`usuario` (`idUsuario`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Prestado_Objeto1`
     FOREIGN KEY (`Objeto_idObjeto` , `Objeto_GrupoObjetos_idGrupoObjetos` , `Objeto_Ubicacion_idUbicacion`)
-    REFERENCES `mydb`.`Objeto` (`idObjeto` , `GrupoObjetos_idGrupoObjetos` , `Ubicacion_idUbicacion`)
+    REFERENCES `ualinventarium`.`objeto` (`idObjeto` , `GrupoObjetos_idGrupoObjetos` , `Ubicacion_idUbicacion`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;

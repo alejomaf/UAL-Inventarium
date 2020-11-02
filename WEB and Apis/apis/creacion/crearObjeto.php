@@ -1,7 +1,8 @@
 <?php
 
 //----------COMPROBACIÓN DEL USUARIO CONECTADO----------\\
-include "../../connection/checkLogin.php";
+//include "../../connection/checkLogin.php";
+include "../../connection/connection.php";
 //-------------------------------------------------------\\
 
 if(isset($_POST["mejorasEquipo"])&&!empty($_POST["mejorasEquipo"]))
@@ -17,6 +18,6 @@ $sql="INSERT INTO objeto(mejorasEquipo, codigo, GrupoObjetos_idGrupoObjetos, Ubi
 $sql2="UPDATE grupoobjetos SET cantidad = cantidad + 1, cantidadDisponible = cantidadDisponible + 1 WHERE idGrupoObjetos = {$grupoObjetos}";
 
 $conn->query($sql);
-$conn->query($sql2);
 echo $conn->error;
+$conn->query($sql2);
 ?>

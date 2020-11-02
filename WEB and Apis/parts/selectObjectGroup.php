@@ -7,7 +7,7 @@
     <div class="alert alert-secondary" id="alertaCreacion" role="alert">
       Escribe el nombre del objeto antes de crearlo
     </div>
-    <li class="list-group-item list-group-item-action list-group-item-primary" onclick="if(grupoDeObjetos.value==''){ $('.alertaCreacion').alert(); return;} crearSeleccionarObjeto(-1); modalGroupObject.style.display = 'none';">Crea un nuevo objeto</li>
+    <li class="list-group-item list-group-item-action list-group-item-primary" onclick="if(grupoDeObjetos.value==''){ $('.alertaCreacion').alert(); return;} crearSeleccionarObjeto(-1);">Crea un nuevo objeto</li>
     <ul id="botonesGroupObject" class="list-group">
 </ul>
   </div>
@@ -50,7 +50,7 @@ async function cargarGrupoObjetos(){
     gobjetos.sort();
 
     for(i=0; i< gobjetos.length;i++){
-        anadirGrupoObjeto(gobjetos[i],"botonObjectGroup.value='"+gobjetos[i]+"';modalGroupObject.style.display = 'none'; crearSeleccionarObjeto('"+gobjetosid[gobjetos[i]]+"'); botonValorGroupObject.value='"+gobjetos[i]+"';");
+        anadirGrupoObjeto(gobjetos[i],"botonObjectGroup.value='"+gobjetos[i]+"'; crearSeleccionarObjeto('"+gobjetosid[gobjetos[i]]+"'); botonValorGroupObject.value='"+gobjetos[i]+"';");
     }
 }
 
@@ -73,22 +73,4 @@ principalGroupObject();
 $( "#grupoDeObjetos" ).keyup(function() {
   cargarGrupoObjetos();
 });
-</script>
-
-<script>
-  // Get the modalGroupObject
-var modalGroupObject = document.getElementById("myModalGroupObject");
-
-// Get the button that opens the modalGroupObject
-var btn = document.getElementById("myBtnGroupObject");
-
-// Get the <span> element that closes the modalGroupObject
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modalGroupObject
-btn.onclick = function() {
-  modalGroupObject.style.display = "block";
-}
-
-
 </script>
