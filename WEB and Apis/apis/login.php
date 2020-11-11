@@ -13,6 +13,11 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     
     while($row = $result->fetch_assoc()) {
+        if($row["rango"]==-1) {
+            header("Location: ../main.php"); 
+            exit();
+        }
+
         if($row["contrasena"]==$password){
 
         if($plataforma==0){
@@ -24,10 +29,14 @@ if ($result->num_rows > 0) {
         }else{
             echo $row["idUsuario"].'/'.$row["nombre"].'/'.$row["correoElectronico"].'/'.$row["rango"].'/'.$row["departamento"].'/'.$row["telefono"].';';
         }
-        }else header("Location: login.php");
+        
+        }else {
+            header("Location: ../main.php");
+            exit();
+        }
 
     }
-}else header("Location: login.php");
+}else header("Location: ../main.php");
 
             
 ?>

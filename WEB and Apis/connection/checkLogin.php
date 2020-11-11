@@ -4,7 +4,6 @@ include "connection.php";
 
 
 if(isset($_SESSION['email']) && $_SESSION['email'] != ''&&isset($_SESSION['password']) && $_SESSION['password'] != '') {
-
     $email=$_SESSION['email'];
     $password=$_SESSION['password'];
 }else if(isset($_POST["emailU"]) && $_POST["emailU"] != ''&&isset($_POST["passwordU"]) && $_POST["passwordU"] != ''){

@@ -80,7 +80,7 @@ async function cargarEdificios(){
         await cargarSubtitulo("//No hay ubicaciones");
         return;
     }
-    for(i=0;i<localizaciones.length;i++) if(!edificios.includes(localizaciones[i].edificio)&&(localizaciones[i].edificio.toLowerCase().search($("#crearUbicacion").val())!=-1)) await edificios.push(localizaciones[i].edificio);
+    for(i=0;i<localizaciones.length;i++) if(!edificios.includes(localizaciones[i].edificio)) await edificios.push(localizaciones[i].edificio);
     edificios.sort();
     for(i=0; i< edificios.length;i++) await anadirObjeto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')",);
 }

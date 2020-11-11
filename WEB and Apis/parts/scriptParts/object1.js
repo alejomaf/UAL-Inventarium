@@ -32,27 +32,31 @@ async function anadirGrupoObjeto(objeto, tipo){
 
   if(objeto.mejorasEquipo!="") valores.push("Mejoras del equipo: "+objeto.mejorasEquipo);
 
-  insertCard($("#insideContainer"), null, titulo, valores, {"Modificar":"showModal("+objeto.idObjeto+");","Solicitud":"showModal2("+objeto.idObjeto+");"},null);
+  insertCard($("#insideContainer"), null, titulo, valores, {"Modificar":"showModal("+objeto.idObjeto+");","Solicitud":"showModal2("+objeto.idObjeto+");"},null,null);
   
 }
 
 async function cargarGrupoObjeto(){
   grupoObjeto=(await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php",{idGrupoObjetos: aux}))[0];
   nombreGrupoObjeto = await grupoObjeto.nombre;
-  objetoT=grupoObjeto.tipo;
-  
-  $("#nombreGrupoObjeto").text(grupoObjeto.nombre);
-  $("#imagen").attr("src","images/objects/"+grupoObjeto.imagen);
 
-  if(grupoObjeto.marca!="") $("#marca").text("Marca: "+grupoObjeto.marca); else $("#marca").remove();
-  if(grupoObjeto.modelo!="") $("#modelo").text("Modelo: "+grupoObjeto.modelo); else $("#modelo").remove();
+  var tituloGO=[];
+  var valoresGO = [];
+
+  tituloGO.push(nombreGrupoObjeto);
+  tituloGO.push(null);
+
+  if(grupoObjeto.marca!="") valoresGO.push("Marca: "+grupoObjeto.marca);
+  if(grupoObjeto.modelo!="") valoresGO.push("Modelo: "+grupoObjeto.modelo);
 
 
-  $("#cantidad").text("Cantidad: "+grupoObjeto.cantidad);
-  $("#cantidadDisponible").text("Cantidad disponible: "+grupoObjeto.cantidadDisponible);
+  valoresGO.push("Cantidad: "+grupoObjeto.cantidad);
+  valoresGO.push("Cantidad disponible: "+grupoObjeto.cantidadDisponible);
 
-  if(tipo==0) $("#tipo").text("Inventario");
-  else $("#tipo").text("Fungible");
+  if(grupoObjeto.tipo==0) tipoGO="Inventario";
+  else tipoGO="Fungible";
+
+  insertCard($("#insideGOContainer"), "images/objects/"+await grupoObjeto.imagen, tituloGO, valoresGO, null,tipoGO,22);
 }
 
 cargarGrupoObjetos();

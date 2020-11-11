@@ -11,16 +11,21 @@ async function realizarConsulta(ubicacion, consulta){
 
 
 
-async function insertCard(ubicacion, imagen, titulo, valores, botones, etiqueta){
+async function insertCard(ubicacion, imagen, titulo, valores, botones, etiqueta, tamano){
   
   var marco= document.createElement("div");
-    marco.setAttribute("class","mr-2 ml-2 py-3");
-    marco.setAttribute("style","width: 18rem;");
-
-  var marco1= document.createElement("div");
-    marco1.setAttribute("class","card border rounded px-3 py-3");
-    marco1.setAttribute("style","width: 18rem;background-color:#FDF7FF;");
+  marco.setAttribute("class","mr-2 ml-2 py-3");
   
+  var marco1= document.createElement("div");
+  marco1.setAttribute("class","card border rounded px-3 py-3");
+
+  if(tamano==null){
+      marco.setAttribute("style","width: 18rem;");
+      marco1.setAttribute("style","width: 18rem;background-color:#FDF7FF;");
+  }else{
+    marco.setAttribute("style","width: "+tamano+"rem;");
+    marco1.setAttribute("style","width: "+tamano+"rem;background-color:#FDF7FF;");
+  }
 
   //Insert image
   if(imagen!=null){
@@ -40,10 +45,12 @@ async function insertCard(ubicacion, imagen, titulo, valores, botones, etiqueta)
     marco3.setAttribute("style","width= 100%;");
     marco3.setAttribute("class","card-body list-group-item-primary border");
     var tituloMarco3= document.createElement("h5");
-    tituloMarco3.setAttribute("style","cursor:pointer");
-    tituloMarco3.setAttribute("class","card-title text-dark text-center");
+    if(titulo[1]!=null){
+      tituloMarco3.setAttribute("style","cursor:pointer");
+      tituloMarco3.setAttribute("class","card-title text-dark text-center");
+      tituloMarco3.setAttribute("onclick", titulo[1]);
+    }
     tituloMarco3.textContent= titulo[0];
-    tituloMarco3.setAttribute("onclick", titulo[1]);
     marco3.append(tituloMarco3);    
     marco1.append(marco3);
   }

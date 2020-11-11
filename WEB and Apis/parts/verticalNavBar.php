@@ -44,6 +44,25 @@
                   Ver equipos configurados
               </a>
       </li>
+      </ul>
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Administración</p>
+      <ul class="nav flex-column bg-white mb-0">
+      </ul>
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Personal</p>
+      <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#perfil" class="nav-link text-dark font-italic">
+                  <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                  Perfil
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="apis/logout.php" class="nav-link text-dark font-italic">
+                  <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                  Cerrar sesión
+              </a>
+      </li>
+    
     </ul>
   </div>
   <!-- End vertical navbar -->

@@ -18,8 +18,8 @@ var contadorObjetos=0;
 
 function selectType(){
     limpiarZona($("#mainAddObject"));
-    insertCard($("#mainAddObject"), "images/essentials/inventario.png", null, null, {"Añadir inventario":"seleccionarObjeto(0);"},null);
-    insertCard($("#mainAddObject"), "images/essentials/fungible.png", null, null, {"Añadir fungible":"seleccionarObjeto(1);"},null);
+    insertCard($("#mainAddObject"), "images/essentials/inventario.png", null, null, {"Añadir inventario":"seleccionarObjeto(0);"},null,22);
+    insertCard($("#mainAddObject"), "images/essentials/fungible.png", null, null, {"Añadir fungible":"seleccionarObjeto(1);"},null,22);
 }
 
 selectType();
