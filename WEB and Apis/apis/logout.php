@@ -7,5 +7,5 @@ $_SESSION["password"]=null;
 session_destroy();
 $conn->close();
 
-header("Location: ../index.php");
+header("Location: ../main.php");
 ?>

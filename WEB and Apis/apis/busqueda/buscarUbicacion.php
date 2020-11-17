@@ -7,7 +7,7 @@ include "../utilities/consultas.php";
 
 $busqueda="";
 
-
+anadirAConsultaTexto("idUbicacion","idUbicacion");
 anadirAConsultaTexto("ubicacion","ubicacion");
 anadirAConsultaTexto("planta","planta");
 anadirAConsultaTexto("edificio","edificio");

@@ -1,155 +1,201 @@
 <!-- The Modal -->
 <div id="myModal" class="modal">
+
   <!-- Modal content -->
-  <div id="botones" class="modal-content">
-    <span class="close">&times;</span>
-    <ul class="list-group">
-    </ul>
-  </div>
+  <div class="modal-content">
+    <h3 id="accionModal"></h3>
+    <input type="text" class="form-control" oninput="actualizarBusqueda()" id="nombreUbicacion" placeholder="Nombre de la ubicación">
+    <div id="contenido">
+        <ul id="lista" class="list-group">
+        </ul>
+    </div>
 
+    <button type="button" id="crearUbicacion" onclick="crearUbicacion()" class="btn btn-primary btn-block">Crear ubicación</button>
+   
+   </div>
 </div>
+
 <script>
+var activo = 1;
+var activoCrear = false;
+var edificioAct = "";
+var plantaAct = "";
+var edificios=[];
+var plantas=[];
+var ubicaciones=[];
+
 var response="";
-var cuadro=document.getElementById("botones");
-var boton=document.getElementById("botonEscrito");
-var botonValor=document.getElementById("botonValor");
-var objetos=[];
+var cuadro=document.getElementById("lista");
 
-/**
-    Definicion de atributos al empezar
- */
-
-async function cogerAtributos(){
-
-await $.post("apis/busqueda/buscarUbicacion.php",
-{
-    ubicacion:" ",
-    edificio: " "
-},
-function(data,status){
-    response=data;
-});
-
+//ORDENACIÓN
+async function actualizarBusqueda(){
+    if(activoCrear==true) return;
+    switch(activo){
+        case 1:
+            cogerEdificios(); 
+            break;
+        case 2:
+            cogerPlantas();
+            break;
+        case 3:
+            cogerUbicaciones();
+            break;
+    }
 }
 
-async function descomponer(){
-    await cogerAtributos();
-    objeto= await JSON.parse(response);
-
-    return objeto;
+async function cogerEdificios(){
+    cuadro.innerHTML="";
+    for(i=0; i< edificios.length;i++) if((edificios[i].toLowerCase()).search($("#nombreUbicacion").val().toLowerCase())!=-1){
+        await anadirObjeto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')");
+    }
 }
+async function cogerPlantas(){
+    cuadro.innerHTML="";
+    for(i=0; i< plantas.length;i++) if((plantas[i].toLowerCase()).search($("#nombreUbicacion").val().toLowerCase())!=-1){
+        await anadirObjeto(plantas[i],"seleccionarUbicacion('"+plantas[i]+"','"+edificioAct+"')");
+    }
+    await anadirObjeto("Volver","cargarEdificios()");
+}
+async function cogerUbicaciones(){
+    cuadro.innerHTML="";
+    for(i=0; i< ubicaciones.length;i++) if((ubicaciones[i].toLowerCase()).search($("#nombreUbicacion").val().toLowerCase())!=-1){
+        await anadirObjeto(ubicaciones[i],"actualizarBoton('"+ubicaciones[i]+"');cargarEdificios();cogerId('"+ubicaciones[i]+"','"+plantaAct+"','"+edificioAct+"');");
+    }
+    await anadirObjeto("Volver","seleccionarPlanta('"+edificioAct+"')");
+}
+
 
 
 async function cargarEdificios(){
+    $("#nombreUbicacion").val("");
+    activo = 1;
+    activoCrear = false;
+    edificioAct = "";
+    plantaAct = "";
     cuadro.innerHTML="";
+    edificios=[];
 
-    cargarTitulo("Elegir edificio");
-
-    var edificios=[];
-
-    for(i=0;i<objetos.length;i++){
-        if(!edificios.includes(objetos[i].edificio))
-        edificios.push(objetos[i].edificio);
+    await cargarTitulo("Crear o elegir edificio");
+    if(localizaciones.length==0){
+        await cargarSubtitulo("//No hay ubicaciones");
+        return;
     }
-
+    for(i=0;i<localizaciones.length;i++) if(!edificios.includes(localizaciones[i].edificio)) await edificios.push(localizaciones[i].edificio);
     edificios.sort();
-
-    for(i=0; i< edificios.length;i++){
-        anadirObjeto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')");
-    }
+    for(i=0; i< edificios.length;i++) await anadirObjeto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')",);
 }
 
-function seleccionarPlanta(edificio){
+
+async function seleccionarPlanta(edificio){
+    activo = 2;
+    edificioAct = edificio;
+
     cuadro.innerHTML="";
-
-    cargarTitulo("Elegir planta");
-    
-    var plantas=[];
-
-    for(i=0;i<objetos.length;i++){
-        if(objetos[i].edificio==edificio&&!plantas.includes(objetos[i].planta))
-        plantas.push(objetos[i].planta);
+    if(activoCrear==true) {
+        await cargarTitulo("Crear planta");
+        await $("#lista").append(document.createElement("br"));
+        return;
     }
+    else await cargarTitulo("Crear o elegir planta");
+    plantas = [];
 
+    for(i=0;i<localizaciones.length;i++) if(localizaciones[i].edificio==edificio&&!plantas.includes(localizaciones[i].planta)) await plantas.push(localizaciones[i].planta);
+    
     plantas.sort(function(a, b){return a-b});
-
-    for(i=0; i< plantas.length;i++){
-        anadirObjeto(plantas[i],"seleccionarUbicacion('"+plantas[i]+"','"+edificio+"')");
+    for(i=0; i< plantas.length;i++) {
+        await anadirObjeto(plantas[i],"seleccionarUbicacion('"+plantas[i]+"','"+edificio+"')");
     }
-    anadirObjeto("Volver","cargarEdificios()");
+    await anadirObjeto("Volver","cargarEdificios()");
 }
 
-function seleccionarUbicacion(planta, edificio){
+async function seleccionarUbicacion(planta, edificio){
+    activo = 3;
+    edificioAct = edificio;
+    plantaAct = planta;
+
     cuadro.innerHTML="";
-
-    cargarTitulo("Elegir ubicación");
-    
-    var ubicaciones=[];
-
-    for(i=0;i<objetos.length;i++){
-        if(objetos[i].edificio==edificio&&objetos[i].planta==planta&&!ubicaciones.includes(objetos[i].ubicacion))
-        ubicaciones.push(objetos[i].ubicacion);
+    if(activoCrear==true) {
+        await cargarTitulo("Crear ubicación"); 
+        await $("#lista").append(document.createElement("br"));
+        return;
     }
+    else await cargarTitulo("Crear o elegir ubicación");
+    ubicaciones = [];
 
+    for(i=0;i<localizaciones.length;i++) if(localizaciones[i].edificio==edificio&&localizaciones[i].planta==planta&&!ubicaciones.includes(localizaciones[i].ubicacion)) await ubicaciones.push(localizaciones[i].ubicacion);
     ubicaciones.sort();
-
-    for(i=0; i< ubicaciones.length;i++){
-        anadirObjeto(ubicaciones[i],"$('#botonEscrito').val('"+ubicaciones[i]+"');modal.style.display = 'none';cargarEdificios();cogerId('"+ubicaciones[i]+"',"+planta+",'"+edificio+"');");
-    }
-    anadirObjeto("Volver","seleccionarPlanta('"+edificio+"')");
+    for(i=0; i< ubicaciones.length;i++) await anadirObjeto(ubicaciones[i],"actualizarBoton('"+ubicaciones[i]+"');cargarEdificios();cogerId('"+ubicaciones[i]+"','"+planta+"','"+edificio+"');");
+    await anadirObjeto("Volver","seleccionarPlanta('"+edificio+"')");
 }
 
-function cogerId(ubicacion, planta, edificio){
-    for(i=0;i<objetos.length;i++){
-        if(objetos[i].ubicacion==ubicacion&&objetos[i].planta==planta&&objetos[i].edificio==edificio) botonValor.setAttribute('value',objetos[i].idUbicacion);
-    } 
+async function cogerId(ubicacion, planta, edificio){
+    await $("#myModal").modal("hide");
+    for(i=0;i<localizaciones.length;i++) if(localizaciones[i].ubicacion==ubicacion&&localizaciones[i].planta==planta&&localizaciones[i].edificio==edificio) await botonValor.setAttribute('value',localizaciones[i].idUbicacion);
 }
 
-function anadirObjeto(texto, accion){
-
+async function anadirObjeto(texto, accion){
     var fila=document.createElement("li");
     fila.textContent=texto;
     fila.setAttribute("class","list-group-item");
     fila.setAttribute("onclick",accion);
-    cuadro.appendChild(fila);
-
+    await $("#lista").append(fila);
 }
 
-function cargarTitulo(texto){
+async function cargarTitulo(texto){
+    $("#accionModal").text(texto);
+}
 
-    var titulo=document.createElement("h3");
+async function cargarSubtitulo(texto){
+    var titulo=document.createElement("h5");
     titulo.textContent=texto;
-    cuadro.appendChild(titulo);
+    await $("#lista").append(document.createElement("br"));
+    await $("#lista").append(titulo);
+    await $("#lista").append(document.createElement("br"));
 }
 
 
-async function principal(){
-    //Hacer método en la clase main
-    objetos=await descomponer();
-    cargarEdificios();
+async function principal(valor){
+    localizaciones=await realizarConsulta("apis/busqueda/buscarUbicacion.php",{idUbicacion:"%"});
+    if(valor) await cargarEdificios();
 }
 
-principal();
-</script>
-
-<script>
-  // Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
+async function crearUbicacion(){
+    activoCrear = true;
+    switch(activo){
+        case 1:
+        if($("#nombreUbicacion").val()=="") return;
+        else{
+            seleccionarPlanta($("#nombreUbicacion").val()); 
+            $("#nombreUbicacion").val("");
+        }
+            break;
+        case 2:
+        if($("#nombreUbicacion").val()=="") return;
+        else{
+            seleccionarUbicacion($("#nombreUbicacion").val(), edificioAct); 
+            $("#nombreUbicacion").val("");
+        }
+            break;
+        case 3:
+        if($("#nombreUbicacion").val()=="") return;
+        else {
+            await generarNuevaUbicacion();
+        }
+            break;
+    }
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
+async function generarNuevaUbicacion(){
+    await $.post("apis/creacion/crearUbicacion.php",{'building': edificioAct, 'floor': plantaAct, 'location': $("#nombreUbicacion").val()});
+            actualizarBoton($("#nombreUbicacion").val());
+            await principal(false);
+            await cogerId($("#nombreUbicacion").val(),plantaAct, edificioAct);
 }
+
+async function actualizarBoton(ubicacionAct){
+    $('#botonEscrito').text(edificioAct+" | "+plantaAct+" | "+ubicacionAct);
+}
+
+principal(true);
 
 </script>

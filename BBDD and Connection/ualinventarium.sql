@@ -119,6 +119,7 @@ CREATE TABLE `prestado` (
   `Objeto_idObjeto` int(11) NOT NULL,
   `Objeto_GrupoObjetos_idGrupoObjetos` int(11) NOT NULL,
   `Objeto_Ubicacion_idUbicacion` int(11) NOT NULL,
+  `estado` TINYINT NULL,
   `solicitado` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

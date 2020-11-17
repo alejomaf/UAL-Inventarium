@@ -8,6 +8,7 @@ include "../utilities/consultas.php";
 $busqueda="";
 
 
+anadirAConsultaNumero("idUsuario","idUsuario");
 anadirAConsultaTexto("nombre","name");
 anadirAConsultaTexto("contrasena","password");
 anadirAConsultaTexto("correoElectronico","email");
