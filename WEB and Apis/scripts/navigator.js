@@ -27,6 +27,14 @@ function cargarPagina(){
             if($(window).width()<768) $('#sidebar, #content').toggleClass('active');
             cambiarObjeto("parts/configurations.php");
             break;
+        case "#perfil":
+            if($(window).width()<768) $('#sidebar, #content').toggleClass('active');
+            cambiarObjeto("parts/profile.php");
+            break;
+        case "#ingresarDatos":
+            if($(window).width()<768) $('#sidebar, #content').toggleClass('active');
+            cambiarObjeto("parts/insertData.php");
+            break;
         default: break;
     }else{
         switch(spl[0]){

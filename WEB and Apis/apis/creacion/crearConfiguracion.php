@@ -1,20 +1,17 @@
 <?php
 
 //----------COMPROBACIÓN DEL USUARIO CONECTADO----------\\
-include "../../connection/connection.php";
+include "../../connection/checkLogin.php";
+include "../utilities/creaciones.php";
 //-------------------------------------------------------\\
 
-$ip=$_POST["ip"];
-$mac=$_POST["mac"];
-$boca=$_POST["boca"];
-$armario=$_POST["armario"];
-$usuario=$_POST["usuario"];
-$contrasena=$_POST["contrasena"];
-$objeto=$_POST["objeto"];
+anadirACreacionTexto("ip", "ip");
+anadirACreacionTexto("mac", "mac");
+anadirACreacionTexto("boca", "boca");
+anadirACreacionTexto("armario", "armario");
+anadirACreacionTexto("usuario", "usuario");
+anadirACreacionTexto("contrasena", "contrasena");
+anadirACreacionNumero("Objeto_idObjeto", "objeto");
 
-
-$sql="INSERT INTO configuracion(ip, mac, boca, armario, usuario, contrasena, Objeto_idObjeto) VALUES ('".$ip."','".$mac."','".$boca."','".$armario."','".$usuario."','".$contrasena."',".$objeto.");";
-
-$conn->query($sql);
-$conn->error;
+crearDatos("configuracion", $conn);
 ?>

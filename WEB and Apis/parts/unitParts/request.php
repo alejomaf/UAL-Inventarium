@@ -41,35 +41,39 @@ async function cargarSolicitudes(){
 }
 
 async function anadirSolicitud(solicitud){
-    objeto= (await realizarConsulta("apis/busqueda/buscarObjeto.php", {idObjeto: solicitud.Objeto_idObjeto}))[0];
-    grupoObjeto= (await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {idGrupoObjetos: solicitud.Objeto_GrupoObjetos_idGrupoObjetos}))[0];
-    usuario= (await realizarConsulta("apis/busqueda/buscarUsuario.php", {idUsuario: solicitud.Usuario_idUsuario}))[0];
 
-    var marcoAuxiliar=$("#marco").clone();
-    
-    $("#nombreSolicitud").attr("onclick","location.hash='#prestamo-"+solicitud.idPrestado+"';");
-    $("#concederPrestamo").attr("onclick","concederPrestamo('"+solicitud.idPrestado+"');"); 
-    $("#eliminarSolicitud").attr("onclick","eliminarSolicitud('"+solicitud.idGrupoObjetos+"');"); 
-    $("#nombreSolicitud").text(grupoObjeto.nombre);
-    $("#destinatario").text("Objeto destinado a: "+solicitud.retiradoPor);
-    $("#solicitante").text("Solicitado por: "+usuario.nombre);
-    $("#imagen").attr("src","images/objects/"+grupoObjeto.imagen);
+  objeto= (await realizarConsulta("apis/busqueda/buscarObjeto.php", {idObjeto: solicitud.Objeto_idObjeto}))[0];
+  grupoObjeto= (await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {idGrupoObjetos: solicitud.Objeto_GrupoObjetos_idGrupoObjetos}))[0];
+  usuario= (await realizarConsulta("apis/busqueda/buscarUsuario.php", {idUsuario: solicitud.Usuario_idUsuario}))[0];
+  ubicacion=(await realizarConsulta("apis/busqueda/buscarUbicacion.php",{idUbicacion: objeto.Ubicacion_idUbicacion}))[0];
 
-    if(grupoObjeto.marca!="") $("#marca").text("Marca: "+grupoObjeto.marca); else $("#marca").remove();
-    if(grupoObjeto.modelo!="") $("#modelo").text("Modelo: "+grupoObjeto.modelo); else $("#modelo").remove();
-    if(objeto.mejorasEquipo!="") $("#mejoras").text("Mejoras: "+objeto.mejorasEquipo); else $("#mejoras").remove();
+  var titulo=[];
+  var valores=[];
 
-    if(grupoObjeto.tipo==0) {
-        $("#tipo").text("Inventario");
-        $("#codigo").text(objeto.codigo);
-    }else {
-        $("#tipo").text("Fungible");
-        $("#codigo").remove();
-    }
-    $("#marco").clone().appendTo("#insideContainer");
+  if(grupoObjeto.tipo!=-1){
+  valores.push("Código: "+objeto.codigo);
+  var etiqueta = "Inventario";
+  }else var etiqueta = "Fungible";
 
-    $("#copiar").children("#marco").remove();
-    $("#copiar").append(marcoAuxiliar);
+  titulo.push(grupoObjeto.nombre+" con id "+objeto.idObjeto);
+  titulo.push("location.hash='objeto-"+objeto.idObjeto+"';")
+
+  $("#concederPrestamo").attr("onclick","concederPrestamo('"+solicitud.idPrestado+"');"); 
+  $("#eliminarSolicitud").attr("onclick","eliminarSolicitud('"+solicitud.idGrupoObjetos+"');"); 
+
+  var imagen = "images/objects/"+grupoObjeto.imagen;
+
+  if(grupoObjeto.marca!="") valores.push("Marca: "+ grupoObjeto.marca);
+  if(grupoObjeto.modelo!="") valores.push("Modelo: "+grupoObjeto.modelo);
+  if(objeto.mejorasEquipo!=null) valores.push("Modelo: "+objeto.mejorasEquipo);
+
+  valores.push("Objeto destinado a: "+solicitud.retiradoPor);
+  valores.push("Solicitado por: "+usuario.nombre);
+
+  valores.push("Edificio: "+ubicacion.edificio+" | Planta: "+ubicacion.planta+" | Ubicacion: "+ubicacion.ubicacion);
+  
+  
+  insertCard($("#variableArea"), "images/objects/"+await grupoObjeto.imagen, titulo, valores, {"Rechazar solicitud":"eliminarSolicitud('"+solicitud.idGrupoObjetos+"');","Conceder préstamo":"concederPrestamo('"+solicitud.idPrestado+"');"},etiqueta,22);
 }
 
 cargarSolicitudes();

@@ -8,10 +8,10 @@ async function cargarGrupoObjetos(){
 
     if(objetos==null) return;
     for(i=0;i<objetos.length;i++){
-      if(objetos[i].tipo==0){
-        await anadirGrupoObjeto(objetos[i],0);
+      if(objetos[i].codigo==-1){
+        anadirGrupoObjeto(objetos[i],-1);
       }else{
-        await anadirGrupoObjeto(objetos[i],1);
+        anadirGrupoObjeto(objetos[i],1);
       }
     }
 }
@@ -26,11 +26,11 @@ async function anadirGrupoObjeto(objeto, tipo){
   titulo.push(nombreGrupoObjeto+" con id "+objeto.idObjeto);
   titulo.push("location.hash='objeto-"+objeto.idObjeto+"';")
 
-  if(tipo!=0){
+  if(tipo!=-1){
     valores.push("Código: "+objeto.codigo);
   }
 
-  if(objeto.mejorasEquipo!="") valores.push("Mejoras del equipo: "+objeto.mejorasEquipo);
+  if(objeto.mejorasEquipo!=null) valores.push("Mejoras del equipo: "+objeto.mejorasEquipo);
 
   insertCard($("#insideContainer"), null, titulo, valores, {"Modificar":"showModal("+objeto.idObjeto+");","Solicitud":"showModal2("+objeto.idObjeto+");"},null,null);
   

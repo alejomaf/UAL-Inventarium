@@ -51,7 +51,10 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ualinventarium`.`objeto` (
   `idObjeto` INT NOT NULL AUTO_INCREMENT,
   `mejorasEquipo` VARCHAR(45) NULL,
+  `etiqueta` VARCHAR(45) NULL,
+  `organizativa` INT NULL,
   `codigo` INT NULL,
+  `observaciones` VARCHAR(255) NULL,
   `GrupoObjetos_idGrupoObjetos` INT NOT NULL,
   `Ubicacion_idUbicacion` INT NOT NULL,
   `disponible` TINYINT NOT NULL,

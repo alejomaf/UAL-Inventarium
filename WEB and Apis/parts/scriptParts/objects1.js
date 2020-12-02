@@ -1,39 +1,35 @@
 async function cargarGrupoObjetos(){
     objetosGroup=await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {nombre: "%"});
-
+    if(objetosGroup==null) return;
     for(i=0;i<objetosGroup.length;i++){
-
       if(objetosGroup[i].tipo==0){
-        anadirGrupoObjeto(objetosGroup[i],0);
+        anadirGrupoObjeto(objetosGroup[i]);
       }else if(objetosGroup[i].tipo==1){
-        anadirGrupoObjeto(objetosGroup[i],1);
+        anadirGrupoObjeto(objetosGroup[i]);
       }
     }
 }
 
-function anadirGrupoObjeto(grupoObjeto, tipo){
-  var marcoAuxiliar=$("#marco").clone();
-  
-  $("#linkGrupoObjeto").attr("onclick","location.hash='#gobjetos-"+grupoObjeto.idGrupoObjetos+"';");
-  $("#modificarGrupoDeObjetos").attr("onclick","showModal('"+grupoObjeto.idGrupoObjetos+"');"); 
-  $("#nombreGrupoObjeto").text(grupoObjeto.nombre);
-  $("#imagen").attr("src","images/objects/"+grupoObjeto.imagen);
+async function anadirGrupoObjeto(grupoObjeto){
+  nombreGrupoObjeto = grupoObjeto.nombre;
 
-  if(grupoObjeto.marca!="") $("#marca").text("Marca: "+grupoObjeto.marca); else $("#marca").remove();
-  if(grupoObjeto.modelo!="") $("#modelo").text("Modelo: "+grupoObjeto.modelo); else $("#modelo").remove();
+  var tituloGO=[];
+  var valoresGO = [];
+
+  tituloGO.push(nombreGrupoObjeto);
+  tituloGO.push("location.hash='#gobjetos-"+grupoObjeto.idGrupoObjetos+"';");
+
+  if(grupoObjeto.marca!="") valoresGO.push("Marca: "+grupoObjeto.marca);
+  if(grupoObjeto.modelo!="") valoresGO.push("Modelo: "+grupoObjeto.modelo);
 
 
-  $("#cantidad").text("Cantidad: "+grupoObjeto.cantidad);
-  $("#cantidadDisponible").text("Cantidad disponible: "+grupoObjeto.cantidadDisponible);
+  valoresGO.push("Cantidad: "+grupoObjeto.cantidad);
+  valoresGO.push("Cantidad disponible: "+grupoObjeto.cantidadDisponible);
 
-  if(tipo==0) $("#tipo").text("Inventario");
-  else $("#tipo").text("Fungible");
+  if(grupoObjeto.tipo==0) tipoGO="Inventario";
+  else tipoGO="Fungible";
 
-  
-  $("#marco").clone().appendTo("#insideContainer");
-
-  $("#copiar").children("#marco").remove();
-  $("#copiar").append(marcoAuxiliar);
+  insertCard($("#insideContainer"), "images/objects/"+await grupoObjeto.imagen, tituloGO, valoresGO, {"Modificar":"showModal("+grupoObjeto.idGrupoObjetos+");"},tipoGO,22);
 }
 
 cargarGrupoObjetos();

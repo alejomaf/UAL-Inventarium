@@ -22,43 +22,51 @@
       </li>
       <li class="nav-item">
         <a href="#gobjetos" class="nav-link text-dark font-italic">
-                  <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+                  <i class="fa fa-object-group mr-3 text-primary fa-fw"></i>
                   Objetos
               </a>
       </li>
       <li class="nav-item">
         <a href="#solicitudes" class="nav-link text-dark font-italic">
-                  <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+                  <i class="fa fa-send mr-3 text-primary fa-fw"></i>
                   Solicitudes
               </a>
       </li>
       <li class="nav-item">
         <a href="#usuarios" class="nav-link text-dark font-italic">
-                  <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                  <i class="fa fa-users mr-3 text-primary fa-fw"></i>
                   Usuarios
               </a>
       </li>
       <li class="nav-item">
         <a href="#equiposConfigurados" class="nav-link text-dark font-italic">
-                  <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                  <i class="fa fa-laptop mr-3 text-primary fa-fw"></i>
                   Ver equipos configurados
               </a>
       </li>
       </ul>
+
       <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Administración</p>
       <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <a href="#ingresarDatos" class="nav-link text-dark font-italic">
+                  <i class="fa fa-database mr-3 text-primary fa-fw"></i>
+                  Ingresar datos
+              </a>
+      </li>
       </ul>
+
       <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Personal</p>
       <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="#perfil" class="nav-link text-dark font-italic">
-                  <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                  <i class="fa fa-user-circle mr-3 text-primary fa-fw"></i>
                   Perfil
               </a>
       </li>
       <li class="nav-item">
         <a href="apis/logout.php" class="nav-link text-dark font-italic">
-                  <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+                  <i class="fa fa-sign-out mr-3 text-primary fa-fw"></i>
                   Cerrar sesión
               </a>
       </li>

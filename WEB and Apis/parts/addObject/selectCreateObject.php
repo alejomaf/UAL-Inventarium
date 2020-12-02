@@ -8,6 +8,6 @@
         </div>
         <input id="botonValorGroupObject" type="hidden" name="nombre" required>
         </div>
-        <?php include "../selectObjectGroup.php";?>
+        <?php include "../extraWindows/selectObjectGroup.php";?>
         </div>
     </div>

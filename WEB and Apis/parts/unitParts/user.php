@@ -1,33 +1,3 @@
-<!-- ADD TO THE CONTAINTER THE CARDS-->
-<div id="copiar" style="display:none">
-<div style="cursor:pointer;" id="marco" class="col-auto mb-3" style="width: 18rem;">
-<div class="card" style="width: 30rem;">
-  <div class="card-body">
-    <h5 id="nombreUsuario" class="card-title">Card title</h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li id="correoElectronico" class="list-group-item">Cras justo odio</li>
-    <li id="departamento" class="list-group-item">Dapibus ac facilisis in</li>
-    <li id="telefono" class="list-group-item">Dapibus ac facilisis in</li>
-  </ul>
-  <li id="rango" class="list-group-item">Vestibulum at eros</li>
-  <ul id="prestamoActivo" class="list-group list-group-flush">
-    <li class="list-group-item"><h6>Préstamos activos</h6></li>
-  </ul>
-  <ul id="solicitudesPendientes" class="list-group list-group-flush">
-    <li class="list-group-item"><h6>Solicitudes pendientes</h6></li>
-  </ul>
-  <ul id="prestamosFinalizados" class="list-group list-group-flush">
-    <li class="list-group-item"><h6>Préstamos finalizados</h6></li>
-  </ul>
-</div>
-</div>
-</div>
-
-<div class="row justify-content-center"><div id="insideContainer" class="row"></div></div>
-<div id="copiarBarra" hidden><div id="barra" class="container"><div class="row"><div id="izquierda" class="col"></div><div style="visibility:hidden" class="col"></div><div id="derecha" class="col-7"></div></div></div></div>
-
-
 <script>
 
 async function anadirBarra(ubicacion, texto1, texto2){
@@ -77,23 +47,21 @@ async function cargarUsuarios(){
 }
 
 async function anadirUsuario(usuario){
-    await procesarSolicitudes(usuario.idUsuario);
-    var marcoAuxiliar=$("#marco").clone();
+  var valores=[];
+  var titulo=[];
 
-  $("#marco").attr("onclick","location.hash='#usuarios-"+usuario.idusuario+"'");
-  $("#nombreUsuario").text(usuario.nombre);
-
-  $("#correoElectronico").text("Correo electrónico: "+usuario.correoElectronico);
-  $("#departamento").text("Departamento: "+usuario.departamento);
-  $("#telefono").text("Teléfono: "+usuario.telefono);
-
-  if(usuario.rango==0) $("#rango").text("Técnico");
-  else $("#rango").text("Profesor");
+  valores.push("Correo electrónico: "+usuario.correoElectronico);
+  valores.push("Departamento: "+usuario.departamento);
+  valores.push("Teléfono: "+usuario.telefono);
   
-  $("#marco").clone().appendTo("#insideContainer");
+  titulo.push(usuario.nombre);
+  titulo.push(null);
 
-  $("#copiar").children("#marco").remove();
-  $("#copiar").append(marcoAuxiliar);
+  if(usuario.rango==0) var etiqueta="Técnico";
+  else var etiqueta="Profesor";
+  
+  insertCard($("#variableArea"),null, titulo, valores, null,etiqueta,22);
+  await procesarSolicitudes(usuario.idUsuario);
 }
 
 cargarUsuarios();

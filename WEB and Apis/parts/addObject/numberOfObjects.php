@@ -27,7 +27,7 @@
     <button id="botonEscrito" type="button" class="btn btn-block btn-secondary" onclick="cargarEdificios(); $('#myModal').modal('show');" placeholder="Ubicación"required>Seleccionar ubicación</button>
     <input id="botonValor" type="hidden" name="ubicacion" required>
     </div>
-    <?php include "../selectUbication.php";?>
+    <?php include "../extraWindows/selectUbication.php";?>
 
     <div class="align-content-center">
         <button id="Crear objetos" type="button" onclick="crearObjetos();"class="btn btn-block btn-primary">Crear objetos</button>

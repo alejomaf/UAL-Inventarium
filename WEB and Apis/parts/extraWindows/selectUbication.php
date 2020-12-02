@@ -25,6 +25,7 @@ var plantas=[];
 var ubicaciones=[];
 
 var response="";
+var botonValor=document.getElementById("botonValor");
 var cuadro=document.getElementById("lista");
 
 //ORDENACIÓN

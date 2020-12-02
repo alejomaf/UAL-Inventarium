@@ -32,8 +32,8 @@ function seleccionarObjeto(tipo){
 async function crearSeleccionarObjeto(tipo){
     nombreGrupoObjeto=$('#grupoDeObjetos').val();
     selectObject= tipo;
-    await $('#botonEscritoGroupObject').modal('hide');
-    $(".modal-backdrop").remove()
+    await quitarModal($('#botonEscritoGroupObject'))
+
     if(tipo==-1) await cambiarObjetoCreacion("parts/addObject/uploadImage.php");
     else await cambiarObjetoCreacion("parts/addObject/numberOfObjects.php");
 }
@@ -65,6 +65,7 @@ async function crearGrupoDeObjetos(){
         success : function(resp){
         }
     });
+    await principalGroupObject();
 
     limpiarZona($("#variableArea"));
     selectType();
@@ -91,13 +92,16 @@ async function crearObjeto(){
 }
 
 async function generar(){
-    mejoras=$("#mejorasEnElEquipo").val();
-    codigo= $("#codigo").val();
-    if($("#codigo").val()=="") {console.log("falta el codigo"); return;}
+    mejoras=await $("#mejorasEnElEquipo").val();
+    codigo= await $("#codigo").val();
+    organizativa= await $("#organizativa").val();
+    etiqueta= await $("#etiqueta").val();
+    observaciones= await $("#observaciones").val();
+    if($("#codigo").val()=="") {console.log("falta el codigo "+etiqueta+" "+organizativa+" "+observaciones); return;}
 
-    await $.post("apis/creacion/crearObjeto.php",{'grupoObjetos': selectObject, 'ubicacion': ubicacion, 'mejorasEquipo':mejoras, 'codigo':codigo});
+    await $.post("apis/creacion/crearObjeto.php",{'grupoObjetos': selectObject, 'ubicacion': ubicacion, 'mejorasEquipo':mejoras, 'codigo':codigo, 'etiqueta':etiqueta, 'organizativa':organizativa, 'observaciones':observaciones});
 
-    await crearObjeto();
+    crearObjeto();
 }
 
 async function saltarCreaciones(){
@@ -105,7 +109,7 @@ async function saltarCreaciones(){
     
     mejoras=await $("#mejorasEnElEquipo").val();
 
-    await realizarConsulta("apis/creacion/crearObjeto.php",{'grupoObjetos': selectObject, 'ubicacion': ubicacion, 'mejorasEquipo':mejoras, 'codigo':-1});
+    await realizarConsulta("apis/creacion/crearObjeto.php",{'grupoObjetos': selectObject, 'ubicacion': ubicacion, 'mejorasEquipo':mejoras, 'organizativa':0, 'codigo':-1});
     
     }
 

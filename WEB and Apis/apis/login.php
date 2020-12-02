@@ -23,6 +23,8 @@ if ($result->num_rows > 0) {
         if($plataforma==0){
             $_SESSION['idUsuario']=$row["idUsuario"];
             $_SESSION['email']=$row["correoElectronico"];
+            $_SESSION['nombre']=$row["nombre"];
+            $_SESSION['telefono']=$row["telefono"];
             $_SESSION['password']=$row["contrasena"];
             $_SESSION['rango']=$row["rango"];
             header("Location: ../user.php");

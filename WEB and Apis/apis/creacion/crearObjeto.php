@@ -1,23 +1,26 @@
 <?php
 
 //----------COMPROBACIÓN DEL USUARIO CONECTADO----------\\
-//include "../../connection/checkLogin.php";
-include "../../connection/connection.php";
+include "../../connection/checkLogin.php";
+include "../utilities/creaciones.php";
 //-------------------------------------------------------\\
+global $creacion;
+global $variables;
 
-if(isset($_POST["mejorasEquipo"])&&!empty($_POST["mejorasEquipo"]))
-$mejorasEquipo=$_POST["mejorasEquipo"];
-else $mejorasEquipo="";
-if(isset($_POST["codigo"])&&!empty($_POST["codigo"]))
-$codigo=$_POST["codigo"];
-else $codigo=-1;
-$grupoObjetos=$_POST["grupoObjetos"];
-$ubicacion=$_POST["ubicacion"];
+anadirACreacionTexto("mejorassEquipo", "mejorasEquipo");
+anadirACreacionTexto("observaciones", "observaciones");
+anadirACreacionNumero("organizativa", "organizativa");
+anadirACreacionTexto("etiqueta", "etiqueta");
+anadirACreacionTexto("GrupoObjetos_idGrupoObjetos", "grupoObjetos");
+anadirACreacionTexto("Ubicacion_idUbicacion", "ubicacion");
+anadirACreacionTexto("codigo", "codigo");
+if(isset($_POST["fechaAdquisicion"])&&$_POST["fechaAdquisicion"]!=""){
+$variables.=", fechaAdquisicion";
+$creacion.=", date('{$_POST["fechaAdquisicion"]}')";
+}
 
-$sql="INSERT INTO objeto(mejorasEquipo, codigo, GrupoObjetos_idGrupoObjetos, Ubicacion_idUbicacion, disponible, eliminado) VALUES ('".$mejorasEquipo."',".$codigo.",".$grupoObjetos.",".$ubicacion.",1,0);";
-$sql2="UPDATE grupoobjetos SET cantidad = cantidad + 1, cantidadDisponible = cantidadDisponible + 1 WHERE idGrupoObjetos = {$grupoObjetos}";
+crearDatos("objeto", $conn);
 
-$conn->query($sql);
-echo $conn->error;
+$sql2="UPDATE grupoobjetos SET cantidad = cantidad + 1, cantidadDisponible = cantidadDisponible + 1 WHERE idGrupoObjetos = {$_POST["grupoObjetos"]}";
 $conn->query($sql2);
 ?>
