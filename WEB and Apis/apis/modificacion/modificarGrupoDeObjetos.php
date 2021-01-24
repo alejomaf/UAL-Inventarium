@@ -15,6 +15,7 @@ anadirAModificacionTexto("marca", "marca");
 anadirAModificacionTexto("modelo", "modelo");
 anadirAModificacionNumero("cantidadDisponible", "cantidadDisponible");
 anadirAModificacionNumero("tipo", "tipo");
+anadirAModificacionNumero("eliminado", "eliminado");
 
 mostrarDatos("grupoobjetos", "idGrupoObjetos", $idGrupoObjetos, $conn);
 ?>

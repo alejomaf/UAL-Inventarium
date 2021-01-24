@@ -1,17 +1,25 @@
 <div class="vertical-nav bg-white" id="sidebar">
 <div class="px-3 mb-4 mr-10">
 </div>
-    <div class="py-4 px-3 mb-4 bg-light">
+    <div class="pt-4 px-3 mb-4 bg-light">
       
       <div class="media d-flex justify-content-center">
       <div class="media-body">
-          <h5 class="m-0"><?php session_start(); echo $_SESSION["email"];?></h5>
+          <h5 class="m-0"><?php echo $_SESSION["email"];?></h5>
           <p class="font-weight-light text-muted mb-0">Técnico</p>
         </div>
         </div>
     </div>
   
-    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Principal</p>
+    <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+        <a href="#inicio" class="nav-link text-dark font-italic bg-light">
+                  <i class="fa fa-home mr-3 text-primary fa-fw"></i>
+                  Inicio
+              </a>
+      </li>
+  </ul>
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Principal</p>
   
     <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
@@ -46,7 +54,7 @@
       </li>
       </ul>
 
-      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Administración</p>
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Administración</p>
       <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="#ingresarDatos" class="nav-link text-dark font-italic">
@@ -56,12 +64,18 @@
       </li>
       </ul>
 
-      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Personal</p>
+      <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Personal</p>
       <ul class="nav flex-column bg-white mb-0">
       <li class="nav-item">
         <a href="#perfil" class="nav-link text-dark font-italic">
                   <i class="fa fa-user-circle mr-3 text-primary fa-fw"></i>
                   Perfil
+              </a>
+      </li>
+      <li class="nav-item">
+        <a href="#misprestamos" class="nav-link text-dark font-italic">
+                  <i class="fa fa-list mr-3 text-primary fa-fw"></i>
+                  Mis préstamos
               </a>
       </li>
       <li class="nav-item">

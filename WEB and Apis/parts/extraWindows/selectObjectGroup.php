@@ -30,29 +30,23 @@ async function cargarGrupoObjetos(){
     var gobjetos=[];
     var gobjetosid={};
 
+    if(objetosGroup==null) return;
+    
     if(objetoT!=-1) 
     for(i=0;i<objetosGroup.length;i++){
         if((objetosGroup[i].nombre.toLowerCase()).search(busquedaV)!=-1){
-          if(objetoT==0){
-            if(objetosGroup[i].tipo==0){
               gobjetos.push(objetosGroup[i].nombre);
               gobjetosid[objetosGroup[i].nombre]=objetosGroup[i].idGrupoObjetos;
-            }
-          }else {
-            if(objetosGroup[i].tipo==1){
-              gobjetos.push(objetosGroup[i].nombre);
-              gobjetosid[objetosGroup[i].nombre]=objetosGroup[i].idGrupoObjetos;
-            }
           }
         }
-    }
+  
 
     gobjetos.sort();
 
     for(i=0; i< gobjetos.length;i++){
         anadirGrupoObjeto(gobjetos[i],"botonObjectGroup.value='"+gobjetos[i]+"'; crearSeleccionarObjeto('"+gobjetosid[gobjetos[i]]+"'); botonValorGroupObject.value='"+gobjetos[i]+"';");
     }
-}
+  }
 
 function anadirGrupoObjeto(texto, accion){
 
@@ -65,7 +59,7 @@ function anadirGrupoObjeto(texto, accion){
 }
 
 async function principalGroupObject(){
-    objetosGroup=await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {nombre:"%"});
+    objetosGroup=await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {tipo:objetoT});
 }
 
 principalGroupObject();

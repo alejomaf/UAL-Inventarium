@@ -47,22 +47,22 @@ async function actualizarBusqueda(){
 async function cogerEdificios(){
     cuadro.innerHTML="";
     for(i=0; i< edificios.length;i++) if((edificios[i].toLowerCase()).search($("#nombreUbicacion").val().toLowerCase())!=-1){
-        await anadirObjeto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')");
+        await anadirTexto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')");
     }
 }
 async function cogerPlantas(){
     cuadro.innerHTML="";
     for(i=0; i< plantas.length;i++) if((plantas[i].toLowerCase()).search($("#nombreUbicacion").val().toLowerCase())!=-1){
-        await anadirObjeto(plantas[i],"seleccionarUbicacion('"+plantas[i]+"','"+edificioAct+"')");
+        await anadirTexto(plantas[i],"seleccionarUbicacion('"+plantas[i]+"','"+edificioAct+"')");
     }
-    await anadirObjeto("Volver","cargarEdificios()");
+    await anadirTexto("Volver","cargarEdificios()");
 }
 async function cogerUbicaciones(){
     cuadro.innerHTML="";
     for(i=0; i< ubicaciones.length;i++) if((ubicaciones[i].toLowerCase()).search($("#nombreUbicacion").val().toLowerCase())!=-1){
-        await anadirObjeto(ubicaciones[i],"actualizarBoton('"+ubicaciones[i]+"');cargarEdificios();cogerId('"+ubicaciones[i]+"','"+plantaAct+"','"+edificioAct+"');");
+        await anadirTexto(ubicaciones[i],"actualizarBoton('"+ubicaciones[i]+"');cargarEdificios();cogerId('"+ubicaciones[i]+"','"+plantaAct+"','"+edificioAct+"');");
     }
-    await anadirObjeto("Volver","seleccionarPlanta('"+edificioAct+"')");
+    await anadirTexto("Volver","seleccionarPlanta('"+edificioAct+"')");
 }
 
 
@@ -83,7 +83,7 @@ async function cargarEdificios(){
     }
     for(i=0;i<localizaciones.length;i++) if(!edificios.includes(localizaciones[i].edificio)) await edificios.push(localizaciones[i].edificio);
     edificios.sort();
-    for(i=0; i< edificios.length;i++) await anadirObjeto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')",);
+    for(i=0; i< edificios.length;i++) await anadirTexto(edificios[i],"seleccionarPlanta('"+edificios[i]+"')",);
 }
 
 
@@ -104,9 +104,9 @@ async function seleccionarPlanta(edificio){
     
     plantas.sort(function(a, b){return a-b});
     for(i=0; i< plantas.length;i++) {
-        await anadirObjeto(plantas[i],"seleccionarUbicacion('"+plantas[i]+"','"+edificio+"')");
+        await anadirTexto(plantas[i],"seleccionarUbicacion('"+plantas[i]+"','"+edificio+"')");
     }
-    await anadirObjeto("Volver","cargarEdificios()");
+    await anadirTexto("Volver","cargarEdificios()");
 }
 
 async function seleccionarUbicacion(planta, edificio){
@@ -125,8 +125,8 @@ async function seleccionarUbicacion(planta, edificio){
 
     for(i=0;i<localizaciones.length;i++) if(localizaciones[i].edificio==edificio&&localizaciones[i].planta==planta&&!ubicaciones.includes(localizaciones[i].ubicacion)) await ubicaciones.push(localizaciones[i].ubicacion);
     ubicaciones.sort();
-    for(i=0; i< ubicaciones.length;i++) await anadirObjeto(ubicaciones[i],"actualizarBoton('"+ubicaciones[i]+"');cargarEdificios();cogerId('"+ubicaciones[i]+"','"+planta+"','"+edificio+"');");
-    await anadirObjeto("Volver","seleccionarPlanta('"+edificio+"')");
+    for(i=0; i< ubicaciones.length;i++) await anadirTexto(ubicaciones[i],"actualizarBoton('"+ubicaciones[i]+"');cargarEdificios();cogerId('"+ubicaciones[i]+"','"+planta+"','"+edificio+"');");
+    await anadirTexto("Volver","seleccionarPlanta('"+edificio+"')");
 }
 
 async function cogerId(ubicacion, planta, edificio){
@@ -134,7 +134,7 @@ async function cogerId(ubicacion, planta, edificio){
     for(i=0;i<localizaciones.length;i++) if(localizaciones[i].ubicacion==ubicacion&&localizaciones[i].planta==planta&&localizaciones[i].edificio==edificio) await botonValor.setAttribute('value',localizaciones[i].idUbicacion);
 }
 
-async function anadirObjeto(texto, accion){
+async function anadirTexto(texto, accion){
     var fila=document.createElement("li");
     fila.textContent=texto;
     fila.setAttribute("class","list-group-item");

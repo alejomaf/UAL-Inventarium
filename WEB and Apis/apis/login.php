@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
     
     while($row = $result->fetch_assoc()) {
         if($row["rango"]==-1) {
-            header("Location: ../main.php"); 
+            header("Location: ../login.php"); 
             exit();
         }
 
@@ -33,12 +33,12 @@ if ($result->num_rows > 0) {
         }
         
         }else {
-            header("Location: ../main.php");
+            header("Location: ../login.php");
             exit();
         }
 
     }
-}else header("Location: ../main.php");
+}else header("Location: ../login.php");
 
             
 ?>

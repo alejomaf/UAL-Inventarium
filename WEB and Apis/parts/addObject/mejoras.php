@@ -7,6 +7,10 @@
   <input type="text" id="codigo" name="codigo" placeholder="Código del inventario" class="form-control">
 </div>
 <div class="col-md-12 mb-3"> 
+  <label>Fecha de adquisición</label>
+  <input type="date" id="fechaAdquisicion" name="fechaAdquisicion" value="<?php echo date("Y-m-d");?>" class="form-control">
+</div>
+<div class="col-md-12 mb-3"> 
   <label>Etiqueta</label>
   <input type="text" id="etiqueta" name="etiqueta" placeholder="Etiqueta del equipo" class="form-control">
 </div>

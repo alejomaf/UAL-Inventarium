@@ -7,13 +7,13 @@ include "../utilities/creaciones.php";
 global $creacion;
 global $variables;
 
-anadirACreacionTexto("mejorassEquipo", "mejorasEquipo");
+anadirACreacionTexto("mejorasEquipo", "mejorasEquipo");
 anadirACreacionTexto("observaciones", "observaciones");
 anadirACreacionNumero("organizativa", "organizativa");
 anadirACreacionTexto("etiqueta", "etiqueta");
-anadirACreacionTexto("GrupoObjetos_idGrupoObjetos", "grupoObjetos");
-anadirACreacionTexto("Ubicacion_idUbicacion", "ubicacion");
-anadirACreacionTexto("codigo", "codigo");
+anadirACreacionNumero("GrupoObjetos_idGrupoObjetos", "grupoObjetos");
+anadirACreacionNumero("Ubicacion_idUbicacion", "ubicacion");
+anadirACreacionNumero("codigo", "codigo");
 if(isset($_POST["fechaAdquisicion"])&&$_POST["fechaAdquisicion"]!=""){
 $variables.=", fechaAdquisicion";
 $creacion.=", date('{$_POST["fechaAdquisicion"]}')";

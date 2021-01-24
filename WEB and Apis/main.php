@@ -19,6 +19,4 @@ function cambiarObjeto(objeto){
     $("#variableArea").hide().load(objeto).fadeIn('300');
 }
 
-cambiarObjeto("login.php");
-
 </script>

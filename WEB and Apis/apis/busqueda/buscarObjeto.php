@@ -4,7 +4,6 @@
 include "../../connection/checkLogin.php";
 include "../utilities/consultas.php";
 //-------------------------------------------------------\\
-
 $busqueda="";
 
 anadirAConsultaNumero("idObjeto","idObjeto");

@@ -15,7 +15,8 @@ anadirAConsultaTexto("marca","marca");
 anadirAConsultaTexto("modelo","modelo");
 anadirAConsultaNumero("cantidadDisponible","cantidadDisponible");
 anadirAConsultaNumero("tipo","tipo");
+anadirAConsultaNumero("eliminado","eliminado");
 
 
-mostrarDatos("grupoobjetos", $busqueda, $conn);
+mostrarDatos("grupoobjetos",$busqueda, $conn);
 ?>

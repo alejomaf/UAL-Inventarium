@@ -1,30 +1,29 @@
 <?php
-
 include "connection.php";
+global $conn;
 
-
-if(isset($_SESSION['email']) && $_SESSION['email'] != ''&&isset($_SESSION['password']) && $_SESSION['password'] != '') {
-    $email=$_SESSION['email'];
-    $password=$_SESSION['password'];
-}else if(isset($_POST["emailU"]) && $_POST["emailU"] != ''&&isset($_POST["passwordU"]) && $_POST["passwordU"] != ''){
-    $email=$_POST["emailU"];
-    $password=$_POST["passwordU"];
-}
-
-if(isset($email)&&isset($password)){
-$sql = "SELECT * FROM usuario WHERE correoElectronico='".$email."'AND contrasena='".$password."'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-
+if (isset($_SESSION['email']) && $_SESSION['email'] != '' && isset($_SESSION['password']) && $_SESSION['password'] != '') {
+    $email = $_SESSION['email'];
+    $password = $_SESSION['password'];
+} else if (isset($_POST["email"]) && $_POST["email"] != '' && isset($_POST["password"]) && $_POST["password"] != '') {
+    $email = $_POST["email"];
+    $password = $_POST["password"];
 }else{
     exec("php ../apis/logout.php");
-    //exit();
+    header("Location: login.php");
+    exit();
 }
 
+    $sql = "SELECT * FROM usuario WHERE correoElectronico='" . $email . "'AND contrasena='" . $password . "'";
+    $result = $conn->query($sql);
+    echo $conn->error;
 
-}else{
-    exec("php ../apis/logout.php");
-    //exit();
-}
+    if ($result->num_rows > 0) {
+        return;
+    } else {
+        exec("php ../apis/logout.php");
+        header("Location: login.php");
+        exit();
+    }
+
 ?>
