@@ -77,8 +77,8 @@ async function cargarEdificios(){
     edificios=[];
 
     await cargarTitulo("Crear o elegir edificio");
-    if(localizaciones.length==0){
-        await cargarSubtitulo("//No hay ubicaciones");
+    if(localizaciones==null){
+        await cargarSubtitulo("//No hay ubicaciones creadas");
         return;
     }
     for(i=0;i<localizaciones.length;i++) if(!edificios.includes(localizaciones[i].edificio)) await edificios.push(localizaciones[i].edificio);

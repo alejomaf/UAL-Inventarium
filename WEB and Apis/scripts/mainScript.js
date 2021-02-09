@@ -132,7 +132,7 @@ async function quitarModal(modalObject) {
   await $("body").removeClass("modal-open");
 }
 
-async function insertCardRequest(ubicacion, imagen, titulo, botones, etiqueta, tamano) {
+async function insertCardRequest(ubicacion, imagen, titulo, botones, etiqueta, tamano, boton) {
 
   var marco = document.createElement("div");
   marco.setAttribute("class", "mr-2 ml-2 py-3");
@@ -179,24 +179,44 @@ async function insertCardRequest(ubicacion, imagen, titulo, botones, etiqueta, t
   //Insert buttons
   if (botones != null) {
     for (const [key, value] of Object.entries(botones)) {
+
       var lista = document.createElement("ul");
       lista.setAttribute("class", "list-group list-group-flush");
 
       for (const [key2, value2] of Object.entries(value)) {
+
         var barra = document.createElement("li");
         barra.setAttribute("class", "list-group-item active");
         barra.textContent = key2;
         lista.append(barra);
-        var barraAux = document.createElement("li");
-        var barra = document.createElement("a");
-        barraAux.setAttribute("class", "list-group-item bg-light");
-        barra.textContent = value2[0][0];
-        barra.setAttribute("href", value2[0][1]);
-        barraAux.append(barra);
-        lista.append(barraAux);
+
+        value2.forEach(function (filasContenido) {
+          var barraAux = document.createElement("li");
+          var barra = document.createElement("a");
+          barraAux.setAttribute("class", "list-group-item bg-light");
+          barra.textContent = filasContenido[0];
+          barra.setAttribute("href", filasContenido[1]);
+          barraAux.append(barra);
+          lista.append(barraAux);
+        });
       }
       marco1.append(lista);
     }
+  }
+
+  if (boton != null) {
+    var marco4 = document.createElement("div");
+    marco4.setAttribute("class", "card-body");
+
+    for (const [key, value] of Object.entries(boton)) {
+      var botonAux = document.createElement("button");
+      botonAux.textContent = key;
+      botonAux.setAttribute("onclick", value);
+      botonAux.setAttribute("class", "btn btn-block btn-primary");
+      marco4.append(botonAux);
+    }
+
+    marco1.append(marco4);
   }
 
   //Insert tag
@@ -213,6 +233,12 @@ async function insertCardRequest(ubicacion, imagen, titulo, botones, etiqueta, t
 }
 async function aquiNoHayNada(ubicacion) {
   insertCardLink(ubicacion, null, null, "fa fa-tree", null, "Aquí no hay nada");
+}
+async function elObjetoNoExiste(ubicacion) {
+  insertCardLink(ubicacion, null, null, "fa fa-tree", null, "El objeto no existe o ha sido eliminado");
+}
+async function elUsuarioNoExiste(ubicacion) {
+  insertCardLink(ubicacion, null, null, "fa fa-tree", null, "El usuario no existe o ha sido eliminado");
 }
 async function insertCardLink(ubicacion, tituloBoton, enlace, imagenTexto, numero, texto) {
   var cartaFinal = $(document.createElement('div'));
@@ -473,6 +499,20 @@ async function generarModalAccion(ubicacion, idModal, titulo, texto, boton1, bot
 
 }
 
+async function addDivAlert(ubicacion, mensaje, tipo) {
+  var modalAlert = $(document.createElement('div'));
+  modalAlert.attr("class", "alert alert-" + tipo);
+  modalAlert.attr("role", "alert");
+
+  var mensajeAlert = $(document.createElement('p'));
+  mensajeAlert.attr("class", "font-weight-bold");
+  mensajeAlert.text(mensaje);
+
+  modalAlert.append(mensajeAlert);
+
+  ubicacion.append(modalAlert);
+}
+
 async function addInput(nombreObjeto, tipo, texto, ubicacion, extras) {
 
   switch (tipo) {
@@ -496,6 +536,10 @@ async function addInput(nombreObjeto, tipo, texto, ubicacion, extras) {
   modalFade.attr("role", "dialog");
 
 
+}
+
+function getUbicacionTexto(ubicacion) {
+  return ubicacion.edificio + " | " + ubicacion.planta + " | " + ubicacion.ubicacion;
 }
 /*function insertarPaginacion(ubicacion, totalObjetos, objetosPorPagina){
   var navigator= document.createElement("nav");

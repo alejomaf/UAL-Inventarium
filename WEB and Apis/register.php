@@ -25,8 +25,17 @@
     <label>Número de teléfono</label>
     <input type="number" name="phone" class="form-control" placeholder="Seleccione su departamento" required>
 </div>
+<div class="form-group">
+<div class="g-recaptcha" data-sitekey="your_site_key"></div></div>
 <br><br>
 <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
 <br>
 <button type="btn" onclick="cambiarObjeto('login.php');" class="btn btn-secondary btn-block">Volver</button>
 </form>
+
+<script></script>
+<script type="text/javascript">
+  var onloadCallback = function() {
+    alert("grecaptcha is ready!");
+  };
+</script>

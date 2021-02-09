@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<?php include "parts/head.html";?>
+<?php include "parts/essentials/head.html";?>
 
 <body>
-<?php include "parts/verticalNavBar.php"?>
+<?php include "parts/essentials/verticalNavBar.php"?>
 
-<?php include "parts/container.php"?>
+<?php include "parts/essentials/container.php"?>
 
 </body>
 </html>

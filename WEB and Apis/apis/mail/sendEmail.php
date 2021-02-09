@@ -2,6 +2,8 @@
 
 require 'PHPMailer/PHPMailerAutoload.php';
 
+
+
 $mail = new PHPMailer();
 $mail->IsSMTP();
 $mail->Mailer = "smtp";
@@ -22,7 +24,7 @@ $mail->AddAddress("alejoemma@gmail.com");
 //$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");
 
 $mail->Subject = "Confirmación de registro de usuario";
-$mail->Body = "<b>Porfavor confirme su registro de usuario</b>";
+$mail->Body = "<b>Porfavor confirme su registro de usuario e ingrese a la siguiente dirección: http://localhost/UALInventarium/apis/creacion/registration.php?verify={$idVerificacion}</b>";
 //$content = "<b>Porfavor confirme su registro de usuario</b>";
 
 

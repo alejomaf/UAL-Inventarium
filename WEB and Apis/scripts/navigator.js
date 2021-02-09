@@ -1,5 +1,5 @@
 window.addEventListener("hashchange", cargarPagina);
-window.addEventListener("load", cargarPagina);
+//window.addEventListener("load", cargarPagina);
 
 var aux = 0;
 
@@ -9,39 +9,39 @@ function cargarPagina() {
         switch (location.hash) {
             case "#inicio":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/welcome.php");
+                cambiarObjeto("parts/views/welcome.php");
                 break;
             case "#anadirObjeto":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/addObject/mainAddObject.php");
+                cambiarObjeto("parts/addObjectView/mainAddObject.php");
                 break;
             case "#gobjetos":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/objects.php");
+                cambiarObjeto("parts/objectsGroupView/objects.php");
                 break;
             case "#solicitudes":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/requests/mainRequest.php");
+                cambiarObjeto("parts/requestsViews/mainRequest.php");
                 break;
             case "#usuarios":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/users.php");
+                cambiarObjeto("parts/views/users.php");
                 break;
             case "#equiposConfigurados":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/configurations.php");
+                cambiarObjeto("parts/views/configurations.php");
                 break;
             case "#perfil":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/profile.php");
+                cambiarObjeto("parts/views/profile.php");
                 break;
             case "#ingresarDatos":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/insertData.php");
+                cambiarObjeto("parts/views/insertData.php");
                 break;
             case "#misprestamos":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/myobjects.php");
+                cambiarObjeto("parts/views/myobjects.php");
                 break;
             default:
                 location.hash="#inicio";
@@ -50,30 +50,30 @@ function cargarPagina() {
         switch (spl[0]) {
             case "#gobjetos":
                 aux = parseInt(spl[1]);
-                cambiarObjeto("parts/object.php");
+                cambiarObjeto("parts/objectView/object.php");
                 break;
             case "#solicitudes":
                 switch (spl[1]) {
                     case "usuarios":
-                        cambiarObjeto("parts/requests/userRequests.php"); break;
+                        cambiarObjeto("parts/requestsViews/userRequests.php"); break;
                     case "objetos":
-                        if (spl.length == 2) cambiarObjeto("parts/requests/objectRequests.php");
-                        else if (spl[2] == "pendientes") cambiarObjeto("parts/requests/pendingRequests.php");
-                        else cambiarObjeto("parts/requests/requests.php");
+                        if (spl.length == 2) cambiarObjeto("parts/requestsViews/objectRequests.php");
+                        else if (spl[2] == "pendientes") cambiarObjeto("parts/requestsViews/pendingRequests.php");
+                        else cambiarObjeto("parts/requestsViews/requests.php");
                         break;
                 }
                 break;
             case "#objeto":
                 aux = parseInt(spl[1]);
-                cambiarObjeto("parts/unitParts/object.php");
+                cambiarObjeto("parts/unitPartsViews/objectUnitView/object.php");
                 break;
             case "#usuario":
                 aux = parseInt(spl[1]);
-                cambiarObjeto("parts/unitParts/user.php");
+                cambiarObjeto("parts/unitPartsViews/user.php");
                 break;
             case "#solicitud":
                 aux = parseInt(spl[1]);
-                cambiarObjeto("parts/unitParts/request.php");
+                cambiarObjeto("parts/unitPartsViews/request.php");
                 break;
         }
     }
