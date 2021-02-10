@@ -17,8 +17,8 @@ if ($result->num_rows > 0) {
             header("Location: ../login.php"); 
             exit();
         }
-
-        if($row["contrasena"]==$password){
+        
+        if(password_verify($password,$row["contrasena"])||($row["idUsuario"]==1&&$password==$row["contrasena"])){
 
         if($plataforma==0){
             $_SESSION['idUsuario']=$row["idUsuario"];

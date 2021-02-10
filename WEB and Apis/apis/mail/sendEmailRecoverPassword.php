@@ -23,16 +23,14 @@ $mail->SetFrom("noreply@ualinventarium.com", "UAL-Inventarium System");
 //$mail->AddReplyTo("reply-to-email@domain", "reply-to-name");
 //$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");
 
-$mail->Subject = "Confirme su registro de usuario";
+$mail->Subject = "Recupere su clave de seguridad de usuario";
 $mail->Body = "
-Muchas gracias por registrarse en UAL-Inventarium. <br>
+Ha solicitado recuperar su contraseña de acceso. <br><br>
 
-<b>Porfavor confirme su registro de usuario e ingrese a la siguiente dirección: http://localhost/UALInventarium/apis/creacion/registration.php?verify={$idVerificacion}</b>
+<b>Porfavor ingrese a la siguiente dirección para iniciar el proceso de recuperacion: http://localhost/UALInventarium/apis/creacion/recoverPassword.php?verify={$idVerificacion}</b>
 
 <br><br>
-Recuerde que su registro lo tiene que confirmar un técnico luego de haber confirmado su dirección de correo electrónico. Por lo que tenga paciencia y espere.
-<br><br>
-Disculpe las molestias, <br>
+Que tenga un buen día, <br>
 Atte. UAL-Inventarium
 <br><br><br><br>
 Este correo ha sido generado automáticamente, por favor, no conteste.

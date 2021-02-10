@@ -17,11 +17,17 @@
 
     //Main fuction, the user can select the item that he wants to create
 
-    function selectType() {
+    async function selectType() {
         limpiarZona($("#mainAddObject"));
-        insertCardLink($("#mainAddObject"), "Añadir inventario", "seleccionarObjeto(0)", "fa fa-cube", null);
-        insertCardLink($("#mainAddObject"), "Añadir fungible", "seleccionarObjeto(1)", "fa fa-bolt", null);
-        insertCardLink($("#mainAddObject"), "Añadir kit", "seleccionarObjeto(2)", "fa fa-archive", null);
+        if (aux == -1) {
+            insertCardLink($("#mainAddObject"), "Añadir inventario", "seleccionarObjeto(0)", "fa fa-cube", null);
+            insertCardLink($("#mainAddObject"), "Añadir fungible", "seleccionarObjeto(1)", "fa fa-bolt", null);
+            insertCardLink($("#mainAddObject"), "Añadir kit", "seleccionarObjeto(2)", "fa fa-archive", null);
+        } else {
+            selectObject = aux;
+            //If the object has been created and the user wants to add new elements
+            await cambiarObjetoCreacion("parts/addObjectView/numberOfObjects.php");
+        }
     }
 
     //Function initialization
@@ -32,7 +38,7 @@
 
     function seleccionarObjeto(tipo) {
         objetoT = tipo;
-        cambiarObjetoCreacion("parts/addObject/selectCreateObject.php");
+        cambiarObjetoCreacion("parts/addObjectView/selectCreateObject.php");
     }
 
     //The user clicks in the creation button, the method works depending if the object group was created or not
@@ -44,10 +50,10 @@
 
         if (tipo == -1) {
             //If the object is being created right now 
-            await cambiarObjetoCreacion("parts/addObject/uploadImage.php");
+            await cambiarObjetoCreacion("parts/addObjectView/uploadImage.php");
         } else {
             //If the object has been created and the user wants to add new elements
-            await cambiarObjetoCreacion("parts/addObject/numberOfObjects.php");
+            await cambiarObjetoCreacion("parts/addObjectView/numberOfObjects.php");
         }
     }
 
@@ -99,15 +105,19 @@
     }
 
     //We create the object
-    
+
     async function crearObjeto() {
         if (contadorObjetos != numeroObjetos) {
             contadorObjetos++;
-            await cambiarObjetoCreacion("parts/addObject/mejoras.php");
+            await cambiarObjetoCreacion("parts/addObjectView/mejoras.php");
         } else {
             numeroObjetos = 0;
             contadorObjetos = 0;
-            await selectType();
+            if (aux == -1) {
+                await selectType();
+            }else{
+                location.hash = "gobjetos-" + aux;
+            }
         }
     }
 
@@ -154,7 +164,11 @@
 
         numeroObjetos = 0;
         contadorObjetos = 0;
-        await selectType();
+        if (aux == -1) {
+            await selectType();
+        }else{
+            location.hash = "gobjetos-" + aux;
+        }
     }
 
     async function cambiarObjetoCreacion(objeto) {

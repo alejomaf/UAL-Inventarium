@@ -25,6 +25,7 @@
 </div>
 
 <script>
+    var fechaActual = new Date("<?php echo date("Y-m-d"); ?>");
     async function mostrarCrearSolicitudObjeto() {
         $("#crearSolicitudModal").modal("show");
     }
@@ -37,13 +38,22 @@
         await ubicacion.append(fila);
     }
 
-    var divAlert=true;
+    var divAlert = true;
+    var divAlertFecha = true;
 
     async function crearSolicitud() {
-        if ($("#nombreS").val() == ""||$("#fechaEstimadaS").val() == "") {
-            if(divAlert){
-                addDivAlert($("#crearSolicitudModal .modal-content"), "Debe añadir el nombre completo de la persona que recibirá el objeto y la fecha estimada en que lo devolverá","primary");
-                divAlert=false;
+        if ($("#nombreS").val() == "" || $("#fechaEstimadaS").val() == "") {
+            if (divAlert) {
+                addDivAlert($("#crearSolicitudModal .modal-content"), "Debe añadir el nombre completo de la persona que recibirá el objeto y la fecha estimada en que lo devolverá", "primary");
+                divAlert = false;
+            }
+            return;
+        }
+        var fechaEstimadaAux = new Date($("#fechaEstimadaS").val());
+        if (fechaEstimadaAux < fechaActual) {
+            if (divAlertFecha) {
+                addDivAlert($("#crearSolicitudModal .modal-content"), "La fecha de devolución no puede ser posterior a la actual", "primary");
+                divAlertFecha = false;
             }
             return;
         }

@@ -99,6 +99,7 @@ async function cargarGrupoObjeto() {
     botones = { "Mostrar objetos del kit": "mostrarObjetosDelKit()" };
   }
   botones['Modificar']= "showModalModificarGrupoObjetos(" + grupoObjeto.idGrupoObjetos + ");";
+  botones['Añadir objetos']= "location.hash='anadirObjeto-"+aux+"';";
   var tituloGO = [];
   var valoresGO = [];
 

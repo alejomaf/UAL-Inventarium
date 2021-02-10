@@ -1,7 +1,7 @@
 window.addEventListener("hashchange", cargarPagina);
 //window.addEventListener("load", cargarPagina);
 
-var aux = 0;
+var aux = -1;
 
 function cargarPagina() {
     var spl = (location.hash).split("-");
@@ -41,16 +41,16 @@ function cargarPagina() {
                 break;
             case "#misprestamos":
                 if ($(window).width() < 768) $('#sidebar, #content').toggleClass('active');
-                cambiarObjeto("parts/views/myobjects.php");
+                cambiarObjeto("parts/views/myloans.php");
                 break;
             default:
-                location.hash="#inicio";
+                location.hash = "#inicio";
                 break;
         } else {
         switch (spl[0]) {
             case "#gobjetos":
-                aux = parseInt(spl[1]);
                 cambiarObjeto("parts/objectView/object.php");
+                aux = parseInt(spl[1]);
                 break;
             case "#solicitudes":
                 switch (spl[1]) {
@@ -64,22 +64,32 @@ function cargarPagina() {
                 }
                 break;
             case "#objeto":
-                aux = parseInt(spl[1]);
                 cambiarObjeto("parts/unitPartsViews/objectUnitView/object.php");
+                aux = parseInt(spl[1]);
                 break;
             case "#usuario":
-                aux = parseInt(spl[1]);
                 cambiarObjeto("parts/unitPartsViews/user.php");
+                aux = parseInt(spl[1]);
                 break;
             case "#solicitud":
-                aux = parseInt(spl[1]);
                 cambiarObjeto("parts/unitPartsViews/request.php");
+                aux = parseInt(spl[1]);
+                break;
+            case "#prestamos":
+                cambiarObjeto("parts/views/myloans.php");
+                aux = parseInt(spl[1]);
+                break;
+            case "#anadirObjeto":
+                cambiarObjeto("parts/addObjectView/mainAddObject.php");
+                aux = parseInt(spl[1]);
                 break;
         }
     }
 }
 
+
 function cambiarObjeto(objeto) {
+    aux = -1;
     $("#variableArea").empty().hide().fadeIn('50');
     $("#variableArea").hide().load(objeto).fadeIn('300');
 }

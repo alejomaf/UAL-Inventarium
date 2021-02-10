@@ -76,50 +76,10 @@
         if (configuracion.usuario != null) valores.push("Usuario: " + configuracion.usuario);
         if (configuracion.contrasena != null) valores.push("Contraseña: " + configuracion.contrasena);
 
-        var botones = {
-            "Modificar configuración": "showModalModificar(" + posicionC + ");",
-            "Eliminar configuración": "eliminarConfiguracion(configuracion.idConfiguracion);"
-        };
         var titulo = ["Configuración", null];
 
 
-        insertCard($("#insideContainer"), "images/objects/" + await grupoObjeto.imagen, tituloGO, valores, botones, null, 22);
-    }
-
-    function showModalModificar(id) {
-        if (configuraciones[id].ip != null) $("#ipObjeto").val(configuraciones[id].ip);
-        if (configuraciones[id].mac != null) $("#macObjeto").val(configuraciones[id].mac);
-        if (configuraciones[id].boca != null) $("#bocaObjeto").val(configuraciones[id].boca);
-        if (configuraciones[id].armario != null) $("#armarioObjeto").val(configuraciones[id].armario);
-        if (configuraciones[id].usuario != null) $("#usuarioObjeto").val(configuraciones[id].usuario);
-        if (configuraciones[id].contrasena != null) $("#contrasenaObjeto").val(configuraciones[id].contrasena);
-
-        $("#botonModificarConfiguracion").attr("onclick", "modificarConfiguracion(" + id + ")");
-        $("#crearConfiguracion span").text("Modificar configuración");
-        $("#crearConfiguracion").modal("show");
-    }
-
-    async function modificarConfiguracion(id) {
-        if ($('#macObjeto').val() == "" && $('#bocaObjeto').val() == "" && $('#armarioObjeto').val() == "" && $('#usuarioObjeto').val() == "" && $('#ipObjeto').val() == "") return;
-        await realizarConsulta("apis/modificacion/modificarConfiguracion.php", {
-            ip: $("#ipObjeto").val(),
-            mac: $("#macObjeto").val(),
-            boca: $("#bocaObjeto").val(),
-            armario: $("#armarioObjeto").val(),
-            usuario: $("#usuarioObjeto").val(),
-            contrasena: $("#contrasenaObjeto").val(),
-            idConfiguracion: configuraciones[id].idConfiguracion
-        });
-        $("#crearConfiguracion").modal("hide");
-        cargarPagina();
-    }
-
-    async function eliminarConfiguracion(idConfiguracion) {
-        await realizarConsulta("apis/eliminacion/eliminarConfiguracion.php", {
-            idConfiguracion: idConfiguracion
-        });
-        $("#crearConfiguracion").modal("hide");
-        cargarPagina();
+        insertCard($("#insideContainer"), "images/objects/" + await grupoObjeto.imagen, tituloGO, valores, null, null, 22);
     }
 
     cargarConfiguraciones();

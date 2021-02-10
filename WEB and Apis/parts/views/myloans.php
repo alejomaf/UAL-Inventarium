@@ -1,4 +1,4 @@
-<table id="tablaMisPrestamos"class="table table-striped table-bordered">
+<table id="tablaMisPrestamos" class="table table-striped table-bordered">
     <thead class="thead-dark">
         <tr>
             <th scope="col">Nombre del objeto</th>
@@ -12,10 +12,16 @@
         var fechaActual = new Date("<?php echo date("Y-m-d"); ?>");
         var solicitudes = [];
         async function cargarSolicitudes() {
-            solicitudes = await realizarConsulta("apis/busqueda/buscarPrestamo.php", {
-                Usuario_idUsuario: "<?php session_start();
-                                    echo $_SESSION["idUsuario"]; ?>"
-            });
+            if (aux == -1) {
+                solicitudes = await realizarConsulta("apis/busqueda/buscarPrestamo.php", {
+                    Usuario_idUsuario: "<?php session_start();
+                                        echo $_SESSION["idUsuario"]; ?>"
+                });
+            }else{
+                solicitudes = await realizarConsulta("apis/busqueda/buscarPrestamo.php", {
+                    Usuario_idUsuario: aux
+                });
+            }
             if (solicitudes == null) {
                 $("#tablaMisPrestamos").remove();
                 aquiNoHayNada($("#insideContainer"));
@@ -24,6 +30,7 @@
             for (k = solicitudes.length - 1; k >= 0; k--) {
                 await anadirSolicitud(solicitudes[k]);
             }
+
         }
         async function anadirSolicitud(solicitud) {
             var fechaEstimadaEntrega = new Date(solicitud.fechaEstimadaEntrega);

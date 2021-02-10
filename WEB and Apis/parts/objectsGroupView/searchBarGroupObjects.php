@@ -26,7 +26,7 @@
 <button type="button" id="mostrarOpcionesAvanzadas" class="btn btn-info">Opciones avanzadas</button>
 <button id="botonEscrito" type="button" class="btn btn-secondary" onclick="cargarEdificios(); $('#myModal').modal('show');" placeholder="Ubicación"required>Seleccionar ubicación</button>
 <input id="botonValor" type="hidden" name="ubicacion" required>
-<?php include "extraWindows/selectUbication.php";?>
+<?php include "../extraWindows/selectUbication.php";?>
 <div id="opcionesAvanzadas" class="card bg-light" style="width: 100%; display:none">
 <form>
 <br>

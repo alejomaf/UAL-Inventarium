@@ -17,23 +17,21 @@ $mail->Username   = "ualinventarium@gmail.com";
 $mail->Password   = '20elMejor1nv$nt@riado$WAL20';
 
 $mail->IsHTML(true);
-$mail->AddAddress($email);
+$mail->AddAddress($_POST["emailEnvio"]);
 //$mail->AddAddress("recipient-email@domain", "recipient-name");
 $mail->SetFrom("noreply@ualinventarium.com", "UAL-Inventarium System");
 //$mail->AddReplyTo("reply-to-email@domain", "reply-to-name");
 //$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");
 
-$mail->Subject = "Confirme su registro de usuario";
+$mail->Subject = "Objeto pendiente de devolucion";
 $mail->Body = "
-Muchas gracias por registrarse en UAL-Inventarium. <br>
+Usted tiene un objeto pendiente de devolver. <br>
 
-<b>Porfavor confirme su registro de usuario e ingrese a la siguiente dirección: http://localhost/UALInventarium/apis/creacion/registration.php?verify={$idVerificacion}</b>
+<b>Por favor, póngase en contacto con un técnico y devuélvale el objeto.</b>
 
-<br><br>
-Recuerde que su registro lo tiene que confirmar un técnico luego de haber confirmado su dirección de correo electrónico. Por lo que tenga paciencia y espere.
 <br><br>
 Disculpe las molestias, <br>
-Atte. UAL-Inventarium
+Atte. UAL Inventarium
 <br><br><br><br>
 Este correo ha sido generado automáticamente, por favor, no conteste.
 ";

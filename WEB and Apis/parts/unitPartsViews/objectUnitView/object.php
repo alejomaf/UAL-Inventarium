@@ -35,7 +35,7 @@
     var prestamosActivos = [];
     var solicitudesPendientes = [];
     var prestamosFinalizados = [];
-
+    var botones={};
     solicitudes = await realizarConsulta("apis/busqueda/buscarPrestamo.php", {
       Objeto_idObjeto: id
     });
@@ -48,7 +48,7 @@
     var haSolicitadoUnPrestamo=false;
 
     for (i = 0; i < solicitudes.length; i++) {
-      var botones = {"Crear solicitud":"mostrarCrearSolicitudObjeto();"};
+      botones = {"Crear solicitud":"mostrarCrearSolicitudObjeto();"};
       usuario = (await realizarConsulta("apis/busqueda/buscarUsuario.php", {
         idUsuario: solicitudes[i].Usuario_idUsuario
       }))[0];
@@ -85,7 +85,7 @@
     });
 
     if(haSolicitadoUnPrestamo) botones = null;
-    await insertCardRequest($("#variableArea"), null, ["Solicitudes", null], valoresS, null, 22, null);
+    await insertCardRequest($("#variableArea"), null, ["Solicitudes", null], valoresS, null,22, botones);
   }
 
   async function insertarConfiguracion() {

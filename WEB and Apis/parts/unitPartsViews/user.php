@@ -1,71 +1,146 @@
+<?php session_start(); ?>
 <script>
+    var usuarioActivo;
 
-async function anadirBarra(ubicacion, texto1, texto2){
-    var barraAuxiliar=$("#barra").clone();
+    async function anadirBarra(ubicacion, texto1, texto2) {
+        var barraAuxiliar = $("#barra").clone();
 
-    $("#izquierda").text(texto1);
-    $("#derecha").text(texto2);
+        $("#izquierda").text(texto1);
+        $("#derecha").text(texto2);
 
-    $("#barra").clone().appendTo(ubicacion);
-  
-    $("#copiarBarra").children("#barra").remove();
-    $("#copiarBarra").append(barraAuxiliar);
-}
+        $("#barra").clone().appendTo(ubicacion);
 
-async function procesarSolicitudes(id){
-    $("#prestamoActivo").hide();
-    $("#solicitudesPendientes").hide();
-    $("#prestamosFinalizados").hide();
-    
-    solicitudes= await realizarConsulta("apis/busqueda/buscarPrestamo.php",{Usuario_idUsuario:aux});
-    if(solicitudes==null) return;
-    for(i=0; i<solicitudes.length;i++){
-        grupoObjeto= (await realizarConsulta("apis/busqueda/buscarGrupoDeObjetos.php", {idGrupoObjetos: solicitudes[i].Objeto_GrupoObjetos_idGrupoObjetos}))[0];
-        if(solicitudes[i].estado==0){
-            $("#prestamoActivo").show();
-            anadirBarra($("#prestamoActivo"), grupoObjeto.nombre, "Fecha estimada de entrega: "+solicitudes[i].fechaEstimadaEntrega);
+        $("#copiarBarra").children("#barra").remove();
+        $("#copiarBarra").append(barraAuxiliar);
+    }
+
+    async function cargarUsuarios() {
+        usersGroup = await realizarConsulta("apis/busqueda/buscarUsuario.php", {
+            idUsuario: aux
+        });
+
+        if (usersGroup == null) {
+            elUsuarioNoExiste($("#variableArea"));
+            return;
         }
-        else if(solicitudes[i].estado==-1){
-            $("#solicitudesPendientes").show();
-            anadirBarra($("#solicitudesPendientes"), grupoObjeto.nombre, "Fecha solicitud: "+solicitudes[i].solicitado);
+        usuarioActivo = usersGroup[0];
+
+        anadirUsuario(usersGroup[0]);
+    }
+
+    async function anadirUsuario(usuario) {
+        var valores = [];
+        var titulo = [];
+        var botones = {};
+
+        
+        valores.push("Correo electrónico: " + usuario.correoElectronico);
+        valores.push("Departamento: " + usuario.departamento);
+        valores.push("Teléfono: " + usuario.telefono);
+
+        titulo.push(usuario.nombre);
+        titulo.push(null);
+
+        var etiqueta = "";
+
+        switch (usuario.rango) {
+            case '-3':
+                etiqueta = "Baneado";
+                if (<?php echo $_SESSION['idUsuario']; ?> == 1) {
+                    botones["Desbanear"] = "desbanearUsuario();";
+                }
+                break;
+            case '-2':
+                etiqueta = "Registro rechazado";
+                botones["Dar de alta"] = "aceptarUsuario();";
+                break;
+            case '-1':
+                etiqueta = "Registro pendiente de aprobación";
+                botones["Dar de alta"] = "aceptarUsuario();";
+                botones["Rechazar registro"] = "rechazarUsuario();";
+                break;
+            case '0':
+                etiqueta = "Técnico";
+                if (<?php echo $_SESSION['idUsuario']; ?> == 1) {
+                    botones["Banear"] = "banearUsuario();";
+                    botones["Dejar de ser técnico"] = "quitarTecnico();";
+                }
+                break;
+            case '1':
+                etiqueta = "Profesor";
+                botones["Banear"] = "banearUsuario();";
+                if (<?php echo $_SESSION['idUsuario']; ?> == 1) {
+                    botones["Convertir en técnico"] = "convertirTecnico();";
+                }
+                break;
         }
-        else{
-            $("#prestamosFinalizados").show();
-            anadirBarra($("#prestamosFinalizados"), grupoObjeto.nombre, "Fecha de entrega: "+solicitudes[i].fechaEntrega);
+
+
+
+        insertCard($("#variableArea"), null, titulo, valores, botones, etiqueta, 22);
+        insertCard($("#variableArea"), null, ["Préstamos y solicitudes de "+usuario.nombre,null], null, {"Ver préstamos":"location.hash='prestamos-"+usuario.idUsuario+"';"}, null, 22);
+    }
+
+    async function aceptarUsuario() {
+        await realizarConsulta("apis/modificacion/modificarUsuario.php", {
+            'idUsuario': aux,
+            'rank': 1,
+            'emailEnvio': usuarioActivo.correoElectronico
+        });
+        await cargarPagina();
+    }
+
+    async function rechazarUsuario() {
+        await realizarConsulta("apis/modificacion/modificarUsuario.php", {
+            'idUsuario': aux,
+            'rank': -2
+        });
+        await cargarPagina();
+    }
+
+    async function convertirTecnico() {
+        if (<?php echo $_SESSION['idUsuario']; ?> == 1) {
+            await realizarConsulta("apis/modificacion/modificarUsuario.php", {
+                'idUsuario': aux,
+                'rank': 0
+            });
+            await cargarPagina();
         }
     }
 
-}
-
-async function cargarUsuarios(){
-    usersGroup=await realizarConsulta("apis/busqueda/buscarUsuario.php", {idUsuario: aux});
-
-    if(usersGroup==null){
-        elUsuarioNoExiste($("#variableArea"));
-        return;
+    async function quitarTecnico() {
+        if (<?php echo $_SESSION['idUsuario']; ?> == 1) {
+            await realizarConsulta("apis/modificacion/modificarUsuario.php", {
+                'idUsuario': aux,
+                'rank': 1
+            });
+            await cargarPagina();
+        }
     }
-    
-    anadirUsuario(usersGroup[0]);
-}
 
-async function anadirUsuario(usuario){
-  var valores=[];
-  var titulo=[];
+    async function banearUsuario() {
+        if (<?php echo $_SESSION['rango']; ?> == 0) {
+            if (usuarioActivo.rango != 0 || <?php echo $_SESSION['idUsuario']; ?> == 1) {
+                await realizarConsulta("apis/modificacion/modificarUsuario.php", {
+                    'idUsuario': aux,
+                    'rank': -3
+                });
+                await cargarPagina();
+            }
+        }
+    }
 
-  valores.push("Correo electrónico: "+usuario.correoElectronico);
-  valores.push("Departamento: "+usuario.departamento);
-  valores.push("Teléfono: "+usuario.telefono);
-  
-  titulo.push(usuario.nombre);
-  titulo.push(null);
+    async function desbanearUsuario() {
+        if (<?php echo $_SESSION['rango']; ?> == 0) {
+            if (usuarioActivo.rango != 0 || <?php echo $_SESSION['idUsuario']; ?> == 1) {
+                await realizarConsulta("apis/modificacion/modificarUsuario.php", {
+                    'idUsuario': aux,
+                    'rank': 1
+                });
+                await cargarPagina();
+            }
+        }
+    }
 
-  if(usuario.rango==0) var etiqueta="Técnico";
-  else var etiqueta="Profesor";
-  
-  insertCard($("#variableArea"),null, titulo, valores, null,etiqueta,22);
-  await procesarSolicitudes(usuario.idUsuario);
-}
-
-cargarUsuarios();
-
+    cargarUsuarios();
 </script>

@@ -4,6 +4,7 @@
 
 <script>
   var solicitudes = [];
+  var usuarioQuePideElObjeto;
 
   async function concederPrestamo(id) {
     await realizarConsulta("apis/modificacion/modificarPrestamo.php", {
@@ -23,9 +24,12 @@
     cargarPagina();
   }
   async function enviarRecordatorio(id) {
-
+    await realizarConsulta("apis/mail/sendEmailRecordatorio.php", {
+      emailEnvio: usuarioQuePideElObjeto.correoElectronico
+    });
+    $(".card-body button").first().prop("disabled",true)
   }
-  
+
   async function finalizarPrestamo(id) {
     await realizarConsulta("apis/modificacion/modificarPrestamo.php", {
       idPrestado: id,
@@ -55,6 +59,7 @@
     usuario = (await realizarConsulta("apis/busqueda/buscarUsuario.php", {
       idUsuario: solicitud.Usuario_idUsuario
     }))[0];
+    usuarioQuePideElObjeto=usuario;
     ubicacion = (await realizarConsulta("apis/busqueda/buscarUbicacion.php", {
       idUbicacion: objeto.Ubicacion_idUbicacion
     }))[0];
@@ -69,24 +74,41 @@
 
     if (solicitud.estado == -1) {
       etiqueta = "Préstamo pendiente";
-      var botones = {
-        "Rechazar solicitud": "eliminarSolicitud(" + solicitud.idGrupoObjetos + ");",
-        "Conceder préstamo": "concederPrestamo(" + solicitud.idPrestado + ");"
+      var solicitudesDelObjeto = await realizarConsulta("apis/busqueda/buscarPrestamo.php", {
+        Objeto_idObjeto: objeto.idObjeto
+      });
+      var isPrestado = false;
+      solicitudesDelObjeto.forEach(function(solicitudAux) {
+        if (solicitudAux.idPrestado != solicitud.idPrestado)
+        if (solicitudAux.estado == 0) isPrestado = true;
+      });
+      if (isPrestado) {
+        etiqueta="Solicitud en espera";
+        var botones = {
+          "Eliminar de la lista de espera": "eliminarSolicitud(" + solicitud.idGrupoObjetos + ");"
+        }
+      } else {
+        var botones = {
+          "Rechazar solicitud": "eliminarSolicitud(" + solicitud.idGrupoObjetos + ");",
+          "Conceder préstamo": "concederPrestamo(" + solicitud.idPrestado + ");"
+        }
       }
-      valores.push("Fecha estimada de entrega: "+solicitud.fechaEstimadaEntrega);
+
+      valores.push("Fecha estimada de entrega: " + solicitud.fechaEstimadaEntrega);
     } else if (solicitud.estado == 0) {
+
       etiqueta = "Prestamo activo";
       var botones = {
         "Enviar recordatorio": "enviarRecordatorio(" + solicitud.idPrestado + ");",
         "Finalizar préstamo": "finalizarPrestamo(" + solicitud.idPrestado + ");"
       }
-      valores.push("Concedido el: "+solicitud.fechaSalida);
-      valores.push("Fecha estimada de entrega: "+solicitud.fechaEstimadaEntrega);
+      valores.push("Concedido el: " + solicitud.fechaSalida);
+      valores.push("Fecha estimada de entrega: " + solicitud.fechaEstimadaEntrega);
     } else if (solicitud.estado == 1) {
       etiqueta = "Préstamo finalizado";
       var botones = null;
-      valores.push("Concedido el: "+solicitud.fechaSalida);
-      valores.push("Entregado el: "+solicitud.fechaEntrega);
+      valores.push("Concedido el: " + solicitud.fechaSalida);
+      valores.push("Entregado el: " + solicitud.fechaEntrega);
     } else {
       etiqueta = "Préstamo rechazado";
       var botones = null;
@@ -96,9 +118,6 @@
 
     titulo.push(grupoObjeto.nombre + " con id " + objeto.idObjeto);
     titulo.push("location.hash='objeto-" + objeto.idObjeto + "';")
-
-    $("#concederPrestamo").attr("onclick", "concederPrestamo('" + solicitud.idPrestado + "');");
-    $("#eliminarSolicitud").attr("onclick", "eliminarSolicitud('" + solicitud.idGrupoObjetos + "');");
 
     var imagen = "images/objects/" + grupoObjeto.imagen;
 

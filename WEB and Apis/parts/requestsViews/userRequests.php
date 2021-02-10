@@ -19,27 +19,9 @@
     }
   }
 
-  async function aceptarUsuario(idUsuario) {
-    await realizarConsulta("apis/modificacion/modificarUsuario.php", {
-      'idUsuario': idUsuario,
-      'rank': 1
-    });
-    await cargarPagina();
-  }
-
-  async function rechazarUsuario(idUsuario) {
-    await realizarConsulta("apis/modificacion/modificarUsuario.php", {
-      'idUsuario': idUsuario,
-      'rank': -3
-    });
-    await cargarPagina();
-  }
 
   function anadirUsuario(usuario) {
-    insertCard($("#variableArea"), null, [usuario.nombre, "location.hash='#usuario-" + usuario.idUsuario + "';"], ["Correo electrónico: " + usuario.correoElectronico, "Departamento: " + usuario.departamento, "Teléfono: " + usuario.telefono], {
-      'Aceptar usuario': 'aceptarUsuario(' + usuario.idUsuario + ');',
-      'Denegar usuario': 'rechazarUsuario(' + usuario.idUsuario + ');'
-    }, "Profesor", 22);
+    insertCard($("#variableArea"), null, [usuario.nombre, "location.hash='#usuario-" + usuario.idUsuario + "';"], ["Correo electrónico: " + usuario.correoElectronico, "Departamento: " + usuario.departamento, "Teléfono: " + usuario.telefono],null, "Profesor", 22);
   }
   cargarUsuarios();
 </script>
