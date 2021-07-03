@@ -1,0 +1,28 @@
+<div class="d-flex flex-row">
+  <app-library-create (refresh)="updateLibraries()"></app-library-create>
+  <div *ngIf="libraries.length==0" class="card text-white bg-dark m-5" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Crea tu primera biblioteca!</h5>
+      <img class="card-img-top"
+        src="https://1.bp.blogspot.com/-qWsx1_c57jk/Xv5QT7Ivb-I/AAAAAAABfUA/e52GCKlfALUpYNpy7zpEoQvGyU32_sJCQCLcBGAsYHQ/s1600/El%2Bcoronavirus%2Bprueba%2Blos%2Bl%25C3%25ADmites%2Bde%2Blas%2Bbibliotecas%2Bp%25C3%25BAblicas%2Bde%2BEstados%2BUnidos.jpg"
+        alt="Card image cap">
+    </div>
+  </div>
+
+
+  <!--Contenido-->
+  <div *ngFor="let library of libraries" class="card text-white bg-dark m-5" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{library.name}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item bg-dark">Passillo: {{library.columnB}}</li>
+      <li class="list-group-item bg-dark">Fila: {{library.rowB}}</li>
+    </ul>
+    <div class="card-body">
+      <a (click)="openLibrary(library.idBookshelf)" class="card-link clickable">Acceder</a>
+      <a (click)="deleteLibrary(library.idBookshelf,library.name)"
+        class="card-link text-secondary clickable">Eliminar</a>
+    </div>
+  </div>
+</div>

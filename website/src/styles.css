@@ -1,0 +1,76 @@
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: black;
+}
+.medium_box {
+    width : 70vh;
+    background-color:aliceblue;
+    border-radius: 20%;
+    padding: 5vh;
+    
+}
+.big-container{
+    width: 100%;
+    height: 100%;
+    display: table;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.centered {
+    margin: auto;
+    vertical-align: middle;
+    margin-top: 100px;
+}
+
+.boton-anadir {
+    border-radius: 100%;
+    position:absolute;
+    bottom: 50px;
+    right: 50px;
+    width: 100px;
+    height: 100px;
+    padding: 3vh;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+}
+
+
+.boton-anadir-texto {
+    font-size: 100px;
+    left: 50%;
+    top:30%;
+}
+
+.form-group input{
+    background-color: lightgrey;
+}
+.modal-title, .form-group label{
+    color: black;   
+}
+
+.form-group ::placeholder{
+    color: darkslategrey;
+}
+
+.modal-content{
+    border-color: white;
+    border-style: solid;
+}
+
+.logout{
+    position: absolute;
+    right: 30px;
+}
+
+.clickable{
+    cursor:pointer;
+}
+
+.close{
+    color:black;
+    background-color: black;
+}
+
