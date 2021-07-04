@@ -2,11 +2,11 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
-async function getById(idObjeto) {
+async function getById(idUbicacion) {
   const rows = await db.query(
-    `SELECT ip, mac, boca, armario, usuario, contrasena
-    FROM configuracion WHERE Objeto_idObjeto = ?`,
-    [idObjeto]
+    `SELECT idUbicacion, ubicacion, planta, edificio
+    FROM ubicacion WHERE idUbicacion = ?`,
+    [idUbicacion]
   );
   const data = helper.emptyOrRows(rows);
 
@@ -16,42 +16,41 @@ async function getById(idObjeto) {
   }
 }
 
-async function create(configuracion) {
+async function create(ubicacion) {
   const result = await db.query(
-    `INSERT INTO Configuracion
-    (ip, mac, boca, armario, usuario, contrasena, Objeto_idObjeto) 
+    `INSERT INTO ubicacion
+    (ubicacion, planta, edificio) 
     VALUES 
-    (?, ?, ?, ?, ?, ?, ?)`,
+    (?, ?, ?)`,
     [
-      configuracion.ip, configuracion.mac,
-      configuracion.boca, configuracion.armario,
-      configuracion.usuario, configuracion.contrasena, configuracion.Objeto_idObjeto
+      ubicacion.ubicacion, ubicacion.planta,
+      ubicacion.edificio
     ]
   );
 
-  let message = 'Error in creating config';
+  let message = 'Error in creating location';
 
   if (result.affectedRows) {
-    message = 'Config created succesfully';
+    message = 'Location created succesfully';
   }
 
   return { message };
 }
 
-async function update(id, configuracion) {
+async function update(id, ubicacion) {
     const result = await db.query(
-      `UPDATE configuracion
-    SET ip=?, mac=?, boca=?, armario=?, usuario=?, contrasena=?
-    WHERE idConfiguracion=?`,
+      `UPDATE ubicacion
+    SET ubicacion=?, planta=?, edificio=?
+    WHERE idUbicacion=?`,
       [
-        configuracion.ip, configuracion.mac, configuracion.boca, configuracion.armario, configuracion.usuario, configuracion.contrasena, id
+        ubicacion.ubicacion, ubicacion.planta, ubicacion.edificio, id
       ]
     );
 
-  let message = 'Error in updating config';
+  let message = 'Error in updating location';
 
   if (result.affectedRows) {
-    message = 'Config updated successfully';
+    message = 'Location updated successfully';
   }
 
   return { message };
@@ -59,14 +58,14 @@ async function update(id, configuracion) {
 
 async function remove(id) {
   const result = await db.query(
-    `DELETE FROM configuracion WHERE idConfiguracion=?`,
+    `DELETE FROM ubicacion WHERE idUbicacion=?`,
     [id]
   );
 
-  let message = 'Error in deleting configuracion';
+  let message = 'Error in deleting location';
 
   if (result.affectedRows) {
-    message = 'Config deleted successfully';
+    message = 'Location deleted successfully';
   }
 
   return { message };

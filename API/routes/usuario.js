@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const usuario = require('../services/usuario');
+const usuarios = require('../services/usuario');
 const bcrypt = require('bcryptjs');
 const jwt = require("jwt-simple");
 const moment = require("moment");
@@ -10,13 +10,14 @@ const middleware = require('./middleware');
 
 
 router.post('/login', async function (req, res, next) {
-  const usuario = await usuario.getByEmail(req.body.correoElectronico);
+  const usuario = await usuarios.getByEmail(req.body.correoElectronico);
+
   if (usuario === undefined) {
     res.json({
       error: "Error, email or password not found"
     });
   } else {
-    if(!bcrypt.compareSync(req.body.password, usuario.contrasena)){
+    if(req.body.contrasena!=usuario.contrasena){ //!bcrypt.compareSync(req.body.password, usuario.contrasena)
       res.json({
         error: "Error, email or password not found"
       });
@@ -27,9 +28,6 @@ router.post('/login', async function (req, res, next) {
       });
     }
   }
-  res.json({
-    error: "Error, email or password not found"
-  });
 });
 
 const createToken = (usuario) => {
@@ -44,7 +42,7 @@ const createToken = (usuario) => {
 router.post('/', async function (req, res, next) {
   try {
     //req.body.password = bcrypt.hashSync(req.body.password, 10); ENCRIPTACIÓN DE LA CONTRASEÑA DESACTIVADA
-    res.json(await usuario.create(req.body));
+    res.json(await usuarios.create(req.body));
   } catch (err) {
     console.error(`Error while creating usuario`, err.message);
     next(err);
@@ -59,7 +57,7 @@ router.use(middleware.checkToken);
 /* GET usuario. */
 router.get('/', async function (req, res, next) {
   try {
-    res.json(await usuario.getMultiple(req.query.page));
+    res.json(await usuarios.getMultiple(req.query.page));
   } catch (err) {
     console.error(`Error while getting usuario `, err.message);
     next(err);
@@ -70,7 +68,7 @@ router.get('/', async function (req, res, next) {
 
 
 router.get("/mainUser", (req, res) => {
-  usuario.getById(req.userId)
+  usuarios.getById(req.userId)
   .then(rows => {
     res.json(rows);
   })
@@ -80,7 +78,7 @@ router.get("/mainUser", (req, res) => {
 router.put('/:id', async function (req, res, next) {
   try {
     req.body.password = bcrypt.hashSync(req.body.password, 10);
-    res.json(await usuario.update(req.params.id, req.body));
+    res.json(await usuarios.update(req.params.id, req.body));
   } catch (err) {
     console.error(`Error while updating usuario`, err.message);
     next(err);
@@ -89,7 +87,7 @@ router.put('/:id', async function (req, res, next) {
 
 router.delete('/:id', async function (req, res, next) {
   try {
-    res.json(await usuario.remove(req.params.id));
+    res.json(await usuarios.remove(req.params.id));
   } catch (err) {
     console.error(`Error while deleting usuario`, err.message);
     next(err);
