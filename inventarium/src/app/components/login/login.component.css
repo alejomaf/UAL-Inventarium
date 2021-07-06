@@ -1,0 +1,14 @@
+#formularioLogin {
+    width : 40%;  
+}
+h1, label {
+    color: white;
+}
+a {
+    color: aqua;
+}
+
+#tituloLogin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

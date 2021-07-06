@@ -1,0 +1,12 @@
+#formularioRegister {
+    width : 40%;  
+}
+
+h1, label {
+    color: white;
+}
+
+#tituloRegister {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
