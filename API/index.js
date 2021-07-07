@@ -25,13 +25,13 @@ app.get('/', (req, res) => {
   res.json({'message': 'ok'});
 })
 
-app.use('/configuracion', configuracion);
-app.use('/users', users);
-app.use('/grupoobjetos', grupoobjetos);
-app.use('/objeto', objeto);
-app.use('/objetokit', objetokit);
-app.use('/prestado', prestado);
-app.use('/ubicacion', ubicacion);
+app.use('/api/configuracion', configuracion);
+app.use('/api/users', users);
+app.use('/api/grupoobjetos', grupoobjetos);
+app.use('/api/objeto', objeto);
+app.use('/api/objetokit', objetokit);
+app.use('/api/prestado', prestado);
+app.use('/api/ubicacion', ubicacion);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {

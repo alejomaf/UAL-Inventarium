@@ -1,1 +1,7 @@
-<p>users works!</p>
+<!--Contenido-->
+<div *ngFor="let user of users">
+    <app-user>
+        <span slot="nombre">{{user.nombre}}</span>
+        <span slot="departamento">{{user.departamento}}</span>
+    </app-user>    
+</div>

@@ -5,6 +5,7 @@ import { PasswordRecoveryComponent } from './components/login/password-recovery/
 import { AddDataComponent } from './components/main/admin/add-data/add-data.component';
 import { MainComponent } from './components/main/main.component';
 import { AddObjectComponent } from './components/main/parts/add-object/add-object.component';
+import { NumberAndLocationComponent } from './components/main/parts/add-object/object/number-and-location/number-and-location.component';
 import { SelectObjectToCreateComponent } from './components/main/parts/add-object/select-object-to-create/select-object-to-create.component';
 import { DashboardComponent } from './components/main/parts/dashboard/dashboard.component';
 import { DevicesComponent } from './components/main/parts/devices/devices.component';
@@ -25,7 +26,8 @@ const routes: Routes = [
     { path: 'dashboard', component: DashboardComponent },  
     { path: 'add-object', component: AddObjectComponent,
       children: [
-        { path: 'select-type', component: SelectObjectToCreateComponent }    
+        { path: 'select-type', component: SelectObjectToCreateComponent },
+        { path: 'create/:id', component: NumberAndLocationComponent }     
       ]},
     { path: 'group-of-objects', component: GroupOfObjectsComponent },
     { path: 'requests', component: RequestsComponent },

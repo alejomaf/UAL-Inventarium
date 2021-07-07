@@ -1,0 +1,55 @@
+{
+  "/api/configuracion*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/grupoobjetos*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/objeto*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/objetokit*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/users/login*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },"/api/bookshelfs/*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/prestado*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/ubicacion*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/users*": {
+    "target": "http://api:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
