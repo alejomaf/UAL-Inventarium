@@ -1,0 +1,92 @@
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="px-3 mb-4 mr-10">
+    </div>
+    <div class="pt-4 px-3 mb-4 bg-light">
+
+        <div class="media d-flex justify-content-center">
+            <div class="media-body">
+                <h5 class="m-0">
+                    <?php echo $_SESSION["email"];?>
+                </h5>
+                <p class="font-weight-light text-muted mb-0">Técnico</p>
+            </div>
+        </div>
+    </div>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a routerLink="/dashboard" class="nav-link text-dark font-italic bg-light">
+                <fa-icon [icon]="casa" class="text-primary"></fa-icon>
+                Inicio
+            </a>
+        </li>
+    </ul>
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Principal</p>
+
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a routerLink="/add-object" class="nav-link text-dark font-italic bg-light">
+                <fa-icon [icon]="anadir" class="text-primary"></fa-icon>
+                +Añadir objeto
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/group-of-objects" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="grupo_objetos" class="text-primary"></fa-icon>
+                Objetos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/requests" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="solicitudes" class="text-primary"></fa-icon>
+                Solicitudes
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/users" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="usuarios" class="text-primary"></fa-icon>
+                Usuarios
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/devices" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="ordenador" class="text-primary"></fa-icon>
+                Ver equipos configurados
+            </a>
+        </li>
+    </ul>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Administración</p>
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a routerLink="/add-data" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="casa" class="text-primary"></fa-icon>
+                Ingresar datos
+            </a>
+        </li>
+    </ul>
+
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Personal</p>
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+            <a routerLink="/profile" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="usuario" class="text-primary"></fa-icon>
+                Perfil
+            </a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="/my-loans" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="lista" class="text-primary"></fa-icon>
+                Mis préstamos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="apis/logout.php" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="cerrar_sesion" class="text-primary"></fa-icon>
+                Cerrar sesión
+            </a>
+        </li>
+
+    </ul>
+</div>
+<!-- End vertical navbar -->
