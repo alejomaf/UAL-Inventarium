@@ -5,11 +5,11 @@ const config = require('../config');
 async function getMultiple(page = 1){
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT idUsuario, nombre, contrasena, correoElectronico, rango, despartamento, telefono 
+    `SELECT idUsuario, nombre, contrasena, correoElectronico, rango, departamento, telefono 
     FROM usuario LIMIT ?,?`, 
     [offset, config.listPerPage]
   );
-  const data = helper.emptyOrRows(rows[0]);
+  const data = helper.emptyOrRows(rows);
   const meta = {page};
 
   return {

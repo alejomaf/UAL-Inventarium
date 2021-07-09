@@ -1,7 +1,17 @@
-<!--Contenido-->
-<div *ngFor="let user of users">
-    <app-user>
-        <span slot="nombre">{{user.nombre}}</span>
-        <span slot="departamento">{{user.departamento}}</span>
-    </app-user>    
+<div class="row d-flex-inline justify-content-center">
+    <!--Contenido-->
+    <div *ngFor="let user of users" style="width: fit-content;">
+        <app-user>
+            <span nombre>{{user.nombre}}</span>
+            <span correoElectronico>{{user.correoElectronico}}</span>
+            <span *ngIf="user.rango==0" rango>Técnico</span>
+            <span *ngIf="user.rango==1" rango>Docente</span>
+            <span *ngIf="user.departamento==0" departamento>Departamento de informática</span>
+            <span *ngIf="user.departamento==1" departamento>Ingeniería de sistemas y automática</span>
+            <span *ngIf="user.departamento==2" departamento>Lenguaje y sistemas informáticos</span>
+            <span *ngIf="user.departamento==3" departamento>Ciencias de la computación e inteligencia artificial</span>
+            <span *ngIf="user.departamento==4" departamento>Arquitectura y tecnología de computadores</span>
+            <span telefono>{{user.telefono}}</span>
+        </app-user>
+    </div>
 </div>

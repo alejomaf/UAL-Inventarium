@@ -1,10 +1,23 @@
-<div class="card text-white bg-dark m-5" style="width: 18rem;">
-    <div class="card-body">
-      </div>
-      <ul class="list-group list-group-flush">
-        <li select="[slot=nombre]" class="list-group-item bg-dark"></li>
-      </ul>
-      <div class="card-body">
-          <li select="[slot=departamento]"></li>
-      </div>
+<div class="card border rounded px-3 py-3">
+  <div style="width:100%;" class="card-body list-group-item-primary border">
+    <h5 style="cursor:pointer" class="card-title text-dark text-center" onclick="location.hash='#usuario-1';">
+      <ng-content select="[nombre]"></ng-content>
+    </h5>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item bg-light">
+      <b>Correo electrónico </b>
+      <a>
+        <ng-content select="[correoElectronico]"></ng-content>
+      </a>
+    </li>
+    <li class="list-group-item bg-light"><ng-content select="[departamento]"></ng-content></li>
+    <li class="list-group-item bg-light">
+      <b>Teléfono :</b>
+      <a><ng-content select="[telefono]"></ng-content></a>
+    </li>
+  </ul>
+  <li class="list-group-item list-group-item-primary font-weight-bold text-center">
+    <ng-content select="[rango]"></ng-content>
+  </li>
 </div>
