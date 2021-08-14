@@ -1,1 +1,15 @@
-<p>group-of-objects works!</p>
+<div class="row d-flex-inline justify-content-center">
+    <!--Contenido-->
+    <div *ngFor="let go of group_of_objects" style="width: fit-content;">
+        <app-group-of-object>
+            <span nombre>{{go.nombre}}</span>
+            <span cantidad>{{go.cantidad}}</span>
+            <span marca>{{go.marca}}</span>
+            <span modelo>{{go.modelo}}</span>
+            <span cantidadDisponible>{{go.cantidadDisponible}}</span>
+            <span *ngIf="go.tipo==0" tipo>Inventario</span>
+            <span *ngIf="go.tipo==1" tipo>Fungible</span>
+            <span *ngIf="go.tipo==2" tipo>Kit</span>
+        </app-group-of-object>
+    </div>
+</div>

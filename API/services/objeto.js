@@ -6,8 +6,8 @@ async function getMultiple(idGrupoObjetos, page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, eliminado, 
-    fechaAdquisicion, observaciones, organizativa, etiqueta, Ubicacion_idUbicacion 
-    FROM objeto WHERE GrupoObjetos_idGrupoObjetos = ? LIMIT ?,?`,
+    fechaAdquisicion, observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, edificio, planta, ubicacion 
+    FROM objeto, ubicacion WHERE GrupoObjetos_idGrupoObjetos = ? AND objeto.Ubicacion_idUbicacion = ubicacion.idUbicacion LIMIT ?,?`,
     [idGrupoObjetos, offset, config.listPerPage]
   );
   const data = helper.emptyOrRows(rows);
@@ -76,10 +76,24 @@ async function remove(id) {
   return { message };
 }
 
+async function getById(idObjeto) {
+  const rows = await db.query(
+    `SELECT *
+    FROM objeto WHERE idObjeto = ?`,
+    [idObjeto]
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+}
+
 
 module.exports = {
   getMultiple,
   create,
   update,
-  remove
+  remove,
+  getById,
 }

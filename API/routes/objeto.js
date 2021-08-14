@@ -6,9 +6,18 @@ router.use(middleware.checkToken);
 
 
 /* GET objeto. */
-router.get('/', async function(req, res, next) {
+router.get('/:id', async function(req, res, next) {
   try {
-    res.json(await objeto.getMultiple(req.query.idBookshelf, req.query.page));
+    res.json(await objeto.getMultiple(req.params.id, req.query.page));
+  } catch (err) {
+    console.error(`Error while getting objeto `, err.message);
+    next(err);
+  }
+});
+
+router.get('/id/:id', async function(req, res, next) {
+  try {
+    res.json(await objeto.getById(req.params.id, req.query.page));
   } catch (err) {
     console.error(`Error while getting objeto `, err.message);
     next(err);

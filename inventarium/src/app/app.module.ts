@@ -31,6 +31,9 @@ import { AddDataToGroupOfObjectComponent } from './components/main/parts/add-obj
 import { NumberAndLocationComponent } from './components/main/parts/add-object/object/number-and-location/number-and-location.component';
 import { AddDataToObjectComponent } from './components/main/parts/add-object/object/add-data-to-object/add-data-to-object.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ModalObjectSelectComponent } from './components/main/parts/add-object/select-or-create-object/modal-object-select/modal-object-select.component';
+import { GroupOfObjectComponent } from './components/main/parts/group-of-objects/group-of-object/group-of-object.component';
+import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +63,10 @@ import { HttpClientModule } from '@angular/common/http';
     SelectOrCreateObjectComponent,
     AddDataToGroupOfObjectComponent,
     NumberAndLocationComponent,
-    AddDataToObjectComponent
+    AddDataToObjectComponent,
+    ModalObjectSelectComponent,
+    GroupOfObjectComponent,
+    ObjectComponent
   ],
   imports: [
     BrowserModule,

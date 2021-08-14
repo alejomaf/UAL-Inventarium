@@ -7,9 +7,11 @@ import { MainComponent } from './components/main/main.component';
 import { AddObjectComponent } from './components/main/parts/add-object/add-object.component';
 import { NumberAndLocationComponent } from './components/main/parts/add-object/object/number-and-location/number-and-location.component';
 import { SelectObjectToCreateComponent } from './components/main/parts/add-object/select-object-to-create/select-object-to-create.component';
+import { SelectOrCreateObjectComponent } from './components/main/parts/add-object/select-or-create-object/select-or-create-object.component';
 import { DashboardComponent } from './components/main/parts/dashboard/dashboard.component';
 import { DevicesComponent } from './components/main/parts/devices/devices.component';
 import { GroupOfObjectsComponent } from './components/main/parts/group-of-objects/group-of-objects.component';
+import { ObjectsComponent } from './components/main/parts/group-of-objects/objects/objects.component';
 import { RequestsComponent } from './components/main/parts/requests/requests.component';
 import { UsersComponent } from './components/main/parts/users/users.component';
 import { MyLoansComponent } from './components/main/personal/my-loans/my-loans.component';
@@ -21,29 +23,35 @@ import { RegisterRecoverComponent } from './components/register/register-recover
 import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
-  { path: '', component: MainComponent, 
-  children: [
-    { path: 'dashboard', component: DashboardComponent },  
-    { path: 'add-object', component: AddObjectComponent,
-      children: [
-        { path: 'select-type', component: SelectObjectToCreateComponent },
-        { path: 'create/:id', component: NumberAndLocationComponent }     
-      ]},
-    { path: 'group-of-objects', component: GroupOfObjectsComponent },
-    { path: 'requests', component: RequestsComponent },
-    { path: 'users', component: UsersComponent },
-    { path: 'devices', component: DevicesComponent },
-    { path: 'add-data', component: AddDataComponent },
-    { path: 'profile', component: ProfileComponent },
-    { path: 'my-loans', component: MyLoansComponent },
-  ]},
+  {
+    path: '', component: MainComponent,
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      {
+        path: 'add-object', component: AddObjectComponent,
+        children: [
+          { path: 'select-type', component: SelectObjectToCreateComponent },
+          { path: ':id', component: SelectOrCreateObjectComponent },
+          { path: 'create/:id', component: NumberAndLocationComponent }
+        ]
+      },
+      { path: 'group-of-objects', component: GroupOfObjectsComponent },
+      { path: 'group-of-object/:id', component: ObjectsComponent },
+      { path: 'requests', component: RequestsComponent },
+      { path: 'users', component: UsersComponent },
+      { path: 'devices', component: DevicesComponent },
+      { path: 'add-data', component: AddDataComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'my-loans', component: MyLoansComponent },
+    ]
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'register-completed', component: RegisterCompletedComponent},
-  { path: 'register-confirmed', component: RegisterConfirmedComponent},
-  { path: 'register-recover', component: RegisterRecoverComponent},
-  { path: 'register-recover-finish', component: RegisterRecoverFinishComponent},
-  { path: 'password-recovery', component: PasswordRecoveryComponent}
+  { path: 'register-completed', component: RegisterCompletedComponent },
+  { path: 'register-confirmed', component: RegisterConfirmedComponent },
+  { path: 'register-recover', component: RegisterRecoverComponent },
+  { path: 'register-recover-finish', component: RegisterRecoverFinishComponent },
+  { path: 'password-recovery', component: PasswordRecoveryComponent }
 ];
 
 @NgModule({

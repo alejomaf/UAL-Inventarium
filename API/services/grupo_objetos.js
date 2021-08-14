@@ -2,15 +2,15 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
-async function getMultiple(req,page = 1){
+async function getMultiple(req, page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT idGrupoObjetos, cantidad, nombre, imagen, marca, modelo, cantidadDisponible, tipo, eliminado 
-    FROM grupoobjetos WHERE eliminado = 0 LIMIT ?,?`, 
+    FROM grupoobjetos WHERE eliminado = 0 LIMIT ?,?`,
     [offset, config.listPerPage]
   );
   const data = helper.emptyOrRows(rows);
-  const meta = {page};
+  const meta = { page };
 
   return {
     data,
@@ -18,12 +18,12 @@ async function getMultiple(req,page = 1){
   }
 }
 
-async function create(grupoobjetos, userId){
+async function create(grupoobjetos, userId) {
   const result = await db.query(
     `INSERT INTO grupoobjetos
     (cantidad, nombre, imagen, marca, modelo, cantidadDisponible, tipo, eliminado) 
     VALUES 
-    (?, ?, ?, ?, ?, ?, ?, ?)`, 
+    (?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       grupoobjetos.cantidad, grupoobjetos.nombre,
       grupoobjetos.imagen, grupoobjetos.marca, grupoobjetos.modelo, grupoobjetos.cantidadDisponible,
@@ -37,14 +37,14 @@ async function create(grupoobjetos, userId){
     message = 'grupoobjetos created successfully';
   }
 
-  return {message};
+  return { message };
 }
 
-async function update(id, grupoobjetos){
+async function update(id, grupoobjetos) {
   const result = await db.query(
     `UPDATE grupoobjetos 
     SET cantidad=?, nombre=?, imagen=?, marca=?, modelo=?, cantidadDisponible=?, tipo=?, eliminado=?
-    WHERE idGrupoObjetos=?`, 
+    WHERE idGrupoObjetos=?`,
     [
       grupoobjetos.cantidad, grupoobjetos.nombre,
       grupoobjetos.imagen, grupoobjetos.marca, grupoobjetos.modelo, grupoobjetos.cantidadDisponible,
@@ -58,12 +58,12 @@ async function update(id, grupoobjetos){
     message = 'grupoobjetos updated successfully';
   }
 
-  return {message};
+  return { message };
 }
 
-async function remove(id){
+async function remove(id) {
   const result = await db.query(
-    `DELETE FROM grupoobjetos WHERE idGrupoObjetos=?`, 
+    `DELETE FROM grupoobjetos WHERE idGrupoObjetos=?`,
     [id]
   );
 
@@ -73,13 +73,26 @@ async function remove(id){
     message = 'grupoobjetos deleted successfully';
   }
 
-  return {message};
+  return { message };
 }
 
+async function getById(idGrupoObjetos) {
+  const rows = await db.query(
+    `SELECT *
+    FROM grupoobjetos WHERE idGrupoObjetos = ?`,
+    [idGrupoObjetos]
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+}
 
 module.exports = {
   getMultiple,
   create,
   update,
-  remove
+  remove,
+  getById,
 }

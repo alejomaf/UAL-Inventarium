@@ -1,6 +1,6 @@
 export interface Objeto {
     idObjeto?: number,
-    mejoraEquipo: Text,
+    mejorasEquipo: Text,
     codigo: Text,
     disponible: number,
     eliminado: number,
@@ -9,5 +9,8 @@ export interface Objeto {
     organizativa: Text,
     etiqueta: Text,
     Ubicacion_idUbicacion: number,
-    GrupoObjetos_idGrupoObjetos: number
+    GrupoObjetos_idGrupoObjetos: number,
+    edificio?: Text,
+    planta?: Text,
+    ubicacion?: Text,
 }

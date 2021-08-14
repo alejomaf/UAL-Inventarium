@@ -1,0 +1,24 @@
+<div class="card border rounded px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
+    <div style="width= 100%;" class="card-body list-group-item-primary border">
+        <h5 style="cursor:pointer" class="card-title text-dark text-center" onclick="location.hash='objeto-1';">
+            <ng-content select="[nombre]"></ng-content> con id <ng-content select="[idObjeto]"></ng-content>
+        </h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-light">
+            <b>Edificio</b>
+            <a>:  <ng-content select="[edificio]"></ng-content> | <b>Planta</b>: <ng-content select="[planta]"></ng-content> | <b>Ubicacion</b>: <ng-content select="[ubicacion]"></ng-content></a>
+        </li>
+        <li class="list-group-item bg-light">
+            <b>Fecha adquisición</b>
+            <a>:  <ng-content select="[fechaAdquisicion]"></ng-content></a>
+        </li><li class="list-group-item bg-light">
+            <b>Código</b>
+            <a>: <ng-content select="[codigo]"></ng-content></a>
+        </li>
+        <li class="list-group-item bg-light">
+            <b>Mejoras del equipo</b>
+            <a>: <ng-content select="[mejorasEquipo]"></ng-content></a>
+        </li>
+    </ul>
+</div>
