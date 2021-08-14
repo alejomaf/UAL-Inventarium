@@ -16,6 +16,11 @@ export class GroupOfObjectsService {
     return this.http.get(this._url, { headers : header});
   }
 
+  getGroupOfObjectsByType(type: number){
+    let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
+    return this.http.get(this._url+"/type/"+type, { headers : header});
+  }
+
   getGroupOfObject(idGrupoObjetos: number){
     let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
     return this.http.get(this._url+"/id/"+idGrupoObjetos,{ headers : header});

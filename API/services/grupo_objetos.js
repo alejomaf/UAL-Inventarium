@@ -89,10 +89,27 @@ async function getById(idGrupoObjetos) {
   }
 }
 
+async function getByType(req, page = 1) {
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT idGrupoObjetos, cantidad, nombre, imagen, marca, modelo, cantidadDisponible, tipo, eliminado 
+    FROM grupoobjetos WHERE eliminado = 0 AND tipo = ? LIMIT ?,?`,
+    [req, offset, config.listPerPage]
+  );
+  const data = helper.emptyOrRows(rows);
+  const meta = { page };
+
+  return {
+    data,
+    meta
+  }
+}
+
 module.exports = {
   getMultiple,
   create,
   update,
   remove,
   getById,
+  getByType,
 }

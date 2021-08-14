@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-select-or-create-object',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectOrCreateObjectComponent implements OnInit {
 
+  lupa = faSearch;
+  
   constructor() { }
 
   ngOnInit(): void {

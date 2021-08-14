@@ -1,9 +1,13 @@
-<div class="card border rounded mb-3 mx-4  px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
-    <img class="card-img-top" alt="Card image cap">
-    <div class="card-body">
-        <div id="myBtnGroupObject" class="col-md-12 mb-3">
-            <label class="font-weight-bold">Seleccionar el objeto*</label>
-            <app-modal-object-select></app-modal-object-select>
+<div class="row d-flex-inline justify-content-center">
+    <div class="card border rounded mb-3 mx-4  px-3 py-3" style="width: 18rem;background-color:#FDF7FF; display: flex;">
+        <span class="pull-center" style="font-size:200px; margin-left: auto; margin-right: auto;">
+            <fa-icon [icon]="lupa"></fa-icon>
+        </span>
+        <div class="card-body">
+            <div id="myBtnGroupObject" class="col-md-12 mb-3">
+                <label class="font-weight-bold">Seleccionar el objeto*</label>
+                <app-modal-object-select></app-modal-object-select>
+            </div>
         </div>
     </div>
 </div>

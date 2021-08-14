@@ -7,13 +7,19 @@
     <!-- Modal content -->
     <div class="modal-content p-3">
         <h5>Busca el objeto o añade uno nuevo</h5>
-        <input id="grupoDeObjetos" type="text" placeholder="Escribe tu búsqueda o el nombre del nuevo objeto">
+        <input (keyup)="onKey($event)" [formControl]="busqueda" id="grupoDeObjetos" type="text" placeholder="Escribe tu búsqueda o el nombre del nuevo objeto">
         <div class="alert alert-secondary" id="alertaCreacion" role="alert">
             Escribe el nombre del objeto antes de crearlo
         </div>
         <li class="list-group-item list-group-item-action list-group-item-primary"
             onclick="if(grupoDeObjetos.value==''){ $('.alertaCreacion').alert(); return;} crearSeleccionarObjeto(-1);">
-            Crea un nuevo objeto</li>
+            Crea un nuevo objeto
+        </li>
+        <div *ngFor="let go of group_of_objects_search">
+            <li class="list-group-item list-group-item-action"> 
+                {{go.nombre}}
+            </li>
+        </div>
         <ul id="botonesGroupObject" class="list-group">
         </ul>
     </div>

@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ModalObjectSelectComponent } from './components/main/parts/add-object/select-or-create-object/modal-object-select/modal-object-select.component';
 import { GroupOfObjectComponent } from './components/main/parts/group-of-objects/group-of-object/group-of-object.component';
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -66,13 +67,15 @@ import { ObjectComponent } from './components/main/parts/group-of-objects/object
     AddDataToObjectComponent,
     ModalObjectSelectComponent,
     GroupOfObjectComponent,
-    ObjectComponent
+    ObjectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

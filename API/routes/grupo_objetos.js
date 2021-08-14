@@ -26,6 +26,16 @@ router.get('/id/:id', async function(req, res, next) {
   }
 });
 
+router.get('/type/:id', async function(req, res, next) {
+  try {
+    req.User_idUser = req.userId;
+    res.json(await group_of_objects.getByType(req.params.id, req.query.page));
+  } catch (err) {
+    console.error(`Error while getting group_of_objects `, err.message);
+    next(err);
+  }
+});
+
 router.post('/', async function(req, res, next) {
   try {
     res.json(await group_of_objects.create(req.body, req.userId));
