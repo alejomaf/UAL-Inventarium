@@ -35,6 +35,7 @@ import { ModalObjectSelectComponent } from './components/main/parts/add-object/s
 import { GroupOfObjectComponent } from './components/main/parts/group-of-objects/group-of-object/group-of-object.component';
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalLocationSelectComponent } from './components/main/parts/add-object/object/number-and-location/modal-location-select/modal-location-select.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ModalObjectSelectComponent,
     GroupOfObjectComponent,
     ObjectComponent,
+    ModalLocationSelectComponent,
   ],
   imports: [
     BrowserModule,

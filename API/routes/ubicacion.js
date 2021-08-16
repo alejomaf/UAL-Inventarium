@@ -7,9 +7,18 @@ router.use(middleware.checkToken);
 
 
 /* GET location. */
+router.get('/:id', async function(req, res, next) {
+  try {
+    res.json(await location.getById(req.params.id, req.query.page));
+  } catch (err) {
+    console.error(`Error while getting config `, err.message);
+    next(err);
+  }
+});
+
 router.get('/', async function(req, res, next) {
   try {
-    res.json(await location.getById(req.query.id, req.query.page));
+    res.json(await location.getMultiple(req.params, req.query.page));
   } catch (err) {
     console.error(`Error while getting config `, err.message);
     next(err);

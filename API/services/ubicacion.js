@@ -11,6 +11,20 @@ async function getById(idUbicacion) {
   const data = helper.emptyOrRows(rows);
 
   return {
+    data
+  }
+}
+
+async function getMultiple(req, page = 1) {
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT * FROM ubicacion LIMIT ?,?`,
+    [offset, config.listPerPage]
+  );
+  const data = helper.emptyOrRows(rows);
+  const meta = { page };
+
+  return {
     data,
     meta
   }
@@ -73,6 +87,7 @@ async function remove(id) {
 
 
 module.exports = {
+  getMultiple,
   getById,
   create,
   update,

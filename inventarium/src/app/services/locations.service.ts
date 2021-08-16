@@ -1,38 +1,39 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { UserService } from './user.service';
-import { Objeto } from '../interfaces/objeto';
+import { Ubicacion } from '../interfaces/ubicacion';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ObjectsService {
-  _url = "api/objeto"
+export class LocationsService {
+
+  _url = "api/ubicacion"
   
   constructor(private http : HttpClient, private userService: UserService) { }
 
-  getObjects(idGrupoObjetos: number){
+  getLocation(idUbicacion: number){
     let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.get(this._url+"/"+idGrupoObjetos, { headers : header});
+    return this.http.get(this._url+"/"+idUbicacion, { headers : header});
   }
 
-  getObject(idObjeto: number){
+  getLocations(){
     let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.get(this._url+"/id/"+idObjeto,{ headers : header});
+    return this.http.get(this._url,{ headers : header});
   }
 
-  addObject(object: Objeto){
+  addLocation(location: Ubicacion){
     let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.post(this._url, object, { headers : header});
+    return this.http.post(this._url, location, { headers : header});
   }
 
-  deleteObject(idObjetos: number){
+  deleteLocation(idUbicacion: number){
     let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.delete(this._url+"/"+idObjetos,{ headers : header});
+    return this.http.delete(this._url+"/"+idUbicacion,{ headers : header});
   }
 
-  updateObject(object: Objeto){
+  updateLocation(location: Ubicacion){
     let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.put(this._url+"/"+object.idObjeto,object,{ headers : header});
+    return this.http.put(this._url+"/"+location.idUbicacion,location,{ headers : header});
   }
 }

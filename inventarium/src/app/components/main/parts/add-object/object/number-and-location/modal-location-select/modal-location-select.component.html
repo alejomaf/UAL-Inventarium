@@ -1,0 +1,38 @@
+<div (click)="abrirModal(searchLocationModal)">
+    <input *ngIf="location_selected==null" disabled type="text" placeholder="Seleccionar ubicación" class="form-control"
+        required>
+    <input *ngIf="location_selected!=null" style="" disabled type="text" placeholder="{{location_selected.location.edificio}} | {{location_selected.location.planta}} | {{location_selected.location.ubicacion}}" class="form-control"
+        required>
+</div>
+<!-- The modalGroupObject -->
+<ng-template #searchLocationModal class="modal">
+    <!-- Modal content -->
+    <div class="modal-content p-3">
+        <h5>{{titulo_ubicacion}}</h5>
+        <input (keyup)="onKey($event)" [formControl]="busqueda" id="grupoDeObjetos" type="text"
+            placeholder="Escribe tu búsqueda o el nombre del nuevo objeto">
+        <div class="alert alert-secondary" id="alertaCreacion" role="alert">
+            Escribe el nombre del objeto antes de crearlo
+        </div>
+        <li class="list-group-item list-group-item-action list-group-item-primary"
+            onclick="if(grupoDeObjetos.value==''){ $('.alertaCreacion').alert(); return;} crearSeleccionarObjeto(-1);">
+            Crea un nuevo objeto
+        </li>
+        <div *ngFor="let loc of locations_search">
+            <li *ngIf="loc.tipo==0" style="cursor:pointer" (click)="procesarPlantas(loc)"
+                class="list-group-item list-group-item-action">
+                {{loc.location.edificio}}
+            </li>
+            <li *ngIf="loc.tipo==1" style="cursor:pointer" (click)="procesarUbicaciones(loc)"
+                class="list-group-item list-group-item-action">
+                {{loc.location.planta}}
+            </li>
+            <li *ngIf="loc.tipo==2" style="cursor:pointer" (click)="this.location_selected = loc;
+            this.cerrarModal(); procesarEdificios();" class="list-group-item list-group-item-action">
+                {{loc.location.ubicacion}}
+            </li>
+        </div>
+        <ul id="botonesGroupObject" class="list-group">
+        </ul>
+    </div>
+</ng-template>

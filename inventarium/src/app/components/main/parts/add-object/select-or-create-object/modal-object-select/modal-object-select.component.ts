@@ -55,4 +55,8 @@ export class ModalObjectSelectComponent implements OnInit {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
 
+  cerrarModal(){
+    this.modalService.dismissAll();
+  }
+
 }
