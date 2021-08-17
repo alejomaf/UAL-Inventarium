@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faThemeisle } from '@fortawesome/free-brands-svg-icons';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { Ubicacion } from 'src/app/interfaces/ubicacion';
@@ -27,12 +27,15 @@ export class ModalLocationSelectComponent implements OnInit {
 
   locations: Ubicacion[] = [];
   locations_search: { location: Ubicacion, tipo: Number }[] = [];
-  location_selected?: {location: Ubicacion, tipo: Number};titulo_ubicacion = "Busca el edificio o crea uno nuevo";
+  location_selected?: { location: Ubicacion, tipo: Number };
+  titulo_ubicacion = "Busca el edificio o crea uno nuevo";
+  titulo_boton = "Crea un edificio";
+  create_location: Ubicacion;
   tipo_objeto!: number;
   busqueda = new FormControl("");
   estado = 0;
-  
-  objects_by_location: Objeto[]= [];
+
+  objects_by_location: Objeto[] = [];
   location_to_delete?: Ubicacion;
   it_can_be_deleted = false;
 
@@ -45,20 +48,70 @@ export class ModalLocationSelectComponent implements OnInit {
         this.locations = res.data; console.log(res.data);
         this.procesarEdificios();
       }, err => console.log('Error', err));
-
+    this.create_location = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
   }
 
   ngOnInit(): void {
   }
 
-  seleccionarTexto(ubicacion: { location: Ubicacion, tipo: Number }) {
-    switch (ubicacion.tipo) {
+  crearUbicacion() {
+    this.locations_search = [];
+
+    switch (this.estado) {
       case 0:
-        this.procesarPlantas(ubicacion);
+        this.create_location.edificio = this.busqueda.value;
         break;
       case 1:
-        this.location_selected = ubicacion;
-        this.cerrarModal();
+        this.create_location.planta = this.busqueda.value;
+        break;
+      case 2:
+        this.create_location.ubicacion = this.busqueda.value;
+        this.estado = -1;
+        this.locations_service.addLocation(this.create_location).subscribe(
+          (res: any) => {
+            this.locations_service.getLocations().subscribe(
+              (res: any) => {
+                this.locations = res.data; console.log(res.data);
+                this.procesarEdificios();
+                this.create_location = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
+              }, err => console.log('Error', err));
+          }, err => console.log('Error', err));
+        break;
+    }
+    this.estado += 1;
+    this.seleccionarFase();
+  }
+
+  eliminarUbicacion(){
+    console.log(this.location_to_delete!.idUbicacion)
+    if(this.it_can_be_deleted){
+      this.locations_service.deleteLocation(this.location_to_delete!.idUbicacion).subscribe(
+        (res: any) => {
+          this.locations_service.getLocations().subscribe(
+            (res: any) => {
+              this.locations = res.data; console.log(res.data);
+              this.procesarEdificios();
+              this.create_location = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
+            }, err => console.log('Error', err));
+          this.location_to_delete = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
+        }, err => console.log('Error', err));
+    }
+  }
+
+  seleccionarFase() {
+    this.busqueda.setValue("");
+    switch (this.estado) {
+      case 0:
+        this.titulo_ubicacion = "Busca el edificio o crea uno nuevo";
+        this.titulo_boton = "Crea un edificio";
+        break;
+      case 1:
+        this.titulo_ubicacion = "Busca la planta o o crea uno nueva";
+        this.titulo_boton = "Crea una planta";
+        break;
+      case 2:
+        this.titulo_ubicacion = "Busca la ubicación o crea uno nueva";
+        this.titulo_boton = "Crea una ubicación";
         break;
     }
   }
@@ -67,36 +120,64 @@ export class ModalLocationSelectComponent implements OnInit {
     this.locations_search = [];
 
     for (let loc of this.locations) {
-      this.locations_search.push({ "location": loc, "tipo": 0 });
+      var repeated_object = false;
+      for (let auxLoc of this.locations_search) {
+        if (loc.edificio === auxLoc.location.edificio) {
+          repeated_object = true;
+          break;
+        }
+      }
+      if (!repeated_object)
+        this.locations_search.push({ "location": loc, "tipo": 0 });
     }
+
+    this.estado = 0;
+    this.seleccionarFase();
   }
 
-  procesarPlantas(ubicacion :{ location: Ubicacion, tipo: Number }){
+  procesarPlantas(ubicacion: { location: Ubicacion, tipo: Number }) {
+    this.create_location.edificio = ubicacion.location.edificio;
     this.locations_search = [];
-    
+
     for (let loc of this.locations) {
-      if(loc.edificio == ubicacion.location.edificio){
-        this.locations_search.push({ "location":loc, "tipo": 1 });
+      var repeated_object = false;
+      for (let auxLoc of this.locations_search) {
+        if (loc.planta == auxLoc.location.planta) {
+          repeated_object = true;
+          break;
+        }
+      }
+      if (!repeated_object)
+        if (loc.edificio == ubicacion.location.edificio) {
+          this.locations_search.push({ "location": loc, "tipo": 1 });
+        }
+    }
+
+    this.estado = 1;
+    this.seleccionarFase();
+  }
+
+  procesarUbicaciones(ubicacion: { location: Ubicacion, tipo: Number }) {
+    this.create_location.planta = ubicacion.location.planta;
+    this.locations_search = [];
+
+    for (let loc of this.locations) {
+      if (loc.planta == ubicacion.location.planta) {
+        if(loc.edificio == ubicacion.location.edificio)
+        this.locations_search.push({ "location": loc, "tipo": 2 });
       }
     }
+
+    this.estado = 2;
+    this.seleccionarFase();
   }
 
-  procesarUbicaciones(ubicacion :{ location: Ubicacion, tipo: Number }){
-    this.locations_search = [];
-    
-    for (let loc of this.locations) {
-      if(loc.planta == ubicacion.location.planta){
-        this.locations_search.push({ "location":loc, "tipo": 2 });
-      }
-    }
-  }
-
-  objetosPorUbicacion(){
+  objetosPorUbicacion() {
     this.objects_by_location = [];
     this.objects_service.getObjectsByLocation(this.location_to_delete!.idUbicacion).subscribe(
       (res: any) => {
         this.objects_by_location = res.data; console.log(res.data);
-        if(this.objects_by_location.length==0){
+        if (this.objects_by_location.length == 0) {
           this.it_can_be_deleted = true;
         }
       }, err => console.log('Error', err));
@@ -106,19 +187,20 @@ export class ModalLocationSelectComponent implements OnInit {
     const url = this.router.serializeUrl(
       this.router.createUrlTree([`/object/${idObjeto}`])
     );
-  
+
     window.open(url, '_blank');
   }
 
   //Modal behaviour
 
   abrirModal(content: any) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', backdrop: 'static'});
   }
 
   cerrarModal() {
     this.modalService.dismissAll();
   }
+  
 
 
 
