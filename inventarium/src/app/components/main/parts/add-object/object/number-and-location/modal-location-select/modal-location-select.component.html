@@ -9,7 +9,7 @@
     <!-- Modal content -->
     <div class="modal-content p-3">
         <h5>{{titulo_ubicacion}}</h5>
-        <input (keyup)="onKey($event)" [formControl]="busqueda" id="grupoDeObjetos" type="text"
+        <input [formControl]="busqueda" id="grupoDeObjetos" type="text"
             placeholder="Escribe tu búsqueda o el nombre del nuevo objeto">
         <div class="alert alert-secondary" id="alertaCreacion" role="alert">
             Escribe el nombre del objeto antes de crearlo
@@ -27,12 +27,31 @@
                 class="list-group-item list-group-item-action">
                 {{loc.location.planta}}
             </li>
-            <li *ngIf="loc.tipo==2" style="cursor:pointer" (click)="this.location_selected = loc;
-            this.cerrarModal(); procesarEdificios();" class="list-group-item list-group-item-action">
-                {{loc.location.ubicacion}}
+            <li *ngIf="loc.tipo==2" class="list-group-item list-group-item-action">
+                <a style="cursor:pointer" (click)="this.location_selected = loc;
+                this.cerrarModal(); procesarEdificios();">{{loc.location.ubicacion}}</a>
+                <fa-icon *ngIf="loc.tipo==2" (click)="this.location_to_delete=loc.location; abrirModal(deleteLocationModal); objetosPorUbicacion(); " [icon]="basura" class="text-primary float-end"></fa-icon>
             </li>
+            
         </div>
         <ul id="botonesGroupObject" class="list-group">
         </ul>
+    </div>
+</ng-template>
+<!-- The modalGroupObject -->
+<ng-template #deleteLocationModal class="modal">
+    <!-- Modal content -->
+    <div class="modal-content p-3">
+        <h5>La ubicación se encuentra actualmente en uso traslada o elimina estos objetos</h5>
+        <div *ngFor="let obj of objects_by_location">
+            <li style="cursor:pointer" (click)="abrirObjetoVentana(obj.idObjeto)"
+                class="list-group-item list-group-item-action">
+                {{obj.nombre}}
+            </li>
+        </div>
+        <div class="d-grid gap-2">
+            <a *ngIf="!it_can_be_deleted" (click)="objetosPorUbicacion();" class="btn btn-secondary">Refrescar objetos</a>
+            <a *ngIf="it_can_be_deleted" class="btn btn-danger">Eliminar ubicación</a>
+        </div>
     </div>
 </ng-template>

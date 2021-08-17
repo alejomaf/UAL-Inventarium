@@ -1,5 +1,5 @@
 export interface Ubicacion {
-    idUbicacion?: Number,
+    idUbicacion: number,
     ubicacion: Text,
     planta: Text,
     edificio: Text

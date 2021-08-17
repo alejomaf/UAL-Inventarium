@@ -19,6 +19,24 @@ async function getMultiple(idGrupoObjetos, page = 1) {
   }
 }
 
+async function getMultipleByLocation(Ubicacion_idUbicacion, page = 1) {
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, objeto.eliminado, 
+    fechaAdquisicion, observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, nombre
+    FROM objeto, grupoobjetos WHERE objeto.Ubicacion_idUbicacion = ? AND GrupoObjetos_idGrupoObjetos = grupoobjetos.idGrupoObjetos LIMIT ?,?`,
+    [Ubicacion_idUbicacion, offset, config.listPerPage]
+  );
+  const data = helper.emptyOrRows(rows);
+  const meta = { page };
+
+  return {
+    data,
+    meta
+  }
+}
+
+
 async function create(objeto) {
   const result = await db.query(
     `INSERT INTO objeto
@@ -96,4 +114,5 @@ module.exports = {
   update,
   remove,
   getById,
+  getMultipleByLocation,
 }

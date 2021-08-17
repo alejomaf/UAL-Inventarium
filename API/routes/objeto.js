@@ -24,6 +24,15 @@ router.get('/id/:id', async function(req, res, next) {
   }
 });
 
+router.get('/location-id/:id', async function(req, res, next) {
+  try {
+    res.json(await objeto.getMultipleByLocation(req.params.id, req.query.page));
+  } catch (err) {
+    console.error(`Error while getting objeto `, err.message);
+    next(err);
+  }
+});
+
 router.post('/', async function(req, res, next) {
   try {
     res.json(await objeto.create(req.body));

@@ -21,6 +21,11 @@ export class ObjectsService {
     return this.http.get(this._url+"/id/"+idObjeto,{ headers : header});
   }
 
+  getObjectsByLocation(idUbicacion: number){
+    let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
+    return this.http.get(this._url+"/location-id/"+idUbicacion,{ headers : header});
+  }
+
   addObject(object: Objeto){
     let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
     return this.http.post(this._url, object, { headers : header});

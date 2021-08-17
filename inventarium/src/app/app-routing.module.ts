@@ -11,6 +11,7 @@ import { SelectOrCreateObjectComponent } from './components/main/parts/add-objec
 import { DashboardComponent } from './components/main/parts/dashboard/dashboard.component';
 import { DevicesComponent } from './components/main/parts/devices/devices.component';
 import { GroupOfObjectsComponent } from './components/main/parts/group-of-objects/group-of-objects.component';
+import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { ObjectsComponent } from './components/main/parts/group-of-objects/objects/objects.component';
 import { RequestsComponent } from './components/main/parts/requests/requests.component';
 import { UsersComponent } from './components/main/parts/users/users.component';
@@ -43,6 +44,7 @@ const routes: Routes = [
       { path: 'add-data', component: AddDataComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'my-loans', component: MyLoansComponent },
+      { path: 'object/:id', component: ObjectComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

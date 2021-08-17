@@ -1,5 +1,5 @@
 export interface Objeto {
-    idObjeto?: number,
+    idObjeto: number,
     mejorasEquipo: Text,
     codigo: Text,
     disponible: number,
@@ -13,4 +13,5 @@ export interface Objeto {
     edificio?: Text,
     planta?: Text,
     ubicacion?: Text,
+    nombre?: Text,
 }

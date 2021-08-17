@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faThemeisle } from '@fortawesome/free-brands-svg-icons';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
@@ -9,6 +9,9 @@ import { Ubicacion } from 'src/app/interfaces/ubicacion';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { LocationsService } from 'src/app/services/locations.service';
 import { StringUtils } from 'turbocommons-ts';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { Objeto } from 'src/app/interfaces/objeto';
+import { ObjectsService } from 'src/app/services/objects.service';
 
 @Component({
   selector: 'app-modal-location-select',
@@ -18,16 +21,22 @@ import { StringUtils } from 'turbocommons-ts';
 
 export class ModalLocationSelectComponent implements OnInit {
 
+  basura = faTrash;
   private routeSub!: Subscription;
+
+
   locations: Ubicacion[] = [];
   locations_search: { location: Ubicacion, tipo: Number }[] = [];
-  location_selected?: {location: Ubicacion, tipo: Number};
-  estado = 0;
-  titulo_ubicacion = "Busca el edificio o crea uno nuevo";
+  location_selected?: {location: Ubicacion, tipo: Number};titulo_ubicacion = "Busca el edificio o crea uno nuevo";
   tipo_objeto!: number;
   busqueda = new FormControl("");
+  estado = 0;
+  
+  objects_by_location: Objeto[]= [];
+  location_to_delete?: Ubicacion;
+  it_can_be_deleted = false;
 
-  constructor(private route: ActivatedRoute, private modalService: NgbModal, private locations_service: LocationsService) {
+  constructor(private route: ActivatedRoute, private router: Router, private modalService: NgbModal, private locations_service: LocationsService, private objects_service: ObjectsService) {
     this.routeSub = this.route.params.subscribe(params => {
       this.tipo_objeto = params['id'];
     });
@@ -40,10 +49,6 @@ export class ModalLocationSelectComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  }
-
-  onKey(event: any) {
-    this.procesarBusqueda();
   }
 
   seleccionarTexto(ubicacion: { location: Ubicacion, tipo: Number }) {
@@ -86,9 +91,23 @@ export class ModalLocationSelectComponent implements OnInit {
     }
   }
 
-  procesarBusqueda() {
-    console.log(this.busqueda.value);
+  objetosPorUbicacion(){
+    this.objects_by_location = [];
+    this.objects_service.getObjectsByLocation(this.location_to_delete!.idUbicacion).subscribe(
+      (res: any) => {
+        this.objects_by_location = res.data; console.log(res.data);
+        if(this.objects_by_location.length==0){
+          this.it_can_be_deleted = true;
+        }
+      }, err => console.log('Error', err));
+  }
 
+  abrirObjetoVentana(idObjeto: number) {
+    const url = this.router.serializeUrl(
+      this.router.createUrlTree([`/object/${idObjeto}`])
+    );
+  
+    window.open(url, '_blank');
   }
 
   //Modal behaviour
