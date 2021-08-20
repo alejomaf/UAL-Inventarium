@@ -33,7 +33,8 @@ const routes: Routes = [
         children: [
           { path: 'select-type', component: SelectObjectToCreateComponent },
           { path: ':id', component: SelectOrCreateObjectComponent },
-          { path: 'create/:id', component: NumberAndLocationComponent }
+          { path: 'create/:id', component: NumberAndLocationComponent },
+          { path: 'create/:type_id/:location_id/:quantity', component: NumberAndLocationComponent },
         ]
       },
       { path: 'group-of-objects', component: GroupOfObjectsComponent },

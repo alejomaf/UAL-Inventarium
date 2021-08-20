@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { faThemeisle } from '@fortawesome/free-brands-svg-icons';
@@ -24,10 +24,11 @@ export class ModalLocationSelectComponent implements OnInit {
   basura = faTrash;
   private routeSub!: Subscription;
 
+  @Output() send_location: EventEmitter<number> = new EventEmitter();
 
   locations: Ubicacion[] = [];
   locations_search: { location: Ubicacion, tipo: Number }[] = [];
-  location_selected?: { location: Ubicacion, tipo: Number };
+  @Input() location_selected?: { location: Ubicacion, tipo: Number };
   titulo_ubicacion = "Busca el edificio o crea uno nuevo";
   titulo_boton = "Crea un edificio";
   create_location: Ubicacion;

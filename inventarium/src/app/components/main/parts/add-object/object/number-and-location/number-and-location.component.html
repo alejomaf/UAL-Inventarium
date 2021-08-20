@@ -9,7 +9,7 @@
               <span class="glyphicon glyphicon-minus"></span>
               </button>
           </span>
-          <input type="text" id="quantity" readonly style="cursor: default" name="quantity" class="form-control input-number text-align-center" [formControl]="objectsQuantity" min="1" max="50">
+          <input type="text" id="quantity" readonly style="cursor: default; text-align: center;" name="quantity" class="form-control input-number text-align-center" [formControl]="objectsQuantity" min="1" max="50">
           <span class="input-group-btn">
               <button type="button" class="quantity-right-plus btn btn-success btn-number" (click)="increase()" data-type="plus" data-field="">
               +    
@@ -24,11 +24,13 @@
         <div class="alert alert-warning">
             <a>Debes añadir una ubicación al objeto obligatoriamente</a>.
           </div>
-        <app-modal-location-select></app-modal-location-select>
+        <app-modal-location-select
+            (send_location)="getSentLocation($event)">
+        </app-modal-location-select>
         </div>
     
-        <div class="align-content-center">
-            <button id="Crear objetos" type="button" onclick="crearObjetos();"class="btn btn-block btn-primary">Crear objetos</button>
+        <div class="d-grid gap-2">
+            <a id="Crear objetos" type="btn btn-primary" (click)="crearObjetos();"class="btn btn-block btn-primary">Crear objetos</a>
         </div>
     </div>
     

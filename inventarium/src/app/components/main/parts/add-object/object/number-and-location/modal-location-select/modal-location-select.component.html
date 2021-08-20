@@ -30,13 +30,19 @@
                 {{loc.location.planta}}
             </li>
             <li *ngIf="loc.tipo==2" class="list-group-item list-group-item-action">
-                <a style="cursor:pointer" (click)="this.location_selected = loc;
+                <a style="cursor:pointer" (click)="this.location_selected = loc; this.send_location.emit(this.location_selected.location.idUbicacion);
                 this.cerrarModal(); procesarEdificios();">{{loc.location.ubicacion}}</a>
                 <fa-icon *ngIf="loc.tipo==2"
-                    (click)="this.location_to_delete=loc.location; abrirModal(deleteLocationModal); objetosPorUbicacion(); "
+                    (click)="this.location_to_delete=loc.location; cerrarModal(); abrirModal(deleteLocationModal); objetosPorUbicacion(); "
                     [icon]="basura" class="text-danger float-end"></fa-icon>
             </li>
 
+        </div>
+        <div *ngIf="this.estado==0" class="d-grid gap-2">
+            <a style="cursor : pointer;" (click)="cerrarModal()"
+                class="btn btn-secondary">
+                Cerrar
+            </a>
         </div>
         <div *ngIf="this.estado==1" class="d-grid gap-2">
             <a style="cursor : pointer;" (click)="procesarEdificios()" class="btn btn-secondary">
@@ -55,6 +61,11 @@
 <ng-template #deleteLocationModal class="modal">
     <!-- Modal content -->
     <div class="modal-content p-3">
+        <div class="modal-header">
+            <button type="button" class="close" aria-label="Close" (click)="cerrarModal()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+        </div>
         <h5>La ubicación se encuentra actualmente en uso traslada o elimina estos objetos</h5>
         <div *ngFor="let obj of objects_by_location">
             <li style="cursor:pointer" (click)="abrirObjetoVentana(obj.idObjeto)"
