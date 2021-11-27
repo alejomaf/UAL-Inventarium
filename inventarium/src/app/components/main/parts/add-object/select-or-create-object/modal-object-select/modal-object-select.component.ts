@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
@@ -19,7 +19,7 @@ export class ModalObjectSelectComponent implements OnInit {
   tipo_objeto!: number;
   busqueda = new FormControl("");
 
-  constructor(private route: ActivatedRoute, private modalService: NgbModal, private group_of_objects_service: GroupOfObjectsService) {
+  constructor(private route: ActivatedRoute, private modalService: NgbModal, private group_of_objects_service: GroupOfObjectsService, private router: Router) {
     this.routeSub = this.route.params.subscribe(params => {
       this.tipo_objeto = params['id'];
     });
@@ -27,7 +27,6 @@ export class ModalObjectSelectComponent implements OnInit {
       (res: any) => {
         this.group_of_objects = res.data; console.log(res.data);
       }, err => console.log('Error', err));
-
     this.procesarBusqueda();
   }
 
@@ -55,8 +54,7 @@ export class ModalObjectSelectComponent implements OnInit {
     this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title' });
   }
 
-  cerrarModal(){
+  cerrarModal() {
     this.modalService.dismissAll();
   }
-
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { faArchive, faBolt, faCube } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-data-to-group-of-object',
@@ -7,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddDataToGroupOfObjectComponent implements OnInit {
 
-  constructor() { }
+  selected_id = 0
+
+  constructor(private route: ActivatedRoute) {
+    this.selected_id = route.snapshot.params['id'];
+  }
+
+  cubo = faCube;
+  rayo = faBolt;
+  caja = faArchive;
 
   ngOnInit(): void {
   }

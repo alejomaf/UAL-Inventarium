@@ -18,7 +18,7 @@ async function getMultiple(req, page = 1) {
   }
 }
 
-async function create(grupoobjetos, userId) {
+async function create(grupoobjetos, userId, name_of_image) {
   const result = await db.query(
     `INSERT INTO grupoobjetos
     (cantidad, nombre, imagen, marca, modelo, cantidadDisponible, tipo, eliminado) 
@@ -26,7 +26,7 @@ async function create(grupoobjetos, userId) {
     (?, ?, ?, ?, ?, ?, ?, ?)`,
     [
       grupoobjetos.cantidad, grupoobjetos.nombre,
-      grupoobjetos.imagen, grupoobjetos.marca, grupoobjetos.modelo, grupoobjetos.cantidadDisponible,
+      name_of_image, grupoobjetos.marca, grupoobjetos.modelo, grupoobjetos.cantidadDisponible,
       grupoobjetos.tipo, grupoobjetos.eliminado
     ]
   );
@@ -40,7 +40,7 @@ async function create(grupoobjetos, userId) {
   return { message };
 }
 
-async function update(id, grupoobjetos) {
+async function update(id, grupoobjetos, imagen) {
   const result = await db.query(
     `UPDATE grupoobjetos 
     SET cantidad=?, nombre=?, imagen=?, marca=?, modelo=?, cantidadDisponible=?, tipo=?, eliminado=?
