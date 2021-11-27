@@ -1,9 +1,8 @@
 version: "3.9"
 services:
   db:
-    platform: linux/x86_64
     container_name: inventarium_sql
-    image: mysql:8.0
+    image: mariadb:10.7.1-focal
     ports:
       - "3306:3306"
     volumes:
@@ -27,5 +26,7 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: user
       MYSQL_ROOT_PASSWORD: user
+    networks:
+      - default
 volumes:
   persistent: {}
