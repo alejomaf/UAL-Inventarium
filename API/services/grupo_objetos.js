@@ -21,13 +21,13 @@ async function getMultiple(req, page = 1) {
 async function create(grupoobjetos, userId, name_of_image) {
   const result = await db.query(
     `INSERT INTO grupoobjetos
-    (cantidad, nombre, imagen, marca, modelo, cantidadDisponible, tipo, eliminado) 
+    (nombre, imagen, marca, modelo, tipo) 
     VALUES 
-    (?, ?, ?, ?, ?, ?, ?, ?)`,
+    (?, ?, ?, ?, ?)`,
     [
-      grupoobjetos.cantidad, grupoobjetos.nombre,
-      name_of_image, grupoobjetos.marca, grupoobjetos.modelo, grupoobjetos.cantidadDisponible,
-      grupoobjetos.tipo, grupoobjetos.eliminado
+      grupoobjetos.nombre,
+      name_of_image, grupoobjetos.marca, grupoobjetos.modelo,
+      grupoobjetos.tipo
     ]
   );
 

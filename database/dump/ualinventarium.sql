@@ -34,12 +34,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `ualinventarium`.`grupoobjetos` (
   `idGrupoObjetos` INT NOT NULL AUTO_INCREMENT,
-  `cantidad` INT NULL,
+  `cantidad` INT DEFAULT 0,
   `nombre` VARCHAR(45) NULL,
   `imagen` VARCHAR(45) NULL,
   `marca` VARCHAR(45) NULL,
   `modelo` VARCHAR(45) NULL,
-  `cantidadDisponible` INT NULL,
+  `cantidadDisponible` INT DEFAULT 0,
   `tipo` TINYINT NULL,
   `eliminado` TINYINT NULL DEFAULT 0,
   PRIMARY KEY (`idGrupoObjetos`))

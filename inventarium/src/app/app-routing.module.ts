@@ -35,7 +35,7 @@ const routes: Routes = [
           { path: 'select-type', component: SelectObjectToCreateComponent },
           { path: ':id', component: SelectOrCreateObjectComponent },
           { path: 'create/:id', component: NumberAndLocationComponent },
-          { path: 'create_new_group_of_objects/:id/:name', component: AddDataToGroupOfObjectComponent },
+          { path: 'create_new_group_of_objects/:type/:name', component: AddDataToGroupOfObjectComponent },
           { path: 'create/:type_id/:location_id/:quantity', component: NumberAndLocationComponent },
         ]
       },

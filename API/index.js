@@ -14,15 +14,12 @@ const ubicacion = require("./routes/ubicacion");
 
 require('dotenv').config();
 
-app.use(bodyParser.json());
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
+app.use(bodyParser.json({ limit: '200mb' }));
+app.use(bodyParser.urlencoded({ limit: '200mb', extended: true }));
+
 
 app.get('/', (req, res) => {
-  res.json({'message': 'ok'});
+  res.json({ 'message': 'ok' });
 })
 
 app.use('/api/configuracion', configuracion);
@@ -37,9 +34,10 @@ app.use('/api/ubicacion', ubicacion);
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
   console.error(err.message, err.stack);
-  res.status(statusCode).json({'message': err.message});
+  res.status(statusCode).json({ 'message': err.message });
   return;
 });
+
 
 app.listen(port, () => {
   console.log(`Inventarium API listening at http://api:${port}`)

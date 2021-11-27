@@ -1,14 +1,10 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { faThemeisle } from '@fortawesome/free-brands-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
-import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { Ubicacion } from 'src/app/interfaces/ubicacion';
-import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { LocationsService } from 'src/app/services/locations.service';
-import { StringUtils } from 'turbocommons-ts';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Objeto } from 'src/app/interfaces/objeto';
 import { ObjectsService } from 'src/app/services/objects.service';
@@ -83,9 +79,9 @@ export class ModalLocationSelectComponent implements OnInit {
     this.seleccionarFase();
   }
 
-  eliminarUbicacion(){
+  eliminarUbicacion() {
     console.log(this.location_to_delete!.idUbicacion)
-    if(this.it_can_be_deleted){
+    if (this.it_can_be_deleted) {
       this.locations_service.deleteLocation(this.location_to_delete!.idUbicacion).subscribe(
         (res: any) => {
           this.locations_service.getLocations().subscribe(
@@ -164,8 +160,8 @@ export class ModalLocationSelectComponent implements OnInit {
 
     for (let loc of this.locations) {
       if (loc.planta == ubicacion.location.planta) {
-        if(loc.edificio == ubicacion.location.edificio)
-        this.locations_search.push({ "location": loc, "tipo": 2 });
+        if (loc.edificio == ubicacion.location.edificio)
+          this.locations_search.push({ "location": loc, "tipo": 2 });
       }
     }
 
@@ -195,13 +191,13 @@ export class ModalLocationSelectComponent implements OnInit {
   //Modal behaviour
 
   abrirModal(content: any) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', backdrop: 'static'});
+    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', backdrop: 'static' });
   }
 
   cerrarModal() {
     this.modalService.dismissAll();
   }
-  
+
 
 
 
