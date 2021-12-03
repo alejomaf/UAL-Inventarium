@@ -1,7 +1,7 @@
 <div (click)="abrirModal(searchLocationModal)">
     <input *ngIf="location_selected==null" disabled type="text" placeholder="Seleccionar ubicación" class="form-control"
         required>
-    <input *ngIf="location_selected!=null" style="" disabled type="text"
+    <input *ngIf="location_selected!=null" disabled type="text"
         placeholder="{{location_selected.location.edificio}} | {{location_selected.location.planta}} | {{location_selected.location.ubicacion}}"
         class="form-control" required>
 </div>
@@ -34,13 +34,13 @@
                 this.cerrarModal(); procesarEdificios();">{{loc.location.ubicacion}}</a>
                 <fa-icon *ngIf="loc.tipo==2"
                     (click)="this.location_to_delete=loc.location; cerrarModal(); abrirModal(deleteLocationModal); objetosPorUbicacion(); "
-                    [icon]="basura" class="text-danger float-end"></fa-icon>
+                    [icon]="basura" class="text-danger float-end">
+                </fa-icon>
             </li>
 
         </div>
         <div *ngIf="this.estado==0" class="d-grid gap-2">
-            <a style="cursor : pointer;" (click)="cerrarModal()"
-                class="btn btn-secondary">
+            <a style="cursor : pointer;" (click)="cerrarModal()" class="btn btn-secondary">
                 Cerrar
             </a>
         </div>
@@ -64,7 +64,7 @@
         <div class="modal-header">
             <button type="button" class="close" aria-label="Close" (click)="cerrarModal()">
                 <span aria-hidden="true">&times;</span>
-              </button>
+            </button>
         </div>
         <h5>La ubicación se encuentra actualmente en uso traslada o elimina estos objetos</h5>
         <div *ngFor="let obj of objects_by_location">
@@ -79,7 +79,8 @@
         <div class="d-grid gap-2">
             <a *ngIf="!it_can_be_deleted" (click)="objetosPorUbicacion();" class="btn btn-secondary">Refrescar
                 objetos</a>
-            <a *ngIf="it_can_be_deleted" (click)="eliminarUbicacion(); cerrarModal(); abrirModal(searchLocationModal);" class="btn btn-danger">Eliminar ubicación</a>
+            <a *ngIf="it_can_be_deleted" (click)="eliminarUbicacion(); cerrarModal(); abrirModal(searchLocationModal);"
+                class="btn btn-danger">Eliminar ubicación</a>
         </div>
     </div>
 </ng-template>

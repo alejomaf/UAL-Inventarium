@@ -11,6 +11,7 @@ export class NumberAndLocationComponent implements OnInit {
 
   objectsQuantity = new FormControl(1);
   selected_id = 0;
+  location_id = 0;
   creation = false;
 
   constructor(private router: Router, private route: ActivatedRoute) {
@@ -25,16 +26,23 @@ export class NumberAndLocationComponent implements OnInit {
       this.objectsQuantity.setValue(this.objectsQuantity.value + 1);
     }
   }
+
   decrease() {
     if (this.objectsQuantity.value > 1 && this.objectsQuantity.value <= 20) {
       this.objectsQuantity.setValue(this.objectsQuantity.value - 1);
     }
   }
+
   crearObjetos() {
     if (this.selected_id == 0) return;
+    if (this.objectsQuantity.value <= 0 || this.objectsQuantity.value > 20) return;
+
+    this.router.navigateByUrl('/add-object/create/' + this.selected_id + '/' + this.location_id + '/' + this.objectsQuantity.value);
   }
+
+
   getSentLocation(location_selected: number) {
-    this.selected_id = location_selected;
+    this.location_id = location_selected;
   }
 
 }

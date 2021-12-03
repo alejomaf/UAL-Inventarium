@@ -6,6 +6,7 @@ import { AddDataComponent } from './components/main/admin/add-data/add-data.comp
 import { MainComponent } from './components/main/main.component';
 import { AddDataToGroupOfObjectComponent } from './components/main/parts/add-object/add-data-to-group-of-object/add-data-to-group-of-object.component';
 import { AddObjectComponent } from './components/main/parts/add-object/add-object.component';
+import { AddDataToObjectComponent } from './components/main/parts/add-object/object/add-data-to-object/add-data-to-object.component';
 import { NumberAndLocationComponent } from './components/main/parts/add-object/object/number-and-location/number-and-location.component';
 import { SelectObjectToCreateComponent } from './components/main/parts/add-object/select-object-to-create/select-object-to-create.component';
 import { SelectOrCreateObjectComponent } from './components/main/parts/add-object/select-or-create-object/select-or-create-object.component';
@@ -36,7 +37,7 @@ const routes: Routes = [
           { path: ':id', component: SelectOrCreateObjectComponent },
           { path: 'create/:id', component: NumberAndLocationComponent },
           { path: 'create_new_group_of_objects/:type/:name', component: AddDataToGroupOfObjectComponent },
-          { path: 'create/:type_id/:location_id/:quantity', component: NumberAndLocationComponent },
+          { path: 'create/:group_of_object_id/:location_id/:quantity', component: AddDataToObjectComponent },
         ]
       },
       { path: 'group-of-objects', component: GroupOfObjectsComponent },
