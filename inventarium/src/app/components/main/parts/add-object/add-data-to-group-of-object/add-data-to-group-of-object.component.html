@@ -1,16 +1,19 @@
 <div class="row justify-content-center bg-light" style="width:22rem;">
-    <div class="card bg-light position-sticky">
-        <div *ngIf="type == '0'" class="align-self-center">
+    <div class="card bg-light position-sticky" style="height: 19rem;">
+        <div *ngIf="imgURL" class="align-self-center" style="margin-top: auto; margin-bottom: auto;">
+            <img [src]="imgURL" height="200px">
+        </div>
+        <div *ngIf="type == '0' && !imgURL" class="align-self-center">
             <span style="font-size:200px;">
                 <fa-icon [icon]="cubo"></fa-icon>
             </span>
         </div>
-        <div *ngIf="type == '1'" class="align-self-center">
+        <div *ngIf="type == '1' && !imgURL" class="align-self-center">
             <span style="font-size:200px;">
                 <fa-icon [icon]="rayo"></fa-icon>
             </span>
         </div>
-        <div *ngIf="type == '2'" class="align-self-center">
+        <div *ngIf="type == '2' && !imgURL" class="align-self-center">
             <span style="font-size:200px;">
                 <fa-icon [icon]="caja"></fa-icon>
             </span>

@@ -11,6 +11,7 @@ import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service
 })
 export class AddDataToGroupOfObjectComponent implements OnInit {
 
+  imgURL: any
   type = ""
   name = ""
   fileToUpload: any;
@@ -31,26 +32,59 @@ export class AddDataToGroupOfObjectComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //We enable the creation button
   handleFileInput(event: any) {
     try {
       this.fileToUpload = event.target.files[0]
+      var mimeType = this.fileToUpload.type;
+
+      if (mimeType.match(/image\/*/) == null) {
+        this.photo_selected = false
+        this.imgURL = null
+        return;
+      }
+
+      var reader = new FileReader();
+      reader.readAsDataURL(this.fileToUpload);
+      reader.onload = (_event) => {
+        this.imgURL = reader.result;
+      }
+
       this.photo_selected = true
+
     } catch {
       this.photo_selected = false
+      this.imgURL = null
     }
   }
 
   createGroupOfObject() {
     if (!this.photo_selected) return
     const formData = new FormData()
-    formData.append("image", this.fileToUpload)
-    formData.append("marca", this.marca.value)
-    formData.append("modelo", this.modelo.value)
-    formData.append("nombre", this.name)
-    formData.append("tipo", this.type)
+    formData.append("image", this.fileToUpload);
+    const data = JSON.stringify({
+      "marca": this.marca.value,
+      "modelo": this.modelo.value,
+      "tipo": this.type,
+      "nombre": this.name
+    })
+    formData.append("marca", this.marca.value);
+    formData.append("modelo", this.modelo.value);
+    formData.append("nombre", this.name);
+    formData.append("tipo", this.type);
+    formData.append("body", data);
 
     this.groupOfObjectsS.addGroupOfObject(formData).subscribe(
-      (res: any) => { console.log(res) });
+      (res: any) => {
+
+        if (res == "The image could not be upload") {
+          this.photo_selected = false;
+          this.imgURL = null;
+          return;
+        } else {
+          console.log(res)
+        }
+      });
   }
 
 

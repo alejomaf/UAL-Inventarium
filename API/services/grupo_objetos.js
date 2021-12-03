@@ -18,16 +18,16 @@ async function getMultiple(req, page = 1) {
   }
 }
 
-async function create(grupoobjetos, userId, name_of_image) {
+async function create(grupoobjetos, name_of_image) {
   const result = await db.query(
     `INSERT INTO grupoobjetos
     (nombre, imagen, marca, modelo, tipo) 
     VALUES 
     (?, ?, ?, ?, ?)`,
     [
-      grupoobjetos.nombre,
-      name_of_image, grupoobjetos.marca, grupoobjetos.modelo,
-      grupoobjetos.tipo
+      grupoobjetos.nombre || "undefined",
+      name_of_image || "", grupoobjetos.marca || "", grupoobjetos.modelo || "",
+      grupoobjetos.tipo || -1
     ]
   );
 

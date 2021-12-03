@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const multer = require('multer');
 const group_of_objects = require('../services/grupo_objetos');
 const middleware = require('./middleware');
+const fs = require('fs');
 //const Resize = require('./resize');
 router.use(middleware.checkToken);
 
@@ -39,27 +39,62 @@ router.get('/type/:id', async function (req, res, next) {
   }
 });
 
-var Storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'images/group_of_objects')
-  },
-  filename: function (req, file, cb) {
-    cb(null, time + '.jpg')
+const isFileValid = (file) => {
+  const type = file.type.split("/").pop();
+  const validTypes = ["jpg", "jpeg", "png"];
+  if (validTypes.indexOf(type) === -1) {
+    return false;
   }
-})
-var upload = multer({ storage: Storage }).array('image', 1)
-var time;
+  return true;
+};
 
 router.post('/', async function (req, res, next) {
   try {
     time = Date.now();
-    upload(req, res, err => {
-      if (err) {
-        res.send('The image could not be upload');
-      } else {
-        res.json(group_of_objects.create(req.body, req.userId, time));
+
+    files = req.files
+
+    // Check if multiple files or a single file
+    if (!files.length) {
+      //Single file
+      const file = files.image;
+      // checks if the file is valid
+      const isValid = isFileValid(file);
+      // creates a valid name by removing spaces
+      const fileName = time;
+
+      if (!isValid) {
+        // throes error if file isn't valid
+        return res.status(400).json({
+          status: "Fail",
+          message: "The file type is not a valid type",
+        });
       }
-    });
+      const uploadFolder = path.join(__dirname, "..", "images", "group_of_objects");
+      try {
+        // renames the file in the directory
+        fs.renameSync(file.path, path.join(uploadFolder, fileName));
+      } catch (error) {
+        console.log(error);
+      }
+
+      try {
+        // stores the fileName in the database
+        const newFile = await File.create({
+          name: `images/group_of_objects/${fileName}`,
+        });
+      } catch (error) {
+        res.json({
+          error,
+        });
+        return;
+      }
+    } else return;
+
+    //Consulta post en la base de datos
+    res.json(await group_of_objects.create(req.fields, time));
+
+
   } catch (err) {
     console.error(`Error while creating group of objects`, err.message);
     next(err);
