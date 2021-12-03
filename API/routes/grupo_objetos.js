@@ -61,7 +61,7 @@ router.post('/', async function (req, res, next) {
       // checks if the file is valid
       const isValid = isFileValid(file);
       // creates a valid name by removing spaces
-      const fileName = time;
+      const fileName = time + ".jpg";
 
       if (!isValid) {
         // throes error if file isn't valid
@@ -78,17 +78,6 @@ router.post('/', async function (req, res, next) {
         console.log(error);
       }
 
-      try {
-        // stores the fileName in the database
-        const newFile = await File.create({
-          name: `images/group_of_objects/${fileName}`,
-        });
-      } catch (error) {
-        res.json({
-          error,
-        });
-        return;
-      }
     } else return;
 
     //Consulta post en la base de datos

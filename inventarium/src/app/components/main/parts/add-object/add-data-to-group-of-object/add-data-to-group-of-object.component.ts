@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faArchive, faBolt, faCube } from '@fortawesome/free-solid-svg-icons';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 
@@ -16,7 +16,7 @@ export class AddDataToGroupOfObjectComponent implements OnInit {
   name = ""
   fileToUpload: any;
 
-  constructor(private route: ActivatedRoute, private groupOfObjectsS: GroupOfObjectsService) {
+  constructor(private route: ActivatedRoute, private groupOfObjectsS: GroupOfObjectsService, private router: Router) {
     this.type = route.snapshot.params['type']
     this.name = route.snapshot.params['name']
   }
@@ -82,7 +82,7 @@ export class AddDataToGroupOfObjectComponent implements OnInit {
           this.imgURL = null;
           return;
         } else {
-          console.log(res)
+          this.router.navigateByUrl('/add-object/create/' + res.id);
         }
       });
   }

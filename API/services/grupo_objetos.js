@@ -34,10 +34,11 @@ async function create(grupoobjetos, name_of_image) {
   let message = 'Error in creating grupoobjetos';
 
   if (result.affectedRows) {
-    message = 'grupoobjetos created successfully';
+    message = 'grupoobjetos created successfully ';
+    id = result.insertId;
   }
 
-  return { message };
+  return { message, id };
 }
 
 async function update(id, grupoobjetos, imagen) {
