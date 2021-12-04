@@ -12,9 +12,9 @@ services:
       - default
     environment:
       MYSQL_DATABASE: ualinventarium
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-      MYSQL_ROOT_PASSWORD: user
+      MYSQL_USER: ualinventarium
+      MYSQL_PASSWORD: 21$uS3rP4ssM0Ord20D1f1CIL3
+      MYSQL_ROOT_PASSWORD: 21$rO0trP4ssM0Ord20D1f1CIL3
   phpmyadmin:
     container_name: inventarium_php_adm
     image: phpmyadmin:5.1
