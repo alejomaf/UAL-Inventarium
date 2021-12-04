@@ -1,6 +1,7 @@
 const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
+const tools = require('../services/utilidades');
 
 async function getMultiple(idGrupoObjetos, page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
@@ -37,22 +38,23 @@ async function getMultipleByLocation(Ubicacion_idUbicacion, page = 1) {
 }
 
 
-async function create(objeto) {
+async function create(objeto, idGrupoObjeto) {
   const result = await db.query(
     `INSERT INTO objeto
-    (mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, eliminado, fechaAdquisicion, observacione, organizativa, etiqueta, Ubicacion_idUbicacion) 
+    (mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, eliminado, fechaAdquisicion, observaciones, organizativa, etiqueta, Ubicacion_idUbicacion) 
     VALUES 
-    (?, ?, ?, ?, ?, ?, ?)`,
+    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
     [
-      objeto.mejorasEquipo, objeto.codigo,
-      objeto.disponible, objeto.GrupoObjetos_idGrupoObjetos,
-      objeto.eliminado, objeto.fechaAdquisicion, objeto.observaciones, objeto.organizativa, objeto.etiqueta, objeto.Ubicacion_idUbicacion
+      objeto.mejorasEquipo || "", objeto.codigo || 0,
+      objeto.disponible || 0, idGrupoObjeto,
+      objeto.eliminado || 0, objeto.fechaAdquisicion || null, objeto.observaciones || "", objeto.organizativa || 0, objeto.etiqueta || "", objeto.Ubicacion_idUbicacion
     ]
   );
 
   let message = 'Error in creating objetos';
 
   if (result.affectedRows) {
+    await tools.addObjectRoutine(idGrupoObjeto);
     message = 'objeto created successfully';
   }
 
@@ -65,7 +67,7 @@ async function update(id, objeto) {
   SET mejoraEquipo=?, codigo=?, disponible=?, eliminado=?, fechaAdquisicion=?, observaciones=?, organizativa=?, etiqueta=?, Ubicacion_idUbicacion=?
   WHERE idObjeto=?`,
     [
-      objeto.mejorasEquipo, objeto.codigo, objeto.disponible, objeto.eliminado, objeto.fechaAdquisicion, 
+      objeto.mejorasEquipo, objeto.codigo, objeto.disponible, objeto.eliminado, objeto.fechaAdquisicion,
       objeto.observaciones, objeto.organizativa, objeto.etiqueta, objeto.Ubicacion_idUbicacion, id
     ]
   );
@@ -79,15 +81,15 @@ async function update(id, objeto) {
   return { message };
 }
 
-async function remove(id) {
+async function remove(idObjeto) {
   const result = await db.query(
-    `DELETE FROM objeto WHERE idObjeto=?`,
-    [id]
+    `UPDATE objeto SET eliminado = 1 WHERE idObjeto =` + idObjeto
   );
 
   let message = 'Error in deleting objeto';
 
   if (result.affectedRows) {
+    await tools.deleteObjectRoutine(idObjeto);
     message = 'objeto deleted successfully';
   }
 
@@ -105,6 +107,10 @@ async function getById(idObjeto) {
   return {
     data
   }
+}
+
+async function lendObject() {
+  const rows = await db.query('UPDATE objeto SET obj')
 }
 
 

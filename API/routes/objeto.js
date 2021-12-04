@@ -6,7 +6,7 @@ router.use(middleware.checkToken);
 
 
 /* GET objeto. */
-router.get('/:id', async function(req, res, next) {
+router.get('/:id', async function (req, res, next) {
   try {
     res.json(await objeto.getMultiple(req.params.id, req.query.page));
   } catch (err) {
@@ -15,7 +15,7 @@ router.get('/:id', async function(req, res, next) {
   }
 });
 
-router.get('/id/:id', async function(req, res, next) {
+router.get('/id/:id', async function (req, res, next) {
   try {
     res.json(await objeto.getById(req.params.id, req.query.page));
   } catch (err) {
@@ -24,7 +24,7 @@ router.get('/id/:id', async function(req, res, next) {
   }
 });
 
-router.get('/location-id/:id', async function(req, res, next) {
+router.get('/location-id/:id', async function (req, res, next) {
   try {
     res.json(await objeto.getMultipleByLocation(req.params.id, req.query.page));
   } catch (err) {
@@ -33,29 +33,29 @@ router.get('/location-id/:id', async function(req, res, next) {
   }
 });
 
-router.post('/', async function(req, res, next) {
+router.post('/:id', async function (req, res, next) {
   try {
-    res.json(await objeto.create(req.body));
+    res.json(await objeto.create(req.fields, req.params.id));
   } catch (err) {
-    console.error(`Error while creating book`, err.message);
+    console.error(`Error while creating object`, err.message);
     next(err);
   }
 });
 
-router.put('/:id', async function(req, res, next) {
+router.put('/:id', async function (req, res, next) {
   try {
     res.json(await objeto.update(req.params.id, req.body));
   } catch (err) {
-    console.error(`Error while updating book`, err.message);
+    console.error(`Error while updating object`, err.message);
     next(err);
   }
 });
 
-router.delete('/:id', async function(req, res, next) {
+router.delete('/:id', async function (req, res, next) {
   try {
     res.json(await objeto.remove(req.params.id));
   } catch (err) {
-    console.error(`Error while deleting book`, err.message);
+    console.error(`Error while deleting object`, err.message);
     next(err);
   }
 });
