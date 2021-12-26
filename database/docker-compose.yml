@@ -11,7 +11,7 @@ services:
     networks:
       - default
     environment:
-      MYSQL_DATABASE: ualinventarium
+      MYSQL_ºDATABASE: ualinventarium
       MYSQL_USER: ualinventarium
       MYSQL_PASSWORD: 21$uS3rP4ssM0Ord20D1f1CIL3
       MYSQL_ROOT_PASSWORD: 21$rO0trP4ssM0Ord20D1f1CIL3
