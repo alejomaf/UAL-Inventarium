@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  26 DEC 2021 18:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  26 DEC 2021 18:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -25,15 +25,15 @@ Package: tocbasic 2019/02/01 v3.26b KOMA-Script package (handling toc-files)
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 136.
-Package scrbook Info: You've used standard option `11pt'.
+Package scrbook Info: You've used standard option `12pt'.
 (scrbook)             This is correct!
-(scrbook)             Internally I'm using `fontsize=11pt'.
+(scrbook)             Internally I'm using `fontsize=12pt'.
 (scrbook)             If you'd like to set the option with \KOMAoptions,
-(scrbook)             you'd have to use `fontsize=11pt' there
-(scrbook)             instead of `11pt', too.
-Class scrbook Info: File `scrsize11pt.clo' used to setup font sizes on input line 2376.
- (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
-File: scrsize11pt.clo 2019/02/01 v3.26b KOMA-Script font size class option (11pt)
+(scrbook)             you'd have to use `fontsize=12pt' there
+(scrbook)             instead of `12pt', too.
+Class scrbook Info: File `scrsize12pt.clo' used to setup font sizes on input line 2376.
+ (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrsize12pt.clo
+File: scrsize12pt.clo 2019/02/01 v3.26b KOMA-Script font size class option (12pt)
 ) (/usr/share/texlive/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2019/02/01 v3.26b KOMA-Script package (type area)
 \ta@bcor=\skip42
@@ -49,21 +49,21 @@ Package typearea Info: You've used standard option `a4paper'.
 \ta@temp=\skip45
 \footheight=\skip46
 Package typearea Info: These are the values describing the layout:
-(typearea)             DIV  = 10
+(typearea)             DIV  = 12
 (typearea)             BCOR = 0.0pt
 (typearea)             \paperwidth      = 597.50793pt
-(typearea)              \textwidth      = 418.25555pt
+(typearea)              \textwidth      = 448.13095pt
 (typearea)              DIV departure   = -6%
-(typearea)              \evensidemargin = 47.2316pt
-(typearea)              \oddsidemargin  = -12.5192pt
+(typearea)              \evensidemargin = 27.31467pt
+(typearea)              \oddsidemargin  = -22.47766pt
 (typearea)             \paperheight     = 845.04694pt
-(typearea)              \textheight     = 595.80026pt
-(typearea)              \topmargin      = -25.16531pt
-(typearea)              \headheight     = 17.0pt
-(typearea)              \headsep        = 20.40001pt
-(typearea)              \topskip        = 11.0pt
-(typearea)              \footskip       = 47.6pt
-(typearea)              \baselineskip   = 13.6pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
+(typearea)              \headheight     = 18.125pt
+(typearea)              \headsep        = 21.75pt
+(typearea)              \topskip        = 12.0pt
+(typearea)              \footskip       = 50.75pt
+(typearea)              \baselineskip   = 14.5pt
 (typearea)              on input line 1715.
 )
 \c@part=\count81
@@ -422,7 +422,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--15
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 15.
+(Font)              <12> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 15.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -436,12 +436,9 @@ LaTeX Font Info:    Try loading font information for OMS+cmr on input line 22.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
- [2]) (./capitulos/estructura_y_desarrollo.tex [3] [4
-
-
-]
+ [2] [3]) (./capitulos/estructura_y_desarrollo.tex [4]
 chapter 2.
 <imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png, id=19, 1441.385pt x 427.5975pt>
 File: imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png Graphic file (type png)
@@ -449,7 +446,7 @@ File: imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png Graphi
 Package pdftex.def Info: imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png  used on input line 5.
 (pdftex.def)             Requested size: 1441.38148pt x 427.59645pt.
 )
-Overfull \hbox (1034.07596pt too wide) in paragraph at lines 5--16
+Overfull \hbox (1005.00041pt too wide) in paragraph at lines 5--16
 [][]
  []
 
@@ -458,22 +455,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--16
 
  []
 
-(/home/alejomaf/Inventarium/documentacion/build/main.bbl [5 <./imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png>] [6
+(/home/alejomaf/Inventarium/documentacion/build/main.bbl [5
+
+
+ <./imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png>] [6
 
 
 ]
 chapter without number
 ) [7] (/home/alejomaf/Inventarium/documentacion/build/main.aux) ) 
 Here is how much of TeX's memory you used:
- 15861 strings out of 492615
- 324620 string characters out of 6131389
- 493928 words of memory out of 5000000
+ 15863 strings out of 492615
+ 324604 string characters out of 6131389
+ 493942 words of memory out of 5000000
  19691 multiletter control sequences out of 15000+600000
  537425 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,19n,77p,9208b,441s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/alejomaf/Inventarium/documentacion/build/main.pdf (7 pages, 320750 bytes).
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on /home/alejomaf/Inventarium/documentacion/build/main.pdf (7 pages, 315364 bytes).
 PDF statistics:
  55 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
