@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  27 DEC 2021 01:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  27 DEC 2021 15:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -740,51 +740,85 @@ chapter 2.
 [5
 
 
-] [6]) (./capitulos/desarrollo_fases_proyecto/desarrollo_fases_proyecto.tex
-Underfull \hbox (badness 10000) in paragraph at lines 76--1
+] [6] [7]) (./capitulos/desarrollo_fases_proyecto/desarrollo_fases_proyecto.tex
+Underfull \hbox (badness 10000) in paragraph at lines 81--1
 
  []
 
-[7] [8]
+[8]
 chapter 3.
-(./capitulos/desarrollo_fases_proyecto/1_reuniones_iniciales.tex) (./capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex) (./capitulos/desarrollo_fases_proyecto/3_preparacion_entorno_trabajo.tex) (./capitulos/desarrollo_fases_proyecto/4_construccion_aplicacion.tex) (./capitulos/desarrollo_fases_proyecto/5_testeo.tex)
-<imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png, id=39, 1441.385pt x 427.5975pt>
-File: imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png Graphic file (type png)
-<use imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png  used on input line 12.
-(pdftex.def)             Requested size: 1441.38148pt x 427.59645pt.
-)
-Overfull \hbox (1177.4483pt too wide) in paragraph at lines 11--16
-[]\OT1/cmr/m/n/10.95 El proyecto se di-vide en varias eta-pas. []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 11--16
+(./capitulos/desarrollo_fases_proyecto/1_reuniones_iniciales.tex
+Underfull \hbox (badness 10000) in paragraph at lines 3--9
 
  []
 
-(/home/alejomaf/Inventarium/documentacion/build/main.bbl [9
+<imagenes/estructura_y_desarrollo/db_old_design.png, id=39, 1055.945pt x 579.16376pt>
+File: imagenes/estructura_y_desarrollo/db_old_design.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo/db_old_design.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo/db_old_design.png  used on input line 13.
+(pdftex.def)             Requested size: 1055.94243pt x 579.16234pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 17--24
 
- <./imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png>] [10
+ []
+
+[9
 
 
 ]
+<imagenes/estructura_y_desarrollo/flujo_de_navegacion.png, id=43, 1559.8275pt x 653.44125pt>
+File: imagenes/estructura_y_desarrollo/flujo_de_navegacion.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo/flujo_de_navegacion.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo/flujo_de_navegacion.png  used on input line 28.
+(pdftex.def)             Requested size: 1559.82372pt x 653.43965pt.
+<imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png, id=45, 361.35pt x 642.4pt>
+File: imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png  used on input line 38.
+(pdftex.def)             Requested size: 180.67456pt x 321.19922pt.
+<imagenes/estructura_y_desarrollo/web_design_adobe_xd/registro.png, id=46, 361.35pt x 969.6225pt>
+File: imagenes/estructura_y_desarrollo/web_design_adobe_xd/registro.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo/web_design_adobe_xd/registro.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo/web_design_adobe_xd/registro.png  used on input line 39.
+(pdftex.def)             Requested size: 144.53743pt x 387.84213pt.
+ [10 <./imagenes/estructura_y_desarrollo/db_old_design.png>] [11 <./imagenes/estructura_y_desarrollo/flujo_de_navegacion.png> <./imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png> <./imagenes/estructura_y_desarrollo/web_design_adobe_xd/registro.png>]
+<imagenes/estructura_y_desarrollo/web_design_adobe_xd/menu_principal.png, id=56, 361.35pt x 642.4pt>
+File: imagenes/estructura_y_desarrollo/web_design_adobe_xd/menu_principal.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo/web_design_adobe_xd/menu_principal.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo/web_design_adobe_xd/menu_principal.png  used on input line 63.
+(pdftex.def)             Requested size: 180.67456pt x 321.19922pt.
+<imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_fungible.png, id=57, 361.35pt x 1041.8925pt>
+File: imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_fungible.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_fungible.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_fungible.png  used on input line 81.
+(pdftex.def)             Requested size: 180.67456pt x 520.94498pt.
+<imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_inventario.png, id=58, 361.35pt x 1367.1075pt>
+File: imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_inventario.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_inventario.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_inventario.png  used on input line 82.
+(pdftex.def)             Requested size: 144.53743pt x 546.83331pt.
+) (./capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex) (./capitulos/desarrollo_fases_proyecto/3_preparacion_entorno_trabajo.tex) (./capitulos/desarrollo_fases_proyecto/4_construccion_aplicacion.tex) (./capitulos/desarrollo_fases_proyecto/5_testeo.tex)) (/home/alejomaf/Inventarium/documentacion/build/main.bbl
+Underfull \vbox (badness 1603) has occurred while \output is active []
+
+ [12 <./imagenes/estructura_y_desarrollo/web_design_adobe_xd/menu_principal.png>] [13 <./imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_fungible.png> <./imagenes/estructura_y_desarrollo/web_design_adobe_xd/add_inventario.png>] [14]
 chapter without number
-) [11] (/home/alejomaf/Inventarium/documentacion/build/main.aux) ) 
+) [15
+
+
+] (/home/alejomaf/Inventarium/documentacion/build/main.aux) ) 
 Here is how much of TeX's memory you used:
- 28806 strings out of 492615
- 610058 string characters out of 6131389
- 776302 words of memory out of 5000000
- 32346 multiletter control sequences out of 15000+600000
+ 28838 strings out of 492615
+ 611887 string characters out of 6131389
+ 776303 words of memory out of 5000000
+ 32370 multiletter control sequences out of 15000+600000
  538957 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,20n,80p,9208b,874s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/alejomaf/Inventarium/documentacion/build/main.pdf (11 pages, 389519 bytes).
+Output written on /home/alejomaf/Inventarium/documentacion/build/main.pdf (15 pages, 352363 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 110 PDF objects out of 1000 (max. 8388607)
+ 69 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 
