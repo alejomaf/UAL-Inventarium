@@ -65,7 +65,7 @@ La barra de navegación vertical tuvo una pequeña modificación que era incorpo
     \end{center}
 \end{figure}
 
-Dentro de ella podemos ver cinco apartados que derivan en cinco??? componentes visuales:
+Dentro de ella podemos ver cinco apartados que derivan en varios componentes visuales:
 
 \begin{itemize}
     \item Añadir objeto: un acceso rápido donde poder añadir objetos dentro de grupos de objetos. Sección de menú solo visible para los técnicos.
@@ -76,6 +76,7 @@ Dentro de ella podemos ver cinco apartados que derivan en cinco??? componentes v
 \end{itemize}
 
 \subsection{Añadir objeto}
+
 \begin{figure}
     \begin{center}
         \includegraphics[scale=0.5]{web_design_adobe_xd/add_fungible.png}
@@ -84,3 +85,25 @@ Dentro de ella podemos ver cinco apartados que derivan en cinco??? componentes v
     \end{center}
 \end{figure}
 
+La única diferencia entre añadir un objeto de tipo inventario y otro fungible es que en el de inventario hay que registrar su código. Siempre que vayamos a añadir uno de estos elementos tiene que ser dentro de un \textbf{grupo de objetos} que debemos haber creado anteriormente. Por el resto son los dos idénticos y se le puede añadir el mismo tipo de información.
+\\No solamente tenemos fungibles e inventarios sino que también tenemos kits.
+\\Un \textbf{kit} podemos considerarlo como otro nivel de agrupación. Ya que un kit contiene más objetos dentro suyo que llamaremos ``objetos kit''. Para entender los niveles de agrupación aquí tenéis un esquema explicándolas.
+
+\begin{figure}\resizebox{
+    \linewidth}{!}{
+    \includegraphics{jerarquia_grupo_objetos.png}
+    }
+    \caption{Jerarquía de elementos que derivan de grupo de objetos}
+\end{figure}
+
+\subsection{Grupo de objetos y objetos}
+
+Dentro de la sección de ``ver objetos'' dentro de la barra de navegación esta nos llevará a la visualización de los grupos de objetos de la aplicación. Dentro de las cuales contendrán objetos. Estos dos conjuntos se pueden modificar y además se pueden pedir solicitudes para los objetos.
+
+\begin{figure}
+    \begin{center}
+        \includegraphics[scale=0.4]{web_design_adobe_xd/grupo_objetos.png}
+        \includegraphics[scale=0.4]{web_design_adobe_xd/objeto_disponible.png}
+        \caption{Grupo de objetos a la izquierda y objetos que contiene a la derecha}
+    \end{center}
+\end{figure}
