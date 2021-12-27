@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex build/main"] 1640561715 "build/main.aux" "build/main.bbl" "build/main" 1640561717
+["bibtex build/main"] 1640567637 "build/main.aux" "build/main.bbl" "build/main" 1640567681
   "/usr/share/texlive/texmf-dist/bibtex/bst/apacite/apacite.bst" 1480098433 141073 9d7b79dbf9d91133318126032cff8c27 ""
   "bibliografia/bibliografia.bib" 1638647150 1008 5668dead2ea6616876e8fe5d90252397 ""
-  "build/main.aux" 1640561717 2530 f194ccb646b09a0d22866ef5cd91f0c5 ""
+  "build/main.aux" 1640567681 4619 8f05f11dea95748c5d860674c0409b87 ""
   (generated)
-  "build/main.bbl"
   "build/main.blg"
-["pdflatex"] 1640561716 "/home/alejomaf/Inventarium/documentacion/main.tex" "/home/alejomaf/Inventarium/documentacion/build/main.pdf" "main" 1640561717
+  "build/main.bbl"
+["pdflatex"] 1640567679 "/home/alejomaf/Inventarium/documentacion/main.tex" "/home/alejomaf/Inventarium/documentacion/build/main.pdf" "main" 1640567681
   "/dev/null" 1640429308 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1640427653 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/alejomaf/Inventarium/documentacion/build/main.aux" 1640561717 2530 f194ccb646b09a0d22866ef5cd91f0c5 ""
-  "/home/alejomaf/Inventarium/documentacion/main.tex" 1640543893 414 a635115aa413efc9174b736bb4af64b6 ""
+  "/home/alejomaf/Inventarium/documentacion/build/main.aux" 1640567681 4619 8f05f11dea95748c5d860674c0409b87 ""
+  "/home/alejomaf/Inventarium/documentacion/main.tex" 1640562225 460 628943e310cd3b2444e15bfa55773c04 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1136768653 1332 1fde11373e221473104d6cc5993f046e ""
@@ -163,17 +163,18 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1551493644 34566 ab5be96bde1a5acfd4f881dbe566b5fb ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1640430737 3236060 fd056e42459c13cbcb0cc6e0a7cae8d4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1640430760 4225228 a199ad2802c36164124d6b92a45a0ce5 ""
-  "build/main.aux" 1640561717 2530 f194ccb646b09a0d22866ef5cd91f0c5 ""
-  "build/main.bbl" 1640561716 1287 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main"
+  "build/main.aux" 1640567681 4619 8f05f11dea95748c5d860674c0409b87 ""
+  "build/main.bbl" 1640567637 1287 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main"
   "capitulos/estructura_y_desarrollo.tex" 1638647150 187 e35cc28ddd9219cab6c6e17280188d71 ""
-  "capitulos/introduccion.tex" 1640561087 9536 5204faba988fa56a6ba80c23009e84e1 ""
+  "capitulos/herramientas_utilizadas.tex" 1640567679 10211 8622cf494cd328d918d0a086071fcabb ""
+  "capitulos/introduccion.tex" 1640561811 9535 b853c52e1770c168c644e0e6059e3286 ""
   "diagramas/cronograma_inicial.tex" 1640561713 2213 eb2230838c150cd03eff0d29195b15fd ""
   "imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png" 1638647150 579834 fd4fa472745ec8b4211900184d89a4de ""
   "include/config.tex" 1640560964 572 3ef5c9bfa77cf8825405b466d51e31c1 ""
-  "main.tex" 1640543893 414 a635115aa413efc9174b736bb4af64b6 ""
+  "main.tex" 1640562225 460 628943e310cd3b2444e15bfa55773c04 ""
   (generated)
-  "/home/alejomaf/Inventarium/documentacion/build/main.pdf"
   "/home/alejomaf/Inventarium/documentacion/build/main.log"
-  "build/main.pdf"
   "build/main.aux"
   "build/main.log"
+  "build/main.pdf"
+  "/home/alejomaf/Inventarium/documentacion/build/main.pdf"

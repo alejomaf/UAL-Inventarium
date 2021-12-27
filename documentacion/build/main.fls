@@ -250,6 +250,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
+INPUT capitulos/herramientas_utilizadas.tex
+INPUT capitulos/herramientas_utilizadas.tex
 INPUT capitulos/estructura_y_desarrollo.tex
 INPUT capitulos/estructura_y_desarrollo.tex
 INPUT imagenes/estructura_y_desarrollo/gestionando_tiempo_actividades.png
