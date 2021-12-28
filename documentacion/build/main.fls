@@ -194,6 +194,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/float.hak
+INPUT /usr/share/texlive/texmf-dist/tex/latex/koma-script/float.hak
 INPUT /usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
@@ -268,6 +272,9 @@ INPUT ./imagenes/estructura_y_desarrollo/db_old_design.png
 INPUT imagenes/estructura_y_desarrollo/flujo_de_navegacion.png
 INPUT ./imagenes/estructura_y_desarrollo/flujo_de_navegacion.png
 INPUT ./imagenes/estructura_y_desarrollo/flujo_de_navegacion.png
+INPUT imagenes/estructura_y_desarrollo/../../diagramas/visual_paradigm/funcionamiento_principal.jpg
+INPUT ./imagenes/estructura_y_desarrollo/../../diagramas/visual_paradigm/funcionamiento_principal.jpg
+INPUT ./imagenes/estructura_y_desarrollo/../../diagramas/visual_paradigm/funcionamiento_principal.jpg
 INPUT imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png
 INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png
 INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/inicio_de_sesion.png
@@ -298,6 +305,15 @@ INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/usuarios_buscados.p
 INPUT imagenes/estructura_y_desarrollo/web_design_adobe_xd/usuario.png
 INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/usuario.png
 INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/usuario.png
+INPUT imagenes/estructura_y_desarrollo/web_design_adobe_xd/solicitar_prestamo.png
+INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/solicitar_prestamo.png
+INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/solicitar_prestamo.png
+INPUT imagenes/estructura_y_desarrollo/web_design_adobe_xd/ver_configuracion.png
+INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/ver_configuracion.png
+INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/ver_configuracion.png
+INPUT imagenes/estructura_y_desarrollo/web_design_adobe_xd/crear_configuracion.png
+INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/crear_configuracion.png
+INPUT ./imagenes/estructura_y_desarrollo/web_design_adobe_xd/crear_configuracion.png
 INPUT capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex
 INPUT capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex
 INPUT capitulos/desarrollo_fases_proyecto/3_preparacion_entorno_trabajo.tex
