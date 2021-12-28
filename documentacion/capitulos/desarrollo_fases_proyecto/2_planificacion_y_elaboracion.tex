@@ -1,1 +1,49 @@
 \section{Planificación y elaboración del desarrollo del proyecto}
+
+Esta sección implica dos apartados de relevante importancia que es de la forma en que la subdividiremos. Por una parte tenemos:
+
+\subsection{Redacción del proyecto}
+
+Para la redacción del proyecto como he explicado anteriormente se está utilizando la herramienta LaTeX. Esta serie de archivos viene incorporado al repositorio principal del proyecto dentro de una carpeta llamada documentación.
+\\Nuestra carpeta de documentación a la vez está subdividida en varios apartados:
+
+\subsubsection{Build}
+Carpeta que viene por defecto incorporada dentro de la ``compilación'' del proyecto que realiza LaTeX. Dentro de ella se genera nuestro documento PDF que gracias a Visual Studio Code se va generando cada vez que se guarda un archivo del proyecto que vaya ligado o afecte al main.tex
+
+\subsubsection{Bibliografía}
+En este apartado añadimos la bibliografía utilizada durante la realización del proyecto.
+
+\subsubsection{Capítulos}
+Dentro de esta carpeta guardaremos cada uno de los capitulos del documento. En el caso de que un capítulo presente apartados demasiados extensos generamos una carpeta con el nombre del capítulo y metemos las secciones dentro de este. Gracias a hacer esto la modificación de cada zona del documento se hace de una forma mucho más cómoda.
+
+\subsubsection{Diagramas}
+Aquí almacenamos los diagramas del proyecto. Estos pueden estar en archivos de imágenes aunque también pueden estar generados mediante LaTeX. Debido a la unicidad que presentan los diagramas estos no están separados en diferentes carpetas por capítulos tengamos.
+
+\subsubsection{Imágenes}
+Como su propio nombre indica almacenamos las imágenes del proyecto. Estas generalmente están divididas por carpetas con el nombre de los capítulos. En el caso de que sea demasiado extensa también se contempla la posibilidad de realizar el almacenaje mediante secciones.
+
+\subsubsection{Include}
+Aquí añadiremos los archivos que generen inclusiones dentro de nuestro documento. Dependiendo de para qué sean estos añadidos irán con unas determinadas agrupaciones u otras.
+
+\subsubsection{main.tex}
+Esto no es un directorio pero es un archivo de relevancia. Su contenido es escaso debido a la generalización que presentamos en nuestra disposición de la documentación. Dentro de él nos podemos encontrar las inclusiones al principio del documento. La adición del índice, los capítulos y de la bibliografía al final de la página. Es el archivo que utiliza LaTeX para generar nuestro documento PDF.
+
+
+\subsection{Elaboración del desarrollo del proyecto}
+
+Esta sección consiste en la explicación y descomposición de pasos que vamos a hacer para la elaboración de nuestra aplicación. Una vez hemos hecho la lógica de la aplicación, su dominio y sus casos de uso procederemos a la maquetación de nuestra aplicación:
+
+\subsubsection{Generación de la base de datos}
+
+Generaremos nuestra base de datos, para ello utilizaremos MariaDB para el despliegue de esta. 
+
+\subsubsection{Construcción de la Interfaz de Programación de Aplicaciones (API)}
+La creación de nuestra API hay que hacerla de forma muy cuidadosa, ya que tiene que incorporar todas nuestras reglas de negocio y cualquier paso adicional que haya que añadir en cada una de las peticiones. Estos pueden consistir en que cuando un objeto es creado hay que sumar una unidad dentro del campo de ``objetos'' y ``objetosDisponibles'' de su respectivo grupo de objetos.
+
+\subsubsection{Construcción de la aplicación}
+Detallaremos cada uno de los pasos más adelante debido a que la construcción de esta depende en pequeña medida al framework utilizado que en este caso es Angular. En todo caso el orden de creación de ficheros sería:
+\begin{enumerate}
+    \item Creación de interfaces
+    \item Creación de servicios
+    \item Creación de componentes visuales
+\end{enumerate}
