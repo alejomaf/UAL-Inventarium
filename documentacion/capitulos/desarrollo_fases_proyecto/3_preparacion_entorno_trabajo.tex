@@ -43,3 +43,103 @@ Hoy en día lo nuevo y a lo que nos dirigimos es la nube. Dentro de ella se pret
 \\Estas ventajas expuesta son las que personalmente me favorecen a mí, pero ¿y si trabajara con un equipo? El poder tener varios compañeros de un mismo equipo trabajando en el mismo proyecto, tocando los distintos componentes que se están desarrollando dentro de tu aplicación es fantástico.
 
 \subsubsection{Crear una máquina virtual en Google Cloud}
+Los pasos para la creación de una máquina virtual son sencillos:
+
+\begin{enumerate}
+    \item Los pasos para el registro son fáciles de realizar al ser la herramienta propiedad de Google. Omitiremos este paso.
+    \item Google Cloud se organiza mediante proyectos. Esto brinda facilidades a la hora de calcular el consumo que vamos a tener por el uso de la computación en la nube. Aparte de poder facilitar la búsqueda por cada proyecto que tengamos activo. Procederemos a crear un nuevo proyecto clicando arriba a la izquierda a la derecha del título de la página y posteriormente clicamos en nuevo proyecto.
+    \item Luego desplegaremos la barra lateral de la izquierda y nos dirigiremos al apartado de Compute Engine.
+    \item Clicamos en crear instancia. A la hora de rellenar los parámetros he comprobado que no hay que darle demasiada importancia a la zona o región donde se ubique nuestra máquina. Esta funciona a una velocidad bastante decente. En el apartado de configuración de máquina con 2GB de RAM y 1VCPU tendremos suficiente. El tamaño del disco eligiremos que sea de 20GB. Dentro de la sección Firewall habilitaremos el tráfico HTTP y HTTPS. Y pulsamos en crear.
+    \item Después de haber creado la máquina le asignaremos una IP estática pública que la usaremos para conectarnos a ella mediante SSH.
+    \item En el momento de haber creado la máquina esta nos ha dado una clave privada SSH para poder conectarnos a ella. La guardaremos.
+\end{enumerate}
+
+\subsubsection{Configurar claves SSH}
+
+Teniendo ya la clave privada SSH de nuestra máquina virtual la utilizaremos para realizar la conexión a nuestra máquina. Pero para ello tenemos que configurarla. Accederemos al fichero usuario/.ssh/config y añadiremos tres nuevas líneas:
+\begin{verbatim}
+    Host "Aquí añadimos la dirección IP"
+    HostName "Aquí ponemos el nombre del host"
+    User "Aquí ponemos nuestro nombre de usuario"
+\end{verbatim}
+Lo último que nos queda es realizar la conexión mediante SSH a la máquina por Visual Studio Code.
+
+\subsubsection{Realizar conexión SSH mediante Visual Studio Code}
+Dentro del apartado de extensiones de Visual Studio Code buscaremos los siguientes plugins para instalar:
+
+\begin{itemize}
+    \item Remote - SSH
+    \item Remote - SSH: Editing Configuration Files
+\end{itemize}
+
+Luego de la instalación de estas dos extensiones procederemos a realizar la conexión. Abajo a la izquierda nos aparecerá la opción de poder conectarnos mediante SSH. Clicamos y luego pulsamos en ``Connect to Host'' añadiendo la dirección IP estática pública que nos dio Google Cloud.
+\\Ya tenemos la masa de nuestro entorno hecha, solo hace falta darle un poco de forma y calor para poder finalizarlo.
+
+\subsection{Instalación de las extensiones de Visual Studio Code dentro de nuestra MV}
+
+Esta es la lista de componentes con la que trabajaremos en todas las fases del proyecto. Accederemos a las extensiones dentro de Visual Studio Code y procedemos a instalarlas dentro de nuestra máquina virtual.
+
+\begin{itemize}
+    \item Docker
+    \item LaTeX
+    \item LaTeX Workshop
+\end{itemize}
+
+Los complementos de Latex nos ayudarán más tarde con la redacción del Trabajo de Fin de Grado.
+\\En nuestro Visual Studio Code también instalaremos:
+
+\begin{itemize}
+    \item Bootstrap 4 snippets
+    \item HTML snippets
+    \item CSS snippets
+\end{itemize}
+
+\subsection{Configuración de nuestra máquina virtual}
+
+Desde Visual Studio Code accederemos a la terminal de nuestra máquina virtual. Pinchamos en ``Ver'' en la sección superior y luego en Terminal. Desde ahí controlaremos a la máquina.
+
+\subsubsection{Actualización del sistema}
+Actualizaremos el sistema para evitar posibles fallos en un futuro:
+\begin{verbatim}
+    sudo apt-get update
+    sudo apt-get upgrade
+\end{verbatim}
+
+\subsubsection{Instalación de Node JS}
+\begin{verbatim}
+    sudo apt install nodejs
+\end{verbatim}
+
+\subsubsection{Instalación de Angular 12}
+\begin{verbatim}
+    sudo npm install npm@latest -g
+    sudo npm install -g @angular/cli
+\end{verbatim}
+
+\subsubsection{Instalación de Docker y Docker Compose}
+\begin{verbatim}
+    \\Instalacion de Docker
+
+    sudo apt install apt-transport-https ca-certificates curl software-properties-common
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+    sudo apt install docker-ce
+
+    \\Instalacion de Docker Compose
+
+    sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    sudo chmod +x /usr/local/bin/docker-compose
+\end{verbatim}
+
+\subsubsection{Configuración de credenciales de Git e instalación del repositorio}
+\begin{verbatim}
+    //Configuración de credenciales
+
+    git config --global user.name "tu nombre de usuario"
+    git config --global user.email "tu correo electrónico"
+    git config --global user.password "tu contraseña"
+
+    //El repositorio lo ubicaremos dentro de la carpeta raíz del usuario
+    
+    git clone https://github.com/alejomaf/Inventarium.git
+\end{verbatim}
