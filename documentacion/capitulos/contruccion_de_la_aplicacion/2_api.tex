@@ -1,1 +1,18 @@
-\section{Creación y puesta en marcha de la Interfaz de Programación de Aplicaciones}
+\section{Creación y puesta en marcha de la Interfaz de Programación de Aplicaciones (API)}
+Las APIs son una de esas pequeñas implementaciones que han cambiado enormemente los desarrollos en la informática, hoy en día si tu aplicación no dispone de una API implica varios aspectos:
+
+\begin{itemize}
+    \item Tu aplicación no presenta una separación cliente servidor. Esto quiere decir que su modularidad es baja, en caso de querer realizar cambios sobre la aplicación estos van a ser complicados de acometer. En otro caso de que tu aplicación se quiera expandir a una nueva tecnología esta tendrá que volver a implementar otro modelo de comunicación con la base de datos.
+    \item La expansión de tu aplicación a otras tecnologías conllevará un esfuerzo mayor que si tuviera una API.
+    \item Tu servidor requiere más servicios y por tanto recursos para funcionar.
+    \item La lógica de negocio de la aplicación ha sido integrada en conjunto con la web presentando una alto nivel de acoplamiento y dificultando la modificación de la misma.
+\end{itemize}
+
+Una API nos ofrece una capa de abstracción para nuestra aplicación. Nuestro famoso modelo de caja negra del que he hablado con anterioridad. Esto permite a distintas tecnologías orientadas a desarrollo web, móvil y de programas de ordenador a tener un punto en común entre todas. A que cada una no necesite personalizar sus comunicaciones con la base de datos y pueda usar un intermediario. Así es el funcionamiento de las APIs.
+\\Para implementar nuestra API hemos utilizado Node junto a Express. Gracias a Node podemos levantar un servidor web que no necesite de demasiados recursos para su funcionamiento. Esto se haría con las siguientes líneas de código:
+\begin{verbatim}
+    app.listen(port, () => {
+        console.log(`Inventarium API listening at http://api:3000`)
+    });
+\end{verbatim}
+Express es unos de los frameworks principales que presenta Node
