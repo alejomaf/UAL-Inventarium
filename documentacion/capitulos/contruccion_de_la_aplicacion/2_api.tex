@@ -70,10 +70,117 @@ Un apartado a tratar en este capítulo es la gestión de directorios y como los 
 \end{itemize}
 
 \subsection{Funcionamiento de index.js}
-Dentro
+
+Dentro de index.js gestionaremos todas las llamadas a los diferentes componentes de nuestra API. Desde añadir el ruteo hasta gestionar la utilización de diferentes librerías que hayamos instalado dentro de nuestro proyecto.
+\\Una variable importante a recalcar es la de Express. Que la definimos así:
+\begin{verbatim}
+    const app = express();
+\end{verbatim}
+Gracias a nuestra variable ``app'' enlazamos toda la configuración principal del ruteo que va a tener nuestra API.
+\\Por ejemplo, de nuestra ruta \textit{/api/grupoobjetos} queremos que el usuario pueda hacer interacciones con la tabla de grupo de objetos. Para gestionarlo enlazamos ese punto a nuestro archivo de ruteo que explicaré en el siguiente apartado:
+\begin{verbatim}
+    //La variable grupoobjetos es nuestra referenciación del archivo de ruteo
+    app.use('/api/grupoobjetos', grupoobjetos); 
+\end{verbatim}
+Realizamos otras gestiones en nuestro componente de Express entre las que se encuentran:
+\begin{itemize}
+    \item Aumentar el tamaño de las peticiones que lleguen para la carga de imágenes.
+    \item Configurar un endpoint en la raíz de nuestro servidor que tenga como finalidad comprobar que la API funciona correctamente.
+\end{itemize}
+Por último configuramos el puerto de entrada del servidor:
+\begin{verbatim}
+    app.listen(port, () => {
+        console.log(`Inventarium API listening at http://api:3000')
+    });
+\end{verbatim}
+Esto nos permite que nuestra aplicación se encuentre ``escuchando'' cada petición de entrada que le envíe la página web.
 
 \subsection{Enrutamiento de la aplicación}
+El objetivo del directorio de ``routes'' es la correcta gestión de todas las peticiones que necesitamos que se gestionen para el correcto funcionamiento de nuestra página web.
+\\Cuando creamos una herramienta para la gestión de unos recursos de una base de datos lo más normal es que necesitamos realizar el repertorio de herramientas llamadas CRUD, create, read, update and, delete, es decir: crear, leer, actualizar y eliminar.
+\\Al inicio de nuestro archivo de enrutamiento llamamos a la funcionalidad de Router que incopora Express:
+\begin{verbatim}
+    const router = express.Router();
+\end{verbatim}
+
+\subsubsection{Métodos de petición HTTP}
+Los métodos de petición HTTP es la definición de un conjunto de elementos que tiene como objetivo realizar diferentes acciones para la gestión de un recurso determinado.
+\\Estos métodos serán los que nos ayuden en nuestra implementación del repertorio de herramientas CRUD. Los que utilizaremos serán:
+
+\subsubsection{GET (leer)}
+El método GET es el encargado de solicitar un recurso en específico. Estas peticiones, por norma general, deben tener como único objetivo la recopilación de datos.
+\\Por ejemplo, en el archivo de grupoobjetos implementamos el siguiente método:
+\begin{verbatim}
+/* GET group_of_objects. */
+router.get('/', async function (req, res, next) {
+    try {
+        res.json(await group_of_objects.getMultiple(req, req.query.page));
+    } catch (err) {
+        console.error(`Error while getting group_of_objects `, err.message);
+        next(err);
+    }
+});
+\end{verbatim}
+Dentro de nuestra llamada al método ``get'' de ``router'' realizamos un ``try catch'' en el que llamamos a nuestro método ``getMultiple'' de la clase que hemos importado con anterioridad de group\_of\_objects con el siguiente método:
+\begin{verbatim}
+    const group_of_objects = require('../services/grupo_objetos');
+\end{verbatim}
+El método ``getMultiple'' nos devuelve una lista con los diferentes grupos de objetos que hay en el servidor. Ahondarémos más en ese método en la siguiente sección. 
+\\Dentro del ``catch'' hacemos que la API devuelva un mensaje de error como respuesta en caso de fallo.
+\begin{tcolorbox}
+    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Personalización de peticiones]
+    Recordemos que el endpoint que gestionaba ``grupoobjetos'' era \textit{/api/grupoobjetos} por lo que al estar definiendo dentro del router.get el parámetro \textit{`/'} queremos que nuestro API ofrezca esa petición desde la raíz del endpoint. Por ejemplo, si quisiéramos personalizar más la petición podríamos modificar este apartado y en vez de usar \textit{`/'} usamos \textit{`/fungibles'} para poder acceder a esa consulta GET habría que llamar a \textit{/api/grupoobjetos/fungibles}.
+\end{tcolorbox}
+No hace falta que le pasemos ningún parámetro a nuestra petición GET pero lo hemos dejado en caso de realizar alguna implementación extra.
+
+\subsubsection{POST (escribir)}
+El método POST lo utilizaremos para el envío de una entidad a un determinado recurso. La API hará uso de este método para la adición de elementos a la base de datos.
+
+\subsubsection{PUT (actualizar)}
+Este método se encarga del reemplazo de una determinada entidad. Lo utilizaremos para la actualización de las filas de nuestra base de datos.
+
+\subsubsection{DELETE (eliminar)}
+Como su propio nombre indica en inglés el método DELETE lo utilizaremos para borrar un recurso en específico.
+
+\vspace{\baselineskip}
+Hemos añadido solamente un ejemplo dentro del método GET porque el resto de llamadas se realiza de forma muy parecida. En el POST y PUT se pasarían objetos como parámetros y en el PUT especificaríamos una ID para la actualización de nuestro objeto. En DELETE solamente especificaríamos la ID al igual que dentro del PUT. Por ejemplo, si queremos realizar una llamada eliminando el grupo de objetos con id 4 llamaríamos al método DELETE de la API con la siguiente dirección \textit{/api/grupoobjetos/4}.
 
 \subsection{Consultas con la base de datos}
+Dentro de nuestras carpeta ``services'' tenemos las consultas con nuestra base de datos. En ella definiríamos todas las posibles interacciones que querría realizar nuestro usuario con la base de datos.
+\\Las funciones coincidentes en todos los ficheros que se encuentran ubicados en este directorio son las siguientes:
+\begin{itemize}
+    \item \textbf{getMultiple}: dentro de ella llamamos al método SELECT de MariaDB.
+    \item \textbf{create}: llamamos al método INSERT INTO.
+    \item \textbf{update}: llamamos al método UPDATE.
+    \item \textbf{remove}: llamamos al método DELETE.
+\end{itemize}
+Para explicar la estructura de estas funciones cogeré como ejemplo la ``getMultiple'':
+\begin{verbatim}
+    const offset = helper.getOffset(page, config.listPerPage);
+    const rows = await db.query(
+      `SELECT idGrupoObjetos, cantidad, nombre, imagen, marca, 
+      modelo, cantidadDisponible, tipo, eliminado 
+      FROM grupoobjetos WHERE eliminado = 0 LIMIT ?,?`,
+      [offset, config.listPerPage]
+    );
+    const data = helper.emptyOrRows(rows);
+    const meta = { page };
+  
+    return {
+      data,
+      meta
+    }
+  }
+\end{verbatim}
+Como podremos comprobar llamamos al método offset que nos ayudará a realizar la paginación de nuestro sitio web.
+\\Después de la consulta llamamos a nuestro método de la clase definida anteriormente ``helper'' llamado ``emptyOrRows''. Este método nos ayuda a evitar cualquier problemática que nos pueda causar la API si la base de datos nos devuelve el array vacío.
+\\Por último en el ``return'' de la función devolvemos un JSON que tiene como primer elemento la respuesta de la petición y como segundo la página.
 
 \subsection{Configuracion del archivo Dockerfile}
+Un archivo Dockerfile sirve para la generación de la imagen de un contenedor. En este caso la imagen la utilizaremos posteriormente para nuestro Docker Compose.
+
+\textbf{FALTA POR HACER, FINALIZAR API Y PREPARAR EL MONTAJE Y LUEGO DECIDIR}
+
+\subsection{Gestión de archivos con Express}
+Para poder realizar la subida de imágenes a nuestra base de datos haremos uso de la librería ``formidable''.
+\\Esta se encontrará importada en nuestro fichero ``index.js''.
