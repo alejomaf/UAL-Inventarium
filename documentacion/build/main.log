@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  30 DEC 2021 20:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  31 DEC 2021 09:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -951,17 +951,17 @@ Overfull \hbox (9.18774pt too wide) in paragraph at lines 182--183
 []\OT1/cmr/bx/n/10.95 FALTA POR HACER, FI-NALIZAR API Y PREPARAR EL MON-TAJE Y LUEGO
  []
 
-) (./capitulos/contruccion_de_la_aplicacion/3_web.tex)) (./capitulos/conclusiones_y_mejoras.tex [35] [36
+[35] [36]) (./capitulos/contruccion_de_la_aplicacion/3_web.tex)) (./capitulos/conclusiones_y_mejoras.tex [37] [38
 
 
 ]
 chapter 5.
-) (/home/alejomaf/Inventarium/documentacion/build/main.bbl [37] [38
+) (/home/alejomaf/Inventarium/documentacion/build/main.bbl [39] [40
 
 
 ]
 chapter without number
-) [39] (/home/alejomaf/Inventarium/documentacion/build/main.aux) ) 
+) [41] (/home/alejomaf/Inventarium/documentacion/build/main.aux) ) 
 Here is how much of TeX's memory you used:
  31190 strings out of 492615
  669195 string characters out of 6131389
@@ -971,10 +971,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  75i,20n,80p,9208b,874s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/alejomaf/Inventarium/documentacion/build/main.pdf (39 pages, 2647786 bytes).
+Output written on /home/alejomaf/Inventarium/documentacion/build/main.pdf (41 pages, 2651003 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 123 compressed objects within 2 object streams
+ 217 PDF objects out of 1000 (max. 8388607)
+ 127 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

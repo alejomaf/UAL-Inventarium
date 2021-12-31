@@ -182,5 +182,84 @@ Un archivo Dockerfile sirve para la generación de la imagen de un contenedor. E
 \textbf{FALTA POR HACER, FINALIZAR API Y PREPARAR EL MONTAJE Y LUEGO DECIDIR}
 
 \subsection{Gestión de archivos con Express}
+
 Para poder realizar la subida de imágenes a nuestra base de datos haremos uso de la librería ``formidable''.
-\\Esta se encontrará importada en nuestro fichero ``index.js''.
+\\Esta se encontrará importada en nuestro fichero ``index.js''. De la siguiente forma:
+
+\begin{verbatim}
+    const formidable = require('express-formidable');
+\end{verbatim}
+
+Procedemos luego a incorporarla a nuestro Express de la siguiente forma:
+
+\begin{verbatim}
+    app.use(formidable());
+\end{verbatim}
+
+Gracias a esto ya podremos analizar el campo de archivos de las peticiones que nos lleguen. Veremos el ejemplo de subida de imagen dentro de grupo de objetos.
+
+\subsubsection{Descomposición de la petición}
+Dentro de la petición que nos llega a la API cogemos el campo de archivos que va vinculada a ella gracias la utilización de \textit{formidable}.
+\begin{verbatim}
+    files = req.files
+\end{verbatim}
+
+\subsubsection{Análisis del archivo}
+Luego podemos analizar nuestro archivo para que cumpla los siguientes requisitos:
+\begin{itemize}
+    \item Que sea únicamente un solo archivo.
+    \item El método ``isFileValid'' comprueba que el archivo tenga la extensión \textit{jpg}, \textit{jpeg}, \textit{png}. Es decir, que sea una imagen. He seleccionado únicamente esta extensión de archivos porque luego si les cambio la extensión a \textit{jpg} se pueden visualizar sin problemas.
+\end{itemize}
+
+\begin{verbatim}
+    // Comprobamos que el archivo sea uno o más de uno
+    if (!files.length) {
+      //En el caso de que sea solo un archivo
+      const file = files.image;
+      // Comprobamos que el archivo sea válido
+      const isValid = isFileValid(file);
+      // Creamos un nombre en base al momento actual en que se
+      // está subiendo el archivo
+      const fileName = time + ".jpg";
+
+      if (!isValid) {
+        // Si el archivo no es válido lanzamos un error
+        return res.status(400).json({
+          status: "Fail",
+          message: "The file type is not a valid type",
+        });
+      }
+\end{verbatim}
+
+\subsubsection{Subida de la imagen}
+Gracias a esto podemos realizar la subida de la imagen sin problemas. Ubicamos nuestro directorio de subida dentro de la carpeta ``images''. Como he indicado anteriormente.
+
+\begin{verbatim}
+      const uploadFolder = path.join(__dirname, "..", "images",
+       "group_of_objects");
+      try {
+        // Cambiamos el nombre del archivo en el directorio
+        fs.renameSync(file.path, path.join(uploadFolder, fileName));
+      } catch (error) {
+        console.log(error);
+      }
+
+    } else return;
+\end{verbatim}
+
+\subsubsection{Enviamos la consulta a la base de datos}
+Mandamos una solicitud a la base de datos para finalizar con la creación del grupo de objeto. En caso que diera error la subida este proceso se pararía y devolvería error. Como podremos comprobar, al llamar al método de creación de grupo de objetos le pasamos como parámetros el campo \textit{fields}, donde va el cuerpo de nuestra petición.
+
+\begin{verbatim}
+    //Consulta post en la base de datos
+    res.json(await group_of_objects.create(req.fields, time));
+
+
+  } catch (err) {
+    console.error(`Error while creating group of objects`, err.message);
+    next(err);
+  }
+});
+\end{verbatim}
+
+Ya tendríamos nuestra imagen subida con nuestra columna dentro de la base de datos.
