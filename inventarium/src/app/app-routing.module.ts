@@ -15,10 +15,12 @@ import { DevicesComponent } from './components/main/parts/devices/devices.compon
 import { GroupOfObjectsComponent } from './components/main/parts/group-of-objects/group-of-objects.component';
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { ObjectsComponent } from './components/main/parts/group-of-objects/objects/objects.component';
+import { LoansComponent } from './components/main/parts/loans/loans.component';
 import { RequestsComponent } from './components/main/parts/requests/requests.component';
 import { UsersComponent } from './components/main/parts/users/users.component';
 import { MyLoansComponent } from './components/main/personal/my-loans/my-loans.component';
 import { ProfileComponent } from './components/main/personal/profile/profile.component';
+import { ObjectUnitComponent } from './components/main/unit/object-unit/object-unit.component';
 import { RegisterCompletedComponent } from './components/register/register-completed/register-completed.component';
 import { RegisterConfirmedComponent } from './components/register/register-confirmed/register-confirmed.component';
 import { RegisterRecoverFinishComponent } from './components/register/register-recover-finish/register-recover-finish.component';
@@ -48,7 +50,8 @@ const routes: Routes = [
       { path: 'add-data', component: AddDataComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'my-loans', component: MyLoansComponent },
-      { path: 'object/:id', component: ObjectComponent },
+      { path: 'loans/:id', component: LoansComponent },
+      { path: 'object/:id', component: ObjectUnitComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

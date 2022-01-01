@@ -36,6 +36,9 @@ import { GroupOfObjectComponent } from './components/main/parts/group-of-objects
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ModalLocationSelectComponent } from './components/main/parts/add-object/object/number-and-location/modal-location-select/modal-location-select.component';
+import { ObjectUnitComponent } from './components/main/unit/object-unit/object-unit.component';
+import { LoanComponent } from './components/main/parts/loans/loan/loan.component';
+import { LoansComponent } from './components/main/parts/loans/loans.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +73,9 @@ import { ModalLocationSelectComponent } from './components/main/parts/add-object
     GroupOfObjectComponent,
     ObjectComponent,
     ModalLocationSelectComponent,
+    ObjectUnitComponent,
+    LoanComponent,
+    LoansComponent,
   ],
   imports: [
     BrowserModule,

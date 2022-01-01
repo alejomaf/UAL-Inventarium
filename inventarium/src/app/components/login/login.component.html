@@ -3,24 +3,21 @@
         <h1 class="text-center font-weight-bold" id="tituloLogin">Iniciar sesión</h1>
         <div class="form-group">
             <label class="font-italic">Correo electrónico</label>
-            <input type="email" id="email" name="email" placeholder="Ingrese su correo electrónico" class="form-control"
+            <input type="email" [formControl]="email" placeholder="Ingrese su correo electrónico" class="form-control"
                 required>
         </div>
         <div class="form-group">
             <label class="font-italic">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Ingrese su contraseña"
-                class="form-control" required>
+            <input type="password" [formControl]="password" placeholder="Ingrese su contraseña" class="form-control"
+                required>
         </div>
-        <small id="nameHelp" class="form-text text-primary"><a
-                routerLink="/password-recovery">¿Has olvidado la
+        <div *ngIf="error" class="alert alert-warning my-2" role="alert">
+            Contraseña o nombre de usuario erróneos
+        </div>
+        <small id="nameHelp" class="form-text text-primary"><a routerLink="/password-recovery">¿Has olvidado la
                 contraseña?</a></small><br>
-        <input type="hidden" id="plataforma" name="plataforma" value=0 class="form-control"><br>
-        <div class="form-group">
-            <input type="checkbox" class="form-check-input" id="mantenerSesion">
-            <label class="form-check-label" for="exampleCheck1">Mantener sesión iniciada</label>
-        </div>
         <div class="d-grid gap-2">
-            <div type="submit" class="btn btn-primary" routerLink="">Iniciar sesión</div>
+            <div type="submit" class="btn btn-primary" (click)="login()">Iniciar sesión</div>
             <div class="btn btn-secondary" routerLink="/register">Registrase</div>
         </div>
     </form>

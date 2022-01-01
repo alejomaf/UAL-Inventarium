@@ -1,26 +1,33 @@
 <div class="card border rounded px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
     <div style="width: 100%;" class="card-body list-group-item-primary border">
         <h5 style="cursor:pointer" class="card-title text-dark text-center">
-            <ng-content select="[nombre]"></ng-content> con id <ng-content select="[idObjeto]"></ng-content>
+            Préstamo a <ng-content select="[nombre]"></ng-content>
         </h5>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item bg-light">
-            <b>Edificio</b>
-            <a>: <ng-content select="[edificio]"></ng-content> | <b>Planta</b>: <ng-content select="[planta]">
-                </ng-content> | <b>Ubicacion</b>: <ng-content select="[ubicacion]"></ng-content></a>
+            <b>Nombre del objeto</b>
+            <ng-content select="[nombre]"></ng-content> con id <ng-content select="[idObjeto]"></ng-content>
         </li>
         <li class="list-group-item bg-light">
-            <b>Fecha adquisición</b>
+            <b>Retirado por</b>
             <a>: <ng-content select="[fechaAdquisicion]"></ng-content></a>
         </li>
         <li class="list-group-item bg-light">
-            <b>Código</b>
+            <b>Fecha salida</b>
             <a>: <ng-content select="[codigo]"></ng-content></a>
         </li>
         <li class="list-group-item bg-light">
-            <b>Mejoras del equipo</b>
-            <a>: <ng-content select="[mejorasEquipo]"></ng-content></a>
+            <b>
+                <ng-content select="[fechaEntrega]"></ng-content>
+            </b>
+            <a>: <ng-content select="[fecha]"></ng-content></a>
         </li>
+        <li class="list-group-item bg-light">
+            <b>Préstamo creado por</b>
+            <a>: <ng-content select="[codigo]"></ng-content></a>
+        </li>
+        <ng-content select="[solicitadoElDia]"></ng-content>
+
     </ul>
 </div>

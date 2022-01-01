@@ -10,18 +10,18 @@ const middleware = require('./middleware');
 
 
 router.post('/login', async function (req, res, next) {
-  const usuario = await usuarios.getByEmail(req.body.correoElectronico);
+  const usuario = await usuarios.getByEmail(req.fields.correoElectronico);
 
   if (usuario === undefined) {
     res.json({
       error: "Error, email or password not found"
     });
   } else {
-    if(req.body.contrasena!=usuario.contrasena){ //!bcrypt.compareSync(req.body.password, usuario.contrasena)
+    if (req.fields.contrasena != usuario.contrasena) { //!bcrypt.compareSync(req.body.password, usuario.contrasena)
       res.json({
         error: "Error, email or password not found"
       });
-    }else{
+    } else {
       res.json({
         successfull: createToken(usuario),
         done: "Login correct"
@@ -36,13 +36,13 @@ const createToken = (usuario) => {
     createdAt: moment().unix(),
     expiresAt: moment().add(1, 'day').unix()
   }
-  return jwt.encode(payload,process.env.TOKEN_KEY);
+  return jwt.encode(payload, process.env.TOKEN_KEY);
 };
 
 router.post('/', async function (req, res, next) {
   try {
     //req.body.password = bcrypt.hashSync(req.body.password, 10); ENCRIPTACIÓN DE LA CONTRASEÑA DESACTIVADA
-    res.json(await usuarios.create(req.body));
+    res.json(await usuarios.create(req.fields));
   } catch (err) {
     console.error(`Error while creating usuario`, err.message);
     next(err);
@@ -69,16 +69,16 @@ router.get('/', async function (req, res, next) {
 
 router.get("/mainUser", (req, res) => {
   usuarios.getById(req.userId)
-  .then(rows => {
-    res.json(rows);
-  })
-  .catch(err => console.log(err));
+    .then(rows => {
+      res.json(rows);
+    })
+    .catch(err => console.log(err));
 });
 
 router.put('/:id', async function (req, res, next) {
   try {
-    req.body.password = bcrypt.hashSync(req.body.password, 10);
-    res.json(await usuarios.update(req.params.id, req.body));
+    req.body.password = bcrypt.hashSync(req.fields.password, 10);
+    res.json(await usuarios.update(req.params.id, req.fields));
   } catch (err) {
     console.error(`Error while updating usuario`, err.message);
     next(err);
