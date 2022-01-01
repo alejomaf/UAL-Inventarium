@@ -15,7 +15,7 @@ async function getById(idUbicacion) {
   }
 }
 
-async function getMultiple(req, page = 1) {
+async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT * FROM ubicacion LIMIT ?,?`,
@@ -37,8 +37,8 @@ async function create(ubicacion) {
     VALUES 
     (?, ?, ?)`,
     [
-      ubicacion.ubicacion, ubicacion.planta,
-      ubicacion.edificio
+      ubicacion.ubicacion || "undefined", ubicacion.planta || "undefined",
+      ubicacion.edificio || "undefined"
     ]
   );
 
@@ -52,14 +52,14 @@ async function create(ubicacion) {
 }
 
 async function update(id, ubicacion) {
-    const result = await db.query(
-      `UPDATE ubicacion
+  const result = await db.query(
+    `UPDATE ubicacion
     SET ubicacion=?, planta=?, edificio=?
     WHERE idUbicacion=?`,
-      [
-        ubicacion.ubicacion, ubicacion.planta, ubicacion.edificio, id
-      ]
-    );
+    [
+      ubicacion.ubicacion, ubicacion.planta, ubicacion.edificio, id
+    ]
+  );
 
   let message = 'Error in updating location';
 

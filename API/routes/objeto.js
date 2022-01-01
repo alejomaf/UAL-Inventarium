@@ -44,7 +44,7 @@ router.post('/:id', async function (req, res, next) {
 
 router.put('/:id', async function (req, res, next) {
   try {
-    res.json(await objeto.update(req.params.id, req.body));
+    res.json(await objeto.update(req.params.id, req.fields));
   } catch (err) {
     console.error(`Error while updating object`, err.message);
     next(err);

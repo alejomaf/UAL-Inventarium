@@ -11,10 +11,10 @@ services:
     networks:
       - default
     environment:
-      MYSQL_ºDATABASE: ualinventarium
+      MYSQL_DATABASE: ualinventarium
       MYSQL_USER: ualinventarium
-      MYSQL_PASSWORD: 21$uS3rP4ssM0Ord20D1f1CIL3
-      MYSQL_ROOT_PASSWORD: 21$rO0trP4ssM0Ord20D1f1CIL3
+      MYSQL_PASSWORD: uS3rP4ssM0Ord20D1f1CIL3
+      MYSQL_ROOT_PASSWORD: rO0trP4ssM0Ord20D1f1CIL3
   phpmyadmin:
     container_name: inventarium_php_adm
     image: phpmyadmin:5.1
@@ -23,9 +23,9 @@ services:
     ports:
       - 8000:80
     environment:
-      MYSQL_USER: user
-      MYSQL_PASSWORD: user
-      MYSQL_ROOT_PASSWORD: user
+      MYSQL_USER: ualinventarium
+      MYSQL_PASSWORD: uS3rP4ssM0Ord20D1f1CIL3
+      MYSQL_ROOT_PASSWORD: rO0trP4ssM0Ord20D1f1CIL3
     networks:
       - default
 volumes:
