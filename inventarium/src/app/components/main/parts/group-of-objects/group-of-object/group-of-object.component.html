@@ -1,11 +1,9 @@
 <div class="card border rounded px-3 py-3" style="width: 22rem;background-color:#FDF7FF;">
-    <div style="width= 100%; height: 230px;">
-        <img class="card-img-top rounded-circle" src="images/objects/../../images/objects/1613063787.jpg">
+    <div style="width: 100%; height: 230px;">
+        <ng-content select="[imagen]"></ng-content>
     </div>
-    <div style="width= 100%;" class="card-body list-group-item-primary border">
-        <h5 style="cursor:pointer" class="card-title text-dark text-center" onclick="location.hash='#gobjetos-1';">
-            <ng-content select="[nombre]"></ng-content>
-        </h5>
+    <div style="width: 100%;" class="card-body list-group-item-primary border">
+        <ng-content select="[nombre]"></ng-content>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item bg-light">

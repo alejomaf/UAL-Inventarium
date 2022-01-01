@@ -41,6 +41,12 @@ export class AddDataToObjectComponent implements OnInit {
     }
     else {
       this.crearObjeto();
+      this.codigo.setValue("");
+      this.fechaAdquisicion.setValue(this.date.getUTCFullYear() + "-" + this.date.getUTCMonth() + "-" + this.date.getUTCDate());
+      this.etiqueta.setValue("")
+      this.departamento.setValue(0);
+      this.mejoras.setValue("");
+      this.observaciones.setValue("");
       //We reduce the quantity in one unit for the next iteration
       this.cantidad -= 1;
       this.router.navigateByUrl('add-object/create/' + this.idGrupoObjetos + '/' + this.idLocalizacion + '/' + this.cantidad);
@@ -58,7 +64,6 @@ export class AddDataToObjectComponent implements OnInit {
           return;
         });
     }
-
     this.router.navigateByUrl('group-of-object/' + this.idGrupoObjetos);
   }
 

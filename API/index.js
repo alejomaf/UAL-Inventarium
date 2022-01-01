@@ -40,6 +40,8 @@ app.use((err, req, res, next) => {
   return;
 });
 
+//app.use(express.static('images'));
+app.use('/images', express.static('images/group_of_objects'));
 
 app.listen(port, () => {
   console.log(`Inventarium API listening at http://api:${port}`)

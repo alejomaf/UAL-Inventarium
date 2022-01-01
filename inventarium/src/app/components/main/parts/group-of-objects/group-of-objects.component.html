@@ -2,7 +2,10 @@
     <!--Contenido-->
     <div *ngFor="let go of group_of_objects" style="width: fit-content;">
         <app-group-of-object>
-            <span nombre>{{go.nombre}}</span>
+            <img imagen class="card-img-top rounded-circle" style="cursor:pointer"
+                src="http://localhost:3000/images/{{go.imagen}}.jpg">
+            <h5 nombre [routerLink]="['/group-of-object', go.idGrupoObjetos]" style="cursor:pointer"
+                class="card-title text-dark text-center">{{go.nombre}}</h5>
             <span cantidad>{{go.cantidad}}</span>
             <span marca>{{go.marca}}</span>
             <span modelo>{{go.modelo}}</span>
