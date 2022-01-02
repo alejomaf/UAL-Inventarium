@@ -2,16 +2,15 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
-async function getMultiple(req,page = 1){
+async function getMultiple(req, page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT idPrestado, retiradoPor, fechaSalida, fechaEntrega, fechaEstimadaEntrega, Usuario_idUsuario, 
-    Objeto_idObjeto, Objeto_GrupoObjetos_idGrupoObjetos, Objeto_Ubicacion_idUbicacion, solicitado, estado, Kit_idKit
-    FROM prestado WHERE Objeto_idObjeto = ? LIMIT ?,?`, 
+    `SELECT *
+    FROM prestado WHERE Objeto_idObjeto = ? LIMIT ?,?`,
     [req.userId, offset, config.listPerPage]
   );
   const data = helper.emptyOrRows(rows);
-  const meta = {page};
+  const meta = { page };
 
   return {
     data,
@@ -19,17 +18,14 @@ async function getMultiple(req,page = 1){
   }
 }
 
-async function create(prestado, userId){
+async function create(prestado, userId) {
   const result = await db.query(
     `INSERT INTO prestado
-    (retiradoPor, fechaSalida, fechaEntrega, fechaEstimadaEntrega, Usuario_idUsuario, Objeto_idObjeto, Objeto_GrupoObjetos_idGrupoObjetos, Objeto_Ubicacion_idUbicacion,
-        solicitado, estado, Kit_idKit) 
+    (retiradoPor, fechaEstimadaEntrega, Usuario_idUsuario, Objeto_idObjeto, solicitado, estado) 
     VALUES 
-    (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`, 
+    (?, ?, ?, ?, now(), 0)`,
     [
-      prestado.retiradoPor, prestado.fechaSalida,
-      prestado.fechaEntrega, prestado.fechaEstimadaEntrega, prestado.Usuario_idUsuario, prestado.Objeto_idObjeto,
-      prestado.Objeto_GrupoObjetos_idGrupoObjetos, prestado.Objeto_Ubicacion_idUbicacion, objeto.solicitado, objeto.estado, objeto.Kit_idKit
+      prestado.retiradoPor, prestado.fechaEstimadaEntrega, userId, prestado.Objeto_idObjeto
     ]
   );
 
@@ -39,15 +35,15 @@ async function create(prestado, userId){
     message = 'prestado created successfully';
   }
 
-  return {message};
+  return { message };
 }
 
-async function update(id, prestado){
+async function update(id, prestado) {
   const result = await db.query(
     `UPDATE prestado 
     SET retiradoPor=?, fechaSalida=?, fechaEntrega=?, fechaEstimadaEntrega=?, Usuario_idUsuario=?, Objeto_idObjeto=?, Objeto_GrupoObjetos_idGrupoObjetos=?, 
     Objeto_Ubicacion_idUbicacion=?, solicitado=?, estado=?, Kit_idKit=?
-    WHERE idPrestado=?`, 
+    WHERE idPrestado=?`,
     [
       prestado.retiradoPor, prestado.fechaSalida,
       prestado.fechaEntrega, prestado.fechaEstimadaEntrega, prestado.Usuario_idUsuario, prestado.Objeto_idObjeto,
@@ -61,12 +57,12 @@ async function update(id, prestado){
     message = 'prestado updated successfully';
   }
 
-  return {message};
+  return { message };
 }
 
-async function remove(id){
+async function remove(id) {
   const result = await db.query(
-    `DELETE FROM prestado WHERE idPrestado=?`, 
+    `DELETE FROM prestado WHERE idPrestado=?`,
     [id]
   );
 
@@ -76,7 +72,40 @@ async function remove(id){
     message = 'prestado deleted successfully';
   }
 
-  return {message};
+  return { message };
+}
+
+async function concederPrestamo(id) {
+  const result = await db.query(
+    `UPDATE prestado 
+    SET estado=1
+    WHERE idPrestado=?`,
+    [
+      id
+    ]
+  );
+}
+
+async function finalizarPrestamo(id) {
+  const result = await db.query(
+    `UPDATE prestado 
+    SET estado=-1
+    WHERE idPrestado=?`,
+    [
+      id
+    ]
+  );
+}
+
+async function rechazarPrestamo(id) {
+  const result = await db.query(
+    `UPDATE prestado 
+    SET estado=-2
+    WHERE idPrestado=?`,
+    [
+      id
+    ]
+  );
 }
 
 
@@ -84,5 +113,8 @@ module.exports = {
   getMultiple,
   create,
   update,
-  remove
+  remove,
+  concederPrestamo,
+  finalizarPrestamo,
+  rechazarPrestamo,
 }

@@ -1,10 +1,54 @@
 <div class="card border rounded my-3 px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
     <div style="width: 100%;" class="card-body list-group-item-primary border">
         <h5 style="cursor:pointer" class="card-title text-dark text-center">
-            Préstamos para {{grupoObjeto!.nombre}} con id {{objeto!.idObjeto}}
+            Préstamos para {{grupoObjeto?.nombre}} con id {{objeto?.idObjeto}}
         </h5>
     </div>
     <div class="card-body d-grid gap-2">
-        <div class="btn btn-primary btn-block">Crear solicitud</div>
+        <div class="btn btn-primary btn-block" (click)="abrirModal(crearSolicitud)">Crear solicitud
+        </div>
+    </div>
+
+    <div class="card-body d-grid gap-2">
+        <div *ngIf="this.activas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-1">Ver
+            solicitudes
+            activas
+        </div>
+        <div *ngIf="this.pendientes" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=0">Ver solicitudes
+            pendientes
+        </div>
+        <div *ngIf="this.pasadas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-1">Ver solicitudes
+            pasadas
+        </div>
+        <div *ngIf="this.rechazadas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-2">Ver solicitudes
+            rechazadas
+        </div>
     </div>
 </div>
+
+
+
+
+
+<!-- Modal for making a loan request -->
+<ng-template #crearSolicitud class="modal">
+    <!-- Modal content -->
+    <div class="modal-content p-3">
+        <h5>Crear solicitud</h5>
+        <li class="list-group-item list-group-item-action">
+            <div class="col-md-12 mb-3">
+                <label>Retirado por:</label>
+                <input type="text" [formControl]="retiradoPor" placeholder="Alejo Martín Arias Filippo"
+                    class="form-control" />
+            </div>
+            <div class="col-md-12 mb-3">
+                <label>Fecha estimada de entrega</label>
+                <input type="date" [formControl]="fechaEstimadaEntrega" value="date:'yyyy-MM-dd'" class="form-control">
+            </div>
+        </li>
+        <div class="d-grid gap-2">
+            <a class="btn btn-secondary" (click)="crearPrestamo()">Crear solicitud</a>
+            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        </div>
+    </div>
+</ng-template>

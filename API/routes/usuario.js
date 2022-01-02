@@ -53,13 +53,7 @@ router.post('/', async function (req, res, next) {
 router.use(middleware.checkToken);
 
 
-router.get('/mainUser', (req, res) => {
-  usuarios.getById(req.userId)
-    .then(rows => {
-      res.json(rows);
-    })
-    .catch(err => console.log(err));
-});
+
 
 router.post('/action/:userId/:id', async function (req, res, next) {
   try {
@@ -76,6 +70,14 @@ router.post('/action/:userId/:id', async function (req, res, next) {
     console.error(`Error while creating usuario`, err.message);
     next(err);
   }
+});
+
+router.get('/mainUser', (req, res) => {
+  usuarios.getById(req.userId)
+    .then(rows => {
+      res.json(rows);
+    })
+    .catch(err => console.log(err));
 });
 
 /* GET usuario. */

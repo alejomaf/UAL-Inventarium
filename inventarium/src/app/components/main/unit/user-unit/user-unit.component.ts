@@ -30,39 +30,22 @@ export class UserUnitComponent implements OnInit {
   darAlta() {
     this.userS.darDeAlta(this.idUsuario!).subscribe(
       (res: any) => {
-        console.log(res);
+        this.user!.rango = 1;
       }
-    );
+    )
   }
 
   rechazarUsuario() {
     this.userS.darDeBaja(this.idUsuario!).subscribe(
       (res: any) => {
-
+        this.user!.rango = -2;
       }
     );
   }
-
-  desbanearUsuario() {
-    this.userS.darDeAlta(this.idUsuario!).subscribe(
-      (res: any) => {
-
-      }
-    );
-  }
-
   convertirEnTecnico() {
     this.userS.convertirEnTecnico(this.idUsuario!).subscribe(
       (res: any) => {
-
-      }
-    );
-  }
-
-  eliminarDeTecnico() {
-    this.userS.darDeAlta(this.idUsuario!).subscribe(
-      (res: any) => {
-
+        this.user!.rango = 0;
       }
     );
   }

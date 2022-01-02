@@ -65,6 +65,18 @@
     "logLevel": "debug",
     "changeOrigin": true
   },
+  "/api/prestado/*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/prestado/action/*/*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
   "/api/ubicacion*": {
     "target": "http://localhost:3000",
     "secure": false,

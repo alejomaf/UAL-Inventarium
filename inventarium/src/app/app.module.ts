@@ -42,6 +42,9 @@ import { LoansComponent } from './components/main/parts/loans/loans.component';
 import { UserRequestsComponent } from './components/main/parts/requests/user-requests/user-requests.component';
 import { LoanRequestsComponent } from './components/main/parts/requests/loan-requests/loan-requests.component';
 import { UserUnitComponent } from './components/main/unit/user-unit/user-unit.component';
+import { PendingLoanComponent } from './components/main/parts/loans/loan/type/pending-loan/pending-loan.component';
+import { DeclinedLoanComponent } from './components/main/parts/loans/loan/type/declined-loan/declined-loan.component';
+import { CompletedLoanComponent } from './components/main/parts/loans/loan/type/completed-loan/completed-loan.component';
 
 @NgModule({
   declarations: [
@@ -82,6 +85,9 @@ import { UserUnitComponent } from './components/main/unit/user-unit/user-unit.co
     UserRequestsComponent,
     LoanRequestsComponent,
     UserUnitComponent,
+    PendingLoanComponent,
+    DeclinedLoanComponent,
+    CompletedLoanComponent,
   ],
   imports: [
     BrowserModule,

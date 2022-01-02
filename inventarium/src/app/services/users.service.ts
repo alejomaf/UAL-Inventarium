@@ -37,18 +37,17 @@ export class UsersService {
   }
 
   darDeBaja(userId: number) {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.userService.getToken() }));
-    return this.http.post(this._url + "/action/" + userId + "/0", { headers: header });
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.post(this._url + "/action/" + userId + "/0", null, { headers: header });
   }
 
   darDeAlta(userId: number) {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.userService.getToken() }));
-    return this.http.post(this._url + "/action/" + userId + "/1", { headers: header });
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.post<any>(this._url + "/action/" + userId + "/1", null, { headers: header });
   }
 
-
   convertirEnTecnico(userId: number) {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.userService.getToken() }));
-    return this.http.post(this._url + "/action/" + userId + "/2", { headers: header });
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.post(this._url + "/action/" + userId + "/2", null, { headers: header });
   }
 }
