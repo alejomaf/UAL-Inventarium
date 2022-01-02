@@ -10,13 +10,8 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private loginS: UserService, private router: Router) {
-    loginS.getUser().subscribe(
-      (res: any) => {
-        console.log(res);
-      }
-    );
-    console.log("entra")
+  constructor() {
+
   }
 
   ngOnInit(): void {

@@ -27,9 +27,8 @@ export class LoginComponent implements OnInit {
     formData.append("contrasena", this.password.value);
 
     this.loginS.login(formData).subscribe(
-      succesfull => {
-        this.loginS.setToken(succesfull.toString())
-        console.log(succesfull)
+      (successfull: any) => {
+        this.loginS.setToken(successfull.successfull)
         this.router.navigateByUrl('/');
       },
       error => {

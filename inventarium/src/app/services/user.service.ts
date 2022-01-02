@@ -34,8 +34,7 @@ export class UserService {
   }
 
   getToken() {
-    return "AUTH_KEY";
-    //return localStorage.getItem(user_token);
+    return localStorage.getItem(user_token)!;
   }
 
   resetToken() {

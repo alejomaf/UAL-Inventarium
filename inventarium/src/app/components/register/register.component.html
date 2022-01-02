@@ -1,28 +1,29 @@
 <div class="d-flex justify-content-center">
-    <form id="formularioRegister" method="post"
-        oninput='up2.setCustomValidity(password.value != password1.value ? "Las contraseñas no coinciden." : "")'>
+    <div>
         <h1 class="text-center font-weight-bold" id="tituloRegister">Registrarse</h1>
         <div class="form-group">
             <label>Nombre completo</label>
-            <input type="text" name="name" class="form-control" aria-describedby="nameHelp"
+            <input [formControl]="name" type="text" class="form-control" aria-describedby="nameHelp"
                 placeholder="Ingrese su nombre completo" required>
         </div>
         <div class="form-group">
             <label>Contraseña</label>
-            <input type="password" name="password" class="form-control" placeholder="Ingrese su contraseña" required>
+            <input type="password" [formControl]="password" class="form-control" placeholder="Ingrese su contraseña"
+                required>
         </div>
         <div class="form-group">
             <label>Repita la contraseña</label>
-            <input type="password" name="password1" class="form-control" placeholder="Repita su contraseña" required>
+            <input type="password" [formControl]="password2" class="form-control" placeholder="Repita su contraseña"
+                required>
         </div>
         <div class="form-group">
             <label>Correo electrónico</label>
-            <input type="email" id="emailUser" name="email" class="form-control"
-                placeholder="Ingrese su correo electrónico" required>
+            <input type="email" [formControl]="email" class="form-control" placeholder="Ingrese su correo electrónico"
+                required>
         </div>
         <div class="form-group">
             <label>Departamento</label>
-            <select class="form-control" name="departamento" id="departamento">
+            <select class="form-control" [formControl]="department">
                 <option value=0>Departamento de informática</option>
                 <option value=1>Ingeniería de sistemas y automática</option>
                 <option value=2>Lenguaje y sistemas informáticos</option>
@@ -32,15 +33,16 @@
         </div>
         <div class="form-group">
             <label>Número de teléfono</label>
-            <input type="number" name="phone" class="form-control" placeholder="Ingrese su número de teléfono" required>
+            <input type="number" [formControl]="phone" class="form-control" placeholder="Ingrese su número de teléfono"
+                required>
         </div>
-        <div class="form-group">
-            <div class="g-recaptcha" data-sitekey="your_site_key"></div>
+        <div *ngIf="alert!=''" class="alert alert-warning my-2" role="alert">
+            {{alert}}
         </div>
         <br>
         <div class="d-grid gap-2">
-            <div type="submit" class="btn btn-primary btn-block">Registrarse</div>
+            <div type="submit" (click)="register()" class="btn btn-primary btn-block">Registrarse</div>
             <div type="btn" routerLink="/login" class="btn btn-secondary btn-block">Volver</div>
         </div>
-    </form>
+    </div>
 </div>
