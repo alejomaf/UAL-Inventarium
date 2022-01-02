@@ -1,8 +1,6 @@
 <div class="card border rounded px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
     <div style="width: 100%;" class="card-body list-group-item-primary border">
-        <h5 class="card-title text-dark text-center">
-            Préstamo a <ng-content select="[nombre]"></ng-content>
-        </h5>
+        <ng-content select="[nombre]"></ng-content>
     </div>
     <ul class="list-group list-group-flush">
         <li class="list-group-item bg-light">

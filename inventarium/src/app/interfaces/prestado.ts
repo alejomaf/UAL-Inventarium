@@ -1,6 +1,6 @@
 export interface Prestado {
     idPrestado?: number,
-    retiradoPor: Text,
+    retiradoPor: String,
     fechaSalida: Date,
     fechaEntrega: Date,
     fechaEstimadaEntrega: Date,
@@ -8,7 +8,7 @@ export interface Prestado {
     Objeto_idObjeto: number,
     Objeto_GrupoObjetos_idGrupoObjetos: number,
     Objeto_Ubicacion_idUbicacion: number,
-    solicitado: number,
+    solicitado: Date,
     estado: number,
-    Kit_idKit: number
+    nombre: String,
 }

@@ -16,6 +16,17 @@ router.get('/', async function (req, res, next) {
   }
 });
 
+/* GET prestado. */
+router.get('/:id', async function (req, res, next) {
+  try {
+    req.User_idUser = req.userId;
+    res.json(await prestado.getMultipleByObject(req.params.id, req.query.page));
+  } catch (err) {
+    console.error(`Error while getting prestado `, err.message);
+    next(err);
+  }
+});
+
 router.post('/', async function (req, res, next) {
   try {
     res.json(await prestado.create(req.fields, req.userId));

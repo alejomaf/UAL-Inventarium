@@ -55,19 +55,20 @@ export class LoansComponent implements OnInit {
   cargarPrestamos() {
     this.loansS.getLoans(this.idObjeto).subscribe(
       (res: any) => {
-        this.prestamos = res;
+        this.prestamos = res.data;
         this.procesarPrestamos();
+        console.log(this.prestamos[0] + "hola")
       }
     )
   }
 
   procesarPrestamos() {
     for (let i = 0; i < this.prestamos.length; i++) {
-      if (this.prestamos[i].estado == 0) {
+      if (this.prestamos[i].estado == 1) {
         this.activas = true;
         continue;
       }
-      if (this.prestamos[i].estado == 1) {
+      if (this.prestamos[i].estado == 0) {
         this.pendientes = true;
         continue;
       }
@@ -80,7 +81,7 @@ export class LoansComponent implements OnInit {
         continue;
       }
     }
-    if (this.activas == false && this.pendientes == true) this.tipoSolicitud = 1;
+    if (this.activas == false && this.pendientes == true) this.tipoSolicitud = 0;
   }
 
   //Préstamo se inicializa en el estado 0

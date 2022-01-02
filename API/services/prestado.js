@@ -5,9 +5,27 @@ const config = require('../config');
 async function getMultiple(req, page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
-    `SELECT *
-    FROM prestado WHERE Objeto_idObjeto = ? LIMIT ?,?`,
-    [req.userId, offset, config.listPerPage]
+    `SELECT date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
+    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, nombre
+    FROM prestado, usuario WHERE prestado.Usuario_idUsuario = usuario.idUsuario LIMIT ?,?`,
+    [offset, config.listPerPage]
+  );
+  const data = helper.emptyOrRows(rows);
+  const meta = { page };
+
+  return {
+    data,
+    meta
+  }
+}
+
+async function getMultipleByObject(idObjeto, page = 1) {
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
+    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, nombre
+    FROM prestado, usuario WHERE Objeto_idObjeto = ? AND prestado.Usuario_idUsuario = usuario.idUsuario LIMIT ?,?`,
+    [idObjeto, offset, config.listPerPage]
   );
   const data = helper.emptyOrRows(rows);
   const meta = { page };
@@ -111,6 +129,7 @@ async function rechazarPrestamo(id) {
 
 module.exports = {
   getMultiple,
+  getMultipleByObject,
   create,
   update,
   remove,
