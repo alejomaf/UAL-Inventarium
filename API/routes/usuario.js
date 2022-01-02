@@ -17,7 +17,7 @@ router.post('/login', async function (req, res, next) {
       error: "Error, email or password not found"
     });
   } else {
-    if (req.fields.contrasena != usuario.contrasena) { //!bcrypt.compareSync(req.body.password, usuario.contrasena)
+    if (!bcrypt.compareSync(req.fields.contrasena, usuario.contrasena)) { //req.fields.contrasena != usuario.contrasena
       res.json({
         error: "Error, email or password not found"
       });
@@ -41,7 +41,7 @@ const createToken = (usuario) => {
 
 router.post('/', async function (req, res, next) {
   try {
-    //req.body.password = bcrypt.hashSync(req.body.password, 10); ENCRIPTACIÓN DE LA CONTRASEÑA DESACTIVADA
+    req.fields.contrasena = bcrypt.hashSync(req.fields.contrasena, 10); //ENCRIPTACIÓN DE LA CONTRASEÑA ACTIVADA
     res.json(await usuarios.create(req.fields));
   } catch (err) {
     console.error(`Error while creating usuario`, err.message);
@@ -53,6 +53,30 @@ router.post('/', async function (req, res, next) {
 router.use(middleware.checkToken);
 
 
+router.get('/mainUser', (req, res) => {
+  usuarios.getById(req.userId)
+    .then(rows => {
+      res.json(rows);
+    })
+    .catch(err => console.log(err));
+});
+
+router.post('/action/:userId/:id', async function (req, res, next) {
+  try {
+    tipo_consulta = req.params.id;
+    if (tipo_consulta == 0) {
+      res.json(await usuarios.darDeBaja(req.params.userId));
+    } else if (tipo_consulta == 1) {
+      res.json(await usuarios.darDeAlta(req.params.userId));
+    } else {
+      res.json(await usuarios.convertirEnTecnico(req.params.userId));
+    }
+
+  } catch (err) {
+    console.error(`Error while creating usuario`, err.message);
+    next(err);
+  }
+});
 
 /* GET usuario. */
 router.get('/', async function (req, res, next) {
@@ -64,16 +88,16 @@ router.get('/', async function (req, res, next) {
   }
 });
 
-
-
-
-router.get("/mainUser", (req, res) => {
-  usuarios.getById(req.userId)
-    .then(rows => {
-      res.json(rows);
-    })
-    .catch(err => console.log(err));
+/* GET usuario. */
+router.get('/:id', async function (req, res, next) {
+  try {
+    res.json(await usuarios.getById(req.params.id));
+  } catch (err) {
+    console.error(`Error while getting usuario `, err.message);
+    next(err);
+  }
 });
+
 
 router.put('/:id', async function (req, res, next) {
   try {

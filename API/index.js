@@ -11,6 +11,7 @@ const objeto = require('./routes/objeto');
 const objetokit = require("./routes/objeto_kit");
 const prestado = require("./routes/prestado");
 const ubicacion = require("./routes/ubicacion");
+const inicializar_admin = require("./services/usuario");
 
 require('dotenv').config();
 
@@ -42,6 +43,8 @@ app.use((err, req, res, next) => {
 
 //app.use(express.static('images'));
 app.use('/images', express.static('images/group_of_objects'));
+
+inicializar_admin.administrador();
 
 app.listen(port, () => {
   console.log(`Inventarium API listening at http://api:${port}`)

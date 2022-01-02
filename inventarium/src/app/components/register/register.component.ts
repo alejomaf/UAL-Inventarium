@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -25,8 +26,9 @@ export class RegisterComponent implements OnInit {
     ]);
 
   alert = "";
+  alertEmail = "";
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userS: UsersService) { }
 
   ngOnInit(): void {
   }
@@ -52,6 +54,25 @@ export class RegisterComponent implements OnInit {
       this.alert = "Ingresa un número de teléfono válido";
       return;
     }
+
+    let formData: any = new FormData()
+    formData.append("nombre", this.name.value);
+    formData.append("correoElectronico", this.email.value);
+    formData.append("contrasena", this.password.value);
+    formData.append("departamento", this.department.value);
+    formData.append("telefono", this.phone.value);
+
+    this.userS.addUser(formData).subscribe(
+      (res: any) => {
+        console.log(res);
+        if (res.message) {
+          this.router.navigateByUrl("/register-completed");
+        } else if (res.error) {
+          console.log(res.error)
+          this.alertEmail = "El correo que ha intentado registrar ya existe"
+        }
+      }
+    )
   }
 
 }

@@ -31,6 +31,11 @@ export class VerticalNavbarComponent implements OnInit {
     }
     loginS.getUser().subscribe(
       (res: any) => {
+        console.log(res);
+        if (res == null) {
+
+          return;
+        }
         this.usuario = res;
       }
     );

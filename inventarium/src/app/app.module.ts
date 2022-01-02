@@ -39,6 +39,9 @@ import { ModalLocationSelectComponent } from './components/main/parts/add-object
 import { ObjectUnitComponent } from './components/main/unit/object-unit/object-unit.component';
 import { LoanComponent } from './components/main/parts/loans/loan/loan.component';
 import { LoansComponent } from './components/main/parts/loans/loans.component';
+import { UserRequestsComponent } from './components/main/parts/requests/user-requests/user-requests.component';
+import { LoanRequestsComponent } from './components/main/parts/requests/loan-requests/loan-requests.component';
+import { UserUnitComponent } from './components/main/unit/user-unit/user-unit.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +79,9 @@ import { LoansComponent } from './components/main/parts/loans/loans.component';
     ObjectUnitComponent,
     LoanComponent,
     LoansComponent,
+    UserRequestsComponent,
+    LoanRequestsComponent,
+    UserUnitComponent,
   ],
   imports: [
     BrowserModule,

@@ -39,6 +39,9 @@
         <div *ngIf="alert!=''" class="alert alert-warning my-2" role="alert">
             {{alert}}
         </div>
+        <div *ngIf="alertEmail!=''" class="alert alert-danger my-2" role="alert">
+            {{alertEmail}}
+        </div>
         <br>
         <div class="d-grid gap-2">
             <div type="submit" (click)="register()" class="btn btn-primary btn-block">Registrarse</div>

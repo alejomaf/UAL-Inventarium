@@ -16,11 +16,14 @@ import { GroupOfObjectsComponent } from './components/main/parts/group-of-object
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { ObjectsComponent } from './components/main/parts/group-of-objects/objects/objects.component';
 import { LoansComponent } from './components/main/parts/loans/loans.component';
+import { LoanRequestsComponent } from './components/main/parts/requests/loan-requests/loan-requests.component';
 import { RequestsComponent } from './components/main/parts/requests/requests.component';
+import { UserRequestsComponent } from './components/main/parts/requests/user-requests/user-requests.component';
 import { UsersComponent } from './components/main/parts/users/users.component';
 import { MyLoansComponent } from './components/main/personal/my-loans/my-loans.component';
 import { ProfileComponent } from './components/main/personal/profile/profile.component';
 import { ObjectUnitComponent } from './components/main/unit/object-unit/object-unit.component';
+import { UserUnitComponent } from './components/main/unit/user-unit/user-unit.component';
 import { RegisterCompletedComponent } from './components/register/register-completed/register-completed.component';
 import { RegisterConfirmedComponent } from './components/register/register-confirmed/register-confirmed.component';
 import { RegisterRecoverFinishComponent } from './components/register/register-recover-finish/register-recover-finish.component';
@@ -45,6 +48,8 @@ const routes: Routes = [
       { path: 'group-of-objects', component: GroupOfObjectsComponent },
       { path: 'group-of-object/:id', component: ObjectsComponent },
       { path: 'requests', component: RequestsComponent },
+      { path: 'user-requests', component: UserRequestsComponent },
+      { path: 'loan-requests', component: LoanRequestsComponent },
       { path: 'users', component: UsersComponent },
       { path: 'devices', component: DevicesComponent },
       { path: 'add-data', component: AddDataComponent },
@@ -52,6 +57,7 @@ const routes: Routes = [
       { path: 'my-loans', component: MyLoansComponent },
       { path: 'loans/:id', component: LoansComponent },
       { path: 'object/:id', component: ObjectUnitComponent },
+      { path: 'user/:id', component: UserUnitComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

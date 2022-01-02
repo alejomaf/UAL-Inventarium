@@ -1,13 +1,13 @@
 <div class="row d-flex-inline justify-content-center">
     <!--Contenido-->
     <div *ngFor="let user of users" style="width: fit-content;">
-        <app-user>
-            <span nombre>{{user.nombre}}</span>
+        <app-user *ngIf="user.rango==-1">
+            <h5 nombre style="cursor:pointer" class="card-title text-dark text-center"
+                routerLink="/user/{{user.idUsuario}}">
+                {{user.nombre}}
+            </h5>
             <span correoElectronico>{{user.correoElectronico}}</span>
-            <span *ngIf="user.rango==0" rango>Técnico</span>
-            <span *ngIf="user.rango==1" rango>Docente</span>
-            <span *ngIf="user.rango==-1" rango>Solicitud pendiente</span>
-            <span *ngIf="user.rango==-2" rango>Solicitud rechazada</span>
+            <span rango>Solicitud pendiente</span>
             <span *ngIf="user.departamento==0" departamento>Departamento de informática</span>
             <span *ngIf="user.departamento==1" departamento>Ingeniería de sistemas y automática</span>
             <span *ngIf="user.departamento==2" departamento>Lenguaje y sistemas informáticos</span>

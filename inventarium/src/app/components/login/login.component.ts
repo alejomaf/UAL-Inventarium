@@ -27,15 +27,18 @@ export class LoginComponent implements OnInit {
     formData.append("contrasena", this.password.value);
 
     this.loginS.login(formData).subscribe(
-      (successfull: any) => {
-        this.loginS.setToken(successfull.successfull)
-        this.router.navigateByUrl('/');
-      },
-      error => {
-        console.log(error);
-        error = true;
+      (res: any) => {
+        if (res.successfull) {
+          this.loginS.setToken(res.successfull)
+          console.log("hola")
+          console.log(this.loginS.getToken())
+          this.router.navigateByUrl('/');
+        } else if (res.error) {
+          console.log(res.error);
+          this.error = true;
+        }
       }
-    )
+    );
   }
 
 }
