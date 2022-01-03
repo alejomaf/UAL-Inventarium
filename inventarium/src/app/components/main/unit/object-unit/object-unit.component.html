@@ -45,4 +45,71 @@
         <span *ngIf="grupoObjeto?.tipo==2" tipo>Kit</span>
     </app-group-of-object>
 
+    <app-configuration *ngIf="configuracion!=null">
+        <span ip>{{configuracion?.ip}}</span>
+        <span mac>{{configuracion?.mac}}</span>
+        <span boca>{{configuracion?.boca}}</span>
+        <span armario>{{configuracion?.armario}}</span>
+        <span usuario>{{configuracion?.usuario}}</span>
+        <span contrasena>{{configuracion?.contrasena}}</span>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-primary btn-block">Modificar configuración
+            </div>
+            <div class="btn btn-primary btn-block">Borrar configuración
+            </div>
+        </div>
+    </app-configuration>
+
+    <div *ngIf="configuracion==null" class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+        <div style="width: 100%;" class="card-title">
+            <h5 class="card-title text-dark text-center">
+                Configuración
+            </h5>
+        </div>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Crear configuración
+            </div>
+        </div>
+    </div>
+
 </div>
+
+<!-- Modal for making a loan request -->
+<ng-template #crearConfiguracionModal class="modal">
+    <!-- Modal content -->
+    <div class="modal-content p-3">
+        <h5>Crear configuracion</h5>
+        <div class="col-md-12 mb-3">
+            <label>Dirección IP:</label>
+            <input type="text" [formControl]="ip" placeholder="192.168.0.0" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Dirección MAC:</label>
+            <input type="text" [formControl]="mac" placeholder="91:75:1a:ec:9a:c7" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Dirección MAC:</label>
+            <input type="text" [formControl]="mac" placeholder="91:75:1a:ec:9a:c7" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Boca:</label>
+            <input type="text" [formControl]="boca" placeholder="4A" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Armario:</label>
+            <input type="text" [formControl]="armario" placeholder="D" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Usuario:</label>
+            <input type="text" [formControl]="usuario" placeholder="user" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Contraseña:</label>
+            <input type="text" [formControl]="contrasena" placeholder="pass" class="form-control" />
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-secondary" (click)="crearConfiguracion()">Crear configuración</a>
+            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        </div>
+    </div>
+</ng-template>

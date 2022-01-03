@@ -33,6 +33,15 @@ router.get('/location-id/:id', async function (req, res, next) {
   }
 });
 
+router.get('/configs', async function (req, res, next) {
+  try {
+    res.json(await objeto.getMultipleWithConfig());
+  } catch (err) {
+    console.error(`Error while getting objeto `, err.message);
+    next(err);
+  }
+});
+
 router.post('/:id', async function (req, res, next) {
   try {
     res.json(await objeto.create(req.fields, req.params.id));

@@ -11,14 +11,13 @@ async function getById(idObjeto) {
   const data = helper.emptyOrRows(rows);
 
   return {
-    data,
-    meta
+    data
   }
 }
 
 async function create(configuracion) {
   const result = await db.query(
-    `INSERT INTO Configuracion
+    `INSERT INTO configuracion
     (ip, mac, boca, armario, usuario, contrasena, Objeto_idObjeto) 
     VALUES 
     (?, ?, ?, ?, ?, ?, ?)`,
@@ -39,14 +38,14 @@ async function create(configuracion) {
 }
 
 async function update(id, configuracion) {
-    const result = await db.query(
-      `UPDATE configuracion
+  const result = await db.query(
+    `UPDATE configuracion
     SET ip=?, mac=?, boca=?, armario=?, usuario=?, contrasena=?
     WHERE idConfiguracion=?`,
-      [
-        configuracion.ip, configuracion.mac, configuracion.boca, configuracion.armario, configuracion.usuario, configuracion.contrasena, id
-      ]
-    );
+    [
+      configuracion.ip, configuracion.mac, configuracion.boca, configuracion.armario, configuracion.usuario, configuracion.contrasena, id
+    ]
+  );
 
   let message = 'Error in updating config';
 

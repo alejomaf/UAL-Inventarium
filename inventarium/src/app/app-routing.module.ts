@@ -10,8 +10,8 @@ import { AddDataToObjectComponent } from './components/main/parts/add-object/obj
 import { NumberAndLocationComponent } from './components/main/parts/add-object/object/number-and-location/number-and-location.component';
 import { SelectObjectToCreateComponent } from './components/main/parts/add-object/select-object-to-create/select-object-to-create.component';
 import { SelectOrCreateObjectComponent } from './components/main/parts/add-object/select-or-create-object/select-or-create-object.component';
+import { ConfigurationsComponent } from './components/main/parts/configurations/configurations.component';
 import { DashboardComponent } from './components/main/parts/dashboard/dashboard.component';
-import { DevicesComponent } from './components/main/parts/devices/devices.component';
 import { GroupOfObjectsComponent } from './components/main/parts/group-of-objects/group-of-objects.component';
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { ObjectsComponent } from './components/main/parts/group-of-objects/objects/objects.component';
@@ -58,7 +58,7 @@ const routes: Routes = [
       { path: 'loan-requests/pending-loans', component: PendingLoansComponent },
       { path: 'loan-requests/expired-loans', component: ExpiredLoansComponent },
       { path: 'users', component: UsersComponent },
-      { path: 'devices', component: DevicesComponent },
+      { path: 'configurations', component: ConfigurationsComponent },
       { path: 'add-data', component: AddDataComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'my-loans', component: MyLoansComponent },

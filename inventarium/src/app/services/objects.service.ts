@@ -40,4 +40,9 @@ export class ObjectsService {
     let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.userService.getToken() }));
     return this.http.put(this._url + "/" + object.idObjeto, object, { headers: header });
   }
+
+  getObjectsWithConfiguration() {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.get(this._url + "/configs", { headers: header });
+  }
 }

@@ -110,8 +110,18 @@ async function getById(idObjeto) {
   }
 }
 
-async function lendObject() {
-  const rows = await db.query('UPDATE objeto SET obj')
+async function getMultipleWithConfig(idGrupoObjetos, page = 1) {
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, eliminado, 
+    date_format(fechaAdquisicion, '%d-%m-%y') as 'fechaAdquisicion', observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, edificio, planta, ubicacion 
+    FROM objeto, ubicacion, configuracion WHERE objeto.Ubicacion_idUbicacion = ubicacion.idUbicacion AND configuracion.Objeto_idObjeto = objeto.idObjeto`,
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
 }
 
 
@@ -122,4 +132,5 @@ module.exports = {
   remove,
   getById,
   getMultipleByLocation,
+  getMultipleWithConfig,
 }

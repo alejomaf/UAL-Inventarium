@@ -19,8 +19,6 @@ import { AddObjectComponent } from './components/main/parts/add-object/add-objec
 import { RequestsComponent } from './components/main/parts/requests/requests.component';
 import { UsersComponent } from './components/main/parts/users/users.component';
 import { UserComponent } from './components/main/parts/users/user/user.component';
-import { DevicesComponent } from './components/main/parts/devices/devices.component';
-import { DeviceComponent } from './components/main/parts/devices/device/device.component';
 import { AddDataComponent } from './components/main/admin/add-data/add-data.component';
 import { ProfileComponent } from './components/main/personal/profile/profile.component';
 import { MyLoansComponent } from './components/main/personal/my-loans/my-loans.component';
@@ -49,6 +47,8 @@ import { LoanUnitComponent } from './components/main/unit/loan-unit/loan-unit.co
 import { PendingLoansComponent } from './components/main/parts/requests/loan-requests/types/pending-loans/pending-loans.component';
 import { ActiveLoansComponent } from './components/main/parts/requests/loan-requests/types/active-loans/active-loans.component';
 import { ExpiredLoansComponent } from './components/main/parts/requests/loan-requests/types/expired-loans/expired-loans.component';
+import { ConfigurationsComponent } from './components/main/parts/configurations/configurations.component';
+import { ConfigurationComponent } from './components/main/parts/configurations/configuration/configuration.component';
 
 @NgModule({
   declarations: [
@@ -68,8 +68,6 @@ import { ExpiredLoansComponent } from './components/main/parts/requests/loan-req
     RequestsComponent,
     UsersComponent,
     UserComponent,
-    DevicesComponent,
-    DeviceComponent,
     AddDataComponent,
     ProfileComponent,
     MyLoansComponent,
@@ -96,6 +94,8 @@ import { ExpiredLoansComponent } from './components/main/parts/requests/loan-req
     PendingLoansComponent,
     ActiveLoansComponent,
     ExpiredLoansComponent,
+    ConfigurationsComponent,
+    ConfigurationComponent,
   ],
   imports: [
     BrowserModule,
