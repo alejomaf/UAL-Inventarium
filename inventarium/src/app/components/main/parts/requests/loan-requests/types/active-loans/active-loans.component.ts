@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Prestado } from 'src/app/interfaces/prestado';
+import { LoansService } from 'src/app/services/loans.service';
 
 @Component({
   selector: 'app-active-loans',
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActiveLoansComponent implements OnInit {
 
-  constructor() { }
+  prestamos: Prestado[] = []
+
+  constructor(private loansS: LoansService) {
+    loansS.getActiveLoans().subscribe(
+      (res: any) => {
+        this.prestamos = res.data
+        console.log(res)
+      }
+    )
+  }
 
   ngOnInit(): void {
   }

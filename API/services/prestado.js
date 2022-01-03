@@ -168,6 +168,45 @@ async function rechazarPrestamo(id) {
   return result;
 }
 
+async function getActiveLoans() {
+  const rows = await db.query(
+    `SELECT date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
+    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, nombre, idPrestado
+    FROM prestado, usuario WHERE prestado.Usuario_idUsuario = usuario.idUsuario AND estado=1`
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+}
+
+async function getPendingLoans() {
+  const rows = await db.query(
+    `SELECT date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
+    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, nombre, idPrestado
+    FROM prestado, usuario, objeto WHERE prestado.Usuario_idUsuario = usuario.idUsuario AND estado=0 AND objeto.disponible=0`
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+}
+
+async function getExpiredLoans() {
+  const rows = await db.query(
+    `SELECT date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
+    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, nombre, idPrestado
+    FROM prestado, usuario WHERE prestado.Usuario_idUsuario = usuario.idUsuario AND fechaEstimadaEntrega < now() AND estado=1`
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+}
+
 
 module.exports = {
   getMultiple,
@@ -179,4 +218,7 @@ module.exports = {
   finalizarPrestamo,
   rechazarPrestamo,
   getById,
+  getActiveLoans,
+  getExpiredLoans,
+  getPendingLoans,
 }

@@ -11,6 +11,7 @@ export class LoansService {
 
   constructor(private http: HttpClient, private userService: UserService) { }
 
+
   getLoans(idObjeto: number) {
     let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
     return this.http.get(this._url + "/" + idObjeto, { headers: header });
@@ -50,6 +51,22 @@ export class LoansService {
     let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
     return this.http.post(this._url + "/action/" + idLoan + "/2", null, { headers: header });
   }
+
+  getActiveLoans() {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.get(this._url + "/type/0", { headers: header });
+  }
+
+  getPendingLoans() {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.get(this._url + "/type/1", { headers: header });
+  }
+
+  getExpiredLoans() {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.get(this._url + "/type/2", { headers: header });
+  }
+
 
 
 }
