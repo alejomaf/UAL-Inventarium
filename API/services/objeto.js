@@ -98,8 +98,9 @@ async function remove(idObjeto) {
 
 async function getById(idObjeto) {
   const rows = await db.query(
-    `SELECT *
-    FROM objeto, ubicacion WHERE idObjeto = ? AND ubicacion.idUbicacion = Ubicacion_idUbicacion`,
+    `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, eliminado, 
+    date_format(fechaAdquisicion, '%d-%m-%y') as 'fechaAdquisicion', observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, edificio, planta, ubicacion 
+    FROM objeto, ubicacion WHERE idObjeto = ? AND objeto.Ubicacion_idUbicacion = ubicacion.idUbicacion`,
     [idObjeto]
   );
   const data = helper.emptyOrRows(rows);

@@ -27,6 +27,16 @@ router.get('/:id', async function (req, res, next) {
   }
 });
 
+/* GET prestado por id. */
+router.get('/id/:id', async function (req, res, next) {
+  try {
+    res.json(await prestado.getById(req.params.id));
+  } catch (err) {
+    console.error(`Error while getting prestado `, err.message);
+    next(err);
+  }
+});
+
 router.post('/', async function (req, res, next) {
   try {
     res.json(await prestado.create(req.fields, req.userId));

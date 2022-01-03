@@ -16,6 +16,11 @@ export class LoansService {
     return this.http.get(this._url + "/" + idObjeto, { headers: header });
   }
 
+  getLoan(idLoan: number) {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.get(this._url + "/id/" + idLoan, { headers: header });
+  }
+
   addLoan(loan: FormData) {
     let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
     return this.http.post(this._url, loan, { headers: header });

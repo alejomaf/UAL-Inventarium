@@ -1,28 +1,48 @@
-<app-object>
-    <span idObjeto>{{objeto!.idObjeto}}</span>
-    <span nombre>{{grupoObjeto!.nombre}}</span>
-    <span ubicacion>{{objeto!.ubicacion}}</span>
-    <span planta>{{objeto!.planta}}</span>
-    <span edificio>{{objeto!.edificio}}</span>
-    <span fechaAdquisicion>{{objeto!.fechaAdquisicion}}</span>
-    <span codigo>{{objeto!.codigo}}</span>
-    <span mejorasEquipo>{{objeto!.mejorasEquipo}}</span>
-</app-object>
-
-<div class="card border rounded my-3 px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
-    <div style="width: 100%;" class="card-body list-group-item-primary border">
-        <h5 style="cursor:pointer" class="card-title text-dark text-center">
-            Préstamos del objeto
+<div class="container d-flex flex-wrap align-items-center">
+    <app-object>
+        <h5 nombre class="card-title text-dark text-center">
+            {{grupoObjeto?.nombre}} con id {{objeto?.idObjeto}}
         </h5>
+        <span ubicacion>{{objeto?.ubicacion}}</span>
+        <span planta>{{objeto?.planta}}</span>
+        <span edificio>{{objeto?.edificio}}</span>
+        <span fechaAdquisicion>{{objeto?.fechaAdquisicion}}</span>
+        <span codigo>{{objeto?.codigo}}</span>
+        <span mejorasEquipo>{{objeto?.mejorasEquipo}}</span>
+    </app-object>
+
+    <div class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+        <div style="width: 100%;" class="card-title">
+            <h5 class="card-title text-dark text-center">
+                Préstamos del objeto
+            </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light">
+                <b>Estado</b>
+                <a *ngIf="objeto?.disponible==0">: Disponible</a>
+                <a *ngIf="objeto?.disponible==1">: Prestado</a>
+            </li>
+        </ul>
+        <div class="card-body d-grid gap-2">
+            <div class="btn btn-primary btn-block" routerLink="/loans/{{objeto?.idObjeto!}}">Ver o solicitar
+                préstamos
+            </div>
+        </div>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item bg-light">
-            <b>Estado</b>
-            <a *ngIf="objeto!.disponible==0">: Disponible</a>
-            <a *ngIf="objeto!.disponible==1">: Prestado</a>
-        </li>
-    </ul>
-    <div class="card-body d-grid gap-2">
-        <div class="btn btn-primary btn-block" routerLink="/loans/{{objeto!.idObjeto}}">Ver o solicitar préstamos</div>
-    </div>
+
+    <app-group-of-object>
+        <img imagen class="card-img-top rounded-circle" style="cursor:pointer"
+            src="http://localhost:3000/images/{{grupoObjeto?.imagen}}.jpg">
+        <h5 nombre [routerLink]="['/group-of-object', grupoObjeto?.idGrupoObjetos]" style="cursor:pointer"
+            class="card-title text-dark text-center">{{grupoObjeto?.nombre}}</h5>
+        <span cantidad>{{grupoObjeto?.cantidad}}</span>
+        <span marca>{{grupoObjeto?.marca}}</span>
+        <span modelo>{{grupoObjeto?.modelo}}</span>
+        <span cantidadDisponible>{{grupoObjeto?.cantidadDisponible}}</span>
+        <span *ngIf="grupoObjeto?.tipo==0" tipo>Inventario</span>
+        <span *ngIf="grupoObjeto?.tipo==1" tipo>Fungible</span>
+        <span *ngIf="grupoObjeto?.tipo==2" tipo>Kit</span>
+    </app-group-of-object>
+
 </div>

@@ -11,4 +11,5 @@ export interface Prestado {
     solicitado: Date,
     estado: number,
     nombre: String,
+    nombre_grupo_objetos: String,
 }

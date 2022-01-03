@@ -2,7 +2,10 @@
     <!--Contenido-->
     <div *ngFor="let user of users" style="width: fit-content;">
         <app-user>
-            <span nombre>{{user.nombre}}</span>
+            <h5 nombre routerLink="/user/{{user?.idUsuario}}" class="card-title text-dark text-center"
+                style="cursor:pointer">
+                {{user?.nombre}}
+            </h5>
             <span correoElectronico>{{user.correoElectronico}}</span>
             <span *ngIf="user.rango==0" rango>Técnico</span>
             <span *ngIf="user.rango==1" rango>Docente</span>
