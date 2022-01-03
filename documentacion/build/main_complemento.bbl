@@ -1,0 +1,58 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Biot%
+}{%
+Biot%
+}{%
+{\protect \APACyear {1962}}%
+}]{%
+Biot1962}
+\APACinsertmetastar {%
+Biot1962}%
+\begin{APACrefauthors}%
+Biot, M\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1962}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Mechanics of deformation and acoustic propagation in
+  porous media} {Mechanics of deformation and acoustic propagation in porous
+  media}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of applied physics}{33}{4}{1482--1498}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Heinz%
+\ \BBA {} Hoffmann%
+}{%
+Heinz%
+\ \BBA {} Hoffmann%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+heinz1listings}
+\APACinsertmetastar {%
+heinz1listings}%
+\begin{APACrefauthors}%
+Heinz, M., Carsten%
+\BCBT {}\ \BBA {} Hoffmann, J.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{March}{}.
+\newblock
+\APACrefbtitle {The listings package, March 2014.} {The listings package, march
+  2014.}
+\newblock
+\APAChowpublished
+  {http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf}.
+\newblock
+\begin{APACrefURL}
+  [{12/12/2014}]\url{http://texdoc.net/texmf-dist/doc/latex/listings/listings.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
