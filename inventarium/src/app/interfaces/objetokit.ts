@@ -1,8 +1,8 @@
 export interface ObjetoKit {
     idObjetoKit?: number,
-    nombre: Text,
+    nombre: string,
     cantidad: number,
-    imagen: Text,
-    observaciones: Text,
+    imagen: string,
+    observaciones: string,
     GrupoObjetos_idGrupoObjetos: number
 }

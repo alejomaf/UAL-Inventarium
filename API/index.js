@@ -43,6 +43,7 @@ app.use((err, req, res, next) => {
 
 //app.use(express.static('images'));
 app.use('/images', express.static('images/group_of_objects'));
+app.use('/images', express.static('images/kits'));
 
 inicializar_admin.administrador();
 

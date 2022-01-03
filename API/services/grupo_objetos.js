@@ -18,6 +18,15 @@ async function getMultiple(req, page = 1) {
   }
 }
 
+const isFileValid = (file) => {
+  const type = file.type.split("/").pop();
+  const validTypes = ["jpg", "jpeg", "png"];
+  if (validTypes.indexOf(type) === -1) {
+    return false;
+  }
+  return true;
+};
+
 async function create(grupoobjetos, name_of_image) {
   const result = await db.query(
     `INSERT INTO grupoobjetos

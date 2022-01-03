@@ -1,1 +1,67 @@
-<p>kits works!</p>
+<div class="row d-flex-inline justify-content-center">
+    <div class="card border rounded p-3 m-2 bg-light" style="width: 18rem;">
+        <div class="card-title">
+            <h5 style="cursor:pointer" class="card-title text-dark text-center">
+                Crear objetos que contiene el kit
+            </h5>
+        </div>
+        <div class="d-grid gap-2">
+            <div class="btn btn-primary btn-block" (click)="abrirModal(crearKitModal)">
+                Crear objeto de kit
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row d-flex-inline justify-content-center">
+    <!--Contenido-->
+    <div *ngFor="let kit of object_kits">
+        <app-kit>
+            <img imagen class="card-img-top rounded-circle" src="http://localhost:3000/images/{{kit.imagen}}.jpg" />
+            <h5 nombre class="card-title text-dark text-center">{{kit.nombre}}</h5>
+            <span cantidad>{{kit.cantidad}}</span>
+            <span observaciones>{{kit.observaciones}}</span>
+            <div botones class="card-body d-grid gap-2">
+                <div class="btn btn-secondary btn-block" (click)="modificarObjetoKit()">Modificar kit
+                </div>
+                <div class="btn btn-light btn-block">Borrar grupo de
+                    objetos
+                </div>
+            </div>
+        </app-kit>
+    </div>
+</div>
+
+
+<!-- Modal for making a kit request -->
+<ng-template #crearKitModal class=" modal">
+    <!-- Modal content -->
+    <div class="modal-content p-3">
+        <h5>Crear objeto del kit</h5>
+        <div *ngIf="imgURL" class="align-self-center" style="margin-top: auto; margin-bottom: auto;">
+            <img [src]="imgURL" height="200px" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Nombre:</label>
+            <input type="text" [formControl]="nombre" placeholder="Tarjeta SD 32GB" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Cantidad:</label>
+            <input type="number" [formControl]="cantidad" placeholder="3" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <input type="file" (change)="handleFileInput($event)" class="form-control-file">
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Observaciones:</label>
+            <input type="text" [formControl]="observaciones" placeholder="SDXC 3 10" class="form-control" />
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-secondary" (click)="modificarObjetoKit()">Modificar
+                objeto del kit</a>
+            <a class="btn btn-secondary" (click)="crearObjetoKit()">Crear
+                objeto del kit</a>
+            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        </div>
+    </div>
+</ng-template>

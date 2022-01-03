@@ -17,7 +17,7 @@
             <div class="btn btn-light btn-block" (click)="borrarGrupoObjeto()">Borrar grupo de objetos
             </div>
             <div *ngIf="go?.tipo==2 && !ruta_kits" class="btn btn-dark btn-block" routerLink="kits"
-                (click)="ruta_kits=!ruta_kits">Ver kit del grupo de objetos
+                (click)="ruta_kits=!ruta_kits">¿Qué contiene el kit?
             </div>
             <div *ngIf="go?.tipo==2 && ruta_kits" class="btn btn-dark btn-block"
                 routerLink="/group-of-object/{{go?.idGrupoObjetos}}" (click)="ruta_kits=!ruta_kits">Volver

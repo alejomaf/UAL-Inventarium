@@ -1,24 +1,20 @@
 const db = require('./db');
 const helper = require('../helper');
-const config = require('../config');
+
 
 async function getMultiple(idGrupoObjetos, page = 1) {
-  const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT idObjetoKit, nombre, cantidad, imagen, GrupoObjetos_idGrupoObjetos, observaciones
-    FROM objetokit WHERE GrupoObjetos_idGrupoObjetos = ? LIMIT ?,?`,
-    [idGrupoObjetos, offset, config.listPerPage]
+    FROM objetokit WHERE GrupoObjetos_idGrupoObjetos = ?`,
+    [idGrupoObjetos]
   );
   const data = helper.emptyOrRows(rows);
-  const meta = { page };
-
   return {
-    data,
-    meta
+    data
   }
 }
 
-async function create(objetokit) {
+async function create(objetokit, imagen) {
   const result = await db.query(
     `INSERT INTO objetokit
     (nombre, cantidad, imagen, GrupoObjetos_idGrupoObjetos, observaciones) 
@@ -26,7 +22,7 @@ async function create(objetokit) {
     (?, ?, ?, ?, ?)`,
     [
       objetokit.nombre, objetokit.cantidad,
-      objetokit.imagen, objetokit.GrupoObjetos_idGrupoObjetos,
+      imagen, objetokit.GrupoObjetos_idGrupoObjetos,
       objetokit.observaciones
     ]
   );
