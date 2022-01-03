@@ -49,6 +49,9 @@ import { ActiveLoansComponent } from './components/main/parts/requests/loan-requ
 import { ExpiredLoansComponent } from './components/main/parts/requests/loan-requests/types/expired-loans/expired-loans.component';
 import { ConfigurationsComponent } from './components/main/parts/configurations/configurations.component';
 import { ConfigurationComponent } from './components/main/parts/configurations/configuration/configuration.component';
+import { GroupWithObjectsComponent } from './components/main/parts/group-of-objects/group-with-objects/group-with-objects.component';
+import { KitsComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kits.component';
+import { KitComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kit/kit.component';
 
 @NgModule({
   declarations: [
@@ -96,6 +99,9 @@ import { ConfigurationComponent } from './components/main/parts/configurations/c
     ExpiredLoansComponent,
     ConfigurationsComponent,
     ConfigurationComponent,
+    GroupWithObjectsComponent,
+    KitsComponent,
+    KitComponent,
   ],
   imports: [
     BrowserModule,

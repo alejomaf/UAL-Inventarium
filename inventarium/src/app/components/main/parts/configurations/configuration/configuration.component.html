@@ -4,30 +4,12 @@
             Configuración</h5>
     </div>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item bg-light">
-            <b>IP</b>
-            <a>: <ng-content select="[ip]"></ng-content></a>
-        </li>
-        <li class="list-group-item bg-light">
-            <b>MAC</b>
-            <a>: <ng-content select="[mac]"></ng-content></a>
-        </li>
-        <li class="list-group-item bg-light">
-            <b>Boca</b>
-            <a>: <ng-content select="[boca]"></ng-content></a>
-        </li>
-        <li class="list-group-item bg-light">
-            <b>Armario</b>
-            <a>: <ng-content select="[armario]"></ng-content></a>
-        </li>
-        <li class="list-group-item bg-light">
-            <b>Usuario</b>
-            <a>: <ng-content select="[usuario]"></ng-content></a>
-        </li>
-        <li class="list-group-item bg-light">
-            <b>Contraseña</b>
-            <a>: <ng-content select="[contrasena]"></ng-content></a>
-        </li>
+        <ng-content select="[ip]"></ng-content>
+        <ng-content select="[mac]"></ng-content>
+        <ng-content select="[boca]"></ng-content>
+        <ng-content select="[armario]"></ng-content>
+        <ng-content select="[usuario]"></ng-content>
+        <ng-content select="[contrasena]"></ng-content>
         <ng-content select="[botones]"></ng-content>
     </ul>
 </div>

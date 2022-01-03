@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Objeto } from 'src/app/interfaces/objeto';
+import { ObjectsService } from 'src/app/services/objects.service';
 
 @Component({
   selector: 'app-configurations',
@@ -7,7 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigurationsComponent implements OnInit {
 
-  constructor() { }
+  objetos: Objeto[] = []
+
+  constructor(private objectsS: ObjectsService) {
+    objectsS.getObjectsWithConfiguration().subscribe(
+      (res: any) => {
+        this.objetos = res.data;
+        console.log(res)
+      }
+    )
+  }
 
   ngOnInit(): void {
   }

@@ -9,31 +9,31 @@ import { Ubicacion } from '../interfaces/ubicacion';
 export class LocationsService {
 
   _url = "api/ubicacion"
-  
-  constructor(private http : HttpClient, private userService: UserService) { }
 
-  getLocation(idUbicacion: number){
-    let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.get(this._url+"/"+idUbicacion, { headers : header});
+  constructor(private http: HttpClient, private userService: UserService) { }
+
+  getLocation(idUbicacion: number) {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.get(this._url + "/" + idUbicacion, { headers: header });
   }
 
-  getLocations(){
-    let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.get(this._url,{ headers : header});
+  getLocations() {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.get(this._url, { headers: header });
   }
 
-  addLocation(location: Ubicacion){
-    let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.post(this._url, location, { headers : header});
+  addLocation(location: FormData) {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.post(this._url, location, { headers: header });
   }
 
-  deleteLocation(idUbicacion: number){
-    let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.delete(this._url+"/"+idUbicacion,{ headers : header});
+  deleteLocation(idUbicacion: number) {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.delete(this._url + "/" + idUbicacion, { headers: header });
   }
 
-  updateLocation(location: Ubicacion){
-    let header = new HttpHeaders(({'Content-Type': 'application/json',"user_token":this.userService.getToken()}));
-    return this.http.put(this._url+"/"+location.idUbicacion,location,{ headers : header});
+  updateLocation(location: FormData, idUbicacion: number) {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.put(this._url + "/" + idUbicacion, location, { headers: header });
   }
 }

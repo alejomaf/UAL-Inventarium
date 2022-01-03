@@ -9,6 +9,12 @@
         <span fechaAdquisicion>{{objeto?.fechaAdquisicion}}</span>
         <span codigo>{{objeto?.codigo}}</span>
         <span mejorasEquipo>{{objeto?.mejorasEquipo}}</span>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-secondary btn-block" (click)="modificarObjeto()">Modificar objeto
+            </div>
+            <div class="btn btn-danger btn-block" (click)="borrarObjeto()">Borrar objeto
+            </div>
+        </div>
     </app-object>
 
     <div class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
@@ -46,16 +52,34 @@
     </app-group-of-object>
 
     <app-configuration *ngIf="configuracion!=null">
-        <span ip>{{configuracion?.ip}}</span>
-        <span mac>{{configuracion?.mac}}</span>
-        <span boca>{{configuracion?.boca}}</span>
-        <span armario>{{configuracion?.armario}}</span>
-        <span usuario>{{configuracion?.usuario}}</span>
-        <span contrasena>{{configuracion?.contrasena}}</span>
+        <li *ngIf="configuracion?.ip!=''" ip class="list-group-item bg-light">
+            <b>IP</b>
+            <a>: {{configuracion?.ip}}</a>
+        </li>
+        <li *ngIf="configuracion?.mac!=''" mac class="list-group-item bg-light">
+            <b>MAC</b>
+            <a>: {{configuracion?.mac}}</a>
+        </li>
+        <li *ngIf="configuracion?.boca!=''" boca class="list-group-item bg-light">
+            <b>Boca</b>
+            <a>: {{configuracion?.boca}}</a>
+        </li>
+        <li *ngIf="configuracion?.armario!=''" armario class="list-group-item bg-light">
+            <b>Armario</b>
+            <a>: {{configuracion?.armario}}</a>
+        </li>
+        <li *ngIf="configuracion?.usuario!=''" usuario class="list-group-item bg-light">
+            <b>Usuario</b>
+            <a>: {{configuracion?.usuario}}</a>
+        </li>
+        <li *ngIf="configuracion?.contrasena!=''" contrasena class="list-group-item bg-light">
+            <b>Contraseña</b>
+            <a>: {{configuracion?.contrasena}}</a>
+        </li>
         <div botones class="card-body d-grid gap-2">
-            <div class="btn btn-primary btn-block">Modificar configuración
+            <div class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Modificar configuración
             </div>
-            <div class="btn btn-primary btn-block">Borrar configuración
+            <div class="btn btn-primary btn-block" (click)="borrarConfiguracion()">Borrar configuración
             </div>
         </div>
     </app-configuration>
@@ -108,7 +132,10 @@
             <input type="text" [formControl]="contrasena" placeholder="pass" class="form-control" />
         </div>
         <div class="d-grid gap-2">
-            <a class="btn btn-secondary" (click)="crearConfiguracion()">Crear configuración</a>
+            <a *ngIf="configuracion!=null" class="btn btn-secondary" (click)="modificarConfiguracion()">Modificar
+                configuración</a>
+            <a *ngIf="configuracion==null" class="btn btn-secondary" (click)="crearConfiguracion()">Crear
+                configuración</a>
             <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
         </div>
     </div>

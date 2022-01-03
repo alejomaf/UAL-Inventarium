@@ -13,6 +13,8 @@ import { SelectOrCreateObjectComponent } from './components/main/parts/add-objec
 import { ConfigurationsComponent } from './components/main/parts/configurations/configurations.component';
 import { DashboardComponent } from './components/main/parts/dashboard/dashboard.component';
 import { GroupOfObjectsComponent } from './components/main/parts/group-of-objects/group-of-objects.component';
+import { GroupWithObjectsComponent } from './components/main/parts/group-of-objects/group-with-objects/group-with-objects.component';
+import { KitsComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kits.component';
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { ObjectsComponent } from './components/main/parts/group-of-objects/objects/objects.component';
 import { LoansComponent } from './components/main/parts/loans/loans.component';
@@ -50,7 +52,12 @@ const routes: Routes = [
         ]
       },
       { path: 'group-of-objects', component: GroupOfObjectsComponent },
-      { path: 'group-of-object/:id', component: ObjectsComponent },
+      {
+        path: 'group-of-object/:id', component: GroupWithObjectsComponent, children: [
+          { path: '', component: ObjectsComponent },
+          { path: 'kits', component: KitsComponent },
+        ]
+      },
       { path: 'requests', component: RequestsComponent },
       { path: 'user-requests', component: UserRequestsComponent },
       { path: 'loan-requests', component: LoanRequestsComponent },

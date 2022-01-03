@@ -101,6 +101,20 @@ export class ObjectUnitComponent implements OnInit {
         this.cargarConfiguracion();
       }
     );
+    this.ip = new FormControl("");
+    this.mac = new FormControl("");
+    this.boca = new FormControl("");
+    this.armario = new FormControl("");
+    this.usuario = new FormControl("");
+    this.contrasena = new FormControl("");
+  }
+
+  modificarObjeto() {
+
+  }
+
+  borrarObjeto() {
+
   }
 
   ngOnInit(): void {

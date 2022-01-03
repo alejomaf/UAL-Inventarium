@@ -4,7 +4,7 @@ const config = require('../config');
 
 async function getById(idObjeto) {
   const rows = await db.query(
-    `SELECT ip, mac, boca, armario, usuario, contrasena
+    `SELECT ip, mac, boca, armario, usuario, contrasena, idConfiguracion, Objeto_idObjeto
     FROM configuracion WHERE Objeto_idObjeto = ?`,
     [idObjeto]
   );

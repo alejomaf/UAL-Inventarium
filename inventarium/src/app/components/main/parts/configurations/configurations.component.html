@@ -1,1 +1,17 @@
-<p>configurations works!</p>
+<div class="container d-flex flex-wrap align-items-center">
+    <!--Contenido-->
+    <div *ngFor="let o of objetos">
+        <app-object>
+            <h5 nombre style="cursor:pointer" class="card-title text-dark text-center"
+                routerLink="/object/{{o.idObjeto}}">
+                {{o.nombre}} con id {{o.idObjeto}}
+            </h5>
+            <span ubicacion>{{o.ubicacion}}</span>
+            <span planta>{{o.planta}}</span>
+            <span edificio>{{o.edificio}}</span>
+            <span fechaAdquisicion>{{o.fechaAdquisicion}}</span>
+            <span codigo>{{o.codigo}}</span>
+            <span mejorasEquipo>{{o.mejorasEquipo}}</span>
+        </app-object>
+    </div>
+</div>
