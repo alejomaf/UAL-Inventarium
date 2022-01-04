@@ -1,5 +1,5 @@
-<div class="card border rounded px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
-    <div style="width: 100%;" class="card-body list-group-item-primary border">
+<div class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+    <div style="width: 100%;" class="card-title">
         <ng-content select="[nombre]"></ng-content>
     </div>
     <ul class="list-group list-group-flush">
@@ -9,7 +9,7 @@
         </li>
         <li class="list-group-item bg-light">
             <b>Fecha entrega</b>
-            <a>: <ng-content select="[fechaSalida]"></ng-content></a>
+            <a>: <ng-content select="[fechaEntrega]"></ng-content></a>
         </li>
         <li class="list-group-item bg-light">
             <b>Fecha estimada de entrega</b>
@@ -23,5 +23,9 @@
             <b>El préstamo fue pedido el día</b>
             <a>: <ng-content select="[fechaSolicitud]"></ng-content></a>
         </li>
+        <p class="font-weight-bold text-center my-3">
+            Préstamo finalizado
+        </p>
+        <ng-content select="[botones]"></ng-content>
     </ul>
 </div>

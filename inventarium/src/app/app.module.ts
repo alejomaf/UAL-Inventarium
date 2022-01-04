@@ -19,8 +19,6 @@ import { AddObjectComponent } from './components/main/parts/add-object/add-objec
 import { RequestsComponent } from './components/main/parts/requests/requests.component';
 import { UsersComponent } from './components/main/parts/users/users.component';
 import { UserComponent } from './components/main/parts/users/user/user.component';
-import { DevicesComponent } from './components/main/parts/devices/devices.component';
-import { DeviceComponent } from './components/main/parts/devices/device/device.component';
 import { AddDataComponent } from './components/main/admin/add-data/add-data.component';
 import { ProfileComponent } from './components/main/personal/profile/profile.component';
 import { MyLoansComponent } from './components/main/personal/my-loans/my-loans.component';
@@ -45,6 +43,15 @@ import { UserUnitComponent } from './components/main/unit/user-unit/user-unit.co
 import { PendingLoanComponent } from './components/main/parts/loans/loan/type/pending-loan/pending-loan.component';
 import { DeclinedLoanComponent } from './components/main/parts/loans/loan/type/declined-loan/declined-loan.component';
 import { CompletedLoanComponent } from './components/main/parts/loans/loan/type/completed-loan/completed-loan.component';
+import { LoanUnitComponent } from './components/main/unit/loan-unit/loan-unit.component';
+import { PendingLoansComponent } from './components/main/parts/requests/loan-requests/types/pending-loans/pending-loans.component';
+import { ActiveLoansComponent } from './components/main/parts/requests/loan-requests/types/active-loans/active-loans.component';
+import { ExpiredLoansComponent } from './components/main/parts/requests/loan-requests/types/expired-loans/expired-loans.component';
+import { ConfigurationsComponent } from './components/main/parts/configurations/configurations.component';
+import { ConfigurationComponent } from './components/main/parts/configurations/configuration/configuration.component';
+import { GroupWithObjectsComponent } from './components/main/parts/group-of-objects/group-with-objects/group-with-objects.component';
+import { KitsComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kits.component';
+import { KitComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kit/kit.component';
 
 @NgModule({
   declarations: [
@@ -64,8 +71,6 @@ import { CompletedLoanComponent } from './components/main/parts/loans/loan/type/
     RequestsComponent,
     UsersComponent,
     UserComponent,
-    DevicesComponent,
-    DeviceComponent,
     AddDataComponent,
     ProfileComponent,
     MyLoansComponent,
@@ -88,6 +93,15 @@ import { CompletedLoanComponent } from './components/main/parts/loans/loan/type/
     PendingLoanComponent,
     DeclinedLoanComponent,
     CompletedLoanComponent,
+    LoanUnitComponent,
+    PendingLoansComponent,
+    ActiveLoansComponent,
+    ExpiredLoansComponent,
+    ConfigurationsComponent,
+    ConfigurationComponent,
+    GroupWithObjectsComponent,
+    KitsComponent,
+    KitComponent,
   ],
   imports: [
     BrowserModule,

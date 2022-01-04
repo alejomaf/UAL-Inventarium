@@ -2,8 +2,18 @@ const express = require('express');
 const router = express.Router();
 const objeto = require('../services/objeto');
 const middleware = require('./middleware');
+
+
 router.use(middleware.checkToken);
 
+router.get('/configs', async function (req, res, next) {
+  try {
+    res.json(await objeto.getMultipleWithConfig());
+  } catch (err) {
+    console.error(`Error while getting objeto `, err.message);
+    next(err);
+  }
+});
 
 /* GET objeto. */
 router.get('/:id', async function (req, res, next) {

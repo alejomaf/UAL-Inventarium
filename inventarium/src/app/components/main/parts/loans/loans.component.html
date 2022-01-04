@@ -1,17 +1,15 @@
 <div class="row d-flex-inline justify-content-center">
-    <div class="card border rounded px-3 py-3 bg-light" style="width: 18rem;">
-        <div style="width: 100%;" class="card-body list-group-item-primary border">
+    <div class="card border rounded p-3 m-2 bg-light" style="width: 18rem;">
+        <div class="card-title">
             <h5 style="cursor:pointer" class="card-title text-dark text-center">
                 Préstamos para {{grupoObjeto?.nombre}} con id {{objeto?.idObjeto}}
             </h5>
         </div>
-        <div class="card-body d-grid gap-2">
-            <div class="btn btn-primary btn-block" (click)="abrirModal(crearSolicitud)">Crear solicitud
+        <div class="d-grid gap-2">
+            <div *ngIf="this.solicitudes_activas" class="btn btn-primary btn-block"
+                (click)="abrirModal(crearSolicitud)">Crear solicitud
             </div>
-        </div>
-
-        <div class="card-body d-grid gap-2">
-            <div *ngIf="this.activas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-1">Ver
+            <div *ngIf="this.activas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=1">Ver
                 solicitudes
                 activas
             </div>
@@ -33,7 +31,8 @@
     <!--Contenido-->
     <div *ngFor="let prestamo of prestamos" style="width: fit-content;">
         <app-loan *ngIf="this.tipoSolicitud==1 && prestamo.estado==1">
-            <h5 nombre class="card-title text-dark text-center">
+            <h5 nombre style="cursor: pointer" routerLink="/loan/{{prestamo.idPrestado}}"
+                class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
             </h5>
             <span retiradoPor>{{prestamo.retiradoPor}}</span>
@@ -41,7 +40,8 @@
             <span fechaEstimadaEntrega>{{prestamo.fechaEstimadaEntrega}}</span>
         </app-loan>
         <app-pending-loan *ngIf="this.tipoSolicitud==0 && prestamo.estado==0">
-            <h5 nombre class="card-title text-dark text-center">
+            <h5 nombre routerLink="/loan/{{prestamo.idPrestado}}" style="cursor: pointer"
+                class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
             </h5>
             <span retiradoPor>{{prestamo.retiradoPor}}</span>
@@ -49,7 +49,8 @@
             <span fechaEstimadaEntrega>{{prestamo.fechaEstimadaEntrega}}</span>
         </app-pending-loan>
         <app-completed-loan *ngIf="this.tipoSolicitud==-1 && prestamo.estado==-1">
-            <h5 nombre class="card-title text-dark text-center">
+            <h5 nombre routerLink="/loan/{{prestamo.idPrestado}}" style="cursor: pointer"
+                class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
             </h5>
             <span retiradoPor>{{prestamo.retiradoPor}}</span>
@@ -59,7 +60,8 @@
             <span fechaSolicitud>{{prestamo.solicitado}}</span>
         </app-completed-loan>
         <app-declined-loan *ngIf="this.tipoSolicitud==-2 && prestamo.estado==-2">
-            <h5 nombre class="card-title text-dark text-center">
+            <h5 nombre routerLink="/loan/{{prestamo.idPrestado}}" style="cursor: pointer"
+                class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
             </h5>
             <span retiradoPor>{{prestamo.retiradoPor}}</span>

@@ -5,6 +5,12 @@
     "logLevel": "debug",
     "changeOrigin": true
   },
+  "/api/configuracion/*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
   "/api/grupoobjetos*": {
     "target": "http://localhost:3000",
     "secure": false,
@@ -35,6 +41,12 @@
     "logLevel": "debug",
     "changeOrigin": true
   },
+  "/api/objeto/configs*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
   "/api/objeto/location-id/*": {
     "target": "http://localhost:3000",
     "secure": false,
@@ -42,6 +54,12 @@
     "changeOrigin": true
   },
   "/api/objetokit*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/objetokit/*": {
     "target": "http://localhost:3000",
     "secure": false,
     "logLevel": "debug",
@@ -60,6 +78,18 @@
     "changeOrigin": true
   },
   "/api/prestado*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/prestado/id/*": {
+    "target": "http://localhost:3000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  },
+  "/api/prestado/type/*": {
     "target": "http://localhost:3000",
     "secure": false,
     "logLevel": "debug",

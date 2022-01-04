@@ -45,7 +45,7 @@ export class ModalLocationSelectComponent implements OnInit {
         this.locations = res.data; console.log(res.data);
         this.procesarEdificios();
       }, err => console.log('Error', err));
-    this.create_location = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
+    this.create_location = { edificio: "", planta: "", idUbicacion: 0, ubicacion: "" }
   }
 
   ngOnInit(): void {
@@ -64,13 +64,17 @@ export class ModalLocationSelectComponent implements OnInit {
       case 2:
         this.create_location.ubicacion = this.busqueda.value;
         this.estado = -1;
-        this.locations_service.addLocation(this.create_location).subscribe(
+        let formData = new FormData();
+        formData.append("edificio", this.create_location.edificio);
+        formData.append("planta", this.create_location.planta);
+        formData.append("ubicacion", this.create_location.ubicacion);
+        this.locations_service.addLocation(formData).subscribe(
           (res: any) => {
             this.locations_service.getLocations().subscribe(
               (res: any) => {
                 this.locations = res.data; console.log(res.data);
                 this.procesarEdificios();
-                this.create_location = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
+                this.create_location = { edificio: "", planta: "", idUbicacion: 0, ubicacion: "" }
               }, err => console.log('Error', err));
           }, err => console.log('Error', err));
         break;
@@ -88,9 +92,9 @@ export class ModalLocationSelectComponent implements OnInit {
             (res: any) => {
               this.locations = res.data; console.log(res.data);
               this.procesarEdificios();
-              this.create_location = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
+              this.create_location = { edificio: "", planta: "", idUbicacion: 0, ubicacion: "" }
             }, err => console.log('Error', err));
-          this.location_to_delete = { edificio: new Text(), planta: new Text(), idUbicacion: 0, ubicacion: new Text() }
+          this.location_to_delete = { edificio: "", planta: "", idUbicacion: 0, ubicacion: "" }
         }, err => console.log('Error', err));
     }
   }

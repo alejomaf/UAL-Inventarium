@@ -1,0 +1,84 @@
+<div class="container d-flex flex-wrap align-items-center">
+    <app-loan *ngIf="prestamo?.estado==1">
+        <h5 nombre style="cursor: pointer" class="card-title text-dark text-center">
+            Préstamo a {{prestamo?.nombre}}
+        </h5>
+        <span retiradoPor>{{prestamo?.retiradoPor}}</span>
+        <span fechaSalida>{{prestamo?.fechaSalida}}</span>
+        <span fechaEstimadaEntrega>{{prestamo?.fechaEstimadaEntrega}}</span>
+        <div botones class="d-grid gap-2">
+            <div *ngIf="usuario?.rango==0" (click)="finalizarPrestamo()" type="btn" class="btn btn-primary btn-block">
+                Finalizar préstamo</div>
+        </div>
+    </app-loan>
+    <app-pending-loan *ngIf="prestamo?.estado==0">
+        <h5 nombre style="cursor: pointer" class="card-title text-dark text-center">
+            Préstamo a {{prestamo?.nombre}}
+        </h5>
+        <span retiradoPor>{{prestamo?.retiradoPor}}</span>
+        <span fechaSolicitud>{{prestamo?.solicitado}}</span>
+        <span fechaEstimadaEntrega>{{prestamo?.fechaEstimadaEntrega}}</span>
+        <div botones class="d-grid gap-2">
+            <div *ngIf="usuario?.rango==0" (click)="concederPrestamo()" type="btn" class="btn btn-primary btn-block">
+                Conceder préstamo</div>
+            <div *ngIf="usuario?.rango==0" (click)="rechazarPrestamo()" type="btn" class="btn btn-secondary btn-block">
+                Rechazar préstamo</div>
+            <div *ngIf="usuario?.idUsuario==prestamo?.Usuario_idUsuario" (click)="cancelarPrestamo()" type="btn"
+                class="btn btn-secondary btn-block">
+                Cancelar
+                préstamo</div>
+        </div>
+    </app-pending-loan>
+    <app-completed-loan *ngIf="prestamo?.estado==-1">
+        <h5 nombre style="cursor: pointer" class="card-title text-dark text-center">
+            Préstamo a {{prestamo?.nombre}}
+        </h5>
+        <span retiradoPor>{{prestamo?.retiradoPor}}</span>
+        <span fechaEntrega>{{prestamo?.fechaEntrega}}</span>
+        <span fechaEstimadaEntrega>{{prestamo?.fechaEstimadaEntrega}}</span>
+        <span fechaSalida>{{prestamo?.fechaSalida}}</span>
+        <span fechaSolicitud>{{prestamo?.solicitado}}</span>
+    </app-completed-loan>
+    <app-declined-loan *ngIf="prestamo?.estado==-2">
+        <h5 nombre style="cursor: pointer" class="card-title text-dark text-center">
+            Préstamo a {{prestamo?.nombre}}
+        </h5>
+        <span retiradoPor>{{prestamo?.retiradoPor}}</span>
+        <span fechaEstimadaEntrega>{{prestamo?.fechaEstimadaEntrega}}</span>
+        <span fechaSolicitud>{{prestamo?.solicitado}}</span>
+    </app-declined-loan>
+
+
+    <app-user style="margin: 0 0; padding: 0 0;">
+        <h5 routerLink="/user/{{usuario_prestamo?.idUsuario}}" nombre style="cursor:pointer"
+            class="card-title text-dark text-center">
+            {{usuario_prestamo?.nombre}}
+        </h5>
+        <span correoElectronico>{{usuario_prestamo?.correoElectronico}}</span>
+        <span *ngIf="usuario_prestamo?.departamento==0" departamento>Departamento de informática</span>
+        <span *ngIf="usuario_prestamo?.departamento==1" departamento>Ingeniería de sistemas y automática</span>
+        <span *ngIf="usuario_prestamo?.departamento==2" departamento>Lenguaje y sistemas informáticos</span>
+        <span *ngIf="usuario_prestamo?.departamento==3" departamento>Ciencias de la computación e inteligencia
+            artificial</span>
+        <span *ngIf="usuario_prestamo?.departamento==4" departamento>Arquitectura y tecnología de computadores</span>
+        <span telefono>{{usuario_prestamo?.telefono}}</span>
+        <span *ngIf="usuario_prestamo?.rango==-1" rango>Solicitud pendiente</span>
+        <span *ngIf="usuario_prestamo?.rango==-2" rango>Usuario cancelado</span>
+        <span *ngIf="usuario_prestamo?.rango==1" rango>Usuario</span>
+        <span *ngIf="usuario_prestamo?.rango==0" rango>Técnico</span>
+    </app-user>
+
+    <app-object style="margin: 0 0; padding: 0 0;">
+        <h5 nombre style="cursor:pointer" class="card-title text-dark text-center"
+            routerLink="/object/{{objeto_prestamo?.idObjeto!}}">
+            {{prestamo?.nombre_grupo_objetos}} con id {{objeto_prestamo?.idObjeto}}
+        </h5>
+        <span ubicacion>{{objeto_prestamo?.ubicacion}}</span>
+        <span planta>{{objeto_prestamo?.planta}}</span>
+        <span edificio>{{objeto_prestamo?.edificio}}</span>
+        <span fechaAdquisicion>{{objeto_prestamo?.fechaAdquisicion}}</span>
+        <span codigo>{{objeto_prestamo?.codigo}}</span>
+        <span mejorasEquipo>{{objeto_prestamo?.mejorasEquipo}}</span>
+    </app-object>
+
+</div>

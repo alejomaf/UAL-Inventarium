@@ -1,1 +1,32 @@
-<p>loan-requests works!</p>
+<div class="row justify-content-center">
+    <div class="card bg-light mx-2 my-2 position-sticky" style="width:18rem;">
+        <div class="align-self-center">
+            <span style="font-size:200px;">
+                <fa-icon [icon]="activos"></fa-icon>
+            </span>
+        </div>
+        <div class="card-body d-grid gap-2">
+            <a routerLink="/loan-requests/active-loans" class="btn btn-primary btn-block">Préstamos activos</a>
+        </div>
+    </div>
+    <div class="card bg-light mx-2 my-2 position-sticky" style="width:18rem;">
+        <div class="align-self-center">
+            <span style="font-size:200px;">
+                <fa-icon [icon]="pendientes"></fa-icon>
+            </span>
+        </div>
+        <div class="card-body d-grid gap-2">
+            <a routerLink="/loan-requests/pending-loans" class="btn btn-primary btn-block">Préstamos pendientes</a>
+        </div>
+    </div>
+    <div class="card bg-light mx-2 my-2 position-sticky" style="width:18rem;">
+        <div class="align-self-center">
+            <span style="font-size:200px;">
+                <fa-icon [icon]="devolver"></fa-icon>
+            </span>
+        </div>
+        <div class="card-body d-grid gap-2">
+            <a routerLink="/loan-requests/expired-loans" class="btn btn-primary btn-block">Préstamos por devolver</a>
+        </div>
+    </div>
+</div>

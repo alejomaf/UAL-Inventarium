@@ -12,23 +12,31 @@ import { ObjectsService } from 'src/app/services/objects.service';
   styleUrls: ['./objects.component.css']
 })
 export class ObjectsComponent implements OnInit {
-  public go! : GrupoObjetos;
-  private routeSub! : Subscription;
-  public objects : Objeto[] = [];
-  idGrupoObjeto! : number;
-  
+  public go!: GrupoObjetos;
+  private routeSub!: Subscription;
+  public objects: Objeto[] = [];
+  idGrupoObjeto!: number;
+
   constructor(private group_of_objects_service: GroupOfObjectsService, private route: ActivatedRoute, private objects_service: ObjectsService) {
     this.routeSub = this.route.params.subscribe(params => {
       this.idGrupoObjeto = params['id'];
     });
     this.group_of_objects_service.getGroupOfObject(this.idGrupoObjeto).subscribe(
-      (res: any) => { 
-        this.go = res.data[0]; console.log(res.data); 
-      },err => console.log('Error', err));
+      (res: any) => {
+        this.go = res.data[0];
+      }, err => console.log('Error', err));
     this.objects_service.getObjects(this.idGrupoObjeto).subscribe(
       (res: any) => {
-        this.objects = res.data; console.log(res.data);
-      },err => console.log('Error', err));
+        this.objects = res.data;
+      }, err => console.log('Error', err));
+  }
+
+  modificarGrupoObjeto() {
+
+  }
+
+  borrarGrupoObjeto() {
+
   }
 
   ngOnInit(): void {

@@ -1,0 +1,19 @@
+<div class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+    <div style="width: 100%; height: 230px;">
+        <ng-content select="[imagen]"></ng-content>
+    </div>
+    <div style="width: 100%;" class="card-body list-group-item-dark border">
+        <ng-content select="[nombre]"></ng-content>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-light">
+            <b>Cantidad</b>
+            <a>:<ng-content select="[cantidad]"></ng-content></a>
+        </li>
+        <li class="list-group-item bg-light">
+            <b>Observaciones</b>
+            <a>:<ng-content select="[observaciones]"></ng-content></a>
+        </li>
+    </ul>
+    <ng-content select="[botones]"></ng-content>
+</div>

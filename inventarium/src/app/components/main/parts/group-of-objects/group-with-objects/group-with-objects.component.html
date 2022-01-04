@@ -1,0 +1,29 @@
+<div class="row d-flex-inline justify-content-center">
+    <!--Contenido-->
+    <app-group-of-object style="width: fit-content;">
+        <img imagen class="card-img-top rounded-circle" src="http://localhost:3000/images/{{go?.imagen}}.jpg">
+        <h5 nombre [routerLink]="['/group-of-object', go?.idGrupoObjetos]" class="card-title text-dark text-center">
+            {{go?.nombre}}</h5>
+        <span cantidad>{{go?.cantidad}}</span>
+        <span marca>{{go?.marca}}</span>
+        <span modelo>{{go?.modelo}}</span>
+        <span cantidadDisponible>{{go?.cantidadDisponible}}</span>
+        <span *ngIf="go?.tipo==0" tipo>Inventario</span>
+        <span *ngIf="go?.tipo==1" tipo>Fungible</span>
+        <span *ngIf="go?.tipo==2" tipo>Kit</span>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-secondary btn-block" (click)="modificarGrupoObjeto()">Modificar grupo de objetos
+            </div>
+            <div class="btn btn-light btn-block" (click)="borrarGrupoObjeto()">Borrar grupo de objetos
+            </div>
+            <div *ngIf="go?.tipo==2 && !ruta_kits" class="btn btn-dark btn-block" routerLink="kits"
+                (click)="ruta_kits=!ruta_kits">¿Qué contiene el kit?
+            </div>
+            <div *ngIf="go?.tipo==2 && ruta_kits" class="btn btn-dark btn-block"
+                routerLink="/group-of-object/{{go?.idGrupoObjetos}}" (click)="ruta_kits=!ruta_kits">Volver
+            </div>
+        </div>
+    </app-group-of-object>
+</div>
+
+<router-outlet></router-outlet>

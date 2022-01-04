@@ -1,0 +1,14 @@
+<div class="row d-flex-inline justify-content-center">
+    <!--Contenido-->
+    <div *ngFor="let prestamo of prestamos" style="width: fit-content;">
+        <app-pending-loan>
+            <h5 nombre routerLink="/loan/{{prestamo.idPrestado}}" style="cursor: pointer"
+                class="card-title text-dark text-center">
+                Préstamo a {{prestamo.nombre}}
+            </h5>
+            <span retiradoPor>{{prestamo.retiradoPor}}</span>
+            <span fechaSolicitud>{{prestamo.solicitado}}</span>
+            <span fechaEstimadaEntrega>{{prestamo.fechaEstimadaEntrega}}</span>
+        </app-pending-loan>
+    </div>
+</div>

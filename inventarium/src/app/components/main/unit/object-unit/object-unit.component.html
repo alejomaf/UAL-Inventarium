@@ -1,28 +1,142 @@
-<app-object>
-    <span idObjeto>{{objeto!.idObjeto}}</span>
-    <span nombre>{{grupoObjeto!.nombre}}</span>
-    <span ubicacion>{{objeto!.ubicacion}}</span>
-    <span planta>{{objeto!.planta}}</span>
-    <span edificio>{{objeto!.edificio}}</span>
-    <span fechaAdquisicion>{{objeto!.fechaAdquisicion}}</span>
-    <span codigo>{{objeto!.codigo}}</span>
-    <span mejorasEquipo>{{objeto!.mejorasEquipo}}</span>
-</app-object>
-
-<div class="card border rounded my-3 px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
-    <div style="width: 100%;" class="card-body list-group-item-primary border">
-        <h5 style="cursor:pointer" class="card-title text-dark text-center">
-            Préstamos del objeto
+<div class="container d-flex flex-wrap align-items-center">
+    <app-object>
+        <h5 nombre class="card-title text-dark text-center">
+            {{grupoObjeto?.nombre}} con id {{objeto?.idObjeto}}
         </h5>
+        <span ubicacion>{{objeto?.ubicacion}}</span>
+        <span planta>{{objeto?.planta}}</span>
+        <span edificio>{{objeto?.edificio}}</span>
+        <span fechaAdquisicion>{{objeto?.fechaAdquisicion}}</span>
+        <span codigo>{{objeto?.codigo}}</span>
+        <span mejorasEquipo>{{objeto?.mejorasEquipo}}</span>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-secondary btn-block" (click)="modificarObjeto()">Modificar objeto
+            </div>
+            <div class="btn btn-danger btn-block" (click)="borrarObjeto()">Borrar objeto
+            </div>
+        </div>
+    </app-object>
+
+    <div class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+        <div style="width: 100%;" class="card-title">
+            <h5 class="card-title text-dark text-center">
+                Préstamos del objeto
+            </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light">
+                <b>Estado</b>
+                <a *ngIf="objeto?.disponible==0">: Disponible</a>
+                <a *ngIf="objeto?.disponible==1">: Prestado</a>
+            </li>
+        </ul>
+        <div class="card-body d-grid gap-2">
+            <div class="btn btn-primary btn-block" routerLink="/loans/{{objeto?.idObjeto!}}">Ver o solicitar
+                préstamos
+            </div>
+        </div>
     </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item bg-light">
-            <b>Estado</b>
-            <a *ngIf="objeto!.disponible==0">: Disponible</a>
-            <a *ngIf="objeto!.disponible==1">: Prestado</a>
+
+    <app-group-of-object>
+        <img imagen class="card-img-top rounded-circle" style="cursor:pointer"
+            src="http://localhost:3000/images/{{grupoObjeto?.imagen}}.jpg">
+        <h5 nombre [routerLink]="['/group-of-object', grupoObjeto?.idGrupoObjetos]" style="cursor:pointer"
+            class="card-title text-dark text-center">{{grupoObjeto?.nombre}}</h5>
+        <span cantidad>{{grupoObjeto?.cantidad}}</span>
+        <span marca>{{grupoObjeto?.marca}}</span>
+        <span modelo>{{grupoObjeto?.modelo}}</span>
+        <span cantidadDisponible>{{grupoObjeto?.cantidadDisponible}}</span>
+        <span *ngIf="grupoObjeto?.tipo==0" tipo>Inventario</span>
+        <span *ngIf="grupoObjeto?.tipo==1" tipo>Fungible</span>
+        <span *ngIf="grupoObjeto?.tipo==2" tipo>Kit</span>
+    </app-group-of-object>
+
+    <app-configuration *ngIf="configuracion!=null">
+        <li *ngIf="configuracion?.ip!=''" ip class="list-group-item bg-light">
+            <b>IP</b>
+            <a>: {{configuracion?.ip}}</a>
         </li>
-    </ul>
-    <div class="card-body d-grid gap-2">
-        <div class="btn btn-primary btn-block" routerLink="/loans/{{objeto!.idObjeto}}">Ver o solicitar préstamos</div>
+        <li *ngIf="configuracion?.mac!=''" mac class="list-group-item bg-light">
+            <b>MAC</b>
+            <a>: {{configuracion?.mac}}</a>
+        </li>
+        <li *ngIf="configuracion?.boca!=''" boca class="list-group-item bg-light">
+            <b>Boca</b>
+            <a>: {{configuracion?.boca}}</a>
+        </li>
+        <li *ngIf="configuracion?.armario!=''" armario class="list-group-item bg-light">
+            <b>Armario</b>
+            <a>: {{configuracion?.armario}}</a>
+        </li>
+        <li *ngIf="configuracion?.usuario!=''" usuario class="list-group-item bg-light">
+            <b>Usuario</b>
+            <a>: {{configuracion?.usuario}}</a>
+        </li>
+        <li *ngIf="configuracion?.contrasena!=''" contrasena class="list-group-item bg-light">
+            <b>Contraseña</b>
+            <a>: {{configuracion?.contrasena}}</a>
+        </li>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Modificar configuración
+            </div>
+            <div class="btn btn-primary btn-block" (click)="borrarConfiguracion()">Borrar configuración
+            </div>
+        </div>
+    </app-configuration>
+
+    <div *ngIf="configuracion==null" class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+        <div style="width: 100%;" class="card-title">
+            <h5 class="card-title text-dark text-center">
+                Configuración
+            </h5>
+        </div>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Crear configuración
+            </div>
+        </div>
     </div>
+
 </div>
+
+<!-- Modal for making a loan request -->
+<ng-template #crearConfiguracionModal class="modal">
+    <!-- Modal content -->
+    <div class="modal-content p-3">
+        <h5>Crear configuracion</h5>
+        <div class="col-md-12 mb-3">
+            <label>Dirección IP:</label>
+            <input type="text" [formControl]="ip" placeholder="192.168.0.0" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Dirección MAC:</label>
+            <input type="text" [formControl]="mac" placeholder="91:75:1a:ec:9a:c7" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Dirección MAC:</label>
+            <input type="text" [formControl]="mac" placeholder="91:75:1a:ec:9a:c7" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Boca:</label>
+            <input type="text" [formControl]="boca" placeholder="4A" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Armario:</label>
+            <input type="text" [formControl]="armario" placeholder="D" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Usuario:</label>
+            <input type="text" [formControl]="usuario" placeholder="user" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Contraseña:</label>
+            <input type="text" [formControl]="contrasena" placeholder="pass" class="form-control" />
+        </div>
+        <div class="d-grid gap-2">
+            <a *ngIf="configuracion!=null" class="btn btn-secondary" (click)="modificarConfiguracion()">Modificar
+                configuración</a>
+            <a *ngIf="configuracion==null" class="btn btn-secondary" (click)="crearConfiguracion()">Crear
+                configuración</a>
+            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        </div>
+    </div>
+</ng-template>

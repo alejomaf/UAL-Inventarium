@@ -1,18 +1,3 @@
-<div class="row d-flex-inline justify-content-center">
-    <!--Contenido-->
-    <app-group-of-object style="width: fit-content;">
-        <img imagen class="card-img-top rounded-circle" src="http://localhost:3000/images/{{go.imagen}}.jpg">
-        <h5 nombre [routerLink]="['/group-of-object', go.idGrupoObjetos]" class="card-title text-dark text-center">
-            {{go.nombre}}</h5>
-        <span cantidad>{{go.cantidad}}</span>
-        <span marca>{{go.marca}}</span>
-        <span modelo>{{go.modelo}}</span>
-        <span cantidadDisponible>{{go.cantidadDisponible}}</span>
-        <span *ngIf="go.tipo==0" tipo>Inventario</span>
-        <span *ngIf="go.tipo==1" tipo>Fungible</span>
-        <span *ngIf="go.tipo==2" tipo>Kit</span>
-    </app-group-of-object>
-</div>
 <div class="row d-flex-inline">
     <!--Contenido-->
     <div *ngFor="let o of objects" class="my-3" style="width: fit-content;">

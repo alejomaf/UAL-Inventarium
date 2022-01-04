@@ -16,11 +16,39 @@ router.get('/', async function (req, res, next) {
   }
 });
 
-/* GET prestado. */
+/* GET prestados by object. */
 router.get('/:id', async function (req, res, next) {
   try {
     req.User_idUser = req.userId;
     res.json(await prestado.getMultipleByObject(req.params.id, req.query.page));
+  } catch (err) {
+    console.error(`Error while getting prestado `, err.message);
+    next(err);
+  }
+});
+
+/* GET prestado by id. */
+router.get('/id/:id', async function (req, res, next) {
+  try {
+    res.json(await prestado.getById(req.params.id));
+  } catch (err) {
+    console.error(`Error while getting prestado `, err.message);
+    next(err);
+  }
+});
+
+/* GET prestado by type. */
+router.get('/type/:id', async function (req, res, next) {
+  try {
+    tipo_de_solicitud = req.params.id;
+
+    if (tipo_de_solicitud == 0) {
+      res.json(await prestado.getActiveLoans());
+    } else if (tipo_de_solicitud == 1) {
+      res.json(await prestado.getPendingLoans());
+    } else if (tipo_de_solicitud == 2) {
+      res.json(await prestado.getExpiredLoans());
+    }
   } catch (err) {
     console.error(`Error while getting prestado `, err.message);
     next(err);

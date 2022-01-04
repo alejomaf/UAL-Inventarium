@@ -25,17 +25,8 @@ export class VerticalNavbarComponent implements OnInit {
   usuario?: Usuario
 
   constructor(private loginS: UserService, private router: Router) {
-    if (!loginS.isLogged()) {
-      this.logout();
-      return;
-    }
     loginS.getUser().subscribe(
       (res: any) => {
-        console.log(res);
-        if (res == null) {
-
-          return;
-        }
         this.usuario = res;
       }
     );

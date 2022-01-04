@@ -98,8 +98,9 @@ async function remove(idObjeto) {
 
 async function getById(idObjeto) {
   const rows = await db.query(
-    `SELECT *
-    FROM objeto, ubicacion WHERE idObjeto = ? AND ubicacion.idUbicacion = Ubicacion_idUbicacion`,
+    `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, eliminado, 
+    date_format(fechaAdquisicion, '%d-%m-%y') as 'fechaAdquisicion', observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, edificio, planta, ubicacion 
+    FROM objeto, ubicacion WHERE idObjeto = ? AND objeto.Ubicacion_idUbicacion = ubicacion.idUbicacion`,
     [idObjeto]
   );
   const data = helper.emptyOrRows(rows);
@@ -109,8 +110,17 @@ async function getById(idObjeto) {
   }
 }
 
-async function lendObject() {
-  const rows = await db.query('UPDATE objeto SET obj')
+async function getMultipleWithConfig() {
+  const rows = await db.query(
+    `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos, objeto.eliminado, 
+    date_format(fechaAdquisicion, '%d-%m-%y') as 'fechaAdquisicion', observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, edificio, planta, ubicacion, nombre 
+    FROM objeto, ubicacion, configuracion, grupoobjetos WHERE objeto.Ubicacion_idUbicacion = ubicacion.idUbicacion AND configuracion.Objeto_idObjeto = objeto.idObjeto AND GrupoObjetos_idGrupoObjetos = grupoobjetos.idGrupoObjetos`,
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
 }
 
 
@@ -121,4 +131,5 @@ module.exports = {
   remove,
   getById,
   getMultipleByLocation,
+  getMultipleWithConfig,
 }

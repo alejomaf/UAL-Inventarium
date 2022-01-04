@@ -5,9 +5,11 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { Objeto } from 'src/app/interfaces/objeto';
 import { Prestado } from 'src/app/interfaces/prestado';
+import { Usuario } from 'src/app/interfaces/usuario';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { LoansService } from 'src/app/services/loans.service';
 import { ObjectsService } from 'src/app/services/objects.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-loans',
@@ -26,6 +28,9 @@ export class LoansComponent implements OnInit {
   pendientes = false;
   pasadas = false;
   rechazadas = false;
+  solicitudes_activas = true;
+
+  usuario?: Usuario
 
   //Formulario de creacion de préstamo
   retiradoPor = new FormControl("");
@@ -33,7 +38,12 @@ export class LoansComponent implements OnInit {
     Validators.required
   ]);
 
-  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private modalService: NgbModal, private loansS: LoansService) {
+  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private modalService: NgbModal, private loansS: LoansService, private userS: UserService) {
+    this.userS.getUser().subscribe(
+      (res: any) => {
+        this.usuario = res;
+      }
+    )
     this.idObjeto = route.snapshot.params['id'];
     this.objectS.getObject(this.idObjeto).subscribe(
       (res: any) => {
@@ -57,7 +67,6 @@ export class LoansComponent implements OnInit {
       (res: any) => {
         this.prestamos = res.data;
         this.procesarPrestamos();
-        console.log(this.prestamos[0] + "hola")
       }
     )
   }
@@ -82,6 +91,8 @@ export class LoansComponent implements OnInit {
       }
     }
     if (this.activas == false && this.pendientes == true) this.tipoSolicitud = 0;
+
+    this.tieneSolicitudesActivas();
   }
 
   //Préstamo se inicializa en el estado 0
@@ -97,45 +108,21 @@ export class LoansComponent implements OnInit {
     this.loansS.addLoan(formData).subscribe(
       (res: any) => {
         console.log(res);
+        this.cerrarModal();
         this.cargarPrestamos();
       }
     )
   }
 
-  //Préstamo pasa al estado 1
-  concederPrestamos(idPrestamo: number) {
-    this.loansS.grantLoan(idPrestamo).subscribe(
-      (res: any) => {
-        this.cargarPrestamos();
+  tieneSolicitudesActivas() {
+    if (!this.pendientes) return;
+    for (let i = 0; i < this.prestamos.length; i++) {
+      if (this.prestamos[i].Usuario_idUsuario == this.usuario!.idUsuario && this.prestamos[i].estado == 0) {
+        this.solicitudes_activas = false;
+        return;
       }
-    );
-  }
-
-  //Préstamo pasa al estado -1
-  finalizarPrestamo(idPrestamo: number) {
-    this.loansS.endLoan(idPrestamo).subscribe(
-      (res: any) => {
-        this.cargarPrestamos();
-      }
-    );
-  }
-
-  //Préstamo pasa al estado -2
-  rechazarPrestamo(idPrestamo: number) {
-    this.loansS.denyLoan(idPrestamo).subscribe(
-      (res: any) => {
-        this.cargarPrestamos();
-      }
-    );
-  }
-
-  //El préstamo se elimina
-  cancelarPrestamo(idPrestamo: number) {
-    this.loansS.deleteLoan(idPrestamo).subscribe(
-      (res: any) => {
-        this.cargarPrestamos();
-      }
-    );
+    }
+    this.solicitudes_activas = true;
   }
 
   //Modal behaviour

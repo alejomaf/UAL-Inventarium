@@ -1,10 +1,10 @@
 export interface Configuracion {
     idConfiguracion?: number,
-    ip: Text,
-    mac: Text,
-    boca: Text,
-    armario: Text,
-    usuario: Text,
-    contrasena: Text,
+    ip: string,
+    mac: string,
+    boca: string,
+    armario: string,
+    usuario: string,
+    contrasena: string,
     Objeto_idObjeto?: number
 }
