@@ -1,1 +1,49 @@
 \section{Copias de seguridad}
+La generación de una copia de seguridad automatizada puede parecer un aspecto secundario en muchos desarrollos. Una copia de seguridad sin planificación puede realizarse cada dos meses, cada semana, cada año pero lo que es seguro es que no se hace de una forma precisa, ordenada y organizada.
+\\Uno de las principios básicos de nuestra aplicación es la del almacenaje de información por lo que es de vital importancia la seguridad que presenta esta presente ante eventos indeseados. Todo cabe decir, que desde que empecé a programar, que fue a los 14 años, una sola vez se me ha vuelto un archivo corrupto. La única similitud, a mi parecer, que comparte la informática con la política.
+\\Los requisitos de la implantación del sistema de copias de seguridad debe ir en relación a los principios del proyecto, tales como modularidad o escalabilidad. Por eso este sistema de copias también tenía que ser creado desde un contenedor de Docker.
+\\Todos los sistemas de copias de seguridad giraban en torno a funcionalidades que presentaba MariaDB. El más referenciado era la siguiente línea de código:
+\begin{verbatim}
+    docker exec nombre_contenedor /usr/bin/mysqldump -u root --password=root \\
+    nombre_de_la_base_de_datos > direccion_copia_de_seguridad.sql
+\end{verbatim}
+En función a esta idea busqué la forma gracias a Crontab, un programador de tareas que podemos instalar en sistemas Linux, de poder automatizar un script de generación de copias de seguridad y enlazarlo a un fichero externo al contenedor que el usuario pudiera estar controlando en todo momento.
+\\Pero, durante la búsqueda encontré una imagen en Docker Hub que resolvía estos requisitos a la perfección.
+
+\subsection{MySQL-Backup}
+Mysql\-backup es una imagen que se encuentra subida a Docker Hub que tiene más de 10 millones de descargas por lo que la he considerado fiable.
+\\Esta imagen nos permite poder varias acciones sobre nuestra base de datos:
+\begin{itemize}
+    \item Guardar y restaurar copias de seguridad
+    \item Guardar a un sistema de ficheros local o a un servidor SMB copias de seguridad.
+    \item Seleccionar la/s base/s de datos a copiar
+    \item Configurar la temporización del generado de copias de seguridad
+\end{itemize}
+A medida que avanzaba en la lectura de toda la documentación que tenían en Docker Hub pude comprobar que toda la personalización que presentaba esta aplicación era gigante. Aparte de tener una perfecta compatibilidad con MariaDB, nuestra base de datos.
+\\Lo siguiente que teníamos que hacer era añadir la configuración de esta máquina a nuestro archivo \textit{docker\-compose.yml}.
+\begin{verbatim}
+    backup:
+        image: databack/mysql-backup
+        restart: always
+        volumes:
+        - ./backup:/db
+        environment:
+        DB_DUMP_TARGET: /db
+        DB_USER: root
+        DB_PASS: secretpass
+        DB_DUMP_FREQ: 1440
+        DB_DUMP_BEGIN: 2330
+        DB_SERVER: db
+        DB_NAMES: ualinventarium
+\end{verbatim}
+Le añadimos como nombre de referencia a nuestro contenedor ``backup''. Referenciamos la imagen anteriormente citada en Docker Hub, le añadimos el parámetro ``restart: always'' que nos ayudará a que la máquina se encienda en caso de que se apague.
+\\En la sección ``volumes'' lo que hacemos es enlazar nuestro directorio \textit{backup} ubicado en la misma carpeta que nuestro fichero \textit{docker\-compose.yml} con la carpeta interna del contenedor \textit{db} que será donde se localizarán las copias de seguridad. Los siguientes parámetros los hemos tratado ya en la configuración de la base de datos pero hay unos nuevos que la imagen nos da la posibilidad de usar:
+\begin{itemize}
+    \item \textbf{DB\_DUMP\_TARGET}: Aquí escribiremos la ubicación donde se almacenarán las copias de seguridad de nuestra base de datos.
+    \item \textbf{DB\_DUMP\_FREQ}: Esta será la variable que regulará la velocidad con la que se crearán las copias de seguridad. Son valores enteros en minutos. He estimado que la base de datos en aproximadamente unos 5 años podría alcanzar un tamaño, estimando bastantes filas de la base de datos, de 100MB. Por lo que una política de copias de seguridad diaria o semanal puede ser ideal. Dado el poco espacio que estimo que van a ocupar recomendaría que la frecuencia de ejecución sea diaria y al llegar al mes se reduzcan las copias pasadas a una copia por semana.
+    \item \textbf{DB\_DUMP\_BEGIN}: Define el la hora cuando empezará a efectuarse la copia de seguridad. Por ejemplo, en el caso de que se quieran realizar las copias de seguridad cada día a las 12 del mediodía una frecuencia de 24 horas en cada copia puede depender del momento en el que inicies el script. Por lo que definir una hora inicial ayuda a poder controlar esa temporización.
+    \item \textbf{DB\_SERVER}: Aquí definiremos el nombre del servidor de la base de datos de la cual vamos a realizar el copiado. Este no es el nombre que tiene definido el contenedor, sino el que le definimos al inicio de la sección con la referenciación de Docker Compose.
+    \item \textbf{DB\_NAMES}: Esta variable nos permite añadir una o varias bases de datos para poder realizar el copiado de los datos. En el caso de no lo definamos el sistema realizará una copia entera de la base de datos.
+\end{itemize}
+\vspace{\baselineskip}
+Con esto ya tendríamos nuestro sistema automático de copias de seguridad en marcha.

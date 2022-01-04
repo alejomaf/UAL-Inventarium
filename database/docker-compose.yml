@@ -43,4 +43,3 @@ services:
       DB_NAMES: ualinventarium
 volumes:
   persistent: {}
-  backup: {}
