@@ -28,5 +28,19 @@ services:
       MYSQL_ROOT_PASSWORD: rO0trP4ssM0Ord20D1f1CIL3
     networks:
       - default
+  backup:
+    image: databack/mysql-backup
+    restart: always
+    volumes:
+      - ./backup:/db
+    environment:
+      DB_DUMP_TARGET: /db
+      DB_USER: root
+      DB_PASS: rO0trP4ssM0Ord20D1f1CIL3
+      DB_DUMP_FREQ: 2
+      DB_DUMP_BEGIN: 2330
+      DB_SERVER: db
+      DB_NAMES: ualinventarium
 volumes:
   persistent: {}
+  backup: {}
