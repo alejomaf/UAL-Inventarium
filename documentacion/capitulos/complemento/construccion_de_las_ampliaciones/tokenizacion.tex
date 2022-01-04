@@ -1,0 +1,96 @@
+\section{Tokenización}
+
+La utilización de tokens durante el desarrollo de APIs ha incrementado a lo largo de los últimos años. Estos tokens permiten aislar de esa capa de seguridad de implementación extra a la que te antes te veías sometido por hacer aplicaciones que gestionasen sus propias consultas con la base de datos.
+\\A medida que iba realizando la construcción de la aplicación pensaba en esta implementación de seguridad.
+\\En un principio lo que hice fue almacenar los datos del usuario y la contraseña de este en caché. Cada vez que se mandaba una consulta se utilizaban los datos en caché del usuario para analizarla y proceder a un sistema de autenticación.
+\\Este proceso de autenticación también iba ligado a una ``API'' podríamos llegar a considerarlo aunque nunca llegó a ser tan potente ni bien planificada como la actual.
+\\El proceso de generación de tokens desde un entorno del cliente resulta un proceso algo tedioso y que nunca hay que realizar. Por suerte, para el entorno del servidor de nuestra API había algunas herramientas que nos podrían ayudar.
+
+\subsection{Generación del token}
+La generación de tokens siempre es un proceso que me ha plasmado dudas, ya que en un principio pensaba que el almacenamiento de este realizaba sobre la base de datos en vez de en el propio servidor. Por suerte me encontré con el plugin ideal el cual se encuentra en el Node Package Manager, jwt-simple.
+\\Gracias a este plugin podría realizar el codificado y decodificado de un plugin generado cada vez que un usuario iniciara sesión.
+\\Dentro de las fases del codificado de este token necesitamos pasarle como parámetros unas fechas que será la duración que tendrán de validez estos ``simbólicos'' (traducción de token al español).
+\\El proceso de codificado de nuestro token se realizará dentro de nuestro inicio de sesión. Quedando de la siguiente forma:
+
+\begin{verbatim}
+    const createToken = (usuario) => {
+        let payload = {
+            userId: usuario.idUsuario,
+            createdAt: moment().unix(),
+            expiresAt: moment().add(1, 'day').unix()
+        }
+        return jwt.encode(payload, process.env.TOKEN_KEY);
+    };
+\end{verbatim}
+
+Esta función se ejecuta cuando hemos podido corroborar que el usuario ha iniciado sesión correctamente y sin problemas.
+\\Lo que codificamos dentro de nuestra variable TOKEN\_KEY ubicada en el archivo .env es un payload que cogerá como parámetros: el id del usuario, el momento en el que se ha logueado y el momento donde expirará su sesión.
+
+Teniendo ya nuestro token generado tenemos que de alguna forma hacer que cada vez que quiera hacer una consulta el usuario pueda hacerlo con su token.
+
+\begin{tcolorbox}
+    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Por qué almacenamos la id del usuario en nuestro payload?]
+    La id del usuario se almacena porque cada vez que queramos acceder a una consulta siendo clientes podremos meter en nuestra soicitud ese nuevo campo. Esta acción la realizaremos siempre por lo que nos aseguramos disponer de los datos del usuario en cada uno de nuestros casos de uso.
+    \\Por ejemplo, si un usuario intenta acceder a una consulta la cual solo se le permite a los técnicos, gracias a poder identificar el id del usuario en base a su token podremos denegar dicha consulta y que no se permita.
+\end{tcolorbox}
+
+\subsection{El middleware}
+El middleware, como concepto, representa a todo software que se sitúa entre el software y las aplicaciones que corren sobre él. Este funciona como una capa de traducción que posibilita la comunicación y la administración de datos en aplicaciones distribuidas. En nuestro caso nuestra función no trabajará en si como un ``middleware'' pero si que será una capa intermedia que se irá ejecutando a medida que el usuario interactúe con nuestra API aportándonos la comprobación de la validez de su token y su id de usuario.
+\\Dentro del middleware tendremos una única función que correrá en cada momento que el usuario acceda a uno de nuestros endpoints.
+\\La implementación sería la siguiente:
+\begin{verbatim}
+    const jwt = require("jwt-simple");
+    const moment = require("moment");
+
+    const checkToken = (req, res, next) => {
+    if (!req.headers['user_token'])
+        return res.json({
+            error: "You must include the header"
+        });
+
+    const token = req.headers['user_token'];
+    let payload = null
+    try {
+        payload = jwt.decode(token, process.env.TOKEN_KEY);
+    } catch (err) {
+        return res.json({
+            error: "Invalid token"
+        });
+    }
+
+    if (moment().unix() > payload.expiresAt) {
+        return res.json({ error: "Expired token" });
+    };
+
+    req.userId = payload.userId;
+
+    next();
+    };
+\end{verbatim}
+Dentro de esta función realizamos 3 comprobaciones.
+
+\subsubsection{Comprobación de los headers}
+Nuestro token irá dentro del encabezado de las solicitudes que hagamos a la API. En concreto con la key ``user\_token''. Si no se incluye este encabezado no podríamos continuar con la comprobación por lo que se devuelve como respuesta al cliente \textit{You must include the header}.
+
+\subsubsection{Decodificación del payload}
+Luego de la comprobación de que haya ``algo'' al menos dentro de nuestro header procedemos a llamar a nuestro plugin de jwt y preguntarle si tiene un payload almacenado con la clave.
+\\En el caso de que no pueda identificarlo, es decir, que no sea válido, obtendremos como respuesta en nuestro sitio web el siguiente mensaje: \textit{Invalid token}.
+
+\subsubsection{Verificación de la validez}
+Después del segundo paso podemos haber obtenido un payload pero tenemos que comprobar que este no haya expirado. Es decir, accedemos a su variables ``expiresAt''. En el caso de que lo haya hecho devolerá un error como respuesta con el siguiente mensaje: \textit{Expired token}.
+\vspace{\baselineskip}
+\\Incorporamos el user id a nuestra solicitud y con esto ya tendríamos implementado nuestro middleware.
+
+\subsection{¿Cómo añadimos el proceso de verificación a cada consulta?}
+Gracias a haber hecho nuestro código de forma estructurada y haber distinguido en servicios y rutas con solo añadir una línea a nuestro campo de rutas hará que podamos añadir este paso de verificación intermedio.
+\\Primero importaremos nuestro fichero ``middleware'' y luego lo llamaremos en el código con la siguiente función:
+\begin{verbatim}
+    router.use(middleware.checkToken);
+\end{verbatim}
+
+\begin{tcolorbox}
+    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo iniciamos sesión si no tenemos un token?]
+    La respuesta es muy sencilla y va en relación a la lógica de nuestro archivo de rutas. Al entrar una petición a uno de nuestros endpoints lo que ocurre es que lo hace en forma de barrido en nuestros ficheros. Es decir que hasta que no llegue a la línea de código de antes no se habrá hecho la comprobación.
+    \\Por lo tanto la solución es que dentro del fichero donde se realice el login y las demás acciones del usuario. Se coloque este primero en la parte de arriba, en medio nuestra comprobación y abajo el resto de consultas que también podemos hacer.
+\end{tcolorbox}
+

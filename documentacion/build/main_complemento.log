@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  4 JAN 2022 00:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  4 JAN 2022 09:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -774,30 +774,53 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]) (./capitulos/complemento/herramientas_utilizadas.tex [3] [4
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./diagramas/cronograma_complemento.tex)
+Overfull \hbox (10.94301pt too wide) in paragraph at lines 5--39
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5--39
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]) (./capitulos/complemento/herramientas_utilizadas.tex [3] [4
 
 
 ]
 chapter 2.
-) (/home/alejomaf/Inventarium/documentacion/build/main_complemento.bbl [5] [6
+[5]) [6]
+chapter 3.
+(./capitulos/complemento/construccion_de_las_ampliaciones/tokenizacion.tex
+Overfull \hbox (3.42958pt too wide) in paragraph at lines 10--14
+\OT1/cmr/m/n/10.95 El pro-ceso de cod-i-fi-cado de nue-stro to-ken se re-alizar^^Sa den-tro de nue-stro ini-cio de sesi^^Son. Quedando
+ []
+
+[7
+
+
+] [8]) (./capitulos/complemento/construccion_de_las_ampliaciones/copias_de_seguridad.tex) (./capitulos/complemento/construccion_de_las_ampliaciones/servidor_de_correo.tex) (./capitulos/complemento/construccion_de_las_ampliaciones/balanceo_de_cargas.tex) (/home/alejomaf/Inventarium/documentacion/build/main_complemento.bbl [9] [10
 
 
 ]
 chapter without number
-) [7] (/home/alejomaf/Inventarium/documentacion/build/main_complemento.aux) ) 
+) [11] (/home/alejomaf/Inventarium/documentacion/build/main_complemento.aux) ) 
 Here is how much of TeX's memory you used:
- 30593 strings out of 492615
- 650670 string characters out of 6131389
- 816539 words of memory out of 5000000
- 34133 multiletter control sequences out of 15000+600000
- 537733 words of font info for 42 fonts, out of 8000000 for 9000
+ 31005 strings out of 492615
+ 660879 string characters out of 6131389
+ 830553 words of memory out of 5000000
+ 34525 multiletter control sequences out of 15000+600000
+ 538957 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,20n,77p,9220b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/alejomaf/Inventarium/documentacion/build/main_complemento.pdf (7 pages, 97689 bytes).
+ 75i,20n,80p,9220b,874s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on /home/alejomaf/Inventarium/documentacion/build/main_complemento.pdf (11 pages, 158295 bytes).
 PDF statistics:
- 59 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

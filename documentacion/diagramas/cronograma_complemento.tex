@@ -28,18 +28,16 @@
     link/.style={-latex, line width=1.5pt, linkred},
     link label font=\scriptsize\bfseries,
     link label node/.append style={below left=-2pt and 0pt},
-    ]{1}{20}
-    \gantttitle{Diagrama de Gantt}{20} \\[grid]
-    \gantttitle{Septiembre}{4}
-    \gantttitle{Octubre}{4}
+    ]{1}{12}
+    \gantttitle{Diagrama de Gantt}{12} \\[grid]
     \gantttitle{Noviembre}{4}
     \gantttitle{Diciembre}{4}
     \gantttitle{Enero}{4}\\
     \gantttitle[
     title label node/.append style={below left=7pt and -3pt}
     ]{Semana:\quad1}{1}
-    \gantttitlelist{2,...,20}{1} \\
-    \ganttgroup[progress=0]{Inventarium}{1}{20} \\
+    \gantttitlelist{2,...,12}{1} \\
+    \ganttgroup[progress=0]{Inventarium}{1}{12} \\
     \ganttbar[
     progress=0,
     name=bar1
@@ -47,22 +45,17 @@
     \ganttbar[
     progress=0,
     name=bar2
-    ]{\textbf{Actividad 2 (80 horas)}}{1}{20} \\
+    ]{\textbf{Actividad 2 (40 horas)}}{1}{12} \\
     \ganttbar[
     progress=0,
     name=bar3
-    ]{\textbf{Actividad 3 (40 horas)}}{4}{6} \\
+    ]{\textbf{Actividad 3 (50 horas)}}{4}{9} \\
     \ganttbar[
     progress=0,
     name=bar4
-    ]{\textbf{Actividad 4 (100 horas)}}{6}{16} \\
-    \ganttbar[
-    progress=0,
-    name=bar5
-    ]{\textbf{Actividad 5 (50 horas)}}{17}{20} \\
+    ]{\textbf{Actividad 4 (30 horas)}}{10}{12} \\
     
     \ganttlink[link type=f-s]{bar1}{bar3}
     \ganttlink[link type=f-s]{bar3}{bar4}
-    \ganttlink[link type=f-s]{bar4}{bar5}
     \end{ganttchart}
 }
