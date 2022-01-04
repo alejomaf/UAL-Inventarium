@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const prestado = require('../services/prestado');
 const middleware = require('./middleware');
+const transporter = require('../mails/mailer');
 router.use(middleware.checkToken);
 
 
@@ -70,6 +71,7 @@ router.post('/action/:idPrestamo/:accion', async function (req, res, next) {
     accion = req.params.accion;
     if (accion == 0) {
       res.json(await prestado.concederPrestamo(id));
+
     } else if (accion == 1) {
       res.json(await prestado.finalizarPrestamo(id));
     } else if (accion == 2) {

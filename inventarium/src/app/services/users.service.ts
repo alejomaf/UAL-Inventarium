@@ -50,4 +50,9 @@ export class UsersService {
     let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
     return this.http.post(this._url + "/action/" + userId + "/2", null, { headers: header });
   }
+
+  confirmarUsuario(token: string, number: string, userId: number) {
+    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    return this.http.post(this._url + "/confirmar-registro/" + token + "/" + number + "/" + userId, null);
+  }
 }

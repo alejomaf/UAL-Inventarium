@@ -7,8 +7,6 @@ const moment = require("moment");
 const middleware = require('./middleware');
 
 
-
-
 router.post('/login', async function (req, res, next) {
   const usuario = await usuarios.getByEmail(req.fields.correoElectronico);
 
@@ -48,6 +46,35 @@ router.post('/', async function (req, res, next) {
     next(err);
   }
 });
+
+router.post('/confirmar-registro/:token/:number/:id', async function (req, res, next) {
+  try {
+    const usuario = await usuarios.getById(req.params.id);
+    if (usuario.rango == 0 || usuario.rango == -2) {
+      res.json({
+        error: "200"
+      });
+      return;
+    }
+    if (usuario.telefono != req.params.number) {
+      res.json({
+        error: "201"
+      });
+      return;
+    }
+    if (!bcrypt.compareSync(req.params.number, req.params.token)) {
+      res.json({
+        error: "Error, email or password not found"
+      });
+      return;
+    }//ENCRIPTACIÓN DE LA CONTRASEÑA ACTIVADA
+    res.json(await usuarios.confirmarRegistro(req.params.id));
+  } catch (err) {
+    console.error(`Error while creating usuario`, err.message);
+    next(err);
+  }
+});
+
 
 
 router.use(middleware.checkToken);

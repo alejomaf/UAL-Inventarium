@@ -2,6 +2,7 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 const bcrypt = require('bcryptjs');
+const transporter = require('../mails/mailer');
 
 async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
@@ -50,7 +51,7 @@ async function create(usuario) {
     (?, ?, ?, ?, ?, ?)`,
     [
       usuario.nombre, usuario.correoElectronico,
-      usuario.contrasena, usuario.rango || -1, usuario.departamento || 0, usuario.telefono
+      usuario.contrasena, usuario.rango || -2, usuario.departamento || 0, usuario.telefono
     ]
   );
 
@@ -58,6 +59,7 @@ async function create(usuario) {
 
   if (result.affectedRows) {
     message = 'usuario created successfully';
+    await transporter.registro_creado(usuario.correoElectronico, "http://" + process.env.HOST + "/register-confirmed/" + result.insertId + '/' + usuario.telefono + '/' + bcrypt.hashSync(usuario.telefono, 3), usuario.nombre);
   }
 
   return { message };
@@ -105,6 +107,22 @@ async function administrador() {
     contrasena = bcrypt.hashSync("admin", 10)
     await create({ "nombre": "admin", "contrasena": contrasena, "correoElectronico": "ualinventarium@gmail.com", "rango": "0", "departamento": "0", "telefono": "674915779" });
   }
+}
+
+async function confirmarRegistro(idUsuario) {
+  const result = await db.query(
+    `UPDATE usuario 
+    SET rango=-1
+    WHERE idUsuario=?`,
+    [
+      idUsuario
+    ]
+  );
+  let message = 'Error in updating usuario';
+  if (result.affectedRows) {
+    message = 'usuario updated successfully';
+  }
+  return { message, result };
 }
 
 async function darDeAlta(idUsuario) {
@@ -168,4 +186,5 @@ module.exports = {
   darDeAlta,
   darDeBaja,
   convertirEnTecnico,
+  confirmarRegistro,
 }
