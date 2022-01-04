@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  3 JAN 2022 00:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2021.12.25)  4 JAN 2022 00:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,64 +756,48 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 File: english.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
-) (./capitulos/introduccion.tex
+) (./capitulos/complemento/introduccion.tex
 chapter 1.
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--15
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--15
-
- []
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 22.
-[1
-
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 22.
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 17.
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 22.
- [2] (./diagramas/cronograma_inicial.tex)
-Overfull \hbox (10.96379pt too wide) in paragraph at lines 5--62
-[][]
- []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 24.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 24.
+ [1
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--62
 
- []
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]) (./capitulos/complemento/herramientas_utilizadas.tex [3] [4
 
-[3]) (/home/alejomaf/Inventarium/documentacion/build/main_complemento.bbl [4]
+
+]
+chapter 2.
+) (/home/alejomaf/Inventarium/documentacion/build/main_complemento.bbl [5] [6
+
+
+]
 chapter without number
-) [5
-
-
-] (/home/alejomaf/Inventarium/documentacion/build/main_complemento.aux) ) 
+) [7] (/home/alejomaf/Inventarium/documentacion/build/main_complemento.aux) ) 
 Here is how much of TeX's memory you used:
- 31022 strings out of 492615
- 660430 string characters out of 6131389
- 835552 words of memory out of 5000000
- 34558 multiletter control sequences out of 15000+600000
- 538957 words of font info for 46 fonts, out of 8000000 for 9000
+ 30593 strings out of 492615
+ 650670 string characters out of 6131389
+ 816539 words of memory out of 5000000
+ 34133 multiletter control sequences out of 15000+600000
+ 537733 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,20n,80p,9220b,874s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on /home/alejomaf/Inventarium/documentacion/build/main_complemento.pdf (5 pages, 138206 bytes).
+ 75i,20n,77p,9220b,493s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on /home/alejomaf/Inventarium/documentacion/build/main_complemento.pdf (7 pages, 97689 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

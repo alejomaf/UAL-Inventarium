@@ -1,0 +1,56 @@
+\chapter{Introducción}
+Luego de la construcción de nuestra aplicación el siguiente paso es de cubrir varios aspectos que son claves hoy en día dentro de la producción de componentes software.
+\\Las características de nuestro software son bastante completas gracias a haber respetado modelos de construcción asentados y con un marco teórico y experiencial por detrás, pero, ¿y la seguridad de la aplicación? Cómo se va a realizar el proceso de autenticación de usuarios o por el cual se van a cubrir las solicitudes a la API. O, ¿cómo podemos garantizar que el usuario es miembro de la Universidad? ¿O cómo garantizamos que a los técnicos se enteren de las solicitudes de préstamos que les llegan?
+\\Dentro de este complemento de trabajo fin de grado nos dedicaremos a la resolución de estas problemáticas que surgen al haber finalizado la implementación de nuestra aplicación.
+
+\section{Motivaciones}
+Por respetar en pequeña parte la estructura del trabajo fin de grado he decidido poder realizar una pequeña sección donde hablar de los motivos de la realización de este complemento.
+\\El motivmo principal es que lo tengo que realizar si o sí, de eso no cabe duda. El segundo radica en las posibilidades que nos brinda el software de las que tanto he hablado en el proyecto.
+\\Una herramienta no acaba con el satisfacer los requisitos que se nos pedían en un principio. Creo que este aspecto nos diferencia bastante de las otras ingenierías. Puede ser quizás a que nuestra forma de implementación es más fácil, quizás. Pero la construcción de herramientas normalmente se expande forma continua y uniforme.
+\\Lo podemos ver con la evolución de las redes sociales de hoy en día. Pongamos como ejemplo, Facebook. Quiero recalcar que en esta sección no estoy tratando de la originalidad de las ideas sino de la ejecución de las mismas.
+\\Facebook al principio de los 2000 no era más que una red social cualquiera. En la que la gente podía interactuar, publicar lo que habían hecho durante el día o habían aprendido y más tarde alrededor del 2008 compartir logros dentro de un sistema de juegos integrados que venían con la plataforma. Ya la implantación de los juegos es ``algo'', pero no fue hasta que comercialiaron aplicaciones como Whatsapp o Instagram donde en verdad tuvo su éxito.
+\\La tecnología da más tecnología. Es una estufa que no se apaga y las implementaciones y añadidos que se pueden realizar a un proyecto son gigantescas. Del modo y forma debidamente adecuados.
+
+\section{Objetivos}
+¿Qué se pretende con la realización de este complemento? Nuestros objetivo principal es la mejora de la aplicación relacionada en tres áreas:
+\begin{itemize}
+    \item La seguridad.
+    \item La escalabilidad.
+    \item La comunicación.
+\end{itemize}
+\subsection{La seguridad}
+La seguridad es algo fundamental que se pide hoy en día en internet. Y algo que suele verse relegado a un segundo plano por bastantes empresarios.
+\\El objetivo de este apartado es centrarnos en dos aspectos: la seguridad en las transacciones con la Interfaz de Programación de Aplicaciones (API), esto lo realizaremos mediante una tokenización de las transacciones que gestionaremos al principio de nuestra aplicación. Lo segundo es la implementación de un sistema de copias de seguridad automatizado que nos ayudará a que en caso de pérdida de información podamos recuperar parte de esta gracias a ficheros almacenados de forma externa que contengan esa información. Estas las iremos generando siguiendo algunas normativas de generación de copias de seguridad en entornos empresariales.
+
+\subsection{La escalabilidad}
+En el proyecto hablé sobre Docker y todas las utilidades que nos podía brindar. En este caso hablaremos de Docker Swarm, un sistema que implementa Docker para poder realizar un balanceo de carga en nuestra aplicación y que esta no se vea sobrecargada. Ideal por si ocurren caídas en algunas de nuestras máquinas o queremos rebajar un poco los recursos que consumen.
+\\Explicaré cómo implementaremos Docker Swarm en nuestro entorno y cómo estos tipos de herramientas pueden ser de gran utilidad para aspectos como la escalabilidad.
+
+\subsection{La comunicación}
+La interacción que una aplicación tiene con su usuario es un aspecto básico que tiene que ser cubierto.
+\\Esta comunicación hoy en día se puede realizar de diferentes formas, por ejemplo, el pitido que hace un microondas cuando termina su ejecución. Ese ya es un método de comunicación que está teniendo con el usuario.
+\\Al principio del auge de internet y de los sistemas informáticos la comunicación era unidireccional, es decir, iba del usuario a la máquina, y esta ya mostraba lo que el usuario le pedía. Nuestra aplicación funciona al igual que hacían las páginas webs hace 20 años. El usuario si necesita algo o quiere consultar si le han concedido una solicitud tiene que buscarlo.
+\\Este aspecto lo cubriremos gracias a la implementación de un servidor de gestión de correo dentro de nuestra API. También decidiremos los modos y momentos en los que la aplicación se comunicará con el usuario.
+
+\section{Planificación}
+La planificación se dividirá en cuatro grandes grupos, muy parecidos a los del proyecto: Reuniones con el cliente, planificación y elaboración del desarrollo del proyecto, construcción de la aplicación y testeo y comprobación de la aplicación y comprobación de errores. Son los mismos puntos que en el proyecto nada más que no trataremos el punto de ``Preparación del entorno de trabajo''.
+\\INSERTAR GRÁFICO
+\begin{itemize}
+    \item \textbf{Actividad 1} Reuniones con el cliente
+    \begin{itemize}
+        \item Reunión para tratar sobre la comunicación a cubrir con el usuario
+        \item Reunión para tratar sobre la seguridad y la escalabilidad
+    \end{itemize}
+    \item \textbf{Actividad 2} Planificación y elaboración del proyecto
+    \item \textbf{Actividad 3} Construcción de la aplicación
+    \begin{itemize}
+        \item Tokenización de las solicitudes a la base de datos
+        \item Configuración de generado automático de copias de seguridad
+        \item Implementación del sistema de envío de correos y gestión de la comunicación
+        \item Implementación de Docker Swarm
+    \end{itemize}
+    \item \textbf{Actividad 4} Testeo, comprobación de la aplicación y comprobación de errores
+\end{itemize}
+
+La metodología del trabajo a realizar será en cascada. Es decir, iremos cubriendo cada uno de los apartados y hasta no terminar con el superior no podremos pasar al siguiente. Este modelo se realizará para las tres implementaciones que haremos.
+\\Las primeras fases se centrarán en el análisis y planificación de la solución que se pretenda implementar. Las fases intermedias consistirán en esta implantación de la aplicación y las finales se centrarán en la realización de pruebas para la comprobación de que todas las funcionalidades que se pensaban implementar en un momento cumplen a la perfección su función.
