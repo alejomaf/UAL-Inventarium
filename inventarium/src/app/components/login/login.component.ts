@@ -29,10 +29,8 @@ export class LoginComponent implements OnInit {
     this.loginS.login(formData).subscribe(
       (res: any) => {
         if (res.successfull) {
-          this.loginS.setToken(res.successfull)
-          console.log("hola")
-          console.log(this.loginS.getToken())
-          this.router.navigateByUrl('/');
+          this.loginS.setToken(res.successfull);
+          this.router.navigateByUrl('/dashboard');
         } else if (res.error) {
           console.log(res.error);
           this.error = true;

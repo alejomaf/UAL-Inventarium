@@ -13,25 +13,12 @@ export class MainComponent implements OnInit {
 
   public usuario?: Usuario
 
-  constructor(private loginS: UserService, private router: Router) {
-    if (!loginS.isLogged()) {
-      this.logout();
-      return;
-    }
+  constructor(private loginS: UserService) {
     loginS.getUser().subscribe(
       (res: any) => {
-        if (res == null) {
-          this.router.navigateByUrl("/");
-          return;
-        }
         this.usuario = res;
       }
     );
-  }
-
-  logout() {
-    this.loginS.resetToken();
-    this.router.navigateByUrl("/login");
   }
 
   ngOnInit(): void {

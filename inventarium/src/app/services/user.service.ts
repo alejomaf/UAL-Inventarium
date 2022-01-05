@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Usuario } from '../interfaces/usuario';
 
 const user_token = "Auth_Key";
@@ -25,10 +26,6 @@ export class UserService {
     return localStorage.getItem(user_token) == "1";
   }
 
-  getName() {
-    return localStorage.getItem(user_name);
-  }
-
   isLogged() {
     return localStorage.getItem(user_token) != null;
   }
@@ -48,6 +45,11 @@ export class UserService {
   getUser() {
     let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.getToken() }));
     return this.http.get("api/users/mainUser", { headers: header });
+  }
+
+  getUserLogin(): Observable<Usuario> {
+    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.getToken() }));
+    return this.http.get<Usuario>("api/users/mainUser", { headers: header });
   }
 
   constructor(private http: HttpClient) { }

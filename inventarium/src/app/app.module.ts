@@ -52,6 +52,7 @@ import { ConfigurationComponent } from './components/main/parts/configurations/c
 import { GroupWithObjectsComponent } from './components/main/parts/group-of-objects/group-with-objects/group-with-objects.component';
 import { KitsComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kits.component';
 import { KitComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kit/kit.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,7 @@ import { KitComponent } from './components/main/parts/group-of-objects/group-wit
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

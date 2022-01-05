@@ -35,10 +35,11 @@ import { RegisterConfirmedComponent } from './components/register/register-confi
 import { RegisterRecoverFinishComponent } from './components/register/register-recover-finish/register-recover-finish.component';
 import { RegisterRecoverComponent } from './components/register/register-recover/register-recover.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
-    path: '', component: MainComponent,
+    path: '', component: MainComponent, canActivate: [AuthGuardService], canActivateChild: [AuthGuardService],
     children: [
       { path: 'dashboard', component: DashboardComponent },
       {
@@ -72,7 +73,7 @@ const routes: Routes = [
       { path: 'loans/:id', component: LoansComponent },
       { path: 'object/:id', component: ObjectUnitComponent },
       { path: 'user/:id', component: UserUnitComponent },
-      { path: 'loan/:id', component: LoanUnitComponent },
+      { path: 'loan/:id', component: LoanUnitComponent }
     ]
   },
   { path: 'login', component: LoginComponent },
