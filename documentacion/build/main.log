@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  5 JAN 2022 13:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  5 JAN 2022 16:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main_complemento.tex
-(c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main_complemento.tex
+**c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex
+(c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2021-11-22> (include/config.tex (C:\Users\alejo\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbook.cls
 Document Class: scrbook 2021/11/13 v3.35 KOMA-Script document class (book)
@@ -515,26 +515,26 @@ LaTeX Info: Redefining \citeyear on input line 735.
 )) (C:\Users\alejo\AppData\Local\Programs\MiKTeX\tex/latex/breakcites\breakcites.sty)
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... none found.
- (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main_complemento.aux)
-\openout1 = `main_complemento.aux'.
+ (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.aux)
+\openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-Package scrbase Info: activating english \contentsname on input line 9.
-Package scrbase Info: activating english \listfigurename on input line 9.
-Package scrbase Info: activating english \listtablename on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+Package scrbase Info: activating english \contentsname on input line 10.
+Package scrbase Info: activating english \listfigurename on input line 10.
+Package scrbase Info: activating english \listtablename on input line 10.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -594,79 +594,223 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 File: english.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 129.
 LaTeX Info: Redefining \BHBI on input line 130.
-) (capitulos/complemento/introduccion.tex
+) (capitulos/introduccion.tex
 chapter 1.
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--15
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--15
+
+ []
+
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 24.
+(Font)              <10.95> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 24.
+(Font)              <8> on input line 22.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 24.
+(Font)              <6> on input line 22.
 [1
 
 
 
-{C:/Users/alejo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] (diagramas/cronograma_complemento.tex)
-Overfull \hbox (10.94301pt too wide) in paragraph at lines 5--39
+{C:/Users/alejo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2] (diagramas/cronograma_inicial.tex)
+Overfull \hbox (10.96379pt too wide) in paragraph at lines 5--62
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5--39
+Underfull \hbox (badness 10000) in paragraph at lines 5--62
 
  []
 
+[3]) (capitulos/herramientas_utilizadas.tex [4]
+chapter 2.
+[5
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2]) (capitulos/complemento/herramientas_utilizadas.tex [3] [4
+] [6] [7]) (capitulos/desarrollo_fases_proyecto/desarrollo_fases_proyecto.tex
+Underfull \hbox (badness 10000) in paragraph at lines 100--1
+
+ []
+
+[8] [9] [10
 
 
 ]
-chapter 2.
-[5]) [6]
 chapter 3.
-(capitulos/complemento/construccion_de_las_ampliaciones/tokenizacion.tex
-Overfull \hbox (3.42958pt too wide) in paragraph at lines 10--14
-\OT1/cmr/m/n/10.95 El pro-ceso de cod-i-fi-cado de nue-stro to-ken se re-alizara den-tro de nue-stro ini-cio de sesion. Quedando
+(capitulos/desarrollo_fases_proyecto/1_reuniones_iniciales.tex
+<imagenes/estructura_y_desarrollo//db_old_design.png, id=44, 1055.945pt x 579.16376pt>
+File: imagenes/estructura_y_desarrollo//db_old_design.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//db_old_design.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//db_old_design.png  used on input line 12.
+(pdftex.def)             Requested size: 455.23982pt x 249.68951pt.
+ [11]
+<imagenes/estructura_y_desarrollo//flujo_de_navegacion.png, id=48, 1559.8275pt x 653.44125pt>
+File: imagenes/estructura_y_desarrollo//flujo_de_navegacion.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//flujo_de_navegacion.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//flujo_de_navegacion.png  used on input line 27.
+(pdftex.def)             Requested size: 455.24213pt x 190.70953pt.
+<imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg, id=50, 884.30376pt x 430.60875pt>
+File: imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg Graphic file (type jpg)
+<use imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg  used on input line 32.
+(pdftex.def)             Requested size: 455.25285pt x 221.68384pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png, id=51, 361.35pt x 642.4pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png  used on input line 43.
+(pdftex.def)             Requested size: 108.40584pt x 192.72148pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png, id=52, 361.35pt x 969.6225pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png  used on input line 44.
+(pdftex.def)             Requested size: 108.40584pt x 290.88899pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12 <./imagenes/estructura_y_desarrollo//db_old_design.png>] [13 <./imagenes/estructura_y_desarrollo//flujo_de_navegacion.png> <./imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg>]
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png, id=61, 361.35pt x 642.4pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png  used on input line 68.
+(pdftex.def)             Requested size: 180.67456pt x 321.19922pt.
+ [14 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png>]
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png, id=67, 361.35pt x 1041.8925pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png  used on input line 87.
+(pdftex.def)             Requested size: 144.53743pt x 416.74962pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png, id=68, 361.35pt x 1367.1075pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png  used on input line 88.
+(pdftex.def)             Requested size: 144.53743pt x 546.83331pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png>] [16 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png>]
+<imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png, id=78, 777.90625pt x 310.15875pt>
+File: imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png  used on input line 100.
+(pdftex.def)             Requested size: 777.90434pt x 310.15799pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png, id=79, 361.35pt x 720.6925pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png  used on input line 110.
+(pdftex.def)             Requested size: 108.40584pt x 216.20941pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png, id=80, 361.35pt x 642.4pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png  used on input line 111.
+(pdftex.def)             Requested size: 108.40584pt x 192.72148pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png, id=81, 376.40625pt x 669.50125pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png  used on input line 121.
+(pdftex.def)             Requested size: 112.92273pt x 200.85191pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png, id=82, 376.40625pt x 669.50125pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png  used on input line 122.
+(pdftex.def)             Requested size: 112.92273pt x 200.85191pt.
+ [17 <./imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png>]
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png, id=89, 386.44376pt x 463.7325pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png  used on input line 142.
+(pdftex.def)             Requested size: 115.93402pt x 139.12082pt.
+ [18 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png>]
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png, id=96, 361.35pt x 642.4pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png  used on input line 152.
+(pdftex.def)             Requested size: 126.4744pt x 224.84337pt.
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png, id=97, 361.35pt x 900.36375pt>
+File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png  used on input line 153.
+(pdftex.def)             Requested size: 108.40584pt x 270.1112pt.
+) (capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex [19 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png>] [20]) (capitulos/desarrollo_fases_proyecto/3_preparacion_entorno_trabajo.tex
+<imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png, id=107, 1445.4pt x 727.71875pt>
+File: imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png  used on input line 19.
+(pdftex.def)             Requested size: 433.62335pt x 218.3173pt.
+ [21 <./imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png>]
+<imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png, id=113, 605.76312pt x 688.5725pt>
+File: imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png  used on input line 28.
+(pdftex.def)             Requested size: 242.30095pt x 275.4241pt.
+ [22 <./imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png>] [23] [24]
+Overfull \hbox (50.64041pt too wide) in paragraph at lines 123--123
+[]    \OT1/cmtt/m/n/10.95 sudo apt install apt-transport-https ca-certificates curl software-properties-common[] 
  []
 
-[7
 
-
-] [8] [9] [10]) (capitulos/complemento/construccion_de_las_ampliaciones/copias_de_seguridad.tex [11] [12]) (capitulos/complemento/construccion_de_las_ampliaciones/servidor_de_correo.tex [13] [14]
-Overfull \hbox (10.3996pt too wide) in paragraph at lines 80--80
-[]    \OT1/cmtt/m/n/10.95 "http://" + process.env.HOST + "/register-confirmed/" + result.insertId + '/'[] 
+Overfull \hbox (4.65091pt too wide) in paragraph at lines 124--124
+[]    \OT1/cmtt/m/n/10.95 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -[] 
  []
 
 
-Overfull \hbox (33.39435pt too wide) in paragraph at lines 81--81
-[]    \OT1/cmtt/m/n/10.95 + usuario.telefono + '/' + bcrypt.hashSync(usuario.telefono, 3), usuario.nombre);[] 
+Overfull \hbox (119.62466pt too wide) in paragraph at lines 125--125
+[]    \OT1/cmtt/m/n/10.95 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"[] 
  []
 
-[15]) (capitulos/complemento/construccion_de_las_ampliaciones/balanceo_de_cargas.tex) (capitulos/complemento/conclusiones_y_mejoras.tex [16] [17] [18
+
+Overfull \hbox (401.31036pt too wide) in paragraph at lines 130--130
+[]    \OT1/cmtt/m/n/10.95 sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose[] 
+ []
+
+)) (capitulos/contruccion_de_la_aplicacion/construccion_aplicacion.tex [25] [26
 
 
 ]
 chapter 4.
-) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main_complemento.bbl [19] [20
+(capitulos/contruccion_de_la_aplicacion/0_introduccion_a_docker.tex) (capitulos/contruccion_de_la_aplicacion/1_base_de_datos.tex
+<imagenes/estructura_y_desarrollo//db_design.png, id=131, 1055.945pt x 848.16875pt>
+File: imagenes/estructura_y_desarrollo//db_design.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//db_design.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//db_design.png  used on input line 6.
+(pdftex.def)             Requested size: 455.23982pt x 365.66316pt.
+ [27] [28 <./imagenes/estructura_y_desarrollo//db_design.png>] [29]) (capitulos/contruccion_de_la_aplicacion/2_diseno_arquitectura.tex [30]
+<imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png, id=144, 1138.2525pt x 542.025pt>
+File: imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png  used on input line 25.
+(pdftex.def)             Requested size: 455.24083pt x 216.78134pt.
+ [31 <./imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png (PNG copy)>]) (capitulos/contruccion_de_la_aplicacion/3_api.tex [32] [33] [34] [35] [36]
+Overfull \hbox (9.18774pt too wide) in paragraph at lines 182--183
+[]\OT1/cmr/bx/n/10.95 FALTA POR HACER, FI-NALIZAR API Y PREPARAR EL MON-TAJE Y LUEGO
+ []
+
+[37]) (capitulos/contruccion_de_la_aplicacion/4_web.tex [38])) (capitulos/conclusiones_y_mejoras.tex [39] [40
+
+
+]
+chapter 5.
+) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.bbl [41] [42
 
 
 ]
 chapter without number
-) [21] (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main_complemento.aux) ) 
+) [43] (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.aux) ) 
 Here is how much of TeX's memory you used:
- 22996 strings out of 478659
- 528621 string characters out of 2845921
- 965316 words of memory out of 3000000
- 40734 multiletter control sequences out of 15000+600000
+ 23255 strings out of 478659
+ 542153 string characters out of 2845921
+ 976337 words of memory out of 3000000
+ 40946 multiletter control sequences out of 15000+600000
  410390 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 130i,20n,123p,10753b,873s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 130i,20n,123p,10741b,873s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\alejo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main_complemento.pdf (21 pages, 207515 bytes).
+Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.pdf (43 pages, 2736670 bytes).
 PDF statistics:
- 123 PDF objects out of 1000 (max. 8388607)
+ 232 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
