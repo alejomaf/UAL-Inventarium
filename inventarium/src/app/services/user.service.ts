@@ -47,10 +47,5 @@ export class UserService {
     return this.http.get("api/users/mainUser", { headers: header });
   }
 
-  getUserLogin(): Observable<Usuario> {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.getToken() }));
-    return this.http.get<Usuario>("api/users/mainUser", { headers: header });
-  }
-
   constructor(private http: HttpClient) { }
 }

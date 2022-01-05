@@ -94,3 +94,78 @@ Gracias a haber hecho nuestro código de forma estructurada y haber distinguido 
     \\Por lo tanto la solución es que dentro del fichero donde se realice el login y las demás acciones del usuario. Se coloque este primero en la parte de arriba, en medio nuestra comprobación y abajo el resto de consultas que también podemos hacer.
 \end{tcolorbox}
 
+\subsection{AuthGuard}
+Aunque esta sea la parte final de la primera sección en verdad es el último apartado que estoy redactando de este capítulo, ya que ha sido el más difícil de implementar por la adquisición de nuevos conceptos que antes no conocía.
+\\AuthGuard es un ``comprobador de usuarios''. Es decir, comprueba que estés logeado cogiendo tu token y mandándolo a la API, si esta no devuelve respuesta o lo hace con un \textit{null} el AuthGuard nos comunicaría que el usuario no está logeado.
+\\Angular nos brinda la posibilidad de poder realizar una autenticación dentro del sistema de rutas de la aplicación. Es decir, dependiendo de a qué sitios quiera acceder de la aplicación puedo implementar unas medidas de seguridad u otras.
+\\Esto lo consigo mediante la adición del parámetro \textbf{canActivate} y \textbf{canActivateChild}:
+\begin{verbatim}
+    path: '', component: MainComponent, 
+    canActivate: [AuthGuardService],
+    canActivateChild: [AuthGuardService],
+    children: [
+      { path: 'dashboard', component: DashboardComponent },
+      {
+        path: 'add-object', component: AddObjectComponent,
+        children: [
+            .
+            .
+            .
+\end{verbatim}
+canActivate y canActivateChild son dos interfaces que podemos implementar en un servicio de Angular. Estas dos interfaces nos van a implementar dos funciones de respectivo nombre y nos devolverán un booleano.
+\\Este booleano, verdadero o falso, le dirá al sitio web si entro a la ruta que esté solicitando (en caso de ser verdadero) o si no lo hago (en caso de ser falso).
+\\El problema que me han supuesto estas interfaces es que la implementación tenía que realizarla de forma asíncrona, asincronía de consultas que he utilizado en la API Rest pero que no había utilizado en el sitio web.
+\\Gracias a este retraso que me ha llevado poder asegurar las rutas de la aplicación he conocido los Resolvers, los cuales son unos servicios que podemos implementar en documento de rutas cuando necesitemos recabar una información antes de inicializar el componente de Angular. El problema era que la inicialización del componente de Angular no conllevaba la inicialización del autenticador de ruta, servicio que se ejecutaba antes. Por lo que estuve dándole vueltas bastantes horas hasta que me di cuenta del fallo de concepto que había cometido.
+\\Después descubrí los \textit{Observables} y las \textit{Promises}.
+
+\subsubsection{Observable}
+\begin{itemize}
+    \item Es una implementación para eventos que conlleven una carga continua a lo largo del tiempo. Por ejemplo la reproducción de un vídeo.
+    \item Tiene atributos que permiten realizar nuevamente solicitudes que han devuelto un error o de las que se han perdido información.
+    \item Pueden solicitar datos en varias pipelines al mismo tiempo.
+\end{itemize}
+
+\subsubsection{Promise}
+\begin{itemize}
+    \item Una promise puede manejar solamente un elemento.
+    \item Devuelve solo un único valor.
+    \item Puede manejar también errores aunque sin un control exhaustivo como un Observable.
+\end{itemize}
+
+Cuando aprendí las diferencias entre estos dos elementos supe que tenía que utilizar una promise.
+\\El segundo contatiempo y el más largo a mi parecer es que creía que la interfaz de canActivate y canActivateChild únicamente podían devolver un valor booleano. Pero también pueden devolver una Promise del tipo booleana por lo que de esa forma el problema de la asincronía ya estaba resuelto.
+\\Nuestro AuthGuard implementaría la siguiente función:
+\begin{verbatim}
+    checkLoginPromise(): Promise<boolean> {
+        const promise = new Promise<boolean>((resolve, reject) => {
+        this.loginS.getUser()
+            .toPromise()
+            .then((res: any) => {
+                // Success
+                this.usuario = res;
+                resolve(true);
+            },
+            err => {
+                // Error
+                this.logout();
+                reject(false);
+            }
+            );
+        });
+        return promise;
+    }
+\end{verbatim}
+Podemos comprobar que los dos valores que nos puede devolver la promesa son verdadero o falso. En caso de que sea verdadero el usuario quedará cargado en el sitio web para poder gestionar algunos estilos que requieren sus datos dentro de ella.
+\\Y por último tendríamos los dos métodos canActivate y canActivateChild:
+\begin{verbatim}
+    canActivateChild(): Promise<boolean> {
+        return this.checkLoginPromise();
+    }
+
+    canActivate(): Promise<boolean> {
+        return this.checkLoginPromise();
+    }
+\end{verbatim}
+
+
+

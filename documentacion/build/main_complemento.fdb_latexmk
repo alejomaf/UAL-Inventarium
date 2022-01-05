@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex build/main_complemento"] 1641335766 "build/main_complemento.aux" "build/main_complemento.bbl" "build/main_complemento" 1641335771
+["bibtex build/main_complemento"] 1641379758 "build/main_complemento.aux" "build/main_complemento.bbl" "build/main_complemento" 1641379764
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/bibtex/bst/apacite/apacite.bst" 1374949128 146156 9d7b79dbf9d91133318126032cff8c27 ""
   "bibliografia/bibliografia.bib" 1641056140 1035 5668dead2ea6616876e8fe5d90252397 ""
-  "build/main_complemento.aux" 1641335770 4100 c753c296a3a1d71d7ffec5d7e6d6efdc "pdflatex"
+  "build/main_complemento.aux" 1641379763 4410 e201c9eb47cdc06c54aae224cfa57829 "pdflatex"
   (generated)
   "build/main_complemento.bbl"
   "build/main_complemento.blg"
-["pdflatex"] 1641335767 "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main_complemento.tex" "build/main_complemento.pdf" "main_complemento" 1641335771
+["pdflatex"] 1641379759 "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main_complemento.tex" "build/main_complemento.pdf" "main_complemento" 1641379764
   "C:/Users/alejo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1641321125 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/alejo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1641319981 12668 a7cfaf77af53d46ae67fda653d942d53 ""
   "C:/Users/alejo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1641319903 9769966 8c96a7303b81bbd75e90b10d1a0a9fe3 ""
@@ -160,13 +160,13 @@
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253165583 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "build/main_complemento.aux" 1641335770 4100 c753c296a3a1d71d7ffec5d7e6d6efdc "pdflatex"
-  "build/main_complemento.bbl" 1641335766 1345 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main_complemento"
+  "build/main_complemento.aux" 1641379763 4410 e201c9eb47cdc06c54aae224cfa57829 "pdflatex"
+  "build/main_complemento.bbl" 1641379758 1345 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main_complemento"
   "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main_complemento.tex" 1641324802 809 486763cb9a034b31c63b7ecf46e31f66 ""
   "capitulos/complemento/construccion_de_las_ampliaciones/balanceo_de_cargas.tex" 1641213121 0 d41d8cd98f00b204e9800998ecf8427e ""
   "capitulos/complemento/construccion_de_las_ampliaciones/copias_de_seguridad.tex" 1641335760 5510 d1b226722f0ca35e3bcd1852c131df1f ""
   "capitulos/complemento/construccion_de_las_ampliaciones/servidor_de_correo.tex" 1641330048 8231 6b2a7775485d9fae3d5f86f7674c18fb ""
-  "capitulos/complemento/construccion_de_las_ampliaciones/tokenizacion.tex" 1641295211 7364 e016ffad8562c2d8e59c0cf90b606380 ""
+  "capitulos/complemento/construccion_de_las_ampliaciones/tokenizacion.tex" 1641379751 12055 08d5d066c3c7087d65456968e55ede0d ""
   "capitulos/complemento/herramientas_utilizadas.tex" 1641295211 3958 d0e15ea07a8d93b34c4d84c6b5211083 ""
   "capitulos/complemento/introduccion.tex" 1641320078 7286 cdd14a8c96bde7cf17d907d452a527f2 ""
   "diagramas/cronograma_complemento.tex" 1641295211 2119 d0f7dfbb6fc335f7ba9a8a4c26d6bfeb ""
