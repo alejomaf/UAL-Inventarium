@@ -29,8 +29,6 @@ export class GroupOfObjectsService {
   addGroupOfObject(objectGroup: FormData) {
     let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
     return this.http.post(this._url, objectGroup, { headers: header });
-
-    //FALTAN LOS HEADERS, CONFIGURAR Y COMPROBAR SU FUNCIONAMIENTO CON LOS TOKEN
   }
 
   deleteGroupOfObject(idGrupoObjetos: number) {

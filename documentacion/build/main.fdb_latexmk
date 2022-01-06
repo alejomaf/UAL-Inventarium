@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex build/main"] 1641406913 "build/main.aux" "build/main.bbl" "build/main" 1641406950
+["bibtex build/main"] 1641467569 "build/main.aux" "build/main.bbl" "build/main" 1641467578
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/bibtex/bst/apacite/apacite.bst" 1374949128 146156 9d7b79dbf9d91133318126032cff8c27 ""
   "bibliografia/bibliografia.bib" 1641056140 1035 5668dead2ea6616876e8fe5d90252397 ""
-  "build/main.aux" 1641406949 16841 0981da79482527efab824369cd93bd27 "pdflatex"
+  "build/main.aux" 1641467577 17595 c6347c53283e941e32e0b5347935ed10 "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
-["pdflatex"] 1641406942 "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex" "build/main.pdf" "main" 1641406950
+["pdflatex"] 1641467570 "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex" "build/main.pdf" "main" 1641467578
   "C:/Users/alejo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1641321125 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/alejo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1641319981 12668 a7cfaf77af53d46ae67fda653d942d53 ""
   "C:/Users/alejo/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1641319903 9769966 8c96a7303b81bbd75e90b10d1a0a9fe3 ""
@@ -160,15 +160,15 @@
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/trimspaces/trimspaces.sty" 1253165583 1380 971a51b00a14503ddf754cab24c3f209 ""
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "build/main.aux" 1641406949 16841 0981da79482527efab824369cd93bd27 "pdflatex"
-  "build/main.bbl" 1641406914 1345 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main"
+  "build/main.aux" 1641467577 17595 c6347c53283e941e32e0b5347935ed10 "pdflatex"
+  "build/main.bbl" 1641467569 1345 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main"
   "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex" 1641384757 629 fe6653fdbb25f5b48fd1b1f022705fd1 ""
   "capitulos/conclusiones_y_mejoras.tex" 1641056141 41 2092a627e0a9901a0ee539fda48eaa61 ""
   "capitulos/contruccion_de_la_aplicacion/0_introduccion_a_docker.tex" 1641056141 1791 b6350e62971db8a16327152dd8fbbdb3 ""
   "capitulos/contruccion_de_la_aplicacion/1_base_de_datos.tex" 1641056141 4717 760421e9c1063d40767bb40135678f7c ""
   "capitulos/contruccion_de_la_aplicacion/2_diseno_arquitectura.tex" 1641394431 4162 24c99066c52bdab74552ce6e5a0211f5 ""
   "capitulos/contruccion_de_la_aplicacion/3_api.tex" 1641384633 17902 6e7d71cf0937364b2279959ace36cd3f ""
-  "capitulos/contruccion_de_la_aplicacion/4_web.tex" 1641406941 8693 12c1a63c63e6e5a90f83304eb875d9f7 ""
+  "capitulos/contruccion_de_la_aplicacion/4_web.tex" 1641467559 19707 15ecf49073842758fd9bfd53dd7810ad ""
   "capitulos/contruccion_de_la_aplicacion/construccion_aplicacion.tex" 1641384782 545 92604f7ff6ee4828c4279b0549e05468 ""
   "capitulos/desarrollo_fases_proyecto/1_reuniones_iniciales.tex" 1641056141 12051 14b95ccc8b3774e4e3ae141c88b896c3 ""
   "capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex" 1641056141 3983 71b810c88f93a12068d352ee1dcab113 ""
@@ -179,6 +179,7 @@
   "diagramas/cronograma_inicial.tex" 1641295211 2322 ccd52d98c4d4d28e6ccdf7d7dd91489b ""
   "imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg" 1641056141 40804 5713ed163c43a3097a62b7d6b2bc1adb ""
   "imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png" 1641390951 54626 fadacf0a2cd0f9c8317adcedf5454428 ""
+  "imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png" 1641464986 103116 cdbcd51a218d01098c179d20cc404e12 ""
   "imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png" 1641406043 5151 fd81282afba582f7087ef849fe4eb7eb ""
   "imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png" 1641406468 7017 f3ecb642f388f03c0c07376ff79de2d0 ""
   "imagenes/estructura_y_desarrollo//db_design.png" 1641056141 111770 0e704e001d40ebe3b0842d1dde5b8a75 ""

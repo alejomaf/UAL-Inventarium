@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  5 JAN 2022 19:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  6 JAN 2022 12:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -803,29 +803,38 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-)) (capitulos/conclusiones_y_mejoras.tex [41] [42 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>]
+[41] [42 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>] [43]
+Underfull \vbox (badness 5667) has occurred while \output is active []
+
+ [44]
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png, id=195, 1716.4125pt x 908.39375pt>
+File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png  used on input line 249.
+(pdftex.def)             Requested size: 455.24411pt x 240.9311pt.
+ [45 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>])) (capitulos/conclusiones_y_mejoras.tex [46]
 chapter 5.
-) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.bbl [43
+) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.bbl [47
 
 
-] [44
+] [48
 
 
 ]
 chapter without number
-) [45] (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.aux) ) 
+) [49] (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.aux) ) 
 Here is how much of TeX's memory you used:
- 23272 strings out of 478659
- 543647 string characters out of 2845921
+ 23280 strings out of 478659
+ 544364 string characters out of 2845921
  976337 words of memory out of 3000000
- 40960 multiletter control sequences out of 15000+600000
+ 40967 multiletter control sequences out of 15000+600000
  410390 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  130i,20n,123p,10741b,873s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\alejo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.pdf (45 pages, 2751407 bytes).
+Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.pdf (49 pages, 2811702 bytes).
 PDF statistics:
- 242 PDF objects out of 1000 (max. 8388607)
+ 257 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 123 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 
