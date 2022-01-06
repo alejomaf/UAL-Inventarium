@@ -86,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `ualinventarium`.`configuracion` (
   `mac` VARCHAR(45) NULL,
   `boca` VARCHAR(45) NULL,
   `armario` VARCHAR(45) NULL,
-  `usuario` VARCHAR(45) NULL,
+  `usuario` VARCHAR(60) NULL,
   `contrasena` VARCHAR(45) NULL,
   `Objeto_idObjeto` INT NOT NULL,
   PRIMARY KEY (`idConfiguracion`),

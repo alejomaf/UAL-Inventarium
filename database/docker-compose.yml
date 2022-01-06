@@ -10,11 +10,9 @@ services:
   db:
     container_name: inventarium_sql
     image: mariadb:10.7.1-focal
-    ports:
-      - "3306:3306"
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
-      - persistent2:/var/lib/mysql
+      - persistent:/var/lib/mysql
     networks:
       - default
     environment:
@@ -59,22 +57,14 @@ services:
     build:
       context: ../API
       dockerfile: ../API/Dockerfile
-    image: node:14.17
+    image: node:16.4
+    restart: always
     container_name: api
-    env_file: ../API/.env
-    restart: unless-stopped
-    environment:
-      MYSQL_USER: ualinventarium
-      MYSQL_PASSWORD: uS3rP4ssM0Ord20D1f1CIL3
-      MYSQL_ROOT_PASSWORD: rO0trP4ssM0Ord20D1f1CIL3
     ports:
       - "3000:3000"
     volumes:
-      - ../API:/home/node/app
+      - ../API:/app
     networks:
       - default
-    depends_on:
-      - "db"
-    command: bash -c 'while !</dev/tcp/db/3306; do sleep 1; done; node index.js'
 volumes:
-  persistent2: {}
+  persistent: {}
