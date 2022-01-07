@@ -19,7 +19,7 @@ Es un MacBook Air M1 de 2020 con 8GB de RAM y 256GB de almacenamiento.
 
 \subsection{Entorno de desarrollo}
 
-Nuestro entorno de desarrollo y desde donde haremos casi absolutamente todo será desde Visual Studio Code. Este es un editor de código desarrollado por Microsoft que soporta varias distribuciones de sistemas operativos, entre ellas: Windows, Mac Os y Ubuntu. 
+Nuestro entorno de desarrollo y desde donde haremos casi absolutamente todo será desde Visual Studio Code. Este es un editor de código desarrollado por Microsoft que soporta varias distribuciones de sistemas operativos, entre ellas: Windows, Mac Os y Ubuntu.
 \\Una de las características de esta herramienta que la hacen la predilecta de varios desarrolladores es el gran soporte que tiene por parte de la comunidad. Tiene un mercado de plugins bastante grande que apoya la creación continua de código para todos los desarrolladores.
 \\Dispone de integraciones con Git, resaltado en errores de sintaxis, finalización de código y hasta conexión remota a otros entornos de trabajo mediante SSH.
 \\Otra enorme ventaja que presenta es el consumo de memoria que tiene, bastante pequeño. Es un programa para ordenadores de todos los tamaños y precios, un software gratuito y una herramienta increíblemente potente al alcance de todos.
@@ -32,10 +32,10 @@ Estas líneas están siendo escritas ahora mismo desde LaTeX. LaTeX es un sistem
 
 \subsection{Diseño y creación de la base de datos}
 
-La base de datos ha sido diseñada con MySQL Workbench. Esta es una herramienta visual de diseño de bases de datos, capaz de administrar, diseñar, gestionar y mantener bases de datos. Su primera versión fue publicada en 2005. 
+La base de datos ha sido diseñada con MySQL Workbench. Esta es una herramienta visual de diseño de bases de datos, capaz de administrar, diseñar, gestionar y mantener bases de datos. Su primera versión fue publicada en 2005.
 \\En un principio la base de datos fue exportada para que el deploy también se realizará en un servidor MySQL pero el versionado de estos scripts para la creación de las bases de datos me llevan dando problemas tres años. Grata fue mi sorpresa al descubrir MariaDB y que ofrece una compatibilidad perfecta con MySQL, además, es software libre.
 \\MariaDB es un sistema de gestión de bases de datos derivado de MySQL con licencia GPL. Fue escrito por el mismo creador que MySQL, y esto ¿por qué? Porque vendió su producto (MySQL) a Oracle, dejando este de ser software libre.
-\\Para la gestión de la base de datos he utilizado PHPMyAdmin. Un gestor de bases de datos que se utiliza desde páginas web. Facilita cualquier tipo de inspección que un técnico tenga que realizar por no poder hacerlo desde la aplicación web de inventarium. 
+\\Para la gestión de la base de datos he utilizado PHPMyAdmin. Un gestor de bases de datos que se utiliza desde páginas web. Facilita cualquier tipo de inspección que un técnico tenga que realizar por no poder hacerlo desde la aplicación web de inventarium.
 
 \subsection{Diseño del sitio web}
 
@@ -65,9 +65,13 @@ Docker Compose es una herramienta de Docker que nos sirve para poder levantar va
 
 NodeJS es un entorno de tiempo de ejecución de JavaScript. Este entorno de tiempo de ejecución en tiempo real incluye todo lo que se necesita para ejecutar un programa escrito en JavaScript. Gracias a él podremos utilizar varias herramientas que explicaré a continuación.
 
-\subsection{Levantamiento del servidor web y de la Interfaz de Programación de Aplicaciones(API)}
+\subsection{Levantamiento la Interfaz de Programación de Aplicaciones(API)}
 
 El servicio Web se levanta desde Express. Express es framework back-end para NodeJS que está diseñado para levantar sitios webs y APIs. Es la herramienta predilecta para levantar servicios web dentro del entorno de Node.
+
+\subsection{Levantamiento del sitio web}
+
+Nginx es un servidor web/proxy de código abierto. Su primer lanzamiento fue en 2004. Presenta ventajas en el momento de recibir un número elevado de solicitudes concurrentes y es utilizado por compañías de alto perfil tecnológico como Google, Facebook o Twitter.
 
 \subsection{Desarrollo del sitio web}
 
@@ -75,14 +79,14 @@ El desarrollo del sitio web se realizará con Angular 12. Angular es sin duda el
 \\Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
 \\Angular se basa en clases tipo Componentes, cuyas propiedades son las usadas para hacer el binding de los datos.
 \\Angular es la evolución de AngularJS (la versión de Angular que usaba JavaScript) aunque incompatible con su predecesor.
-\\Este framework para mí ha sido como el descubrimiento de América. Y es que en la anterior versión de la aplicación había utilizado únicamente PHP, Javascript y CSS. Es más, había conseguido desarrollar un modelo basado en jQuery para que el sitio web se ubicara en una única página y fuera refrescando los datos de forma interactiva y fluida. 
+\\Este framework para mí ha sido como el descubrimiento de América. Y es que en la anterior versión de la aplicación había utilizado únicamente PHP, Javascript y CSS. Es más, había conseguido desarrollar un modelo basado en jQuery para que el sitio web se ubicara en una única página y fuera refrescando los datos de forma interactiva y fluida.
 \\Pero Angular fue un cambio total de mentalidad, la gestión de componentes es lo que le da la vida en su totalidad y es que, ¿qué sería un desarrollo software sin que presente una modularidad en sus componentes? Angular te lo ofrece, y te da más. Podemos definir todo el dominio de la aplicación dentro de ella y crear los servicios para que estén listos para usarse para contactar con la API. Luego podemos definir el sistema de rutas que deba tener la aplicación junto al resto de componentes que tienen que interactuar con el usuario.
 \\No podría imaginarme un desarrollado planificado, con sus diagramas de requisitos, de base de datos, diseño de componentes y estructuración de vistas sin este framework.
 
 \section{Servicios}
 
 \subsection{Sistema de control de versiones}
-El sistema de control de versiones se realizará gracias a GitHub. GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creación de aplicaciones. 
+El sistema de control de versiones se realizará gracias a GitHub. GitHub es una plataforma de desarrollo colaborativo para alojar proyectos utilizando el sistema de control de versiones Git. Se utiliza principalmente para la creación de aplicaciones.
 \\El software que opera GitHub fue escrito en Ruby on Rails. Desde enero de 2010, GitHub opera bajo el nombre de GitHub, Inc. Anteriormente era conocida como Logical Awesome LLC. El código de los proyectos alojados en GitHub se almacena normalmente de forma pública.
 \\El 4 de junio de 2018 Microsoft compró GitHub por 7500 millones de dólares. Al principio, el cambio de propietario generó preocupaciones y la salida de algunos proyectos de este repositorio, sin embargo no fueron representativos. GitHub continúa siendo la plataforma más importante de colaboración para proyectos Open Source.
 

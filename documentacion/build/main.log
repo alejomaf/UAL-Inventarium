@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  6 JAN 2022 12:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  7 JAN 2022 13:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -632,7 +632,7 @@ chapter 2.
 
 
 ] [6] [7]) (capitulos/desarrollo_fases_proyecto/desarrollo_fases_proyecto.tex
-Underfull \hbox (badness 10000) in paragraph at lines 100--1
+Underfull \hbox (badness 10000) in paragraph at lines 104--1
 
  []
 
@@ -803,38 +803,45 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[41] [42 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>] [43]
-Underfull \vbox (badness 5667) has occurred while \output is active []
-
- [44]
+[41] [42 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>] [43] [44]
 <imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png, id=195, 1716.4125pt x 908.39375pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png  used on input line 249.
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png  used on input line 261.
 (pdftex.def)             Requested size: 455.24411pt x 240.9311pt.
- [45 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>])) (capitulos/conclusiones_y_mejoras.tex [46]
+ [45 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>] [46]) (capitulos/contruccion_de_la_aplicacion/5_deploy.tex [47] [48
+
+
+]
 chapter 5.
-) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.bbl [47
+[49] [50] [51])) (capitulos/pruebas.tex [52]
+chapter 6.
+) (capitulos/conclusiones_y_mejoras.tex [53
 
 
-] [48
+] [54
+
+
+]
+chapter 7.
+) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.bbl [55] [56
 
 
 ]
 chapter without number
-) [49] (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.aux) ) 
+) [57] (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.aux) ) 
 Here is how much of TeX's memory you used:
- 23280 strings out of 478659
- 544364 string characters out of 2845921
- 976337 words of memory out of 3000000
- 40967 multiletter control sequences out of 15000+600000
- 410390 words of font info for 50 fonts, out of 8000000 for 9000
+ 23297 strings out of 478659
+ 544908 string characters out of 2845921
+ 976348 words of memory out of 3000000
+ 40977 multiletter control sequences out of 15000+600000
+ 410771 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  130i,20n,123p,10741b,873s stack positions out of 5000i,500n,10000p,200000b,80000s
- <C:\Users\alejo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.pdf (49 pages, 2811702 bytes).
+ <C:\Users\alejo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti1095.pk> <C:\Users\alejo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.pdf (57 pages, 2832643 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
+ 287 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

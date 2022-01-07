@@ -1,4 +1,4 @@
-\section{Creación de UAL Inventarium}
+\section{Creación de UAL Inventarium}\label{sec:4_web}
 Este es la sección donde se juntan todos los conocimientos y herramientas que hemos ido exponiendo a lo largo de este documentos y los cohesionamos para crear UAL Inventarium.
 \\UAL Inventarium o Inventarium es una herramienta web diseñada para la gestión del inventario del Departamento de Informática de la Universidad de Almería.
 \\La página web está hecha en Angular 12. Angular es una plataforma de desarrollo compuesta por un framework y librerías. Angular nos brinda todas las herramientas necesarias para la creación de un sitio web.
@@ -239,7 +239,19 @@ El componente es bastante sencillo. Primero definimos un contenedor donde iremos
 </div>
 \end{verbatim}
 Este es el modelado que tiene nuestro objeto. El componente HTML llamado \textit{ng-content} será el encargado de tomar los objetos que le está pasando el componente padre. Estos los referencia con el atributo \textit{select} y le indica el nombre del tipo de componente que quiere coger.
-
+\\Para poder ir revisando cómo quedan nuestros componentes utilizaremos una funcionalidad que nos incorpora Angular. Dentro de nuestro archivo \textit{package.json} NPM nos define una serie de scripts que podemos utilizar. Uno de ellos es el siguiente:
+\begin{verbatim}
+    "start": "ng serve"
+\end{verbatim}
+Para poder ejecutar este script ejecutaríamos el siguiente comando:
+\begin{verbatim}
+    npm run start
+\end{verbatim}
+Que sería lo mismo que utilizar:
+\begin{verbatim}
+    ng serve
+\end{verbatim}
+Esto nos despliega un servidor de la aplicación de Angular en el puerto 4200. Una de las ventajas que nos ofrece esto es una compilación continua del proyecto. Es decir, a medida que vayamos realizando la contruccion de la aplicación, la generación de componentes y la creación de rutas la web se irá actualizando en cada guardado y será de gran utilidad poder ir viendo estos cambios al momento.
 \subsection{Definir el archivo de rutas}
 Definir el archivo de rutas de la aplicación sirve para saber qué direcciones y que comportamientos tendrá esta en su uso.
 \\Las rutas de la aplicación son las siguientes:
@@ -291,5 +303,29 @@ Dentro del HTML nos encontramos con un componente llamativo \textit{router-outle
     })
 \end{verbatim}
 
-\subsection{Deploy de nuestra Web}
-Al terminar la construcción de nuestra página web lo que haremos será preparar los archivos para añadirlos a nuestro servidor web.
+\subsection{Definir el proxy en nuestra aplicación}
+La finalidad de un proxy inverso es reenviar las solicitudes que realiza la aplicación a la API, esta por políticas de CORS no puede reenviar una solicitud que entra al puerto 80 al puerto 3000 del mismo sitio. Tampoco podemos hacer que la API funciones sobre el puerto 80 ya que este puerto está siendo utilizado por nuestra aplicación web. Por ello tenemos que hacer que este proceso se haga de forma interna en nuestro servidor y para ello utilizaremos un proxy inverso.
+\\Un proxy inverso se encarga de reenviar las solicitudes que llegan a unas determinadas rutas del sitio web a otro puerto de nuestro entorno pero que no está alojado en nuestro sitio. En este caso el proxy sería el encargado de que todas las solicitudes que entrasen por el puerto 80 de las direcciones definidas en la sección anterior sean redirigidas a nuestra API que trabaja sobre el puerto 3000.
+\\Este proxy inverso lo definiríamos en el fichero \textit{proxy.conf.json} de la siguiente forma:
+\begin{verbatim}
+"/api/configuracion*": {
+    "target": "http://localhost:3000",
+    "changeOrigin": true
+}
+\end{verbatim}
+Y para poder utilizarlo durante el desarrollo de la aplicación modificaremos el comando que utilizamos para inicializar el entorno de pruebas por el siguiente:
+\begin{verbatim}
+    "start": "ng serve -o --proxy-config proxy.conf.json --host 0.0.0.0"
+\end{verbatim}
+\textit{/api/configuracion*} es para indicar que todas las solicitudes que llegen a la web con esa dirección se reenvien a \textit{"target": "http://localhost:3000"} y que se cambie el origen de la solicitud \textit{"changeOrigin": true}.
+\begin{tcolorbox}
+    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Qué son las políticas de CORS?]
+    CORS (Cross-Origin Resource Sharing) es un mecanismo o política de seguridad que permite controlar las peticiones HTTP asíncronas que se pueden realizar desde un navegador a un servidor con un dominio diferente de la página cargada originalmente. Este tipo de peticiones se llaman peticiones de origen cruzado (cross-origin). Estas peticiones no están permitidas por ley porque suelen ser utilizadas para la piratería informática.
+\end{tcolorbox}
+
+\subsection{Compilar nuestro sitio Web}
+Para compilar nuestro sitio web ejecutaremos el siguiente comando dentro de la raíz de nuestro proyecto:
+\begin{verbatim}
+    ng build
+\end{verbatim}
+Esto nos generará un directorio \textit{dist} con otro directorio dentro con el nombre de nuestro proyecto. En este caso \textit{Inventarium}. Este contendrá todos los ficheros para poder añadirlo directamente a un servidor web.

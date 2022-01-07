@@ -1,0 +1,134 @@
+\chapter{Deploy de nuestra Web}
+Al terminar la construcción de nuestra página lo que haremos será preparar los archivos para añadirlos a nuestro servidor web.
+\\En un principio, es más, en la anterior frases que escribí pensé que el tiempo dedicado a este apartado sería de poco más de cinco horas, ya que no era mucho trabajo. Me equivocaba.
+\\Un objetivo de la preparación del deploy del sitio es que estuviera todo en un archivo docker-compose. Esto en vistas a una mejor configuración y a poder asegurar el entorno antes de llevarlo a producción.
+\\Por lo que nuestro fichero docker-compose se tendría que encargar de levantar los siguientes elementos:
+
+\begin{itemize}
+    \item La base de datos de MariaDB
+    \item El servidor Node que manejara nuestra API
+    \item El servicio de PHPMyAdmin para manejar la base de datos ante cualquier problemática
+    \item El servidor Web con el Deploy de Angular que iría con Nginx
+\end{itemize}
+
+Más adelante en un futuro añadiremos otro bloque más que será el gestor de copias de seguridad de la base de datos.
+\\Del apartado de configuración de la base de datos con PHPMyAdmin ya hemos hablado por lo que pasaremos directamente a los dos últimos puntos. Las joyas de la corona.
+
+\section{Levantar el servidor para nuestra API}
+Para poder levantar el servidor con nuestra API necesitábamos sí o sí realizar una configuración de una imagen docker Node para poder inicializar el Node Package Manager.
+\\También quería ahorrar intermediarios por lo que si podía generar la imagen Docker desde Docker Compose sería mucho mejor.
+\\Un fichero Dockerfile sirve para generar una imagen docker (no un contenedor) que podremos ir manipulando a nuestro antojo para que tenga la configuración que necesitamos o nos provea de los servicios que necesitamos.
+\\La estructura de un archivo Dockerfile es la siguiente:
+\begin{verbatim}
+    FROM node:16.4
+\end{verbatim}
+Primero definimos la imagen desde la que vamos a partir. Este es un proceso obligatorio. Generaremos nuestra imagen para la API desde la versión de node 16.4 que es con la que se ha llevado a cabo el desarrollo.
+\begin{verbatim}
+
+    WORKDIR /app
+    COPY package*.json ./
+    RUN npm install
+    COPY . .
+
+    
+\end{verbatim}
+Nuestro segundo paso será definir nuestra dirección del directorio de trabajo. Esta dirección \textit{/app} será donde se ubicará el directorio raíz de nuestra API.
+\\Luego copiaremos todos los archivos que empiecen por \textit{package} que en este caso son dos: \textit{package.json} y \textit{package-lock.json}. Dentro de estos ficheros se encuentra toda el versionado y la configuración de los plugins que vamos a utilizar en nuestro sistema.
+\\Luego de copiar la configuración del versionado iniciamos nuestro Node Package Manager. Este, en base a los paquetes que hemos declarado anteriormente, será el encargado de generar todos los directorios que necesita Node para funcionar.
+\\Después de haber instalado NPM el siguiente paso es copiar todo el directorio raíz de nuestra API dentro de la imagen que estamos creando, eso lo hacemos con \textit{``COPY . .''}.
+\begin{tcolorbox}
+    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Por qué no copiamos directamente nuestro directorio raíz con los plugins y demás?]
+    Esta pregunta se me ocurrió hace unos dos años, ya que me parecía una tontería volver a descargar exactamente los mismos paquetes para tenerlos en nuestra Aplicación. Frente a todos los sitios web que no realizaban ese copiado entero me dispuse a hacerlo yo. Lo que ocurre cuando haces una copia exacta es que tu sistema ha adaptado las librerías y alguna configuración extras a tu entorno. Por lo que luego al contenerizarlo da error. Lo bueno que nos permite Docker es que esté donde esté el sistema que vayamos a utilizar, mientras esté en un contenedor, esté será el mismo para todos los usuarios.
+\end{tcolorbox}
+\begin{verbatim}
+    EXPOSE 3000
+    CMD ["npm", "run", "dev"]
+\end{verbatim}
+Tenemos ya nuestra imagen casi creada, lo siguiente sería abrir el puerto 3000 para que el usuario pueda mandar solicitudes a la API y ejecutar el comando \textit{npm run dev} para que esta empiece a funcionar.
+\\Junto a este Dockerfile también tenemos que generar un \textit{.dockerignore} que al igual que \textit{.gitignore} sirve para que en el momento de la creación de nuestra imagen que hacemos con el Dockerfile nuestro sistema Docker no coja ni los ficheros ni directorios que se encuentren declarados dentro del documento.
+\\El archivo contiene los siguientes campos de texto:
+\begin{verbatim}
+    node_modules
+    Dockerfile
+    .git
+\end{verbatim}
+Ignoramos el directorio \textit{node\_modules} que es donde se descargan nuestros paquetes. El \textit{Dockerfile} y el \textit{.git} es para que la imagen no tenga contenido extra que no vaya a usar.
+\vspace{\baselineskip}
+\\Con todo esto ya definido pasaríamos a añadir el apartado de nuestra API en el Docker Compose.
+\begin{verbatim}
+    api:
+        build:
+            context: ../API
+            dockerfile: ../API/Dockerfile
+\end{verbatim}
+Dentro de nuestra sección \textit{build} definiremos el sitio donde Docker Compose generará la imagen que vayamos a utilizar para el contenedor. En el apartado \textit{context} definimos el directorio que será la raíz de la generación y en el apartado \textit{dockerfile} como su propio nombre indica seleccionamos el archivo Dockerfile que utilizaremos.
+\begin{verbatim}
+        image: inventarium_api:1.0
+        restart: always
+\end{verbatim}
+Aquí definimos el nombre de la imagen que estamos creando y \textit{restart: always} nos servirá para que en el momento en el que el contenedor se pare este se vuelva a iniciar.
+\begin{tcolorbox}
+    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cuándo se para un contenedor?]
+    Un contenedor puede dejar de funcionar por varias razones pero, la principal, es porque se ha quedado sin tareas que realizar. En nuestro caso si ocurre eso significaría que nuestra API ha dado un error y se ha parado. Como no queremos que esta deje de funcionar hacemos que se vuelva a ejecutar.
+\end{tcolorbox}
+\begin{verbatim}
+        container_name: api
+        ports:
+            - "3000:3000"
+        volumes:
+            - ../API:/app
+        networks:
+            - default
+\end{verbatim}
+Por último definimos el nombre del contenedor, que redirija el puerto 3000 a el puerto 3000 del sistema, que realice un copiado de archivos del contenido de la carpeta API dentro de la raíz del sistema en caso de que haya nuevos archivos para subir y por último que esté funcionando sobre la red con el nombre \textit{default}.
+
+\section{Levantar nuestro servidor Web}
+La primera vez que levanté un servidor Web para el desarrollo de un proyecto final de la asignatura Desarrollo Rápido de Aplicaciones este lo hice con NPM. Es decir, no compile el proyecto de Angular.
+\\Esta vez no iba a ser tan fácil, aquella vez tampoco lo fue, y el haber tenido que preparar todo para que funcionara desde un entorno Docker dificultó bastante la realización de este apartado.
+\\Han surgido dos problemas principales al intentar realizar esto:
+\begin{enumerate}
+    \item Configurar las rutas de la aplicación desde el servidor web.
+    \item Configurar un proxy reverso desde el servidor web.
+\end{enumerate}
+El servidor web que se utilizó fue \textbf{Nginx}. La configuración inicial fue bastante rápida. Quedando el fichero \textit{docker-compose.yml} así en un principio:
+\begin{verbatim}
+    client:
+        image: nginx:latest
+        ports:
+            - 80:80
+        volumes:
+            - ../inventarium/dist/inventarium:/usr/share/nginx/html
+\end{verbatim}
+Importamos la última imagen de nginx, redirigimos el puerto 80 al puerto 80 nuestro y por último importamos el contenido del sitio web dentro de el directorio \textit{/usr/share/nginx/html} de nginx.
+\\Hasta este punto parecía que estaba todo bien pero al acceder al sitio web me di cuenta de dos cosas: que no llegaban las solicitudes a la API y que tampoco podía acceder al archivo de rutas más allá que la raíz de Angular. Es decir, no podía acceder a la ruta \textit{/group-of-objects} por ejemplo.
+\\Con \textit{ng build} no se había importado el proxy que habíamos creado en nuestro sitio web y tampoco funcionaba la configuración de rutas, aunque, si navegaba dentro de la aplicación sí lo hacía.
+\\Esto se debía a la configuración de rutas que estaban configuradas en nginx. Rutas que se modificaban desde \textit{/etc/nginx/conf.d/default.conf}.
+\\Por lo tanto procedí a crear un archivo llamado \textit{default.conf} y añadí una línea más en la sección de \textit{volumes} del fichero del Compose. Esta línea era:
+\begin{verbatim}
+            - ./web/default.conf:/etc/nginx/conf.d/default.conf
+\end{verbatim}
+Teníamos que configurar las rutas en default.conf.
+
+\subsection{Configuración del ruteo de la web}
+El objetivo de configurar las rutas de la web es que todas las direcciones apuntásen al mismo archivo \textit{index.html}. Para eso añadiríamos dentro del fichero las siguientes líneas:
+\begin{verbatim}
+    location / {
+      root /usr/share/nginx/html;
+      try_files $uri $uri/ /index.html;
+    }
+\end{verbatim}
+Esta configuración define las rutas entrantes a la dirección raíz \textit{``/''}, en el caso de que sean allí apuntará a nuestro directorio \textit{html} que hemos indicado anteriormente y si no es el caso lo hará sobre \textit{try\_files \$uri \$uri/ /index.html;}. Sobre index.html. Es decir, lo mismo que si apuntara a la raíz del servidor.
+
+\subsection{Configuración del proxy inverso de la web}
+Este apartado se volvería el más complicado pero por unas razones que explicaré en el apartado de resolución de problemas.
+\\Como expliqué en la sección \ref{sec:4_web} para poder conseguir que la aplicación se comunicara con la API esta tenía que disponer de un proxy que redirigiese unas determinadas rutas dentro del puerto 80 a otras del puerto 3000.
+\\Para poder hacer esto en Nginx añadiremos las siguientes líneas de código en el archivo anterior:
+\begin{verbatim}
+    location /api/users/login {
+        proxy_pass http://api:3000;
+        proxy_pass_request_headers on;
+    }
+\end{verbatim}
+Sigue casi la misma estructura que en el apartado anterior siendo \textit{proxy\_pass} la dirección donde reenviará las peticiones. El dominio donde las reenvia se llama \textit{api}, esto es debido a que dentro del entorno que genera Docker Compose podemos llamar a las máquinas creadas en base a su referenciación.
+\\La siguiente línea sirve para poder reenviar el encabezado de nuestras solicitudes para que en la ampliación del proyecto podamos generar un sistema de tokens con el objetivo de querer aumentar la seguridad.
+\\Con esto ya tendríamos definido nuestro servidor web donde se localizaría la aplicación.
