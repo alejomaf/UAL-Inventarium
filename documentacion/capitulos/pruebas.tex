@@ -48,3 +48,35 @@ Las Herramientas de Desarrollador de Google me ha acompañado en todas las fases
     \includegraphics[scale=0.6,keepaspectratio]{../pruebas/network_dev_tools_chrome.png}
     \caption{Sección \textit{Network} dentro de las herramientas de desarrollador de Google Chrome}
 \end{figure}
+\section{Corrección de errores}
+Para poder realizar esta sección he ido recopilando las correcciones más significativas que ha sufrido el proyecto.
+
+\subsection{Cambio de la base de datos}
+Cuando se estaba realizando la construcción del sitio web con la base de datos y la API ya programadas se pidió crear un nuevo tipo de objeto. Este objeto serían los kits.
+\\Los kits consistían en un grupo de objetos que en realidad eran un conjunto de otros objetos. Poder remodelar la página para adaptar la lógica de los kits fue bastante complicado pero la solución fue bastante buena.
+\\En un principio iba a implementar dos nuevas tablas a la base de datos, una que se llamara \textbf{Kit} y otra \textbf{ObjetoKit}. Esto hubiera modificado la mayoría de consultas de generación de préstamos y suponía un aumento de la complejidad de la aplicación bastante grande. Tenía que distinguir en cada consulta si un elemento era un grupo de objetos o un kit.
+\\Pero un tiempo después comprobé que no hacía falta implementar un elemento del tipo Kit, ya que esta funcionalidad la cubría grupo de objeto.
+\\El formato termino consistiendo es que de un grupo de objetos contenía dos tipos de parámetros diferentes: objetos u objeto kit. Los objeto kit eran los objetos de los que estaba compuesto el kit, en caso de serlo. Mientras que los objetos era el número de elementos con sus distintos atributos que había.
+
+\subsection{Cambios de solicitudes}
+En las etapas intermedias del proyecto cuando estaba realizando el proceso de creación de un grupo de objetos tuve que hacer una readaptación.
+\\El problema ocurría a la hora de estar subiendo imágenes a la base de datos y es que para poder procesar y enviar estas imágenes tuve que usar campos de formularios.
+\\Hasta ahí no había problema hasta que los plugin que había de procesamiento de formularios no eran compatibles con el que tenía para poder procesar solicitudes en formato json.
+\\Así que por las imágenes tanto de los grupos de objetos como las de los objetos de kit tuve que cambiar todo el repertorio de solicitudes que había creado para la creación, modificación, actualización y eliminación de elementos para adaptarlos con un formato de formularios.
+
+\subsection{Conexión entre máquinas de Docker Compose}
+Este es el error más insignificante y a la vez que más tiempo me ha llevado de toda la lista. Pude haber perdido fácilmente 15 o 20 horas indagando a ver qué pasaba.
+\\Resulta que al configurar la API con la base de datos esta (la API) tenía que esperar a que la base de datos se encendiera. Como he explicado en la configuración del documento de docker compose.
+\\Esta estaba mandando constatemente solicitudes TCP al puerto 3306 que es el que usaba la base de datos y posteriormente cuando se intentaba conectar daba un error de conexión.
+\\Al analizar los errores en la terminal vi que la base de datos había mandado un mensaje que no había sido posible conectar con ella porque las credenciales eran del estilo \textit{`user':`unnauthenticated'} y \textit{`password':`unset'}.
+\\Me iba a explotar la cabeza. No entendía cómo era posible que no se conectase mi máquina Node con la de MariaDB si lo había probado desde mi PC sin contenerizar y funcionaba. Las credenciales estaban ahí pero era como que no la reconocía la máquina. O eso pensaba.
+\\Fue un caos, la solución fue, como comenté anteriormente: que para poder conectarnos con una máquina en un entorno local de Docker desplegado con Docker Compose teníamos que referenciar la máquina con el nombre con la que la habíamos creado. Quedando así:
+\begin{verbatim}
+const connection = await mysql.createConnection({
+    host: 'db',
+    user: 'ualinventarium',
+    password: 'secretpassword',
+    database: 'ualinventarium',
+    port: '3306'
+});
+\end{verbatim}

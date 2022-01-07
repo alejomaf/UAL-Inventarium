@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  7 JAN 2022 16:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 21.12) (preloaded format=pdflatex 2022.1.4)  7 JAN 2022 17:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -984,12 +984,17 @@ File: imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png 
 <use imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png  used on input line 48.
 (pdftex.def)             Requested size: 260.62569pt x 176.15947pt.
-[54 <./imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png>]) (capitulos/conclusiones_y_mejoras.tex [55 <./imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png> <./imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png>] [56
+[54 <./imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png>] [55 <./imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png> <./imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png>]
+Overfull \hbox (5.03865pt too wide) in paragraph at lines 68--74
+\OT1/cmr/m/n/10.95 haba sido posi-ble conec-tar con ella porque las cre-den-ciales eran del es-tilo \OT1/cmr/m/it/10.95 `user':`unnauthenticated'
+ []
 
-
-]
+) (capitulos/conclusiones_y_mejoras.tex [56]
 chapter 7.
-) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.bbl [57] [58
+) (c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.bbl [57
+
+
+] [58
 
 
 ]
@@ -999,17 +1004,17 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30586 strings out of 478659
- 660593 string characters out of 2845921
+ 30594 strings out of 478659
+ 660676 string characters out of 2845921
  1090208 words of memory out of 3000000
- 47882 multiletter control sequences out of 15000+600000
+ 47886 multiletter control sequences out of 15000+600000
  410771 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  130i,20n,123p,10741b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\alejo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcti1095.pk> <C:\Users\alejo\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/alejo/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.pdf (59 pages, 3040664 bytes).
+Output written on c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.pdf (59 pages, 3046911 bytes).
 PDF statistics:
- 892 PDF objects out of 1000 (max. 8388607)
- 269 named destinations out of 1000 (max. 500000)
- 823 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 909 PDF objects out of 1000 (max. 8388607)
+ 273 named destinations out of 1000 (max. 500000)
+ 855 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex build/main"] 1641570223 "build/main.aux" "build/main.bbl" "build/main" 1641570367
+["bibtex build/main"] 1641572116 "build/main.aux" "build/main.bbl" "build/main" 1641572126
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/bibtex/bst/apacite/apacite.bst" 1374949128 146156 9d7b79dbf9d91133318126032cff8c27 ""
   "bibliografia/bibliografia.bib" 1641056140 1035 5668dead2ea6616876e8fe5d90252397 ""
-  "build/main.aux" 1641570366 57669 482b0bac5fd13c003a07cca7445ddecd "pdflatex"
+  "build/main.aux" 1641572125 59768 0743849c5a00c7ec9fee837f7a8ffebb "pdflatex"
   (generated)
   "build/main.bbl"
   "build/main.blg"
-["pdflatex"] 1641570359 "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex" "build/main.pdf" "main" 1641570367
+["pdflatex"] 1641572117 "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex" "build/main.pdf" "main" 1641572126
   "C:/Users/alejo/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1641568070 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/alejo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1095.pk" 1641319981 12668 a7cfaf77af53d46ae67fda653d942d53 ""
   "C:/Users/alejo/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcti1095.pk" 1641552901 15464 f3eff0920348754cde5f88039649a7ae ""
@@ -193,9 +193,9 @@
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1636284872 56029 3f7889dab51d620aa43177c391b7b190 ""
   "C:/Users/alejo/AppData/Local/Programs/MiKTeX/tex/latex/xpatch/xpatch.sty" 1585221260 8510 7803f78066c4f9d008405191a4b43073 ""
-  "build/main.aux" 1641570366 57669 482b0bac5fd13c003a07cca7445ddecd "pdflatex"
-  "build/main.bbl" 1641570223 1345 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main"
-  "build/main.out" 1641570362 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "build/main.aux" 1641572125 59768 0743849c5a00c7ec9fee837f7a8ffebb "pdflatex"
+  "build/main.bbl" 1641572116 1345 644fe051f1d6b21f8bfd941d5b943711 "bibtex build/main"
+  "build/main.out" 1641572120 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "c:/Users/alejo/Documents/GitHub/Inventarium/documentacion/main.tex" 1641556804 660 e7e89c7fb94949f14b5d0a82ffb8975b ""
   "capitulos/conclusiones_y_mejoras.tex" 1641056141 41 2092a627e0a9901a0ee539fda48eaa61 ""
   "capitulos/contruccion_de_la_aplicacion/0_introduccion_a_docker.tex" 1641056141 1791 b6350e62971db8a16327152dd8fbbdb3 ""
@@ -211,7 +211,7 @@
   "capitulos/desarrollo_fases_proyecto/desarrollo_fases_proyecto.tex" 1641056141 724 5a2f9e15b902a089a7ddf6a484da8804 ""
   "capitulos/herramientas_utilizadas.tex" 1641567680 14140 83f331b053cd8404cbbdbd7dc700d9ca ""
   "capitulos/introduccion.tex" 1641056141 9640 b853c52e1770c168c644e0e6059e3286 ""
-  "capitulos/pruebas.tex" 1641570357 5519 c49debf3fb63add2333eca0c26965778 ""
+  "capitulos/pruebas.tex" 1641572106 9390 5510e7b3a16e77d34b8faa27369d5a81 ""
   "diagramas/cronograma_inicial.tex" 1641295211 2322 ccd52d98c4d4d28e6ccdf7d7dd91489b ""
   "imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg" 1641056141 40804 5713ed163c43a3097a62b7d6b2bc1adb ""
   "imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png" 1641390951 54626 fadacf0a2cd0f9c8317adcedf5454428 ""
