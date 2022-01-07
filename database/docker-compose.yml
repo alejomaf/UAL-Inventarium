@@ -3,7 +3,7 @@ services:
   client:
     image: nginx:latest
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - ../inventarium/dist/inventarium:/usr/share/nginx/html
       - ./web/default.conf:/etc/nginx/conf.d/default.conf

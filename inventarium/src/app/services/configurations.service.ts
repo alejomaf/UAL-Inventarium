@@ -11,22 +11,22 @@ export class ConfigurationsService {
   constructor(private http: HttpClient, private userService: UserService) { }
 
   getConfiguration(idObjeto: number) {
-    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.get(this._url + "/" + idObjeto, { headers: header });
   }
 
   addConfiguration(configuracion: FormData) {
-    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.post(this._url, configuracion, { headers: header });
   }
 
   deleteConfiguration(idConfiguracion: number) {
-    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.delete(this._url + "/" + idConfiguracion, { headers: header });
   }
 
   updateConfiguration(configuracion: FormData, idConfiguracion: number) {
-    let header = new HttpHeaders(({ "user_token": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.put(this._url + "/" + idConfiguracion, configuracion, { headers: header });
   }
 

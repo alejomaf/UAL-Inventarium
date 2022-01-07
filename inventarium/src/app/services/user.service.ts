@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Usuario } from '../interfaces/usuario';
 
-const user_token = "Auth_Key";
+const usertoken = "Auth_Key";
 const user_name = "Undefined";
 const user_type = "0";
 
@@ -14,7 +14,7 @@ export class UserService {
   _url = "api/users/login"
 
   setToken(token: string): void {
-    localStorage.setItem(user_token, token);
+    localStorage.setItem(usertoken, token);
   }
 
   setUser(user: Usuario): void {
@@ -23,19 +23,19 @@ export class UserService {
   }
 
   isTechnician(): boolean {
-    return localStorage.getItem(user_token) == "1";
+    return localStorage.getItem(usertoken) == "1";
   }
 
   isLogged() {
-    return localStorage.getItem(user_token) != null;
+    return localStorage.getItem(usertoken) != null;
   }
 
   getToken() {
-    return localStorage.getItem(user_token)!;
+    return localStorage.getItem(usertoken)!;
   }
 
   resetToken() {
-    localStorage.removeItem(user_token);
+    localStorage.removeItem(usertoken);
   }
 
   login(loginInfo: FormData) {
@@ -43,7 +43,7 @@ export class UserService {
   }
 
   getUser() {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "user_token": this.getToken() }));
+    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "usertoken": this.getToken() }));
     return this.http.get("api/users/mainUser", { headers: header });
   }
 
