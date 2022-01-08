@@ -9,6 +9,23 @@
 
 \begin{document}
 
+% PORTADA Y CONTRAPORTADA
+\begingroup
+\begin{titlepage}
+    \newgeometry{left=0cm,top=0cm,bottom=0cm, right=0cm}
+    \AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1]{portada_y_contraportada/1-PortadaTFG.pdf}}} % pdf de fondo de portada
+    \noindent
+    \vspace{125mm}
+    \newgeometry{left=0cm,top=0cm,bottom=0cm, right=0cm}
+    \AddToShipoutPicture*{\put(0,0){\includegraphics[scale=1]{portada_y_contraportada/2-ContraportadaTFG.pdf}}} % pdf de fondo de portada
+    \noindent
+    \vspace{125mm}
+\end{titlepage}
+\endgroup
+
+% ÍNDICE
+\tableofcontents
+
 % CAPÍTULOS
 \input{capitulos/introduccion.tex}
 \input{capitulos/herramientas_utilizadas.tex}
