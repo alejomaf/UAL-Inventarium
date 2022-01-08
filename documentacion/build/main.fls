@@ -1126,6 +1126,11 @@ INPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.toc
 INPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.toc
 INPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.toc
 OUTPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.toc
+INPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.lof
+INPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.lof
+INPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.lof
+INPUT C:\Users\alejo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
+OUTPUT c:\Users\alejo\Documents\GitHub\Inventarium\documentacion\build\main.lof
 INPUT .\capitulos\introduccion.tex
 INPUT capitulos\introduccion.tex
 INPUT .\capitulos\introduccion.tex
@@ -1323,7 +1328,6 @@ INPUT .\capitulos\contruccion_de_la_aplicacion\3_api.tex
 INPUT capitulos\contruccion_de_la_aplicacion\3_api.tex
 INPUT .\capitulos\contruccion_de_la_aplicacion\3_api.tex
 INPUT capitulos\contruccion_de_la_aplicacion\3_api.tex
-INPUT C:\Users\alejo\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
 INPUT .\capitulos\contruccion_de_la_aplicacion\4_web.tex
 INPUT capitulos\contruccion_de_la_aplicacion\4_web.tex
 INPUT .\capitulos\contruccion_de_la_aplicacion\4_web.tex

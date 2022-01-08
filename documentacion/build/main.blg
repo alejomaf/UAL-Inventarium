@@ -14,45 +14,82 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'wiz_functions' (item size: 4) to 9000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bibliografia/bibliografia.bib
+Warning--entry type for "clean-architecture" isn't style-file defined
+--line 59 of file bibliografia/bibliografia.bib
+Warning--entry type for "proxy-reverse" isn't style-file defined
+--line 89 of file bibliografia/bibliografia.bib
+Warning--entry type for "nginx-routing" isn't style-file defined
+--line 101 of file bibliografia/bibliografia.bib
+Warning--entry type for "google-cloud-documentation" isn't style-file defined
+--line 113 of file bibliografia/bibliografia.bib
+Warning--entry type for "ssh-connection" isn't style-file defined
+--line 125 of file bibliografia/bibliografia.bib
+Warning--entry type for "ieee-software-architecture" isn't style-file defined
+--line 139 of file bibliografia/bibliografia.bib
+Warning--entry type for "api-definition" isn't style-file defined
+--line 153 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-components" isn't style-file defined
+--line 167 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-services" isn't style-file defined
+--line 181 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-interfaces" isn't style-file defined
+--line 193 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-routing" isn't style-file defined
+--line 205 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-file-structure" isn't style-file defined
+--line 217 of file bibliografia/bibliografia.bib
+Warning--entry type for "postman-testing" isn't style-file defined
+--line 229 of file bibliografia/bibliografia.bib
+Warning--entry type for "selenium-testing" isn't style-file defined
+--line 243 of file bibliografia/bibliografia.bib
+Warning--entry type for "chrome-testing" isn't style-file defined
+--line 257 of file bibliografia/bibliografia.bib
+Warning--entry type for "docker-compose-create" isn't style-file defined
+--line 269 of file bibliografia/bibliografia.bib
+Warning--entry type for "docker-nodejs" isn't style-file defined
+--line 281 of file bibliografia/bibliografia.bib
+Warning--entry type for "node-express" isn't style-file defined
+--line 295 of file bibliografia/bibliografia.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 2 entries,
+You've used 21 entries,
             6951 wiz_defined-function locations,
-            1284 strings with 10966 characters,
-and the built_in function-call counts, 3305 in all, are:
-= -- 403
-> -- 24
-< -- 143
-+ -- 142
-- -- 4
-* -- 209
-:= -- 628
-add.period$ -- 9
-call.type$ -- 2
-change.case$ -- 36
+            1367 strings with 13555 characters,
+and the built_in function-call counts, 34771 in all, are:
+= -- 4976
+> -- 217
+< -- 1277
++ -- 1122
+- -- 63
+* -- 1725
+:= -- 5278
+add.period$ -- 85
+call.type$ -- 21
+change.case$ -- 242
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 76
-empty$ -- 143
-format.name$ -- 38
-if$ -- 634
+cite$ -- 42
+duplicate$ -- 714
+empty$ -- 1458
+format.name$ -- 312
+if$ -- 7359
 int.to.chr$ -- 0
-int.to.str$ -- 6
+int.to.str$ -- 73
 missing$ -- 0
-newline$ -- 52
-num.names$ -- 16
-pop$ -- 91
+newline$ -- 472
+num.names$ -- 168
+pop$ -- 475
 preamble$ -- 1
-purify$ -- 10
+purify$ -- 77
 quote$ -- 0
-skip$ -- 191
+skip$ -- 3385
 stack$ -- 0
-substring$ -- 156
-swap$ -- 47
-text.length$ -- 6
+substring$ -- 1235
+swap$ -- 348
+text.length$ -- 44
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 160
+type$ -- 2976
 warning$ -- 0
-while$ -- 14
+while$ -- 108
 width$ -- 0
-write$ -- 59
+write$ -- 517
+(There were 18 warnings)

@@ -36,17 +36,17 @@ Un apartado a tratar en este capítulo es la gestión de directorios y como los 
     \item \textbf{node\_modules}: La carpeta de node\_modules es donde se gestionan todos los paquetes de nuestro NPM.
     \item \textbf{routes}: Dentro de la carpeta routers crearemos todo el enrutamiento de nuestra aplicación. En ella se ubica un archivo por cada tabla que se nos presenta en la base de datos.
     \item \textbf{services}: El objetivo de la carpeta services es el de poder realizar todos los tipos de consultas que requiera la aplicación.
-    \begin{itemize}
-        \item \textit{\.dockerignore}: La funcionalidad de este fichero es el de poder ignorar un directorio o fichero en el momento de la creación de una imagen de un contenedor docker. En este caso el único directorio que estamos ignorando es node\_modules. ¿Por qué? Porque en el momento de la generación de una imagen docker suele dar problemas el importar directamente las dependencias que se iban a utilizar a mano. Es mejor que desde el propio sistema sea el gestor de paquetes quien, después de leer el package\-lock.json, sea quien instale las dependencias nuevamente.
-        \item \textit{\.env}: Aquí ubicamos las variables con las que trabajaremos en nuestro entorno. Es una forma fácil y sencilla de poder generalizar secciones del código. El contenido del archivo es el siguiente:
-        \begin{verbatim}
+          \begin{itemize}
+              \item \textit{\.dockerignore}: La funcionalidad de este fichero es el de poder ignorar un directorio o fichero en el momento de la creación de una imagen de un contenedor docker. En este caso el único directorio que estamos ignorando es node\_modules. ¿Por qué? Porque en el momento de la generación de una imagen docker suele dar problemas el importar directamente las dependencias que se iban a utilizar a mano. Es mejor que desde el propio sistema sea el gestor de paquetes quien, después de leer el package\-lock.json, sea quien instale las dependencias nuevamente.
+              \item \textit{\.env}: Aquí ubicamos las variables con las que trabajaremos en nuestro entorno. Es una forma fácil y sencilla de poder generalizar secciones del código. El contenido del archivo es el siguiente:
+                    \begin{verbatim}
             DB_HOST='localhost',
             DB_USER='user',
             DB_PASSWORD='secretpassword',
             DB_NAME='ualinventarium',
         \end{verbatim}
-        \item \textit{config.js}: Dentro del fichero de configuración añadimos los parámetros que va a coger nuestra variable db para conectarse a la base de datos.
-        \begin{verbatim}
+              \item \textit{config.js}: Dentro del fichero de configuración añadimos los parámetros que va a coger nuestra variable db para conectarse a la base de datos.
+                    \begin{verbatim}
             const config = {
                 db: {
                     host: env.DB_HOST,
@@ -57,16 +57,16 @@ Un apartado a tratar en este capítulo es la gestión de directorios y como los 
                 listPerPage: env.LIST_PER_PAGE || 10,
             };
         \end{verbatim}
-        \begin{tcolorbox}
-            [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Utilización del archivo .env]
-            Podemos ver como nuestro archivo que genera la configuración para la base de datos solicita la información dentro de nuestro fichero \.env. El último atributo que intenta solicitar es ``LIST\_PER\_PAGE'' en el caso que no lo pueda obtener, que será lo que va a ocurrir, pondrá como valor predeterminado 10.
-        \end{tcolorbox}
-        \item \textit{Dockerfile}: Este archivo funciona para la generación de una imagen de un contenedor docker.
-        \item \textit{helper.js}: Un pequeño fichero que nos brinda un par de funciones a la hora de manejar consultas con la base de datos.
-        \item \textit{index.js}: El archivo principal de nuestra API, dentro de él inicializaremos todo.
-        \item \textit{package\-lock.json}: El fichero principal de NPM que nos ayuda a gestionar todas las dependencias con los paquetes que tenemos instalados en nuestro proyecto.
-        \item \textit{package.json}: El paquete json es el corazón de cualquier proyecto de Node. Registra metadatos importantes sobre un proyecto que necesarios para la publicación de la aplicación, y también define atributos funcionales de un proyecto que npm usa para instalar dependencias, ejecutar scripts e identificar el punto de entrada a nuestro paquete.
-    \end{itemize}
+                    \begin{tcolorbox}
+                        [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Utilización del archivo .env]
+                        Podemos ver como nuestro archivo que genera la configuración para la base de datos solicita la información dentro de nuestro fichero \.env. El último atributo que intenta solicitar es ``LIST\_PER\_PAGE'' en el caso que no lo pueda obtener, que será lo que va a ocurrir, pondrá como valor predeterminado 10.
+                    \end{tcolorbox}
+              \item \textit{Dockerfile}: Este archivo funciona para la generación de una imagen de un contenedor docker.
+              \item \textit{helper.js}: Un pequeño fichero que nos brinda un par de funciones a la hora de manejar consultas con la base de datos.
+              \item \textit{index.js}: El archivo principal de nuestra API, dentro de él inicializaremos todo.
+              \item \textit{package\-lock.json}: El fichero principal de NPM que nos ayuda a gestionar todas las dependencias con los paquetes que tenemos instalados en nuestro proyecto.
+              \item \textit{package.json}: El paquete json es el corazón de cualquier proyecto de Node. Registra metadatos importantes sobre un proyecto que necesarios para la publicación de la aplicación, y también define atributos funcionales de un proyecto que npm usa para instalar dependencias, ejecutar scripts e identificar el punto de entrada a nuestro paquete.
+          \end{itemize}
 \end{itemize}
 
 \subsection{Funcionamiento de index.js}
@@ -125,7 +125,7 @@ Dentro de nuestra llamada al método ``get'' de ``router'' realizamos un ``try c
 \begin{verbatim}
     const group_of_objects = require('../services/grupo_objetos');
 \end{verbatim}
-El método ``getMultiple'' nos devuelve una lista con los diferentes grupos de objetos que hay en el servidor. Ahondarémos más en ese método en la siguiente sección. 
+El método ``getMultiple'' nos devuelve una lista con los diferentes grupos de objetos que hay en el servidor. Ahondarémos más en ese método en la siguiente sección.
 \\Dentro del ``catch'' hacemos que la API devuelva un mensaje de error como respuesta en caso de fallo.
 \begin{tcolorbox}
     [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Personalización de peticiones]
@@ -175,11 +175,6 @@ Para explicar la estructura de estas funciones cogeré como ejemplo la ``getMult
 Como podremos comprobar llamamos al método offset que nos ayudará a realizar la paginación de nuestro sitio web.
 \\Después de la consulta llamamos a nuestro método de la clase definida anteriormente ``helper'' llamado ``emptyOrRows''. Este método nos ayuda a evitar cualquier problemática que nos pueda causar la API si la base de datos nos devuelve el array vacío.
 \\Por último en el ``return'' de la función devolvemos un JSON que tiene como primer elemento la respuesta de la petición y como segundo la página.
-
-\subsection{Configuracion del archivo Dockerfile}
-Un archivo Dockerfile sirve para la generación de la imagen de un contenedor. En este caso la imagen la utilizaremos posteriormente para nuestro Docker Compose.
-
-\textbf{FALTA POR HACER, FINALIZAR API Y PREPARAR EL MONTAJE Y LUEGO DECIDIR}
 
 \subsection{Gestión de archivos con Express}
 
