@@ -1,15 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-    background-color: #2c6394!important;
+    /* background-color: #2c6394!important; */
+    /* background-color: black !important; */
+    background-image: url("./assets/img/background.png") !important;
 }
 
 .btn-primary {
-    background-color: #800080!important;
-    border-color: #a006a0!important;
+    background-color: #800080 !important;
+    border-color: #a006a0 !important;
 }
+
 .btn-secondary {
-    background-color: #ADD8E6!important;
-    border-color: #b7dfec!important;
-    color: black!important;
+    background-color: #ADD8E6 !important;
+    border-color: #b7dfec !important;
+    color: black !important;
+}
+
+.bg-secondary {
+    background-color: #cc56af;
+}
+
+.card-main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.514);
+    background-clip: border-box;
+    border-radius: 0.25rem;
+}
+
+.list-group-item-transparent {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #212529;
+    text-decoration: none;
 }
