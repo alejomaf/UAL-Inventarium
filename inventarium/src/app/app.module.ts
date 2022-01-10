@@ -54,6 +54,7 @@ import { KitsComponent } from './components/main/parts/group-of-objects/group-wi
 import { KitComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kit/kit.component';
 import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BoxLinkComponent } from './components/main/unit/box-link/box-link.component';
 
 @NgModule({
   declarations: [
@@ -104,6 +105,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     GroupWithObjectsComponent,
     KitsComponent,
     KitComponent,
+    BoxLinkComponent,
   ],
   imports: [
     BrowserModule,
