@@ -3,11 +3,14 @@ import { Router } from '@angular/router';
 import $ from "jquery";
 import { Usuario } from 'src/app/interfaces/usuario';
 import { UserService } from 'src/app/services/user.service';
+import { RouterOutlet } from '@angular/router';
+import { fader } from 'src/app/animations/main-animations';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  styleUrls: ['./main.component.css'],
+  animations: [fader]
 })
 export class MainComponent implements OnInit {
 
@@ -26,5 +29,9 @@ export class MainComponent implements OnInit {
 
   sidebarCollapse() {
     $('#sidebar, #content').toggleClass('active');
+  }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && outlet.activatedRouteData;
   }
 }

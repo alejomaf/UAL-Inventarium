@@ -13,6 +13,7 @@ services:
     volumes:
       - ./dump:/docker-entrypoint-initdb.d
       - persistent:/var/lib/mysql
+      - ./config-database/my.cnf:/etc/mysql/my.cnf
     networks:
       - default
     ports:

@@ -17,7 +17,7 @@
         </div>
     </app-object>
 
-    <div class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+    <div class="card rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
         <div style="width: 100%;" class="card-title">
             <h5 class="card-title text-dark text-center">
                 Préstamos del objeto
@@ -38,8 +38,10 @@
     </div>
 
     <app-group-of-object>
-        <img imagen class="card-img-top rounded-circle" style="cursor:pointer"
-            src="http://localhost:3000/images/{{grupoObjeto?.imagen}}.jpg">
+        <img *ngIf="grupoObjeto?.imagen != null" imagen class="card-img-top rounded-circle"
+            style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{grupoObjeto?.imagen}}.jpg">
+        <img *ngIf="grupoObjeto?.imagen == null" imagen class="card-img-top rounded-circle" style="height:180px;"
+            src="./assets/icons/no-photo.svg">
         <h5 nombre [routerLink]="['/group-of-object', grupoObjeto?.idGrupoObjetos]" style="cursor:pointer"
             class="card-title text-dark text-center">{{grupoObjeto?.nombre}}</h5>
         <span cantidad>{{grupoObjeto?.cantidad}}</span>
@@ -84,7 +86,7 @@
         </div>
     </app-configuration>
 
-    <div *ngIf="configuracion==null" class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+    <div *ngIf="configuracion==null" class="card rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
         <div style="width: 100%;" class="card-title">
             <h5 class="card-title text-dark text-center">
                 Configuración

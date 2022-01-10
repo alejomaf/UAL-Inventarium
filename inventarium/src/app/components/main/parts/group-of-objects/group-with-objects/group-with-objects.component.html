@@ -1,7 +1,10 @@
 <div class="row d-flex-inline justify-content-center">
     <!--Contenido-->
     <app-group-of-object style="width: fit-content;">
-        <img imagen class="card-img-top rounded-circle" src="http://localhost:3000/images/{{go?.imagen}}.jpg">
+        <img *ngIf="go.imagen != null" imagen class="card-img-top rounded-circle"
+            style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{go.imagen}}.jpg">
+        <img *ngIf="go.imagen == null" imagen class="card-img-top rounded-circle" style="height:180px;"
+            src="./assets/icons/no-photo.svg">
         <h5 nombre [routerLink]="['/group-of-object', go?.idGrupoObjetos]" class="card-title text-dark text-center">
             {{go?.nombre}}</h5>
         <span cantidad>{{go?.cantidad}}</span>

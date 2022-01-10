@@ -53,6 +53,7 @@ import { GroupWithObjectsComponent } from './components/main/parts/group-of-obje
 import { KitsComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kits.component';
 import { KitComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kit/kit.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]

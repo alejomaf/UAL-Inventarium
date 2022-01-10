@@ -1,36 +1,39 @@
-<div class="card border rounded px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
+<div class="card rounded px-3 py-3" style="width: 18rem;background-color:#FDF7FF;">
     <div class="form-group row col-md-12 mb-3">
-      <label class="font-weight-bold">Número de objetos</label>
-    <div class="col-md-12 mb-3">
-              <div class="input-group">
-          <span class="input-group-btn">
-              <button type="button" class="quantity-left-minus btn btn-danger btn-number" (click)="decrease()" data-type="minus" data-field="">
-              - 
-              <span class="glyphicon glyphicon-minus"></span>
-              </button>
-          </span>
-          <input type="text" id="quantity" readonly style="cursor: default; text-align: center;" name="quantity" class="form-control input-number text-align-center" [formControl]="objectsQuantity" min="1" max="50">
-          <span class="input-group-btn">
-              <button type="button" class="quantity-right-plus btn btn-success btn-number" (click)="increase()" data-type="plus" data-field="">
-              +    
-              <span class="glyphicon glyphicon-plus"></span>
-              </button>
-          </span>
-      </div>
-    </div>
+        <label class="font-weight-bold">Número de objetos</label>
+        <div class="col-md-12 mb-3">
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <button type="button" class="quantity-left-minus btn btn-danger btn-number" (click)="decrease()"
+                        data-type="minus" data-field="">
+                        -
+                        <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </span>
+                <input type="text" id="quantity" readonly style="cursor: default; text-align: center;" name="quantity"
+                    class="form-control input-number text-align-center" [formControl]="objectsQuantity" min="1"
+                    max="50">
+                <span class="input-group-btn">
+                    <button type="button" class="quantity-right-plus btn btn-success btn-number" (click)="increase()"
+                        data-type="plus" data-field="">
+                        +
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
+        </div>
     </div>
     <div id="myBtn" class="col-md-12 mb-3">
         <label class="font-weight-bold">Ubicación del/los objeto/s*</label>
         <div class="alert alert-warning">
             <a>Debes añadir una ubicación al objeto obligatoriamente</a>.
-          </div>
-        <app-modal-location-select
-            (send_location)="getSentLocation($event)">
+        </div>
+        <app-modal-location-select (send_location)="getSentLocation($event)">
         </app-modal-location-select>
-        </div>
-    
-        <div class="d-grid gap-2">
-            <a id="Crear objetos" type="btn btn-primary" (click)="crearObjetos();"class="btn btn-block btn-primary">Crear objetos</a>
-        </div>
     </div>
-    
+
+    <div class="d-grid gap-2">
+        <a id="Crear objetos" type="btn btn-primary" (click)="crearObjetos();" class="btn btn-block btn-primary">Crear
+            objetos</a>
+    </div>
+</div>
