@@ -16,6 +16,11 @@ export class UsersService {
     return this.http.get(this._url, { headers: header });
   }
 
+  getUserRequests() {
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
+    return this.http.get(this._url + "/requests", { headers: header });
+  }
+
   getUser(idUser: number) {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.get(this._url + "/" + idUser, { headers: header });

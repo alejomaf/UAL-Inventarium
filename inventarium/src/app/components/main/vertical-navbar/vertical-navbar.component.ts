@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faHome, faTh, faObjectGroup, faUsers, faLaptop, faDatabase, faUser, faCircle, faList, faSignOutAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -36,12 +37,8 @@ export class VerticalNavbarComponent implements OnInit {
 
   usuario?: Usuario
 
-  constructor(private loginS: UserService, private router: Router) {
-    loginS.getUser().subscribe(
-      (res: any) => {
-        this.usuario = res;
-      }
-    );
+  constructor(private authS: AuthGuardService, private loginS: UserService, private router: Router) {
+    this.usuario = authS.getCurrentUser();
     this.changeSelection(this.router.url.split("/")[1]);
   }
 

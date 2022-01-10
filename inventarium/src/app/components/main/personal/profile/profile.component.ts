@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Usuario } from 'src/app/interfaces/usuario';
-import { UserService } from 'src/app/services/user.service';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -22,12 +22,8 @@ export class ProfileComponent implements OnInit {
 
   usuario?: Usuario;
 
-  constructor(private userS: UserService, private modalService: NgbModal, private usersS: UsersService) {
-    userS.getUser().subscribe(
-      (res: any) => {
-        this.usuario = res;
-      }
-    )
+  constructor(private authS: AuthGuardService, private modalService: NgbModal, private usersS: UsersService) {
+    this.usuario = authS.getCurrentUser();
   }
 
   ngOnInit(): void {

@@ -6,10 +6,10 @@ import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { Objeto } from 'src/app/interfaces/objeto';
 import { Prestado } from 'src/app/interfaces/prestado';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { LoansService } from 'src/app/services/loans.service';
 import { ObjectsService } from 'src/app/services/objects.service';
-import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-loans',
@@ -38,12 +38,8 @@ export class LoansComponent implements OnInit {
     Validators.required
   ]);
 
-  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private modalService: NgbModal, private loansS: LoansService, private userS: UserService) {
-    this.userS.getUser().subscribe(
-      (res: any) => {
-        this.usuario = res;
-      }
-    )
+  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private modalService: NgbModal, private loansS: LoansService, private authS: AuthGuardService) {
+    this.usuario = this.authS.getCurrentUser();
     this.idObjeto = route.snapshot.params['id'];
     this.objectS.getObject(this.idObjeto).subscribe(
       (res: any) => {

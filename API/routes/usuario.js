@@ -107,6 +107,17 @@ router.get('/mainUser', (req, res) => {
     .catch(err => console.log(err));
 });
 
+
+/* GET usuario. */
+router.get('/requests', async function (req, res, next) {
+  try {
+    res.json(await usuarios.getUserRequests(req.query.page));
+  } catch (err) {
+    console.error(`Error while getting usuarios `, err.message);
+    next(err);
+  }
+});
+
 /* GET usuario. */
 router.get('/', async function (req, res, next) {
   try {

@@ -1,1 +1,24 @@
-<p>dashboard works!</p>
+<div class="row d-flex-inline justify-content-center">
+    <app-box-link style="width: fit-content;" *ngIf="usuario?.rango==0">
+        <fa-icon imagen [icon]="cubo"></fa-icon>
+        <a routerLink="/add-object/select-type" botones class="btn btn-primary btn-block">Crear objeto</a>
+    </app-box-link>
+    <app-box-link style="width: fit-content;" *ngIf="usuario?.rango==0">
+        <div numero style="align-self:end; position:absolute">
+            <div class="rounded-circle bg-primary text-center" style="width:40px;height:40px;"
+                *ngIf="numero_solicitudes != 0">
+                <p style="font-size: x-large; font-weight: bold; color:white">{{numero_solicitudes}}</p>
+            </div>
+        </div>
+        <fa-icon imagen [icon]="solicitudes"></fa-icon>
+        <a routerLink="/requests" botones class="btn btn-primary btn-block">Solicitudes</a>
+    </app-box-link>
+    <app-box-link style="width: fit-content;">
+        <fa-icon imagen [icon]="my_loans"></fa-icon>
+        <a routerLink="/my-loans" botones class="btn btn-primary btn-block">Mis préstamos</a>
+    </app-box-link>
+    <app-box-link style="width: fit-content;">
+        <fa-icon imagen [icon]="grupo_objetos"></fa-icon>
+        <a routerLink="/group-of-objects" botones class="btn btn-primary btn-block">Buscar objetos</a>
+    </app-box-link>
+</div>

@@ -1,10 +1,22 @@
 <div class="row d-flex-inline justify-content-center">
     <app-box-link style="width: fit-content;">
+        <div numero style="align-self:end; position:absolute">
+            <div class="rounded-circle bg-primary text-center" style="width:40px;height:40px;"
+                *ngIf="numero_solicitudes_objetos != 0">
+                <p style="font-size: x-large; font-weight: bold; color:white">{{numero_solicitudes_objetos}}</p>
+            </div>
+        </div>
         <fa-icon imagen [icon]="cubo"></fa-icon>
         <a routerLink="/loan-requests" botones class="btn btn-primary btn-block">Solicitudes
             de objetos</a>
     </app-box-link>
     <app-box-link style="width: fit-content;">
+        <div numero style="align-self:end; position:absolute">
+            <div class="rounded-circle bg-primary text-center" style="width:40px;height:40px;"
+                *ngIf="numero_solicitudes_usuarios != 0">
+                <p style="font-size: x-large; font-weight: bold; color:white">{{numero_solicitudes_usuarios}}</p>
+            </div>
+        </div>
         <fa-icon imagen [icon]="usuarios"></fa-icon>
         <a routerLink="/user-requests" botones class="btn btn-primary btn-block">Solicitudes de registro</a>
     </app-box-link>
