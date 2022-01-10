@@ -1,10 +1,11 @@
 import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faHome, faTh, faObjectGroup, faUsers, faLaptop, faDatabase, faUser, faCircle, faList, faSignOutAlt, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faTh, faObjectGroup, faUsers, faLaptop, faDatabase, faUser, faCircle, faList, faSignOutAlt, faPaperPlane, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { UserService } from 'src/app/services/user.service';
+import $ from "jquery";
 
 @Component({
   selector: 'app-vertical-navbar',
@@ -62,6 +63,10 @@ export class VerticalNavbarComponent implements OnInit {
   }
 
   async changeSelection(state: string) {
+    if ($('#content').hasClass('active')) {
+      $('#sidebar, #content').toggleClass('active');
+      $('.sidebar-button').toggleClass('active');
+    }
     await this.selectState();
     switch (state) {
       case "dashboard":

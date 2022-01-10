@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import $ from "jquery";
 import { RouterOutlet } from '@angular/router';
 import { fader } from 'src/app/animations/main-animations';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-main',
@@ -11,6 +12,7 @@ import { fader } from 'src/app/animations/main-animations';
 })
 export class MainComponent implements OnInit {
 
+  hide_navbar = faBars;
   constructor() { }
 
   ngOnInit(): void {
@@ -18,6 +20,7 @@ export class MainComponent implements OnInit {
 
   sidebarCollapse() {
     $('#sidebar, #content').toggleClass('active');
+    $('.sidebar-button').toggleClass('active');
   }
 
   prepareRoute(outlet: RouterOutlet) {
