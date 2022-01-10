@@ -173,6 +173,22 @@ async function convertirEnTecnico(idUsuario) {
   return { message, result };
 }
 
+async function cambiarContrasena(idUsuario, nuevaContrasena) {
+  const result = await db.query(
+    `UPDATE usuario 
+    SET contrasena=?
+    WHERE idUsuario=?`,
+    [
+      nuevaContrasena, idUsuario
+    ]
+  );
+  let message = 'Error in updating usuario';
+  if (result.affectedRows) {
+    message = 'usuario updated successfully';
+  }
+  return { message, result };
+}
+
 
 
 module.exports = {
@@ -187,4 +203,5 @@ module.exports = {
   darDeBaja,
   convertirEnTecnico,
   confirmarRegistro,
+  cambiarContrasena,
 }

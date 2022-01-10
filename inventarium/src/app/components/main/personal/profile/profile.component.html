@@ -1,1 +1,52 @@
-<p>profile works!</p>
+<div class="row d-flex-inline justify-content-center">
+    <app-user style="width: fit-content;">
+        <h5 nombre class="card-title text-dark text-center" style="cursor:pointer">
+            {{usuario?.nombre}}
+        </h5>
+        <span correoElectronico>{{usuario?.correoElectronico}}</span>
+        <span *ngIf="usuario?.rango==0" rango>Técnico</span>
+        <span *ngIf="usuario?.rango==1" rango>Docente</span>
+        <span *ngIf="usuario?.rango==-1" rango>Solicitud pendiente</span>
+        <span *ngIf="usuario?.rango==-2" rango>Solicitud rechazada</span>
+        <span *ngIf="usuario?.departamento==0" departamento>Departamento de informática</span>
+        <span *ngIf="usuario?.departamento==1" departamento>Ingeniería de sistemas y automática</span>
+        <span *ngIf="usuario?.departamento==2" departamento>Lenguaje y sistemas informáticos</span>
+        <span *ngIf="usuario?.departamento==3" departamento>Ciencias de la computación e inteligencia artificial</span>
+        <span *ngIf="usuario?.departamento==4" departamento>Arquitectura y tecnología de computadores</span>
+        <span telefono>{{usuario?.telefono}}</span>
+        <div botones class="card-body d-grid gap-2">
+            <div class="btn btn-light btn-block" (click)="abrirModal(changePass)">Modificar contraseña
+            </div>
+        </div>
+    </app-user>
+</div>
+
+<!-- Modal for making a loan request -->
+<ng-template #changePass class="modal">
+    <!-- Modal content -->
+    <div class="modal-content p-3">
+        <h5>Modificar contrasena</h5>
+        <div class="col-md-12 mb-3">
+            <label>Contraseña antigua:</label>
+            <input type="password" [formControl]="oldpass" placeholder="secretpass" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Contraseña nueva:</label>
+            <input type="password" [formControl]="newpass" placeholder="newsecretpass" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Repita la nueva contraseña:</label>
+            <input type="password" [formControl]="newpass2" placeholder="newsecretpass" class="form-control" />
+        </div>
+        <div *ngIf="alertPass!=''" class="alert alert-danger my-2" role="alert">
+            {{alertPass}}
+        </div>
+        <div *ngIf="successChange!=''" class="alert alert-success my-2" role="alert">
+            {{successChange}}
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-secondary" (click)="cambiarContrasena()">Cambiar contraseña</a>
+            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        </div>
+    </div>
+</ng-template>
