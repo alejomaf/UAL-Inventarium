@@ -36,8 +36,8 @@ export class GroupOfObjectsService {
     return this.http.delete(this._url + "/" + idGrupoObjetos, { headers: header });
   }
 
-  updateGroupOfObject(objectGroup: GrupoObjetos) {
+  updateGroupOfObject(idGrupoObjetos: number, objectGroup: FormData) {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
-    return this.http.put(this._url + "/" + objectGroup.idGrupoObjetos, objectGroup, { headers: header });
+    return this.http.put(this._url + "/" + idGrupoObjetos, objectGroup, { headers: header });
   }
 }

@@ -1,5 +1,5 @@
 export interface GrupoObjetos {
-    idGrupoObjetos?: number,
+    idGrupoObjetos: number,
     cantidad: number,
     nombre: string,
     imagen: string,

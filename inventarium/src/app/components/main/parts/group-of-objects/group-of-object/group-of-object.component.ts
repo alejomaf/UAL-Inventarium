@@ -12,4 +12,5 @@ export class GroupOfObjectComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
 }

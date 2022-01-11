@@ -20,7 +20,9 @@ export class MainComponent implements OnInit {
 
   sidebarCollapse() {
     $('#sidebar, #content').toggleClass('active');
-    $('.sidebar-button').toggleClass('active');
+    if (window.innerWidth < 992) {
+      $('.sidebar-button').toggleClass('active');
+    }
   }
 
   prepareRoute(outlet: RouterOutlet) {

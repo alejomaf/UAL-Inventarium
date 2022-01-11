@@ -50,15 +50,14 @@ async function create(grupoobjetos, name_of_image) {
   return { message, id };
 }
 
-async function update(id, grupoobjetos, imagen) {
+async function update(id, grupoobjetos) {
   const result = await db.query(
     `UPDATE grupoobjetos 
-    SET cantidad=?, nombre=?, imagen=?, marca=?, modelo=?, cantidadDisponible=?, tipo=?, eliminado=?
+    SET nombre=?, marca=?, modelo=?, tipo=?
     WHERE idGrupoObjetos=?`,
     [
-      grupoobjetos.cantidad, grupoobjetos.nombre,
-      grupoobjetos.imagen, grupoobjetos.marca, grupoobjetos.modelo, grupoobjetos.cantidadDisponible,
-      grupoobjetos.tipo, grupoobjetos.eliminado, id
+      grupoobjetos.nombre, grupoobjetos.marca, grupoobjetos.modelo,
+      grupoobjetos.tipo, id
     ]
   );
 
@@ -66,6 +65,25 @@ async function update(id, grupoobjetos, imagen) {
 
   if (result.affectedRows) {
     message = 'grupoobjetos updated successfully';
+  }
+
+  return { message };
+}
+
+async function updateImage(id, imagen) {
+  const result = await db.query(
+    `UPDATE grupoobjetos 
+    SET imagen=?
+    WHERE idGrupoObjetos=?`,
+    [
+      imagen, id
+    ]
+  );
+
+  let message = 'Error in updating image of grupoobjetos';
+
+  if (result.affectedRows) {
+    message = 'grupoobjetos image updated successfully';
   }
 
   return { message };
@@ -122,4 +140,5 @@ module.exports = {
   remove,
   getById,
   getByType,
+  updateImage,
 }
