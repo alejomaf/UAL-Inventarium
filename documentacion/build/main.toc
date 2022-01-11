@@ -1,0 +1,132 @@
+\contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{7}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Motivaciones}{7}{section.1.1}% 
+\contentsline {section}{\numberline {1.2}Objetivos}{7}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Planificaci\IeC {\'o}n}{8}{section.1.3}% 
+\contentsline {subsection}{\numberline {1.3.1}Reuniones iniciales con los clientes}{8}{subsection.1.3.1}% 
+\contentsline {subsection}{\numberline {1.3.2}Planificaci\IeC {\'o}n y elaboraci\IeC {\'o}n del desarrollo del proyecto}{8}{subsection.1.3.2}% 
+\contentsline {subsection}{\numberline {1.3.3}Preparaci\IeC {\'o}n del entorno de trabajo}{8}{subsection.1.3.3}% 
+\contentsline {subsection}{\numberline {1.3.4}Construcci\IeC {\'o}n de la aplicaci\IeC {\'o}n}{9}{subsection.1.3.4}% 
+\contentsline {subsection}{\numberline {1.3.5}Testeo y comprobaci\IeC {\'o}n de la aplicaci\IeC {\'o}n y comprobaci\IeC {\'o}n de errores}{9}{subsection.1.3.5}% 
+\contentsline {section}{\numberline {1.4}Estructuraci\IeC {\'o}n del documento}{10}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Herramientas utilizadas}{10}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Desarrollo de las fases del proyecto}{10}{subsection.1.4.2}% 
+\contentsline {subsection}{\numberline {1.4.3}Conclusiones y posibles mejoras}{10}{subsection.1.4.3}% 
+\contentsline {subsection}{\numberline {1.4.4}Bibliograf\IeC {\'\i }a}{10}{subsection.1.4.4}% 
+\contentsline {chapter}{\numberline {2}Herramientas utilizadas}{11}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Hardware}{11}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Torre de PC}{11}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}Un port\IeC {\'a}til}{11}{subsection.2.1.2}% 
+\contentsline {section}{\numberline {2.2}Software}{11}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Entorno de desarrollo}{11}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Redacci\IeC {\'o}n del documento}{11}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Dise\IeC {\~n}o y creaci\IeC {\'o}n de la base de datos}{12}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Dise\IeC {\~n}o del sitio web}{12}{subsection.2.2.4}% 
+\contentsline {subsection}{\numberline {2.2.5}Dise\IeC {\~n}o de diagramas}{12}{subsection.2.2.5}% 
+\contentsline {subsection}{\numberline {2.2.6}Dise\IeC {\~n}o y modificaci\IeC {\'o}n de im\IeC {\'a}genes}{12}{subsection.2.2.6}% 
+\contentsline {subsection}{\numberline {2.2.7}Contenerizaci\IeC {\'o}n del sistema}{13}{subsection.2.2.7}% 
+\contentsline {subsubsection}{\nonumberline Docker Compose}{13}{section*.3}% 
+\contentsline {subsection}{\numberline {2.2.8}NodeJS}{13}{subsection.2.2.8}% 
+\contentsline {subsection}{\numberline {2.2.9}Levantamiento la Interfaz de Programaci\IeC {\'o}n de Aplicaciones(API)}{13}{subsection.2.2.9}% 
+\contentsline {subsection}{\numberline {2.2.10}Levantamiento del sitio web}{13}{subsection.2.2.10}% 
+\contentsline {subsection}{\numberline {2.2.11}Desarrollo del sitio web}{13}{subsection.2.2.11}% 
+\contentsline {subsection}{\numberline {2.2.12}Testing de UAL Inventarium}{14}{subsection.2.2.12}% 
+\contentsline {section}{\numberline {2.3}Servicios}{14}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Sistema de control de versiones}{14}{subsection.2.3.1}% 
+\contentsline {subsection}{\numberline {2.3.2}Gesti\IeC {\'o}n y creaci\IeC {\'o}n de m\IeC {\'a}quinas virtuales}{14}{subsection.2.3.2}% 
+\contentsline {subsubsection}{\nonumberline Amazon Web Services}{15}{section*.4}% 
+\contentsline {subsubsection}{\nonumberline Microsoft Azure}{15}{section*.5}% 
+\contentsline {subsubsection}{\nonumberline Google Cloud}{15}{section*.6}% 
+\contentsline {chapter}{\numberline {3}Fases previas a la construcci\IeC {\'o}n de la aplicaci\IeC {\'o}n}{17}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Reuniones iniciales con los clientes}{17}{section.3.1}% 
+\contentsline {subsection}{\numberline {3.1.1}Inicio de sesi\IeC {\'o}n y registro}{18}{subsection.3.1.1}% 
+\contentsline {subsection}{\numberline {3.1.2}Barra de navegaci\IeC {\'o}n}{20}{subsection.3.1.2}% 
+\contentsline {subsection}{\numberline {3.1.3}A\IeC {\~n}adir objeto}{22}{subsection.3.1.3}% 
+\contentsline {subsection}{\numberline {3.1.4}Grupo de objetos y objetos}{23}{subsection.3.1.4}% 
+\contentsline {subsection}{\numberline {3.1.5}Usuarios}{23}{subsection.3.1.5}% 
+\contentsline {subsection}{\numberline {3.1.6}Pr\IeC {\'e}stamos}{24}{subsection.3.1.6}% 
+\contentsline {subsection}{\numberline {3.1.7}Configuraciones}{25}{subsection.3.1.7}% 
+\contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n y elaboraci\IeC {\'o}n del desarrollo del proyecto}{25}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Redacci\IeC {\'o}n del proyecto}{25}{subsection.3.2.1}% 
+\contentsline {subsubsection}{\nonumberline Build}{25}{section*.7}% 
+\contentsline {subsubsection}{\nonumberline Bibliograf\IeC {\'\i }a}{26}{section*.8}% 
+\contentsline {subsubsection}{\nonumberline Cap\IeC {\'\i }tulos}{26}{section*.9}% 
+\contentsline {subsubsection}{\nonumberline Diagramas}{26}{section*.10}% 
+\contentsline {subsubsection}{\nonumberline Im\IeC {\'a}genes}{26}{section*.11}% 
+\contentsline {subsubsection}{\nonumberline Include}{26}{section*.12}% 
+\contentsline {subsubsection}{\nonumberline main.tex}{26}{section*.13}% 
+\contentsline {subsection}{\numberline {3.2.2}Elaboraci\IeC {\'o}n del desarrollo del proyecto}{26}{subsection.3.2.2}% 
+\contentsline {subsubsection}{\nonumberline Generaci\IeC {\'o}n de la base de datos}{26}{section*.14}% 
+\contentsline {subsubsection}{\nonumberline Construcci\IeC {\'o}n de la Interfaz de Programaci\IeC {\'o}n de Aplicaciones (API)}{26}{section*.15}% 
+\contentsline {subsubsection}{\nonumberline Construcci\IeC {\'o}n de la aplicaci\IeC {\'o}n}{27}{section*.16}% 
+\contentsline {section}{\numberline {3.3}Preparaci\IeC {\'o}n del entorno de trabajo}{27}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}GitHub}{27}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Visual Studio Code y Google Cloud, los mejores amigos}{28}{subsection.3.3.2}% 
+\contentsline {subsubsection}{\nonumberline Crear una m\IeC {\'a}quina virtual en Google Cloud}{29}{section*.17}% 
+\contentsline {subsubsection}{\nonumberline Configurar claves SSH}{29}{section*.18}% 
+\contentsline {subsubsection}{\nonumberline Realizar conexi\IeC {\'o}n SSH mediante Visual Studio Code}{30}{section*.19}% 
+\contentsline {subsection}{\numberline {3.3.3}Instalaci\IeC {\'o}n de las extensiones de Visual Studio Code dentro de nuestra MV}{30}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}Configuraci\IeC {\'o}n de nuestra m\IeC {\'a}quina virtual}{30}{subsection.3.3.4}% 
+\contentsline {subsubsection}{\nonumberline Actualizaci\IeC {\'o}n del sistema}{30}{section*.20}% 
+\contentsline {subsubsection}{\nonumberline Instalaci\IeC {\'o}n de Node JS}{30}{section*.21}% 
+\contentsline {subsubsection}{\nonumberline Instalaci\IeC {\'o}n de Angular 12}{31}{section*.22}% 
+\contentsline {subsubsection}{\nonumberline Instalaci\IeC {\'o}n de Docker y Docker Compose}{31}{section*.23}% 
+\contentsline {subsubsection}{\nonumberline Configuraci\IeC {\'o}n de credenciales de Git e instalaci\IeC {\'o}n del repositorio}{31}{section*.24}% 
+\contentsline {chapter}{\numberline {4}Construcci\IeC {\'o}n de la aplicaci\IeC {\'o}n}{33}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Introducci\IeC {\'o}n a Docker y Docker Compose}{33}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}\IeC {\textquestiondown }Para qu\IeC {\'e} sirve Docker?}{33}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Docker Compose: el SimCity de los entornos}{33}{subsection.4.1.2}% 
+\contentsline {section}{\numberline {4.2}Generaci\IeC {\'o}n y puesta en marcha de la base de datos}{33}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Dise\IeC {\~n}o de la arquitectura de la aplicaci\IeC {\'o}n}{36}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}\IeC {\textquestiondown }Qu\IeC {\'e} es una arquitectura de software?}{36}{subsection.4.3.1}% 
+\contentsline {subsubsection}{\nonumberline \IeC {\textquestiondown }Por qu\IeC {\'e} es importante definir una arquitectura software?}{37}{section*.25}% 
+\contentsline {subsection}{\numberline {4.3.2}Clean Architecture o Arquitectura Limpia}{37}{subsection.4.3.2}% 
+\contentsline {subsubsection}{\nonumberline Entidades}{37}{section*.26}% 
+\contentsline {subsubsection}{\nonumberline Casos de uso}{38}{section*.27}% 
+\contentsline {subsubsection}{\nonumberline Controladores, presentadores y vistas de los modelos}{38}{section*.28}% 
+\contentsline {subsubsection}{\nonumberline Vistas y fuentes externas}{38}{section*.29}% 
+\contentsline {section}{\numberline {4.4}Creaci\IeC {\'o}n y puesta en marcha de la Interfaz de Programaci\IeC {\'o}n de Aplicaciones (API)}{38}{section.4.4}% 
+\contentsline {subsection}{\numberline {4.4.1}Creaci\IeC {\'o}n del sistema de directorios}{39}{subsection.4.4.1}% 
+\contentsline {subsection}{\numberline {4.4.2}Funcionamiento de index.js}{40}{subsection.4.4.2}% 
+\contentsline {subsection}{\numberline {4.4.3}Enrutamiento de la aplicaci\IeC {\'o}n}{41}{subsection.4.4.3}% 
+\contentsline {subsubsection}{\nonumberline M\IeC {\'e}todos de petici\IeC {\'o}n HTTP}{41}{section*.30}% 
+\contentsline {subsubsection}{\nonumberline GET (leer)}{41}{section*.31}% 
+\contentsline {subsubsection}{\nonumberline POST (escribir)}{42}{section*.32}% 
+\contentsline {subsubsection}{\nonumberline PUT (actualizar)}{42}{section*.33}% 
+\contentsline {subsubsection}{\nonumberline DELETE (eliminar)}{42}{section*.34}% 
+\contentsline {subsection}{\numberline {4.4.4}Consultas con la base de datos}{42}{subsection.4.4.4}% 
+\contentsline {subsection}{\numberline {4.4.5}Gesti\IeC {\'o}n de archivos con Express}{43}{subsection.4.4.5}% 
+\contentsline {subsubsection}{\nonumberline Descomposici\IeC {\'o}n de la petici\IeC {\'o}n}{43}{section*.35}% 
+\contentsline {subsubsection}{\nonumberline An\IeC {\'a}lisis del archivo}{43}{section*.36}% 
+\contentsline {subsubsection}{\nonumberline Subida de la imagen}{44}{section*.37}% 
+\contentsline {subsubsection}{\nonumberline Enviamos la consulta a la base de datos}{44}{section*.38}% 
+\contentsline {section}{\numberline {4.5}Creaci\IeC {\'o}n de UAL Inventarium}{44}{section.4.5}% 
+\contentsline {subsection}{\numberline {4.5.1}Estructura de un proyecto Angular}{44}{subsection.4.5.1}% 
+\contentsline {subsubsection}{\nonumberline Componente}{46}{section*.39}% 
+\contentsline {subsubsection}{\nonumberline Servicio}{46}{section*.40}% 
+\contentsline {subsubsection}{\nonumberline Interfaz}{47}{section*.41}% 
+\contentsline {subsection}{\numberline {4.5.2}Disposici\IeC {\'o}n y elementos que hay en Inventarium}{47}{subsection.4.5.2}% 
+\contentsline {subsubsection}{\nonumberline Interfaces}{47}{section*.42}% 
+\contentsline {subsubsection}{\nonumberline Services}{47}{section*.43}% 
+\contentsline {subsection}{\numberline {4.5.3}Creaci\IeC {\'o}n de componentes}{48}{subsection.4.5.3}% 
+\contentsline {subsubsection}{\nonumberline Preparar nuestro apartado TypeScript}{48}{section*.44}% 
+\contentsline {subsubsection}{\nonumberline Preparar nuestro archivo HTML}{49}{section*.45}% 
+\contentsline {subsection}{\numberline {4.5.4}Definir el archivo de rutas}{51}{subsection.4.5.4}% 
+\contentsline {subsection}{\numberline {4.5.5}Definir el proxy en nuestra aplicaci\IeC {\'o}n}{52}{subsection.4.5.5}% 
+\contentsline {subsection}{\numberline {4.5.6}Compilar nuestro sitio Web}{53}{subsection.4.5.6}% 
+\contentsline {section}{\numberline {4.6}Dise\IeC {\~n}o y funcionamiento final}{53}{section.4.6}% 
+\contentsline {chapter}{\numberline {5}Deploy de nuestra Web}{55}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Levantar el servidor para nuestra API}{55}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Levantar nuestro servidor Web}{57}{section.5.2}% 
+\contentsline {subsection}{\numberline {5.2.1}Configuraci\IeC {\'o}n del ruteo de la web}{58}{subsection.5.2.1}% 
+\contentsline {subsection}{\numberline {5.2.2}Configuraci\IeC {\'o}n del proxy inverso de la web}{58}{subsection.5.2.2}% 
+\contentsline {chapter}{\numberline {6}Pruebas durante el desarrollo y correcci\IeC {\'o}n de errores}{59}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Pruebas durante el desarrollo}{59}{section.6.1}% 
+\contentsline {subsection}{\numberline {6.1.1}Postman}{59}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.2}Selenium}{59}{subsection.6.1.2}% 
+\contentsline {subsection}{\numberline {6.1.3}Herramientas de Desarrollador de Google Chrome}{60}{subsection.6.1.3}% 
+\contentsline {section}{\numberline {6.2}Correcci\IeC {\'o}n de errores}{61}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}Cambio de la base de datos}{61}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.2}Cambios de solicitudes}{62}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.3}Conexi\IeC {\'o}n entre m\IeC {\'a}quinas de Docker Compose}{62}{subsection.6.2.3}% 
+\contentsline {chapter}{\numberline {7}Conclusiones y posibles mejoras}{63}{chapter.7}% 
+\contentsline {chapter}{\nonumberline References}{65}{chapter*.46}% 

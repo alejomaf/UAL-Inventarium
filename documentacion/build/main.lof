@@ -1,0 +1,28 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 3.1}{\ignorespaces Dise\IeC {\~n}o principal de la base de datos}}{18}{figure.3.1}% 
+\contentsline {figure}{\numberline {\relax 3.2}{\ignorespaces Dise\IeC {\~n}o principal del sistema de navegaci\IeC {\'o}n}}{19}{figure.3.2}% 
+\contentsline {figure}{\numberline {\relax 3.3}{\ignorespaces Diagrama de casos de uso del funcionamiento principal de la herramienta Inventarium}}{19}{figure.3.3}% 
+\contentsline {figure}{\numberline {\relax 3.4}{\ignorespaces Dise\IeC {\~n}o del inicio de sesi\IeC {\'o}n y del registro}}{20}{figure.3.4}% 
+\contentsline {figure}{\numberline {\relax 3.5}{\ignorespaces Dise\IeC {\~n}o de la barra lateral de b\IeC {\'u}squeda}}{21}{figure.3.5}% 
+\contentsline {figure}{\numberline {\relax 3.6}{\ignorespaces Dise\IeC {\~n}o de la caracter\IeC {\'\i }stica para poder a\IeC {\~n}adir fungibles e inventarios}}{22}{figure.3.6}% 
+\contentsline {figure}{\numberline {\relax 3.7}{\ignorespaces Jerarqu\IeC {\'\i }a de elementos que derivan de grupo de objetos}}{23}{figure.3.7}% 
+\contentsline {figure}{\numberline {\relax 3.8}{\ignorespaces Grupo de objetos a la izquierda y objetos que contiene a la derecha}}{23}{figure.3.8}% 
+\contentsline {figure}{\numberline {\relax 3.9}{\ignorespaces Grupo de usuarios a la izquierda y usuario \IeC {\'u}nico a la derecha}}{24}{figure.3.9}% 
+\contentsline {figure}{\numberline {\relax 3.10}{\ignorespaces Solicitud del pr\IeC {\'e}stamo de un objeto}}{24}{figure.3.10}% 
+\contentsline {figure}{\numberline {\relax 3.11}{\ignorespaces Visualizaci\IeC {\'o}n de los campos de configuraci\IeC {\'o}n a la izquierda y creaci\IeC {\'o}n de estos a la derecha}}{25}{figure.3.11}% 
+\contentsline {figure}{\numberline {\relax 3.12}{\ignorespaces P\IeC {\'a}gina principal de GitHub}}{27}{figure.3.12}% 
+\contentsline {figure}{\numberline {\relax 3.13}{\ignorespaces Creando un nuevo repositorio dentro de GitHub}}{28}{figure.3.13}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 4.1}{\ignorespaces Dise\IeC {\~n}o final de la base de datos}}{34}{figure.4.1}% 
+\contentsline {figure}{\numberline {\relax 4.2}{\ignorespaces Clean Architecture}}{37}{figure.4.2}% 
+\contentsline {figure}{\numberline {\relax 4.3}{\ignorespaces Interfaces y servicios de UAL Inventarium}}{48}{figure.4.3}% 
+\contentsline {figure}{\numberline {\relax 4.4}{\ignorespaces Rutas disponibles en la aplicaci\IeC {\'o}n}}{51}{figure.4.4}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {\relax 6.1}{\ignorespaces Creando un usuario con Postman}}{60}{figure.6.1}% 
+\contentsline {figure}{\numberline {\relax 6.2}{\ignorespaces Registrando un usuario con Selenium}}{61}{figure.6.2}% 
+\contentsline {figure}{\numberline {\relax 6.3}{\ignorespaces Secci\IeC {\'o}n \textit {Network} dentro de las herramientas de desarrollador de Google Chrome}}{61}{figure.6.3}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
