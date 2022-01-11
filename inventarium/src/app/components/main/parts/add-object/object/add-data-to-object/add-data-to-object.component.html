@@ -1,41 +1,36 @@
 <div class="card rounded mb-3 mx-4 px-3 py-3" style="background-color:#FDF7FF;">
+    <div class="col-md-12 mb-3">
+        <label>Código</label>
+        <input type="number" [formControl]="codigo" placeholder="Código del inventario" class="form-control" />
+    </div>
+    <div class="col-md-12 mb-3">
+        <label>Fecha de adquisición</label>
+        <input type="date" [formControl]="fechaAdquisicion" value="date:'yyyy-MM-dd'" class="form-control">
+    </div>
+    <div class="col-md-12 mb-3">
+        <label>Etiqueta</label>
+        <input type="text" [formControl]="etiqueta" placeholder="Etiqueta del equipo" class="form-control">
+    </div>
 
-    <form id="pasarDatos">
+    <div class="col-md-12 mb-3">
+        <label>Área</label>
+        <select class="form-control" [formControl]="departamento">
+            <option value=0>Departamento de informática</option>
+            <option value=1>Ingeniería de sistemas y automática</option>
+            <option value=2>Lenguaje y sistemas informáticos</option>
+            <option value=3>Ciencias de la computación e inteligencia artificial</option>
+            <option value=4>Arquitectura y tecnología de computadores</option>
+        </select>
+    </div>
 
-        <div class="col-md-12 mb-3">
-            <label>Código</label>
-            <input type="number" [formControl]="codigo" placeholder="Código del inventario" class="form-control" />
-        </div>
-        <div class="col-md-12 mb-3">
-            <label>Fecha de adquisición</label>
-            <input type="date" [formControl]="fechaAdquisicion" value="date:'yyyy-MM-dd'" class="form-control">
-        </div>
-        <div class="col-md-12 mb-3">
-            <label>Etiqueta</label>
-            <input type="text" [formControl]="etiqueta" placeholder="Etiqueta del equipo" class="form-control">
-        </div>
-
-        <div class="col-md-12 mb-3">
-            <label>Área</label>
-            <select class="form-control" [formControl]="departamento">
-                <option value=0>Departamento de informática</option>
-                <option value=1>Ingeniería de sistemas y automática</option>
-                <option value=2>Lenguaje y sistemas informáticos</option>
-                <option value=3>Ciencias de la computación e inteligencia artificial</option>
-                <option value=4>Arquitectura y tecnología de computadores</option>
-            </select>
-        </div>
-
-        <div class="col-md-12 mb-3">
-            <label>Mejoras en el equipo</label>
-            <input type="text" [formControl]="mejoras" placeholder="Mejoras en el equipo" class="form-control">
-        </div>
-        <div class="col-md-12 mb-3">
-            <label>Observaciones</label>
-            <input type="text" [formControl]="observaciones" placeholder="Observaciones del equipo"
-                class="form-control">
-        </div>
-    </form>
+    <div class="col-md-12 mb-3">
+        <label>Mejoras en el equipo</label>
+        <input type="text" [formControl]="mejoras" placeholder="Mejoras en el equipo" class="form-control">
+    </div>
+    <div class="col-md-12 mb-3">
+        <label>Observaciones</label>
+        <input type="text" [formControl]="observaciones" placeholder="Observaciones del equipo" class="form-control">
+    </div>
 
     <button type="button" (click)="generar()" class="btn btn-block btn-primary">Crear objeto</button>
     <button type="button" (click)="saltarCreaciones()" class="btn btn-block btn-info my-2">Saltar

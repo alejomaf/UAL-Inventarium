@@ -36,9 +36,9 @@ export class ObjectsService {
     return this.http.delete(this._url + "/" + idObjetos, { headers: header });
   }
 
-  updateObject(object: Objeto) {
+  updateObject(idObjeto: number, objeto: FormData) {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
-    return this.http.put(this._url + "/" + object.idObjeto, object, { headers: header });
+    return this.http.put(this._url + "/" + idObjeto, objeto, { headers: header });
   }
 
   getObjectsWithConfiguration() {

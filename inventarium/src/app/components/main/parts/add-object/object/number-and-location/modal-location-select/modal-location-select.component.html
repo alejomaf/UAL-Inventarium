@@ -31,7 +31,7 @@
             </li>
             <li *ngIf="loc.tipo==2" class="list-group-item list-group-item-action">
                 <a style="cursor:pointer" (click)="this.location_selected = loc; this.send_location.emit(this.location_selected.location.idUbicacion);
-                this.cerrarModal(); procesarEdificios();">{{loc.location.ubicacion}}</a>
+                this.cerrarModalUbicacion(); procesarEdificios();">{{loc.location.ubicacion}}</a>
                 <fa-icon *ngIf="loc.tipo==2"
                     (click)="this.location_to_delete=loc.location; cerrarModal(); abrirModal(deleteLocationModal); objetosPorUbicacion(); "
                     [icon]="basura" class="text-danger float-end">
@@ -40,7 +40,7 @@
 
         </div>
         <div *ngIf="this.estado==0" class="d-grid gap-2">
-            <a style="cursor : pointer;" (click)="cerrarModal()" class="btn btn-secondary">
+            <a style="cursor : pointer;" (click)="cerrarModalUbicacion()" class="btn btn-secondary">
                 Cerrar
             </a>
         </div>
