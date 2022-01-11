@@ -1,5 +1,5 @@
 export interface ObjetoKit {
-    idObjetoKit?: number,
+    idObjetoKit: number,
     nombre: string,
     cantidad: number,
     imagen: string,

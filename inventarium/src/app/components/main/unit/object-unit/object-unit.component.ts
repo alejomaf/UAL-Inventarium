@@ -79,13 +79,15 @@ export class ObjectUnitComponent implements OnInit {
   cargarConfiguracion() {
     this.configsS.getConfiguration(this.idObjeto).subscribe(
       (res: any) => {
-        this.configuracion = res.data[0];
-        this.ip.setValue(this.configuracion!.ip);
-        this.mac.setValue(this.configuracion!.mac);
-        this.boca.setValue(this.configuracion!.boca);
-        this.armario.setValue(this.configuracion!.armario);
-        this.usuario.setValue(this.configuracion!.usuario);
-        this.contrasena.setValue(this.configuracion!.contrasena);
+        if (res.data) {
+          this.configuracion = res.data[0];
+          this.ip.setValue(this.configuracion!.ip);
+          this.mac.setValue(this.configuracion!.mac);
+          this.boca.setValue(this.configuracion!.boca);
+          this.armario.setValue(this.configuracion!.armario);
+          this.usuario.setValue(this.configuracion!.usuario);
+          this.contrasena.setValue(this.configuracion!.contrasena);
+        }
       }
     );
     this.cerrarModal();

@@ -14,6 +14,18 @@ async function getMultiple(idGrupoObjetos, page = 1) {
   }
 }
 
+async function getById(idObjetoKit) {
+  const rows = await db.query(
+    `SELECT idObjetoKit, nombre, cantidad, imagen, GrupoObjetos_idGrupoObjetos, observaciones
+    FROM objetokit WHERE idObjetoKit = ?`,
+    [idObjetoKit]
+  );
+  const data = helper.emptyOrRows(rows);
+  return {
+    data
+  }
+}
+
 async function create(objetokit, imagen) {
   const result = await db.query(
     `INSERT INTO objetokit
@@ -39,10 +51,10 @@ async function create(objetokit, imagen) {
 async function update(id, objetokit) {
   const result = await db.query(
     `UPDATE objetokit 
-  SET nombre=?, cantidad=?, imagen=?, observaciones=?
+  SET nombre=?, cantidad=?, observaciones=?
   WHERE idObjetoKit=?`,
     [
-      objetokit.nombre, objetokit.cantidad, objetokit.imagen, objetokit.observaciones, id
+      objetokit.nombre, objetokit.cantidad, objetokit.observaciones, id
     ]
   );
 
@@ -50,6 +62,25 @@ async function update(id, objetokit) {
 
   if (result.affectedRows) {
     message = 'objetokit updated successfully';
+  }
+
+  return { message };
+}
+
+async function updateImage(id, image) {
+  const result = await db.query(
+    `UPDATE objetokit 
+  SET imagen=?
+  WHERE idObjetoKit=?`,
+    [
+      image, id
+    ]
+  );
+
+  let message = 'Error in updating the image objetokit';
+
+  if (result.affectedRows) {
+    message = 'objetokit image updated successfully';
   }
 
   return { message };
@@ -75,5 +106,7 @@ module.exports = {
   getMultiple,
   create,
   update,
-  remove
+  remove,
+  updateImage,
+  getById
 }

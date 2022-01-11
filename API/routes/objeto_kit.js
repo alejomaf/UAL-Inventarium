@@ -26,6 +26,34 @@ const isFileValid = (file) => {
   return true;
 };
 
+async function uploadingFile(files, name, id) {
+  // Check if multiple files or a single file
+  if (!files.length) {
+    //Single file
+    const file = files.image;
+    // checks if the file is valid
+    const isValid = isFileValid(file);
+    // creates a valid name by removing spaces
+    const fileName = name + ".jpg";
+
+    if (!isValid) {
+      // throes error if file isn't valid
+      return res.status(400).json({
+        status: "Fail",
+        message: "The file type is not a valid type",
+      });
+    }
+    const uploadFolder = path.join(__dirname, "..", "images", "kits");
+    try {
+      // renames the file in the directory
+      fs.renameSync(file.path, path.join(uploadFolder, fileName));
+      await objetokit.updateImage(id, name);
+    } catch (error) {
+      console.log(error);
+    }
+
+  } else return;
+}
 
 router.post('/', async function (req, res, next) {
   try {
@@ -33,31 +61,7 @@ router.post('/', async function (req, res, next) {
 
     files = req.files
 
-    // Check if multiple files or a single file
-    if (!files.length) {
-      //Single file
-      const file = files.image;
-      // checks if the file is valid
-      const isValid = isFileValid(file);
-      // creates a valid name by removing spaces
-      const fileName = time + ".jpg";
-
-      if (!isValid) {
-        // throes error if file isn't valid
-        return res.status(400).json({
-          status: "Fail",
-          message: "The file type is not a valid type",
-        });
-      }
-      const uploadFolder = path.join(__dirname, "..", "images", "kits");
-      try {
-        // renames the file in the directory
-        fs.renameSync(file.path, path.join(uploadFolder, fileName));
-      } catch (error) {
-        console.log(error);
-      }
-
-    } else return;
+    await uploadingFile(files, time, req.fields.idObjetoKit)
 
     //Consulta post en la base de datos
     res.json(await objetokit.create(req.fields, time));
@@ -69,6 +73,38 @@ router.post('/', async function (req, res, next) {
 
 router.put('/:id', async function (req, res, next) {
   try {
+    let kit = (await objetokit.getById(req.params.id)).data[0];
+    if (kit === undefined) {
+      res.json({ 'error': 'Group of object dont exist' });
+      return;
+    }
+
+    if ('image' in req.files) {
+
+      if (kit.imagen != null) {
+        const path = '__dirname/../images/kits/' + kit.imagen + '.jpg';
+        try {
+          fs.exists(path, function (exists) {
+            if (exists) {
+              //Show in green
+              console.log('File exists. Deleting now ...');
+              fs.unlinkSync(path);
+            } else {
+              //Show in red
+              console.log('File not found, so not deleting.');
+            }
+          });
+        } catch (err) {
+          console.error(err);
+        }
+      }
+
+      time = Date.now();
+      files = req.files
+
+      await uploadingFile(files, time, req.params.id);
+    }
+
     res.json(await objetokit.update(req.params.id, req.fields));
   } catch (err) {
     console.error(`Error while updating objetokit`, err.message);
