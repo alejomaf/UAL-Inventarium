@@ -1,0 +1,22 @@
+\subsubsection{Interfaz}
+La interfaz sirve para definir los elementos con los que vamos a trabajar. Estos elementos corresponden a los que tenemos en nuestra base de datos.
+\\Para poder generar una interfaz escribimos lo siguiente en la terminal dentro de nuestro proyecto:
+\begin{verbatim}
+    ng g i directorio_y_nombre_de_la_interfaz
+\end{verbatim}
+Un ejemplo de interfaz sería por ejemplo la de un objeto del tipo \textit{Configuración}:
+\begin{verbatim}
+    export interface Configuracion {
+        idConfiguracion: number,
+        ip: string,
+        mac: string,
+        boca: string,
+        armario: string,
+        usuario: string,
+        contrasena: string,
+        Objeto_idObjeto?: number
+    }
+\end{verbatim}
+Estos elementos también nos ayudarán a procesar las respuestas que nos llegarán desde la API y poder manipularlos en nuestros componentes sin problemas.
+\vspace{\baselineskip}
+\\Ya sabemos qué tipos de componentes conforman un proyecto Angular. Ahora metemos de lleno las manos en la masa.

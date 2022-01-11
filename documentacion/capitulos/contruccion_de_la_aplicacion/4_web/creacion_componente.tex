@@ -1,0 +1,24 @@
+\subsection{Creación de componentes}
+Ya sabemos cómo crear un componente pero no he explicado un poco de forma más detallada su funcionamiento.
+\\Como ejemplo hablaremos de nuestro componente \textit{groups-of-objects} que es donde se visualizan todos los grupos de objetos.
+
+\subsubsection{Preparar nuestro apartado TypeScript}
+Declaramos las variables que necesitaremos, en este caso solo es una:
+\begin{verbatim}
+    group_of_objects: GrupoObjetos[] = [];
+\end{verbatim}
+Aprovechamos también para inicializar nuestro array de grupo de objetos. Como se puede ver al declarar la variable hemos llamado a su interfaz para que su utilización sea mucho más cómoda.
+\\Para poder cargar los grupos de objetos que hay definidos en Inventarium tendremos que importar su servicio:
+\begin{verbatim}
+    constructor(private group_of_objects_service: GroupOfObjectsService)
+\end{verbatim}
+Y al querer que cuando accedamos a la página esta cargue los respectivos grupos de objetos, dentro del constructor tendremos que llamar al método para que lo haga:
+\begin{verbatim}
+    this.group_of_objects_service.getGroupOfObjects().subscribe(
+    (data : any) => { 
+        this.group_of_objects = res.data;
+    },err => console.log('Error', err));
+\end{verbatim}
+El método \textit{getGroupOfObjects()} es el método que hemos definido anteriormente, el \textit{.subscribe} es para poder realizar la consulta. Dentro de él podremos decidir cómo manipular los elementos que nos devuelva la petición.
+\\Este elemento es un objeto del \textit{json} pero Angular lo interpreta perfectamente. Objeto que puede tener uno de estos dos atributos, \textit{data} que es un array de grupo de objetos, significando que la consulta no ha tenido errores y \textit{err} que nos devuelve una cadena de carácteres en las que sale el tipo de error que ha ocurrido.
+\\Con esto ya tendríamos nuestro objeto cargado, pero ahora tenemos que mostrarlo.

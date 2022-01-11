@@ -1,0 +1,79 @@
+\subsubsection{Preparar nuestro archivo HTML}
+Nuestro fichero HTML será el siguiente:
+\begin{verbatim}
+    <div class="row d-flex-inline justify-content-center">
+    <!--Contenido-->
+    <div *ngFor="let go of group_of_objects" style="width: fit-content;">
+        <app-group-of-object>
+            <img imagen class="card-img-top rounded-circle" 
+            style="cursor:pointer" src="http://api/images/{{go.imagen}}.jpg">
+            <h5 nombre [routerLink]="['/group-of-object', 
+            go.idGrupoObjetos]" style="cursor:pointer"
+            class="card-title text-dark text-center">
+                {{go.nombre}}
+            </h5>
+            <span cantidad>{{go.cantidad}}</span>
+            <span marca>{{go.marca}}</span>
+            <span modelo>{{go.modelo}}</span>
+            <span cantidadDisponible>{{go.cantidadDisponible}}</span>
+            <span *ngIf="go.tipo==0" tipo>Inventario</span>
+            <span *ngIf="go.tipo==1" tipo>Fungible</span>
+            <span *ngIf="go.tipo==2" tipo>Kit</span>
+        </app-group-of-object>
+    </div>
+</div>
+\end{verbatim}
+El componente es bastante sencillo. Primero definimos un contenedor donde iremos insertando tantos componentes nos haya devuelto la petición mandada anteriormente.
+\\Ahora definimos otro contenedor donde iteraremos sobre nuestro array de groupo de objetos asignandolo a una variable auxiliar \textit{go}. Esto lo haremos utilizando \textit{*ngFor}.
+\\Luego de iterar llamaremos a nuestro componente hijo que será el que iremos generando por cada grupo de objeto que cargue. Este componente lo veremos ahora después.
+\\Dentro del componente hijo definiremos los componentes HTML que le queramos pasar. Para poder definir esto basta con añadirle un nombre que después referenciaremos en el otro componente.
+\\Podemos ver al final del código que definimos un atributo dentro de nuestro componente HTML \textit{span} llamado \textit{*ngIf}. Este atributo es un condicional, en caso de que sea \textit{true} se cargará el componente. Si es \textit{false} no lo hará.
+\\Ahora definiremos nuestro componente hijo que es al que estamos llamando:
+\begin{verbatim}
+    <div class="card border rounded p-3 m-2" 
+    style="width: 22rem;background-color:#FDF7FF;">
+    <div style="width: 100%; height: 230px;">
+        <ng-content select="[imagen]"></ng-content>
+    </div>
+    <div style="width: 100%;" class="card-body list-group-item-dark border">
+        <ng-content select="[nombre]"></ng-content>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-light">
+            <b>Marca</b>
+            <a>:<ng-content select="[marca]"></ng-content></a>
+        </li>
+        <li class="list-group-item bg-light">
+            <b>Modelo</b>
+            <a>:<ng-content select="[modelo]"></ng-content></a>
+        </li>
+        <li class="list-group-item bg-light">
+            <b>Cantidad</b>
+            <a>:<ng-content select="[cantidad]"></ng-content></a>
+        </li>
+        <li class="list-group-item bg-light">
+            <b>Cantidad disponible</b>
+            <a>:<ng-content select="[cantidadDisponible]"></ng-content></a>
+        </li>
+    </ul>
+    <li class="list-group-item list-group-item-dark 
+    font-weight-bold text-center">
+        <ng-content select="[tipo]"></ng-content>
+    </li>
+    <ng-content select="[botones]"></ng-content>
+</div>
+\end{verbatim}
+Este es el modelado que tiene nuestro objeto. El componente HTML llamado \textit{ng-content} será el encargado de tomar los objetos que le está pasando el componente padre. Estos los referencia con el atributo \textit{select} y le indica el nombre del tipo de componente que quiere coger.
+\\Para poder ir revisando cómo quedan nuestros componentes utilizaremos una funcionalidad que nos incorpora Angular. Dentro de nuestro archivo \textit{package.json} NPM nos define una serie de scripts que podemos utilizar. Uno de ellos es el siguiente:
+\begin{verbatim}
+    "start": "ng serve"
+\end{verbatim}
+Para poder ejecutar este script ejecutaríamos el siguiente comando:
+\begin{verbatim}
+    npm run start
+\end{verbatim}
+Que sería lo mismo que utilizar:
+\begin{verbatim}
+    ng serve
+\end{verbatim}
+Esto nos despliega un servidor de la aplicación de Angular en el puerto 4200. Una de las ventajas que nos ofrece esto es una compilación continua del proyecto. Es decir, a medida que vayamos realizando la contruccion de la aplicación, la generación de componentes y la creación de rutas la web se irá actualizando en cada guardado y será de gran utilidad poder ir viendo estos cambios al momento.
