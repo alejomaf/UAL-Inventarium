@@ -55,20 +55,26 @@ export class GroupOfObjectsComponent implements OnInit {
   busqueda() {
     if (this.nombre.value == "" && this.marca.value == "" && this.modelo.value == "") {
       this.group_of_objects = this.group_of_objects_aux;
+      this.paginasTotales = Math.ceil(this.group_of_objects.length / this.elementosPorPagina);
+      this.paginaActual = 0;
       return;
     }
     this.group_of_objects = [];
+    console.log((this.nombre.value != '') + " " + (this.marca.value != ''))
     for (var go of this.group_of_objects_aux) {
-      if (!((this.nombre.value == "" || go.nombre.toLocaleLowerCase().indexOf(this.nombre.value.toLowerCase()) == -1) || (this.marca.value == "" || go.marca.toLocaleLowerCase().indexOf(this.marca.value.toLowerCase()) == -1))) continue;
-
-      this.group_of_objects.push(go);
+      if ((((this.nombre.value != "") && (go.nombre.toLocaleLowerCase().indexOf(this.nombre.value.toLowerCase()) != -1)) || ((this.marca.value != "") && (go.marca.toLocaleLowerCase().indexOf(this.marca.value.toLowerCase()) != -1)) || ((this.modelo.value != "") && (go.modelo.toLocaleLowerCase().indexOf(this.modelo.value.toLowerCase()) != -1)))) {
+        this.group_of_objects.push(go);
+      }
     }
+    console.log(this.group_of_objects)
     this.paginasTotales = Math.ceil(this.group_of_objects.length / this.elementosPorPagina);
     this.paginaActual = 0;
   }
 
+
+
   paginacion(i: number, go: GrupoObjetos) {
-    return this.paginasTotales > 1 && (i >= (this.paginaActual * this.elementosPorPagina) && i < ((this.paginaActual + 1) * this.elementosPorPagina));
+    return this.paginasTotales >= 1 && (i >= (this.paginaActual * this.elementosPorPagina) && i < ((this.paginaActual + 1) * this.elementosPorPagina));
   }
 
 }
