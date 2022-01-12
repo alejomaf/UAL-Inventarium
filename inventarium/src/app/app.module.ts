@@ -55,6 +55,7 @@ import { KitComponent } from './components/main/parts/group-of-objects/group-wit
 import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoxLinkComponent } from './components/main/unit/box-link/box-link.component';
+import { ObjectSearchComponent } from './components/main/parts/group-of-objects/objects/object-search/object-search.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +107,7 @@ import { BoxLinkComponent } from './components/main/unit/box-link/box-link.compo
     KitsComponent,
     KitComponent,
     BoxLinkComponent,
+    ObjectSearchComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,19 +2,15 @@ const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
 
-async function getMultiple(req, page = 1) {
-  const offset = helper.getOffset(page, config.listPerPage);
+async function getMultiple(req) {
   const rows = await db.query(
     `SELECT idGrupoObjetos, cantidad, nombre, imagen, marca, modelo, cantidadDisponible, tipo, eliminado 
-    FROM grupoobjetos WHERE eliminado = 0 LIMIT ?,?`,
-    [offset, config.listPerPage]
+    FROM grupoobjetos WHERE eliminado = 0`,
   );
   const data = helper.emptyOrRows(rows);
-  const meta = { page };
 
   return {
-    data,
-    meta
+    data
   }
 }
 

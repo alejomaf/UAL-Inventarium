@@ -81,6 +81,7 @@ export class ObjectUnitComponent implements OnInit {
       (res: any) => {
         if (res.data) {
           this.configuracion = res.data[0];
+          if (this.configuracion! == undefined) return;
           this.ip.setValue(this.configuracion!.ip);
           this.mac.setValue(this.configuracion!.mac);
           this.boca.setValue(this.configuracion!.boca);

@@ -1,7 +1,7 @@
 import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faHome, faTh, faObjectGroup, faUsers, faLaptop, faDatabase, faUser, faCircle, faList, faSignOutAlt, faPaperPlane, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faTh, faObjectGroup, faUsers, faLaptop, faDatabase, faUser, faCircle, faList, faSignOutAlt, faPaperPlane, faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { UserService } from 'src/app/services/user.service';
@@ -24,12 +24,14 @@ export class VerticalNavbarComponent implements OnInit {
   circulo = faCircle;
   lista = faList;
   cerrar_sesion = faSignOutAlt;
+  lupa = faSearch;
 
   //Estados
 
   dashboard = false;
   add_object = false;
   objects = false;
+  object_search = false;
   requests = false;
   users = false;
   devices = false;
@@ -60,6 +62,7 @@ export class VerticalNavbarComponent implements OnInit {
     this.devices = false;
     this.profile = false;
     this.my_loans = false;
+    this.object_search = false;
   }
 
   async changeSelection(state: string) {
@@ -77,6 +80,9 @@ export class VerticalNavbarComponent implements OnInit {
         break;
       case "group_of_objects":
         this.objects = true;
+        break;
+      case "object-search":
+        this.object_search = true;
         break;
       case "requests":
         this.requests = true;

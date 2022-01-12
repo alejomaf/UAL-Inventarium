@@ -53,7 +53,7 @@
         <span *ngIf="grupoObjeto?.tipo==2" tipo>Kit</span>
     </app-group-of-object>
 
-    <app-configuration *ngIf="configuracion!=null">
+    <app-configuration *ngIf="configuracion!=null && configuracion!=undefined">
         <li *ngIf="configuracion?.ip!=''" ip class="list-group-item bg-light">
             <b>IP</b>
             <a>: {{configuracion?.ip}}</a>

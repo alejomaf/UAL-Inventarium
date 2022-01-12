@@ -40,6 +40,13 @@
                 Objetos
             </a>
         </li>
+        <li class="nav-item" [ngClass]="object_search ? 'selected-li':''">
+            <a routerLink="/object-search" (click)="changeSelection('object-search')"
+                class="nav-link text-dark font-italic">
+                <fa-icon [icon]="lupa"></fa-icon>
+                Búsqueda avanzada
+            </a>
+        </li>
         <li class="nav-item" [ngClass]="requests ? 'selected-li':''">
             <a routerLink="/requests" (click)="changeSelection('requests')" class="nav-link text-dark font-italic">
                 <fa-icon [icon]="solicitudes"></fa-icon>

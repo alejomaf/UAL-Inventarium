@@ -12,7 +12,7 @@ router.use(middleware.checkToken);
 router.get('/', async function (req, res, next) {
   try {
     req.User_idUser = req.userId;
-    res.json(await group_of_objects.getMultiple(req, req.query.page));
+    res.json(await group_of_objects.getMultiple(req.query));
   } catch (err) {
     console.error(`Error while getting group_of_objects `, err.message);
     next(err);
