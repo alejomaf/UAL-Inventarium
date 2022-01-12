@@ -43,5 +43,23 @@
                 class="form-control">
         </div>
     </div>
+    <button type="button" (click)="buscar()" class="btn btn-dark btn-block btn-block m-1">Buscar</button>
 </div>
-<button type="button" class="btn btn-dark btn-block">Buscar</button>
+
+<div class="row d-flex-inline">
+    <!--Contenido-->
+    <div *ngFor="let obj of objects" class="my-3" style="width: fit-content;">
+        <app-object>
+            <h5 nombre style="cursor:pointer" class="card-title text-dark text-center"
+                routerLink="/object/{{obj.idObjeto}}">
+                {{obj.nombre}} con id {{obj.idObjeto}}
+            </h5>
+            <span ubicacion>{{obj.ubicacion}}</span>
+            <span planta>{{obj.planta}}</span>
+            <span edificio>{{obj.edificio}}</span>
+            <span fechaAdquisicion>{{obj.fechaAdquisicion}}</span>
+            <span codigo>{{obj.codigo}}</span>
+            <span mejorasEquipo>{{obj.mejorasEquipo}}</span>
+        </app-object>
+    </div>
+</div>

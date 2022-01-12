@@ -1,7 +1,7 @@
 <div class="row d-flex-inline justify-content-center">
     <button (click)="mostrarOpciones = !mostrarOpciones" class="btn btn-dark btn-block m-1">Buscar grupo de
         objetos</button>
-    <button class="btn btn-light btn-block m-1">Busqueda avanzada de objetos</button>
+    <button class="btn btn-light btn-block m-1" routerLink="/object-search">Busqueda avanzada de objetos</button>
     <div [hidden]="mostrarOpciones" class="card p-2" style="width: 100%;">
         <div class="form-group row p-2">
             <label class="col-sm-2 mx-4 col-form-label"><b>Nombre</b></label>

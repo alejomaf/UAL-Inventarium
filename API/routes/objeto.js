@@ -25,6 +25,16 @@ router.get('/:id', async function (req, res, next) {
   }
 });
 
+/* GET objeto. */
+router.get('/', async function (req, res, next) {
+  try {
+    res.json(await objeto.getAll(req.query));
+  } catch (err) {
+    console.error(`Error while getting objetos `, err.message);
+    next(err);
+  }
+});
+
 router.get('/id/:id', async function (req, res, next) {
   try {
     res.json(await objeto.getById(req.params.id, req.query.page));
