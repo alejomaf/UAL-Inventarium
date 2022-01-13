@@ -113,28 +113,35 @@
 \contentsline {subsection}{\numberline {4.5.4}Definir el archivo de rutas}{51}{subsection.4.5.4}%
 \contentsline {subsection}{\numberline {4.5.5}Definir el proxy en nuestra aplicación}{52}{subsection.4.5.5}%
 \contentsline {subsection}{\numberline {4.5.6}Compilar nuestro sitio Web}{53}{subsection.4.5.6}%
-\contentsline {section}{\numberline {4.6}Diseño y funcionamiento final}{53}{section.4.6}%
-\contentsline {subsection}{\numberline {4.6.1}Inicio de sesión y registro de usuario}{53}{subsection.4.6.1}%
-\contentsline {section}{\numberline {4.7}Distribución de componentes y diseño}{54}{section.4.7}%
-\contentsline {subsection}{\numberline {4.7.1}Componentes principales}{54}{subsection.4.7.1}%
-\contentsline {subsubsection}{\nonumberline Usuario}{55}{subsubsection*.90}%
-\contentsline {subsubsection}{\nonumberline Objeto}{55}{subsubsection*.92}%
-\contentsline {subsubsection}{\nonumberline Grupo de objeto}{55}{subsubsection*.94}%
-\contentsline {subsubsection}{\nonumberline Préstamos}{55}{subsubsection*.96}%
-\contentsline {chapter}{\numberline {5}Deploy de nuestra Web}{57}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Levantar el servidor para nuestra API}{57}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Levantar nuestro servidor Web}{59}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Configuración del ruteo de la web}{60}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Configuración del proxy inverso de la web}{60}{subsection.5.2.2}%
-\contentsline {chapter}{\numberline {6}Pruebas durante el desarrollo y corrección de errores}{61}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Pruebas durante el desarrollo}{61}{section.6.1}%
-\contentsline {subsection}{\numberline {6.1.1}Postman}{61}{subsection.6.1.1}%
-\contentsline {subsection}{\numberline {6.1.2}Selenium}{61}{subsection.6.1.2}%
-\contentsline {subsection}{\numberline {6.1.3}Herramientas de Desarrollador de Google Chrome}{62}{subsection.6.1.3}%
-\contentsline {section}{\numberline {6.2}Corrección de errores}{63}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Cambio de la base de datos}{63}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Cambios de solicitudes}{64}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Conexión entre máquinas de Docker Compose}{64}{subsection.6.2.3}%
-\contentsline {chapter}{\numberline {7}Conclusiones y posibles mejoras}{65}{chapter.7}%
-\contentsline {chapter}{\nonumberline References}{67}{chapter*.97}%
+\contentsline {chapter}{\numberline {5}Diseño y funcionamiento final}{55}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Inicio de sesión y registro de usuario}{55}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Componentes principales}{55}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Usuario}{56}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Objeto}{57}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Grupo de objetos}{57}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Préstamos}{57}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Componentes de procesos}{57}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Proceso de creación de grupo de objetos y objetos}{58}{subsection.5.3.1}%
+\contentsline {subsubsection}{\nonumberline Escoger el tipo}{58}{subsubsection*.90}%
+\contentsline {subsubsection}{\nonumberline Buscar o añadir el grupo de objeto}{58}{subsubsection*.92}%
+\contentsline {subsubsection}{\nonumberline Añadir imagen y datos}{58}{subsubsection*.94}%
+\contentsline {subsubsection}{\nonumberline Creación de objetos}{58}{subsubsection*.96}%
+\contentsline {subsubsection}{\nonumberline Añadir datos a los objetos}{59}{subsubsection*.98}%
+\contentsline {subsection}{\numberline {5.3.2}Proceso de creación, selección y eliminación de ubicaciones}{59}{subsection.5.3.2}%
+\contentsline {chapter}{\numberline {6}Deploy de nuestra Web}{63}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Levantar el servidor para nuestra API}{63}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Levantar nuestro servidor Web}{65}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Configuración del ruteo de la web}{66}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Configuración del proxy inverso de la web}{66}{subsection.6.2.2}%
+\contentsline {chapter}{\numberline {7}Pruebas durante el desarrollo y corrección de errores}{67}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Pruebas durante el desarrollo}{67}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Postman}{67}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Selenium}{67}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Herramientas de Desarrollador de Google Chrome}{68}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Corrección de errores}{69}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Cambio de la base de datos}{69}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Cambios de solicitudes}{70}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Conexión entre máquinas de Docker Compose}{70}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {8}Conclusiones y posibles mejoras}{71}{chapter.8}%
+\contentsline {chapter}{\nonumberline References}{73}{chapter*.99}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -29,7 +29,7 @@
 
 <div class="row d-flex-inline justify-content-center">
     <!--Contenido-->
-    <div *ngFor="let go of group_of_objects; let i = index" style="width: 37vh;">
+    <div *ngFor="let go of group_of_objects; let i = index" style="width: fit-content; padding: 0 0;">
         <app-group-of-object *ngIf="paginacion(i, go)">
             <img *ngIf="go.imagen != null" imagen class="card-img-top rounded-circle"
                 style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{go.imagen}}.jpg">

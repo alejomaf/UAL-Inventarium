@@ -19,14 +19,23 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Clean Architecture}}{37}{figure.4.2}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Interfaces y servicios de UAL Inventarium}}{48}{figure.4.3}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Rutas disponibles en la aplicación}}{51}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces A la izquierda el inicio de sesión y a la derecha el formulario de registro de usuario}}{54}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Representación de un usuario en la aplicación}}{54}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Representación de un usuario y posibles acciones sobre él en la aplicación}}{55}{figure.4.7}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces A la izquierda el inicio de sesión y a la derecha el formulario de registro de usuario}}{55}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Representación de un usuario en la aplicación}}{56}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Representación de un usuario y posibles acciones sobre él en la aplicación}}{56}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Objeto y acciones que podemos hacer sobre él}}{57}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Grupo de objeto y acciones que podemos hacer sobre él}}{58}{figure.5.5}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Funcionamiento y descomposición de préstamos}}{59}{figure.5.6}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Funcionamiento y descomposición de préstamos}}{59}{figure.5.7}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Cuadros para iniciar la búsqueda de grupos de objetos}}{60}{figure.5.8}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Añadir imagen y datos al grupo de objetos}}{60}{figure.5.9}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Número de objetos y localización}}{60}{figure.5.10}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Funcionamiento y descomposición de préstamos}}{61}{figure.5.11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Creando un usuario con Postman}}{62}{figure.6.1}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Registrando un usuario con Selenium}}{63}{figure.6.2}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Sección \textit {Network} dentro de las herramientas de desarrollador de Google Chrome}}{63}{figure.6.3}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Creando un usuario con Postman}}{68}{figure.7.1}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Registrando un usuario con Selenium}}{69}{figure.7.2}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Sección \textit {Network} dentro de las herramientas de desarrollador de Google Chrome}}{69}{figure.7.3}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

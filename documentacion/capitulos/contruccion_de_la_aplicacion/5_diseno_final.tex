@@ -1,7 +1,7 @@
-\section{Diseño y funcionamiento final}
+\chapter{Diseño y funcionamiento final}
 Luego de todo el desarrollo de la aplicación mostraré el diseño y funcionamiento final que tiene.
 
-\subsection{Inicio de sesión y registro de usuario}
+\section{Inicio de sesión y registro de usuario}
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/login.png}
@@ -17,10 +17,8 @@ En la figura \ref{fig:register-and-login} podemos ver cómo ha quedado el result
     \item El correo electrónico tiene que tener la extensión \textbf{@ual.es} o \textbf{@inlumine.ual.es}
     \item El apartado para ingresar el número de teléfono debe contener 9 dígitos exactos.
 \end{itemize}
-\section{Distribución de componentes y diseño}
-El desarrollo de los componentes se ha hecho pensando fírmemente en la modularización de los mismos.
 
-\subsection{Componentes principales}
+\section{Componentes principales}
 Estos componentes reciben su nombre debido a que son la estructura principal de la aplicación. Son los átomos que conforman los distintos componentes.
 \\Un ejemplo sería la figura \ref{fig:user-view}. En ella podemos ver cómo se muestran los campos que puede contener un usuario, el correo electrónico, el departamento al que pertenece, su número de teléfono y qué tipo de usuario es.
 \begin{figure}[h]
@@ -39,7 +37,7 @@ Este componente ha sido creado en base a uno principal con el cual también podr
 \\En una vista unitaria se van a poder realizar todas las acciones posibles sobre un objeto. Esto nos ayudará a poder hacer una separación de permisos, dependiendo de si es un usuario o un técnico y a implementar modificaciones únicamente en un sitio en caso de realizar algún cambio. Por ejemplo el usuario de la figura \ref{fig:user-unit} es de la vista unitaria del usuario. Dentro de ella podemos realizar diferentes acciones como convertirlo en técnico o eliminarlo.
 \\Esta diferencia de vistas nos permite crear relaciones que nos ayudarán en la gestión de la herramienta. Las vistas unitarias junto a sus respectivas relaciones son las siguientes:
 
-\subsubsection{Usuario}
+\subsection{Usuario}
 Dentro de un usuario dispondremos de un campo donde podremos acceder para visualizar sus préstamos. También podremos realizar diferentes acciones sobre él en caso de que seamos un usuario \textit{técnico}:
 \begin{itemize}
     \item Dar de alta
@@ -47,10 +45,96 @@ Dentro de un usuario dispondremos de un campo donde podremos acceder para visual
     \item Convertir en técnico
 \end{itemize}
 
-\subsubsection{Objeto}
-En el objeto podremos acceder a un apartado donde veremos sus préstamos. También veremos al grupo de objetos al que pertenece y por último tendremos un campo donde podremos añadirle una configuración.
+\subsection{Objeto}
+En el objeto podremos acceder a un apartado donde veremos sus préstamos. También veremos el grupo de objetos al que pertenece y por último tendremos un campo donde podremos añadirle una configuración.
+\\Para poder hacer una distinción de unos objetos de otros se les ha asociado a su nombre la id del elemento. Esto ayudará a los usuarios a distinguir posibles objetos que no tienen un código de inventario asociado a su nombre.
+\\Podemos ver cómo nos queda la vista de los objetos en la figura \ref{fig:object-unit}.
 
-\subsubsection{Grupo de objeto}
-Dentro de los grupos de objeto
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/object.png}
+    \caption{Objeto y acciones que podemos hacer sobre él}\label{fig:object-unit}
+\end{figure}
 
-\subsubsection{Préstamos}
+\subsection{Grupo de objetos}
+Dentro de los grupos de objetos podremos visualizar los datos principales del grupo como puede ser la \textit{marca}, \textit{modelo} y \textit{nombre} y debajo de ella veremos los objetos que pertenecen a ese grupo.
+\\Adicionalmente en el caso de que un objeto pertenezca a la categoría de \textit{kit} se mostrará un botón que pondrá \textit{¿Qué contiene el kit?} y que clicándolo nos mostrará los elementos del tipo \textit{objetokit} que contiene. Todo esto lo podemos ver en la figura \ref{fig:group-of-object-unit}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/group_of_object.png}
+    \caption{Grupo de objeto y acciones que podemos hacer sobre él}\label{fig:group-of-object-unit}
+\end{figure}
+
+
+\subsection{Préstamos}
+Al haber distintos campos de préstamos cada uno dispone de diferentes casos de usos. Estos son los de la figura \ref{fig:loans-diagram}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/prestamos-working.png}
+    \caption{Funcionamiento y descomposición de préstamos}\label{fig:loans-diagram}
+\end{figure}
+
+\section{Componentes de procesos}
+Habiendo visto los componentes principales que conforman la aplicación otro aspecto a destacar es el del desarrollo de los procesos. Distinguiremos tres tipos de desarrollo:
+\begin{itemize}
+    \item Proceso de creación de grupo de objetos y objetos
+    \item Procesos de creación
+    \item Procesos de modificación
+    \item Procesos de búsqueda
+\end{itemize}
+
+\subsection{Proceso de creación de grupo de objetos y objetos}
+Los procesos de creación de estos dos componentes tenía que llevar un aspecto de personalización debido a la interrelación que hay entre ellos.
+\\Es decir, si un técnico quiere crear un objeto al pasar por este proceso va a saber si este ya ha sido creado con anterioridad para poder añadirlo al grupo de objetos.
+\\Pero vayamos a ver la construcción y secuencia de vistas que ocurren en una creación de grupo de objetos y de objetos.
+\subsubsection{Escoger el tipo}
+El primer paso es escoger el tipo de objeto que deseas crear, tal como podemos ver en la figura \ref{fig:1-creation-o}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/01_add_object.png}
+    \caption{Funcionamiento y descomposición de préstamos}\label{fig:1-creation-o}
+\end{figure}
+
+\subsubsection{Buscar o añadir el grupo de objeto}
+Este proceso se encargará de que el usuario pueda ver si su grupo de objetos ya ha sido creado. En caso de que no lo sea puede pulsar en el botón de crear grupo de objetos para realizar una creación. Podemos observarlo en la figura \ref{fig:2-creation-o}.
+\\En este ejemplo vamos a suponer que ha iniciado un proceso de creación de grupo de objetos.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/02_add_object.png}
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/03_add_object.png}
+    \caption{Cuadros para iniciar la búsqueda de grupos de objetos}\label{fig:2-creation-o}
+\end{figure}
+
+\subsubsection{Añadir imagen y datos}
+Uno de los requisitos obtenido en las entrevistas iniciales era que cada grupo de objeto tenía que ir asociado obligatoriamente con una imagen. Por lo que el subir una imagen es un proceso obligatorio en el proceso de creación de un grupo de objetos tal como vemos en la figura \ref{fig:3-creation-o}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/04_add_object.png}
+    \caption{Añadir imagen y datos al grupo de objetos}\label{fig:3-creation-o}
+\end{figure}
+
+\subsubsection{Creación de objetos}
+Luego de haber generado nuestro grupo de objetos el sistema nos llevará a la ventana de adición de objetos. Esta vista es la misma a la que nos hubiera llevado en caso de que hubieramos seleccionado un grupo de objetos del cuadro de búsqueda.
+\\Para empezar con la creación de elementos tendremos que elegir cuántos elementos querremos crear y dónde se ubicarán. El proceso de gestión de ubicaciones lo trataremos más adelante. De momento vemos el contenido de la figura \ref{fig:4-creation-o}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/05-add_object.png}
+    \caption{Número de objetos y localización}\label{fig:4-creation-o}
+\end{figure}
+
+\subsubsection{Añadir datos a los objetos}
+Al realizar el paso anterior nos llevará a una vista donde iremos añadiendo los datos de los objetos que queremos crear. En caso de que no queramos añadir los datos objeto por objeto hay un botón habilitado que realiza la creación de estos de forma automática pero sin la adición de los datos personalizados. Esto lo podemos ver en la figura \ref{fig:5-creation-o}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/07_add_object.png}
+    \caption{Funcionamiento y descomposición de préstamos}\label{fig:5-creation-o}
+\end{figure}
+
+\subsection{Proceso de creación, selección y eliminación de ubicaciones}
+La gestión de ubicaciones

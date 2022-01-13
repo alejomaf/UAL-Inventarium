@@ -12,7 +12,7 @@ export class UserRequestsComponent implements OnInit {
   public users: Usuario[] = []
 
   constructor(private userS: UsersService) {
-    this.userS.getUsers().subscribe(
+    this.userS.getUserRequests().subscribe(
       (res: any) => { this.users = res.data; },
       err => console.log('Error', err));
   }
