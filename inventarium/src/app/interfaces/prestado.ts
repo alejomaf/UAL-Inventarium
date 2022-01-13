@@ -12,4 +12,5 @@ export interface Prestado {
     estado: number,
     nombre: String,
     nombre_grupo_objetos: String,
+    disponible: number,
 }

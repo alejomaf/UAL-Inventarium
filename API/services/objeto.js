@@ -25,7 +25,7 @@ async function getAll(busqueda) {
     `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos,
     date_format(fechaAdquisicion, '%d-%m-%y') as 'fechaAdquisicion', observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, edificio, planta, ubicacion, nombre
     FROM objeto, ubicacion, grupoobjetos WHERE objeto.Ubicacion_idUbicacion = ubicacion.idUbicacion AND objeto.GrupoObjetos_idGrupoObjetos = grupoobjetos.idGrupoObjetos AND
-    Ubicacion_idUbicacion LIKE "%_`+ (busqueda.idUbicacion || "") + `" AND mejorasEquipo LIKE "%_` + (busqueda.mejorasEquipo || "") + `%" AND codigo LIKE "%_` + (busqueda.codigo || "") + `%" AND observaciones LIKE "%_` + (busqueda.observaciones || "") + `%" AND organizativa LIKE "%_` + (busqueda.organizativa || "") + `" AND etiqueta LIKE "%_` + (busqueda.etiqueta || "") + `%"`
+    Ubicacion_idUbicacion LIKE "%`+ (busqueda.idUbicacion || "") + `" AND mejorasEquipo LIKE "%` + (busqueda.mejorasEquipo || "") + `%" AND codigo LIKE "%` + (busqueda.codigo || "") + `%" AND observaciones LIKE "%` + (busqueda.observaciones || "") + `%" AND organizativa LIKE "%` + (busqueda.organizativa || "") + `" AND etiqueta LIKE "%` + (busqueda.etiqueta || "") + `%"`
   );
   const data = helper.emptyOrRows(rows);
 

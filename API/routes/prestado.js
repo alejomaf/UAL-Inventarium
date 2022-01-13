@@ -38,6 +38,17 @@ router.get('/id/:id', async function (req, res, next) {
   }
 });
 
+/* GET prestado by user id. */
+router.get('/user/:id', async function (req, res, next) {
+  try {
+    res.json(await prestado.getByUserId(req.params.id));
+  } catch (err) {
+    console.error(`Error while getting prestado `, err.message);
+    next(err);
+  }
+});
+
+
 /* GET prestado by type. */
 router.get('/type/:id', async function (req, res, next) {
   try {

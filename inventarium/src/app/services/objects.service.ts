@@ -16,9 +16,9 @@ export class ObjectsService {
     return this.http.get(this._url + "/" + idGrupoObjetos, { headers: header });
   }
 
-  getAllObjects(idUbicacion: string, mejorasEquipo: string, codigo: string, observaciones: string, etiqueta: string) {
+  getAllObjects(idUbicacion: string, mejorasEquipo: string, codigo: string, observaciones: string, etiqueta: string, organizativa: string) {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
-    return this.http.get(this._url + "/", { headers: header, params: { 'idUbicacion': idUbicacion, 'mejorasEquipo': mejorasEquipo, 'codigo': codigo, 'observaciones': observaciones, 'etiqueta': etiqueta } });
+    return this.http.get(this._url + "/", { headers: header, params: { 'idUbicacion': idUbicacion, 'mejorasEquipo': mejorasEquipo, 'codigo': codigo, 'observaciones': observaciones, 'etiqueta': etiqueta, 'organizativa': organizativa } });
   }
 
   getObject(idObjeto: number) {

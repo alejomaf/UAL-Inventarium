@@ -73,9 +73,10 @@ const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'my-loans', component: MyLoansComponent },
       { path: 'loans/:id', component: LoansComponent },
+      { path: 'loans/user/:id', component: MyLoansComponent },
       { path: 'object/:id', component: ObjectUnitComponent },
       { path: 'user/:id', component: UserUnitComponent },
-      { path: 'loan/:id', component: LoanUnitComponent }
+      { path: 'loan/:id', component: LoanUnitComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

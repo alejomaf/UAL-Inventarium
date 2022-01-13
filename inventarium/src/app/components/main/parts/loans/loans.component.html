@@ -27,10 +27,12 @@
             </div>
         </div>
     </div>
+</div>
 
+<div class="row d-flex-inline justify-content-center">
     <!--Contenido-->
-    <div *ngFor="let prestamo of prestamos" style="width: fit-content;">
-        <app-loan *ngIf="this.tipoSolicitud==1 && prestamo.estado==1">
+    <div *ngFor="let prestamo of prestamos" style="width: fit-content; padding: 0 0;">
+        <app-loan *ngIf="this.tipoSolicitud==1 && prestamo.estado==1" style="width: fit-content;">
             <h5 nombre style="cursor: pointer" routerLink="/loan/{{prestamo.idPrestado}}"
                 class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
@@ -39,7 +41,7 @@
             <span fechaSalida>{{prestamo.fechaSalida}}</span>
             <span fechaEstimadaEntrega>{{prestamo.fechaEstimadaEntrega}}</span>
         </app-loan>
-        <app-pending-loan *ngIf="this.tipoSolicitud==0 && prestamo.estado==0">
+        <app-pending-loan *ngIf="this.tipoSolicitud==0 && prestamo.estado==0" style="width: fit-content;">
             <h5 nombre routerLink="/loan/{{prestamo.idPrestado}}" style="cursor: pointer"
                 class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
@@ -48,7 +50,7 @@
             <span fechaSolicitud>{{prestamo.solicitado}}</span>
             <span fechaEstimadaEntrega>{{prestamo.fechaEstimadaEntrega}}</span>
         </app-pending-loan>
-        <app-completed-loan *ngIf="this.tipoSolicitud==-1 && prestamo.estado==-1">
+        <app-completed-loan *ngIf="this.tipoSolicitud==-1 && prestamo.estado==-1" style="width: fit-content;">
             <h5 nombre routerLink="/loan/{{prestamo.idPrestado}}" style="cursor: pointer"
                 class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
@@ -59,7 +61,7 @@
             <span fechaSalida>{{prestamo.fechaSalida}}</span>
             <span fechaSolicitud>{{prestamo.solicitado}}</span>
         </app-completed-loan>
-        <app-declined-loan *ngIf="this.tipoSolicitud==-2 && prestamo.estado==-2">
+        <app-declined-loan *ngIf="this.tipoSolicitud==-2 && prestamo.estado==-2" style="width: fit-content;">
             <h5 nombre routerLink="/loan/{{prestamo.idPrestado}}" style="cursor: pointer"
                 class="card-title text-dark text-center">
                 Préstamo a {{prestamo.nombre}}
