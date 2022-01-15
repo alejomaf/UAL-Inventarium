@@ -4,6 +4,7 @@ const path = require('path');
 const group_of_objects = require('../services/grupo_objetos');
 const middleware = require('./middleware');
 const fs = require('fs');
+const request = require('request');
 //const Resize = require('./resize');
 router.use(middleware.checkToken);
 
@@ -48,6 +49,15 @@ const isFileValid = (file) => {
   return true;
 };
 
+var download = async function (uri, filename, callback) {
+  request.head(uri, function (err, res, body) {
+    console.log('content-type:', res.headers['content-type']);
+    console.log('content-length:', res.headers['content-length']);
+
+    request(uri).pipe(fs.createWriteStream(filename)).on('close', callback);
+  });
+};
+
 async function uploadingFile(files, name, id) {
   // Check if multiple files or a single file
   if (!files.length) {
@@ -77,13 +87,22 @@ async function uploadingFile(files, name, id) {
   } else return;
 }
 
+async function uploadFileFromInternet(file, name, id) {
+  parts_of_file = file.split("/");
+  id_file = "https://drive.google.com/uc?export=download&id=" + parts_of_file[parts_of_file.length - 2]
+  await download(id_file, '__dirname/../images/group_of_objects/' + name + ".jpg", function () { console.log("Upload from internet successfully") });
+}
+
 router.post('/', async function (req, res, next) {
   try {
     time = Date.now();
 
-    files = req.files
+    if (req.files.size != undefined) {
+      files = req.files
+      await uploadingFile(files, time, req.params.id);
+    } else if (req.fields.image)
+      await uploadFileFromInternet(req.fields.image, time, req.params.id)
 
-    await uploadingFile(files, time, req.params.id);
 
     //Consulta post en la base de datos
     res.json(await group_of_objects.create(req.fields, time));
