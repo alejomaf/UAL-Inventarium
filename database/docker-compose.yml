@@ -23,8 +23,8 @@ services:
       MYSQL_USER: ualinventarium
       MYSQL_PASSWORD: uS3rP4ssM0Ord20D1f1CIL3
       MYSQL_ROOT_PASSWORD: rO0trP4ssM0Ord20D1f1CIL3
-    depends_on:
-      - "client"
+    # depends_on:
+    #   - "client"
   phpmyadmin:
     container_name: inventarium_php_adm
     image: phpmyadmin:5.1

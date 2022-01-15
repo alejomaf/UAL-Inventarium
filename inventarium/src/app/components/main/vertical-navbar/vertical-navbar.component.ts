@@ -1,7 +1,7 @@
 import { state } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { faHome, faTh, faObjectGroup, faUsers, faLaptop, faDatabase, faUser, faCircle, faList, faSignOutAlt, faPaperPlane, faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faTh, faObjectGroup, faUsers, faLaptop, faDatabase, faUser, faCircle, faList, faSignOutAlt, faPaperPlane, faBars, faSearch, faUpload } from '@fortawesome/free-solid-svg-icons';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { UserService } from 'src/app/services/user.service';
@@ -25,11 +25,13 @@ export class VerticalNavbarComponent implements OnInit {
   lista = faList;
   cerrar_sesion = faSignOutAlt;
   lupa = faSearch;
+  upload = faUpload;
 
   //Estados
 
   dashboard = false;
   add_object = false;
+  add_data = false;
   objects = false;
   object_search = false;
   requests = false;
@@ -57,6 +59,7 @@ export class VerticalNavbarComponent implements OnInit {
     this.dashboard = false;
     this.add_object = false;
     this.objects = false;
+    this.add_data = false;
     this.requests = false;
     this.users = false;
     this.devices = false;
@@ -110,6 +113,9 @@ export class VerticalNavbarComponent implements OnInit {
         break;
       case "object":
         this.objects = true;
+        break;
+      case "add-data":
+        this.add_data = true;
         break;
       case "user":
         this.users = true;

@@ -43,14 +43,6 @@ export class GroupOfObjectsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  paginaIzquierda() {
-
-  }
-
-  paginaDerecha() {
-
-  }
-
 
   busqueda() {
     if (this.nombre.value == "" && this.marca.value == "" && this.modelo.value == "") {

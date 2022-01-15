@@ -67,7 +67,15 @@
             </a>
         </li>
     </ul>
-
+    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Administración</p>
+    <ul class="nav flex-column mb-0">
+        <li class="nav-item" [ngClass]="add_data ? 'selected-li':''">
+            <a routerLink="/add-data" (click)="changeSelection('add-data')" class="nav-link text-dark font-italic">
+                <fa-icon [icon]="upload"></fa-icon>
+                Carga de datos
+            </a>
+        </li>
+    </ul>
     <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Personal</p>
     <ul class="nav flex-column mb-0">
         <li class="nav-item" [ngClass]="profile ? 'selected-li':''">
@@ -88,7 +96,6 @@
                 Cerrar sesión
             </a>
         </li>
-
     </ul>
 </div>
 <!-- End vertical navbar -->
