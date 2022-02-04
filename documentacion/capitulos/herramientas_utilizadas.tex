@@ -1,17 +1,17 @@
 \chapter{Herramientas utilizadas}
 
-En este capítulo hablaré sobre las herramientas utilizadas durante el desarrollo del proyecto. Me parece bastante interesante debido a la inclusión de nuevas herramientas que irán en conjunción a nuevas metodologías de trabajo.
+En este capítulo hablaré sobre las herramientas utilizadas durante el desarrollo del proyecto. Me parece bastante interesante debido a la inclusión de nuevas herramientas que irán en conjunción a al uso de metodologías de trabajo novedosas.
 \\Al igual que las tecnologías van avanzando las empresas también lo hacen, y la amplia gama de tecnologías gratuitas que están a nuestro alcances conlleva que el conocimiento de las mismas sea de vital importancia en el momento de construcción de una aplicación.
 
 \section{Hardware}
 
 Dentro del apartado de hardware disponemos de dos ordenadores. Su procesador no conlleva relevancia en el desarrollo de la aplicación debido a la utilización de servicios en la nube.
 
-\subsection{Torre de PC}
+\subsection{Ordenador de sobremesa}
 
 La cual contiene como procesador un Xeon E5-2620 V3. 16GB de RAM DDR3. Una tarjeta gráfica RTX 570 de 4GB DDR5. Tiene 256GB de memoria SSD y 1TB de memoria HDD.
 
-\subsection{Un portátil}
+\subsection{Ordenador portátil}
 
 Es un MacBook Air M1 de 2020 con 8GB de RAM y 256GB de almacenamiento.
 
@@ -28,13 +28,13 @@ Nuestro entorno de desarrollo y desde donde haremos casi absolutamente todo ser�
 
 Estas líneas están siendo escritas ahora mismo desde LaTeX. LaTeX es un sistema de composición de textos que está formado mayoritariamente por órdenes construidas a partir de comandos TeX. En un principio no estaba seguro de qué herramienta utilizar, ya que la posición de varios profesores respecto a esta herramienta era bastante férrea pero Word siempre había ido agarrado a mi mano desde comienzos del instituto.
 \\Luego de pasar de Word a LaTeX y de LaTeX a Word bastantes veces no fue hasta que mi profesora Rosa, en una de mis visitas matinales a su despacho me dijo: Yo hice mi TFG en LaTeX.
-\\No me lo podía creer y al comprobar la fecha de publicación de este programa de procesado de textos me sorprendí al ver que su lanzamiento oficial fue en 1980. ``Si el programa ha durado tanto es que algo de importante tendrá'' pensé. Y aquí me hallo redactando este documento con un programa que facilita el control de versiones de Git de una manera asombrosa. Facilita también los procesos de documentación y disposición de las diferentes subsecciones. Y, lo que más me gusta sin lugar a dudas, que puedo realizar una separación de cada capítulo por documentos separados y es que a mí, el tener las cosas descompuestas, me puede.
+\\No me lo podía creer y al comprobar la fecha de publicación de este programa de procesado de textos me sorprendí al ver que su lanzamiento oficial fue en 1980. ``Si el programa ha durado tanto es que algo de importante tendrá'' pensé. Y aquí me hallo redactando este documento con un programa que facilita el control de versiones de Git de una manera asombrosa. Facilita también los procesos de documentación y disposición de las diferentes subsecciones. Y, lo que más me gusta sin lugar a dudas, que puedo realizar una separación de cada capítulo por documentos separados y es que a mí, el tener las cosas modularizadas, me puede.
 
 \subsection{Diseño y creación de la base de datos}
 
 La base de datos ha sido diseñada con MySQL Workbench. Esta es una herramienta visual de diseño de bases de datos, capaz de administrar, diseñar, gestionar y mantener bases de datos. Su primera versión fue publicada en 2005.
 \\En un principio la base de datos fue exportada para que el deploy también se realizará en un servidor MySQL pero el versionado de estos scripts para la creación de las bases de datos me llevan dando problemas tres años. Grata fue mi sorpresa al descubrir MariaDB y que ofrece una compatibilidad perfecta con MySQL, además, es software libre.
-\\MariaDB es un sistema de gestión de bases de datos derivado de MySQL con licencia GPL. Fue escrito por el mismo creador que MySQL, y esto ¿por qué? Porque vendió su producto (MySQL) a Oracle, dejando este de ser software libre.
+\\MariaDB es un sistema de gestión de bases de datos derivado de MySQL con licencia GPL. Fue escrito por el mismo creador que MySQL, y esto ¿por qué? Ya que vendió su producto (MySQL) a Oracle, dejando este de ser software libre.
 \\Para la gestión de la base de datos he utilizado PHPMyAdmin. Un gestor de bases de datos que se utiliza desde páginas web. Facilita cualquier tipo de inspección que un técnico tenga que realizar por no poder hacerlo desde la aplicación web de inventarium.
 
 \subsection{Diseño del sitio web}
@@ -59,17 +59,17 @@ Para el diseño y modificación de imágenes utilizaremos Adobe Photoshop 2021. 
 
 \subsubsection{Docker Compose}
 
-Docker Compose es una herramienta de Docker que nos sirve para poder levantar varios contenedores a la vez y de forma simultánea. Gracias a esta utilidad podemos desplegar entornos web en tiempos cortos. Además nos brinda utilidades como si una de las máquinas se apaga Docker Compose la vuelve a encender.
+Docker Compose es una herramienta de Docker que nos sirve para poder levantar varios contenedores a la vez y de forma simultánea. Gracias a esta utilidad podemos desplegar entornos web en tiempos cortos. Además nos brinda utilidades como que si una de las máquinas se apaga podemos automatizar que se vuelva a encender.
 
 \subsection{NodeJS}
 
 NodeJS es un entorno de tiempo de ejecución de JavaScript. Este entorno de tiempo de ejecución en tiempo real incluye todo lo que se necesita para ejecutar un programa escrito en JavaScript. Gracias a él podremos utilizar varias herramientas que explicaré a continuación.
 
-\subsection{Levantamiento la Interfaz de Programación de Aplicaciones(API)}
+\subsection{Deploy de la Interfaz de Programación de Aplicaciones(API)}
 
-El servicio Web se levanta desde Express. Express es framework back-end para NodeJS que está diseñado para levantar sitios webs y APIs. Es la herramienta predilecta para levantar servicios web dentro del entorno de Node.
+El servicio Web se levanta desde Express. Express es un framework back-end para NodeJS que está diseñado para levantar sitios webs y APIs. Es la herramienta predilecta para levantar servicios web dentro del entorno de Node.
 
-\subsection{Levantamiento del sitio web}
+\subsection{Deploy del sitio web}
 
 Nginx es un servidor web/proxy de código abierto. Su primer lanzamiento fue en 2004. Presenta ventajas en el momento de recibir un número elevado de solicitudes concurrentes y es utilizado por compañías de alto perfil tecnológico como Google, Facebook o Twitter.
 
@@ -77,18 +77,18 @@ Nginx es un servidor web/proxy de código abierto. Su primer lanzamiento fue en 
 
 El desarrollo del sitio web se realizará con Angular 12. Angular es sin duda el punto más importante de esta subsección.
 \\Angular es un framework para aplicaciones web desarrollado en TypeScript, de código abierto, mantenido por Google, que se utiliza para crear y mantener aplicaciones web de una sola página. Su objetivo es aumentar las aplicaciones basadas en navegador con capacidad de Modelo Vista Controlador (MVC), en un esfuerzo para hacer que el desarrollo y las pruebas sean más fáciles.
-\\Angular se basa en clases tipo Componentes, cuyas propiedades son las usadas para hacer el binding de los datos.
+\\Angular se basa en clases de tipo Componentes, que facilitan el ``binding'' de los datos, es decir, disponer de una variable en el controlador cuyo valor sea visualizado en la vista.
 \\Angular es la evolución de AngularJS (la versión de Angular que usaba JavaScript) aunque incompatible con su predecesor.
 \\Este framework para mí ha sido como el descubrimiento de América. Y es que en la anterior versión de la aplicación había utilizado únicamente PHP, Javascript y CSS. Es más, había conseguido desarrollar un modelo basado en jQuery para que el sitio web se ubicara en una única página y fuera refrescando los datos de forma interactiva y fluida.
-\\Pero Angular fue un cambio total de mentalidad, la gestión de componentes es lo que le da la vida en su totalidad y es que, ¿qué sería un desarrollo software sin que presente una modularidad en sus componentes? Angular te lo ofrece, y te da más. Podemos definir todo el dominio de la aplicación dentro de ella y crear los servicios para que estén listos para usarse para contactar con la API. Luego podemos definir el sistema de rutas que deba tener la aplicación junto al resto de componentes que tienen que interactuar con el usuario.
+\\Pero Angular fue un cambio total de mentalidad, la gestión de componentes es lo que le da la vida en su totalidad y es que, ¿qué sería un desarrollo software sin que presente una modularidad en sus componentes? Angular te lo ofrece, y te da más. Podemos definir todo el dominio de la aplicación dentro de ella y crear los servicios para contactar con la API. Luego podemos definir el sistema de rutas que deba tener la aplicación junto al resto de componentes que tienen que interactuar con el usuario.
 \\No podría imaginarme un desarrollado planificado, con sus diagramas de requisitos, de base de datos, diseño de componentes y estructuración de vistas sin este framework.
 
 \subsection{Testing de UAL Inventarium}
 Para realizar el testing hemos utilizado tres herramientas:
 \begin{itemize}
-    \item \textbf{Postman}: Nos da una serie de herramientas para poder mandar solicitudes HTTP a las direcciones que queramos. Es ideal para poder probar APIs o aplicaciones que utilicen proxy para sus consultas con la base de datos.
+    \item \textbf{Postman}: Nos da una serie de utilidades para poder mandar solicitudes HTTP a las direcciones que queramos. Es ideal para poder probar APIs o aplicaciones que utilicen proxy para sus consultas con la base de datos.
     \item \textbf{Selenium}: Esta herramienta nos permite crear pruebas de software en nuestro sitio web. Nos provee de una herramienta de gran utilidad que es la de poder grabar y reproducir secuencias de prueba con tan solo un botón. Esto nos ayuda en gran medida a la hora de tener que ir probando campos de formulario y no estar todo el rato ingresando los datos mecánicamente.
-    \item \textbf{Herramientas de Desarrollador de Google CHrome}: Esta columna derecha que incorpora Google Chrome nos es de gran utilidad para ver la consola, modificar estilos, ver los datos que estamos almacenando en caché y capturar tráfico web de las páginas.
+    \item \textbf{Herramientas de Desarrollador de Google Chrome}: Esta columna derecha que incorpora Google Chrome nos es de gran utilidad para ver la consola, modificar estilos, ver los datos que estamos almacenando en caché y capturar tráfico web de las páginas.
 \end{itemize}
 
 \section{Servicios}
@@ -100,7 +100,7 @@ El sistema de control de versiones se realizará gracias a GitHub. GitHub es una
 
 \subsection{Gestión y creación de máquinas virtuales}
 
-Este apartado no creí que lo llegaría a utilizar. En la Universidad de Almería tenemos OpenStack un servicio que nos ofrece el poder crear y destruir máquinas virtuales además de poder ubicarlas en una infraestructura de red. El problema que tuve con OpenStack fue la propia configuración de entorno de red de la universidad. Y es que había unos determinados puertos que por mucho que los abriese en la máquina virtual el cortafuegos de la Universidad me impedía acceder a ellos. Como veremos más adelante a lo largo de estas páginas esto no tuvo por qué haber sido un problema pero lo descubrí más tarde.
+Este apartado no creí que lo llegaría a utilizar. En la Universidad de Almería tenemos OpenStack un servicio que nos permite poder crear y destruir máquinas virtuales además de poder ubicarlas en una infraestructura de red. El problema que tuve con OpenStack fue la propia configuración de entorno de red de la universidad. Y es que había unos determinados puertos que por mucho que los abriese en la máquina virtual el cortafuegos de la Universidad me impedía acceder a ellos. Como veremos más adelante a lo largo de estas páginas esto no tuvo por qué haber sido un problema pero lo descubrí más tarde.
 \\Debido a los problemas anteriormente mencionados con OpenStack me dispuse a buscar las soluciones que me brindaban las distintas ``empresas top'' del sector.
 \\Las iré evaluando por precio, rendimiento e interfaz. Las he probado todas.
 
@@ -110,4 +110,4 @@ En precio se encuentra en un rango medio. Creo que de las tres es la que mejor s
 El precio es alto, bastante a mi parecer. El manejo y creación de base de datos se complica por el plan de precios que presentan que están almacenados en unos tipos de monederos. No creo que sean malas ideas pero sí que están mal implementadas dificultando el aprendizaje inicial. Los servidores y la configuración de los mismos son más limitados que los de Amazon Web Services.
 \subsubsection{Google Cloud}
 Ofrecen el mejor precio de la competencia. El problema es que la primera vez que entras te encuentras con muchas soluciones que ofrece Google con servicios en la nube. Es una sobreinformación de cosas que realmente no necesitaba para desplegar una simple máquina virtual. Una vez te ubicas que tienes que moverte en el entorno de ``Compute Engine'' todo se vuelve mucho más fácil. Las máquinas virtuales son fáciles de desplegar y de personalizar y presentan una alta gama de servidores disponibles, al fin y al cabo Google está en todo el mundo.
-\\\\Mi elección fue Google Cloud. Sin duda para el proyecto iba a ser la mejor opción.
+\\\\Mi elección fue Google Cloud. Sin duda, para el proyecto, iba a ser la mejor opción.

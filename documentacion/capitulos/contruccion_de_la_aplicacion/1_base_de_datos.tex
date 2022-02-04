@@ -1,10 +1,10 @@
 \section{Generación y puesta en marcha de la base de datos}
 
 Ha llegado el momento de ponernos manos a la masa y dejarnos de preparativos o presentación de herramientas. Vamos a levantar nuestra base de datos.
-\\El diagrama final de la base de datos quedaría así:
+\\El diagrama final de la base de datos quedaría como podemos ver en la figura \ref{fig:db-design}.
 \begin{figure}
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{db_design.png}
-    \caption{Diseño final de la base de datos}
+    \caption{Diseño final de la base de datos}\label{fig:db-design}
 \end{figure}
 Generamos el script ``.sql'' para poder generar nuestra base de datos.
 \\Esta configuración la basaremos únicamente en la sección de código que añadiremos a nuestro archivo docker-compose.yml para poder hacerlo.
@@ -68,7 +68,7 @@ Este despliegue es para phpmyadmin, nuestro gestor de base de datos. Como añadi
 volumes:
     persistent: {}
 \end{verbatim}
-Dentro de la sección \textbf{volumes} podemos generar volúmenes que se van a utilizar dentro de nuestros contenedores. En este caso hemos creado nuestro volumen ``persistent'' para poder almacenar la información que se almacene dentro de nuestra base de datos.
+Dentro de la sección \textbf{volumes} podemos generar volúmenes que se van a utilizar dentro de nuestros contenedores. En este caso hemos creado nuestro volumen ``persistent'' para poder guardar la información que se almacene dentro de nuestra base de datos.
 \vspace{\baselineskip}
 \\Para levantar nuestra base de datos ejecutaríamos dentro del directorio donde hemos creado nuestro docker-compose.yml el siguiente comando:
 \begin{verbatim}
@@ -78,6 +78,6 @@ Ya tendríamos nuestra base de datos en funcionamiento.
 \vspace{\baselineskip}
 \begin{tcolorbox}
     [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo comprobamos los resultados?]
-    Visual Studio Code realiza una \textbf{tunelización de los puertos} a partir de la conexión SSH. Es decir, podemos ir habilitando redireccionamientos de puertos para poder ir viendo los resultados en nuestra máquina. Esto resulta de gran ayuda ya que no hay que realizar una configuración de la máquina previa de apertura de puertos para poder ir trabajando sobre ellas. Ya que el funcionamiento del sistema será interno con poder disponer de los puertos HTTP Y HTTPS abiertos no necesitamos más.
+    Visual Studio Code realiza una \textbf{tunelización de los puertos} a partir de la conexión SSH. Es decir, podemos ir habilitando redireccionamientos de puertos para poder ir viendo los resultados en nuestra máquina. Esto resulta de gran ayuda ya que no hay que realizar una configuración en la máquina de apertura de puertos para poder ir trabajando sobre cada una de las aplicaciones existentes. Ya que el funcionamiento del sistema será interno con poder disponer de los puertos HTTP Y HTTPS abiertos no necesitamos más.
 \end{tcolorbox}
 
