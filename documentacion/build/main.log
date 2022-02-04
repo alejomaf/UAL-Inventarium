@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  4 FEB 2022 16:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  4 FEB 2022 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -867,15 +867,12 @@ LaTeX Info: Redefining \BHBI on input line 130.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-
-
-pdfTeX warning: pdflatex (file ./portada_y_contraportada/1-PortadaTFG.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<portada_y_contraportada/1-PortadaTFG.pdf, id=7, 597.55246pt x 845.19763pt>
+<portada_y_contraportada/1-PortadaTFG.pdf, id=7, 597.23125pt x 845.1575pt>
 File: portada_y_contraportada/1-PortadaTFG.pdf Graphic file (type pdf)
 <use portada_y_contraportada/1-PortadaTFG.pdf>
 Package pdftex.def Info: portada_y_contraportada/1-PortadaTFG.pdf  used on input line 19.
-(pdftex.def)             Requested size: 597.551pt x 845.19557pt.
-[1
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+ [1
 
 
 
@@ -919,15 +916,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 23.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 23.
-
-
-pdfTeX warning: pdflatex (file ./portada_y_contraportada/2-ContraportadaTFG.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<portada_y_contraportada/2-ContraportadaTFG.pdf, id=39, 597.55246pt x 845.19763pt>
+<portada_y_contraportada/2-ContraportadaTFG.pdf, id=45, 597.23125pt x 845.1575pt>
 File: portada_y_contraportada/2-ContraportadaTFG.pdf Graphic file (type pdf)
 <use portada_y_contraportada/2-ContraportadaTFG.pdf>
 Package pdftex.def Info: portada_y_contraportada/2-ContraportadaTFG.pdf  used on input line 23.
-(pdftex.def)             Requested size: 597.551pt x 845.19557pt.
-[2
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+ [2
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./portada_y_contraportada/2-ContraportadaTFG.pdf>] (/home/alejomaf/Documents/Inventarium/documentacion/build/main.toc [3
 
@@ -984,28 +978,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--1
 ]
 chapter 3.
 (./capitulos/desarrollo_fases_proyecto/1_reuniones_iniciales.tex
-<imagenes/estructura_y_desarrollo//db_old_design.png, id=429, 1055.945pt x 579.16376pt>
+<imagenes/estructura_y_desarrollo//db_old_design.png, id=437, 1055.945pt x 579.16376pt>
 File: imagenes/estructura_y_desarrollo//db_old_design.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//db_old_design.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//db_old_design.png  used on input line 12.
 (pdftex.def)             Requested size: 455.23982pt x 249.68951pt.
  [19]
-<imagenes/estructura_y_desarrollo//flujo_de_navegacion.png, id=437, 1559.8275pt x 653.44125pt>
+<imagenes/estructura_y_desarrollo//flujo_de_navegacion.png, id=445, 1559.8275pt x 653.44125pt>
 File: imagenes/estructura_y_desarrollo//flujo_de_navegacion.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//flujo_de_navegacion.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//flujo_de_navegacion.png  used on input line 27.
 (pdftex.def)             Requested size: 455.24213pt x 190.70953pt.
-<imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg, id=439, 884.30376pt x 430.60875pt>
+<imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg, id=447, 884.30376pt x 430.60875pt>
 File: imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg Graphic file (type jpg)
 <use imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg  used on input line 32.
 (pdftex.def)             Requested size: 455.25285pt x 221.68384pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png, id=440, 361.35pt x 642.4pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png, id=448, 361.35pt x 642.4pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png  used on input line 43.
 (pdftex.def)             Requested size: 108.40584pt x 192.72148pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png, id=441, 361.35pt x 969.6225pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png, id=449, 361.35pt x 969.6225pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png  used on input line 44.
@@ -1014,18 +1008,18 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/r
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20 <./imagenes/estructura_y_desarrollo//db_old_design.png>] [21 <./imagenes/estructura_y_desarrollo//flujo_de_navegacion.png> <./imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg>]
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png, id=451, 361.35pt x 642.4pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png, id=459, 361.35pt x 642.4pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png  used on input line 68.
 (pdftex.def)             Requested size: 180.67456pt x 321.19922pt.
  [22 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/inicio_de_sesion.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/registro.png>]
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png, id=458, 361.35pt x 1041.8925pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png, id=466, 361.35pt x 1041.8925pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png  used on input line 87.
 (pdftex.def)             Requested size: 144.53743pt x 416.74962pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png, id=459, 361.35pt x 1367.1075pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png, id=467, 361.35pt x 1367.1075pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png  used on input line 88.
@@ -1034,56 +1028,56 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/a
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/menu_principal.png>] [24 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_fungible.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/add_inventario.png>]
-<imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png, id=472, 777.90625pt x 310.15875pt>
+<imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png, id=480, 777.90625pt x 310.15875pt>
 File: imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png  used on input line 100.
 (pdftex.def)             Requested size: 777.90434pt x 310.15799pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png, id=473, 361.35pt x 720.6925pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png, id=481, 361.35pt x 720.6925pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png  used on input line 110.
 (pdftex.def)             Requested size: 108.40584pt x 216.20941pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png, id=474, 361.35pt x 642.4pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png, id=482, 361.35pt x 642.4pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png  used on input line 111.
 (pdftex.def)             Requested size: 108.40584pt x 192.72148pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png, id=475, 376.40625pt x 669.50125pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png, id=483, 376.40625pt x 669.50125pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png  used on input line 121.
 (pdftex.def)             Requested size: 112.92273pt x 200.85191pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png, id=476, 376.40625pt x 669.50125pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png, id=484, 376.40625pt x 669.50125pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png  used on input line 122.
 (pdftex.def)             Requested size: 112.92273pt x 200.85191pt.
  [25 <./imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png>]
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png, id=485, 386.44376pt x 463.7325pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png, id=493, 386.44376pt x 463.7325pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png  used on input line 142.
 (pdftex.def)             Requested size: 115.93402pt x 139.12082pt.
  [26 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png>]
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png, id=493, 361.35pt x 642.4pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png, id=501, 361.35pt x 642.4pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png  used on input line 152.
 (pdftex.def)             Requested size: 126.4744pt x 224.84337pt.
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png, id=494, 361.35pt x 900.36375pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png, id=502, 361.35pt x 900.36375pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png  used on input line 153.
 (pdftex.def)             Requested size: 108.40584pt x 270.1112pt.
 ) (./capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex [27 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png>] [28]) (./capitulos/desarrollo_fases_proyecto/3_preparacion_entorno_trabajo.tex
-<imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png, id=524, 1445.4pt x 727.71875pt>
+<imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png, id=532, 1445.4pt x 727.71875pt>
 File: imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png  used on input line 19.
 (pdftex.def)             Requested size: 433.62335pt x 218.3173pt.
  [29 <./imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png>]
-<imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png, id=539, 605.76312pt x 688.5725pt>
+<imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png, id=547, 605.76312pt x 688.5725pt>
 File: imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png  used on input line 28.
@@ -1114,24 +1108,24 @@ Overfull \hbox (401.31036pt too wide) in paragraph at lines 130--130
 ]
 chapter 4.
 (./capitulos/contruccion_de_la_aplicacion/0_introduccion_a_docker.tex) (./capitulos/contruccion_de_la_aplicacion/1_base_de_datos.tex
-<imagenes/estructura_y_desarrollo//db_design.png, id=589, 1055.945pt x 848.16875pt>
+<imagenes/estructura_y_desarrollo//db_design.png, id=597, 1055.945pt x 848.16875pt>
 File: imagenes/estructura_y_desarrollo//db_design.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//db_design.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//db_design.png  used on input line 6.
 (pdftex.def)             Requested size: 455.23982pt x 365.66316pt.
  [35] [36 <./imagenes/estructura_y_desarrollo//db_design.png>] [37]) (./capitulos/contruccion_de_la_aplicacion/2_diseno_arquitectura.tex [38]
-<imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png, id=608, 1138.2525pt x 542.025pt>
+<imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png, id=616, 1138.2525pt x 542.025pt>
 File: imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png  used on input line 25.
 (pdftex.def)             Requested size: 455.24083pt x 216.78134pt.
  [39 <./imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png (PNG copy)>]) (./capitulos/contruccion_de_la_aplicacion/3_api.tex [40] [41] [42] [43] [44] [45]) (./capitulos/contruccion_de_la_aplicacion/4_web.tex (./capitulos/contruccion_de_la_aplicacion/4_web/estructura_proyecto.tex [46] [47]) (./capitulos/contruccion_de_la_aplicacion/4_web/componente.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/servicio.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/interfaz.tex [48]) (./capitulos/contruccion_de_la_aplicacion/4_web/elementos.tex
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png, id=682, 139.27031pt x 130.23656pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png, id=690, 139.27031pt x 130.23656pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png  used on input line 13.
 (pdftex.def)             Requested size: 139.26996pt x 130.23624pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png, id=683, 149.05687pt x 149.05687pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png, id=691, 149.05687pt x 149.05687pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png  used on input line 14.
@@ -1141,7 +1135,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [49]) (./capitulos/contruccion_de_la_aplicacion/4_web/creacion_componente.tex [50 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>]) (./capitulos/contruccion_de_la_aplicacion/4_web/preparar_html.tex [51] [52]) (./capitulos/contruccion_de_la_aplicacion/4_web/definir_archivo_rutas.tex
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png, id=714, 1716.4125pt x 908.39375pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png, id=722, 1716.4125pt x 908.39375pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png  used on input line 7.
@@ -1151,33 +1145,33 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 ]
 chapter 5.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png, id=733, 424.58624pt x 221.32687pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png, id=741, 424.58624pt x 221.32687pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png  used on input line 7.
 (pdftex.def)             Requested size: 212.2926pt x 110.66315pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png, id=734, 270.25969pt x 386.94562pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png, id=742, 270.25969pt x 386.94562pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png  used on input line 8.
 (pdftex.def)             Requested size: 135.1295pt x 193.47234pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png, id=737, 204.01219pt x 194.97844pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png, id=745, 204.01219pt x 194.97844pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png  used on input line 26.
 (pdftex.def)             Requested size: 102.00584pt x 97.48897pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png, id=739, 203.25937pt x 260.47313pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png, id=747, 203.25937pt x 260.47313pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png  used on input line 32.
 (pdftex.def)             Requested size: 101.62943pt x 130.23624pt.
 [57 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png>] [58 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png>]
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png, id=754, 203.25937pt x 295.1025pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png, id=762, 203.25937pt x 295.1025pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png  used on input line 55.
 (pdftex.def)             Requested size: 101.62943pt x 147.55087pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png, id=756, 251.43938pt x 470.50781pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png, id=764, 251.43938pt x 470.50781pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png  used on input line 65.
@@ -1186,7 +1180,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png, id=758, 875.1897pt x 403.2666pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png, id=766, 875.1897pt x 403.2666pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png  used on input line 75.
@@ -1200,7 +1194,7 @@ Overfull \hbox (1.79729pt too wide) in paragraph at lines 80--81
  []
 
 [59 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png>]
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png, id=765, 667.74469pt x 271.76532pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png, id=773, 667.74469pt x 271.76532pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png  used on input line 97.
@@ -1209,12 +1203,12 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png, id=767, 207.77625pt x 312.41719pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png, id=775, 207.77625pt x 312.41719pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png  used on input line 107.
 (pdftex.def)             Requested size: 103.88786pt x 156.2082pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png, id=768, 348.55219pt x 210.7875pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png, id=776, 348.55219pt x 210.7875pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png  used on input line 108.
@@ -1222,7 +1216,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png, id=770, 248.42813pt x 471.26062pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png, id=778, 248.42813pt x 471.26062pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png  used on input line 117.
@@ -1231,7 +1225,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [60 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png>]
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png, id=785, 208.52907pt x 240.9pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png, id=793, 208.52907pt x 240.9pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png  used on input line 127.
@@ -1240,7 +1234,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png, id=787, 761.84625pt x 416.30531pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png, id=795, 761.84625pt x 416.30531pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png  used on input line 135.
@@ -1248,7 +1242,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png, id=789, 347.79938pt x 481.04718pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png, id=797, 347.79938pt x 481.04718pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png  used on input line 143.
@@ -1256,17 +1250,17 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplica
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png, id=793, 348.55219pt x 233.37187pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png, id=801, 348.55219pt x 233.37187pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png  used on input line 154.
 (pdftex.def)             Requested size: 174.27565pt x 116.68564pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png, id=794, 346.29375pt x 204.01219pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png, id=802, 346.29375pt x 204.01219pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png  used on input line 159.
 (pdftex.def)             Requested size: 173.14644pt x 102.00584pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png, id=795, 349.305pt x 204.765pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png, id=803, 349.305pt x 204.765pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png  used on input line 164.
@@ -1288,7 +1282,7 @@ chapter 6.
 
 ] [66] [67]) (./capitulos/pruebas.tex [68]
 chapter 7.
-<imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png, id=848, 1269.74374pt x 916.42375pt>
+<imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png, id=856, 1269.74374pt x 916.42375pt>
 File: imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png  used on input line 18.
@@ -1296,7 +1290,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/postman_cr
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png, id=852, 962.59625pt x 713.66624pt>
+<imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png, id=860, 962.59625pt x 713.66624pt>
 File: imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png  used on input line 35.
@@ -1308,7 +1302,7 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/registro_u
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png, id=857, 434.37282pt x 293.59688pt>
+<imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png, id=865, 434.37282pt x 293.59688pt>
 File: imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png  used on input line 48.
@@ -1355,16 +1349,16 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Here is how much of TeX's memory you used:
  27631 strings out of 479304
  602797 string characters out of 5869780
- 1080001 words of memory out of 5000000
+ 1080000 words of memory out of 5000000
  43868 multiletter control sequences out of 15000+600000
  410771 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,21n,119p,10734b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main.pdf (76 pages, 5494345 bytes).
+Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main.pdf (76 pages, 6243198 bytes).
 PDF statistics:
- 1377 PDF objects out of 1440 (max. 8388607)
- 1176 compressed objects within 12 object streams
+ 1385 PDF objects out of 1440 (max. 8388607)
+ 1174 compressed objects within 12 object streams
  350 named destinations out of 1000 (max. 500000)
  1078 words of extra memory for PDF output out of 10000 (max. 10000000)
 
