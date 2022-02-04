@@ -20,6 +20,20 @@ async function getMultiple(idGrupoObjetos, page = 1) {
   }
 }
 
+async function getAll(busqueda) {
+  const rows = await db.query(
+    `SELECT idObjeto, mejorasEquipo, codigo, disponible, GrupoObjetos_idGrupoObjetos,
+    date_format(fechaAdquisicion, '%d-%m-%y') as 'fechaAdquisicion', observaciones, organizativa, etiqueta, Ubicacion_idUbicacion, edificio, planta, ubicacion, nombre
+    FROM objeto, ubicacion, grupoobjetos WHERE objeto.Ubicacion_idUbicacion = ubicacion.idUbicacion AND objeto.GrupoObjetos_idGrupoObjetos = grupoobjetos.idGrupoObjetos AND
+    Ubicacion_idUbicacion LIKE "%`+ (busqueda.idUbicacion || "") + `" AND mejorasEquipo LIKE "%` + (busqueda.mejorasEquipo || "") + `%" AND codigo LIKE "%` + (busqueda.codigo || "") + `%" AND observaciones LIKE "%` + (busqueda.observaciones || "") + `%" AND organizativa LIKE "%` + (busqueda.organizativa || "") + `" AND etiqueta LIKE "%` + (busqueda.etiqueta || "") + `%"`
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+}
+
 async function getMultipleByLocation(Ubicacion_idUbicacion, page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
@@ -63,11 +77,10 @@ async function create(objeto, idGrupoObjeto) {
 
 async function update(id, objeto) {
   const result = await db.query(
-    `UPDATE objeto 
-  SET mejoraEquipo=?, codigo=?, disponible=?, eliminado=?, fechaAdquisicion=?, observaciones=?, organizativa=?, etiqueta=?, Ubicacion_idUbicacion=?
+    `UPDATE objeto SET mejorasEquipo=?, codigo=?, fechaAdquisicion=?, observaciones=?, organizativa=?, etiqueta=?, Ubicacion_idUbicacion=?
   WHERE idObjeto=?`,
     [
-      objeto.mejorasEquipo, objeto.codigo, objeto.disponible, objeto.eliminado, objeto.fechaAdquisicion,
+      objeto.mejorasEquipo, objeto.codigo, objeto.fechaAdquisicion,
       objeto.observaciones, objeto.organizativa, objeto.etiqueta, objeto.Ubicacion_idUbicacion, id
     ]
   );
@@ -132,4 +145,5 @@ module.exports = {
   getById,
   getMultipleByLocation,
   getMultipleWithConfig,
+  getAll,
 }

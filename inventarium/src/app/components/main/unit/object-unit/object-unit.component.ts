@@ -5,6 +5,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Configuracion } from 'src/app/interfaces/configuracion';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { Objeto } from 'src/app/interfaces/objeto';
+import { Ubicacion } from 'src/app/interfaces/ubicacion';
 import { ConfigurationsService } from 'src/app/services/configurations.service';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { ObjectsService } from 'src/app/services/objects.service';
@@ -29,31 +30,65 @@ export class ObjectUnitComponent implements OnInit {
   usuario = new FormControl("");
   contrasena = new FormControl("");
 
+  //Elements for object modal
+  codigo = new FormControl("");
+  fechaAdquisicion = new FormControl("");
+  etiqueta = new FormControl("");
+  departamento = new FormControl(0);
+  mejoras = new FormControl("");
+  observaciones = new FormControl("");
+  location_id?: { location: Ubicacion; tipo: Number; };
+  errorModificationObject = "";
+  successModificationObject = "";
+
   constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private configsS: ConfigurationsService, private modalService: NgbModal) {
     this.idObjeto = route.snapshot.params['id'];
+
+    this.cargarObjeto();
+  }
+
+  cargarObjeto() {
     this.objectS.getObject(this.idObjeto).subscribe(
       (res: any) => {
-        this.objeto = res.data[0];
-        this.groupOfObjectS.getGroupOfObject(this.objeto!.GrupoObjetos_idGrupoObjetos).subscribe(
-          (res: any) => {
-            this.grupoObjeto = res.data[0];
-          }
-        );
-        this.cargarConfiguracion();
+        if (res.data) {
+          this.objeto = res.data[0];
+          this.groupOfObjectS.getGroupOfObject(this.objeto!.GrupoObjetos_idGrupoObjetos).subscribe(
+            (res: any) => {
+              if (res.data) {
+                this.grupoObjeto = res.data[0];
+              }
+            }
+          );
+          this.codigo.setValue(this.objeto!.codigo);
+          this.fechaAdquisicion.setValue(this.objeto!.fechaAdquisicion);
+          this.etiqueta.setValue(this.objeto!.etiqueta);
+          this.departamento.setValue(this.objeto!.organizativa);
+          this.mejoras.setValue(this.objeto!.mejorasEquipo);
+          this.observaciones.setValue(this.objeto!.observaciones);
+          this.location_id = { location: { edificio: this.objeto!.edificio, idUbicacion: this.objeto!.Ubicacion_idUbicacion, planta: this.objeto!.planta, ubicacion: this.objeto!.ubicacion }, tipo: 0 };
+          this.errorModificationObject = "";
+          this.successModificationObject = "";
+
+          this.cargarConfiguracion();
+        }
       }
     )
+
   }
 
   cargarConfiguracion() {
     this.configsS.getConfiguration(this.idObjeto).subscribe(
       (res: any) => {
-        this.configuracion = res.data[0];
-        this.ip.setValue(this.configuracion!.ip);
-        this.mac.setValue(this.configuracion!.mac);
-        this.boca.setValue(this.configuracion!.boca);
-        this.armario.setValue(this.configuracion!.armario);
-        this.usuario.setValue(this.configuracion!.usuario);
-        this.contrasena.setValue(this.configuracion!.contrasena);
+        if (res.data) {
+          this.configuracion = res.data[0];
+          if (this.configuracion! == undefined) return;
+          this.ip.setValue(this.configuracion!.ip);
+          this.mac.setValue(this.configuracion!.mac);
+          this.boca.setValue(this.configuracion!.boca);
+          this.armario.setValue(this.configuracion!.armario);
+          this.usuario.setValue(this.configuracion!.usuario);
+          this.contrasena.setValue(this.configuracion!.contrasena);
+        }
       }
     );
     this.cerrarModal();
@@ -110,7 +145,32 @@ export class ObjectUnitComponent implements OnInit {
   }
 
   modificarObjeto() {
+    if (this.fechaAdquisicion.value == '') {
+      this.errorModificationObject = "Debe añadir una fecha válida al objeto"
+    }
+    let formData = new FormData();
+    formData.append("codigo", this.codigo.value);
+    formData.append("fechaAdquisicion", this.fechaAdquisicion.value);
+    formData.append("etiqueta", this.etiqueta.value);
+    formData.append("organizativa", this.departamento.value);
+    formData.append("mejorasEquipo", this.mejoras.value);
+    formData.append("observaciones", this.observaciones.value);
+    formData.append("Ubicacion_idUbicacion", String(this.location_id!.location.idUbicacion));
 
+    this.objectS.updateObject(this.idObjeto, formData).subscribe(
+      (res: any) => {
+        if (res.message) {
+          this.errorModificationObject = "";
+          this.successModificationObject = res.message;
+          this.cargarObjeto();
+          setTimeout(() => { this.cerrarModal() }, 2000)
+        }
+      }
+    )
+  }
+
+  getSentLocation(location_selected: number) {
+    this.location_id!.location.idUbicacion = location_selected;
   }
 
   borrarObjeto() {

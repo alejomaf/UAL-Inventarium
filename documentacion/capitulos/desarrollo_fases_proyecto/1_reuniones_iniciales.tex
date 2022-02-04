@@ -1,11 +1,11 @@
-\section{Reuniones iniciales con los clientes}
+\section{Reuniones iniciales con los clientes y especificación inicial}
 
-La reunión inicial fue con Juan Francisco Sanjuan Estrada donde me explicó los distintos objetivos que se tenía pensado para la aplicación y los puntos de vista de los técnicos. La organización, gestión y préstamos del inventario se realizaba mediante la utilización de hojas de cálculo.
-\\Dentro de las hojas de cálculo se hacía un detallado exhaustivo del objeto y también se indicaba su ubicación actual dentro del Edificio Científico Técnico III.
+La reunión inicial fue con Juan Francisco Sanjuan Estrada quien me explicó los distintos objetivos que se tenía pensado para la aplicación y los puntos de vista de los técnicos. Quienes utilizaban hojas de cálculo para gestionar el inventario y registrar los préstamos.
+\\Dentro de las hojas de cálculo se detallaban exhaustivamente los objetos y también se indicaban su ubicaciones actuales dentro del Edificio Científico Técnico III.
 \\El problema es que esto no estaba tan organizado como parecía en un principio debido a que la gestión no la realizaba únicamente un técnico sino que eran tres. Es decir, había tres filosofías distintas a la hora de ir gestionando una parte dle inventariado del Departamento de Informática.
 \\Después de estas aclaraciones Juan me comentó que no tenían un diseño en mente en el Departamento por lo que las propuestas iniciales de diseño iban a ser libres siempre y cuando se satisfacieran los requisitos principales de esta como la adición y eliminación del inventario y la concesión de préstamos.
 \vspace{\baselineskip}
-\\Luego de esta primera reunión acordamos en que podría visualizar los archivos Excel de los técnicos. Estos me compartieron sus ficheros y desde ahí pude empezar a realizar la definición de los diferentes campos que irían ligados a cada tabla en la base de datos. Desde esa primera definición de campos se haría una propuesta inicial.
+\\Luego de esta primera reunión acordamos en que podría visualizar los archivos Excel de los técnicos. Estos me compartieron sus ficheros y desde ahí pude empezar a realizar la definición de los diferentes campos que irían ligados a cada tabla en la base de datos. Desde este punto se haría una propuesta inicial.
 \\La propuesta inicial fue esta:
 
 \begin{figure}
@@ -13,13 +13,13 @@ La reunión inicial fue con Juan Francisco Sanjuan Estrada donde me explicó los
     \caption{Diseño principal de la base de datos}
 \end{figure}
 
-La lógica de la aplicación consistiría en generar un grupoobjetos de un determinado tipo, inventario o fungible, 1 o 0. Dentro de este se contendrían objetos que irían vinculados a una ubicación. También los objetos irían vinculados a una posible configuración.
+La lógica de la aplicación consistiría en generar un grupo de objetos de un determinado tipo, inventario o fungible, 1 o 0. Dentro de este se contendrían objetos que irían vinculados a una ubicación. También los objetos podrían contener una posible configuración.
 \\Esta configuración ¿para qué sirviría? Resulta que los técnicos aparte de manejar el inventariado disponible en la universidad también manejan las claves y accesos a esos determinados objetos, como puede ser el armario donde se ubiquen, sus direcciones mac o ip, las bocas de conexión con las regletas y más.
 \\Este objeto tendría la posibilidad de tener varios préstamos, aunque es verdad que sería uno activo por persona, siempre dejando un registro de los anteriores usos que se hayan realizado del mismo. Este préstamo tendría que ir ligado obligatoriamente a un usuario. Contiene un campo de ``retiradoPor'' en el caso de que un docente o investigador quiera realizar un préstamo para su alumno.
 \vspace{\baselineskip}
-\\La propuesta inicial fue aceptada por el grupo de los técnicos y por el director del proyecto así que podíamos continuar hacia adelante. Más adelante se realizaron unas modificaciones en los datos que manejarían los objetos por lo que las columnas de la tabla son las definitivas.
+\\La propuesta inicial fue aceptada por el grupo de los técnicos y por el director del proyecto así que podíamos continuar hacia adelante. Más adelante se realizaron unas modificaciones en los datos que manejarían los objetos por lo que las columnas de las tablas expuestas no serían las definitivas.
 \\Preparé las propuestas iniciales de diseño mediante la utilización de la herramiento de Adobe XD. El aprendizaje de la herramienta es rápido y fácil de usar, aparte de que ya la había empezado a utilizar unos años atrás. Adobe XD le dió un toque de frescura y profesionalidad a las propuestas de diseño.
-\\Las propuestas iniciales fueron ligadas a un diseño móvil ya que desde el primer momento se buscó que fuera responsive el sitio web. Esto influyó luego a la hora de realizar el diseño ya que se basó en un funcionamientos de ``cards'', es decir, componentes web con forma de carta y con fácil adaptabilidad a diseños móviles.
+\\Las propuestas iniciales fueron ligadas a un diseño móvil ya que desde el primer momento se buscó que la aplicación fuera responsive, es decir, que desde un dispositivo móvil fuera fácil poder utilizarla. Esto influyó luego a la hora de realizar el diseño ya que se basó en un funcionamientos de ``cards'', es decir, componentes web con forma de carta y con fácil adaptabilidad a diseños móviles.
 \\El esquema de navegación de la propuesta inicial nos quedaría tal como podemos ver en la Figura \ref{diseno_principal_sistema_navegacion}.
 \\Tenemos dos roles de usuario, un personal docente o investigador y un técnico. Después del análisis hecho en la entrevista y correos mantenidos más tarde con el cliente teníamos el siguiente resultado en la Figura \ref{funcionamiento_principal_casos_de_uso}.
 
@@ -90,13 +90,13 @@ Dentro de ella podemos ver cinco apartados que derivan en varios componentes vis
     \end{center}
 \end{figure}
 
-La única diferencia entre añadir un objeto de tipo inventario y otro fungible es que en el de inventario hay que registrar su código. Siempre que vayamos a añadir uno de estos elementos tiene que ser dentro de un \textbf{grupo de objetos} que debemos haber creado anteriormente. Por el resto son los dos idénticos y se le puede añadir el mismo tipo de información.
+La única diferencia entre añadir un objeto de tipo inventario y otro fungible es que en el de inventario hay que registrar su código. Siempre que vayamos a añadir uno de estos elementos tiene que ser dentro de un \textbf{grupo de objetos} que debemos haber creado anteriormente. Por el resto, los dos son idénticos y se le puede añadir el mismo tipo de información.
 \\No solamente tenemos fungibles e inventarios sino que también tenemos kits.
 \\Un \textbf{kit} podemos considerarlo como otro nivel de agrupación. Ya que un kit contiene más objetos dentro suyo que llamaremos ``objetos kit''. Para entender los niveles de agrupación aquí tenéis un esquema explicándolas.
 
 \begin{figure}[H]\resizebox{
-    \linewidth}{!}{
-    \includegraphics{jerarquia_grupo_objetos.png}
+        \linewidth}{!}{
+        \includegraphics{jerarquia_grupo_objetos.png}
     }
     \caption{Jerarquía de elementos que derivan de grupo de objetos}
 \end{figure}
@@ -107,9 +107,9 @@ Dentro de la sección de ``ver objetos'' de la barra de navegación nos llevará
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[scale=0.3]{web_design_adobe_xd/grupo_objetos.png}
-        \includegraphics[scale=0.3]{web_design_adobe_xd/objeto_disponible.png}
-        \caption{Grupo de objetos a la izquierda y objetos que contiene a la derecha}
+    \includegraphics[scale=0.3]{web_design_adobe_xd/grupo_objetos.png}
+    \includegraphics[scale=0.3]{web_design_adobe_xd/objeto_disponible.png}
+    \caption{Grupo de objetos a la izquierda y objetos que contiene a la derecha}
 \end{figure}
 
 \subsection{Usuarios}
@@ -139,8 +139,8 @@ Cada solicitud irá con un color representativo dependiendo de cuál sea su esta
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[scale=0.3]{web_design_adobe_xd/solicitar_prestamo.png}
-        \caption{Solicitud del préstamo de un objeto}
+    \includegraphics[scale=0.3]{web_design_adobe_xd/solicitar_prestamo.png}
+    \caption{Solicitud del préstamo de un objeto}
 \end{figure}
 
 \subsection{Configuraciones}
@@ -149,7 +149,7 @@ Un objeto puede ir ligado a una información extra o no. Esta información no es
 
 \begin{figure}[htbp]
     \centering
-        \includegraphics[scale=0.35]{web_design_adobe_xd/ver_configuracion.png}
-        \includegraphics[scale=0.3]{web_design_adobe_xd/crear_configuracion.png}
-        \caption{Visualización de los campos de configuración a la izquierda y creación de estos a la derecha}
+    \includegraphics[scale=0.35]{web_design_adobe_xd/ver_configuracion.png}
+    \includegraphics[scale=0.3]{web_design_adobe_xd/crear_configuracion.png}
+    \caption{Visualización de los campos de configuración a la izquierda y creación de estos a la derecha}
 \end{figure}

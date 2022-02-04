@@ -8,6 +8,7 @@ import { LocationsService } from 'src/app/services/locations.service';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Objeto } from 'src/app/interfaces/objeto';
 import { ObjectsService } from 'src/app/services/objects.service';
+import $ from "jquery";
 
 @Component({
   selector: 'app-modal-location-select',
@@ -19,6 +20,7 @@ export class ModalLocationSelectComponent implements OnInit {
 
   basura = faTrash;
   private routeSub!: Subscription;
+  modalLocation: any;
 
   @Output() send_location: EventEmitter<number> = new EventEmitter();
 
@@ -195,11 +197,15 @@ export class ModalLocationSelectComponent implements OnInit {
   //Modal behaviour
 
   abrirModal(content: any) {
-    this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', backdrop: 'static' });
+    this.modalLocation = this.modalService.open(content, { ariaLabelledBy: 'modal-basic-title', backdrop: 'static' });
   }
 
   cerrarModal() {
     this.modalService.dismissAll();
+  }
+
+  cerrarModalUbicacion() {
+    this.modalLocation.close();
   }
 
 

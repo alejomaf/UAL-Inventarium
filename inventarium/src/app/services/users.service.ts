@@ -12,27 +12,32 @@ export class UsersService {
   constructor(private http: HttpClient, private userService: UserService) { }
 
   getUsers() {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "usertoken": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.get(this._url, { headers: header });
   }
 
+  getUserRequests() {
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
+    return this.http.get(this._url + "/requests", { headers: header });
+  }
+
   getUser(idUser: number) {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "usertoken": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.get(this._url + "/" + idUser, { headers: header });
   }
 
   addUser(user: FormData) {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "usertoken": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.post(this._url, user);
   }
 
   deleteUser(idUser: number) {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "usertoken": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.delete(this._url + "/" + idUser, { headers: header });
   }
 
   updateUser(user: FormData, idUsuario: number) {
-    let header = new HttpHeaders(({ 'Content-Type': 'application/json', "usertoken": this.userService.getToken() }));
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.put(this._url + "/" + idUsuario, user, { headers: header });
   }
 
@@ -54,5 +59,10 @@ export class UsersService {
   confirmarUsuario(token: string, number: string, userId: number) {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.post(this._url + "/confirmar-registro/" + token + "/" + number + "/" + userId, null);
+  }
+
+  cambiarContrasena(user: FormData) {
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
+    return this.http.post(this._url + "/change-password", user, { headers: header });
   }
 }

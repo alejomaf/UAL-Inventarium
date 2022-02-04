@@ -1,0 +1,93 @@
+This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: build/main.aux
+The style file: apacite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: bibliografia/bibliografia.bib
+Warning--entry type for "clean-architecture" isn't style-file defined
+--line 1 of file bibliografia/bibliografia.bib
+Warning--entry type for "proxy-reverse" isn't style-file defined
+--line 16 of file bibliografia/bibliografia.bib
+Warning--entry type for "nginx-routing" isn't style-file defined
+--line 22 of file bibliografia/bibliografia.bib
+Warning--entry type for "google-cloud-documentation" isn't style-file defined
+--line 28 of file bibliografia/bibliografia.bib
+Warning--entry type for "ssh-connection" isn't style-file defined
+--line 34 of file bibliografia/bibliografia.bib
+Warning--entry type for "ieee-software-architecture" isn't style-file defined
+--line 41 of file bibliografia/bibliografia.bib
+Warning--entry type for "api-definition" isn't style-file defined
+--line 48 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-components" isn't style-file defined
+--line 55 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-services" isn't style-file defined
+--line 62 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-interfaces" isn't style-file defined
+--line 68 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-routing" isn't style-file defined
+--line 74 of file bibliografia/bibliografia.bib
+Warning--entry type for "angular-file-structure" isn't style-file defined
+--line 80 of file bibliografia/bibliografia.bib
+Warning--entry type for "postman-testing" isn't style-file defined
+--line 86 of file bibliografia/bibliografia.bib
+Warning--entry type for "selenium-testing" isn't style-file defined
+--line 93 of file bibliografia/bibliografia.bib
+Warning--entry type for "chrome-testing" isn't style-file defined
+--line 100 of file bibliografia/bibliografia.bib
+Warning--entry type for "docker-compose-create" isn't style-file defined
+--line 106 of file bibliografia/bibliografia.bib
+Warning--entry type for "docker-nodejs" isn't style-file defined
+--line 112 of file bibliografia/bibliografia.bib
+Warning--entry type for "node-express" isn't style-file defined
+--line 119 of file bibliografia/bibliografia.bib
+apacite.bst [2013/07/21 v6.03 APA bibliography style]
+You've used 19 entries,
+            6951 wiz_defined-function locations,
+            1351 strings with 13260 characters,
+and the built_in function-call counts, 31489 in all, are:
+= -- 4572
+> -- 193
+< -- 1128
++ -- 980
+- -- 59
+* -- 1517
+:= -- 4682
+add.period$ -- 76
+call.type$ -- 19
+change.case$ -- 206
+chr.to.int$ -- 0
+cite$ -- 38
+duplicate$ -- 632
+empty$ -- 1316
+format.name$ -- 274
+if$ -- 6719
+int.to.chr$ -- 0
+int.to.str$ -- 67
+missing$ -- 0
+newline$ -- 423
+num.names$ -- 152
+pop$ -- 384
+preamble$ -- 1
+purify$ -- 67
+quote$ -- 0
+skip$ -- 3195
+stack$ -- 0
+substring$ -- 1079
+swap$ -- 301
+text.length$ -- 38
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 2816
+warning$ -- 0
+while$ -- 94
+width$ -- 0
+write$ -- 460
+(There were 18 warnings)

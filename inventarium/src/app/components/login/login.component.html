@@ -9,7 +9,7 @@
         <div class="form-group">
             <label class="font-italic">Contraseña</label>
             <input type="password" [formControl]="password" placeholder="Ingrese su contraseña" class="form-control"
-                required>
+                (keydown.enter)="login()" required>
         </div>
         <div *ngIf="error" class="alert alert-warning my-2" role="alert">
             Contraseña o nombre de usuario erróneos

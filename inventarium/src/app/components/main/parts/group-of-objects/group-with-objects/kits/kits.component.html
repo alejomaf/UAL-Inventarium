@@ -1,19 +1,19 @@
 <div class="row d-flex-inline justify-content-center">
-    <div class="card border rounded p-3 m-2 bg-light" style="width: 18rem;">
+    <div class="card rounded p-3 m-2" style="width: 18rem;">
         <div class="card-title">
             <h5 style="cursor:pointer" class="card-title text-dark text-center">
                 Crear objetos que contiene el kit
             </h5>
         </div>
         <div class="d-grid gap-2">
-            <div class="btn btn-primary btn-block" (click)="abrirModal(crearKitModal)">
+            <div class="btn btn-primary btn-block" (click)="modalCrearKit(crearKitModal)">
                 Crear objeto de kit
             </div>
         </div>
     </div>
 </div>
 
-<div class="row d-flex-inline justify-content-center">
+<div class="container d-flex flex-wrap align-items-center">
     <!--Contenido-->
     <div *ngFor="let kit of object_kits">
         <app-kit>
@@ -22,10 +22,11 @@
             <span cantidad>{{kit.cantidad}}</span>
             <span observaciones>{{kit.observaciones}}</span>
             <div botones class="card-body d-grid gap-2">
-                <div class="btn btn-secondary btn-block" (click)="modificarObjetoKit()">Modificar kit
+                <div class="btn btn-secondary btn-block" (click)="modalModificarKit(crearKitModal, kit)">
+                    Modificar kit
                 </div>
-                <div class="btn btn-light btn-block">Borrar grupo de
-                    objetos
+                <div class="btn btn-light btn-block" (click)="modalBorrarKit(confirmationModal, kit)">
+                    Borrar kit
                 </div>
             </div>
         </app-kit>
@@ -56,12 +57,28 @@
             <label>Observaciones:</label>
             <input type="text" [formControl]="observaciones" placeholder="SDXC 3 10" class="form-control" />
         </div>
+        <div *ngIf="errorKit!=''" class="alert alert-warning my-2" role="alert">
+            {{errorKit}}
+        </div>
+        <div *ngIf="successKit!=''" class="alert alert-success my-2" role="alert">
+            {{successKit}}
+        </div>
         <div class="d-grid gap-2">
-            <a class="btn btn-secondary" (click)="modificarObjetoKit()">Modificar
+            <a *ngIf="!isCreacion" class="btn btn-secondary" (click)="modificarObjetoKit()">Modificar
                 objeto del kit</a>
-            <a class="btn btn-secondary" (click)="crearObjetoKit()">Crear
+            <a *ngIf="isCreacion" class="btn btn-secondary" (click)="crearObjetoKit()">Crear
                 objeto del kit</a>
             <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
         </div>
+    </div>
+</ng-template>
+
+<!-- Modal for deleting the group of objects -->
+<ng-template #confirmationModal class="modal">
+    <div class="d-grid gap-2 p-3">
+        <h2>¿Seguro que quiere borrar el kit?</h2>
+        <div class="btn btn-primary" boton (click)="eliminarObjetoKit()">Borrar kit
+        </div>
+        <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
     </div>
 </ng-template>

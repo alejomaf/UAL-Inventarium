@@ -1,1 +1,17 @@
 \chapter{Conclusiones y posibles mejoras}
+\section{Posibles mejoras}
+Una de las posibles mejoras que contemplé al inicio del desarrollo del proyecto era la factorización de la aplicación. Es decir, poder añadirle una capa extra de generalización a todos los componentes utilizados.
+\\Estas modificaciones conllevaría que podría registrarse un sistema de gestión de inventarios y que cada uno de estos gestionaría sus propios usuarios. Esto implicaría tener que habilitar nuevos end-points al sitio web y más complciado aún, habría que pensar en una forma de generalizar la información que se almacenara en cada uno de los componentes.
+\\La siguiente mejora era más viable: implementar un gestor de notificaciones. Un gestor de notificaciones hubiera ayudado en el aviso de acciones de concesión, rechazo, creación y caducidad de préstamos tanto para los usuarios como para los técnicos.
+\\También se hubiera podido utilziar en el momento de generación y creación de nuevos objetos para que los usuarios vieran la disponibilidad y adquisiciones de inventario del departamento.
+\\La tercera y última modificación va muy relacionada con la primera que he comentado. Esta sería la de poder generalizar la creación y manipulación de subcomponentes en un grupo de objetos. Consistiría en permitir la creación de una capa de aislamiento de cada objeto. Con esto no haría falta tener que diferenciar únicamente entre inventario, fungible o kit sino que de esto ya se encargaría Inventarium.
+\section{Conclusiones}
+La conclusión de un trabajo a la que le he puesto tanta dedicación se me hace un poco complicado.
+\\Durante el desarrollo de este proyecto he podido ir aprendiendo aspectos muy importantes dentro del desarrollo de aplicaciones. Además he podido unir los distintos aprendizajes que he obtenido en el Grado y utilizarlos en gran medida en cada una de las distintas tecnologías y apartados de la aplicación.
+\\En un principio deseaba poder tener una herramienta que con tan solo escribir una línea en la terminal:
+\begin{verbatim}
+    docker compose up
+\end{verbatim}
+Pudieramos tener una aplicación en su totalidad, con base de datos, API, servidor web y más adiciones que he podido realizar posteriormente en el desarrollo del complemento de este trabajo.
+\\Creo que el resultado final no difiere mucho de lo que en un momento quería tener. Un sistema que es capaz de implementar una persona que utilice el ordenador para ofimática y navegación web. Una herramienta fácil y accesible por todos.
+\\Una bonita definición de lo que es la ingeniería.

@@ -107,6 +107,17 @@ router.get('/mainUser', (req, res) => {
     .catch(err => console.log(err));
 });
 
+
+/* GET usuario. */
+router.get('/requests', async function (req, res, next) {
+  try {
+    res.json(await usuarios.getUserRequests(req.query.page));
+  } catch (err) {
+    console.error(`Error while getting usuarios `, err.message);
+    next(err);
+  }
+});
+
 /* GET usuario. */
 router.get('/', async function (req, res, next) {
   try {
@@ -114,6 +125,35 @@ router.get('/', async function (req, res, next) {
   } catch (err) {
     console.error(`Error while getting usuario `, err.message);
     next(err);
+  }
+});
+
+/* Change password. */
+router.post('/change-password', async function (req, res, next) {
+  const usuario = await usuarios.getById(req.userId);
+
+  if (usuario === undefined) {
+    res.json({
+      error: "Usuario no encontrado"
+    });
+    return;
+  } else {
+    if (!bcrypt.compareSync(req.fields.oldpass, usuario.contrasena)) { //req.fields.contrasena != usuario.contrasena
+      res.json({
+        error: "Contraseña incorrecta"
+      });
+    } else {
+      try {
+        req.fields.newpass = bcrypt.hashSync(req.fields.newpass, 10); //ENCRIPTACIÓN DE LA CONTRASEÑA ACTIVADA
+        await usuarios.cambiarContrasena(req.userId, req.fields.newpass);
+      } catch (err) {
+        res.json({ error: err.message });
+        return;
+      }
+      res.json({
+        done: "Cambio de contraseña realizado"
+      });
+    }
   }
 });
 

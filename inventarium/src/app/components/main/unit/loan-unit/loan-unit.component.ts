@@ -3,11 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Objeto } from 'src/app/interfaces/objeto';
 import { Prestado } from 'src/app/interfaces/prestado';
 import { Usuario } from 'src/app/interfaces/usuario';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { LoansService } from 'src/app/services/loans.service';
 import { ObjectsService } from 'src/app/services/objects.service';
-import { UserService } from 'src/app/services/user.service';
 import { UsersService } from 'src/app/services/users.service';
-import { VerticalNavbarComponent } from '../../vertical-navbar/vertical-navbar.component';
 
 @Component({
   selector: 'app-loan-unit',
@@ -22,14 +21,10 @@ export class LoanUnitComponent implements OnInit {
   objeto_prestamo?: Objeto
   usuario_prestamo?: Usuario
 
-  constructor(private route: ActivatedRoute, private loansS: LoansService, private loginS: UserService, private usersS: UsersService, private objectS: ObjectsService, private router: Router) {
+  constructor(private route: ActivatedRoute, private loansS: LoansService, private authS: AuthGuardService, private usersS: UsersService, private objectS: ObjectsService, private router: Router) {
     this.idPrestamo = route.snapshot.params['id'];
 
-    loginS.getUser().subscribe(
-      (res: any) => {
-        this.usuario = res;
-      }
-    );
+    this.usuario = authS.getCurrentUser();
     this.loansS.getLoan(this.idPrestamo!).subscribe(
       (res: any) => {
         this.prestamo = res.data[0];

@@ -1,32 +1,15 @@
-<div class="row justify-content-center">
-    <div class="card bg-light mx-2 my-2 position-sticky" style="width:18rem;">
-        <div class="align-self-center">
-            <span style="font-size:200px;">
-                <fa-icon [icon]="activos"></fa-icon>
-            </span>
-        </div>
-        <div class="card-body d-grid gap-2">
-            <a routerLink="/loan-requests/active-loans" class="btn btn-primary btn-block">Préstamos activos</a>
-        </div>
-    </div>
-    <div class="card bg-light mx-2 my-2 position-sticky" style="width:18rem;">
-        <div class="align-self-center">
-            <span style="font-size:200px;">
-                <fa-icon [icon]="pendientes"></fa-icon>
-            </span>
-        </div>
-        <div class="card-body d-grid gap-2">
-            <a routerLink="/loan-requests/pending-loans" class="btn btn-primary btn-block">Préstamos pendientes</a>
-        </div>
-    </div>
-    <div class="card bg-light mx-2 my-2 position-sticky" style="width:18rem;">
-        <div class="align-self-center">
-            <span style="font-size:200px;">
-                <fa-icon [icon]="devolver"></fa-icon>
-            </span>
-        </div>
-        <div class="card-body d-grid gap-2">
-            <a routerLink="/loan-requests/expired-loans" class="btn btn-primary btn-block">Préstamos por devolver</a>
-        </div>
-    </div>
+<div class="row d-flex-inline justify-content-center">
+    <app-box-link style="width: fit-content;">
+        <fa-icon imagen [icon]="activos"></fa-icon>
+        <a routerLink="/loan-requests/active-loans" botones class="btn btn-primary btn-block">Préstamos activos</a>
+    </app-box-link>
+    <app-box-link style="width: fit-content;">
+        <fa-icon imagen [icon]="pendientes"></fa-icon>
+        <a routerLink="/loan-requests/pending-loans" botones class="btn btn-primary btn-block">Préstamos pendientes</a>
+    </app-box-link>
+    <app-box-link style="width: fit-content;">
+        <fa-icon imagen [icon]="devolver"></fa-icon>
+        <a routerLink="/loan-requests/expired-loans" botones class="btn btn-primary btn-block">Préstamos por
+            devolver</a>
+    </app-box-link>
 </div>

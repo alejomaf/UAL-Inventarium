@@ -8,7 +8,7 @@ async function getMultiple(page = 1) {
   const offset = helper.getOffset(page, config.listPerPage);
   const rows = await db.query(
     `SELECT idUsuario, nombre, contrasena, correoElectronico, rango, departamento, telefono 
-    FROM usuario LIMIT ?,?`,
+    FROM usuario WHERE rango >= 0 LIMIT ?,?`,
     [offset, config.listPerPage]
   );
   const data = helper.emptyOrRows(rows);
@@ -34,6 +34,21 @@ async function getById(idUsuario) {
     FROM usuario WHERE idUsuario = ?`, [idUsuario]
   );
   return usuario[0];
+}
+
+async function getUserRequests(page = 1) {
+  const offset = helper.getOffset(page, config.listPerPage);
+  const rows = await db.query(
+    `SELECT idUsuario, nombre, correoElectronico, contrasena, rango, departamento, telefono
+    FROM usuario WHERE rango = -1`
+  );
+  const data = helper.emptyOrRows(rows);
+  const meta = { page };
+
+  return {
+    data,
+    meta
+  }
 }
 
 async function create(usuario) {
@@ -173,6 +188,22 @@ async function convertirEnTecnico(idUsuario) {
   return { message, result };
 }
 
+async function cambiarContrasena(idUsuario, nuevaContrasena) {
+  const result = await db.query(
+    `UPDATE usuario 
+    SET contrasena=?
+    WHERE idUsuario=?`,
+    [
+      nuevaContrasena, idUsuario
+    ]
+  );
+  let message = 'Error in updating usuario';
+  if (result.affectedRows) {
+    message = 'usuario updated successfully';
+  }
+  return { message, result };
+}
+
 
 
 module.exports = {
@@ -187,4 +218,6 @@ module.exports = {
   darDeBaja,
   convertirEnTecnico,
   confirmarRegistro,
+  cambiarContrasena,
+  getUserRequests,
 }

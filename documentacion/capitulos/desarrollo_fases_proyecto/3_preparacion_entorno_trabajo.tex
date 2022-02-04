@@ -3,31 +3,31 @@
 La preparación del entorno de trabajo es una de las secciones que me hacen especial ilusión de este trabajo. Como decía Robert Owen, un reconocido empresario galés, en el siglo XVIII:
 
 \begin{displayquote}
-Mejorando el entorno se mejora al hombre.
+    Mejorando el entorno se mejora al hombre.
 \end{displayquote}
 
-En nuestro caso en vez de hombre podría ir mi nombre, ya que me ha ahorrado mucho tiempo esta preparación previa, o, el proyecto.
+El desarrollo de esta preparación previa ha supuesto un ahorro de tiempo bastante grande para el proyecto.
 \\Esta sección irá estructurada en consonancia a la cronología de creación de cada parte del entorno. Empezamos por la semilla de todo: Github.
 
 \subsection{GitHub}
 Realizaremos la creación de nuestro proyecto en GitHub. Esto se hace de forma muy rápida y fácil.
 
 \begin{enumerate}
-    \item Nos dirigimos a la dirección de \url{github.com} 
-    \begin{figure}[htbp]
-        \centering
-            \includegraphics[scale=0.3]{preparacion_entorno/pagina_principal_github.png}
-            \caption{Página principal de GitHub}
-    \end{figure}
+    \item Nos dirigimos a la dirección de \url{github.com}
+          \begin{figure}[htbp]
+              \centering
+              \includegraphics[scale=0.3]{preparacion_entorno/pagina_principal_github.png}
+              \caption{Página principal de GitHub}
+          \end{figure}
     \item En la parte superior derecha nos aparece ``Sign up'' donde clicaremos y nos permitirá registrarnos dentro de la web.
-    \item Una vez registrados volvemos a \url{github.com} y clicamos a la izquierda de ``Sign up'' que pone ``Sign in'' donde nos registraremos.
+    \item Una vez registrados volvemos a \url{github.com} y clicamos a la izquierda de ``Sign up'' que pone ``Sign in'' donde iniciaremos sesión.
     \item Cuando hayamos iniciado sesión nos dirigiremos a la parte superior izquierda y clicaremos en ``new'' para crear un nuevo repositorio.
     \item Rellenamos los campos que nos solicitan para crear un nuevo repositorio. Le damos el nombre de Inventarium y seleccionamos la opción para que el repositorio sea privado. También procedemos a añadirle un readme al archivo para poder describir partes del proyecto dentro de este. Por último pulsamos el botón ``Create repository''.
-    \begin{figure}[htbp]
-        \centering
-            \includegraphics[scale=0.4]{preparacion_entorno/creando_nuevo_repositorio.png}
-            \caption{Creando un nuevo repositorio dentro de GitHub}
-    \end{figure}
+          \begin{figure}[htbp]
+              \centering
+              \includegraphics[scale=0.4]{preparacion_entorno/creando_nuevo_repositorio.png}
+              \caption{Creando un nuevo repositorio dentro de GitHub}
+          \end{figure}
 \end{enumerate}
 
 Con estos sencillos pasos ya tendríamos creado nuestro repositorio.
@@ -39,15 +39,15 @@ Hoy en día lo nuevo y a lo que nos dirigimos es la nube. Dentro de ella se pret
 \\Las ventajas son enormes aunque solo nos centraremos en las que para mí implican mayor relevancia.
 \\El tener ya un repositorio generado con nuestro proyecto subido dentro de él ya nos aporta bastante autonomía ya que podemos acceder a él y descargar nuestros datos desde cualquier lugar. Pero, ¿y configurarlo?
 \\Aquí viene una problemática que no nos resuelve un entorno de repositorios. El tener que configurarlo todo cada vez que queremos trabajar desde un sitio distinto. Esto nos lo resuelven las máquinas virtuales en la nube. El generar un directorio de trabajo donde poder conectar nuestro Visual Studio Code y olvidarnos de preocupaciones.
-\\Lo segundo que me parece más importante es el ahorro de memoria tanto de RAM como de disco y de procesos que se origina al hacer esto. No es lo mismo tener que trabajar con un portátil conectado todo el día a un enchufe que poder ir llevándotelo contigo por el escaso consumo de su batería. Peor si es una torre, solo puedes trabajar desde un único sitio, con la problemática también de que siempre se te puede cortar la luz, y más en una zona de pueblo de sierra como es la mía, suele ocurrir una vez cada dos semanas.
+\\Lo segundo que me parece más importante es el ahorro de memoria tanto de RAM como de disco y de procesos que se origina al hacer esto. No es lo mismo tener que trabajar con un portátil conectado todo el día a un enchufe que poder ir llevándotelo contigo durante todo el día por el escaso consumo de batería que tiene. Peor si es una torre, solo puedes trabajar desde un único sitio, con la problemática también de que siempre se te puede ir la luz, y más en una zona de pueblo de sierra como es la mía, suele ocurrir una vez cada dos semanas.
 \\Estas ventajas expuesta son las que personalmente me favorecen a mí, pero ¿y si trabajara con un equipo? El poder tener varios compañeros de un mismo equipo trabajando en el mismo proyecto, tocando los distintos componentes que se están desarrollando dentro de tu aplicación es fantástico.
 
 \subsubsection{Crear una máquina virtual en Google Cloud}
-Los pasos para la creación de una máquina virtual son sencillos:
+Los pasos para la creación de una máquina virtual son:
 
 \begin{enumerate}
-    \item Los pasos para el registro son fáciles de realizar al ser la herramienta propiedad de Google. Omitiremos este paso.
-    \item Google Cloud se organiza mediante proyectos. Esto brinda facilidades a la hora de calcular el consumo que vamos a tener por el uso de la computación en la nube. Aparte de poder facilitar la búsqueda por cada proyecto que tengamos activo. Procederemos a crear un nuevo proyecto clicando arriba a la izquierda a la derecha del título de la página y posteriormente clicamos en nuevo proyecto.
+    \item El registro es fácil de realizar ya que la herramienta es propiedad de Google. Omitiremos este paso.
+    \item Google Cloud se organiza mediante proyectos. Esto brinda facilidades a la hora de calcular el gasto que vamos a tener por el uso de la computación en la nube. Aparte de poder facilitar la búsqueda por cada proyecto que tengamos activo. Procederemos a crear un nuevo proyecto clicando arriba a la izquierda a la derecha del título de la página y posteriormente clicamos en nuevo proyecto.
     \item Luego desplegaremos la barra lateral de la izquierda y nos dirigiremos al apartado de Compute Engine.
     \item Clicamos en crear instancia. A la hora de rellenar los parámetros he comprobado que no hay que darle demasiada importancia a la zona o región donde se ubique nuestra máquina. Esta funciona a una velocidad bastante decente. En el apartado de configuración de máquina con 2GB de RAM y 1VCPU tendremos suficiente. El tamaño del disco eligiremos que sea de 20GB. Dentro de la sección Firewall habilitaremos el tráfico HTTP y HTTPS. Y pulsamos en crear.
     \item Después de haber creado la máquina le asignaremos una IP estática pública que la usaremos para conectarnos a ella mediante SSH.

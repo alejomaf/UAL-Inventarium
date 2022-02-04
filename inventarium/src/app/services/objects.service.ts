@@ -16,6 +16,11 @@ export class ObjectsService {
     return this.http.get(this._url + "/" + idGrupoObjetos, { headers: header });
   }
 
+  getAllObjects(idUbicacion: string, mejorasEquipo: string, codigo: string, observaciones: string, etiqueta: string, organizativa: string) {
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
+    return this.http.get(this._url + "/", { headers: header, params: { 'idUbicacion': idUbicacion, 'mejorasEquipo': mejorasEquipo, 'codigo': codigo, 'observaciones': observaciones, 'etiqueta': etiqueta, 'organizativa': organizativa } });
+  }
+
   getObject(idObjeto: number) {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.get(this._url + "/id/" + idObjeto, { headers: header });
@@ -36,9 +41,9 @@ export class ObjectsService {
     return this.http.delete(this._url + "/" + idObjetos, { headers: header });
   }
 
-  updateObject(object: Objeto) {
+  updateObject(idObjeto: number, objeto: FormData) {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
-    return this.http.put(this._url + "/" + object.idObjeto, object, { headers: header });
+    return this.http.put(this._url + "/" + idObjeto, objeto, { headers: header });
   }
 
   getObjectsWithConfiguration() {

@@ -1,0 +1,93 @@
+<div class="card" style="width: 100%;">
+    <div class="form-group row p-2">
+        <label class="col-sm-2 mx-4 col-form-label"><b>Ubicación</b></label>
+        <div class="col-sm-8">
+            <app-modal-location-select (send_location)="getSentLocation($event)"></app-modal-location-select>
+        </div>
+    </div>
+    <div class="form-group row p-2">
+        <label class="col-sm-2 mx-4 col-form-label"><b>Código</b></label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [formControl]="codigo" placeholder="Código">
+        </div>
+    </div>
+    <div class="form-group row p-2">
+        <label class="col-sm-2 mx-4 col-form-label"><b>Mejoras del equipo</b></label>
+        <div class="col-sm-8">
+            <input type="text" class="form-control" [formControl]="mejoras" placeholder="Mejoras del equipo">
+        </div>
+    </div>
+    <div class="form-group row p-2">
+        <label class="col-sm-2 mx-4 col-form-label"><b>Etiqueta</b></label>
+        <div class="col-sm-8">
+            <input type="text" [formControl]="etiqueta" placeholder="Etiqueta del equipo" class="form-control">
+        </div>
+    </div>
+    <div class="form-group row p-2">
+        <label class="col-sm-2 mx-4 col-form-label"><b>Organizativa</b></label>
+        <div class="col-sm-8">
+            <select class="form-control" [formControl]="organizativa">
+                <option value="">Ninguna opción seleccionada</option>
+                <option value=0>Departamento de informática</option>
+                <option value=1>Ingeniería de sistemas y automática</option>
+                <option value=2>Lenguaje y sistemas informáticos</option>
+                <option value=3>Ciencias de la computación e inteligencia artificial</option>
+                <option value=4>Arquitectura y tecnología de computadores</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group row p-2">
+        <label class="col-sm-2 mx-4 col-form-label"><b>Observaciones</b></label>
+        <div class="col-sm-8">
+            <input type="text" [formControl]="observaciones" placeholder="Observaciones del equipo"
+                class="form-control">
+        </div>
+    </div>
+    <div *ngIf="error!=''" class="alert alert-warning m-2" role="alert">
+        {{error}}
+    </div>
+    <button type="button" (click)="buscar()" class="btn btn-dark btn-block btn-block m-1">Buscar</button>
+</div>
+
+<div class="row d-flex-inline">
+    <!--Contenido-->
+    <div *ngFor="let obj of objects;  let i = index" class="my-3" style="width: 32vh;">
+        <app-object *ngIf="paginacion(i)">
+            <h5 nombre style="cursor:pointer" class="card-title text-dark text-center"
+                routerLink="/object/{{obj.idObjeto}}">
+                {{obj.nombre}} con id {{obj.idObjeto}}
+            </h5>
+            <span ubicacion>{{obj.ubicacion}}</span>
+            <span planta>{{obj.planta}}</span>
+            <span edificio>{{obj.edificio}}</span>
+            <span fechaAdquisicion>{{obj.fechaAdquisicion}}</span>
+            <span codigo>{{obj.codigo}}</span>
+            <span mejorasEquipo>{{obj.mejorasEquipo}}</span>
+        </app-object>
+    </div>
+</div>
+<div *ngIf="paginasTotales > 1" class="row d-flex-inline justify-content-center m-2">
+    <div>
+        <div class="row">
+            <div [style.visibility]="(paginaActual > 0) ? 'unset' : 'hidden'" class="col-12 col-sm-5 col-md-5">
+                <div class="previous d-grid gap-2">
+                    <button type="button" class="btn btn-dark" (click)="paginaActual = paginaActual - 1;">
+                        <fa-icon [icon]="flechaDerecha"></fa-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="bg-light col-12 col-sm-1 col-md-1 rounded-circle text-center"
+                style="font-size: x-large; font-weight: bold;">
+                {{paginaActual}}
+            </div>
+            <div [style.visibility]="(paginaActual < paginasTotales-1) ? 'unset' : 'hidden'"
+                class="col-12 col-sm-5 col-md-5">
+                <div class="next d-grid gap-2">
+                    <button type="button" class="btn btn-dark" (click)="paginaActual = paginaActual + 1">
+                        <fa-icon [icon]="flechaIzquierda"></fa-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -10,14 +10,14 @@
         <span codigo>{{objeto?.codigo}}</span>
         <span mejorasEquipo>{{objeto?.mejorasEquipo}}</span>
         <div botones class="card-body d-grid gap-2">
-            <div class="btn btn-secondary btn-block" (click)="modificarObjeto()">Modificar objeto
+            <div class="btn btn-secondary btn-block" (click)="abrirModal(modifyObjectModal)">Modificar objeto
             </div>
-            <div class="btn btn-danger btn-block" (click)="borrarObjeto()">Borrar objeto
+            <div class="btn btn-danger btn-block" (click)="abrirModal(confirmationModal)">Borrar objeto
             </div>
         </div>
     </app-object>
 
-    <div class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+    <div class="card rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
         <div style="width: 100%;" class="card-title">
             <h5 class="card-title text-dark text-center">
                 Préstamos del objeto
@@ -38,8 +38,10 @@
     </div>
 
     <app-group-of-object>
-        <img imagen class="card-img-top rounded-circle" style="cursor:pointer"
-            src="http://localhost:3000/images/{{grupoObjeto?.imagen}}.jpg">
+        <img *ngIf="grupoObjeto?.imagen != null" imagen class="card-img-top rounded-circle"
+            style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{grupoObjeto?.imagen}}.jpg">
+        <img *ngIf="grupoObjeto?.imagen == null" imagen class="card-img-top rounded-circle" style="height:180px;"
+            src="./assets/icons/no-photo.svg">
         <h5 nombre [routerLink]="['/group-of-object', grupoObjeto?.idGrupoObjetos]" style="cursor:pointer"
             class="card-title text-dark text-center">{{grupoObjeto?.nombre}}</h5>
         <span cantidad>{{grupoObjeto?.cantidad}}</span>
@@ -51,7 +53,7 @@
         <span *ngIf="grupoObjeto?.tipo==2" tipo>Kit</span>
     </app-group-of-object>
 
-    <app-configuration *ngIf="configuracion!=null">
+    <app-configuration *ngIf="configuracion!=null && configuracion!=undefined">
         <li *ngIf="configuracion?.ip!=''" ip class="list-group-item bg-light">
             <b>IP</b>
             <a>: {{configuracion?.ip}}</a>
@@ -79,12 +81,12 @@
         <div botones class="card-body d-grid gap-2">
             <div class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Modificar configuración
             </div>
-            <div class="btn btn-primary btn-block" (click)="borrarConfiguracion()">Borrar configuración
+            <div class="btn btn-danger btn-block" (click)="borrarConfiguracion()">Borrar configuración
             </div>
         </div>
     </app-configuration>
 
-    <div *ngIf="configuracion==null" class="card border rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
+    <div *ngIf="configuracion==null" class="card rounded p-3 m-2" style="width: 18rem;background-color:#FDF7FF;">
         <div style="width: 100%;" class="card-title">
             <h5 class="card-title text-dark text-center">
                 Configuración
@@ -136,6 +138,74 @@
                 configuración</a>
             <a *ngIf="configuracion==null" class="btn btn-secondary" (click)="crearConfiguracion()">Crear
                 configuración</a>
+            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        </div>
+    </div>
+</ng-template>
+
+<!-- Modal for deleting the group of objects -->
+<ng-template #confirmationModal class="modal">
+    <div class="d-grid gap-2 p-3">
+        <h2>¿Seguro que quiere borrar objeto?</h2>
+        <p>Si lo borra se cancelarán los préstamos actuales relacionados con este. Luego de esta
+            acción no se puede volver a recuperar el objeto.</p>
+        <div class="btn btn-success" boton (click)="borrarObjeto()">Borrar objeto
+        </div>
+        <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+    </div>
+</ng-template>
+
+<!-- Modal for making a loan request -->
+<ng-template #modifyObjectModal class="modal">
+    <div class="p-2">
+        <div class="col-md-12 mb-3">
+            <label>Código</label>
+            <input type="number" [formControl]="codigo" placeholder="Código del inventario" class="form-control" />
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Fecha de adquisición</label>
+            <input type="date" [formControl]="fechaAdquisicion" value="date:'yyyy-MM-dd'" class="form-control">
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Etiqueta</label>
+            <input type="text" [formControl]="etiqueta" placeholder="Etiqueta del equipo" class="form-control">
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <label>Área</label>
+            <select class="form-control" [formControl]="departamento">
+                <option value=0>Departamento de informática</option>
+                <option value=1>Ingeniería de sistemas y automática</option>
+                <option value=2>Lenguaje y sistemas informáticos</option>
+                <option value=3>Ciencias de la computación e inteligencia artificial</option>
+                <option value=4>Arquitectura y tecnología de computadores</option>
+            </select>
+        </div>
+
+        <div class="col-md-12 mb-3">
+            <label>Mejoras en el equipo</label>
+            <input type="text" [formControl]="mejoras" placeholder="Mejoras en el equipo" class="form-control">
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Observaciones</label>
+            <input type="text" [formControl]="observaciones" placeholder="Observaciones del equipo"
+                class="form-control">
+        </div>
+
+        <div *ngIf="errorModificationObject!=''" class="alert alert-warning my-2" role="alert">
+            {{errorModificationObject}}
+        </div>
+        <div *ngIf="successModificationObject!=''" class="alert alert-success my-2" role="alert">
+            {{successModificationObject}}
+        </div>
+        <div class="col-md-12 mb-3">
+            <label>Ubicación</label>
+            <app-modal-location-select [location_selected]='location_id' (send_location)="getSentLocation($event)">
+            </app-modal-location-select>
+        </div>
+        <div class="d-grid gap-2">
+            <a class="btn btn-success" (click)="modificarObjeto()">Modificar
+                objeto</a>
             <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
         </div>
     </div>

@@ -15,6 +15,7 @@ import { DashboardComponent } from './components/main/parts/dashboard/dashboard.
 import { GroupOfObjectsComponent } from './components/main/parts/group-of-objects/group-of-objects.component';
 import { GroupWithObjectsComponent } from './components/main/parts/group-of-objects/group-with-objects/group-with-objects.component';
 import { KitsComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kits.component';
+import { ObjectSearchComponent } from './components/main/parts/group-of-objects/objects/object-search/object-search.component';
 import { ObjectComponent } from './components/main/parts/group-of-objects/objects/object/object.component';
 import { ObjectsComponent } from './components/main/parts/group-of-objects/objects/objects.component';
 import { LoansComponent } from './components/main/parts/loans/loans.component';
@@ -39,7 +40,7 @@ import { AuthGuardService } from './services/auth-guard.service';
 
 const routes: Routes = [
   {
-    path: '', component: MainComponent, canActivate: [AuthGuardService], canActivateChild: [AuthGuardService],
+    path: '', component: MainComponent, canActivate: [AuthGuardService],
     children: [
       { path: 'dashboard', component: DashboardComponent },
       {
@@ -59,6 +60,7 @@ const routes: Routes = [
           { path: 'kits', component: KitsComponent },
         ]
       },
+      { path: 'object-search', component: ObjectSearchComponent },
       { path: 'requests', component: RequestsComponent },
       { path: 'user-requests', component: UserRequestsComponent },
       { path: 'loan-requests', component: LoanRequestsComponent },
@@ -71,9 +73,10 @@ const routes: Routes = [
       { path: 'profile', component: ProfileComponent },
       { path: 'my-loans', component: MyLoansComponent },
       { path: 'loans/:id', component: LoansComponent },
+      { path: 'loans/user/:id', component: MyLoansComponent },
       { path: 'object/:id', component: ObjectUnitComponent },
       { path: 'user/:id', component: UserUnitComponent },
-      { path: 'loan/:id', component: LoanUnitComponent }
+      { path: 'loan/:id', component: LoanUnitComponent },
     ]
   },
   { path: 'login', component: LoginComponent },

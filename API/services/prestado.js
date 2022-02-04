@@ -38,10 +38,24 @@ async function getMultipleByObject(idObjeto, page = 1) {
 
 async function getById(idPrestamo) {
   const rows = await db.query(
-    `SELECT date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
+    `SELECT disponible, date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
     date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, usuario.nombre, idPrestado, grupoobjetos.nombre as 'nombre_grupo_objetos'
     FROM prestado, usuario, grupoobjetos, objeto WHERE idPrestado = ? AND prestado.Objeto_idObjeto = objeto.idObjeto AND prestado.Usuario_idUsuario = usuario.idUsuario AND grupoobjetos.idGrupoObjetos = objeto.GrupoObjetos_idGrupoObjetos`,
     [idPrestamo]
+  );
+  const data = helper.emptyOrRows(rows);
+
+  return {
+    data
+  }
+}
+
+async function getByUserId(idUsuario) {
+  const rows = await db.query(
+    `SELECT disponible, date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
+    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, usuario.nombre, idPrestado, grupoobjetos.nombre as 'nombre_grupo_objetos'
+    FROM prestado, usuario, grupoobjetos, objeto WHERE prestado.Objeto_idObjeto = objeto.idObjeto AND prestado.Usuario_idUsuario = ? AND prestado.Usuario_idUsuario = usuario.idUsuario AND grupoobjetos.idGrupoObjetos = objeto.GrupoObjetos_idGrupoObjetos`,
+    [idUsuario]
   );
   const data = helper.emptyOrRows(rows);
 
@@ -185,7 +199,7 @@ async function getPendingLoans() {
   const rows = await db.query(
     `SELECT date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
     date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, nombre, idPrestado
-    FROM prestado, usuario, objeto WHERE prestado.Usuario_idUsuario = usuario.idUsuario AND estado=0 AND objeto.disponible=0`
+    FROM prestado, usuario, objeto WHERE prestado.Usuario_idUsuario = usuario.idUsuario AND prestado.Objeto_idObjeto = objeto.idObjeto AND estado=0 AND objeto.disponible=0`
   );
   const data = helper.emptyOrRows(rows);
 
@@ -221,4 +235,5 @@ module.exports = {
   getActiveLoans,
   getExpiredLoans,
   getPendingLoans,
+  getByUserId,
 }

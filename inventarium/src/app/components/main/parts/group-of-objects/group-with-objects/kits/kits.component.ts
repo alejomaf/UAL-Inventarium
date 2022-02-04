@@ -17,6 +17,10 @@ export class KitsComponent implements OnInit {
   object_kits: ObjetoKit[] = []
   photo_selected = false
   imgURL: any
+  isCreacion = false;
+  selected_kit?: ObjetoKit
+  successKit = ""
+  errorKit = ""
 
   //Campos del formulario
   fileToUpload: any
@@ -78,17 +82,41 @@ export class KitsComponent implements OnInit {
 
     this.kitobjectsS.addKitObject(formData).subscribe(
       (res: any) => {
-        this.cargarKits();
+        if (res.message) {
+          this.successKit = res.message;
+          this.cargarKits();
+          setTimeout(() => { this.cerrarModal() }, 2000);
+          return;
+        }
+        this.errorKit = "Error al crear el Kit";
       }
     )
   }
 
   modificarObjetoKit() {
+    if (this.nombre.value == "" || this.cantidad.value < 1) return;
 
+    let formData = new FormData();
+    formData.append("nombre", this.nombre.value);
+    formData.append("cantidad", this.cantidad.value);
+    formData.append("observaciones", this.observaciones.value);
+    if (this.fileToUpload != "") formData.append("image", this.fileToUpload);
+
+    this.kitobjectsS.updateKitObject(formData, this.selected_kit!.idObjetoKit).subscribe(
+      (res: any) => {
+        if (res.message) {
+          this.successKit = res.message;
+          this.cargarKits();
+          setTimeout(() => { this.cerrarModal() }, 2000);
+          return;
+        }
+        this.errorKit = "Error al modificar el kit";
+      }
+    )
   }
 
-  eliminarObjetoKit(idKitObject: number) {
-    this.kitobjectsS.deleteKitObject(idKitObject).subscribe(
+  eliminarObjetoKit() {
+    this.kitobjectsS.deleteKitObject(this.selected_kit!.idObjetoKit).subscribe(
       (res: any) => {
         this.cargarKits();
       }
@@ -103,5 +131,36 @@ export class KitsComponent implements OnInit {
 
   cerrarModal() {
     this.modalService.dismissAll();
+  }
+
+  modalCrearKit(modal: any) {
+    this.selected_kit = undefined;
+    this.fileToUpload = ""
+    this.imgURL = "";
+    this.successKit = ""
+    this.errorKit = ""
+    this.isCreacion = true;
+    this.nombre.setValue("");
+    this.cantidad.setValue(1);
+    this.observaciones.setValue("");
+    this.abrirModal(modal);
+  }
+
+  modalModificarKit(modal: any, kit: ObjetoKit) {
+    this.selected_kit = kit;
+    this.fileToUpload = ""
+    this.successKit = ""
+    this.errorKit = ""
+    this.isCreacion = false;
+    this.nombre.setValue(kit.nombre);
+    this.cantidad.setValue(kit.cantidad);
+    this.observaciones.setValue(kit.observaciones);
+    this.imgURL = "http://localhost:3000/images/" + kit.imagen + ".jpg"
+    this.abrirModal(modal);
+  }
+
+  modalBorrarKit(modal: any, kit: ObjetoKit) {
+    this.selected_kit = kit;
+    this.abrirModal(modal);
   }
 }

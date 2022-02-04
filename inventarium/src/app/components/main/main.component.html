@@ -2,8 +2,15 @@
 <div class="page-content p-5" id="content">
   <!-- Toggle button -->
   <button id="sidebarCollapse" (click)="sidebarCollapse()" type="button"
-    class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small
-      class="text-uppercase font-weight-bold">Toggle</small></button>
+    class="btn rounded-circle shadow-sm px-4 mb-4 sidebar-button">
+    <fa-icon [icon]="hide_navbar" style="font-size: 30px; margin-left: -7px;"></fa-icon>
+  </button>
+  <button id="sidebarCollapse" (click)="sidebarCollapse()" type="button"
+    class="btn rounded-circle shadow-sm px-4 mb-4 external-button">
+    <fa-icon [icon]="hide_navbar" style="font-size: 30px; margin-left: -7px;"></fa-icon>
+  </button>
 
-  <router-outlet></router-outlet>
+  <div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
 </div>

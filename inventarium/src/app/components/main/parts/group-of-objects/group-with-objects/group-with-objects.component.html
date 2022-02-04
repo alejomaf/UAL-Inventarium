@@ -1,7 +1,10 @@
 <div class="row d-flex-inline justify-content-center">
     <!--Contenido-->
     <app-group-of-object style="width: fit-content;">
-        <img imagen class="card-img-top rounded-circle" src="http://localhost:3000/images/{{go?.imagen}}.jpg">
+        <img *ngIf="go?.imagen != null" imagen class="card-img-top rounded-circle"
+            style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{go?.imagen}}.jpg">
+        <img *ngIf="go?.imagen == null" imagen class="card-img-top rounded-circle" style="height:180px;"
+            src="./assets/icons/no-photo.svg">
         <h5 nombre [routerLink]="['/group-of-object', go?.idGrupoObjetos]" class="card-title text-dark text-center">
             {{go?.nombre}}</h5>
         <span cantidad>{{go?.cantidad}}</span>
@@ -12,10 +15,23 @@
         <span *ngIf="go?.tipo==1" tipo>Fungible</span>
         <span *ngIf="go?.tipo==2" tipo>Kit</span>
         <div botones class="card-body d-grid gap-2">
-            <div class="btn btn-secondary btn-block" (click)="modificarGrupoObjeto()">Modificar grupo de objetos
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6">
+                    <div class="previous d-grid gap-2">
+                        <button type="button" class="btn btn-secondary"
+                            (click)="abrirModal(modifyGroupOfObjectModal)">Modificar</button>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6">
+                    <div class="next d-grid gap-2">
+                        <button type="button" class="btn btn-danger" (click)="abrirModal(confirmationModal)">Borrar
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="btn btn-light btn-block" (click)="borrarGrupoObjeto()">Borrar grupo de objetos
-            </div>
+
+
+            <!-- This divs is for the behaviour of the kits -->
             <div *ngIf="go?.tipo==2 && !ruta_kits" class="btn btn-dark btn-block" routerLink="kits"
                 (click)="ruta_kits=!ruta_kits">¿Qué contiene el kit?
             </div>
@@ -25,5 +41,74 @@
         </div>
     </app-group-of-object>
 </div>
+
+<!-- Modal for deleting the group of objects -->
+<ng-template #confirmationModal class="modal">
+    <div class="d-grid gap-2 p-3">
+        <h2>¿Seguro que quiere borrar el grupo de objetos?</h2>
+        <p>Si lo borra se cancelarán todos los objetos y los préstamos actuales relacionados con este. Luego de esta
+            acción no se puede volver a recuperar el objeto.</p>
+        <div class="btn btn-success" boton (click)="borrarGrupoObjeto()">Borrar grupo de objetos
+        </div>
+        <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+    </div>
+</ng-template>
+
+<!-- Modal for making a loan request -->
+<ng-template #modifyGroupOfObjectModal class="modal">
+    <div class="p-2">
+        <div class="card bg-light position-sticky" style="height: 19rem;">
+            <div *ngIf="imgURL" class="align-self-center" style="margin-top: auto; margin-bottom: auto;">
+                <img [src]="imgURL" height="200px">
+            </div>
+            <div *ngIf="go?.imagen !=null && !imgURL" class="align-self-center"
+                style="margin-top: auto; margin-bottom: auto;">
+                <img src="http://localhost:3000/images/{{go.imagen}}.jpg" height="200px">
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <div class="alert alert-warning">
+                    <a>Debes subir una imagen del objeto obligatoriamente</a>.
+                </div>
+                <label class="font-weight-bold">Imagen del objeto*</label>
+                <input type="file" id="file" (change)="handleFileInput($event)" class="form-control-file">
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold">Nombre</label>
+                <input type="text" [formControl]="name" placeholder="Nombre del grupo de objeto" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold">Marca</label>
+                <input type="text" [formControl]="marca" placeholder="Marca del grupo de objeto" class="form-control">
+            </div>
+            <div class="form-group">
+                <label class="font-weight-bold">Modelo</label>
+                <input type="text" [formControl]="modelo" placeholder="Modelo del grupo de objeto" class="form-control">
+            </div>
+            <div class="col-md-12 mb-3">
+                <label>Tipo</label>
+                <select class="form-control" [formControl]="type">
+                    <option value=0>Grupo de objetos</option>
+                    <option value=1>Fungible</option>
+                    <option value=2>Kit</option>
+                </select>
+            </div>
+        </div>
+
+        <div *ngIf="errorModification!=''" class="alert alert-warning my-2" role="alert">
+            {{errorModification}}
+        </div>
+        <div *ngIf="successModification!=''" class="alert alert-success my-2" role="alert">
+            {{successModification}}
+        </div>
+
+        <div class="d-grid gap-2">
+            <a class="btn btn-success" (click)="modificarGrupoObjeto()">Modificar
+                grupo de objetos</a>
+            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        </div>
+    </div>
+</ng-template>
 
 <router-outlet></router-outlet>

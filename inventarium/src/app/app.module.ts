@@ -53,6 +53,9 @@ import { GroupWithObjectsComponent } from './components/main/parts/group-of-obje
 import { KitsComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kits.component';
 import { KitComponent } from './components/main/parts/group-of-objects/group-with-objects/kits/kit/kit.component';
 import { AuthGuardService } from './services/auth-guard.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BoxLinkComponent } from './components/main/unit/box-link/box-link.component';
+import { ObjectSearchComponent } from './components/main/parts/group-of-objects/objects/object-search/object-search.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +106,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     GroupWithObjectsComponent,
     KitsComponent,
     KitComponent,
+    BoxLinkComponent,
+    ObjectSearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -110,7 +115,8 @@ import { AuthGuardService } from './services/auth-guard.service';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthGuardService],
   bootstrap: [AppComponent]
