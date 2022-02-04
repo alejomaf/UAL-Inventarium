@@ -77,12 +77,12 @@ Al haber distintos campos de préstamos cada uno dispone de diferentes casos de 
 \end{figure}
 
 \section{Componentes de procesos}
-Habiendo visto los componentes principales que conforman la aplicación otro aspecto a destacar es el del desarrollo de los procesos. Distinguiremos tres tipos de desarrollo:
+Habiendo visto los componentes principales que conforman la aplicación otro aspecto a destacar es el del desarrollo de los procesos. Distinguiremos cuatro tipos de procesos:
 \begin{itemize}
     \item Proceso de creación de grupo de objetos y objetos
     \item Procesos de creación
     \item Procesos de modificación
-    \item Procesos de búsqueda
+    \item Proceso de creación, selección y eliminación de ubicaciones
 \end{itemize}
 
 \subsection{Proceso de creación de grupo de objetos y objetos}
@@ -136,5 +136,31 @@ Al realizar el paso anterior nos llevará a una vista donde iremos añadiendo lo
     \caption{Funcionamiento y descomposición de préstamos}\label{fig:5-creation-o}
 \end{figure}
 
+\subsection{Procesos de creación y modificación}
+Estos procesos utilizan el mismo componente ya que la acción de modificación permite cambiar los mismos atributos que la acción de creación. Podemos ver un ejemplo en la figura \ref{fig:creation-and-modification}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/configuration_form.png}
+    \caption{Creación y modificación de elementos}\label{fig:creation-and-modification}
+\end{figure}
 \subsection{Proceso de creación, selección y eliminación de ubicaciones}
-La gestión de ubicaciones
+Una ubicación en la Universidad de Almería consta de tres atributos. Un edificio, una planta y una localización dentro de esa planta.
+\\En base a estos distintos atributos haríamos el componente encargado de gestionar la ubicación de un objeto.
+\\Este componente consta de tres etapas de selección la primera donde empiezas seleccionando el edificio, figura \ref{fig:1-loc-o}, luego podrás ver las plantas, figura \ref{fig:2-loc-o}, y luego las localizaciones dentro de esas plantas, figura \ref{fig:3-loc-o}.
+\\En este proceso está presente en la parte superior una barra de búsqueda que también hace la función de creación. Es decir, en el caso de que no encuentres un edificio, escribes su nombre y a partir de ahí pasas a la siguiente etapa que es crear una planta para ese edificio. Hasta que no llegas a la etapa final de la creación de la localización esta ubicación no se genera.
+\\Para poder eliminar las ubicaciones basta con seleccionar la localización que quieras eliminar y en caso de que esta esté enlazada con un objeto te pedirá que elimines dichos objetos o les cambies la ubicación. Si no lo haces, el sistema te impide eliminar la ubicación.
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png}
+    \caption{Selección o creación del edificio}\label{fig:1-loc-o}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png}
+    \caption{Selección o creación de la planta}\label{fig:2-loc-o}
+\end{figure}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5,keepaspectratio]{../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png}
+    \caption{Selección o creación de la ubicación}\label{fig:3-loc-o}
+\end{figure}
