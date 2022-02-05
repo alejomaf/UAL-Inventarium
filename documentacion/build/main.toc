@@ -152,6 +152,7 @@
 \contentsline {subsubsection}{\nonumberline Adición de capa superior}{73}{subsubsection*.100}%
 \contentsline {subsubsection}{\nonumberline Gestor de notificaciones}{73}{subsubsection*.102}%
 \contentsline {subsubsection}{\nonumberline Generalización de tipos de objetos}{73}{subsubsection*.104}%
+\contentsline {subsubsection}{\nonumberline Inclusión de horarios de laboratorio}{73}{subsubsection*.106}%
 \contentsline {section}{\numberline {8.2}Conclusiones}{73}{section.8.2}%
-\contentsline {chapter}{\nonumberline References}{75}{chapter*.105}%
+\contentsline {chapter}{\nonumberline References}{75}{chapter*.107}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
