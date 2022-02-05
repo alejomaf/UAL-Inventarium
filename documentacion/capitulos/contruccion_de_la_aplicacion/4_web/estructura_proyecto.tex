@@ -1,29 +1,29 @@
 \subsection{Estructura de un proyecto Angular}
-Para poder desplegar un entorno donde trabajar en Angular primero tenemos que instalarlo en nuestro Node Package Manager (NPM) con el siguiente comando:
+Para poder desplegar un entorno donde trabajar en Angular primero hay que tenerlo instalado en Node Package Manager (NPM) con el siguiente comando:
 \begin{verbatim}
     npm i -g @angular/cli
 \end{verbatim}
-Al hacer esto se nos desplegará nuestro entorno de desarrollo para Angular. El directorio \textbf{node\_modules} es donde se almacena el Framework de Angular, el CLI y los distintos componentes que vayamos instalando con el NPM.
+Al hacer esto se desplegará el entorno de desarrollo para Angular. El directorio \textbf{node\_modules} es donde se almacena el Framework de Angular, el CLI y los distintos componentes que se vayan instalando con el NPM.
 \begin{tcolorbox}
     [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Qué diferencias hay entre Angular CLI y Angular Framework?]
-    Angular CLI es la Command Line Interface la cual permite poder crear proyectos Angular, añadir componentes, servicios o directivas desde una línea de comandos. Angular CLI se encarga de la gestión de las distintas posibilidades que nos puede ofrecer el framework de Angular.
+    Angular CLI es la Command Line Interface la cual permite poder crear proyectos Angular, añadir componentes, servicios o directivas desde una línea de comandos. Angular CLI se encarga de la gestión de las distintas posibilidades que puede ofrecer el framework de Angular.
 \end{tcolorbox}
-Los ficheros que se nos despliegan sobre el directorio raíz al crear un proyecto Angular son:
+Los ficheros que se despliegan sobre el directorio raíz al crear un proyecto Angular son:
 \begin{itemize}
     \item \textbf{.editorconfig}: Un archivo de configuración para editores de código.
     \item \textbf{README.MD}: Archivo de texto que procesa GitHub en sus repositorios. El contenido inicial del fichero en el momento de la creación del proyecto trata sobre documentación acerca del Framework.
-    \item \textbf{angular.json}: Esta es la configuración predeterminada que nos aporta el CLI de Angular para poder construir la aplicación, generar el servicio y testear los diferentes componentes.
+    \item \textbf{angular.json}: Esta es la configuración predeterminada que aporta el CLI de Angular para poder construir la aplicación, generar el servicio y testear los diferentes componentes.
     \item \textbf{package.json}: Este fichero se encarga de manejar las dependencias de NPM, precisamente las que están habilitadas dentro del espacio de trabajo.
-    \item \textbf{package-lock.json}: Nos aporta información del versionado de los distintos paquetes que están en node\_modules.
+    \item \textbf{package-lock.json}: Aporta información del versionado de los distintos paquetes que están en node\_modules.
     \item \textbf{tsconfig.json}: Esta es la configuración básica de TypeScript para el proyecto.
-    \item \textbf{proxy.conf.json}: Este es el fichero que nos va a ayudar a poder consumir nuestra API. Reenvía las peticiones que llegan a nuestra aplicación al puerto 3000 que es donde se encuentra ubicada.
+    \item \textbf{proxy.conf.json}: Este es el fichero que va a ayudar a poder consumir la API. Reenvía las peticiones que llegan a la aplicación al puerto 3000 que es donde se encuentra ubicada.
 \end{itemize}
-En la misma carpeta raíz tenemos un directorio llamado \textit{src}, su descomposición es la siguiente:
+En la misma carpeta raíz se tiene un directorio llamado \textit{src}, su descomposición es la siguiente:
 
 \begin{itemize}
     \item \textbf{app}: Directorio que contiene todos los distintos componentes de los que está compuesta la aplicación.
     \item \textbf{assets}: Contiene imágenes y otros recursos para ser copiados en el momento que se construya la aplicación.
-    \item \textbf{environments}: Gracias a este fichero podemos configurar una opción en particular de construcción de la aplicación.
+    \item \textbf{environments}: Gracias a este fichero puede configurarse una opción en particular de construcción de la aplicación.
     \item \textbf{favicon.ico}: El ícono que sale en la parte superior de la pestaña de la página web.
     \item \textbf{index.html}: La página principal que tiene cualquier web. El CLI se dedica a añadir automáticamente todo el JavaScript y el CSS cuando construye la aplicación. No es un fichero que se use.
     \item \textbf{main.ts}: Este fichero es el punto de entrada principal de la aplicación. Compila la aplicación y arranca el módulo raíz de la aplicación (AppModule) para que se ejecute en el navegador.
@@ -39,12 +39,12 @@ El contenido del directorio \textit{app} en el momento de la creación del proye
     \item \textbf{app.component.html}: Define el diseño HTML asociaciado con el elemento raíz.
     \item \textbf{app.component.css}: Define el elemento de diseño para el elemento raíz.
     \item \textbf{app.component.spec.ts}: Define el conjunto de pruebas asociado con el elemento raíz.
-    \item \textbf{app.module.ts}: Define el módulo raíz, este fichero le comunica a Angular cómo se tiene que realizar el ensamblaje de la aplicación. Inicialmente está declarado detrno de él el propio módulo raíz, pero a medida que vayamos añadiendo elementos a nuestra aplicación irá incluyendo más módulos.
+    \item \textbf{app.module.ts}: Define el módulo raíz, este fichero le comunica a Angular cómo se tiene que realizar el ensamblaje de la aplicación. Inicialmente está declarado dentro de él el propio módulo raíz, pero a medida que se vayan añadiendo elementos a la aplicación se irán incluyendo más módulos.
 \end{itemize}
 
 Dentro de la carpeta \textit{src} hay tres directorios más:
 \begin{itemize}
-    \item \textit{components}
-    \item \textit{interfaces}
-    \item \textit{services}
+    \item \textit{components}.
+    \item \textit{interfaces}.
+    \item \textit{services}.
 \end{itemize}

@@ -7,44 +7,44 @@ Las APIs son una de esas pequeñas implementaciones que han cambiado enormemente
     \item La lógica de negocio de la aplicación ha sido integrada en conjunto con la web presentando una alto nivel de acoplamiento y dificultando la modificación de la misma.
 \end{itemize}
 
-Una API nos ofrece una capa de abstracción para nuestra aplicación. Nuestro famoso modelo de caja negra del que he hablado con anterioridad. Esto permite a distintas tecnologías orientadas a desarrollo web, móvil y de programas de ordenador a tener un punto en común entre todas. A que cada una no necesite personalizar sus comunicaciones con la base de datos y pueda usar un intermediario. Así es el funcionamiento de las APIs.
-\\Para implementar nuestra API hemos utilizado Node junto a Express. Gracias a Node podemos levantar un servidor web que no necesite de demasiados recursos para su funcionamiento. Esto se haría con las siguientes líneas de código:
+Una API ofrece una capa de abstracción para la aplicación. El famoso modelo de caja negra del que se ha hablado con anterioridad. Esto permite a distintas tecnologías orientadas a desarrollo web, móvil y de programas de ordenador a tener un punto en común entre todas. A que cada una no necesite personalizar sus comunicaciones con la base de datos y pueda usar un intermediario. Así es el funcionamiento de las APIs.
+\\Para implementar la API se ha utilizado Node junto a Express. Gracias a Node puede levantarse un servidor web que no necesite de demasiados recursos para su funcionamiento. Esto se haría con las siguientes líneas de código:
 \begin{verbatim}
     app.listen(port, () => {
         console.log(`Inventarium API listening at http://api:3000`)
     });
 \end{verbatim}
-Otra de las partes que nos aporta Node es su gestor de paquetes, Node Package Manager (NPM), gracias a esto la implementación de funcionalidades más complejas se pueden realizar en un tramo de tiempo muy pequeño.
-\\Para inicializar un proyecto de NPM utilizamos el siguiente comando dentro de un directorio:
+Otra de las partes que aporta Node es su gestor de paquetes, Node Package Manager (NPM), gracias a esto la implementación de funcionalidades más complejas se pueden realizar en un tramo de tiempo muy pequeño.
+\\Para inicializar un proyecto de NPM se utiliza el siguiente comando dentro de un directorio:
 \begin{verbatim}
     npm init
 \end{verbatim}
 
 Express es unos de los frameworks principales que presenta Node. Es un marco de desarrollo minimalista para Node que nos permite estructurar aplicaciones, crear enrutamientos y muchos más aspectos relacionados con lo que sería un entorno web.
-\\Para instalar Express en un proyecto NPM y guardarlo en la lista de dependencias escribimos el siguiente comando:
+\\Para instalar Express en un proyecto NPM y guardarlo en la lista de dependencias hay que escribir el siguiente comando:
 \begin{verbatim}
     npm install express --save
 \end{verbatim}
 
 \subsection{Creación del sistema de directorios}
 Un apartado a tratar en este capítulo es la gestión de directorios y los distintos ficheros que hay en su ubicación interactúan entre ellos.
-\\Ya habiendo creado nuestro proyecto Node y habiéndole añadido Express esta sería la estructura de directorios que usaríamos:
+\\Ya habiendo creado el proyecto Node y habiéndole añadido Express esta sería la estructura de directorios que se usará:
 
 \begin{itemize}
-    \item \textbf{images}: Dentro de este directorio almacenamos las imágenes que se van subiendo a nuestro sitio web. Estas imágenes van ligadas a un ``grupo de objetos''.
-    \item \textbf{node\_modules}: La carpeta de node\_modules es donde se gestionan todos los paquetes de nuestro NPM.
-    \item \textbf{routes}: Dentro de la carpeta routers crearemos todo el enrutamiento de nuestra aplicación. En ella se ubica un archivo por cada tabla que se nos presenta en la base de datos.
+    \item \textbf{images}: Dentro de este directorio se almacenan las imágenes que se van subiendo al sitio web. Estas imágenes van ligadas a un ``grupo de objetos''.
+    \item \textbf{node\_modules}: La carpeta de node\_modules es donde se gestionan todos los paquetes del NPM.
+    \item \textbf{routes}: Dentro de la carpeta routers se creará todo el enrutamiento de la aplicación. En ella se ubica un archivo por cada tabla que se presenta en la base de datos.
     \item \textbf{services}: El objetivo de la carpeta services es el de poder realizar todos los tipos de consultas que requiera la aplicación.
           \begin{itemize}
-              \item \textit{.dockerignore}: La funcionalidad de este fichero es el de poder ignorar un directorio o fichero en el momento de la creación de una imagen de un contenedor docker. En este caso el único directorio que estamos ignorando es node\_modules. ¿Por qué? Porque en el momento de la generación de una imagen docker suele dar problemas el importar directamente las dependencias que se iban a utilizar a mano. Es mejor que desde el propio sistema sea el gestor de paquetes quien, después de leer el package\-lock.json, sea quien instale las dependencias nuevamente.
-              \item \textit{.env}: Aquí ubicamos las variables con las que trabajaremos en nuestro entorno. Es una forma fácil y sencilla de poder generalizar secciones del código. El contenido del archivo es el siguiente:
+              \item \textit{.dockerignore}: La funcionalidad de este fichero es el de poder ignorar un directorio o fichero en el momento de la creación de una imagen de un contenedor docker. En este caso el único directorio que se está ignorando es node\_modules. ¿Por qué? Porque en el momento de la generación de una imagen docker suele dar problemas el importar directamente las dependencias que se iban a utilizar a mano. Es mejor que desde el propio sistema de gestor de paquetes, después de leer el package\-lock.json, sea quien instale las dependencias nuevamente.
+              \item \textit{.env}: Aquí se ubicarán las variables con las que se trabajará en el entorno. Es una forma fácil y sencilla de poder generalizar secciones del código. El contenido del archivo es el siguiente:
                     \begin{verbatim}
             DB_HOST='localhost',
             DB_USER='user',
             DB_PASSWORD='secretpassword',
             DB_NAME='ualinventarium',
         \end{verbatim}
-              \item \textit{config.js}: Dentro del fichero de configuración añadimos los parámetros que va a coger nuestra variable db para conectarse a la base de datos.
+              \item \textit{config.js}: Dentro del fichero de configuración se añadirán los parámetros que va a coger la variable ``db'' para conectarse a la base de datos.
                     \begin{verbatim}
             const config = {
                 db: {
@@ -61,54 +61,54 @@ Un apartado a tratar en este capítulo es la gestión de directorios y los disti
                         Podemos ver cómo nuestro archivo que genera la configuración para la base de datos solicita la información dentro de nuestro fichero \.env. El último atributo que intenta solicitar es ``LIST\_PER\_PAGE'' en el caso que no lo pueda obtener, que será lo que va a ocurrir, pondrá como valor predeterminado 10.
                     \end{tcolorbox}
               \item \textit{Dockerfile}: Este archivo funciona para la generación de una imagen de un contenedor docker.
-              \item \textit{helper.js}: Un pequeño fichero que nos brinda un par de funciones a la hora de manejar consultas con la base de datos.
-              \item \textit{index.js}: El archivo principal de nuestra API, dentro de él inicializaremos todo.
-              \item \textit{package\-lock.json}: El fichero principal de NPM que nos ayuda a gestionar todas las dependencias con los paquetes que tenemos instalados en nuestro proyecto.
-              \item \textit{package.json}: El paquete json es el corazón de cualquier proyecto de Node. Registra metadatos importantes necesarios para la publicación de la aplicación, y también define atributos funcionales de un proyecto que npm usa para instalar dependencias, ejecutar scripts e identificar el punto de entrada a nuestro paquete.
+              \item \textit{helper.js}: Un pequeño fichero que brinda un par de funciones a la hora de manejar consultas con la base de datos.
+              \item \textit{index.js}: El archivo principal de la API, dentro de él se inicializará todo.
+              \item \textit{package\-lock.json}: El fichero principal de NPM que ayuda a gestionar todas las dependencias con los paquetes que se tengan instalados en el proyecto.
+              \item \textit{package.json}: El paquete json es el corazón de cualquier proyecto de Node. Registra metadatos importantes necesarios para la publicación de la aplicación, y también define atributos funcionales de un proyecto que NPM usa para instalar dependencias, ejecutar scripts e identificar el punto de entrada al paquete.
           \end{itemize}
 \end{itemize}
 
 \subsection{Funcionamiento de index.js}
 
-Dentro de index.js gestionaremos todas las llamadas a los diferentes componentes de nuestra API. Desde añadir el ruteo hasta gestionar la utilización de diferentes librerías que hayamos instalado dentro de nuestro proyecto.
-\\Una variable importante a recalcar es la de Express. Que la definimos así:
+Dentro de index.js se gestionarán todas las llamadas a los diferentes componentes de la API. Desde añadir el ruteo hasta gestionar la utilización de diferentes librerías que se hayan instalado dentro del proyecto.
+\\Una variable importante a recalcar es la de Express. La cual se define así:
 \begin{verbatim}
     const app = express();
 \end{verbatim}
-Gracias a nuestra variable ``app'' enlazamos toda la configuración principal del ruteo que va a tener nuestra API.
-\\Por ejemplo, de nuestra ruta \textit{/api/grupoobjetos} queremos que el usuario pueda hacer interacciones con la tabla de grupo de objetos. Para gestionarlo enlazamos ese punto a nuestro archivo de ruteo que explicaré en el siguiente apartado:
+Gracias a la variable ``app'' se puede enlazar toda la configuración principal del ruteo que va a tener la API.
+\\Por ejemplo, de la ruta \textit{/api/grupoobjetos} se quiere que el usuario pueda hacer interacciones con la tabla de grupo de objetos. Para gestionarlo se enlaza ese punto al archivo de ruteo que se explicará en el siguiente apartado:
 \begin{verbatim}
-    //La variable grupoobjetos es nuestra referenciación del archivo de ruteo
+    //La variable grupoobjetos es la referenciación del archivo de ruteo
     app.use('/api/grupoobjetos', grupoobjetos); 
 \end{verbatim}
-Realizamos otras gestiones en nuestro componente de Express entre las que se encuentran:
+Se realizaron otras gestiones en el componente de Express entre las que se encuentran:
 \begin{itemize}
     \item Aumentar el tamaño de las peticiones que lleguen para la carga de imágenes.
-    \item Configurar un endpoint en la raíz de nuestro servidor que tenga como finalidad comprobar que la API funciona correctamente.
+    \item Configurar un endpoint en la raíz del servidor que tenga como finalidad comprobar que la API funciona correctamente.
 \end{itemize}
-Por último configuramos el puerto de entrada del servidor:
+Por último se configuró el puerto de entrada del servidor:
 \begin{verbatim}
     app.listen(port, () => {
         console.log(`Inventarium API listening at http://api:3000')
     });
 \end{verbatim}
-Esto nos permite que nuestra aplicación se encuentre ``escuchando'' cada petición de entrada que le envíe la página web.
+Esto permite que la aplicación se encuentre ``escuchando'' cada petición de entrada que le envíe la página web.
 
 \subsection{Enrutamiento de la aplicación}
-El objetivo del directorio ``routes'' es la correcta gestión de todas las peticiones para el funcionamiento de nuestra página web.
-\\Cuando creamos una herramienta para la gestión de unos recursos de una base de datos lo más normal es que necesitamos realizar el repertorio de herramientas llamadas CRUD, create, read, update and, delete, es decir: crear, leer, actualizar y eliminar.
-\\Al inicio de nuestro archivo de enrutamiento llamamos a la funcionalidad de Router que incopora Express:
+El objetivo del directorio ``routes'' es la correcta gestión de todas las peticiones para el funcionamiento de la página web.
+\\Cuando se crea una herramienta para la gestión de los recursos de una base de datos lo más normal es que se necesite implementar el repertorio de herramientas llamadas CRUD, create, read, update and, delete, es decir: crear, leer, actualizar y eliminar.
+\\Al inicio del archivo de enrutamiento se llama a la funcionalidad de Router que incopora Express:
 \begin{verbatim}
     const router = express.Router();
 \end{verbatim}
 
 \subsubsection{Métodos de petición HTTP}
 Los métodos de petición HTTP es la definición de un conjunto de elementos que tiene como objetivo realizar diferentes acciones para la gestión de un recurso determinado.
-\\Estos métodos serán los que nos ayuden en nuestra implementación del repertorio de herramientas CRUD. Los que utilizaremos serán:
+\\Estos métodos serán los que ayuden en la implementación del repertorio de herramientas CRUD.
 
 \subsubsection{GET (leer)}
 El método GET es el encargado de solicitar un recurso en específico. Estas peticiones, por norma general, deben tener como único objetivo la recopilación de datos.
-\\Por ejemplo, en el archivo de grupoobjetos implementamos el siguiente método:
+\\Por ejemplo, en el archivo de grupoobjetos se implementa el siguiente método:
 \begin{verbatim}
 /* GET group_of_objects. */
 router.get('/', async function (req, res, next) {
@@ -120,40 +120,40 @@ router.get('/', async function (req, res, next) {
     }
 });
 \end{verbatim}
-Dentro de nuestra llamada al método ``get'' de ``router'' realizamos un ``try catch'' en el que llamamos a nuestro método ``getMultiple'' de la clase que hemos importado con anterioridad de group\_of\_objects con el siguiente método:
+Dentro de la llamada al método ``get'' de ``router'' se realiza un ``try catch'' en el que se llama al método ``getMultiple'' de la clase que se ha importado con anterioridad de group\_of\_objects con el siguiente método:
 \begin{verbatim}
     const group_of_objects = require('../services/grupo_objetos');
 \end{verbatim}
-El método ``getMultiple'' nos devuelve una lista con los diferentes grupos de objetos que hay en el servidor. Ahondarémos más en ese método en la siguiente sección.
-\\Dentro del ``catch'' hacemos que la API devuelva un mensaje de error como respuesta en caso de fallo.
+El método ``getMultiple'' devuelve una lista con los diferentes grupos de objetos que hay en el servidor. Se ahondará más en ese método en la siguiente sección.
+\\Dentro del ``catch'' se hace que la API devuelva un mensaje de error como respuesta en caso de fallo.
 \begin{tcolorbox}
     [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=Personalización de peticiones]
-    Recordemos que el endpoint que gestionaba ``grupoobjetos'' era \textit{/api/grupoobjetos} por lo que al estar definiendo dentro del router.get el parámetro \textit{`/'} queremos que nuestro API ofrezca esa petición desde la raíz del endpoint. Por ejemplo, si quisiéramos personalizar más la petición podríamos modificar este apartado y en vez de usar \textit{`/'} usamos \textit{`/fungibles'} para poder acceder a esa consulta GET habría que llamar a \textit{/api/grupoobjetos/fungibles}.
+    El endpoint que gestiona ``grupoobjetos'' es \textit{/api/grupoobjetos} por lo que al estar definiendo dentro del router.get el parámetro \textit{`/'} se pretende que la API ofrezca esa petición desde la raíz del endpoint. Por ejemplo, si se quisiera personalizar más la petición podría modificarse este apartado y en vez de usar \textit{`/'} se usaría \textit{`/fungibles'}. Para poder acceder a esa consulta GET habría que llamar a \textit{/api/grupoobjetos/fungibles}.
 \end{tcolorbox}
-No hace falta que le pasemos ningún parámetro a nuestra petición GET pero lo hemos dejado en caso de realizar alguna implementación extra.
+No hace falta que se le pase ningún parámetro a la petición GET pero se ha dejado en caso de realizar alguna implementación extra.
 
 \subsubsection{POST (escribir)}
-El método POST lo utilizaremos para el envío de una entidad a un determinado recurso. La API hará uso de este método para la adición de elementos a la base de datos.
+El método POST se utilizará para el envío de una entidad a un determinado recurso. La API hará uso de este método para la adición de elementos a la base de datos.
 
 \subsubsection{PUT (actualizar)}
-Este método se encarga del reemplazo de una determinada entidad. Lo utilizaremos para la actualización de las filas de nuestra base de datos.
+Este método se encarga del reemplazo de una determinada entidad. Se utilizará para la actualización de las filas de la base de datos.
 
 \subsubsection{DELETE (eliminar)}
-Como su propio nombre indica en inglés el método DELETE lo utilizaremos para borrar un recurso en específico.
+Como su propio nombre indica en inglés el método DELETE se utilizará para borrar un recurso en específico.
 
 \vspace{\baselineskip}
-Hemos añadido solamente un ejemplo dentro del método GET porque el resto de llamadas se realiza de forma muy parecida. En el POST y PUT se pasarían objetos como parámetros y en el PUT especificaríamos una ID para la actualización de nuestro objeto. En DELETE solamente especificaríamos la ID al igual que dentro del PUT. Por ejemplo, si queremos realizar una llamada eliminando el grupo de objetos con id 4 llamaríamos al método DELETE de la API con la siguiente dirección \textit{/api/grupoobjetos/4}.
+Se ha añadido solamente un ejemplo dentro del método GET porque el resto de llamadas se realiza de forma muy parecida. En el POST y PUT se pasarían objetos como parámetros y en el PUT se especificaría una ID para la actualización del objeto. En DELETE solamente se especificaría la ID al igual que dentro del método PUT. Por ejemplo, si se quiere realizar una llamada eliminando el grupo de objetos con id 4 se llamaría al método DELETE de la API con la siguiente dirección \textit{/api/grupoobjetos/4}.
 
 \subsection{Consultas con la base de datos}
-Dentro de nuestras carpeta ``services'' tenemos las consultas con nuestra base de datos. En ella definiríamos todas las posibles interacciones que querría realizar nuestro usuario con la base de datos.
+Dentro de la carpeta ``services'' están las consultas con la base de datos. En ella se definen todas las posibles interacciones que querría realizar el usuario con la base de datos.
 \\Las funciones coincidentes en todos los ficheros que se encuentran ubicados en este directorio son las siguientes:
 \begin{itemize}
-    \item \textbf{getMultiple}: dentro de ella llamamos al método SELECT de MariaDB.
-    \item \textbf{create}: llamamos al método INSERT INTO.
-    \item \textbf{update}: llamamos al método UPDATE.
-    \item \textbf{remove}: llamamos al método DELETE.
+    \item \textbf{getMultiple}: dentro de ella se llama al método SELECT de MariaDB.
+    \item \textbf{create}: se llama al método INSERT INTO.
+    \item \textbf{update}: se llama al método UPDATE.
+    \item \textbf{remove}: se llama al método DELETE.
 \end{itemize}
-Para explicar la estructura de estas funciones cogeré como ejemplo la ``getMultiple'':
+Para explicar la estructura de estas funciones se cogerá como ejemplo ``getMultiple'':
 \begin{verbatim}
     const offset = helper.getOffset(page, config.listPerPage);
     const rows = await db.query(
@@ -171,53 +171,53 @@ Para explicar la estructura de estas funciones cogeré como ejemplo la ``getMult
     }
   }
 \end{verbatim}
-Como podremos comprobar llamamos al método offset que nos ayudará a realizar la paginación de nuestro sitio web.
-\\Después de la consulta llamamos a nuestro método de la clase definida anteriormente ``helper'' llamado ``emptyOrRows''. Este método nos ayuda a evitar cualquier problemática que nos pueda causar la API si la base de datos nos devuelve el array vacío.
-\\Por último en el ``return'' de la función devolvemos un JSON que tiene como primer elemento la respuesta de la petición y como segundo la página.
+Como puede comprobarse se llama al método offset que ayudará a realizar la paginación del sitio web.
+\\Después de la consulta se llama al método de la clase definida anteriormente ``helper'' llamado ``emptyOrRows''. Este método ayuda a evitar cualquier problemática que pueda causar la API si la base de datos devuelve el array vacío.
+\\Por último en el ``return'' de la función se devuelve un JSON que tiene como primer elemento la respuesta de la petición y como segundo la página.
 
 \subsection{Gestión de archivos con Express}
 
-Para poder realizar la subida de imágenes a nuestra base de datos haremos uso de la librería ``formidable''.
-\\Esta se encontrará importada en nuestro fichero ``index.js''. De la siguiente forma:
+Para poder realizar la subida de imágenes a la base de datos se hará uso de la librería ``formidable''.
+\\Esta se encontrará importada en el fichero ``index.js'' de la siguiente forma:
 
 \begin{verbatim}
     const formidable = require('express-formidable');
 \end{verbatim}
 
-Procedemos luego a incorporarla a nuestro Express de la siguiente forma:
+Se procederá luego a incorporarla a Express de la siguiente forma:
 
 \begin{verbatim}
     app.use(formidable());
 \end{verbatim}
 
-Gracias a esto ya podremos analizar el campo de archivos de las peticiones que nos lleguen. Veremos el ejemplo de subida de imagen dentro de grupo de objetos.
+Gracias a esto ya puede analizarse el campo de archivos de las peticiones que lleguen.
 
 \subsubsection{Descomposición de la petición}
-Dentro de la petición que nos llega a la API cogemos el campo de archivos que va vinculada a ella gracias la utilización de \textit{formidable}.
+Dentro de la petición que llega a la API se coge el campo de archivos que va vinculada a ella gracias a la utilización de \textit{formidable}.
 \begin{verbatim}
     files = req.files
 \end{verbatim}
 
 \subsubsection{Análisis del archivo}
-Luego podemos analizar nuestro archivo para que cumpla los siguientes requisitos:
+Luego se procede a analizar el archivo para que cumpla los siguientes requisitos:
 \begin{itemize}
     \item Que sea únicamente un solo archivo.
-    \item El método ``isFileValid'' comprueba que el archivo tenga la extensión \textit{jpg}, \textit{jpeg}, \textit{png}. Es decir, que sea una imagen. He seleccionado únicamente esta extensión de archivos porque luego si les cambio la extensión a \textit{jpg} se pueden visualizar sin problemas.
+    \item El método ``isFileValid'' comprueba que el archivo tenga la extensión \textit{jpg}, \textit{jpeg}, \textit{png}. Es decir, que sea una imagen. Se ha seleccionado únicamente esta extensión de archivos porque luego si se cambia la extensión a \textit{jpg} se pueden visualizar sin problemas.
 \end{itemize}
 
 \begin{verbatim}
-    // Comprobamos que el archivo sea uno o más de uno
+    // Se comprueba que el archivo sea uno o más de uno
     if (!files.length) {
       //En el caso de que sea solo un archivo
       const file = files.image;
-      // Comprobamos que el archivo sea válido
+      // Se comprueba que el archivo sea válido
       const isValid = isFileValid(file);
-      // Creamos un nombre en base al momento actual en que se
+      // Se crea un nombre en base al momento actual en que se
       // está subiendo el archivo
       const fileName = time + ".jpg";
 
       if (!isValid) {
-        // Si el archivo no es válido lanzamos un error
+        // Si el archivo no es válido se lanza un error
         return res.status(400).json({
           status: "Fail",
           message: "The file type is not a valid type",
@@ -226,13 +226,13 @@ Luego podemos analizar nuestro archivo para que cumpla los siguientes requisitos
 \end{verbatim}
 
 \subsubsection{Subida de la imagen}
-Gracias a esto podemos realizar la subida de la imagen sin problemas. Ubicamos nuestro directorio de subida dentro de la carpeta ``images''. Como he indicado anteriormente.
+Gracias a esto puede realizarse la subida de la imagen sin problemas. El directorio de subida se será ``images''.
 
 \begin{verbatim}
       const uploadFolder = path.join(__dirname, "..", "images",
        "group_of_objects");
       try {
-        // Cambiamos el nombre del archivo en el directorio
+        // Se cambia el nombre del archivo en el directorio
         fs.renameSync(file.path, path.join(uploadFolder, fileName));
       } catch (error) {
         console.log(error);
@@ -241,8 +241,8 @@ Gracias a esto podemos realizar la subida de la imagen sin problemas. Ubicamos n
     } else return;
 \end{verbatim}
 
-\subsubsection{Enviamos la consulta a la base de datos}
-Mandamos una solicitud a la base de datos para finalizar con la creación del grupo de objeto. En caso que diera error la subida este proceso se pararía y devolvería error. Como podremos comprobar, al llamar al método de creación de grupo de objetos le pasamos como parámetros el campo \textit{fields}, donde va el cuerpo de nuestra petición.
+\subsubsection{Envio de la consulta a la base de datos}
+Se envía una solicitud a la base de datos para finalizar con la creación del grupo de objeto. En caso que la subida diera error este proceso se pararía. Como puede comprobarse, al llamar al método de creación de grupo de objetos se le pasa como parámetro el campo \textit{fields}, donde va el cuerpo de la petición.
 
 \begin{verbatim}
     //Consulta post en la base de datos
@@ -256,4 +256,4 @@ Mandamos una solicitud a la base de datos para finalizar con la creación del gr
 });
 \end{verbatim}
 
-Ya tendríamos nuestra imagen subida con nuestra columna dentro de la base de datos.
+Ya con esto se tendría la imagen subida con el nombre del archivo actualizado dentro de la base de datos.

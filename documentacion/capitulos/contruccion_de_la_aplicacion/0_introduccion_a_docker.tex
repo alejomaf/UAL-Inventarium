@@ -1,19 +1,19 @@
 \section{Introducción a Docker y Docker Compose}
-¿Cómo funciona Docker Compose? O mejor dicho ¿para qué vamos a necesitar Docker?
+¿Cómo funciona Docker Compose? O mejor dicho ¿para qué es necesario Docker?
 
 \subsection{¿Para qué sirve Docker?}
-Gracias a Docker en vez de máquinas virtuales podemos utilizar contenedores. Los contenedores presentan diferentes ventajas:
+Gracias a Docker en vez de máquinas virtuales pueden utilizarse contenedores. Los contenedores presentan diferentes ventajas:
 
 \begin{itemize}
-  \item El entorno de pruebas donde ejecutaremos los distintos componentes de la aplicación son idénticos al de un servidor.
-  \item Obtenemos mayor modularidad. Gracias a esto tenemos un entorno ideal donde poder trabajar con microservicios.
-  \item Podemos ejecutar nuestra aplicación en un entorno que sabemos que en caso de fallo lo volvemos a levantar.
+  \item El entorno de pruebas donde se ejecutarán los distintos componentes de la aplicación son idénticos al de un servidor.
+  \item Se obtiene una mayor modularidad. Gracias a esto se tiene un entorno ideal donde poder trabajar con microservicios.
+  \item Puede ejecutarse la aplicación en un entorno donde en caso de fallo puede reiniciarse fácilmente.
 \end{itemize}
 
-Docker es un avance para la informática. Nos ayuda a ahorrar recursos en nuestro ordenador y poder dedicar el tiempo invertido en la configuración de entornos de servidor a otras actividades.
+Docker es un avance para la informática. Ayuda a ahorrar recursos en los sistemas y a dedicar el tiempo invertido en la configuración de entornos de servidor a otras actividades de desarrollo.
 
 \subsection{Docker Compose: el SimCity de los entornos}
 
-¿Por qué SimCity? Al igual que en el famoso juego SimCity levantávamos ciudades en cuestión de segundos gracias a Docker Compose levantamos entornos en el mismo tiempo.
-\\Docker Compose nos ayuda a definir un entorno de contenedores con la posibilidad de poder conectarlos entre ellos. También nos ofrece la posibilidad de generar volúmenes de almacenamiento donde ir guardando la información generada dentro de esos volúmenes. Lo hace todo menos la comida, ojalá.
-\\Docker Compose funciona sobre un archivo llamado docker-compose.yml dentro del cual iremos añadiendo los componentes que querramos configurar. Todo esto lo iremos viendo a lo largo de las siguientes secciones.
+¿Por qué SimCity? Al igual que en el famoso juego SimCity se levantan ciudades en cuestión de segundos, gracias a Docker Compose, se levantan entornos en el mismo tiempo.
+\\Docker Compose ayuda a definir un entorno de contenedores con la posibilidad de poder conectarlos entre ellos. También ofrece la posibilidad de generar volúmenes de almacenamiento donde ir guardando la información generada dentro de ellos.
+\\Docker Compose funciona sobre un archivo llamado docker-compose.yml dentro del cual se irán añadiendo los componentes que quieran configurarse. Todo esto se irá viendo a lo largo de las siguientes secciones.

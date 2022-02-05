@@ -1,26 +1,25 @@
 \section{Generación y puesta en marcha de la base de datos}
 
-Ha llegado el momento de ponernos manos a la masa y dejarnos de preparativos o presentación de herramientas. Vamos a levantar nuestra base de datos.
-\\El diagrama final de la base de datos quedaría como podemos ver en la figura \ref{fig:db-design}.
-\begin{figure}
-    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{db_design.png}
-    \caption{Diseño final de la base de datos}\label{fig:db-design}
+El diagrama final de la base de datos quedaría como puede observarse en la figura \ref{fig:db-design}.
+\begin{figure}[h]
+  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{db_design.png}
+  \caption{Diseño final de la base de datos}\label{fig:db-design}
 \end{figure}
-Generamos el script ``.sql'' para poder generar nuestra base de datos.
-\\Esta configuración la basaremos únicamente en la sección de código que añadiremos a nuestro archivo docker-compose.yml para poder hacerlo.
-\\Añadimos la versión que utilizaremos de docker-compose:
+Se generará el script ``.sql'' para poder crear la base de datos.
+\\Esta configuración se basará únicamente en la sección de código que se añadirá dentro del docker-compose.yml.
+\\Se añade la versión de docker-compose a utilizar:
 
 \begin{verbatim}
 version: "3.9"
 \end{verbatim}
 
-Creamos el apartado ``services'':
+Se creará el apartado ``services'':
 
 \begin{verbatim}
     services:
 \end{verbatim}
 
-Y añadimos nuestro primer contenedor, el de la base de datos:
+Se añade el primer contenedor, en este caso, el de la base de datos:
 
 \begin{verbatim}
     db:
@@ -40,13 +39,13 @@ Y añadimos nuestro primer contenedor, el de la base de datos:
       MYSQL_ROOT_PASSWORD: contraseñasecreta
 \end{verbatim}
 \begin{itemize}
-    \item \textbf{db}: Este es el nombre que le hemos puesto como referencia para docker-compose.
-    \item \textbf{container\_name}: Es el nombre que tendrá el contenedor que vayamos a desplegar.
-    \item \textbf{image}: La imagen utilizada, es decir, la ``máquina virtual'' que vamos a levantar. En este caso es una máquina virtual de MariaDB.
-    \item \textbf{ports}: Los puertos que utilizará la máquina, a la izquierda son los que le llegan a la máquina y a la derecha los que salen.
-    \item \textbf{volumes}: Esta sección es muy importante ya que aquí podremos importar archivos en el momento del despliegue de nuestro entorno. En este caso estamos importando la carpeta ``dump'' donde dentro está el archivo de generación de la base de datos. También le enlazamos el volumen ``persistent'' que creamos más adelante. Esto es para que no perdamos datos cuando paremos el contenedor. Ya que los datos de la base de datos de esta se almacenará en un sitio externo.
-    \item \textbf{networks}: Aquí podemos añadir las redes que manejará nuestro contenedor. En este caso es la default.
-    \item \textbf{environment}: Dentro de environments podremos definir variables que se necesiten en el momento del despliegue de nuestro contenedor. En este caso definimos el nombre de la base de datos, el usuario junto a su contraseña y la contraseña del usuario root.
+  \item \textbf{db}: Este es el nombre que se le ha puesto como referencia para docker-compose.
+  \item \textbf{container\_name}: Es el nombre que tendrá el contenedor que se vaya a desplegar.
+  \item \textbf{image}: La imagen utilizada, es decir, la ``máquina virtual'' que se irá a levantar. En este caso es una máquina virtual de MariaDB.
+  \item \textbf{ports}: Los puertos que utilizará la máquina, a la izquierda son los que le llegan a la máquina y a la derecha los que salen.
+  \item \textbf{volumes}: Esta sección es muy importante ya que aquí se podrán importar archivos en el momento del despliegue del entorno. En este caso se está importando la carpeta ``dump'' donde está el archivo de generación de la base de datos. También se le enlazará el volumen ``persistent'' que se creará más adelante. Esto es para que no se pierdan datos cuando se detenga contenedor ya que los datos de la base de datos, se almacenarán en un sitio externo.
+  \item \textbf{networks}: Aquí pueden añadirse las redes que manejará el contenedor. En este caso es la default.
+  \item \textbf{environment}: Dentro de environments se podrán definir variables que se necesiten en el momento del despliegue del contenedor. En este caso se definirá el nombre de la base de datos, el usuario junto a su contraseña y la contraseña del usuario root.
 \end{itemize}
 \begin{verbatim}
     phpmyadmin:
@@ -63,21 +62,21 @@ Y añadimos nuestro primer contenedor, el de la base de datos:
     networks:
       - default
 \end{verbatim}
-Este despliegue es para phpmyadmin, nuestro gestor de base de datos. Como añadido al punto anterior tenemos el apartado \textbf{links} que nos ayuda a crear una vinculación de un contenedor con otro. En este caso le estamos pasando la información de nuestra base de datos para que trabaje sobre ella.
+Este despliegue es para phpmyadmin, el gestor de la base de datos. Como añadido al punto anterior está el apartado \textbf{links} que ayuda a crear una vinculación de un contenedor con otro. En este caso se le está pasando la información de la base de datos para que trabaje sobre ella.
 \begin{verbatim}
 volumes:
     persistent: {}
 \end{verbatim}
-Dentro de la sección \textbf{volumes} podemos generar volúmenes que se van a utilizar dentro de nuestros contenedores. En este caso hemos creado nuestro volumen ``persistent'' para poder guardar la información que se almacene dentro de nuestra base de datos.
+Dentro de la sección \textbf{volumes} se pueden generar volúmenes que se van a utilizar dentro de los contenedores. En este caso se ha creado el volumen ``persistent'' para poder guardar la información que se almacene dentro de nuestra base de datos.
 \vspace{\baselineskip}
-\\Para levantar nuestra base de datos ejecutaríamos dentro del directorio donde hemos creado nuestro docker-compose.yml el siguiente comando:
+\\Para levantar la base de datos se ejecutará dentro del directorio donde se ha creado el docker-compose.yml el siguiente comando:
 \begin{verbatim}
     sudo docker compose up
 \end{verbatim}
-Ya tendríamos nuestra base de datos en funcionamiento.
+Ya con esto estaría la base de datos en funcionamiento.
 \vspace{\baselineskip}
 \begin{tcolorbox}
-    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo comprobamos los resultados?]
-    Visual Studio Code realiza una \textbf{tunelización de los puertos} a partir de la conexión SSH. Es decir, podemos ir habilitando redireccionamientos de puertos para poder ir viendo los resultados en nuestra máquina. Esto resulta de gran ayuda ya que no hay que realizar una configuración en la máquina de apertura de puertos para poder ir trabajando sobre cada una de las aplicaciones existentes. Ya que el funcionamiento del sistema será interno con poder disponer de los puertos HTTP Y HTTPS abiertos no necesitamos más.
+  [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo comprobamos los resultados?]
+  Visual Studio Code realiza una \textbf{tunelización de los puertos} a partir de la conexión SSH. Es decir, habilita redireccionamientos de puertos para poder ir viendo los resultados en la máquina. Esto resulta de gran ayuda ya que no hay que realizar una configuración en la máquina de apertura de puertos para poder ir trabajando sobre cada una de las aplicaciones existentes ya que el funcionamiento del sistema será interno. Con poder disponer de los puertos HTTP Y HTTPS abiertos no se necesitará más.
 \end{tcolorbox}
 
