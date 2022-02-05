@@ -988,6 +988,7 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
 INPUT /usr/share/texlive/texmf-dist/tex/latex/pdfpages/pppdftex.def
+INPUT /usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
@@ -1525,6 +1526,11 @@ INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_o
 INPUT imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png
+INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
+INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
+INPUT imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
+INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
+INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png
 INPUT imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png
@@ -1535,11 +1541,6 @@ INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_o
 INPUT imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png
-INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
-INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
-INPUT imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
-INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
-INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png
 INPUT ./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png
 INPUT imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png

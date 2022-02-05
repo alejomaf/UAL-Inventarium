@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  5 FEB 2022 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  5 FEB 2022 20:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1229,30 +1229,30 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/o
 <imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png, id=432, 376.40625pt x 669.50125pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png  used on input line 121.
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png  used on input line 123.
 (pdftex.def)             Requested size: 112.92273pt x 200.85191pt.
 <imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png, id=433, 376.40625pt x 669.50125pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png  used on input line 122.
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png  used on input line 124.
 (pdftex.def)             Requested size: 112.92273pt x 200.85191pt.
-LaTeX Info: Redefining \. on input line 139.
-LaTeX Info: Redefining \% on input line 139.
- [18 <./imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg>]
-<imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png, id=439, 386.44376pt x 463.7325pt>
+<imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png, id=434, 386.44376pt x 463.7325pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png  used on input line 142.
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png  used on input line 130.
 (pdftex.def)             Requested size: 115.93402pt x 139.12082pt.
+LaTeX Info: Redefining \. on input line 146.
+LaTeX Info: Redefining \% on input line 146.
+ [18 <./imagenes/estructura_y_desarrollo//../../diagramas/visual_paradigm/funcionamiento_principal.jpg>]
 <imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png, id=441, 361.35pt x 642.4pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png  used on input line 152.
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png  used on input line 154.
 (pdftex.def)             Requested size: 126.4744pt x 224.84337pt.
 <imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png, id=442, 361.35pt x 900.36375pt>
 File: imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png  used on input line 153.
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png  used on input line 155.
 (pdftex.def)             Requested size: 108.40584pt x 270.1112pt.
 ) (./capitulos/desarrollo_fases_proyecto/2_planificacion_y_elaboracion.tex
 LaTeX Info: Redefining \. on input line 12.
@@ -1294,16 +1294,13 @@ LaTeX Info: Redefining \% on input line 1.
  [27 <./imagenes/estructura_y_desarrollo//jerarquia_grupo_objetos.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/grupo_objetos.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/objeto_disponible.png>]
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [28 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png>]
+ [28 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuarios_buscados.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/usuario.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/solicitar_prestamo.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png>]
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [29 <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/ver_configuracion.png> <./imagenes/estructura_y_desarrollo//web_design_adobe_xd/crear_configuracion.png> <./imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png>]
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [30 <./imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png>]
+ [29 <./imagenes/estructura_y_desarrollo//preparacion_entorno/pagina_principal_github.png> <./imagenes/estructura_y_desarrollo//preparacion_entorno/creando_nuevo_repositorio.png>]
 chapter 4.
 (./capitulos/contruccion_de_la_aplicacion/0_introduccion_a_docker.tex) (./capitulos/contruccion_de_la_aplicacion/1_base_de_datos.tex
-<imagenes/estructura_y_desarrollo//db_design.png, id=567, 1055.945pt x 848.16875pt>
+<imagenes/estructura_y_desarrollo//db_design.png, id=563, 1055.945pt x 848.16875pt>
 File: imagenes/estructura_y_desarrollo//db_design.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//db_design.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//db_design.png  used on input line 5.
@@ -1312,16 +1309,18 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//db_design.png  used o
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[31
+LaTeX Info: Redefining \. on input line 24.
+LaTeX Info: Redefining \% on input line 24.
+[30
 
 ]
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
- [32 <./imagenes/estructura_y_desarrollo//db_design.png>]
+ [31 <./imagenes/estructura_y_desarrollo//db_design.png>]
 LaTeX Info: Redefining \. on input line 82.
 LaTeX Info: Redefining \% on input line 82.
- [33]) (./capitulos/contruccion_de_la_aplicacion/2_diseno_arquitectura.tex
-<imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png, id=582, 1138.2525pt x 542.025pt>
+ [32]) (./capitulos/contruccion_de_la_aplicacion/2_diseno_arquitectura.tex
+<imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png, id=578, 1138.2525pt x 542.025pt>
 File: imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png  used on input line 25.
@@ -1332,233 +1331,196 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 33.
 LaTeX Info: Redefining \% on input line 33.
-[34]) (./capitulos/contruccion_de_la_aplicacion/3_api.tex
+[33]) (./capitulos/contruccion_de_la_aplicacion/3_api.tex
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
- [35 <./imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png (PNG copy)>]
+ [34 <./imagenes/estructura_y_desarrollo//../complemento/clean_architecture.png (PNG copy)>]
 LaTeX Info: Redefining \. on input line 40.
 LaTeX Info: Redefining \% on input line 40.
- [36]
+ [35]
 Underfull \vbox (badness 1946) has occurred while \output is active []
 
 LaTeX Info: Redefining \. on input line 75.
 LaTeX Info: Redefining \% on input line 75.
- [37]
+ [36]
 LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
- [38]
+ [37]
 LaTeX Info: Redefining \. on input line 150.
 LaTeX Info: Redefining \% on input line 150.
- [39]
+ [38]
 LaTeX Info: Redefining \. on input line 198.
 LaTeX Info: Redefining \% on input line 198.
- [40]
+ [39]
 LaTeX Info: Redefining \. on input line 247.
 LaTeX Info: Redefining \% on input line 247.
- [41]) (./capitulos/contruccion_de_la_aplicacion/4_web.tex (./capitulos/contruccion_de_la_aplicacion/4_web/estructura_proyecto.tex
+ [40]) (./capitulos/contruccion_de_la_aplicacion/4_web.tex (./capitulos/contruccion_de_la_aplicacion/4_web/estructura_proyecto.tex
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
- [42]) (./capitulos/contruccion_de_la_aplicacion/4_web/componente.tex
+ [41]) (./capitulos/contruccion_de_la_aplicacion/4_web/componente.tex
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
- [43]) (./capitulos/contruccion_de_la_aplicacion/4_web/servicio.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/interfaz.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/elementos.tex
+ [42]) (./capitulos/contruccion_de_la_aplicacion/4_web/servicio.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/interfaz.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/elementos.tex
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
- [44]
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png, id=664, 139.27031pt x 130.23656pt>
+ [43]
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png, id=660, 139.27031pt x 130.23656pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png  used on input line 13.
 (pdftex.def)             Requested size: 139.26996pt x 130.23624pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png, id=665, 149.05687pt x 149.05687pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png, id=661, 149.05687pt x 149.05687pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png  used on input line 14.
 (pdftex.def)             Requested size: 149.0565pt x 149.0565pt.
 LaTeX Info: Redefining \. on input line 45.
 LaTeX Info: Redefining \% on input line 45.
- [45 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>]) (./capitulos/contruccion_de_la_aplicacion/4_web/creacion_componente.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/preparar_html.tex
+ [44 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/interfaces.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/servicios.png>]) (./capitulos/contruccion_de_la_aplicacion/4_web/creacion_componente.tex) (./capitulos/contruccion_de_la_aplicacion/4_web/preparar_html.tex
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- [46]
+ [45]
 LaTeX Info: Redefining \. on input line 56.
 LaTeX Info: Redefining \% on input line 56.
- [47]) (./capitulos/contruccion_de_la_aplicacion/4_web/definir_archivo_rutas.tex
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png, id=689, 1716.4125pt x 908.39375pt>
+ [46]) (./capitulos/contruccion_de_la_aplicacion/4_web/definir_archivo_rutas.tex
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png, id=685, 1716.4125pt x 908.39375pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png  used on input line 7.
 (pdftex.def)             Requested size: 455.24411pt x 240.9311pt.
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
- [48]) (./capitulos/contruccion_de_la_aplicacion/4_web/definir_proxy.tex
+ [47]) (./capitulos/contruccion_de_la_aplicacion/4_web/definir_proxy.tex
 LaTeX Info: Redefining \. on input line 5.
 LaTeX Info: Redefining \% on input line 5.
- [49 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>]) (./capitulos/contruccion_de_la_aplicacion/4_web/compilar_sitio_web.tex)) (./capitulos/contruccion_de_la_aplicacion/5_diseno_final.tex
+ [48 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/estructura_del_proyecto/app_routing.png>]) (./capitulos/contruccion_de_la_aplicacion/4_web/compilar_sitio_web.tex)) (./capitulos/contruccion_de_la_aplicacion/5_diseno_final.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [50]
+ [49]
 chapter 5.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png, id=705, 424.58624pt x 221.32687pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png, id=700, 424.58624pt x 221.32687pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png  used on input line 7.
 (pdftex.def)             Requested size: 212.2926pt x 110.66315pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png, id=706, 270.25969pt x 386.94562pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png, id=701, 270.25969pt x 386.94562pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png  used on input line 8.
 (pdftex.def)             Requested size: 135.1295pt x 193.47234pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png, id=709, 204.01219pt x 194.97844pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png, id=704, 204.01219pt x 194.97844pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png  used on input line 26.
 (pdftex.def)             Requested size: 102.00584pt x 97.48897pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png, id=711, 203.25937pt x 260.47313pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png, id=706, 203.25937pt x 260.47313pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png  used on input line 32.
 (pdftex.def)             Requested size: 101.62943pt x 130.23624pt.
-[51
+LaTeX Info: Redefining \. on input line 39.
+LaTeX Info: Redefining \% on input line 39.
+[50
 
  <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/login.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/register.png>]
 LaTeX Info: Redefining \. on input line 52.
 LaTeX Info: Redefining \% on input line 52.
- [52 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png>]
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png, id=726, 203.25937pt x 295.1025pt>
+ [51 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/user_unit.png>]
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png, id=722, 203.25937pt x 295.1025pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png  used on input line 55.
 (pdftex.def)             Requested size: 101.62943pt x 147.55087pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png, id=728, 251.43938pt x 470.50781pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png, id=724, 251.43938pt x 470.50781pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png  used on input line 65.
 (pdftex.def)             Requested size: 125.71938pt x 235.25333pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png, id=730, 875.1897pt x 403.2666pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png, id=726, 875.1897pt x 403.2666pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png  used on input line 75.
 (pdftex.def)             Requested size: 437.59378pt x 201.6328pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
 LaTeX Info: Redefining \. on input line 91.
 LaTeX Info: Redefining \% on input line 91.
-[53 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png>]
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png, id=737, 667.74469pt x 271.76532pt>
+ [52 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/object.png>]
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png, id=733, 667.74469pt x 271.76532pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png  used on input line 96.
 (pdftex.def)             Requested size: 333.87152pt x 135.88232pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png, id=739, 207.77625pt x 312.41719pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png, id=735, 207.77625pt x 312.41719pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png  used on input line 106.
 (pdftex.def)             Requested size: 103.88786pt x 156.2082pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png, id=740, 348.55219pt x 210.7875pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png, id=736, 348.55219pt x 210.7875pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png  used on input line 107.
 (pdftex.def)             Requested size: 174.27565pt x 105.3935pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png, id=742, 248.42813pt x 471.26062pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png, id=738, 248.42813pt x 471.26062pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png  used on input line 116.
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png  used on input line 117.
 (pdftex.def)             Requested size: 124.21376pt x 235.62973pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png, id=744, 208.52907pt x 240.9pt>
-File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png Graphic file (type png)
-<use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png  used on input line 126.
-(pdftex.def)             Requested size: 104.26427pt x 120.44969pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png, id=746, 761.84625pt x 416.30531pt>
-File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png Graphic file (type png)
-<use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png  used on input line 134.
-(pdftex.def)             Requested size: 380.9222pt x 208.15215pt.
-LaTeX Info: Redefining \. on input line 137.
-LaTeX Info: Redefining \% on input line 137.
-[54 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png, id=761, 347.79938pt x 481.04718pt>
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png, id=739, 347.79938pt x 481.04718pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png  used on input line 142.
-(pdftex.def)             Requested size: 173.89926pt x 240.523pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png, id=765, 348.55219pt x 233.37187pt>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png  used on input line 122.
+(pdftex.def)             Requested size: 139.11728pt x 192.41545pt.
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png, id=741, 208.52907pt x 240.9pt>
+File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png  used on input line 134.
+(pdftex.def)             Requested size: 83.41014pt x 96.35828pt.
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png, id=742, 761.84625pt x 416.30531pt>
+File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png Graphic file (type png)
+<use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png  used on input line 139.
+(pdftex.def)             Requested size: 228.55563pt x 124.89255pt.
+LaTeX Info: Redefining \. on input line 146.
+LaTeX Info: Redefining \% on input line 146.
+ [53 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/group_of_object.png>]
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png, id=761, 348.55219pt x 233.37187pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png  used on input line 153.
-(pdftex.def)             Requested size: 174.27565pt x 116.68564pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png, id=766, 346.29375pt x 204.01219pt>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png  used on input line 159.
+(pdftex.def)             Requested size: 139.4184pt x 93.34709pt.
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png, id=762, 346.29375pt x 204.01219pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png  used on input line 158.
-(pdftex.def)             Requested size: 173.14644pt x 102.00584pt.
-<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png, id=767, 349.305pt x 204.765pt>
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png  used on input line 164.
+(pdftex.def)             Requested size: 138.51503pt x 81.60342pt.
+<imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png, id=763, 349.305pt x 204.765pt>
 File: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png>
-Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png  used on input line 163.
-(pdftex.def)             Requested size: 174.65207pt x 102.38223pt.
-)) (./capitulos/deploy.tex
+Package pdftex.def Info: imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png  used on input line 170.
+(pdftex.def)             Requested size: 139.71951pt x 81.90454pt.
+LaTeX Info: Redefining \. on input line 173.
+LaTeX Info: Redefining \% on input line 173.
+ [54 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png>])) (./capitulos/deploy.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [55 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/prestamos-working.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/01_add_object.png>]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+ [55 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png>]
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-[56 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/02_add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/03_add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/04_add_object.png>]
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [57 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/configuration_form.png>]
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
- [58 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png>]
+ [56 <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/05-add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/07_add_object.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_01_add_location.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_02_add_location.png> <./imagenes/estructura_y_desarrollo//../contruccion_aplicacion/design/add_object/add_location/06_03_add_location.png>]
 chapter 6.
-[59
+[57
 
 ]
 LaTeX Info: Redefining \. on input line 74.
 LaTeX Info: Redefining \% on input line 74.
- [60]
+ [58]
 LaTeX Info: Redefining \. on input line 117.
 LaTeX Info: Redefining \% on input line 117.
- [61]) (./capitulos/pruebas.tex
+ [59]) (./capitulos/pruebas.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [62]
+ [60]
 chapter 7.
-<imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png, id=819, 1269.74374pt x 916.42375pt>
+<imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png, id=810, 1269.74374pt x 916.42375pt>
 File: imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png  used on input line 17.
@@ -1566,18 +1528,18 @@ Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/postman_cr
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png, id=823, 962.59625pt x 713.66624pt>
+<imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png, id=814, 962.59625pt x 713.66624pt>
 File: imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png  used on input line 34.
 (pdftex.def)             Requested size: 385.03168pt x 285.46143pt.
-[63
+[61
 
 ]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png, id=829, 434.37282pt x 293.59688pt>
+<imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png, id=821, 434.37282pt x 293.59688pt>
 File: imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png Graphic file (type png)
 <use imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png>
 Package pdftex.def Info: imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png  used on input line 47.
@@ -1587,20 +1549,20 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Info: Redefining \. on input line 53.
 LaTeX Info: Redefining \% on input line 53.
-[64 <./imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png>]
+[62 <./imagenes/estructura_y_desarrollo//../pruebas/postman_creation_user.png>]
 LaTeX Info: Redefining \. on input line 65.
 LaTeX Info: Redefining \% on input line 65.
- [65 <./imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png>]) (./capitulos/conclusiones_y_mejoras.tex
+ [63 <./imagenes/estructura_y_desarrollo//../pruebas/registro_usuario_selenium.png>]) (./capitulos/conclusiones_y_mejoras.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [66 <./imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png>]
+ [64 <./imagenes/estructura_y_desarrollo//../pruebas/network_dev_tools_chrome.png>]
 chapter 8.
-) [67
+) [65
 
 ] (/home/alejomaf/Documents/Inventarium/documentacion/build/main.bbl
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
- [68]
+ [66]
 chapter without number
 
 Underfull \hbox (badness 1297) in paragraph at lines 299--312
@@ -1617,12 +1579,12 @@ Underfull \hbox (badness 7273) in paragraph at lines 375--388
 \OT1/cmr/m/n/10.95 car-ga-do de []$\OT1/cmtt/m/n/10.95 https :// www [] .serverlab [] .ca / tutorials / linux / web [] -servers [] -linux / how [] -to []
  []
 
-[69
+[67
 
 ])
 LaTeX Info: Redefining \. on input line 35.
 LaTeX Info: Redefining \% on input line 35.
- [70] (/home/alejomaf/Documents/Inventarium/documentacion/build/main.aux
+ [68] (/home/alejomaf/Documents/Inventarium/documentacion/build/main.aux
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
@@ -1630,18 +1592,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29343 strings out of 479304
- 628090 string characters out of 5869780
- 1128515 words of memory out of 5000000
+ 29341 strings out of 479304
+ 628076 string characters out of 5869780
+ 1128532 words of memory out of 5000000
  45537 multiletter control sequences out of 15000+600000
  411384 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,119p,10734b,970s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main.pdf (70 pages, 6239833 bytes).
+Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main.pdf (68 pages, 6239242 bytes).
 PDF statistics:
- 1356 PDF objects out of 1440 (max. 8388607)
- 1145 compressed objects within 12 object streams
- 352 named destinations out of 1000 (max. 500000)
+ 1348 PDF objects out of 1440 (max. 8388607)
+ 1139 compressed objects within 12 object streams
+ 350 named destinations out of 1000 (max. 500000)
  1108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

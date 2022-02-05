@@ -78,84 +78,84 @@
 \contentsline {subsubsection}{\nonumberline Instalación de Angular 12}{24}{subsubsection*.42}%
 \contentsline {subsubsection}{\nonumberline Instalación de Docker y Docker Compose}{25}{subsubsection*.44}%
 \contentsline {subsubsection}{\nonumberline Configuración de credenciales de Git e instalación del repositorio}{25}{subsubsection*.46}%
-\contentsline {chapter}{\numberline {4}Construcción de la aplicación}{31}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Introducción a Docker y Docker Compose}{31}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}¿Para qué sirve Docker?}{31}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Docker Compose: el SimCity de los entornos}{31}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Generación y puesta en marcha de la base de datos}{31}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Diseño de la arquitectura de la aplicación}{34}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}¿Qué es una arquitectura de software?}{34}{subsection.4.3.1}%
-\contentsline {subsubsection}{\nonumberline ¿Por qué es importante definir una arquitectura software?}{34}{subsubsection*.48}%
-\contentsline {subsection}{\numberline {4.3.2}Clean Architecture o Arquitectura Limpia}{34}{subsection.4.3.2}%
-\contentsline {subsubsection}{\nonumberline Entidades}{35}{subsubsection*.50}%
-\contentsline {subsubsection}{\nonumberline Casos de uso}{35}{subsubsection*.52}%
-\contentsline {subsubsection}{\nonumberline Controladores, presentadores y vistas de los modelos}{35}{subsubsection*.54}%
-\contentsline {subsubsection}{\nonumberline Vistas y fuentes externas}{35}{subsubsection*.56}%
-\contentsline {section}{\numberline {4.4}Creación y puesta en marcha de la Interfaz de Programación de Aplicaciones (API)}{35}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Creación del sistema de directorios}{36}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Funcionamiento de index.js}{38}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Enrutamiento de la aplicación}{38}{subsection.4.4.3}%
-\contentsline {subsubsection}{\nonumberline Métodos de petición HTTP}{38}{subsubsection*.58}%
-\contentsline {subsubsection}{\nonumberline GET (leer)}{38}{subsubsection*.60}%
-\contentsline {subsubsection}{\nonumberline POST (escribir)}{39}{subsubsection*.62}%
-\contentsline {subsubsection}{\nonumberline PUT (actualizar)}{39}{subsubsection*.64}%
-\contentsline {subsubsection}{\nonumberline DELETE (eliminar)}{39}{subsubsection*.66}%
-\contentsline {subsection}{\numberline {4.4.4}Consultas con la base de datos}{40}{subsection.4.4.4}%
-\contentsline {subsection}{\numberline {4.4.5}Gestión de archivos con Express}{40}{subsection.4.4.5}%
-\contentsline {subsubsection}{\nonumberline Descomposición de la petición}{41}{subsubsection*.68}%
-\contentsline {subsubsection}{\nonumberline Análisis del archivo}{41}{subsubsection*.70}%
-\contentsline {subsubsection}{\nonumberline Subida de la imagen}{41}{subsubsection*.72}%
-\contentsline {subsubsection}{\nonumberline Envio de la consulta a la base de datos}{42}{subsubsection*.74}%
-\contentsline {section}{\numberline {4.5}Creación de UAL Inventarium}{42}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Estructura de un proyecto Angular}{42}{subsection.4.5.1}%
-\contentsline {subsubsection}{\nonumberline Componente}{44}{subsubsection*.76}%
-\contentsline {subsubsection}{\nonumberline Servicio}{44}{subsubsection*.78}%
-\contentsline {subsubsection}{\nonumberline Interfaz}{44}{subsubsection*.80}%
-\contentsline {subsection}{\numberline {4.5.2}Disposición y elementos que hay en Inventarium}{44}{subsection.4.5.2}%
-\contentsline {subsubsection}{\nonumberline Interfaces}{45}{subsubsection*.82}%
-\contentsline {subsubsection}{\nonumberline Services}{45}{subsubsection*.84}%
-\contentsline {subsection}{\numberline {4.5.3}Creación de componentes}{46}{subsection.4.5.3}%
-\contentsline {subsubsection}{\nonumberline Preparar el apartado TypeScript}{46}{subsubsection*.86}%
-\contentsline {subsubsection}{\nonumberline Preparar el archivo HTML}{46}{subsubsection*.88}%
-\contentsline {subsection}{\numberline {4.5.4}Definir el archivo de rutas}{48}{subsection.4.5.4}%
-\contentsline {subsection}{\numberline {4.5.5}Definir el proxy en nuestra aplicación}{50}{subsection.4.5.5}%
-\contentsline {subsection}{\numberline {4.5.6}Compilar el sitio Web}{50}{subsection.4.5.6}%
-\contentsline {chapter}{\numberline {5}Diseño y funcionamiento final}{51}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Inicio de sesión y registro de usuario}{51}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Componentes principales}{51}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Usuario}{52}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}Objeto}{53}{subsection.5.2.2}%
-\contentsline {subsection}{\numberline {5.2.3}Grupo de objetos}{53}{subsection.5.2.3}%
-\contentsline {subsection}{\numberline {5.2.4}Préstamos}{53}{subsection.5.2.4}%
-\contentsline {section}{\numberline {5.3}Componentes de procesos}{53}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Proceso de creación de grupo de objetos y objetos}{54}{subsection.5.3.1}%
-\contentsline {subsubsection}{\nonumberline Escoger el tipo}{54}{subsubsection*.90}%
-\contentsline {subsubsection}{\nonumberline Buscar o añadir el grupo de objeto}{54}{subsubsection*.92}%
-\contentsline {subsubsection}{\nonumberline Añadir imagen y datos}{54}{subsubsection*.94}%
-\contentsline {subsubsection}{\nonumberline Creación de objetos}{54}{subsubsection*.96}%
-\contentsline {subsubsection}{\nonumberline Añadir datos a los objetos}{55}{subsubsection*.98}%
-\contentsline {subsection}{\numberline {5.3.2}Procesos de creación y modificación}{55}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Proceso de creación, selección y eliminación de ubicaciones}{55}{subsection.5.3.3}%
-\contentsline {chapter}{\numberline {6}Deploy del sitio web}{59}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Levantar el servidor para la API}{59}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Levantar el servidor Web}{61}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Configuración del ruteo de la web}{61}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Configuración del proxy inverso de la web}{62}{subsection.6.2.2}%
-\contentsline {chapter}{\numberline {7}Pruebas durante el desarrollo y corrección de errores}{63}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Pruebas durante el desarrollo}{63}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Postman}{63}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Selenium}{63}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}Herramientas de Desarrollador de Google Chrome}{64}{subsection.7.1.3}%
-\contentsline {section}{\numberline {7.2}Corrección de errores}{65}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Cambio de la base de datos}{65}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Cambios de solicitudes}{65}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Conexión entre máquinas de Docker Compose}{66}{subsection.7.2.3}%
-\contentsline {chapter}{\numberline {8}Conclusiones y posibles mejoras}{67}{chapter.8}%
-\contentsline {section}{\numberline {8.1}Posibles mejoras}{67}{section.8.1}%
-\contentsline {subsubsection}{\nonumberline Adición de capa superior}{67}{subsubsection*.100}%
-\contentsline {subsubsection}{\nonumberline Gestor de notificaciones}{67}{subsubsection*.102}%
-\contentsline {subsubsection}{\nonumberline Generalización de tipos de objetos}{67}{subsubsection*.104}%
-\contentsline {subsubsection}{\nonumberline Inclusión de horarios de laboratorio}{67}{subsubsection*.106}%
-\contentsline {section}{\numberline {8.2}Conclusiones}{67}{section.8.2}%
-\contentsline {chapter}{\nonumberline Referencias}{69}{chapter*.107}%
+\contentsline {chapter}{\numberline {4}Construcción de la aplicación}{30}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introducción a Docker y Docker Compose}{30}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}¿Para qué sirve Docker?}{30}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Docker Compose: el SimCity de los entornos}{30}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Generación y puesta en marcha de la base de datos}{30}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Diseño de la arquitectura de la aplicación}{33}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}¿Qué es una arquitectura de software?}{33}{subsection.4.3.1}%
+\contentsline {subsubsection}{\nonumberline ¿Por qué es importante definir una arquitectura software?}{33}{subsubsection*.48}%
+\contentsline {subsection}{\numberline {4.3.2}Clean Architecture o Arquitectura Limpia}{33}{subsection.4.3.2}%
+\contentsline {subsubsection}{\nonumberline Entidades}{34}{subsubsection*.50}%
+\contentsline {subsubsection}{\nonumberline Casos de uso}{34}{subsubsection*.52}%
+\contentsline {subsubsection}{\nonumberline Controladores, presentadores y vistas de los modelos}{34}{subsubsection*.54}%
+\contentsline {subsubsection}{\nonumberline Vistas y fuentes externas}{34}{subsubsection*.56}%
+\contentsline {section}{\numberline {4.4}Creación y puesta en marcha de la Interfaz de Programación de Aplicaciones (API)}{34}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Creación del sistema de directorios}{35}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Funcionamiento de index.js}{37}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Enrutamiento de la aplicación}{37}{subsection.4.4.3}%
+\contentsline {subsubsection}{\nonumberline Métodos de petición HTTP}{37}{subsubsection*.58}%
+\contentsline {subsubsection}{\nonumberline GET (leer)}{37}{subsubsection*.60}%
+\contentsline {subsubsection}{\nonumberline POST (escribir)}{38}{subsubsection*.62}%
+\contentsline {subsubsection}{\nonumberline PUT (actualizar)}{38}{subsubsection*.64}%
+\contentsline {subsubsection}{\nonumberline DELETE (eliminar)}{38}{subsubsection*.66}%
+\contentsline {subsection}{\numberline {4.4.4}Consultas con la base de datos}{39}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Gestión de archivos con Express}{39}{subsection.4.4.5}%
+\contentsline {subsubsection}{\nonumberline Descomposición de la petición}{40}{subsubsection*.68}%
+\contentsline {subsubsection}{\nonumberline Análisis del archivo}{40}{subsubsection*.70}%
+\contentsline {subsubsection}{\nonumberline Subida de la imagen}{40}{subsubsection*.72}%
+\contentsline {subsubsection}{\nonumberline Envio de la consulta a la base de datos}{41}{subsubsection*.74}%
+\contentsline {section}{\numberline {4.5}Creación de UAL Inventarium}{41}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Estructura de un proyecto Angular}{41}{subsection.4.5.1}%
+\contentsline {subsubsection}{\nonumberline Componente}{43}{subsubsection*.76}%
+\contentsline {subsubsection}{\nonumberline Servicio}{43}{subsubsection*.78}%
+\contentsline {subsubsection}{\nonumberline Interfaz}{43}{subsubsection*.80}%
+\contentsline {subsection}{\numberline {4.5.2}Disposición y elementos que hay en Inventarium}{43}{subsection.4.5.2}%
+\contentsline {subsubsection}{\nonumberline Interfaces}{44}{subsubsection*.82}%
+\contentsline {subsubsection}{\nonumberline Services}{44}{subsubsection*.84}%
+\contentsline {subsection}{\numberline {4.5.3}Creación de componentes}{45}{subsection.4.5.3}%
+\contentsline {subsubsection}{\nonumberline Preparar el apartado TypeScript}{45}{subsubsection*.86}%
+\contentsline {subsubsection}{\nonumberline Preparar el archivo HTML}{45}{subsubsection*.88}%
+\contentsline {subsection}{\numberline {4.5.4}Definir el archivo de rutas}{47}{subsection.4.5.4}%
+\contentsline {subsection}{\numberline {4.5.5}Definir el proxy en nuestra aplicación}{49}{subsection.4.5.5}%
+\contentsline {subsection}{\numberline {4.5.6}Compilar el sitio Web}{49}{subsection.4.5.6}%
+\contentsline {chapter}{\numberline {5}Diseño y funcionamiento final}{50}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Inicio de sesión y registro de usuario}{50}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Componentes principales}{50}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Usuario}{51}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Objeto}{52}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.3}Grupo de objetos}{52}{subsection.5.2.3}%
+\contentsline {subsection}{\numberline {5.2.4}Préstamos}{52}{subsection.5.2.4}%
+\contentsline {section}{\numberline {5.3}Componentes de procesos}{52}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Proceso de creación de grupo de objetos y objetos}{53}{subsection.5.3.1}%
+\contentsline {subsubsection}{\nonumberline Escoger el tipo}{53}{subsubsection*.90}%
+\contentsline {subsubsection}{\nonumberline Buscar o añadir el grupo de objeto}{53}{subsubsection*.92}%
+\contentsline {subsubsection}{\nonumberline Añadir imagen y datos}{53}{subsubsection*.94}%
+\contentsline {subsubsection}{\nonumberline Creación de objetos}{53}{subsubsection*.96}%
+\contentsline {subsubsection}{\nonumberline Añadir datos a los objetos}{54}{subsubsection*.98}%
+\contentsline {subsection}{\numberline {5.3.2}Procesos de creación y modificación}{54}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Proceso de creación, selección y eliminación de ubicaciones}{54}{subsection.5.3.3}%
+\contentsline {chapter}{\numberline {6}Deploy del sitio web}{57}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Levantar el servidor para la API}{57}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Levantar el servidor Web}{59}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Configuración del ruteo de la web}{59}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Configuración del proxy inverso de la web}{60}{subsection.6.2.2}%
+\contentsline {chapter}{\numberline {7}Pruebas durante el desarrollo y corrección de errores}{61}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Pruebas durante el desarrollo}{61}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Postman}{61}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Selenium}{61}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Herramientas de Desarrollador de Google Chrome}{62}{subsection.7.1.3}%
+\contentsline {section}{\numberline {7.2}Corrección de errores}{63}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Cambio de la base de datos}{63}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Cambios de solicitudes}{63}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Conexión entre máquinas de Docker Compose}{64}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {8}Conclusiones y posibles mejoras}{65}{chapter.8}%
+\contentsline {section}{\numberline {8.1}Posibles mejoras}{65}{section.8.1}%
+\contentsline {subsubsection}{\nonumberline Adición de capa superior}{65}{subsubsection*.100}%
+\contentsline {subsubsection}{\nonumberline Gestor de notificaciones}{65}{subsubsection*.102}%
+\contentsline {subsubsection}{\nonumberline Generalización de tipos de objetos}{65}{subsubsection*.104}%
+\contentsline {subsubsection}{\nonumberline Inclusión de horarios de laboratorio}{65}{subsubsection*.106}%
+\contentsline {section}{\numberline {8.2}Conclusiones}{65}{section.8.2}%
+\contentsline {chapter}{\nonumberline Referencias}{67}{chapter*.107}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
