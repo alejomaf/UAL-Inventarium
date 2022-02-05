@@ -77,8 +77,9 @@ Luego de la asignación de campos a \textit{mailOptions} mandamos los parámetro
 if (result.affectedRows) {
     message = 'usuario created successfully';
     await transporter.registro_creado(usuario.correoElectronico, 
-    "http://" + process.env.HOST + "/register-confirmed/" + result.insertId + '/'
-    + usuario.telefono + '/' + bcrypt.hashSync(usuario.telefono, 3), usuario.nombre);
+    "http://" + process.env.HOST + "/register-confirmed/" + result.insertId 
+    + '/' + usuario.telefono + '/' + bcrypt.hashSync(usuario.telefono, 3),
+     usuario.nombre);
 }
 \end{verbatim}
 Este condicional comprueba que hayamos creado con éxito el usuario. Por consiguiente, se le envía un correo para que confirme su registro. Llamando a nuestra clase \textit{transporter} anteriormente implementada.

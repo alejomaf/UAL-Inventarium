@@ -8,7 +8,7 @@ La reunión inicial fue con Juan Francisco Sanjuan Estrada quien explicó los di
 \\Luego de esta primera reunión se acordó en que podrían visualizarse los archivos Excel de los técnicos. Estos compartieron sus ficheros y desde ahí se pudo empezar a realizar la definición de los diferentes campos que irían ligados a cada tabla en la base de datos. Desde este punto se haría una propuesta inicial.
 \\La propuesta inicial fue la de la figura \ref{diseno_principal_base_datos}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{db_old_design.png}
     \caption{Diseño principal de la base de datos}\label{diseno_principal_base_datos}
 \end{figure}
@@ -23,12 +23,12 @@ La lógica de la aplicación consistiría en generar un grupo de objetos de un d
 \\El esquema de navegación de la propuesta inicial quedaría tal como se puede observar en la Figura \ref{diseno_principal_sistema_navegacion}.
 \\Donde se tienen dos roles de usuario, un personal docente o investigador y un técnico. Después del análisis hecho en la entrevista y correos mantenidos más tarde con el cliente se obtuvo el siguiente resultado de la Figura \ref{funcionamiento_principal_casos_de_uso}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{flujo_de_navegacion.png}
     \caption{Diseño principal del sistema de navegación}\label{diseno_principal_sistema_navegacion}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{../../diagramas/visual_paradigm/funcionamiento_principal.jpg}
     \caption{Diagrama de casos de uso del funcionamiento principal de la herramienta Inventarium}\label{funcionamiento_principal_casos_de_uso}
 \end{figure}
@@ -38,7 +38,7 @@ La lógica de la aplicación consistiría en generar un grupo de objetos de un d
 
 El registro del usuario no conllevaba un registro instantáneo del mismo ya que este tiene que ser dado de alta por un técnico del sistema. Pueden observarse los diseños en la figura \ref{inicio_registro_design}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \begin{center}
         \includegraphics[scale=0.3]{web_design_adobe_xd/inicio_de_sesion.png}
         \includegraphics[scale=0.3]{web_design_adobe_xd/registro.png}
@@ -63,7 +63,7 @@ Otro campo para comprobar es el del correo electrónica institucional teniendo q
 
 La barra de navegación vertical tuvo una pequeña modificación que era incorporar una pequeña sección de inicio donde aparecieran información pertinente y relevante para el usuario. Esto será explicado más adelante en la parte de desarrollo. Puede observarse en la figura \ref{barra_de_navegacion}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \begin{center}
         \includegraphics[scale=0.5]{web_design_adobe_xd/menu_principal.png}
         \caption{Diseño de la barra lateral de búsqueda}\label{barra_de_navegacion}
@@ -82,7 +82,7 @@ Dentro de ella se pueden ver cinco apartados que derivan en varios componentes v
 
 \subsection{Añadir objeto}
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \begin{center}
         \includegraphics[scale=0.4]{web_design_adobe_xd/add_fungible.png}
         \includegraphics[scale=0.4]{web_design_adobe_xd/add_inventario.png}
@@ -94,7 +94,7 @@ La única diferencia entre añadir un objeto de tipo inventario y otro fungible 
 \\No solo existen los fungibles e inventarios sino que también se solicitó más tarde poder crear kits.
 \\Un \textbf{kit} puede considerarse como otro nivel de agrupación. Ya que un kit contiene más objetos dentro suyo que llamaremos ``objetos kit''. Para entender los niveles de agrupación puede observarse la figura \ref{jerarquia_grupo_objetos}.
 
-\begin{figure}[h]\resizebox{
+\begin{figure}[ht]\resizebox{
         \linewidth}{!}{
         \includegraphics{jerarquia_grupo_objetos.png}
     }
@@ -105,7 +105,7 @@ La única diferencia entre añadir un objeto de tipo inventario y otro fungible 
 
 Dentro de la sección de ``ver objetos'' de la barra de navegación se podrá observar la visualización de los grupos de objetos de la aplicación. En las cuales habrá también objetos. Estos dos conjuntos se pueden modificar y además se pueden pedir solicitudes para el inventariado, fungibles y kits. Pueden observarse en la figura \ref{grupo_objetos_y_objetos_design}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.3]{web_design_adobe_xd/grupo_objetos.png}
     \includegraphics[scale=0.3]{web_design_adobe_xd/objeto_disponible.png}
@@ -116,7 +116,7 @@ Dentro de la sección de ``ver objetos'' de la barra de navegación se podrá ob
 
 En este apartado se podrán visualizar los usuarios que están registrados en la aplicación. Permitiéndose poder acceder a cada uno de los perfiles para ver sus respectivos datos y sus solicitudes o historial de préstamos. Tal como se observa en la figura \ref{grupo_usuarios_design}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \begin{center}
         \includegraphics[scale=0.3]{web_design_adobe_xd/usuarios_buscados.png}
         \includegraphics[scale=0.3]{web_design_adobe_xd/usuario.png}
@@ -137,7 +137,7 @@ Los préstamos se pueden encontrar en tres diferentes estados:
 
 Cada solicitud irá con un color representativo dependiendo de cuál sea su estado, una utilidad tanto para el usuario como para el técnico que van a realizar las acciones de ir solicitando y concediendo préstamos. Tal como muestra la figura \ref{solicitar_prestamos_design}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.3]{web_design_adobe_xd/solicitar_prestamo.png}
     \caption{Solicitud del préstamo de un objeto}\label{solicitar_prestamos_design}
@@ -147,7 +147,7 @@ Cada solicitud irá con un color representativo dependiendo de cuál sea su esta
 
 Un objeto puede ir ligado a una información extra o no. Esta información no es algo que vuelva más descriptivo el objeto sino que es una utilidad que se solicitó en el momento del desarrollo de la aplicación. Su objetivo es poder acceder a información a la que suelen recurrir los técnicos de forma bastante frecuente. Como la IP o dirección MAC de un ordenador o las credenciales para poder acceder a él. Gracias a esta distinción se permite que la información de los equipos que disponen de una configuración en particular estén en una sección para ellos solos facilitándoles el acceso a ese recurso a los técnicos. Tal como se ve en la figura \ref{configuracion_design}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.35]{web_design_adobe_xd/ver_configuracion.png}
     \includegraphics[scale=0.3]{web_design_adobe_xd/crear_configuracion.png}

@@ -1,0 +1,13 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Creando segunda máquina virtual}}{20}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Entorno de máquinas en Google Cloud}}{20}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Inicializando el entorno de docker swarm}}{21}{figure.3.3}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Añadiendo nodo esclavo a nuestro entorno}}{21}{figure.3.4}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Deploy de nuestro entorno Docker en el clúster}}{22}{figure.3.5}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Visualización de los servicios corriendo en Docker Swarm}}{22}{figure.3.6}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

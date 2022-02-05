@@ -1,11 +1,12 @@
 % Configuración del documento
 
-\documentclass[a4paper,11pt,titlepage]{scrbook}
+\documentclass[a4paper,11pt,titlepage, openany]{scrbook}
 \KOMAoption{toc}{bib,chapterentryfill} % Opciones del índice
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{scrhack} % Previene algunos errores
 % Paquete de formato para scrbook. Con marcas, linea-separador superior e inferior
 \usepackage[automark,headsepline,footsepline]{scrlayer-scrpage}
+\renewcommand{\chapterpagestyle}{scrheadings}
 \usepackage{wallpaper}
 \usepackage{indentfirst}
 \usepackage{pgfgantt}
@@ -13,6 +14,8 @@
 \usepackage{csquotes}
 \usepackage{tcolorbox}
 \usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage[spanish]{babel}
 % Gestionar imágenes
 
 %%%%%%%%%%%%%%%%%%%%%%%%

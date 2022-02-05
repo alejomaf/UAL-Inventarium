@@ -1,14 +1,14 @@
 \subsection{Definir el proxy en nuestra aplicación}
-La finalidad de un proxy inverso es reenviar las solicitudes que realiza la aplicación a la API, esta por políticas de CORS no puede reenviar una solicitud que entra al puerto 80 al puerto 3000 del mismo sitio. Tampoco podemos hacer que la API funciones sobre el puerto 80 ya que este puerto está siendo utilizado por nuestra aplicación web. Por ello tenemos que hacer que este proceso se haga de forma interna en nuestro servidor y para ello utilizaremos un proxy inverso.
-\\Un proxy inverso se encarga de reenviar las solicitudes que llegan a unas determinadas rutas del sitio web a otro puerto de nuestro entorno pero que no está alojado en nuestro sitio. En este caso el proxy sería el encargado de que todas las solicitudes que entrasen por el puerto 80 de las direcciones definidas en la sección anterior sean redirigidas a nuestra API que trabaja sobre el puerto 3000.
-\\Este proxy inverso lo definiríamos en el fichero \textit{proxy.conf.json} de la siguiente forma:
+La finalidad de un proxy inverso es reenviar las solicitudes que realiza la aplicación a la API, esta por políticas de CORS no puede reenviar una solicitud que entra al puerto 80 al puerto 3000 del mismo sitio. Tampoco se puede hacer que la API funcione sobre el puerto 80 ya que este puerto está siendo utilizado por la aplicación web. Por ello se tiene que hacer que este proceso se haga de forma interna en el servidor y para ello se utilizará un proxy inverso.
+\\Un proxy inverso se encarga de reenviar las solicitudes que llegan a unas determinadas rutas del sitio web a otro puerto del entorno que no está alojado desde donde se envía. En este caso el proxy sería el encargado de que todas las solicitudes que entrasen por el puerto 80 de las direcciones definidas en la sección anterior sean redirigidas a la API que trabaja sobre el puerto 3000.
+\\Este proxy inverso se definirá en el fichero \textit{proxy.conf.json} de la siguiente forma:
 \begin{verbatim}
 "/api/configuracion*": {
     "target": "http://localhost:3000",
     "changeOrigin": true
 }
 \end{verbatim}
-Y para poder utilizarlo durante el desarrollo de la aplicación modificaremos el comando que utilizamos para inicializar el entorno de pruebas por el siguiente:
+Y para poder utilizarlo durante el desarrollo de la aplicación se modificará el comando que se utiliza para inicializar el entorno de pruebas por el siguiente:
 \begin{verbatim}
     "start": "ng serve -o --proxy-config proxy.conf.json --host 0.0.0.0"
 \end{verbatim}

@@ -1,5 +1,5 @@
-\subsubsection{Preparar nuestro archivo HTML}
-Nuestro fichero HTML será el siguiente:
+\subsubsection{Preparar el archivo HTML}
+El fichero HTML será el siguiente:
 \begin{verbatim}
     <div class="row d-flex-inline justify-content-center">
     <!--Contenido-->
@@ -23,12 +23,12 @@ Nuestro fichero HTML será el siguiente:
     </div>
 </div>
 \end{verbatim}
-El componente es bastante sencillo. Primero definimos un contenedor donde iremos insertando tantos componentes nos haya devuelto la petición mandada anteriormente.
-\\Ahora definimos otro contenedor donde iteraremos sobre nuestro array de groupo de objetos asignandolo a una variable auxiliar \textit{go}. Esto lo haremos utilizando \textit{*ngFor}.
-\\Luego de iterar llamaremos a nuestro componente hijo que será el que iremos generando por cada grupo de objeto que cargue. Este componente lo veremos ahora después.
-\\Dentro del componente hijo definiremos los componentes HTML que le queramos pasar. Para poder definir esto basta con añadirle un nombre que después referenciaremos en el otro componente.
-\\Podemos ver al final del código que definimos un atributo dentro de nuestro componente HTML \textit{span} llamado \textit{*ngIf}. Este atributo es un condicional, en caso de que sea \textit{true} se cargará el componente. Si es \textit{false} no lo hará.
-\\Ahora definiremos nuestro componente hijo que es al que estamos llamando:
+El componente es bastante sencillo. Primero se define un contenedor donde se irán insertando los componentes que haya devuelto la petición mandada anteriormente en el constructor.
+\\Ahora se definirá otro contenedor donde se iterará sobre el array de groupos de objetos asignándolo a una variable auxiliar \textit{go}. Esto se hará utilizando \textit{*ngFor}.
+\\Luego de iterar se llamará al componente hijo que será el que se irá generando por cada grupo de objeto que cargue.
+\\Dentro del componente hijo se definirán los componentes HTML que se quieran pasar. Para poder definir esto basta con añadirle un nombre que después se referenciará en el otro componente.
+\\Puede verse al final del código que se define un atributo dentro del componente HTML \textit{span} llamado \textit{*ngIf}. Este atributo es un condicional, en caso de que sea \textit{true} se cargará el componente. Si es \textit{false} no lo hará.
+\\Ahora se definirá componente hijo que es al que se está llamando:
 \begin{verbatim}
     <div class="card border rounded p-3 m-2" 
     style="width: 22rem;background-color:#FDF7FF;">
@@ -63,12 +63,12 @@ El componente es bastante sencillo. Primero definimos un contenedor donde iremos
     <ng-content select="[botones]"></ng-content>
 </div>
 \end{verbatim}
-Este es el modelado que tiene nuestro objeto. El componente HTML llamado \textit{ng-content} será el encargado de tomar los objetos que le está pasando el componente padre. Estos los referencia con el atributo \textit{select} y le indica el nombre del tipo de componente que quiere coger.
-\\Para poder ir revisando cómo quedan nuestros componentes utilizaremos una funcionalidad que nos incorpora Angular. Dentro de nuestro archivo \textit{package.json} NPM nos define una serie de scripts que podemos utilizar. Uno de ellos es el siguiente:
+Este es el modelado que tiene el objeto. El componente HTML llamado \textit{ng-content} será el encargado de tomar los objetos que le está pasando el componente padre. Estos los referencia con el atributo \textit{select} y le indica el nombre del tipo de componente que quiere coger.
+\\Para poder ir revisando cómo quedan los componentes se utilizará una funcionalidad que incorpora Angular. Dentro del archivo \textit{package.json} NPM define una serie de scripts que pueden utilizarse. Uno de ellos es el siguiente:
 \begin{verbatim}
     "start": "ng serve"
 \end{verbatim}
-Para poder ejecutar este script ejecutaríamos el siguiente comando:
+Para poder ejecutar este script se ejecutará el siguiente comando:
 \begin{verbatim}
     npm run start
 \end{verbatim}
@@ -76,4 +76,4 @@ Que sería lo mismo que utilizar:
 \begin{verbatim}
     ng serve
 \end{verbatim}
-Esto nos despliega un servidor de la aplicación de Angular en el puerto 4200. Una de las ventajas que nos ofrece esto es una compilación continua del proyecto. Es decir, a medida que vayamos realizando la contruccion de la aplicación, la generación de componentes y la creación de rutas la web se irá actualizando en cada guardado y será de gran utilidad poder ir viendo estos cambios al momento.
+Esto desplegará un servidor de la aplicación de Angular en el puerto 4200. Una de las ventajas que ofrece esto es una compilación continua del proyecto. Es decir, a medida que se vaya realizando la contruccion de la aplicación, la generación de componentes y la creación de rutas la web se irá actualizando en cada guardado y será de gran utilidad poder ir viendo estos cambios al momento.
