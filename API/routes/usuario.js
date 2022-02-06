@@ -5,6 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require("jwt-simple");
 const moment = require("moment");
 const middleware = require('./middleware');
+const transporter = require('../mails/mailer');
 
 
 router.post('/login', async function (req, res, next) {
@@ -26,6 +27,42 @@ router.post('/login', async function (req, res, next) {
       });
     }
   }
+});
+
+router.post('/request-password/:email', async function (req, res, next) {
+  const usuario = await usuarios.getByEmail(req.params.email);
+
+  if (usuario === undefined) {
+    // User didn't found
+  } else {
+    var hash = createToken(req.params.usuario);
+    transporter.recuperar_contrasena(usuario.correoElectronico, "http://" + process.env.HOST + "/password-new-set/" + hash);
+  }
+});
+
+router.post('/recover-password/:token/:newpassword', async function (req, res, next) {
+  if (!req.params.token && !req.params.newpassword)
+    return res.json({
+      error: "You must include the data"
+    });
+
+  const token = req.params.token;
+  let payload = null
+  try {
+    payload = jwt.decode(token, process.env.TOKEN_KEY);
+  } catch (err) {
+    return res.json({
+      error: "Invalid token"
+    });
+  }
+
+  if (moment().unix() > payload.expiresAt) {
+    return res.json({ error: "Expired token" });
+  };
+
+  var password = bcrypt.hashSync(req.params.newpassword, 10);
+  res.json(await usuarios.updatePassword(payload.userId, password));
+
 });
 
 const createToken = (usuario) => {

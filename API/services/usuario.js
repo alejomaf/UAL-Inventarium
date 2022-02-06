@@ -100,6 +100,17 @@ async function update(id, usuario) {
   return { message };
 }
 
+async function updatePassword(id, password) {
+  const result = await db.query(
+    `UPDATE usuario 
+    SET contrasena=?
+    WHERE idUsuario=?`,
+    [
+      password, id
+    ]
+  );
+}
+
 async function remove(id) {
   const result = await db.query(
     `DELETE FROM usuario WHERE idUsuario=?`,
@@ -210,6 +221,7 @@ module.exports = {
   getMultiple,
   create,
   update,
+  updatePassword,
   remove,
   getByEmail,
   getById,

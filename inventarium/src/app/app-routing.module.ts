@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
-import { PasswordRecoveryComponent } from './components/login/password-recovery/password-recovery.component';
 import { AddDataComponent } from './components/main/admin/add-data/add-data.component';
 import { MainComponent } from './components/main/main.component';
 import { AddDataToGroupOfObjectComponent } from './components/main/parts/add-object/add-data-to-group-of-object/add-data-to-group-of-object.component';
@@ -31,6 +30,8 @@ import { ProfileComponent } from './components/main/personal/profile/profile.com
 import { LoanUnitComponent } from './components/main/unit/loan-unit/loan-unit.component';
 import { ObjectUnitComponent } from './components/main/unit/object-unit/object-unit.component';
 import { UserUnitComponent } from './components/main/unit/user-unit/user-unit.component';
+import { RecoverPasswordComponent } from './components/register/recover-password/recover-password.component';
+import { ResetPasswordComponent } from './components/register/recover-password/reset-password/reset-password.component';
 import { RegisterCompletedComponent } from './components/register/register-completed/register-completed.component';
 import { RegisterConfirmedComponent } from './components/register/register-confirmed/register-confirmed.component';
 import { RegisterRecoverFinishComponent } from './components/register/register-recover-finish/register-recover-finish.component';
@@ -85,7 +86,8 @@ const routes: Routes = [
   { path: 'register-confirmed/:id/:number/:token', component: RegisterConfirmedComponent },
   { path: 'register-recover', component: RegisterRecoverComponent },
   { path: 'register-recover-finish', component: RegisterRecoverFinishComponent },
-  { path: 'password-recovery', component: PasswordRecoveryComponent }
+  { path: 'password-recovery', component: RecoverPasswordComponent },
+  { path: 'password-new-set/:hash', component: ResetPasswordComponent },
 ];
 
 @NgModule({

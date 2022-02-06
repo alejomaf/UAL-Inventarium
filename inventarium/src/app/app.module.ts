@@ -10,7 +10,6 @@ import { RegisterCompletedComponent } from './components/register/register-compl
 import { RegisterConfirmedComponent } from './components/register/register-confirmed/register-confirmed.component';
 import { RegisterRecoverComponent } from './components/register/register-recover/register-recover.component';
 import { RegisterRecoverFinishComponent } from './components/register/register-recover-finish/register-recover-finish.component';
-import { PasswordRecoveryComponent } from './components/login/password-recovery/password-recovery.component';
 import { MainComponent } from './components/main/main.component';
 import { VerticalNavbarComponent } from './components/main/vertical-navbar/vertical-navbar.component';
 import { GroupOfObjectsComponent } from './components/main/parts/group-of-objects/group-of-objects.component';
@@ -56,6 +55,8 @@ import { AuthGuardService } from './services/auth-guard.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BoxLinkComponent } from './components/main/unit/box-link/box-link.component';
 import { ObjectSearchComponent } from './components/main/parts/group-of-objects/objects/object-search/object-search.component';
+import { RecoverPasswordComponent } from './components/register/recover-password/recover-password.component';
+import { ResetPasswordComponent } from './components/register/recover-password/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,6 @@ import { ObjectSearchComponent } from './components/main/parts/group-of-objects/
     RegisterConfirmedComponent,
     RegisterRecoverComponent,
     RegisterRecoverFinishComponent,
-    PasswordRecoveryComponent,
     MainComponent,
     VerticalNavbarComponent,
     GroupOfObjectsComponent,
@@ -108,6 +108,8 @@ import { ObjectSearchComponent } from './components/main/parts/group-of-objects/
     KitComponent,
     BoxLinkComponent,
     ObjectSearchComponent,
+    RecoverPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

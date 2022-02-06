@@ -3,15 +3,15 @@
         <!--Grid column-->
         <div class="col-sm-6 form-group-lg">
 
-            <div *ngIf="calculando && !fallo" class="bg-white rounded-circle p-3 text-center">
+            <div *ngIf="calculando && !fallo" class="bg-white p-3 text-center">
                 <h2>Su registro ha sido confirmado</h2>
                 <p>Cuando sea <b>dado de alta por un técnico</b> le enviaremos un mensaje a su correo.</p>
             </div>
-            <div *ngIf="!calculando && !fallo" class="bg-white rounded-circle p-3 text-center">
+            <div *ngIf="!calculando && !fallo" class="bg-white p-3 text-center">
                 <h2>Validando su registro...</h2>
                 <p>Espere mientras <b>validamos su registro</b></p>
             </div>
-            <div *ngIf="fallo" class="bg-white rounded-circle p-3 text-center">
+            <div *ngIf="fallo" class="bg-white p-3 text-center">
                 <h2>Su registro <b>NO ha sido validado</b></h2>
                 <p>Contacte con un técnico</p>
             </div>

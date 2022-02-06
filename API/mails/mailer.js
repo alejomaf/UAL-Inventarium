@@ -8,6 +8,22 @@ var transporter = nodemailer.createTransport({
     }
 });
 
+async function recuperar_contrasena(direccion, url, nombre) {
+    var mailOptions = {
+        from: 'UAL Inventarium',
+        to: direccion,
+        subject: 'Recuperar contraseña',
+        html: 'Estimado ' + nombre + '<br>Para poder recuperar su contraseña tiene que acceder al siguiente enlace:  <a href="' + url + '">Pulsa aquí para recuperar su contraseña</a> <br><br>Un cordial saludo,<br>El equipo de UAL-Inventarium'
+    };
+
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Email password recover sent: ' + info.response);
+        }
+    });
+}
 
 async function registro_creado(direccion, url, nombre) {
     var mailOptions = {
@@ -100,4 +116,5 @@ module.exports = {
     prestamo_concedido,
     prestamo_expirado,
     prestamo_rechazado,
+    recuperar_contrasena,
 }
