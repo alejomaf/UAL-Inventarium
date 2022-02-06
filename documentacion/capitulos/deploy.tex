@@ -13,7 +13,7 @@ Al terminar la construcción de la página lo que se hará será preparar los ar
 Más adelante en un futuro se añadiría otro bloque más que sería el gestor de copias de seguridad de la base de datos.
 
 \section{Levantar el servidor para la API}
-Para poder levantar el servidor con la API era necesario sí o sí realizar una configuración de una imagen docker Node para poder inicializar el Node Package Manager.
+Para poder levantar el servidor con la API era necesario sí o sí realizar una configuración de una imagen docker Node para poder inicializar el Node Package Manager \cite{docker-nodejs}.
 \\También, con el objetivo de ahorrar intermediarios, se quería poder generar la imagen Docker desde Docker Compose.
 \\Un fichero Dockerfile sirve para generar una imagen docker (no un contenedor) que se podrá ir manipulando para que tenga la configuración que sea necesaria para que provea de los servicios necesarios para UAL Inventarium.
 \\La estructura de un archivo Dockerfile es la siguiente:
@@ -106,7 +106,7 @@ Se importa la última imagen de nginx, se redirige el puerto 80 al puerto 80 y p
 Que ayudaba a configurar las rutas en default.conf.
 
 \subsection{Configuración del ruteo de la web}
-El objetivo de configurar las rutas de la web es que todas las direcciones apuntásen al mismo archivo \textit{index.html}. Para eso se añadieron dentro del fichero las siguientes líneas:
+El objetivo de configurar las rutas de la web es que todas las direcciones apuntásen al mismo archivo \textit{index.html}. Para eso se añadieron dentro del fichero las siguientes líneas \cite{nginx-routing}:
 \begin{verbatim}
     location / {
       root /usr/share/nginx/html;
@@ -117,7 +117,7 @@ Esta configuración define las rutas entrantes a la dirección raíz \textit{``/
 
 \subsection{Configuración del proxy inverso de la web}
 Como se explicó en la sección \ref{sec:4_web}, para poder conseguir que la aplicación se comunique con la API esta tiene que disponer de un proxy que rediriga unas determinadas rutas dentro del puerto 80 a otras del puerto 3000.
-\\Para poder hacer esto en Nginx hay que añadir las siguientes líneas de código en el archivo anterior:
+\\Para poder hacer esto en Nginx hay que añadir las siguientes líneas de código en el archivo anterior \cite{proxy-reverse}:
 \begin{verbatim}
     location /api/users/login {
         proxy_pass http://api:3000;

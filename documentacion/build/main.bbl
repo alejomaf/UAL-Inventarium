@@ -311,33 +311,6 @@ Juell, K.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
-McCormick%
-}{%
-McCormick%
-}{%
-{\protect \APACyear {8 de octubre de 2012}}%
-}]{%
-waterfall-vs-agile}
-\APACinsertmetastar {%
-waterfall-vs-agile}%
-\begin{APACrefauthors}%
-McCormick, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{8 de octubre de 2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Waterfall vs. Agile Methodology} {Waterfall vs. agile
-  methodology}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{MPCS, Inc.}{}{}{}.
-\newblock
-\begin{APACrefURL}
-  \url{http://www.mccormickpcs.com/images/Waterfall_vs_Agile_Methodology.pdf}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem [\protect \citeauthoryear {%
 Mouat%
 }{%
 Mouat%

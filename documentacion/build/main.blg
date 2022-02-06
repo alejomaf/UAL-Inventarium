@@ -15,79 +15,79 @@ Database file #1: bibliografia/bibliografia.bib
 Warning--entry type for "clean-architecture" isn't style-file defined
 --line 1 of file bibliografia/bibliografia.bib
 Warning--entry type for "proxy-reverse" isn't style-file defined
---line 16 of file bibliografia/bibliografia.bib
+--line 8 of file bibliografia/bibliografia.bib
 Warning--entry type for "nginx-routing" isn't style-file defined
---line 22 of file bibliografia/bibliografia.bib
+--line 14 of file bibliografia/bibliografia.bib
 Warning--entry type for "google-cloud-documentation" isn't style-file defined
---line 28 of file bibliografia/bibliografia.bib
+--line 20 of file bibliografia/bibliografia.bib
 Warning--entry type for "ssh-connection" isn't style-file defined
---line 34 of file bibliografia/bibliografia.bib
+--line 26 of file bibliografia/bibliografia.bib
 Warning--entry type for "ieee-software-architecture" isn't style-file defined
---line 41 of file bibliografia/bibliografia.bib
+--line 33 of file bibliografia/bibliografia.bib
 Warning--entry type for "api-definition" isn't style-file defined
---line 48 of file bibliografia/bibliografia.bib
+--line 40 of file bibliografia/bibliografia.bib
 Warning--entry type for "angular-components" isn't style-file defined
---line 55 of file bibliografia/bibliografia.bib
+--line 47 of file bibliografia/bibliografia.bib
 Warning--entry type for "angular-services" isn't style-file defined
---line 62 of file bibliografia/bibliografia.bib
+--line 54 of file bibliografia/bibliografia.bib
 Warning--entry type for "angular-interfaces" isn't style-file defined
---line 68 of file bibliografia/bibliografia.bib
+--line 60 of file bibliografia/bibliografia.bib
 Warning--entry type for "angular-routing" isn't style-file defined
---line 74 of file bibliografia/bibliografia.bib
+--line 66 of file bibliografia/bibliografia.bib
 Warning--entry type for "angular-file-structure" isn't style-file defined
---line 80 of file bibliografia/bibliografia.bib
+--line 72 of file bibliografia/bibliografia.bib
 Warning--entry type for "postman-testing" isn't style-file defined
---line 86 of file bibliografia/bibliografia.bib
+--line 78 of file bibliografia/bibliografia.bib
 Warning--entry type for "selenium-testing" isn't style-file defined
---line 93 of file bibliografia/bibliografia.bib
+--line 85 of file bibliografia/bibliografia.bib
 Warning--entry type for "chrome-testing" isn't style-file defined
---line 100 of file bibliografia/bibliografia.bib
+--line 92 of file bibliografia/bibliografia.bib
 Warning--entry type for "docker-compose-create" isn't style-file defined
---line 106 of file bibliografia/bibliografia.bib
+--line 98 of file bibliografia/bibliografia.bib
 Warning--entry type for "docker-nodejs" isn't style-file defined
---line 112 of file bibliografia/bibliografia.bib
+--line 104 of file bibliografia/bibliografia.bib
 Warning--entry type for "node-express" isn't style-file defined
---line 119 of file bibliografia/bibliografia.bib
+--line 111 of file bibliografia/bibliografia.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 23 entries,
+You've used 22 entries,
             6951 wiz_defined-function locations,
-            1371 strings with 13725 characters,
-and the built_in function-call counts, 38269 in all, are:
-= -- 5430
-> -- 233
-< -- 1470
-+ -- 1314
-- -- 67
-* -- 1905
-:= -- 5970
-add.period$ -- 92
-call.type$ -- 23
-change.case$ -- 274
+            1365 strings with 13563 characters,
+and the built_in function-call counts, 36767 in all, are:
+= -- 5247
+> -- 223
+< -- 1404
++ -- 1256
+- -- 65
+* -- 1815
+:= -- 5705
+add.period$ -- 88
+call.type$ -- 22
+change.case$ -- 257
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 792
-empty$ -- 1596
-format.name$ -- 330
-if$ -- 8029
+cite$ -- 44
+duplicate$ -- 754
+empty$ -- 1523
+format.name$ -- 316
+if$ -- 7730
 int.to.chr$ -- 0
-int.to.str$ -- 79
+int.to.str$ -- 76
 missing$ -- 0
-newline$ -- 511
-num.names$ -- 184
-pop$ -- 568
+newline$ -- 487
+num.names$ -- 176
+pop$ -- 546
 preamble$ -- 1
-purify$ -- 83
+purify$ -- 79
 quote$ -- 0
-skip$ -- 3609
+skip$ -- 3487
 stack$ -- 0
-substring$ -- 1441
-swap$ -- 369
-text.length$ -- 46
+substring$ -- 1378
+swap$ -- 348
+text.length$ -- 44
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 3136
+type$ -- 3056
 warning$ -- 0
-while$ -- 114
+while$ -- 109
 width$ -- 0
-write$ -- 556
+write$ -- 530
 (There were 18 warnings)

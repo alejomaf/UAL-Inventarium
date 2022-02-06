@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  6 FEB 2022 11:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  6 FEB 2022 12:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1101,27 +1101,27 @@ LaTeX Info: Redefining \% on input line 40.
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
  [20]
-<imagenes/complemento/docker-swarm/creating_second_virtual_machine.png, id=267, 421.575pt x 490.83376pt>
+<imagenes/complemento/docker-swarm/creating_second_virtual_machine.png, id=285, 421.575pt x 490.83376pt>
 File: imagenes/complemento/docker-swarm/creating_second_virtual_machine.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/creating_second_virtual_machine.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/creating_second_virtual_machine.png  used on input line 21.
 (pdftex.def)             Requested size: 252.94695pt x 294.50252pt.
-<imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png, id=270, 913.16156pt x 106.14656pt>
+<imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png, id=288, 913.16156pt x 106.14656pt>
 File: imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png  used on input line 27.
 (pdftex.def)             Requested size: 410.9189pt x 47.7655pt.
-<imagenes/complemento/docker-swarm/docker-swarm-init.png, id=272, 564.1075pt x 339.2675pt>
+<imagenes/complemento/docker-swarm/docker-swarm-init.png, id=290, 564.1075pt x 339.2675pt>
 File: imagenes/complemento/docker-swarm/docker-swarm-init.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-swarm-init.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-swarm-init.png  used on input line 37.
 (pdftex.def)             Requested size: 282.05305pt x 169.63333pt.
-<imagenes/complemento/docker-swarm/docker-compose-join.png, id=274, 564.1075pt x 339.2675pt>
+<imagenes/complemento/docker-swarm/docker-compose-join.png, id=292, 564.1075pt x 339.2675pt>
 File: imagenes/complemento/docker-swarm/docker-compose-join.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-compose-join.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-compose-join.png  used on input line 43.
 (pdftex.def)             Requested size: 282.05305pt x 169.63333pt.
-<imagenes/complemento/docker-swarm/docker-stack-deploy.png, id=276, 620.3175pt x 311.1625pt>
+<imagenes/complemento/docker-swarm/docker-stack-deploy.png, id=294, 620.3175pt x 311.1625pt>
 File: imagenes/complemento/docker-swarm/docker-stack-deploy.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-stack-deploy.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-stack-deploy.png  used on input line 56.
@@ -1132,7 +1132,7 @@ LaTeX Info: Redefining \% on input line 63.
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
  [22 <./imagenes/complemento/docker-swarm/creating_second_virtual_machine.png> <./imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png> <./imagenes/complemento/docker-swarm/docker-swarm-init.png>]
-<imagenes/complemento/docker-swarm/docker-FINAL.png, id=289, 1069.9975pt x 311.1625pt>
+<imagenes/complemento/docker-swarm/docker-FINAL.png, id=309, 1069.9975pt x 311.1625pt>
 File: imagenes/complemento/docker-swarm/docker-FINAL.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-FINAL.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-FINAL.png  used on input line 77.
@@ -1162,18 +1162,18 @@ Package rerunfilecheck Info: File `main_complemento.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28581 strings out of 479304
- 601305 string characters out of 5869780
- 1109719 words of memory out of 5000000
- 45129 multiletter control sequences out of 15000+600000
+ 28585 strings out of 479304
+ 601406 string characters out of 5869780
+ 1109777 words of memory out of 5000000
+ 45132 multiletter control sequences out of 15000+600000
  411003 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,119p,10746b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.pdf (26 pages, 1694756 bytes).
+Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.pdf (26 pages, 1696812 bytes).
 PDF statistics:
- 497 PDF objects out of 1000 (max. 8388607)
- 408 compressed objects within 5 object streams
- 99 named destinations out of 1000 (max. 500000)
+ 512 PDF objects out of 1000 (max. 8388607)
+ 423 compressed objects within 5 object streams
+ 100 named destinations out of 1000 (max. 500000)
  379 words of extra memory for PDF output out of 10000 (max. 10000000)
 

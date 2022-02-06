@@ -11,8 +11,8 @@ Las herramientas que han utilizado para la realización de pruebas durante el de
 \end{itemize}
 
 \subsection{Postman}
-Gracias a Postman se ha podido probar en este proyecto todas las interacciones que se pueden realizar con la API y el proxy configurado en Angular.
-\begin{figure}[h]
+Gracias a Postman \cite{postman-testing} se ha podido probar en este proyecto todas las interacciones que se pueden realizar con la API y el proxy configurado en Angular.
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.3,keepaspectratio]{../pruebas/postman_creation_user.png}
     \caption{Creando un usuario con Postman}\label{fig:postman-creation-user}
@@ -24,25 +24,25 @@ Como puede comprobarse en la figura \ref{fig:postman-creation-user} se ha genera
 \\Otra herramienta que tiene incorporada esta aplicación te permite capturar solicitudes que salgan de un determinado puerto. Aparte de capturarlas, interpreta en su totalidad las estructuras de estas y puede comprobarse si se ha cometido algún fallo al mandar cualquier tipo de solicitud desde la página.
 
 \subsection{Selenium}
-Gracias a la herramienta de grabación que aporta Selenium se han realizado bastantes pruebas en la página web.
+Gracias a la herramienta de grabación que aporta Selenium \cite{selenium-testing} se han realizado bastantes pruebas en la página web.
 \\Para poder utilizar la herramienta se ha hecho desde Google Chrome instalando la siguiente \href{https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd}{\textbf{extensión}}.
 \\Luego de instalarla hay que dirigirse a la lista de complementos del navegador y seleccionar la aplicación. Se pulsará en crear nuevo proyecto y la aplicación pedirá una \textit{url} para empezar a grabar pruebas. Se añadirá la url \textit{http://localhost/register} para poder automatizar el proceso de registro.
 \\Al empezar la grabación se abrirá una nueva ventana de Google Chrome y se completarán los datos como un proceso normal de registro pulsando finalmente en \textit{Registrarse}.
 \\La prueba que se ha generado puede verse en la figura \ref{fig:registro-usuario-selenium}
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.40,keepaspectratio]{../pruebas/registro_usuario_selenium.png}
     \caption{Registro de un usuario con Selenium}\label{fig:registro-usuario-selenium}
 \end{figure}
 \subsection{Herramientas de Desarrollador de Google Chrome}
-Las Herramientas de Desarrollador de Google han sido utilizadas en todas las fases del desarrollo de la aplicación. Desde las más tempranas hasta las más tardías.
+Las Herramientas de Desarrollador de Google \cite{chrome-testing} han sido utilizadas en todas las fases del desarrollo de la aplicación. Desde las más tempranas hasta las más tardías.
 \\El navegador Google Chrome brinda un conjunto de herramientas muy completo. Las tres que más se han utilizado han sido:
 \begin{itemize}
     \item \textbf{Elements}: Aquí pueden verse los elementos presentes en pantalla. Disponem también de un inspector que permite pulsar sobre un elemento y localizarlo dentro de la estructura HTML que presenta el documento. También permite poder editar los estilos con los que se esté trabajando y ver los cambios en tiempo real. Estos no se aplican al documento pero ayudan en gran medida a realizar arreglos de diseño.
     \item \textbf{Console}: Desde aquí pueden verse las salidas de consola que da la aplicación. En Angular para poder emitir señales en la consola se utiliza \textit{console.log(``Elemento que quiera emitirse'')}. Desde aquí pueden verse fallos que haya devuelto la aplicación y poder actuar en medida.
     \item \textbf{Network}: Esta sección es de gran ayuda porque desde aquí se pueden ver todos los paquetes entrantes y salientes desde el punto de vista del cliente.
 \end{itemize}
-\begin{figure}[h]
+\begin{figure}[ht]
     \centering
     \includegraphics[scale=0.6,keepaspectratio]{../pruebas/network_dev_tools_chrome.png}
     \caption{Sección \textit{Network} dentro de las herramientas de desarrollador de Google Chrome}

@@ -7,7 +7,7 @@ La utilización de tokens durante el desarrollo de APIs ha incrementado a lo lar
 \\El proceso de generación de tokens desde un entorno del cliente resulta un proceso algo tedioso y que nunca hay que realizar. Por suerte, para el entorno del servidor de la API había algunas herramientas que iban a resultar de gran ayuda.
 
 \subsection{Generación del token}
-La generación de tokens siempre ha sido un proceso dudoso para el usuario intermedio, ya que, en un principio, se suele pensar que el almacenamiento de este se realiza sobre la base de datos en vez de en el propio servidor. Por suerte existe un plugin ideal que se encuentra en el Node Package Manager para esta tarea: jwt-simple.
+La generación de tokens siempre ha sido un proceso dudoso para el usuario intermedio, ya que, en un principio, se suele pensar que el almacenamiento de este se realiza sobre la base de datos en vez de en el propio servidor. Por suerte existe un plugin ideal que se encuentra en el Node Package Manager para esta tarea: jwt-simple \cite{node-token}.
 \\Gracias a este plugin se puede realizar el codificado y decodificado de un plugin generado cada vez que un usuario iniciara sesión.
 \\Dentro de las fases del codificado de este token hay que pasarle como parámetros unas fechas que será la duración que tendrán de validez estos ``simbólicos'' (traducción de token al español).
 \\El proceso de codificado del token se realizará dentro del inicio de sesión. Quedando de la siguiente forma:
@@ -95,7 +95,7 @@ Gracias a haber hecho el código de forma estructurada y haber distinguido en se
 \end{tcolorbox}
 
 \subsection{AuthGuard}
-AuthGuard es un ``comprobador de usuarios''. Es decir, comprueba que estés logeado cogiendo tu token y mandándolo a la API, si esta no devuelve respuesta o lo hace con un \textit{null} el AuthGuard comunicaría que el usuario no está logeado.
+AuthGuard \cite{angular-auth-guard} es un ``comprobador de usuarios''. Es decir, comprueba que estés logeado cogiendo tu token y mandándolo a la API, si esta no devuelve respuesta o lo hace con un \textit{null} el AuthGuard comunicaría que el usuario no está logeado.
 \\Angular brinda la posibilidad de poder realizar una autenticación dentro del sistema de rutas de la aplicación. Es decir, dependiendo de a qué sitios se quiera acceder de la aplicación se pueden implementar unas medidas de seguridad u otras.
 \\Esto se consigo mediante la adición del parámetro \textbf{canActivate} y \textbf{canActivateChild}:
 \begin{verbatim}

@@ -43,7 +43,7 @@ Hoy en día lo nuevo y a lo que la sociedad se dirige es la nube. Dentro de ella
 \\Estas ventajas expuesta son las que favorecen al desarrollo del proyecto que es realizado por una única persona, pero ¿y si este se hiciera en un equipo? El poder tener varias personas trabajando en el mismo proyecto, tocando los distintos componentes que se están desarrollando dentro de la aplicación es fantástico.
 
 \subsubsection{Crear una máquina virtual en Google Cloud}
-Los pasos para la creación de una máquina virtual son:
+Los pasos para la creación de una máquina virtual son \cite{google-cloud-documentation}:
 
 \begin{enumerate}
     \item El registro es fácil de realizar ya que la herramienta es propiedad de Google. Se omitirá este paso.
@@ -56,7 +56,7 @@ Los pasos para la creación de una máquina virtual son:
 
 \subsubsection{Configurar claves SSH}
 
-Teniendo ya la clave privada SSH de la máquina virtual se utilizará para realizar la conexión con ella. Pero para ello es necesario configurarla. Hay que acceder al fichero usuario/.ssh/config y añadir tres nuevas líneas:
+Teniendo ya la clave privada SSH de la máquina virtual se utilizará para realizar la conexión con ella. Pero para ello es necesario configurarla \cite{ssh-connection}. Hay que acceder al fichero usuario/.ssh/config y añadir tres nuevas líneas:
 \begin{verbatim}
     Host "Dirección IP"
     HostName "Nombre del host"

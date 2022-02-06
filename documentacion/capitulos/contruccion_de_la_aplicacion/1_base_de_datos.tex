@@ -1,13 +1,13 @@
 \section{Generación y puesta en marcha de la base de datos}
 
 El diagrama final de la base de datos quedaría como puede observarse en la figura \ref{fig:db-design}.
-\begin{figure}[h]
-  \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{db_design.png}
-  \caption{Diseño final de la base de datos}\label{fig:db-design}
+\begin{figure}[ht]
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{db_design.png}
+    \caption{Diseño final de la base de datos}\label{fig:db-design}
 \end{figure}
 Se generará el script ``.sql'' para poder crear la base de datos.
 \\Esta configuración se basará únicamente en la sección de código que se añadirá dentro del docker-compose.yml.
-\\Se añade la versión de docker-compose a utilizar:
+\\Se añade la versión de docker-compose \cite{docker-compose-create} a utilizar:
 
 \begin{verbatim}
 version: "3.9"
@@ -39,13 +39,13 @@ Se añade el primer contenedor, en este caso, el de la base de datos:
       MYSQL_ROOT_PASSWORD: contraseñasecreta
 \end{verbatim}
 \begin{itemize}
-  \item \textbf{db}: Este es el nombre que se le ha puesto como referencia para docker-compose.
-  \item \textbf{container\_name}: Es el nombre que tendrá el contenedor que se vaya a desplegar.
-  \item \textbf{image}: La imagen utilizada, es decir, la ``máquina virtual'' que se irá a levantar. En este caso es una máquina virtual de MariaDB.
-  \item \textbf{ports}: Los puertos que utilizará la máquina, a la izquierda son los que le llegan a la máquina y a la derecha los que salen.
-  \item \textbf{volumes}: Esta sección es muy importante ya que aquí se podrán importar archivos en el momento del despliegue del entorno. En este caso se está importando la carpeta ``dump'' donde está el archivo de generación de la base de datos. También se le enlazará el volumen ``persistent'' que se creará más adelante. Esto es para que no se pierdan datos cuando se detenga contenedor ya que los datos de la base de datos, se almacenarán en un sitio externo.
-  \item \textbf{networks}: Aquí pueden añadirse las redes que manejará el contenedor. En este caso es la default.
-  \item \textbf{environment}: Dentro de environments se podrán definir variables que se necesiten en el momento del despliegue del contenedor. En este caso se definirá el nombre de la base de datos, el usuario junto a su contraseña y la contraseña del usuario root.
+    \item \textbf{db}: Este es el nombre que se le ha puesto como referencia para docker-compose.
+    \item \textbf{container\_name}: Es el nombre que tendrá el contenedor que se vaya a desplegar.
+    \item \textbf{image}: La imagen utilizada, es decir, la ``máquina virtual'' que se irá a levantar. En este caso es una máquina virtual de MariaDB.
+    \item \textbf{ports}: Los puertos que utilizará la máquina, a la izquierda son los que le llegan a la máquina y a la derecha los que salen.
+    \item \textbf{volumes}: Esta sección es muy importante ya que aquí se podrán importar archivos en el momento del despliegue del entorno. En este caso se está importando la carpeta ``dump'' donde está el archivo de generación de la base de datos. También se le enlazará el volumen ``persistent'' que se creará más adelante. Esto es para que no se pierdan datos cuando se detenga contenedor ya que los datos de la base de datos, se almacenarán en un sitio externo.
+    \item \textbf{networks}: Aquí pueden añadirse las redes que manejará el contenedor. En este caso es la default.
+    \item \textbf{environment}: Dentro de environments se podrán definir variables que se necesiten en el momento del despliegue del contenedor. En este caso se definirá el nombre de la base de datos, el usuario junto a su contraseña y la contraseña del usuario root.
 \end{itemize}
 \begin{verbatim}
     phpmyadmin:
@@ -76,7 +76,7 @@ Dentro de la sección \textbf{volumes} se pueden generar volúmenes que se van a
 Ya con esto estaría la base de datos en funcionamiento.
 \vspace{\baselineskip}
 \begin{tcolorbox}
-  [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo comprobamos los resultados?]
-  Visual Studio Code realiza una \textbf{tunelización de los puertos} a partir de la conexión SSH. Es decir, habilita redireccionamientos de puertos para poder ir viendo los resultados en la máquina. Esto resulta de gran ayuda ya que no hay que realizar una configuración en la máquina de apertura de puertos para poder ir trabajando sobre cada una de las aplicaciones existentes ya que el funcionamiento del sistema será interno. Con poder disponer de los puertos HTTP Y HTTPS abiertos no se necesitará más.
+    [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo comprobamos los resultados?]
+    Visual Studio Code realiza una \textbf{tunelización de los puertos} a partir de la conexión SSH. Es decir, habilita redireccionamientos de puertos para poder ir viendo los resultados en la máquina. Esto resulta de gran ayuda ya que no hay que realizar una configuración en la máquina de apertura de puertos para poder ir trabajando sobre cada una de las aplicaciones existentes ya que el funcionamiento del sistema será interno. Con poder disponer de los puertos HTTP Y HTTPS abiertos no se necesitará más.
 \end{tcolorbox}
 
