@@ -43,6 +43,7 @@ const routes: Routes = [
   {
     path: '', component: MainComponent, canActivate: [AuthGuardService],
     children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       { path: 'dashboard', component: DashboardComponent },
       {
         path: 'add-object', component: AddObjectComponent,
