@@ -1,0 +1,66 @@
+\section{Volcado de datos}
+Cuando se habla sobre volcado de datos se hace referencia a la capacidad de coger un fichero con datos y que estos datos que contenga puedan ser volcados dentro del sistema.
+\\Esta funcionalidad se había contemplado al principio del desarrollo y resulta de bastante interés ya que facilitaría en gran medida la puesta en punto de UAL Inventarium para su utilización por parte de los técnicos.
+\\Con la realización de este apartado surgían las siguientes preguntas:
+\begin{itemize}
+    \item ¿Cómo pueden leerse los datos de un archivo XLSX?
+    \item ¿Cómo pueden procesarse los datos del archivo?
+    \item ¿Cómo se cargarán los datos?
+\end{itemize}
+
+\subsection{Lectura de datos de un fichero XLSX}
+Para poder realizar una lectura de datos se utilizó un plugin dentro de Node Package Manager llamado ``xlsx''. Al importarlo se realizó el procesado de la siguiente forma:
+\begin{verbatim}
+    processData() {
+        fetch(this.excel).then(function (res) {
+            if (!res.ok) throw new Error("La carga del archivo falló");
+            return res.arrayBuffer();
+        }).then((ab) => {
+            var data = new Uint8Array(ab);
+            var datos = XLSX.read(data, { type: "array" });
+            this.processed_data = XLSX.utils.sheet_to_json(
+                datos.Sheets[datos.SheetNames[0]]);
+            console.log(this.processed_data);
+            this.processLocations();
+        });
+    }
+\end{verbatim}
+Esta función se encargará de procesar los datos de un fichero xlsx. Este se subirá al sitio web como si de una imagen se tratase.
+\\En concreto al realizar el procesado se llama a la función ``sheet\_to\_json'' la cual convierte los archivos de una tabla en formato JSON.
+
+\subsubsection{JSON resultante}
+El JSON obtenido en la tabla consiste en un array de las filas que tiene esta. La primera fila, es decir, donde se define el nombre de las columnas, se tratan como el nombre de las variables que tendrán asignados los componentes del array.
+\\Este objeto se cargará en la variable \textit{processed\_data} y servirá próximamente para poder iterar sobre cada una de sus columnas.
+
+\subsection{Procesado del fichero Excel}
+Al realizar el procesado de los datos que iba a contener este fichero había que pensar en la disposición de los elementos que tendría en su interior, ya que afectaría en gran medida a la interpretación posterior de sus datos.
+\\Para ello la disposición sería que cada fila podría contener los campos posibles de definir en un grupo de objetos, en un objeto y en una configuración.
+\\Los grupos de objetos que contuvieran varios objetos se irían agrupando automáticamente comprobando si el nombre anterior del grupo insertado es igual al actual. Por otro lado, el objeto y la configuración se irían enlazando automáticamente para posteriormente ser añadidas dentro del grupo de objetos.
+\\En este punto surgió la problemática de cómo implementar el procesado de los kits.
+
+\subsubsection{Procesado de los kits}
+Para poder procesar los kits antes de entrar en un objeto de dicho tipo se iteraría sobre una fila que como nombre de objeto se llamaría ``kit''. La siguiente fila sería para definir el nombre del kit y la cantidad de objetos que tendría. Las filas restantes servirían para ir añadiendo los objetos del kit al nuevo grupo de objetos generado.
+\\La iteración pararía hasta llegar a un objeto que tuviera como nombre ``fin-kit''.
+
+
+\subsection{Carga de datos}
+A partir de este último punto todo el proceso se vuelve mucho más fácil. Ya que tenemos un array de grupos de objetos con sus respectivos atributos.
+\\Cada grupo de objetos contiene un array en su interior de objetos también con sus respectivos atributos. Estos objetos pueden contener, o no, una configuración enlazada a ellos.
+\\Por último, si el grupo de objetos es un kit, este tendrá un array de objetos de kit dentro.
+
+\subsubsection{Carga de imágenes mediante enlace}
+Se pidió durante el desarrollo de este apartado si sería posible cargar las imágenes que irían dentro de una fila de la tabla de excel. Estas imágenes en verdad son un enlace a archivos públicos de Google Drive de imágenes de los elementos.
+\\Para poder permitir esta característica se modificó levemente el caso de uso de creación de grupos de objetos y objetos de kit dentro de la API. Permitiendo que la imagen fuera un enlace de Google Drive facilitando su proceso de subida al servidor.
+\begin{verbatim}
+    async function uploadFileFromInternet(file, name) {
+        parts_of_file = file.split("/");
+        id_file = "https://drive.google.com/uc?export=download&id=" + 
+        parts_of_file[parts_of_file.length - 2];
+        await download(id_file, '__dirname/../images/group_of_objects/' + 
+        name + ".jpg", function () { 
+            console.log("Subida desde internet exitosa") 
+        });
+    }
+\end{verbatim}
+Dentro de la función vemos cómo se procesa es dirección que se pasa desde el fichero Excel para extraerle su ID que servirá para descargarla. Con los objetos de kit se hace lo mismo pero cambiando el directorio.
+\\Con esto ya se tendría el sistema de volcado de datos preparado para empezar a utilizar UAL Inventarium.

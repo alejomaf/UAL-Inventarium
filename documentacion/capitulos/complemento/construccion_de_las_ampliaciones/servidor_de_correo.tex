@@ -1,6 +1,6 @@
 \section{Servidor de correo}
-A la hora de desarrollar el servicio de correo tenía que pensar en dos objetivos, primero, ¿\textbf{cómo} implementarlo? y segundo ¿\textbf{dónde} implementarlo?
-\\Lo que tenía claro es que iba a necesitar una dirección de Gmail con la dirección de la aplicación para poder utilizar los servicios de correos que nos aporta Google. En parte la mensajería que ocurriera en la aplicación se podría supervisar desde una entidad superior como es la bandeja de entrada de Gmail. Donde podríamos visualizar todos los envíos realizados e intentar cualquier tipo de incidencia que pudiera ocurrir.
+A la hora de desarrollar el servicio de correo había que pensar en dos objetivos, primero, ¿\textbf{cómo} implementarlo? y segundo ¿\textbf{dónde} hacerlo?
+\\Se iba a necesitar una dirección de Gmail con la dirección de la aplicación para poder utilizar los servicios de correos que aporta Google. En parte la mensajería que ocurriera en la aplicación se podría supervisar desde una entidad superior como es la bandeja de entrada de Gmail. Donde se podrían visualizar todos los envíos realizados e intentar resolver cualquier tipo de incidencia que pudiera ocurrir.
 \\La dirección de Gmail con la que se ha vinculado la API es:
 \begin{verbatim}
     ualinventarium@gmail.com
@@ -8,31 +8,31 @@ A la hora de desarrollar el servicio de correo tenía que pensar en dos objetivo
 También es la dirección con la que está registrado el administrador del sistema dentro de la aplicación.
 
 \subsection{Nodemailer}
-Las posibilidades que nos brinda Node JS y el enorme abanico de implementaciones que ha hecho la comunidad con él son increíbles. En un principio el servidor web se realizó en PHP y fue una tarea bastante tuortosa.
-\\Los pasos que tuvimos que hacer para configurar el plugin de Nodemailer fue, primero de todo, instalarlo:
+Las posibilidades que brinda Node JS y el enorme abanico de implementaciones que ha hecho la comunidad con él son increíbles. En un principio el servidor web se realizó en PHP y fue una tarea bastante tuortosa.
+\\Los pasos que se tuvieron que hacer para configurar el plugin de Nodemailer fue, primero de todo, instalarlo:
 \begin{verbatim}
     npm install nodemailer
 \end{verbatim}
-La implantación del servidor de correo se ha hecho desde la API. Esto es debido a que los complementos de los casos de uso de la aplicación tienen que ir junto a los casos de uso. Por ello los haremos en sintonía con las solicitudes que vayan llegando a la Interfaz de Programación de Aplicaciones.
+La implantación del servidor de correo se ha hecho desde la API. Esto es debido a que los complementos de los casos de uso de la aplicación tienen que ir junto a los casos de uso. Por ello se harán en sintonía con las solicitudes que vayan llegando a la Interfaz de Programación de Aplicaciones.
 
 \subsection{¿Dónde implementar esta nueva funcionalidad?}
-El proceso de añadir nueva funcionalidad a una aplicación puede resultar tedioso. Tienes que tocar casos de uso, modificar secciones de código... En este caso fue bastante cómodo. La API lo facilitó todo en gran medida. ¿Por qué? Por la estructura de carpetas y de desarrollo que hemos hecho en la aplicación, aparte de que la mayoría de los componentes presentan una modularidad bastante alta.
+El proceso de añadir nueva funcionalidad a una aplicación puede resultar tedioso. Hay que tocar casos de uso, modificar secciones de código... En este caso fue bastante cómodo. La API lo facilitó todo en gran medida. ¿Por qué? Por la estructura de carpetas y de desarrollo que se habían hecho en la aplicación, aparte de que la mayoría de los componentes presentan una modularidad bastante alta.
 \\Casos de uso donde se decidió realizar una notificación al usuario:
 \begin{itemize}
-    \item \textbf{Confirmación de registro}: La confirmación de registro supone dos cosas: la primera es que aumentamos el grado de seguridad frente a posibles registros falsos. Aparte de que ahorramos trabajo a los encargados que tendrían que ir revisando una por una las solicitudes. La segunda es que podemos garantizar que las personas que se registren posean un email institucional ya que si el dominio del correo no es \textit{inlumine.ual.es} o \textit{ual.es} la aplicación no permite el registro. Eso en sintonía a la confirmación hacen la pareja perfecta.
+    \item \textbf{Confirmación de registro}: La confirmación de registro supone dos cosas: la primera es que se aumenta el grado de seguridad frente a posibles registros falsos. Aparte de que se ahorra trabajo a los encargados que tendrían que ir revisando una por una las solicitudes. La segunda es que pueden garantizarse que las personas que se registren posean un email institucional ya que si el dominio del correo no es \textit{inlumine.ual.es} o \textit{ual.es} la aplicación no permite el registro. Eso en sintonía a la confirmación hacen la pareja perfecta.
           \begin{tcolorbox}
-              [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo podemos realizar la confirmación del registro?]
-              La confirmación del registro no supone darse de alta en la aplicación pero sí que supone garantizar tu identidad dentro de la aplicación. Hacía falta generar un estilo de token para poder garantizar que no confirmara su registro cualquier tipo de usuario.
-              \\Para poder realizar esto en el momento de registro del usuario, en la confirmación de creación del mismo se manda una solicitud de envío de correo. En esa solicitud se adjunta un enlace que será el que utilice el usuario para darse de alta. Dentro del enlace tenemos, el id del usuario, el número de teléfono y un hash generado a partir del número de teléfono.
-              \\Cuando el usuario accede al link para confirmar su registro se mandan estos parámetros nuevamente al servidor. Primero se comprueba que el usuario no esté baneado o haya sido de alta ya. Luego comprobamos si el número de teléfono del usuario es el del usuario (gracias al id) y posteriormente si el hash coincide con el del teléfono.
+              [colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=¿Cómo se puede realizar la confirmación del registro?]
+              La confirmación del registro no supone darse de alta en la aplicación pero sí que supone garantizar la identidad del usuario dentro de la aplicación. Hacía falta generar un estilo de token para poder garantizar que no confirmara su registro cualquier tipo de usuario.
+              \\Para poder realizar esto en el momento de registro del usuario, en la confirmación de creación del mismo se manda una solicitud de envío de correo. En esa solicitud se adjunta un enlace que será el que utilice el usuario para darse de alta. Dentro del enlace están: el id del usuario, el número de teléfono y un hash generado a partir del número de teléfono.
+              \\Cuando el usuario accede al link para confirmar su registro se mandan estos parámetros nuevamente al servidor. Primero se comprueba que el usuario no esté baneado o haya sido de alta ya. Luego se comprueba si el número de teléfono es el del usuario (gracias al id) y posteriormente si el hash coincide con el del teléfono.
           \end{tcolorbox}
     \item \textbf{Alta del usuario}: Cuando el usuario es dado de alta por un técnico este recibe una notificación.
     \item \textbf{Concesión de préstamo}: Resulta un proceso tedioso el ir revisando la web cada día por si han aceptado tu solicitud de préstamo. Por lo que se facilita todo bastante si te llega una notificación de correo con la conceción de este.
-    \item \textbf{Recordatorio de entrega}: Cuando hay un préstamo activo y este ha expirado damos la posibilidad a un técnico de que mande un recordatorio por correo a un usuario para que devuelva el objeto.
+    \item \textbf{Recordatorio de entrega}: Cuando hay un préstamo activo y este ha expirado UAL Inventarium brinda la posibilidad a un técnico de que mande un recordatorio por correo a un usuario para que devuelva el objeto.
 \end{itemize}
 
 \subsubsection{Generación del mailer.js}
-Dentro de la API he generado un nuevo directorio llamado mails y dentro de este un fichero llamado \textit{mailer.js}. El objetivo de este archivo es el de poder importar nuestro nodemailer e inicializar nuestra clase ``transportadora'', esto último lo hacemos de la siguiente forma:
+Dentro de la API se ha generado un nuevo directorio llamado mails y dentro de este un fichero llamado \textit{mailer.js}. El objetivo de este archivo es el de poder importar nodemailer e inicializar la clase ``transportadora'', esto último se hace de la siguiente forma:
 \begin{verbatim}
     var transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -42,8 +42,8 @@ Dentro de la API he generado un nuevo directorio llamado mails y dentro de este 
     }
 });
 \end{verbatim}
-El campo ``pass'' es un token que podemos generar desde Gmail. Para ello tenemos que tener el segundo factor de autenticación habilitado. Al hacerlo, debajo de este nos aparece una sección de autenticación para aplicaciones donde nos permitirá generar una clave que será la que ingresemos en el campo ``pass''.
-\\Luego de haber generado este token procedemos a la creación de la función que se encargará de mandar los mails de confirmación de registro:
+El campo ``pass'' es un token que puede generarse desde Gmail. Para ello se tiene que tener el segundo factor de autenticación habilitado. Al hacerlo, debajo aparecerá una sección de autenticación para aplicaciones donde permitirá generar una clave que será la que ingresemos en el campo ``pass''.
+\\Luego de haber generado este token se procede a la creación de la función que se encargará de mandar los mails de confirmación de registro:
 \begin{verbatim}
     async function registro_creado(direccion, url, nombre) {
     var mailOptions = {
@@ -62,17 +62,17 @@ El campo ``pass'' es un token que podemos generar desde Gmail. Para ello tenemos
     });
 }
 \end{verbatim}
-Le pasaremos como parámetros la dirección de correo donde mandaremos el correo. La url que utilizará el usuario para confirmar su registro y el nombre del usuario.
-\\Generamos nuestro objeto mailOptions con los siguientes parámetros:
+Se le pasarán como parámetros: la dirección de correo del destinatario, la url que utilizará el usuario para confirmar su registro y el nombre del usuario.
+\\Hay que generar el objeto mailOptions con los siguientes parámetros:
 \begin{itemize}
     \item \textbf{from}: Que es el campo del remitente, en este caso al usuario le llegará \textit{Correo recibido de UAL Inventarium}.
     \item \textbf{to}: La dirección del destinatario. En este caso la del usuario que se registra.
     \item \textbf{subject}: El asunto del correo.
-    \item \textbf{html}: En este caso también me daba la posibilidad de poder ingresar un campo de texto ``body''. El problema que presenta body es que la capa de personalización es bastante baja. También es verdad que la capa de personalización que ofrecen los sistemas de correos es muy básica y antigua. Los correos que normalmente envían las empresas, estos que vienen bastante bien decorados que parece que han sido realizados con un modelado punto por punto en realidad son hechos en base a tablas con sus filas y columnas.
+    \item \textbf{html}: En este caso también daba la posibilidad de poder ingresar un campo de texto ``body''. El problema que presenta body es que la capa de personalización es bastante baja. También es verdad que la capa de personalización que ofrecen los sistemas de correos es muy básica y antigua. Los correos que normalmente envían las empresas, estos que vienen bastante bien decorados que parece que han sido realizados con un modelado punto por punto en realidad son hechos en base a tablas con sus filas y columnas.
 \end{itemize}
-Luego de la asignación de campos a \textit{mailOptions} mandamos los parámetros con ``sendEmail''. Aquí intentamos capturar cualquier posible error que pueda surgir en el envío del correo.
+Luego de la asignación de campos a \textit{mailOptions} se pasan los parámetros con ``sendEmail''. Aquí se intenta capturar cualquier posible error que pueda surgir en el envío del correo.
 \vspace{\baselineskip}
-\\Estas funciones las llamaremos desde nuestros archivos del directorio service. Siguiendo con el ejemplo del caso anterior, el de la confirmación del usuario, quedaría de la siguiente forma:
+\\Estas funciones se llamarán desde los archivos del directorio \textit{service}. Siguiendo con el ejemplo del caso anterior, el de la confirmación del usuario, quedaría de la siguiente forma:
 \begin{verbatim}
 if (result.affectedRows) {
     message = 'usuario created successfully';
@@ -82,6 +82,6 @@ if (result.affectedRows) {
      usuario.nombre);
 }
 \end{verbatim}
-Este condicional comprueba que hayamos creado con éxito el usuario. Por consiguiente, se le envía un correo para que confirme su registro. Llamando a nuestra clase \textit{transporter} anteriormente implementada.
-\\Con todo esto, ya tendríamos nuestro servidor de correo implementado.
+Este condicional comprueba que se haya creado con éxito el usuario. Por consiguiente, se le envía un correo para que confirme su registro. Llamando a la clase \textit{transporter} anteriormente implementada.
+\\Con todo esto, ya se tendría el servidor de correo implementado.
 

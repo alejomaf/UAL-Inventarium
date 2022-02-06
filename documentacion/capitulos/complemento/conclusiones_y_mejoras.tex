@@ -1,17 +1,17 @@
 \chapter{Conclusiones y mejoras}
-Creo que gran parte de la implementación del complemento de trabajo fin de grado la han facilitado herramientas y soluciones fantásticas que ofrece la inmensa comunidad de internet.
+Gran parte de la implementación del complemento de trabajo fin de grado la han facilitado herramientas y soluciones fantásticas que ofrece la inmensa comunidad de internet.
 \\Dentro de la implementación del sistema de copias de seguridad el poder haber encontrado aquella imagen en Docker Hub ayudó en enorme medida a la creación de la solución.
-\\El resto de implementaciones aunque en verdad se basan en todas las modificaciones correspondientes que les pude haber realizado, estas no serían nada sin aquellos frameworks o plugins que me han facilitado la tarea.
-\\Se me han ocurrido bastantes mejoras a medida que iba redactando el documento pero las dos principales y que veo con mayor consistencia son:
+\\El resto de implementaciones aunque en verdad se basan en todas las modificaciones correspondientes que se les pudo haber realizado, estas no serían nada sin aquellos frameworks o plugins que han facilitado la tarea.
+\\Se han ocurrido bastantes mejoras a medida que se iba redactando el documento pero las dos principales y que se ven con mayor consistencia son:
 
 \subsubsection{Mejora de la gestión de las copias de seguridad}
-Podría mejorarse la gestión de las copias de seguridad sin que se tenga la necesidad de que tenga que intervenir un técnico en ellas. En la redacción de la sección comenté que sería conveniente ir realizando una copia diaria de la base de datos y que a final de mes podrían descartarse la mayoría de las copias de seguridad y dejar una por semana.
+Podría mejorarse la gestión de las copias de seguridad sin que se tenga la necesidad de que tenga que intervenir un técnico en ellas. En la redacción de la sección se comentó que sería conveniente ir realizando una copia diaria de la base de datos y que a final de mes podrían descartarse la mayoría de las copias de seguridad y dejar una por semana.
 \\Todo esto iba fundamentado al espacio que ocuparían tales ficheros.
 \\Una mejora sería automatizar este proceso para que no conlleve la revisión mensual de un técnico.
 
 \subsubsection{Mejora de las interacciones con el gestor de correo}
-La siguiente mejora es un poco más compleja. Pensé en una personalización del usuario ``técnico'' para que este recibiera correos cada vez que se solicitaba un objeto.
-\\El problema ocurría que, primero de todo no podía enviar un correo a todos los técnicos cada vez que se solicitara un objeto debido a que esta cantidad puede llegar a ser bastante grande y, segundo, tendría que modificar el dominio para añadir un nuevo atributo a un grupo de objeto llamado ``coordinador''. Que implicaría tener que remodelar bastantes aspectos de la interfaz de usuario para poder utilizar aquella funcionalidad.
+La siguiente mejora es un poco más compleja. Se pensó en una personalización del usuario ``técnico'' para que este recibiera correos cada vez que se solicitaba un objeto.
+\\El problema ocurría que, primero de todo no podía enviarse un correo a todos los técnicos cada vez que se solicitara un objeto debido a que esta cantidad puede llegar a ser bastante grande y, segundo, se tendría que modificar el dominio para añadir un nuevo atributo a un grupo de objeto llamado ``coordinador'', con una id de usuario relacionada que serviría para apuntar hacia ese técnico. Esto implicaría tener que remodelar bastantes aspectos de la interfaz de usuario para poder utilizar aquella funcionalidad.
 
 \vspace{\baselineskip}
 A partir de este grupo de implementaciones creo que la página web que se nos presenta dispone de una configuración bastante profesional pero, sobre todo, y más importante: segura, fiable y cómoda de utilizar.

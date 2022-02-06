@@ -1230,6 +1230,10 @@ INPUT ./capitulos/complemento/construccion_de_las_ampliaciones/servidor_de_corre
 INPUT capitulos/complemento/construccion_de_las_ampliaciones/servidor_de_correo.tex
 INPUT ./capitulos/complemento/construccion_de_las_ampliaciones/servidor_de_correo.tex
 INPUT capitulos/complemento/construccion_de_las_ampliaciones/servidor_de_correo.tex
+INPUT ./capitulos/complemento/construccion_de_las_ampliaciones/volcado_de_datos.tex
+INPUT capitulos/complemento/construccion_de_las_ampliaciones/volcado_de_datos.tex
+INPUT ./capitulos/complemento/construccion_de_las_ampliaciones/volcado_de_datos.tex
+INPUT capitulos/complemento/construccion_de_las_ampliaciones/volcado_de_datos.tex
 INPUT ./capitulos/complemento/construccion_de_las_ampliaciones/balanceo_de_cargas.tex
 INPUT capitulos/complemento/construccion_de_las_ampliaciones/balanceo_de_cargas.tex
 INPUT ./capitulos/complemento/construccion_de_las_ampliaciones/balanceo_de_cargas.tex
