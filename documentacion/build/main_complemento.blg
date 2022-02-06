@@ -1,65 +1,59 @@
 This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: build/main_complemento.aux
-The style file: apacite.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+The style file: IEEEannot.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia/bibliografia_complemento.bib
-Warning--entry type for "angular-auth-guard" isn't style-file defined
---line 1 of file bibliografia/bibliografia_complemento.bib
-Warning--entry type for "node-token" isn't style-file defined
---line 8 of file bibliografia/bibliografia_complemento.bib
-Warning--entry type for "mysql-backup" isn't style-file defined
---line 15 of file bibliografia/bibliografia_complemento.bib
-Warning--entry type for "nodemailer" isn't style-file defined
---line 20 of file bibliografia/bibliografia_complemento.bib
-apacite.bst [2013/07/21 v6.03 APA bibliography style]
+-- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for use with work to be submitted to the IEEE.
+Warning--to sort, need author, organization, or key in mysql-backup
+
+Done.
 You've used 6 entries,
-            6951 wiz_defined-function locations,
-            1297 strings with 11651 characters,
-and the built_in function-call counts, 10219 in all, are:
-= -- 1441
-> -- 50
-< -- 410
-+ -- 395
+            4480 wiz_defined-function locations,
+            906 strings with 8876 characters,
+and the built_in function-call counts, 2607 in all, are:
+= -- 221
+> -- 36
+< -- 0
++ -- 16
 - -- 10
-* -- 526
-:= -- 1679
-add.period$ -- 23
+* -- 103
+:= -- 494
+add.period$ -- 11
 call.type$ -- 6
-change.case$ -- 88
+change.case$ -- 22
 chr.to.int$ -- 0
-cite$ -- 12
-duplicate$ -- 190
-empty$ -- 429
-format.name$ -- 70
-if$ -- 2100
+cite$ -- 7
+duplicate$ -- 177
+empty$ -- 241
+format.name$ -- 10
+if$ -- 530
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 0
-newline$ -- 130
-num.names$ -- 40
-pop$ -- 147
+int.to.str$ -- 6
+missing$ -- 37
+newline$ -- 54
+num.names$ -- 10
+pop$ -- 128
 preamble$ -- 1
-purify$ -- 22
-quote$ -- 0
-skip$ -- 939
+purify$ -- 17
+quote$ -- 2
+skip$ -- 197
 stack$ -- 0
-substring$ -- 426
-swap$ -- 94
-text.length$ -- 11
+substring$ -- 31
+swap$ -- 91
+text.length$ -- 0
 text.prefix$ -- 0
-top$ -- 1
-type$ -- 792
-warning$ -- 0
-while$ -- 26
-width$ -- 0
-write$ -- 143
-(There were 4 warnings)
+top$ -- 6
+type$ -- 44
+warning$ -- 1
+while$ -- 10
+width$ -- 7
+write$ -- 81
+(There was 1 warning)

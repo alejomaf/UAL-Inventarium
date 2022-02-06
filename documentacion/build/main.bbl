@@ -1,527 +1,176 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
 
-\bibitem [\protect \citeauthoryear {%
-Angular%
-}{%
-Angular%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-{\protect \APACexlab {{\protect \BCntND {1}}}}}]{%
-angular-routing}
-\APACinsertmetastar {%
-angular-routing}%
-\begin{APACrefauthors}%
-Angular.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}{\protect \BCntND {1}}}{}{}.
-\newblock
-\APACrefbtitle {Common Routing Tasks.} {Common routing tasks.}
-\newblock
-\begin{APACrefURL} \url{https://angular.io/guide/router} \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\bibitem{angular-routing}
+\BIBentryALTinterwordspacing
+Angular. Common routing tasks. [Online]. Available:
+  \url{https://angular.io/guide/router}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Angular%
-}{%
-Angular%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-{\protect \APACexlab {{\protect \BCntND {2}}}}}]{%
-angular-services}
-\APACinsertmetastar {%
-angular-services}%
-\begin{APACrefauthors}%
-Angular.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}{\protect \BCntND {2}}}{}{}.
-\newblock
-\APACrefbtitle {Introduction to services and dependency injection.}
-  {Introduction to services and dependency injection.}
-\newblock
-\begin{APACrefURL} \url{https://angular.io/guide/architecture-services}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-Angular%
-}{%
-Angular%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-{\protect \APACexlab {{\protect \BCntND {3}}}}}]{%
-angular-file-structure}
-\APACinsertmetastar {%
-angular-file-structure}%
-\begin{APACrefauthors}%
-Angular.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}{\protect \BCntND {3}}}{}{}.
-\newblock
-\APACrefbtitle {Workspace and project file structure.} {Workspace and project
-  file structure.}
-\newblock
-\begin{APACrefURL} \url{https://angular.io/guide/file-structure}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\bibitem{angular-services}
+\BIBentryALTinterwordspacing
+------. Introduction to services and dependency injection. [Online]. Available:
+  \url{https://angular.io/guide/architecture-services}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Angular%
-}{%
-Angular%
-}{%
-{\protect \APACyear {18 de marzo de 2021}}%
-}]{%
-angular-components}
-\APACinsertmetastar {%
-angular-components}%
-\begin{APACrefauthors}%
-Angular.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{18 de marzo de 2021}{}{}.
-\newblock
-\APACrefbtitle {Angular Components Overview.} {Angular components overview.}
-\newblock
-\begin{APACrefURL} \url{https://angular.io/guide/component-overview}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-Bob%
-}{%
-Bob%
-}{%
-{\protect \APACyear {13 de agosto de 2013}}%
-}]{%
-clean-architecture}
-\APACinsertmetastar {%
-clean-architecture}%
-\begin{APACrefauthors}%
-Bob, U.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{13 de agosto de 2013}{}{}.
-\newblock
-\APACrefbtitle {The Clean Architecture.} {The clean architecture.}
-\newblock
-\begin{APACrefURL}
+\bibitem{angular-file-structure}
+\BIBentryALTinterwordspacing
+------. Workspace and project file structure. [Online]. Available:
+  \url{https://angular.io/guide/file-structure}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{angular-components}
+\BIBentryALTinterwordspacing
+------. (18 de marzo de 2021) Angular components overview. [Online]. Available:
+  \url{https://angular.io/guide/component-overview}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{clean-architecture}
+\BIBentryALTinterwordspacing
+U.~Bob. (13 de agosto de 2013) The clean architecture. [Online]. Available:
   \url{https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-D.~Docs%
-}{%
-D.~Docs%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-docker-compose-create}
-\APACinsertmetastar {%
-docker-compose-create}%
-\begin{APACrefauthors}%
-Docs, D.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\APACrefbtitle {Use Docker Compose.} {Use docker compose.}
-\newblock
-\begin{APACrefURL} \url{https://docs.docker.com/get-started/08_using_compose/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-N.~Docs%
-}{%
-N.~Docs%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-proxy-reverse}
-\APACinsertmetastar {%
-proxy-reverse}%
-\begin{APACrefauthors}%
-Docs, N.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\APACrefbtitle {NGINX Reverse Proxy.} {Nginx reverse proxy.}
-\newblock
-\begin{APACrefURL}
+\bibitem{docker-compose-create}
+\BIBentryALTinterwordspacing
+D.~Docs. Use docker compose. [Online]. Available:
+  \url{https://docs.docker.com/get-started/08_using_compose/}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{proxy-reverse}
+\BIBentryALTinterwordspacing
+N.~Docs. Nginx reverse proxy. [Online]. Available:
   \url{https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Ellingwood%
-}{%
-Ellingwood%
-}{%
-{\protect \APACyear {2 de diciembre de 2020}}%
-}]{%
-ssh-connection}
-\APACinsertmetastar {%
-ssh-connection}%
-\begin{APACrefauthors}%
-Ellingwood, J.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2 de diciembre de 2020}{}{}.
-\newblock
-\APACrefbtitle {Cómo usar SSH para conectarse a un servidor remoto.} {Cómo
-  usar ssh para conectarse a un servidor remoto.}
-\newblock
-\begin{APACrefURL}
+
+\bibitem{ssh-connection}
+\BIBentryALTinterwordspacing
+J.~Ellingwood. (2 de diciembre de 2020) Cómo usar ssh para conectarse a un
+  servidor remoto. [Online]. Available:
   \url{https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-es}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Google%
-}{%
-Google%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-{\protect \APACexlab {{\protect \BCntND {1}}}}}]{%
-chrome-testing}
-\APACinsertmetastar {%
-chrome-testing}%
-\begin{APACrefauthors}%
-Google.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}{\protect \BCntND {1}}}{}{}.
-\newblock
-\APACrefbtitle {Chrome DevTools.} {Chrome devtools.}
-\newblock
-\begin{APACrefURL} \url{https://developer.chrome.com/docs/devtools/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-Google%
-}{%
-Google%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-{\protect \APACexlab {{\protect \BCntND {2}}}}}]{%
-google-cloud-documentation}
-\APACinsertmetastar {%
-google-cloud-documentation}%
-\begin{APACrefauthors}%
-Google.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}{\protect \BCntND {2}}}{}{}.
-\newblock
-\APACrefbtitle {Desarrollar soluciones en Google Cloud.} {Desarrollar
-  soluciones en google cloud.}
-\newblock
-\begin{APACrefURL} \url{https://cloud.google.com/docs} \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\bibitem{chrome-testing}
+\BIBentryALTinterwordspacing
+Google. Chrome devtools. [Online]. Available:
+  \url{https://developer.chrome.com/docs/devtools/}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Izquierda%
-}{%
-Izquierda%
-}{%
-{\protect \APACyear {1 de diciembre de 2018}}%
-}]{%
-postman-testing}
-\APACinsertmetastar {%
-postman-testing}%
-\begin{APACrefauthors}%
-Izquierda, C.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1 de diciembre de 2018}{}{}.
-\newblock
-\APACrefbtitle {Cómo se hace: API testing con Postman.} {Cómo se hace: Api
-  testing con postman.}
-\newblock
-\begin{APACrefURL}
+
+\bibitem{google-cloud-documentation}
+\BIBentryALTinterwordspacing
+------. Desarrollar soluciones en google cloud. [Online]. Available:
+  \url{https://cloud.google.com/docs}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{postman-testing}
+\BIBentryALTinterwordspacing
+C.~Izquierda. (1 de diciembre de 2018) Cómo se hace: Api testing con postman.
+  [Online]. Available:
   \url{https://medium.com/@cesiztel/c%C3%B3mo-se-hace-api-testing-con-postman-978a521552f4}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Josh%
-}{%
-Josh%
-}{%
-{\protect \APACyear {1 de abril de 2020}}%
-}]{%
-node-express}
-\APACinsertmetastar {%
-node-express}%
-\begin{APACrefauthors}%
-Josh.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1 de abril de 2020}{}{}.
-\newblock
-\APACrefbtitle {How to Use MySQL or MariaDB with Node.js and Express.} {How to
-  use mysql or mariadb with node.js and express.}
-\newblock
-\begin{APACrefURL}
+
+\bibitem{node-express}
+\BIBentryALTinterwordspacing
+Josh. (1 de abril de 2020) How to use mysql or mariadb with node.js and
+  express. [Online]. Available:
   \url{https://forum.codeselfstudy.com/t/tutorial-how-to-use-mysql-or-mariadb-with-node-js-and-express/2260}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Juell%
-}{%
-Juell%
-}{%
-{\protect \APACyear {5 de diciembre de 2019}}%
-}]{%
-docker-nodejs}
-\APACinsertmetastar {%
-docker-nodejs}%
-\begin{APACrefauthors}%
-Juell, K.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{5 de diciembre de 2019}{}{}.
-\newblock
-\APACrefbtitle {Cómo crear una aplicación Node.js con Docker.} {Cómo crear
-  una aplicación node.js con docker.}
-\newblock
-\begin{APACrefURL}
+
+\bibitem{docker-nodejs}
+\BIBentryALTinterwordspacing
+K.~Juell. (5 de diciembre de 2019) Cómo crear una aplicación node.js con
+  docker. [Online]. Available:
   \url{https://www.digitalocean.com/community/tutorials/como-crear-una-aplicacion-node-js-con-docker-es}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Mouat%
-}{%
-Mouat%
-}{%
-{\protect \APACyear {25 de diciembre de 2015}}%
-}]{%
-docker-book}
-\APACinsertmetastar {%
-docker-book}%
-\begin{APACrefauthors}%
-Mouat, A.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{25 de diciembre de 2015}.
-\newblock
-\APACrefbtitle {Using Docker: Developing and Deploying Software with
-  Containers} {Using docker: Developing and deploying software with
-  containers}.
-\newblock
-\APACaddressPublisher{}{O'Reilly Media}.
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-M.W.~Maier%
-}{%
-M.W.~Maier%
-}{%
-{\protect \APACyear {abril de 2001}}%
-}]{%
-ieee-software-architecture}
-\APACinsertmetastar {%
-ieee-software-architecture}%
-\begin{APACrefauthors}%
-M.W.~Maier, R\BPBI H., D.~Emery.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{abril de 2001}{}{}.
-\newblock
-\APACrefbtitle {Software architecture: introducing IEEE Standard 1471.}
-  {Software architecture: introducing ieee standard 1471.}
-\newblock
-\begin{APACrefURL} \url{https://ieeexplore.ieee.org/document/917550}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\bibitem{docker-book}
+A.~Mouat, \emph{Using Docker: Developing and Deploying Software with
+  Containers}.\hskip 1em plus 0.5em minus 0.4em\relax O'Reilly Media, 25 de
+  diciembre de 2015.
 
-\bibitem [\protect \citeauthoryear {%
-Orcero%
-}{%
-Orcero%
-}{%
-{\protect \APACyear {13 de enero de 2020}}%
-}]{%
-latex-book}
-\APACinsertmetastar {%
-latex-book}%
-\begin{APACrefauthors}%
-Orcero, D\BPBI S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{13 de enero de 2020}.
-\newblock
-\APACrefbtitle {La Biblia de LaTeX} {La biblia de latex}.
-\newblock
-\APACaddressPublisher{}{Lulu Press}.
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-Rainville%
-}{%
-Rainville%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-nginx-routing}
-\APACinsertmetastar {%
-nginx-routing}%
-\begin{APACrefauthors}%
-Rainville, S.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\APACrefbtitle {How to configure NGINX for Angular and ReactJS.} {How to
-  configure nginx for angular and reactjs.}
-\newblock
-\begin{APACrefURL}
+\bibitem{ieee-software-architecture}
+\BIBentryALTinterwordspacing
+R.~H. M.W.~Maier, D.~Emery. (abril de 2001) Software architecture: introducing
+  ieee standard 1471. [Online]. Available:
+  \url{https://ieeexplore.ieee.org/document/917550}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{latex-book}
+D.~S. Orcero, \emph{La Biblia de LaTeX}.\hskip 1em plus 0.5em minus 0.4em\relax
+  Lulu Press, 13 de enero de 2020.
+
+
+\bibitem{nginx-routing}
+\BIBentryALTinterwordspacing
+S.~Rainville. How to configure nginx for angular and reactjs. [Online].
+  Available:
   \url{https://www.serverlab.ca/tutorials/linux/web-servers-linux/how-to-configure-nginx-for-angular-and-reactjs/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Rangle.io%
-}{%
-Rangle.io%
-}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-angular-interfaces}
-\APACinsertmetastar {%
-angular-interfaces}%
-\begin{APACrefauthors}%
-Rangle.io.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\APACrefbtitle {Interfaces.} {Interfaces.}
-\newblock
-\begin{APACrefURL}
+
+\bibitem{angular-interfaces}
+\BIBentryALTinterwordspacing
+Rangle.io. Interfaces. [Online]. Available:
   \url{https://angular-training-guide.rangle.io/features/typescript/interfaces}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-RedHat%
-}{%
-RedHat%
-}{%
-{\protect \APACyear {31 de octubre de 2017}}%
-}]{%
-api-definition}
-\APACinsertmetastar {%
-api-definition}%
-\begin{APACrefauthors}%
-RedHat.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{31 de octubre de 2017}{}{}.
-\newblock
-\APACrefbtitle {¿Qué es una API?} {¿qué es una api?}
-\newblock
-\begin{APACrefURL}
+
+\bibitem{api-definition}
+\BIBentryALTinterwordspacing
+RedHat. (31 de octubre de 2017) ¿qué es una api? [Online]. Available:
   \url{https://www.redhat.com/es/topics/api/what-are-application-programming-interfaces}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Rungta%
-}{%
-Rungta%
-}{%
-{\protect \APACyear {11 de diciembre de 2021}}%
-}]{%
-selenium-testing}
-\APACinsertmetastar {%
-selenium-testing}%
-\begin{APACrefauthors}%
-Rungta, K.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{11 de diciembre de 2021}{}{}.
-\newblock
-\APACrefbtitle {What is Selenium? Introduction to Selenium Automation Testing.}
-  {What is selenium? introduction to selenium automation testing.}
-\newblock
-\begin{APACrefURL} \url{https://www.guru99.com/introduction-to-selenium.html}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-Series%
-}{%
-Series%
-}{%
-{\protect \APACyear {17 de septiembre de 2017}}%
-}]{%
-clean-architecture-book}
-\APACinsertmetastar {%
-clean-architecture-book}%
-\begin{APACrefauthors}%
-Series, R\BPBI C\BPBI M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{17 de septiembre de 2017}.
-\newblock
-\APACrefbtitle {Clean Architecture: A Craftsman's Guide to Software Structure
-  and Design} {Clean architecture: A craftsman's guide to software structure
-  and design}.
-\newblock
-\APACaddressPublisher{}{Addison-Wesley}.
-\PrintBackRefs{\CurrentBib}
+\bibitem{selenium-testing}
+\BIBentryALTinterwordspacing
+K.~Rungta. (11 de diciembre de 2021) What is selenium? introduction to selenium
+  automation testing. [Online]. Available:
+  \url{https://www.guru99.com/introduction-to-selenium.html}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Yakov~Fain%
-}{%
-Yakov~Fain%
-}{%
-{\protect \APACyear {21 de marzo de 2019}}%
-}]{%
-angular-book}
-\APACinsertmetastar {%
-angular-book}%
-\begin{APACrefauthors}%
-Yakov~Fain, A\BPBI M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{21 de marzo de 2019}.
-\newblock
-\APACrefbtitle {Angular Development with TypeScript} {Angular development with
-  typescript}.
-\newblock
-\APACaddressPublisher{}{Manning Publications}.
-\PrintBackRefs{\CurrentBib}
+
+\bibitem{clean-architecture-book}
+R.~C.~M. Series, \emph{Clean Architecture: A Craftsman's Guide to Software
+  Structure and Design}.\hskip 1em plus 0.5em minus 0.4em\relax Addison-Wesley,
+  17 de septiembre de 2017.
+
+
+\bibitem{angular-book}
+A.~M. Yakov~Fain, \emph{Angular Development with TypeScript}.\hskip 1em plus
+  0.5em minus 0.4em\relax Manning Publications, 21 de marzo de 2019.
+
 
 \end{thebibliography}

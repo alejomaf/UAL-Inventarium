@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  6 FEB 2022 12:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  6 FEB 2022 13:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -742,28 +742,17 @@ Package babel Info: Making " an active character on input line 561.
 Package babel Info: Making . an active character on input line 662.
 Package babel Info: Making < an active character on input line 707.
 Package babel Info: Making > an active character on input line 707.
-)) (/usr/share/texlive/texmf-dist/tex/latex/apacite/apacite.sty
-Package: apacite 2013/07/21 v6.03 APA citation
-\c@BibCnt=\count335
-\bibleftmargin=\skip76
-\bibindent=\skip77
-\bibparsep=\skip78
-\bibitemsep=\skip79
-\biblabelsep=\skip80
-) (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
-Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip81
-\bibsep=\skip82
-LaTeX Info: Redefining \cite on input line 694.
-LaTeX Info: Redefining \citeauthor on input line 712.
-LaTeX Info: Redefining \citeyear on input line 735.
-\c@NAT@ctr=\count336
-)) (/usr/share/texlive/texmf-dist/tex/latex/breakcites/breakcites.sty)
+)))
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
- (/home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.aux
+
+
+LaTeX Warning: Unused global option(s):
+    [conference].
+
+(/home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.aux
 LaTeX Info: Redefining \. on input line 27.
 LaTeX Info: Redefining \% on input line 27.
 )
@@ -822,20 +811,26 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count337
+\scratchcounter=\count335
 \scratchdimen=\dimen267
 \scratchbox=\box75
-\nofMPsegments=\count338
-\nofMParguments=\count339
+\nofMPsegments=\count336
+\nofMParguments=\count337
 \everyMPshowfont=\toks38
-\MPscratchCnt=\count340
+\MPscratchCnt=\count338
 \MPscratchDim=\dimen268
-\MPnumerator=\count341
-\makeMPintoPDFobject=\count342
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
@@ -847,7 +842,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count343
+\c@section@level=\count341
 )
 LaTeX Info: Redefining \ref on input line 9.
 LaTeX Info: Redefining \pageref on input line 9.
@@ -868,7 +863,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count344
+\BKM@id=\count342
 )) (/usr/share/texlive/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty
@@ -878,18 +873,12 @@ Package scrhack Info: loading lscape hack on input line 77.
  (/usr/share/texlive/texmf-dist/tex/latex/koma-script/lscape.hak
 File: lscape.hak 2020/09/21 v3.32 KOMA-Script scrhack part (hacking package lscape)
 Package scrhack Info: \landscape patched to make \textheight change optional on input line 90.
-\scrh@LT@textheight=\skip83
+\scrh@LT@textheight=\skip76
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
-\c@maskedRefs=\count345
- (/usr/share/texlive/texmf-dist/tex/latex/apacite/spanish.apc
-File: spanish.apc 2013/07/21 v6.03 apacite language file
-LaTeX Info: Redefining \BPBI on input line 138.
-LaTeX Info: Redefining \BHBI on input line 139.
-)
 <portada_y_contraportada/1-PortadaCTFG.pdf, id=7, 597.23125pt x 845.1575pt>
 File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
 <use portada_y_contraportada/1-PortadaCTFG.pdf>
@@ -1101,27 +1090,27 @@ LaTeX Info: Redefining \% on input line 40.
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
  [20]
-<imagenes/complemento/docker-swarm/creating_second_virtual_machine.png, id=285, 421.575pt x 490.83376pt>
+<imagenes/complemento/docker-swarm/creating_second_virtual_machine.png, id=278, 421.575pt x 490.83376pt>
 File: imagenes/complemento/docker-swarm/creating_second_virtual_machine.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/creating_second_virtual_machine.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/creating_second_virtual_machine.png  used on input line 21.
 (pdftex.def)             Requested size: 252.94695pt x 294.50252pt.
-<imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png, id=288, 913.16156pt x 106.14656pt>
+<imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png, id=281, 913.16156pt x 106.14656pt>
 File: imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png  used on input line 27.
 (pdftex.def)             Requested size: 410.9189pt x 47.7655pt.
-<imagenes/complemento/docker-swarm/docker-swarm-init.png, id=290, 564.1075pt x 339.2675pt>
+<imagenes/complemento/docker-swarm/docker-swarm-init.png, id=283, 564.1075pt x 339.2675pt>
 File: imagenes/complemento/docker-swarm/docker-swarm-init.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-swarm-init.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-swarm-init.png  used on input line 37.
 (pdftex.def)             Requested size: 282.05305pt x 169.63333pt.
-<imagenes/complemento/docker-swarm/docker-compose-join.png, id=292, 564.1075pt x 339.2675pt>
+<imagenes/complemento/docker-swarm/docker-compose-join.png, id=285, 564.1075pt x 339.2675pt>
 File: imagenes/complemento/docker-swarm/docker-compose-join.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-compose-join.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-compose-join.png  used on input line 43.
 (pdftex.def)             Requested size: 282.05305pt x 169.63333pt.
-<imagenes/complemento/docker-swarm/docker-stack-deploy.png, id=294, 620.3175pt x 311.1625pt>
+<imagenes/complemento/docker-swarm/docker-stack-deploy.png, id=287, 620.3175pt x 311.1625pt>
 File: imagenes/complemento/docker-swarm/docker-stack-deploy.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-stack-deploy.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-stack-deploy.png  used on input line 56.
@@ -1132,7 +1121,7 @@ LaTeX Info: Redefining \% on input line 63.
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
  [22 <./imagenes/complemento/docker-swarm/creating_second_virtual_machine.png> <./imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png> <./imagenes/complemento/docker-swarm/docker-swarm-init.png>]
-<imagenes/complemento/docker-swarm/docker-FINAL.png, id=309, 1069.9975pt x 311.1625pt>
+<imagenes/complemento/docker-swarm/docker-FINAL.png, id=302, 1069.9975pt x 311.1625pt>
 File: imagenes/complemento/docker-swarm/docker-FINAL.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-FINAL.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-FINAL.png  used on input line 77.
@@ -1149,6 +1138,11 @@ chapter 4.
 
 ]
 chapter without number
+
+Underfull \hbox (badness 1303) in paragraph at lines 30--34
+\OT1/cmr/m/n/10.95 rou-te guards. [On-li-ne]. Avai-la-ble: []$https : / / medium . com / @ryanchenkie[]40935 /
+ []
+
 )
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
@@ -1162,18 +1156,18 @@ Package rerunfilecheck Info: File `main_complemento.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28585 strings out of 479304
- 601406 string characters out of 5869780
- 1109777 words of memory out of 5000000
- 45132 multiletter control sequences out of 15000+600000
+ 27890 strings out of 479304
+ 592734 string characters out of 5869780
+ 1093737 words of memory out of 5000000
+ 44446 multiletter control sequences out of 15000+600000
  411003 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,119p,10746b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.pdf (26 pages, 1696812 bytes).
+Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.pdf (26 pages, 1695243 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 423 compressed objects within 5 object streams
+ 506 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
  100 named destinations out of 1000 (max. 500000)
  379 words of extra memory for PDF output out of 10000 (max. 10000000)
 

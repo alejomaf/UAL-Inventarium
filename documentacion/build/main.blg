@@ -1,93 +1,57 @@
 This is BibTeX, Version 0.99d (TeX Live 2020/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: build/main.aux
-The style file: apacite.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+The style file: IEEEannot.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibliografia/bibliografia.bib
-Warning--entry type for "clean-architecture" isn't style-file defined
---line 1 of file bibliografia/bibliografia.bib
-Warning--entry type for "proxy-reverse" isn't style-file defined
---line 8 of file bibliografia/bibliografia.bib
-Warning--entry type for "nginx-routing" isn't style-file defined
---line 14 of file bibliografia/bibliografia.bib
-Warning--entry type for "google-cloud-documentation" isn't style-file defined
---line 20 of file bibliografia/bibliografia.bib
-Warning--entry type for "ssh-connection" isn't style-file defined
---line 26 of file bibliografia/bibliografia.bib
-Warning--entry type for "ieee-software-architecture" isn't style-file defined
---line 33 of file bibliografia/bibliografia.bib
-Warning--entry type for "api-definition" isn't style-file defined
---line 40 of file bibliografia/bibliografia.bib
-Warning--entry type for "angular-components" isn't style-file defined
---line 47 of file bibliografia/bibliografia.bib
-Warning--entry type for "angular-services" isn't style-file defined
---line 54 of file bibliografia/bibliografia.bib
-Warning--entry type for "angular-interfaces" isn't style-file defined
---line 60 of file bibliografia/bibliografia.bib
-Warning--entry type for "angular-routing" isn't style-file defined
---line 66 of file bibliografia/bibliografia.bib
-Warning--entry type for "angular-file-structure" isn't style-file defined
---line 72 of file bibliografia/bibliografia.bib
-Warning--entry type for "postman-testing" isn't style-file defined
---line 78 of file bibliografia/bibliografia.bib
-Warning--entry type for "selenium-testing" isn't style-file defined
---line 85 of file bibliografia/bibliografia.bib
-Warning--entry type for "chrome-testing" isn't style-file defined
---line 92 of file bibliografia/bibliografia.bib
-Warning--entry type for "docker-compose-create" isn't style-file defined
---line 98 of file bibliografia/bibliografia.bib
-Warning--entry type for "docker-nodejs" isn't style-file defined
---line 104 of file bibliografia/bibliografia.bib
-Warning--entry type for "node-express" isn't style-file defined
---line 111 of file bibliografia/bibliografia.bib
-apacite.bst [2013/07/21 v6.03 APA bibliography style]
+-- IEEEtranS.bst version 1.11 (2003/04/02) by Michael Shell.
+-- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+** Sorting version - not for use with work to be submitted to the IEEE.
+
+Done.
 You've used 22 entries,
-            6951 wiz_defined-function locations,
-            1365 strings with 13563 characters,
-and the built_in function-call counts, 36767 in all, are:
-= -- 5247
-> -- 223
-< -- 1404
-+ -- 1256
-- -- 65
-* -- 1815
-:= -- 5705
-add.period$ -- 88
+            4480 wiz_defined-function locations,
+            974 strings with 10788 characters,
+and the built_in function-call counts, 9251 in all, are:
+= -- 781
+> -- 154
+< -- 0
++ -- 67
+- -- 44
+* -- 296
+:= -- 1721
+add.period$ -- 44
 call.type$ -- 22
-change.case$ -- 257
+change.case$ -- 84
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 754
-empty$ -- 1523
-format.name$ -- 316
-if$ -- 7730
+cite$ -- 22
+duplicate$ -- 629
+empty$ -- 876
+format.name$ -- 44
+if$ -- 1919
 int.to.chr$ -- 0
-int.to.str$ -- 76
-missing$ -- 0
-newline$ -- 487
-num.names$ -- 176
-pop$ -- 546
+int.to.str$ -- 22
+missing$ -- 146
+newline$ -- 144
+num.names$ -- 44
+pop$ -- 527
 preamble$ -- 1
-purify$ -- 79
-quote$ -- 0
-skip$ -- 3487
+purify$ -- 66
+quote$ -- 2
+skip$ -- 693
 stack$ -- 0
-substring$ -- 1378
-swap$ -- 348
-text.length$ -- 44
+substring$ -- 111
+swap$ -- 322
+text.length$ -- 0
 text.prefix$ -- 0
-top$ -- 1
-type$ -- 3056
+top$ -- 6
+type$ -- 156
 warning$ -- 0
-while$ -- 109
-width$ -- 0
-write$ -- 530
-(There were 18 warnings)
+while$ -- 44
+width$ -- 24
+write$ -- 240

@@ -111,12 +111,12 @@
 \contentsline {subsubsection}{\nonumberline Componente}{43}{subsubsection*.76}%
 \contentsline {subsubsection}{\nonumberline Servicio}{43}{subsubsection*.78}%
 \contentsline {subsubsection}{\nonumberline Interfaz}{43}{subsubsection*.80}%
-\contentsline {subsection}{\numberline {4.5.2}Disposición y elementos que hay en Inventarium}{44}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.2}Disposición y elementos que hay en Inventarium}{43}{subsection.4.5.2}%
 \contentsline {subsubsection}{\nonumberline Interfaces}{44}{subsubsection*.82}%
 \contentsline {subsubsection}{\nonumberline Services}{44}{subsubsection*.84}%
 \contentsline {subsection}{\numberline {4.5.3}Creación de componentes}{45}{subsection.4.5.3}%
 \contentsline {subsubsection}{\nonumberline Preparar el apartado TypeScript}{45}{subsubsection*.86}%
-\contentsline {subsubsection}{\nonumberline Preparar el archivo HTML}{46}{subsubsection*.88}%
+\contentsline {subsubsection}{\nonumberline Preparar el archivo HTML}{45}{subsubsection*.88}%
 \contentsline {subsection}{\numberline {4.5.4}Definir el archivo de rutas}{47}{subsection.4.5.4}%
 \contentsline {subsection}{\numberline {4.5.5}Definir el proxy en nuestra aplicación}{49}{subsection.4.5.5}%
 \contentsline {subsection}{\numberline {4.5.6}Compilar el sitio Web}{49}{subsection.4.5.6}%
@@ -157,5 +157,5 @@
 \contentsline {subsubsection}{\nonumberline Generalización de tipos de objetos}{65}{subsubsection*.104}%
 \contentsline {subsubsection}{\nonumberline Inclusión de horarios de laboratorio}{65}{subsubsection*.106}%
 \contentsline {section}{\numberline {8.2}Conclusiones}{65}{section.8.2}%
-\contentsline {chapter}{\nonumberline Referencias}{67}{chapter*.107}%
+\contentsline {chapter}{\nonumberline Bibliograf\'{\i }a}{67}{chapter*.107}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

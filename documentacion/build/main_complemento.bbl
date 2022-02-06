@@ -1,144 +1,65 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
 
-\bibitem [\protect \citeauthoryear {%
-Chenkie%
-}{%
-Chenkie%
-}{%
-{\protect \APACyear {24 de julio de 2017}}%
-}]{%
-angular-auth-guard}
-\APACinsertmetastar {%
-angular-auth-guard}%
-\begin{APACrefauthors}%
-Chenkie, R.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{24 de julio de 2017}{}{}.
-\newblock
-\APACrefbtitle {Angular Authentication: Using Route Guards.} {Angular
-  authentication: Using route guards.}
-\newblock
-\begin{APACrefURL}
+\bibitem{mysql-backup}
+\BIBentryALTinterwordspacing
+Mysql backup. [Online]. Available:
+  \url{https://hub.docker.com/r/databack/mysql-backup}
+\BIBentrySTDinterwordspacing
+
+
+\bibitem{angular-auth-guard}
+\BIBentryALTinterwordspacing
+R.~Chenkie. (24 de julio de 2017) Angular authentication: Using route guards.
+  [Online]. Available:
   \url{https://medium.com/@ryanchenkie_40935/angular-authentication-using-route-guards-bf7a4ca13ae3}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Fabrizio~Soppelsa%
-}{%
-Fabrizio~Soppelsa%
-}{%
-{\protect \APACyear {20 de diciembre de 2016}}%
-}]{%
-docker-swarm-book}
-\APACinsertmetastar {%
-docker-swarm-book}%
-\begin{APACrefauthors}%
-Fabrizio~Soppelsa, C\BPBI K.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYear{20 de diciembre de 2016}.
-\newblock
-\APACrefbtitle {Native Docker Clustering with Swarm} {Native docker clustering
-  with swarm}.
-\newblock
-\APACaddressPublisher{}{Packt Publishing}.
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-McCormick%
-}{%
-McCormick%
-}{%
-{\protect \APACyear {8 de octubre de 2012}}%
-}]{%
-waterfall-vs-agile}
-\APACinsertmetastar {%
-waterfall-vs-agile}%
-\begin{APACrefauthors}%
-McCormick, M.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{8 de octubre de 2012}{}{}.
-\newblock
-{\BBOQ}\APACrefatitle {Waterfall vs. Agile Methodology} {Waterfall vs. agile
-  methodology}.{\BBCQ}
-\newblock
-\APACjournalVolNumPages{MPCS, Inc.}{}{}{}.
-\newblock
-\begin{APACrefURL}
+\bibitem{docker-swarm-book}
+C.~K. Fabrizio~Soppelsa, \emph{Native Docker Clustering with Swarm}.\hskip 1em
+  plus 0.5em minus 0.4em\relax Packt Publishing, 20 de diciembre de 2016.
+
+
+\bibitem{waterfall-vs-agile}
+\BIBentryALTinterwordspacing
+M.~McCormick, ``Waterfall vs. agile methodology,'' \emph{MPCS, Inc.}, 8 de
+  octubre de 2012. [Online]. Available:
   \url{http://www.mccormickpcs.com/images/Waterfall_vs_Agile_Methodology.pdf}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-\APACcitebtitle {MySQL Backup}}{%
-\APACcitebtitle {MySQL Backup}}{%
-{\protect \APACyear {{\protect \bibnodate {}}}}%
-}]{%
-mysql-backup}
-\APACinsertmetastar {%
-mysql-backup}%
-\APACrefbtitle {MySQL Backup.} {Mysql backup.}
-\newblock
-\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
-\newblock
-\begin{APACrefURL} \url{https://hub.docker.com/r/databack/mysql-backup}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
 
-\bibitem [\protect \citeauthoryear {%
-Olubisi%
-}{%
-Olubisi%
-}{%
-{\protect \APACyear {15 de junio de 2021}}%
-}]{%
-node-token}
-\APACinsertmetastar {%
-node-token}%
-\begin{APACrefauthors}%
-Olubisi, I.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{15 de junio de 2021}{}{}.
-\newblock
-\APACrefbtitle {How to Build an Authentication API with JWT Token in Node.js.}
-  {How to build an authentication api with jwt token in node.js.}
-\newblock
-\begin{APACrefURL}
+\bibitem{node-token}
+\BIBentryALTinterwordspacing
+I.~Olubisi. (15 de junio de 2021) How to build an authentication api with jwt
+  token in node.js. [Online]. Available:
   \url{https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
 
-\bibitem [\protect \citeauthoryear {%
-Rachel%
-}{%
-Rachel%
-}{%
-{\protect \APACyear {25 de enero de 2021}}%
-}]{%
-nodemailer}
-\APACinsertmetastar {%
-nodemailer}%
-\begin{APACrefauthors}%
-Rachel, T\BPBI B.%
-\end{APACrefauthors}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{25 de enero de 2021}{}{}.
-\newblock
-\APACrefbtitle {How to Use Nodemailer to Send Emails from Your Node.js Server.}
-  {How to use nodemailer to send emails from your node.js server.}
-\newblock
-\begin{APACrefURL}
+
+\bibitem{nodemailer}
+\BIBentryALTinterwordspacing
+T.~B. Rachel. (25 de enero de 2021) How to use nodemailer to send emails from
+  your node.js server. [Online]. Available:
   \url{https://www.freecodecamp.org/news/use-nodemailer-to-send-emails-from-your-node-js-server/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
+\BIBentrySTDinterwordspacing
+
 
 \end{thebibliography}
