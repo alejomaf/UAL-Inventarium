@@ -26,6 +26,29 @@ Chenkie, R.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem [\protect \citeauthoryear {%
+Fabrizio~Soppelsa%
+}{%
+Fabrizio~Soppelsa%
+}{%
+{\protect \APACyear {20 de diciembre de 2016}}%
+}]{%
+docker-swarm-book}
+\APACinsertmetastar {%
+docker-swarm-book}%
+\begin{APACrefauthors}%
+Fabrizio~Soppelsa, C\BPBI K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYear{20 de diciembre de 2016}.
+\newblock
+\APACrefbtitle {Native Docker Clustering with Swarm} {Native docker clustering
+  with swarm}.
+\newblock
+\APACaddressPublisher{}{Packt Publishing}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
 \APACcitebtitle {MySQL Backup}}{%
 \APACcitebtitle {MySQL Backup}}{%
 {\protect \APACyear {{\protect \bibnodate {}}}}%

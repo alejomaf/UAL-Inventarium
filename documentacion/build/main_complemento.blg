@@ -21,45 +21,45 @@ Warning--entry type for "mysql-backup" isn't style-file defined
 Warning--entry type for "nodemailer" isn't style-file defined
 --line 20 of file bibliografia/bibliografia_complemento.bib
 apacite.bst [2013/07/21 v6.03 APA bibliography style]
-You've used 4 entries,
+You've used 5 entries,
             6951 wiz_defined-function locations,
-            1286 strings with 11363 characters,
-and the built_in function-call counts, 7124 in all, are:
-= -- 1053
-> -- 30
-< -- 274
-+ -- 263
-- -- 6
-* -- 347
-:= -- 1119
-add.period$ -- 15
-call.type$ -- 4
-change.case$ -- 54
+            1291 strings with 11489 characters,
+and the built_in function-call counts, 8726 in all, are:
+= -- 1258
+> -- 40
+< -- 347
++ -- 337
+- -- 8
+* -- 436
+:= -- 1414
+add.period$ -- 19
+call.type$ -- 5
+change.case$ -- 71
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 118
-empty$ -- 286
-format.name$ -- 42
-if$ -- 1489
+cite$ -- 10
+duplicate$ -- 155
+empty$ -- 356
+format.name$ -- 56
+if$ -- 1804
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 15
 missing$ -- 0
-newline$ -- 84
-num.names$ -- 24
-pop$ -- 79
+newline$ -- 106
+num.names$ -- 32
+pop$ -- 125
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 18
 quote$ -- 0
-skip$ -- 715
+skip$ -- 817
 stack$ -- 0
-substring$ -- 282
-swap$ -- 56
-text.length$ -- 7
+substring$ -- 363
+swap$ -- 73
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 632
+type$ -- 712
 warning$ -- 0
-while$ -- 16
+while$ -- 21
 width$ -- 0
-write$ -- 93
+write$ -- 117
 (There were 4 warnings)

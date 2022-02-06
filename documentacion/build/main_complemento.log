@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  6 FEB 2022 11:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2022.2.4)  6 FEB 2022 11:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -890,99 +890,80 @@ File: spanish.apc 2013/07/21 v6.03 apacite language file
 LaTeX Info: Redefining \BPBI on input line 138.
 LaTeX Info: Redefining \BHBI on input line 139.
 )
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(0.0pt, 597.50787pt, 0.0pt)
-* v-part:(T,H,B)=(0.0pt, 845.04684pt, 0.0pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=597.50787pt
-* \textheight=845.04684pt
-* \oddsidemargin=-72.26999pt
-* \evensidemargin=-72.26999pt
-* \topmargin=-109.67pt
-* \headheight=17.0pt
-* \headsep=20.40001pt
-* \topskip=11.0pt
-* \footskip=47.6pt
-* \marginparwidth=89.62619pt
-* \marginparsep=12.8401pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
 <portada_y_contraportada/1-PortadaCTFG.pdf, id=7, 597.23125pt x 845.1575pt>
 File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
 <use portada_y_contraportada/1-PortadaCTFG.pdf>
-Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf  used on input line 18.
+Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf  used on input line 12.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/1-PortadaCTFG.pdf>
+Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf  used on input line 12.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<portada_y_contraportada/1-PortadaCTFG.pdf, id=10, page=1, 597.23125pt x 845.1575pt>
+File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/1-PortadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf , page1 used on input line 12.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/1-PortadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf , page1 used on input line 12.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/1-PortadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf , page1 used on input line 12.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/1-PortadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf , page1 used on input line 12.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: portada_y_contraportada/1-PortadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/1-PortadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/1-PortadaCTFG.pdf , page1 used on input line 12.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
  [1
 
-
-
-
  <./portada_y_contraportada/1-PortadaCTFG.pdf>]
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(0.0pt, 597.50787pt, 0.0pt)
-* v-part:(T,H,B)=(0.0pt, 845.04684pt, 0.0pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=597.50787pt
-* \textheight=845.04684pt
-* \oddsidemargin=-72.26999pt
-* \evensidemargin=-72.26999pt
-* \topmargin=-109.67pt
-* \headheight=17.0pt
-* \headsep=20.40001pt
-* \topskip=11.0pt
-* \footskip=47.6pt
-* \marginparwidth=89.62619pt
-* \marginparsep=12.8401pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 22.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 22.
-<portada_y_contraportada/2-ContraportadaCTFG.pdf, id=45, 597.23125pt x 845.1575pt>
+<portada_y_contraportada/2-ContraportadaCTFG.pdf, id=48, 597.23125pt x 845.1575pt>
 File: portada_y_contraportada/2-ContraportadaCTFG.pdf Graphic file (type pdf)
 <use portada_y_contraportada/2-ContraportadaCTFG.pdf>
-Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf  used on input line 22.
+Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf  used on input line 13.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
- [2
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./portada_y_contraportada/2-ContraportadaCTFG.pdf>] (/home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.toc
+File: portada_y_contraportada/2-ContraportadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/2-ContraportadaCTFG.pdf>
+Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf  used on input line 13.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+<portada_y_contraportada/2-ContraportadaCTFG.pdf, id=51, page=1, 597.23125pt x 845.1575pt>
+File: portada_y_contraportada/2-ContraportadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/2-ContraportadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: portada_y_contraportada/2-ContraportadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/2-ContraportadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: portada_y_contraportada/2-ContraportadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/2-ContraportadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: portada_y_contraportada/2-ContraportadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/2-ContraportadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: portada_y_contraportada/2-ContraportadaCTFG.pdf Graphic file (type pdf)
+<use portada_y_contraportada/2-ContraportadaCTFG.pdf, page 1>
+Package pdftex.def Info: portada_y_contraportada/2-ContraportadaCTFG.pdf , page1 used on input line 13.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [2 <./portada_y_contraportada/2-ContraportadaCTFG.pdf>] (/home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 Package tocbasic Info: Using my definition of `\numberline' on input line 2.
 Package tocbasic Info: Using my definition of `\numberline' on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 3.
 Package tocbasic Info: Using my definition of `\numberline' on input line 4.
 Package tocbasic Info: Using my definition of `\numberline' on input line 5.
 Package tocbasic Info: Using my definition of `\numberline' on input line 6.
@@ -1022,9 +1003,9 @@ Package tocbasic Info: Using my definition of `\numberline' on input line 49.
 \tf@toc=\write7
 \openout7 = `main_complemento.toc'.
 
-LaTeX Info: Redefining \. on input line 29.
-LaTeX Info: Redefining \% on input line 29.
- [3
+LaTeX Info: Redefining \. on input line 19.
+LaTeX Info: Redefining \% on input line 19.
+ [3{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ] (/home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.lof
 LaTeX Info: Redefining \. on input line 1.
@@ -1120,27 +1101,27 @@ LaTeX Info: Redefining \% on input line 40.
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
  [20]
-<imagenes/complemento/docker-swarm/creating_second_virtual_machine.png, id=261, 421.575pt x 490.83376pt>
+<imagenes/complemento/docker-swarm/creating_second_virtual_machine.png, id=267, 421.575pt x 490.83376pt>
 File: imagenes/complemento/docker-swarm/creating_second_virtual_machine.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/creating_second_virtual_machine.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/creating_second_virtual_machine.png  used on input line 21.
 (pdftex.def)             Requested size: 252.94695pt x 294.50252pt.
-<imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png, id=264, 913.16156pt x 106.14656pt>
+<imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png, id=270, 913.16156pt x 106.14656pt>
 File: imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png  used on input line 27.
 (pdftex.def)             Requested size: 410.9189pt x 47.7655pt.
-<imagenes/complemento/docker-swarm/docker-swarm-init.png, id=266, 564.1075pt x 339.2675pt>
+<imagenes/complemento/docker-swarm/docker-swarm-init.png, id=272, 564.1075pt x 339.2675pt>
 File: imagenes/complemento/docker-swarm/docker-swarm-init.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-swarm-init.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-swarm-init.png  used on input line 37.
 (pdftex.def)             Requested size: 282.05305pt x 169.63333pt.
-<imagenes/complemento/docker-swarm/docker-compose-join.png, id=268, 564.1075pt x 339.2675pt>
+<imagenes/complemento/docker-swarm/docker-compose-join.png, id=274, 564.1075pt x 339.2675pt>
 File: imagenes/complemento/docker-swarm/docker-compose-join.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-compose-join.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-compose-join.png  used on input line 43.
 (pdftex.def)             Requested size: 282.05305pt x 169.63333pt.
-<imagenes/complemento/docker-swarm/docker-stack-deploy.png, id=270, 620.3175pt x 311.1625pt>
+<imagenes/complemento/docker-swarm/docker-stack-deploy.png, id=276, 620.3175pt x 311.1625pt>
 File: imagenes/complemento/docker-swarm/docker-stack-deploy.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-stack-deploy.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-stack-deploy.png  used on input line 56.
@@ -1151,7 +1132,7 @@ LaTeX Info: Redefining \% on input line 63.
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
  [22 <./imagenes/complemento/docker-swarm/creating_second_virtual_machine.png> <./imagenes/complemento/docker-swarm/virtual_machines_on_google_cloud.png> <./imagenes/complemento/docker-swarm/docker-swarm-init.png>]
-<imagenes/complemento/docker-swarm/docker-FINAL.png, id=283, 1069.9975pt x 311.1625pt>
+<imagenes/complemento/docker-swarm/docker-FINAL.png, id=289, 1069.9975pt x 311.1625pt>
 File: imagenes/complemento/docker-swarm/docker-FINAL.png Graphic file (type png)
 <use imagenes/complemento/docker-swarm/docker-FINAL.png>
 Package pdftex.def Info: imagenes/complemento/docker-swarm/docker-FINAL.png  used on input line 77.
@@ -1169,8 +1150,8 @@ chapter 4.
 ]
 chapter without number
 )
-LaTeX Info: Redefining \. on input line 41.
-LaTeX Info: Redefining \% on input line 41.
+LaTeX Info: Redefining \. on input line 31.
+LaTeX Info: Redefining \% on input line 31.
  [26
 
 ] (/home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.aux
@@ -1181,18 +1162,18 @@ Package rerunfilecheck Info: File `main_complemento.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28565 strings out of 479304
- 600674 string characters out of 5869780
- 1109084 words of memory out of 5000000
- 45116 multiletter control sequences out of 15000+600000
+ 28581 strings out of 479304
+ 601305 string characters out of 5869780
+ 1109719 words of memory out of 5000000
+ 45129 multiletter control sequences out of 15000+600000
  411003 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,20n,119p,10746b,875s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.pdf (26 pages, 1694295 bytes).
+Output written on /home/alejomaf/Documents/Inventarium/documentacion/build/main_complemento.pdf (26 pages, 1694756 bytes).
 PDF statistics:
- 490 PDF objects out of 1000 (max. 8388607)
- 407 compressed objects within 5 object streams
- 98 named destinations out of 1000 (max. 500000)
- 349 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 497 PDF objects out of 1000 (max. 8388607)
+ 408 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
+ 379 words of extra memory for PDF output out of 10000 (max. 10000000)
 
