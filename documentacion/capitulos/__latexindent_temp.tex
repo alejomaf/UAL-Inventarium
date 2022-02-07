@@ -1,0 +1,123 @@
+\chapter{Introducción}
+
+Son varios los caminos que han llevado al desarrollo de este proyecto. En este capítulo tendré la oportunidad de poder hablar de cada uno de ellos. Desde empezar a estudiar ingeniería informática hasta la mentalidad que he ido adquiriendo a lo largo de estos años gracias a ella.
+
+\section{Motivaciones}
+
+La motivación principal ha sido la ingeniería informática y es que sin ella no sería quién soy ahora. Para bien y para mal, ha ido siendo una evolución de pequeños pasos empezando en primero de carrera hasta llegar a saber una pizca de todo este mundo de tecnología ya acabando cuarto. Todo empezó desde pequeño, desde que vi esos monitores gigantes, los disquetes y el Age of Empires 1 a la edad de cuatro años.
+\\Mi madre tuvo un novio, Martín se llamaba, que nos trajo el mundo de la tecnología a la casa. Ella también era otra fan tecnológica, pues al haberme tenido con tan solo 17 años siempre tuvo esa mentalidad más abierta con todo el tema de nuevas herramientas. Creo que esto me acabó ayudando bastante.
+\\Luego de esta pequeña época vino una un poco más oscura que consistía en una vida de cero tecnología. Influía bastante el aspecto de vivir en Argentina y que el precio de los aranceles fuera bastante alto influyendo en los productos tecnológicos en su mayoría. Pasar al lado de los escaparates y ver esas pantallas brillantes con juegos, películas, canciones\ldots era un martirio para mí.
+\\Otro aspecto muy importante y el cual también he de agradecer fue la concesión que hizo la Junta de Andalucía allá por 2009 de aquellos pequeños ordenadores verdes. Esos sí que fueron gasolina para mis aspiraciones y para terminar hoy aquí, dentro del grado de Ingeniería Informática de la Universidad de Almería.
+\\\\Mi segunda motivación principal para el desarrollo de este proyecto fue la beca extracurricular que publicó el Departamento de Informática de la Universidad de Almería, cuyo director en el momento de la concesión y en la fecha actual de redacción de este documento es Juan Francisco Sanjuan Estrada, el tutor de este proyecto.
+\\Gracias a ella me sentí motivado para poder afianzar la actividad desempeñada en aquel pequeño trayecto de tiempo, unos seis meses, a la redacción de este trabajo.
+\\El trabajo no se basa en lo que exactamente realicé en aquella beca, sino en una refactorización/transformación de aquel proyecto para poder convertirla en algo ``fresco'' podríamos llamarlo.
+\\\\Y aquí pasamos al tercer y último punto de este apartado. La transformación del proyecto, el aplicar el concepto de ingeniería para poder transformar algo que era un software cerrado, con poca modularidad, difícil de entender y de ampliar en algo que merezca la pena tener. Un software que combine tecnologías y metodologías de hoy en día. Un ejemplo a seguir.
+
+\section{Objetivos}
+
+El objetivo principal de este proyecto es la creación de un sistema de gestión de inventario y préstamos para el Departamento de Informática de la Universidad de Almería.
+\\Este sitio web tiene que cumplir con unos requisitos principales, que son:
+
+\begin{itemize}
+    \item Llevar un registro del inventario del Departamento de Informática ubicado en el edificio Científico Técnico III.
+    \item Que el estudiantado y el personal docente e investigador realicen solicitudes de préstamos para los distintos elementos ofertados dentro de la página.
+    \item Que los técnicos de servicio puedan gestionar estas solicitudes más el seguimiento del inventario dentro del edificio.
+\end{itemize}
+Por estos puntos se entiende que la motivación principal de la herramienta es la de gestionar y organizar préstamos.
+\\Luego de los requisitos principales que había que cumplir se presentaban los secundarios.
+
+\begin{itemize}
+    \item La página web tenía que disponer de un modo adaptativo para las versiones móviles.
+    \item Había que incorporar la posibilidad de realizar un importado de datos gracias al procesamiento de una tabla de datos que es lo que antiguamente utilizaban los técnicos del departamento.
+    \item Había una serie de datos que tenían que almacenar los objetos añadidos a este sistema los cuales podían ser de tres tipos: inventarios, fungibles o kits.
+    \item Se permitiría ver un seguimiento de los préstamos realizados sobre los objetos.
+\end{itemize}
+En base a estos objetivos principales y secundarios se realizó la construcción de la aplicación.
+
+\section{Planificación}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+
+La planificación del proyecto se dividirá en cinco grandes grupos: reuniones iniciales con los clientes, planificación y elaboración del desarrollo del proyecto, preparación del entorno de trabajo, construcción de la aplicación, testeo y comprobación de la aplicación y comprobación de errores.
+
+\subsection{Reuniones iniciales con los clientes y especificación inicial}
+
+A pesar de basarse en la reconstrucción de una aplicación las reuniones con los clientes son iniciales. Estas se hicieron en un principio del desarrollo y se mantuvieron unas pocas más a lo largo del mismo.
+
+\subsection{Planificación y elaboración del desarrollo del proyecto}
+
+En el desarrollo del proyecto no solo se considera la planificación de las diferentes etapas para poder ver y realizar un seguimiento del proyecto sino que también importa la redacción y especificación de las diferentes actividades realizadas en cada una de estas. Este apartado de la planificación se desarrolla junto a todo el resto de apartados.
+
+\subsection{Preparación del entorno de trabajo}
+
+Los mayores casos de éxito tanto en producción como en mejoras de producto de una empresa se debe a la mejora de su entorno de producción. Gracias a algunas asignaturas del grado, a la investigación, a poder haber estado alrededor de un año en el entorno laboral y a la magnífica herramienta que es internet y todo lo que nos brinda se ha podido perfeccionar esta creación de entornos de trabajo.
+
+\subsection{Construcción de la aplicación}
+
+Fue uno de los apartados más difíciles en cierto momento, por lo que conllevaba la creación de la lógica de la aplicación, las interacciones que realiza la interfaz con el usuario y las distintas funcionalidades que tiene que presentar la misma. Esta sección unos dos años atrás pudo haber sido de las que más tiempo podrían llevar en realizarse pero gracias a los distintos frameworks que tenemos hoy en día para poder reutilizar componentes software y ahorrar pasos intermedios se ha ido volviendo más pequeña, que no quiere decir menos importante. Gracias a Angular 12 y a algunas tecnologías más que utilizaremos se podrá ver como la construcción no es tan complicada como en un principio parecía.
+
+\subsection{Testeo y comprobación de la aplicación y comprobación de errores}
+
+¿Qué es de una aplicación bien planificada, con una interfaz bien elaborada y unos requisitos satisfechos que presente errores? No es nada, y es por ello que un testeo intensivo en el momento que la aplicación finalmente haya sido publicada hará que mejore en esos apartados que anteriormente podría haber presentado fallos.
+
+\input{diagramas/cronograma_inicial.tex}
+
+\begin{itemize}
+    \item \textbf{Actividad 1} (30 horas) Reuniones iniciales con los clientes.
+          \begin{itemize}
+              \item Reunión inicial con el director del proyecto.
+              \item Reunión con los técnicos para investigar el dominio de la aplicación.
+              \item Presentar primer diseño de la aplicación junto a una interpretación del dominio.
+          \end{itemize}
+    \item \textbf{Actividad 2} (80 horas) Planificación y elaboración del desarrollo del proyecto.
+    \item \textbf{Actividad 3} (40 horas) Preparación del entorno de trabajo.
+          \begin{itemize}
+              \item Creación del entorno en la nube Google Cloud.
+              \item Creación del repositorio en GitHub.
+              \item Creación del entorno virtual en Visual Studio Code.
+              \item Contenerización de los distintos sistemas que se utilizarán en el desarrollo de la aplicación.
+          \end{itemize}
+    \item \textbf{Actividad 4} (100 horas) Construcción de la aplicación.
+          \begin{itemize}
+              \item Elaboración y creación de la base de datos.
+              \item Desarrollo de la API.
+              \item Desarrollo del sitio web.
+          \end{itemize}
+    \item \textbf{Actividad 5} (50 horas) Testeo, comprobación de la aplicación y comprobación de errores.
+\end{itemize}
+
+
+\section{Estructuración del documento}
+
+La estructura de este documento de trabajo fin de grado es la siguiente:
+
+\subsection{Herramientas utilizadas}
+
+Donde se hará un pequeño resumen de todas las herramientas tanto físicas como tecnológicas utilizadas para la construcción de este software.
+
+\subsection{Fases previas a la construcción de la aplicación}
+
+Donde se describirán y detallarán todas las fases previas a la construcción de la aplicación, desde las reuniones iniciales con los clientes, la creación de una especificación inicial del proyecto y la planificación y elaboración del desarrollo del proyecto.
+
+\subsection{Construcción de la aplicación}
+
+Aquí se tratarán los procesos de construcción por los que ha ido pasando la aplicación.
+
+\subsection{Diseño y funcionamiento final}
+
+Se revisará el aspecto final del sitio web y toda la funcionalidad que presenta.
+
+\subsection{Deploy del sitio web}
+
+Se explicarán los distintos procesos por los que tiene que pasar el sitio web para poder ser subido a internet.
+
+\subsection{Pruebas durante el desarrollo y corrección de errores}
+
+Se expondrán las distintas tecnologías utilizadas para la comprobación del correcto funcionamiento de los componentes desarrollados en este trabajo. También se explicarán problemáticas surgidas durante el desarrollo y su posterior resolución.
+
+\subsection{Conclusiones y posibles mejoras}
+
+Se realizará una evaluación de las distintas fases de desarrollo, su desempeño en ellas y posibles mejoras que se hubieran podido realizar.
+
+\subsection{Bibliografía}
+
+Se hablará sobre la bibliografía en la que se han fundamentado cada uno de los pasos de elaboración de este proyecto.
