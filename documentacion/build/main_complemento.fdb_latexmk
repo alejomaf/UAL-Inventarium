@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex build/main_complemento"] 1644255156 "build/main_complemento.aux" "build/main_complemento.bbl" "build/main_complemento" 1644271845
+["bibtex build/main_complemento"] 1644255156 "build/main_complemento.aux" "build/main_complemento.bbl" "build/main_complemento" 1644272622
   "./IEEEannot.bst" 1644253766 61919 bf06423465058a2272d4ac4bdeb9eab7 ""
   "bibliografia/bibliografia_complemento.bib" 1644253766 1385 d8728d20bbf0195dc0e1ba10ffb9141b ""
-  "build/main_complemento.aux" 1644271845 20791 bc1ed42992e173570c324a8fa689ed0a "pdflatex"
+  "build/main_complemento.aux" 1644272622 20791 bc1ed42992e173570c324a8fa689ed0a "pdflatex"
   (generated)
   "build/main_complemento.blg"
   "build/main_complemento.bbl"
-["pdflatex"] 1644271842 "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/main_complemento.tex" "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/build/main_complemento.pdf" "main_complemento" 1644271845
-  "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/build/main_complemento.aux" 1644271845 20791 bc1ed42992e173570c324a8fa689ed0a ""
+["pdflatex"] 1644272620 "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/main_complemento.tex" "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/build/main_complemento.pdf" "main_complemento" 1644272622
+  "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/build/main_complemento.aux" 1644272622 20791 bc1ed42992e173570c324a8fa689ed0a ""
   "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/main_complemento.tex" 1644253767 780 2dc2e47239a6edf1504c12a6465a0d32 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -210,11 +210,11 @@
   "/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616695603 5169178 a2ce6e2d73f603b690db6777d06dbccb ""
   "/usr/local/texlive/2021/texmf-var/web2c/pdftex/pdflatex.fmt" 1637880413 2724741 52198349e6a0b83f5562e5ce12d0386f ""
   "/usr/local/texlive/2021/texmf.cnf" 1616695596 577 4c1911a7228e554c6032256d3cf5567d ""
-  "build/main_complemento.aux" 1644271845 20791 bc1ed42992e173570c324a8fa689ed0a "pdflatex"
+  "build/main_complemento.aux" 1644272622 20791 bc1ed42992e173570c324a8fa689ed0a "pdflatex"
   "build/main_complemento.bbl" 1644255156 2310 65410d9ba22993b350074ff4f9b25cbe "bibtex build/main_complemento"
-  "build/main_complemento.lof" 1644271845 880 54874fc22aad6a495a75974060917193 "pdflatex"
-  "build/main_complemento.out" 1644271844 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "build/main_complemento.toc" 1644271845 4340 4278cbc224c25fe9f1cdb8217839f230 "pdflatex"
+  "build/main_complemento.lof" 1644272622 880 54874fc22aad6a495a75974060917193 "pdflatex"
+  "build/main_complemento.out" 1644272621 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "build/main_complemento.toc" 1644272622 4340 4278cbc224c25fe9f1cdb8217839f230 "pdflatex"
   "capitulos/complemento/conclusiones_y_mejoras.tex" 1644253767 2357 0add4e76e892eaa0876263ec54e7c7a6 ""
   "capitulos/complemento/construccion_de_las_ampliaciones/balanceo_de_cargas.tex" 1644253767 6859 f430fe9a9cc2acc6c519556d99887010 ""
   "capitulos/complemento/construccion_de_las_ampliaciones/contruccion_de_las_ampliaciones.tex" 1644253767 471 0074972967766bd27d4bfe7f2ae8da50 ""
@@ -234,13 +234,13 @@
   "include/config.tex" 1644253767 756 9c8429cce502af20109794f750036ae3 ""
   "main_complemento.tex" 1644253767 780 2dc2e47239a6edf1504c12a6465a0d32 ""
   "portada_y_contraportada/1-PortadaCTFG.pdf" 1643990644 828329 937b7f8af1971ea9d82edc4a46416b67 ""
-  "portada_y_contraportada/2-ContraportadaCTFG.pdf" 1644271815 581880 5be1f14cc6d768ffc9e357c765dba5a9 ""
+  "portada_y_contraportada/2-ContraportadaCTFG.pdf" 1644272583 578737 6d9821682a75f68a5743e3c4612914dc ""
   (generated)
-  "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/build/main_complemento.pdf"
   "build/main_complemento.lof"
-  "build/main_complemento.toc"
-  "build/main_complemento.aux"
-  "build/main_complemento.pdf"
   "build/main_complemento.log"
-  "build/main_complemento.out"
+  "build/main_complemento.pdf"
+  "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/build/main_complemento.pdf"
   "/Users/alejomaf/Documents/GitHub/Inventarium/documentacion/build/main_complemento.log"
+  "build/main_complemento.aux"
+  "build/main_complemento.toc"
+  "build/main_complemento.out"
