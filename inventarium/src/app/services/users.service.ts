@@ -65,4 +65,19 @@ export class UsersService {
     let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
     return this.http.post(this._url + "/change-password", user, { headers: header });
   }
+
+  solicitudRecuperarContrasena(email: string) {
+    let formData = new FormData();
+    formData.append("email", email);
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
+    return this.http.post(this._url + "/request-password", formData);
+  }
+
+  solicitudCambiarContrasena(token: string, new_password: string) {
+    let formData = new FormData();
+    formData.append("token", token);
+    formData.append("newpassword", new_password);
+    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
+    return this.http.post(this._url + "/recover-password", formData);
+  }
 }

@@ -29,24 +29,27 @@ router.post('/login', async function (req, res, next) {
   }
 });
 
-router.post('/request-password/:email', async function (req, res, next) {
-  const usuario = await usuarios.getByEmail(req.params.email);
-
+router.post('/request-password', async function (req, res, next) {
+  const usuario = await usuarios.getByEmail(req.fields.email);
+  console.log("Entra")
   if (usuario === undefined) {
     // User didn't found
+    console.log("Usuario no encontrado")
   } else {
-    var hash = createToken(req.params.usuario);
-    transporter.recuperar_contrasena(usuario.correoElectronico, "http://" + process.env.HOST + "/password-new-set/" + hash);
+    console.log("Correo encontrado");
+    var hash = createToken(usuario);
+    await transporter.recuperar_contrasena(usuario.correoElectronico, "http://" + process.env.HOST + "/password-new-set/" + hash, usuario.nombre);
   }
+  return res.json({ successfull: "Send or not" });
 });
 
-router.post('/recover-password/:token/:newpassword', async function (req, res, next) {
-  if (!req.params.token && !req.params.newpassword)
+router.post('/recover-password', async function (req, res, next) {
+  if (!req.fields.token && !req.fields.newpassword)
     return res.json({
       error: "You must include the data"
     });
 
-  const token = req.params.token;
+  const token = req.fields.token;
   let payload = null
   try {
     payload = jwt.decode(token, process.env.TOKEN_KEY);
@@ -60,9 +63,8 @@ router.post('/recover-password/:token/:newpassword', async function (req, res, n
     return res.json({ error: "Expired token" });
   };
 
-  var password = bcrypt.hashSync(req.params.newpassword, 10);
-  res.json(await usuarios.updatePassword(payload.userId, password));
-
+  var password = bcrypt.hashSync(req.fields.newpassword, 10);
+  return res.json(await usuarios.updatePassword(payload.userId, password));
 });
 
 const createToken = (usuario) => {

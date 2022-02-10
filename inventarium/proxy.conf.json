@@ -77,13 +77,13 @@
     "logLevel": "debug",
     "changeOrigin": true
   },
-  "/api/users/request-password/*": {
+  "/api/users/request-password": {
     "target": "http://localhost:3000",
     "secure": false,
     "logLevel": "debug",
     "changeOrigin": true
   },
-  "/api/users/recover-password/*/*": {
+  "/api/users/recover-password": {
     "target": "http://localhost:3000",
     "secure": false,
     "logLevel": "debug",
