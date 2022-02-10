@@ -1,0 +1,34 @@
+% importo la configuración inicial del documento
+\input{include/config}
+  
+\author{Alejo Martín Arias Filippo}                        
+\date{\today}      
+
+
+
+\begin{document}
+
+% PORTADA Y CONTRAPORTADA
+\includepdf{portada_y_contraportada/1-PortadaTFG.pdf}
+\includepdf{portada_y_contraportada/2-ContraportadaTFG.pdf}
+
+% ÍNDICE
+\tableofcontents
+
+% ÍNDICE DE FIGURAS
+\listoffigures
+
+% CAPÍTULOS
+\input{capitulos/introduccion.tex}
+\input{capitulos/herramientas_utilizadas.tex}
+\input{capitulos/desarrollo_fases_proyecto/desarrollo_fases_proyecto.tex}
+\input{capitulos/contruccion_de_la_aplicacion/construccion_aplicacion.tex}
+\input{capitulos/deploy.tex}
+\input{capitulos/pruebas.tex}
+\input{capitulos/conclusiones_y_mejoras.tex}
+
+\nocite{*}
+\bibliographystyle{IEEEannot}
+\bibliography{bibliografia/bibliografia}
+
+\end{document}
