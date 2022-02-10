@@ -70,6 +70,7 @@ async function create(objeto, idGrupoObjeto) {
   if (result.affectedRows) {
     await tools.addObjectRoutine(idGrupoObjeto);
     message = 'objeto created successfully';
+    id = result.insertId;
   }
 
   return { message };

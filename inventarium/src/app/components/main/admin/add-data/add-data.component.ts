@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfiguracionProcesada, GrupoObjetosProcesados, KitProcesado, ObjetosProcesados } from 'src/app/interfaces/grupoobjetosprocesados';
+import { ConfigurationsService } from 'src/app/services/configurations.service';
+import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
+import { KitObjectsService } from 'src/app/services/kit-objects.service';
+import { ObjectsService } from 'src/app/services/objects.service';
 import * as XLSX from 'xlsx';
 
 @Component({
@@ -18,7 +22,7 @@ export class AddDataComponent implements OnInit {
   object_visualizer: any;
   ultimoObjeto = "";
 
-  constructor() { }
+  constructor(private groupObjectS: GroupOfObjectsService, private objectS: ObjectsService, private configS: ConfigurationsService, private kitS: KitObjectsService) { }
 
   ngOnInit(): void {
   }
@@ -160,5 +164,77 @@ export class AddDataComponent implements OnInit {
   itContainsConfig(configuration: any): boolean {
     if (configuration.ip == undefined && configuration.mac == undefined && configuration.boca == undefined && configuration.armario == undefined && configuration.usuario == undefined && configuration.contrasena == undefined) return false;
     return true;
+  }
+
+  uploadingData() {
+    for (let op of this.processed_objects) {
+      let formDataGO = new FormData();
+      formDataGO.append("nombre", op.nombre == undefined ? "Sin nombre" : op.nombre);
+      if (op.imagen != undefined) formDataGO.append("imagen", op.imagen);
+      formDataGO.append("marca", op.marca == undefined ? "" : op.marca);
+      formDataGO.append("modelo", op.modelo == undefined ? "" : op.modelo);
+      formDataGO.append("tipo", String(op.tipo));
+
+      this.groupObjectS.addGroupOfObject(formDataGO).subscribe(
+        (res: any) => {
+          console.log("Group of object added " + res.id);
+          let idGO = res.id;
+          for (let o of op.objetos) {
+            let formDataO = new FormData();
+            formDataO.append("mejorasEquipo", o.mejorasEquipo == undefined ? "" : o.mejorasEquipo);
+            formDataO.append("codigo", o.codigo == undefined ? "" : o.codigo);
+            formDataO.append("fechaAdquisicion", o.fechaAdquisicion == undefined ? "" : o.fechaAdquisicion);
+            formDataO.append("observaciones", o.observaciones == undefined ? "" : o.observaciones);
+            formDataO.append("organizativa", o.organizativa == undefined ? "0" : o.organizativa);
+            formDataO.append("etiqueta", o.etiqueta == undefined ? "" : o.etiqueta);
+            formDataO.append("Ubicacion_idUbicacion", o.Ubicacion_idUbicacion == undefined ? "0" : String(o.Ubicacion_idUbicacion));
+
+            this.objectS.addObject(formDataO, idGO).subscribe(
+              (res: any) => {
+
+                console.log("Object added " + res.id);
+
+                let idO = res.id;
+
+                if (o.configuracion != undefined) {
+                  let formDataC = new FormData();
+                  let conf = o.configuracion;
+                  formDataC.append("ip", conf.ip == undefined ? "" : conf.ip);
+                  formDataC.append("mac", conf.mac == undefined ? "" : conf.mac);
+                  formDataC.append("boca", conf.boca == undefined ? "" : conf.boca);
+                  formDataC.append("armario", conf.armario == undefined ? "" : conf.armario);
+                  formDataC.append("usuario", conf.usuario == undefined ? "" : conf.usuario);
+                  formDataC.append("contrasena", conf.contrasena == undefined ? "" : conf.contrasena);
+                  formDataC.append("Objeto_idObjeto", idO);
+
+                  this.configS.addConfiguration(formDataC).subscribe(
+                    (res: any) => {
+                      console.log("Configuration added")
+                    }
+                  )
+                }
+              }
+            )
+          }
+
+          if (op.tipo == 2) {
+            for (let kit of op.kit!) {
+              let formDataK = new FormData();
+              formDataK.append("nombre", kit.nombre == undefined ? "" : kit.nombre);
+              formDataK.append("cantidad", String(kit.cantidad == undefined ? 1 : kit.cantidad));
+              if (kit.imagen != undefined) formDataK.append("imagen", kit.imagen);
+              formDataK.append("observaciones", kit.observaciones == undefined ? "" : kit.observaciones);
+              formDataK.append("GrupoObjetos_idGrupoObjetos", idGO);
+
+              this.kitS.addKitObject(formDataK).subscribe(
+                (res: any) => {
+                  console.log("Kit added")
+                }
+              )
+            }
+          }
+        }
+      )
+    }
   }
 }

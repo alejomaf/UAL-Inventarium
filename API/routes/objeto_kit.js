@@ -77,11 +77,9 @@ router.post('/', async function (req, res, next) {
 
     if (req.files.size != undefined) {
       files = req.files
-      await uploadingFile(files, time, req.params.id);
+      await uploadingFile(files, time, req.fields.GrupoObjetos_idGrupoObjetos);
     } else if (req.fields.image)
-      await uploadFileFromInternet(req.fields.image, time, req.params.id)
-
-    await uploadingFile(files, time, req.fields.idObjetoKit)
+      await uploadFileFromInternet(req.fields.image, time, GrupoObjetos_idGrupoObjetos)
 
     //Consulta post en la base de datos
     res.json(await objetokit.create(req.fields, time));
