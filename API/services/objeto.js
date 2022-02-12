@@ -97,14 +97,16 @@ async function update(id, objeto) {
 }
 
 async function remove(idObjeto) {
+  await db.query(`DELETE FROM configuracion WHERE Objeto_idObjeto=` + idObjeto);
+  await db.query(`DELETE FROM prestado WHERE Objeto_idObjeto=` + idObjeto);
+  await tools.deleteObjectRoutine(idObjeto);
   const result = await db.query(
-    `UPDATE objeto SET eliminado = 1 WHERE idObjeto =` + idObjeto
+    `DELETE FROM objeto WHERE idObjeto =` + idObjeto
   );
 
   let message = 'Error in deleting objeto';
 
   if (result.affectedRows) {
-    await tools.deleteObjectRoutine(idObjeto);
     message = 'objeto deleted successfully';
   }
 

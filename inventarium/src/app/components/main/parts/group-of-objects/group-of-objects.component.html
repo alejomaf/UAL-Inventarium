@@ -32,7 +32,8 @@
     <div *ngFor="let go of group_of_objects; let i = index" style="width: fit-content; padding: 0 0;">
         <app-group-of-object *ngIf="paginacion(i, go)">
             <img *ngIf="go.imagen != null" imagen class="card-img-top rounded-circle"
-                style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{go.imagen}}.jpg">
+                onerror="this.src='./assets/icons/no-photo.svg'" style="height:190px; object-fit: contain;"
+                src="http://localhost:3000/images/{{go.imagen}}.jpg">
             <img *ngIf="go.imagen == null" imagen class="card-img-top rounded-circle" style="height:180px;"
                 src="./assets/icons/no-photo.svg">
             <h5 nombre [routerLink]="['/group-of-object', go.idGrupoObjetos]" style="cursor:pointer"

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Configuracion } from 'src/app/interfaces/configuracion';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
@@ -41,7 +41,7 @@ export class ObjectUnitComponent implements OnInit {
   errorModificationObject = "";
   successModificationObject = "";
 
-  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private configsS: ConfigurationsService, private modalService: NgbModal) {
+  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private configsS: ConfigurationsService, private modalService: NgbModal, private router: Router) {
     this.idObjeto = route.snapshot.params['id'];
 
     this.cargarObjeto();
@@ -174,7 +174,12 @@ export class ObjectUnitComponent implements OnInit {
   }
 
   borrarObjeto() {
-
+    this.objectS.deleteObject(this.idObjeto).subscribe(
+      (res: any) => {
+        this.cerrarModal();
+        this.router.navigateByUrl("group-of-object/" + this.grupoObjeto!.idGrupoObjetos);
+      }
+    )
   }
 
   ngOnInit(): void {

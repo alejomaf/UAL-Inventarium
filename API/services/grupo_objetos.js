@@ -1,6 +1,7 @@
 const db = require('./db');
 const helper = require('../helper');
 const config = require('../config');
+const objeto = require('../services/objeto');
 
 async function getMultiple(req) {
   const rows = await db.query(
@@ -86,6 +87,12 @@ async function updateImage(id, imagen) {
 }
 
 async function remove(id) {
+  const objects = (await objeto.getMultiple(id)).data;
+  for (let i = 0; i < objects.length; i++) {
+    await objeto.remove(objects[i].idObjeto);
+  }
+
+  await db.query(`DELETE FROM objetokit WHERE GrupoObjetos_idGrupoObjetos=` + id);
   const result = await db.query(
     `DELETE FROM grupoobjetos WHERE idGrupoObjetos=?`,
     [id]

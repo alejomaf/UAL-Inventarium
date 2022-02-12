@@ -24,15 +24,17 @@ export class MyLoansComponent implements OnInit {
   solicitudes_activas = true;
 
   constructor(private route: ActivatedRoute, private loansS: LoansService, private authS: AuthGuardService, private usersS: UsersService) {
-    if (route.snapshot.params['id'] == undefined) this.usuario = this.authS.getCurrentUser();
-    else usersS.getUser(route.snapshot.params['id']).subscribe(
+    if (route.snapshot.params['id'] == undefined) {
+      this.usuario = this.authS.getCurrentUser();
+      this.cargarPrestamos();
+    } else usersS.getUser(route.snapshot.params['id']).subscribe(
       (res: any) => {
         this.usuario = res;
+        this.cargarPrestamos();
       }
       //CASTEAR ERROR POR NO COGER BIEN UN USUARIO
     )
 
-    this.cargarPrestamos();
   }
 
   ngOnInit(): void {
