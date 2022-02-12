@@ -79,10 +79,11 @@ router.post('/', async function (req, res, next) {
       files = req.files
       await uploadingFile(files, time, req.fields.GrupoObjetos_idGrupoObjetos);
     } else if (req.fields.image)
-      await uploadFileFromInternet(req.fields.image, time, GrupoObjetos_idGrupoObjetos)
+      await uploadFileFromInternet(req.fields.image, time, req.fields.GrupoObjetos_idGrupoObjetos)
 
     //Consulta post en la base de datos
     res.json(await objetokit.create(req.fields, time));
+
   } catch (err) {
     console.error(`Error while creating objetokit`, err.message);
     next(err);

@@ -71,6 +71,7 @@ async function create(objeto, idGrupoObjeto) {
     await tools.addObjectRoutine(idGrupoObjeto);
     message = 'objeto created successfully';
     id = result.insertId;
+    return { message, id }
   }
 
   return { message };
