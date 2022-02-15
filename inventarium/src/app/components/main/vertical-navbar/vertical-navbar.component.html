@@ -47,7 +47,7 @@
                 Búsqueda avanzada
             </a>
         </li>
-        <li class="nav-item" [ngClass]="requests ? 'selected-li':''">
+        <li *ngIf="usuario?.rango==0" class="nav-item" [ngClass]="requests ? 'selected-li':''">
             <a routerLink="/requests" (click)="changeSelection('requests')" class="nav-link text-dark font-italic">
                 <fa-icon [icon]="solicitudes"></fa-icon>
                 Solicitudes
@@ -67,8 +67,9 @@
             </a>
         </li>
     </ul>
-    <p class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">Administración</p>
-    <ul class="nav flex-column mb-0">
+    <p *ngIf="usuario?.rango==0" class="text-gray font-weight-bold text-uppercase px-3 small pb-1 pt-1 mb-0">
+        Administración</p>
+    <ul *ngIf="usuario?.rango==0" class="nav flex-column mb-0">
         <li class="nav-item" [ngClass]="add_data ? 'selected-li':''">
             <a routerLink="/add-data" (click)="changeSelection('add-data')" class="nav-link text-dark font-italic">
                 <fa-icon [icon]="upload"></fa-icon>
@@ -96,7 +97,7 @@
                 Cerrar sesión
             </a>
         </li>
-        <div class="nav-item">
+        <div class="nav-item" style="position: relative; top: 15px; font-weight: bold; font-weight: 1.5vh;">
             <a target="_blank" href="https://github.com/alejomaf/Inventarium/tree/main/inventarium"
                 style="cursor:pointer" class="nav-link text-dark font-italic">
                 Versión de Inventarium 1.0

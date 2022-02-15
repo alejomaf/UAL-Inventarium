@@ -12,21 +12,21 @@
             <span *ngIf="user?.departamento==3" departamento>Ciencias de la computación e inteligencia artificial</span>
             <span *ngIf="user?.departamento==4" departamento>Arquitectura y tecnología de computadores</span>
             <span telefono>{{user?.telefono}}</span>
-            <div *ngIf="user?.rango==-1" botones class="d-grid gap-2 my-2">
+            <div *ngIf="user?.rango==-1 && usuario?.rango==0" botones class="d-grid gap-2 my-2">
                 <div class="btn btn-primary" (click)="darAlta()">Dar de alta</div>
                 <div class="btn btn-secondary" (click)="rechazarUsuario()">Rechazar usuario</div>
             </div>
             <span *ngIf="user?.rango==-1" rango>Solicitud pendiente</span>
-            <div *ngIf="user?.rango==-2" botones class="d-grid gap-2 my-2">
+            <div *ngIf="user?.rango==-2 && usuario?.rango==0" botones class="d-grid gap-2 my-2">
                 <div class="btn btn-primary" (click)="darAlta()">Dar de alta</div>
             </div>
             <span *ngIf="user?.rango==-2" rango>Usuario cancelado</span>
-            <div *ngIf="user?.rango==1" botones class="d-grid gap-2 my-2">
+            <div *ngIf="user?.rango==1 && usuario?.rango==0" botones class="d-grid gap-2 my-2">
                 <div class="btn btn-primary" (click)="convertirEnTecnico()">Convertir en técnico</div>
                 <div class="btn btn-secondary" (click)="rechazarUsuario()">Eliminar usuario</div>
             </div>
             <span *ngIf="user?.rango==1" rango>Usuario</span>
-            <div *ngIf="user?.rango==0" botones class="d-grid gap-2 my-2">
+            <div *ngIf="user?.rango==0 && usuario?.rango==0 && user?.idUsuario!=1" botones class="d-grid gap-2 my-2">
                 <div class="btn btn-secondary" (click)="rechazarUsuario()">Eliminar usuario</div>
             </div>
             <span *ngIf="user?.rango==0" rango>Técnico</span>

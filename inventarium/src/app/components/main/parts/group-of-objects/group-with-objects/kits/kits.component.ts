@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { ObjetoKit } from 'src/app/interfaces/objetokit';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { KitObjectsService } from 'src/app/services/kit-objects.service';
 
 @Component({
@@ -13,6 +15,7 @@ import { KitObjectsService } from 'src/app/services/kit-objects.service';
 })
 export class KitsComponent implements OnInit {
 
+  usuario?: Usuario
   idGrupoObjeto!: any;
   object_kits: ObjetoKit[] = []
   photo_selected = false
@@ -28,8 +31,9 @@ export class KitsComponent implements OnInit {
   cantidad = new FormControl(1)
   observaciones = new FormControl("");
 
-  constructor(private modalService: NgbModal, private route: ActivatedRoute, private kitobjectsS: KitObjectsService, private router: Router) {
+  constructor(private modalService: NgbModal, private route: ActivatedRoute, private kitobjectsS: KitObjectsService, private router: Router, private authS: AuthGuardService) {
     this.idGrupoObjeto = router.url.split("/")[router.url.split("/").length - 2];
+    this.usuario = authS.getCurrentUser();
     this.cargarKits();
   }
 

@@ -6,6 +6,8 @@ import { Configuracion } from 'src/app/interfaces/configuracion';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { Objeto } from 'src/app/interfaces/objeto';
 import { Ubicacion } from 'src/app/interfaces/ubicacion';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { ConfigurationsService } from 'src/app/services/configurations.service';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { ObjectsService } from 'src/app/services/objects.service';
@@ -16,6 +18,7 @@ import { ObjectsService } from 'src/app/services/objects.service';
   styleUrls: ['./object-unit.component.css']
 })
 export class ObjectUnitComponent implements OnInit {
+  usuario?: Usuario
 
   idObjeto: any;
   objeto?: Objeto;
@@ -27,7 +30,7 @@ export class ObjectUnitComponent implements OnInit {
   mac = new FormControl("");
   boca = new FormControl("");
   armario = new FormControl("");
-  usuario = new FormControl("");
+  usuarioAux = new FormControl("");
   contrasena = new FormControl("");
 
   //Elements for object modal
@@ -41,9 +44,9 @@ export class ObjectUnitComponent implements OnInit {
   errorModificationObject = "";
   successModificationObject = "";
 
-  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private configsS: ConfigurationsService, private modalService: NgbModal, private router: Router) {
+  constructor(private route: ActivatedRoute, private objectS: ObjectsService, private groupOfObjectS: GroupOfObjectsService, private configsS: ConfigurationsService, private modalService: NgbModal, private router: Router, private authS: AuthGuardService) {
     this.idObjeto = route.snapshot.params['id'];
-
+    this.usuario = authS.getCurrentUser();
     this.cargarObjeto();
   }
 
@@ -86,7 +89,7 @@ export class ObjectUnitComponent implements OnInit {
           this.mac.setValue(this.configuracion!.mac);
           this.boca.setValue(this.configuracion!.boca);
           this.armario.setValue(this.configuracion!.armario);
-          this.usuario.setValue(this.configuracion!.usuario);
+          this.usuarioAux.setValue(this.configuracion!.usuario);
           this.contrasena.setValue(this.configuracion!.contrasena);
         }
       }
@@ -95,13 +98,13 @@ export class ObjectUnitComponent implements OnInit {
   }
 
   crearConfiguracion() {
-    if (this.ip.value == "" && this.mac.value == "" && this.boca.value == "" && this.armario.value == "" && this.usuario.value == "" && this.contrasena.value == "") return;
+    if (this.ip.value == "" && this.mac.value == "" && this.boca.value == "" && this.armario.value == "" && this.usuarioAux.value == "" && this.contrasena.value == "") return;
     let formData = new FormData();
     formData.append("ip", this.ip.value);
     formData.append("mac", this.mac.value);
     formData.append("boca", this.boca.value);
     formData.append("armario", this.armario.value);
-    formData.append("usuario", this.usuario.value);
+    formData.append("usuario", this.usuarioAux.value);
     formData.append("contrasena", this.contrasena.value);
     formData.append("Objeto_idObjeto", this.idObjeto);
 
@@ -113,13 +116,13 @@ export class ObjectUnitComponent implements OnInit {
   }
 
   modificarConfiguracion() {
-    if (this.ip.value == this.configuracion!.ip && this.mac.value == this.configuracion!.mac && this.boca.value == this.configuracion!.boca && this.armario.value == this.configuracion!.armario && this.usuario.value == this.configuracion!.usuario && this.contrasena.value == this.configuracion!.contrasena) return;
+    if (this.ip.value == this.configuracion!.ip && this.mac.value == this.configuracion!.mac && this.boca.value == this.configuracion!.boca && this.armario.value == this.configuracion!.armario && this.usuarioAux.value == this.configuracion!.usuario && this.contrasena.value == this.configuracion!.contrasena) return;
     let formData = new FormData();
     formData.append("ip", this.ip.value);
     formData.append("mac", this.mac.value);
     formData.append("boca", this.boca.value);
     formData.append("armario", this.armario.value);
-    formData.append("usuario", this.usuario.value);
+    formData.append("usuario", this.usuarioAux.value);
     formData.append("contrasena", this.contrasena.value);
     formData.append("Objeto_idObjeto", this.idObjeto);
 
@@ -140,7 +143,7 @@ export class ObjectUnitComponent implements OnInit {
     this.mac = new FormControl("");
     this.boca = new FormControl("");
     this.armario = new FormControl("");
-    this.usuario = new FormControl("");
+    this.usuarioAux = new FormControl("");
     this.contrasena = new FormControl("");
   }
 

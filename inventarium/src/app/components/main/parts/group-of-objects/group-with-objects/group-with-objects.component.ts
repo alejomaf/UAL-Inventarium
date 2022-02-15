@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subscription } from 'rxjs';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
+import { Usuario } from 'src/app/interfaces/usuario';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 
 @Component({
@@ -12,6 +14,7 @@ import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service
   styleUrls: ['./group-with-objects.component.css']
 })
 export class GroupWithObjectsComponent implements OnInit {
+  usuario?: Usuario
   private routeSub!: Subscription;
   public go!: GrupoObjetos;
   idGrupoObjeto!: number;
@@ -28,10 +31,11 @@ export class GroupWithObjectsComponent implements OnInit {
   errorModification = '';
   successModification = '';
 
-  constructor(private group_of_objects_service: GroupOfObjectsService, private route: ActivatedRoute, public router: Router, private modalService: NgbModal) {
+  constructor(private group_of_objects_service: GroupOfObjectsService, private route: ActivatedRoute, public router: Router, private modalService: NgbModal, private authS: AuthGuardService) {
     this.routeSub = this.route.params.subscribe(params => {
       this.idGrupoObjeto = params['id'];
     });
+    this.usuario = authS.getCurrentUser();
     this.getGroupOfObject();
   }
 
