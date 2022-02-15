@@ -109,6 +109,10 @@ async function updatePassword(id, password) {
       password, id
     ]
   );
+  if (result.affectedRows) {
+    return { message: "User password updated" };
+  }
+  return { error: "Error in updating the password" };
 }
 
 async function remove(id) {

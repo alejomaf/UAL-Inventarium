@@ -31,6 +31,11 @@ export class AuthGuardService implements CanActivateChild, CanActivate {
       this.loginS.getUser()
         .toPromise()
         .then((res: any) => {
+          if (res.error) {
+            // Error
+            this.logout();
+            reject(false);
+          }
           this.usuario = res;
           resolve(true);
         },

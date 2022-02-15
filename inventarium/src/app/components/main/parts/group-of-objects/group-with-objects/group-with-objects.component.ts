@@ -84,7 +84,12 @@ export class GroupWithObjectsComponent implements OnInit {
   }
 
   borrarGrupoObjeto() {
-
+    this.group_of_objects_service.deleteGroupOfObject(this.idGrupoObjeto).subscribe(
+      (res: any) => {
+        this.cerrarModal();
+        this.router.navigateByUrl("group-of-objects");
+      }
+    );
   }
 
   ngOnInit(): void {

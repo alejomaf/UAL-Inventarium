@@ -11,7 +11,7 @@ export interface GrupoObjetosProcesados {
 export interface ObjetosProcesados {
     mejorasEquipo: string,
     codigo: string,
-    fechaAdquisicion: Date,
+    fechaAdquisicion: string,
     observaciones: string,
     organizativa: string,
     etiqueta: string,
