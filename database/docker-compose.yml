@@ -63,8 +63,6 @@ services:
     image: node:16.4
     restart: always
     container_name: api
-    ports:
-      - "3000:3000"
     volumes:
       - ../API:/app
     networks:

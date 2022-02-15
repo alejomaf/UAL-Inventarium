@@ -35,7 +35,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ualinventarium`.`grupoobjetos` (
   `idGrupoObjetos` INT NOT NULL AUTO_INCREMENT,
   `cantidad` INT DEFAULT 0,
-  `nombre` VARCHAR(45) NULL,
+  `nombre` VARCHAR(70) NULL,
   `imagen` VARCHAR(45) NULL,
   `marca` VARCHAR(45) NULL,
   `modelo` VARCHAR(45) NULL,
@@ -105,7 +105,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `ualinventarium`.`usuario` (
   `idUsuario` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
-  `contrasena` VARCHAR(45) NULL,
+  `contrasena` VARCHAR(60) NULL,
   `correoElectronico` VARCHAR(60) NULL,
   `rango` INT(1) NULL,
   `departamento` INT(1) NULL,
