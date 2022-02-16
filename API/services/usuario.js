@@ -52,7 +52,7 @@ async function getUserRequests(page = 1) {
 }
 
 async function create(usuario) {
-  const usuario_repetido = await this.getByEmail(usuario.correoElectronico);
+  const usuario_repetido = await getByEmail(usuario.correoElectronico);
 
   if (!(usuario_repetido === undefined)) {
     let error = "El usuario registrado ya existe";

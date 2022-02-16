@@ -16,8 +16,6 @@ services:
       - ./config-database/my.cnf:/etc/mysql/my.cnf
     networks:
       - default
-    ports:
-      - 3306:3306
     environment:
       MYSQL_DATABASE: ualinventarium
       MYSQL_USER: ualinventarium
