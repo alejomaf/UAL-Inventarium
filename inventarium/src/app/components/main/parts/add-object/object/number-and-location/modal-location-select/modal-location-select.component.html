@@ -16,9 +16,9 @@
             Escribe el nombre del objeto antes de crearlo
         </div>
         <div class="d-grid gap-2">
-            <a style="cursor : pointer;" (click)="crearUbicacion()" class="btn btn-primary">
+            <button (click)="crearUbicacion()" class="btn btn-primary">
                 {{titulo_boton}}
-            </a>
+            </button>
         </div>
         <div *ngFor="let loc of locations_search">
             <li *ngIf="loc.tipo==0" style="cursor:pointer" (click)="procesarPlantas(loc)"
@@ -40,20 +40,19 @@
 
         </div>
         <div *ngIf="this.estado==0" class="d-grid gap-2">
-            <a style="cursor : pointer;" (click)="cerrarModalUbicacion()" class="btn btn-secondary">
+            <button (click)="cerrarModalUbicacion()" class="btn btn-secondary">
                 Cerrar
-            </a>
+            </button>
         </div>
         <div *ngIf="this.estado==1" class="d-grid gap-2">
-            <a style="cursor : pointer;" (click)="procesarEdificios()" class="btn btn-secondary">
+            <button (click)="procesarEdificios()" class="btn btn-secondary">
                 Atrás
-            </a>
+            </button>
         </div>
         <div *ngIf="this.estado==2" class="d-grid gap-2">
-            <a style="cursor : pointer;" (click)="procesarPlantas({location: this.create_location, tipo: 1})"
-                class="btn btn-secondary">
+            <button (click)="procesarPlantas({location: this.create_location, tipo: 1})" class="btn btn-secondary">
                 Atrás
-            </a>
+            </button>
         </div>
     </div>
 </ng-template>
@@ -77,10 +76,11 @@
             No hay ningún objeto que esté ubicado en esta localización
         </li>
         <div class="d-grid gap-2">
-            <a *ngIf="!it_can_be_deleted" (click)="objetosPorUbicacion();" class="btn btn-secondary">Refrescar
-                objetos</a>
-            <a *ngIf="it_can_be_deleted" (click)="eliminarUbicacion(); cerrarModal(); abrirModal(searchLocationModal);"
-                class="btn btn-danger">Eliminar ubicación</a>
+            <button *ngIf="!it_can_be_deleted" (click)="objetosPorUbicacion();" class="btn btn-secondary">Refrescar
+                objetos</button>
+            <button *ngIf="it_can_be_deleted"
+                (click)="eliminarUbicacion(); cerrarModal(); abrirModal(searchLocationModal);"
+                class="btn btn-danger">Eliminar ubicación</button>
         </div>
     </div>
 </ng-template>

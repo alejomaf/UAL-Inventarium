@@ -15,8 +15,8 @@
         <span *ngIf="usuario?.departamento==4" departamento>Arquitectura y tecnología de computadores</span>
         <span telefono>{{usuario?.telefono}}</span>
         <div botones class="card-body d-grid gap-2">
-            <div class="btn btn-light btn-block" (click)="abrirModal(changePass)">Modificar contraseña
-            </div>
+            <button class="btn btn-light btn-block" (click)="abrirModal(changePass)">Modificar contraseña
+            </button>
         </div>
     </app-user>
 </div>
@@ -45,8 +45,8 @@
             {{successChange}}
         </div>
         <div class="d-grid gap-2">
-            <a class="btn btn-secondary" (click)="cambiarContrasena()">Cambiar contraseña</a>
-            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+            <button class="btn btn-secondary" (click)="cambiarContrasena()">Cambiar contraseña</button>
+            <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
         </div>
     </div>
 </ng-template>

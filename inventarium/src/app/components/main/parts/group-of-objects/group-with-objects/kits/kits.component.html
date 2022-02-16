@@ -6,9 +6,9 @@
             </h5>
         </div>
         <div class="d-grid gap-2">
-            <div class="btn btn-primary btn-block" (click)="modalCrearKit(crearKitModal)">
+            <button class="btn btn-primary btn-block" (click)="modalCrearKit(crearKitModal)">
                 Crear objeto de kit
-            </div>
+            </button>
         </div>
     </div>
 </div>
@@ -23,12 +23,12 @@
             <span cantidad>{{kit.cantidad}}</span>
             <span observaciones>{{kit.observaciones}}</span>
             <div *ngIf="usuario?.rango==0" botones class="card-body d-grid gap-2">
-                <div class="btn btn-secondary btn-block" (click)="modalModificarKit(crearKitModal, kit)">
+                <button class="btn btn-secondary btn-block" (click)="modalModificarKit(crearKitModal, kit)">
                     Modificar kit
-                </div>
-                <div class="btn btn-light btn-block" (click)="modalBorrarKit(confirmationModal, kit)">
+                </button>
+                <button class="btn btn-light btn-block" (click)="modalBorrarKit(confirmationModal, kit)">
                     Borrar kit
-                </div>
+                </button>
             </div>
         </app-kit>
     </div>
@@ -65,11 +65,11 @@
             {{successKit}}
         </div>
         <div class="d-grid gap-2">
-            <a *ngIf="!isCreacion" class="btn btn-secondary" (click)="modificarObjetoKit()">Modificar
-                objeto del kit</a>
-            <a *ngIf="isCreacion" class="btn btn-secondary" (click)="crearObjetoKit()">Crear
-                objeto del kit</a>
-            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+            <button *ngIf="!isCreacion" class="btn btn-secondary" (click)="modificarObjetoKit()">Modificar
+                objeto del kit</button>
+            <button *ngIf="isCreacion" class="btn btn-secondary" (click)="crearObjetoKit()">Crear
+                objeto del kit</button>
+            <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
         </div>
     </div>
 </ng-template>
@@ -78,8 +78,8 @@
 <ng-template #confirmationModal class="modal">
     <div class="d-grid gap-2 p-3">
         <h2>¿Seguro que quiere borrar el kit?</h2>
-        <div class="btn btn-primary" boton (click)="eliminarObjetoKit()">Borrar kit
-        </div>
-        <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        <button class="btn btn-primary" boton (click)="eliminarObjetoKit()">Borrar kit
+        </button>
+        <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
     </div>
 </ng-template>

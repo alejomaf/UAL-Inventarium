@@ -1,7 +1,7 @@
 <div class="row d-flex-inline justify-content-center">
     <app-box-link style="width: fit-content;" *ngIf="usuario?.rango==0">
         <fa-icon imagen [icon]="cubo"></fa-icon>
-        <a routerLink="/add-object/select-type" botones class="btn btn-primary btn-block">Crear objeto</a>
+        <button routerLink="/add-object/select-type" botones class="btn btn-primary btn-block">Crear objeto</button>
     </app-box-link>
     <app-box-link style="width: fit-content;" *ngIf="usuario?.rango==0">
         <div numero style="align-self:end; position:absolute">
@@ -11,14 +11,14 @@
             </div>
         </div>
         <fa-icon imagen [icon]="solicitudes"></fa-icon>
-        <a routerLink="/requests" botones class="btn btn-primary btn-block">Solicitudes</a>
+        <button routerLink="/requests" botones class="btn btn-primary btn-block">Solicitudes</button>
     </app-box-link>
     <app-box-link style="width: fit-content;">
         <fa-icon imagen [icon]="my_loans"></fa-icon>
-        <a routerLink="/my-loans" botones class="btn btn-primary btn-block">Mis préstamos</a>
+        <button routerLink="/my-loans" botones class="btn btn-primary btn-block">Mis préstamos</button>
     </app-box-link>
     <app-box-link style="width: fit-content;">
         <fa-icon imagen [icon]="grupo_objetos"></fa-icon>
-        <a routerLink="/group-of-objects" botones class="btn btn-primary btn-block">Buscar objetos</a>
+        <button routerLink="/group-of-objects" botones class="btn btn-primary btn-block">Buscar objetos</button>
     </app-box-link>
 </div>
