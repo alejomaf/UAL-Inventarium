@@ -2,7 +2,7 @@
     <!--Contenido-->
     <app-group-of-object style="width: fit-content;">
         <img *ngIf="go?.imagen != null" imagen class="card-img-top rounded-circle"
-            style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{go?.imagen}}.jpg"
+            style="height:190px; object-fit: contain;" src="{{weblink}}/images/{{go?.imagen}}.jpg"
             onerror="this.src='./assets/icons/no-photo.svg'">
         <img *ngIf="go?.imagen == null" imagen class="card-img-top rounded-circle" style="height:180px;"
             src="./assets/icons/no-photo.svg">
@@ -64,7 +64,7 @@
             </div>
             <div *ngIf="go?.imagen !=null && !imgURL" class="align-self-center"
                 style="margin-top: auto; margin-bottom: auto;">
-                <img src="http://localhost:3000/images/{{go.imagen}}.jpg" height="200px">
+                <img src="{{weblink}}/images/{{go.imagen}}.jpg" height="200px">
             </div>
         </div>
         <div class="card-body">

@@ -11,6 +11,7 @@ import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { ConfigurationsService } from 'src/app/services/configurations.service';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { ObjectsService } from 'src/app/services/objects.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-object-unit',
@@ -24,6 +25,7 @@ export class ObjectUnitComponent implements OnInit {
   objeto?: Objeto;
   grupoObjeto?: GrupoObjetos;
   configuracion?: Configuracion;
+  weblink = environment.webUrl;
 
   //Elements for configuration modal
   ip = new FormControl("");

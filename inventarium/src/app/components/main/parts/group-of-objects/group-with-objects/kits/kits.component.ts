@@ -7,6 +7,7 @@ import { ObjetoKit } from 'src/app/interfaces/objetokit';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { KitObjectsService } from 'src/app/services/kit-objects.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-kits',
@@ -24,6 +25,7 @@ export class KitsComponent implements OnInit {
   selected_kit?: ObjetoKit
   successKit = ""
   errorKit = ""
+  weblink = environment.webUrl;
 
   //Campos del formulario
   fileToUpload: any
@@ -159,7 +161,7 @@ export class KitsComponent implements OnInit {
     this.nombre.setValue(kit.nombre);
     this.cantidad.setValue(kit.cantidad);
     this.observaciones.setValue(kit.observaciones);
-    this.imgURL = "http://localhost:3000/images/" + kit.imagen + ".jpg"
+    this.imgURL = this.weblink + "/images/" + kit.imagen + ".jpg"
     this.abrirModal(modal);
   }
 

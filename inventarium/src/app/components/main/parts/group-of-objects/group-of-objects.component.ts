@@ -4,6 +4,7 @@ import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
 import { StringUtils } from 'turbocommons-ts';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-group-of-objects',
@@ -16,6 +17,7 @@ export class GroupOfObjectsComponent implements OnInit {
   public group_of_objects_aux: GrupoObjetos[] = [];
   mostrarOpciones = true;
   mostrarOpcionesAvanzadas = true;
+  weblink = environment.webUrl;
 
   //Paginación
   paginaActual = 0;

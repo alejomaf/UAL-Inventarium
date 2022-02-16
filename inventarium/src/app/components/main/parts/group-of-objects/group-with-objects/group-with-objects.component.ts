@@ -7,6 +7,7 @@ import { GrupoObjetos } from 'src/app/interfaces/grupoobjetos';
 import { Usuario } from 'src/app/interfaces/usuario';
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { GroupOfObjectsService } from 'src/app/services/group-of-objects.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-group-with-objects',
@@ -19,6 +20,7 @@ export class GroupWithObjectsComponent implements OnInit {
   public go!: GrupoObjetos;
   idGrupoObjeto!: number;
   ruta_kits = false;
+  weblink = environment.webUrl;
 
   //Modify group of object
   photo_selected = false

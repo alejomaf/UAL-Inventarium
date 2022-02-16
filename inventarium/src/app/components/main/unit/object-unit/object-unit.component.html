@@ -39,7 +39,7 @@
 
     <app-group-of-object>
         <img *ngIf="grupoObjeto?.imagen != null" imagen class="card-img-top rounded-circle"
-            style="height:190px; object-fit: contain;" src="http://localhost:3000/images/{{grupoObjeto?.imagen}}.jpg">
+            style="height:190px; object-fit: contain;" src="{{weblink}/images/{{grupoObjeto?.imagen}}.jpg">
         <img *ngIf="grupoObjeto?.imagen == null" imagen class="card-img-top rounded-circle" style="height:180px;"
             src="./assets/icons/no-photo.svg">
         <h5 nombre [routerLink]="['/group-of-object', grupoObjeto?.idGrupoObjetos]" style="cursor:pointer"

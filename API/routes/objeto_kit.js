@@ -56,7 +56,9 @@ async function uploadingFile(files, name, id) {
     const uploadFolder = path.join(__dirname, "..", "images", "kits");
     try {
       // renames the file in the directory
-      fs.renameSync(file.path, path.join(uploadFolder, fileName));
+      fs.copyFile(file.path, path.join(uploadFolder, fileName), function (err) {
+        if (err) throw err;
+      });
       await objetokit.updateImage(id, name);
     } catch (error) {
       console.log(error);
