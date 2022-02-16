@@ -88,12 +88,12 @@ async function update(id, prestado) {
   const result = await db.query(
     `UPDATE prestado 
     SET retiradoPor=?, fechaSalida=?, fechaEntrega=?, fechaEstimadaEntrega=?, Usuario_idUsuario=?, Objeto_idObjeto=?, Objeto_GrupoObjetos_idGrupoObjetos=?, 
-    Objeto_Ubicacion_idUbicacion=?, solicitado=?, estado=?, Kit_idKit=?
+    solicitado=?, estado=?, Kit_idKit=?
     WHERE idPrestado=?`,
     [
       prestado.retiradoPor, prestado.fechaSalida,
       prestado.fechaEntrega, prestado.fechaEstimadaEntrega, prestado.Usuario_idUsuario, prestado.Objeto_idObjeto,
-      prestado.Objeto_GrupoObjetos_idGrupoObjetos, prestado.Objeto_Ubicacion_idUbicacion, prestado.solicitado, prestado.estado, prestado.Kit_idKit, id
+      prestado.Objeto_GrupoObjetos_idGrupoObjetos, prestado.solicitado, prestado.estado, prestado.Kit_idKit, id
     ]
   );
 
