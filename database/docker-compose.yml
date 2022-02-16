@@ -7,6 +7,7 @@ services:
     volumes:
       - ../inventarium/dist/inventarium:/usr/share/nginx/html
       - ./web/default.conf:/etc/nginx/conf.d/default.conf
+      - ./temp_files:/var/cache/nginx/client_temp
   db:
     container_name: inventarium_sql
     image: mariadb:10.7.1-focal
@@ -63,6 +64,7 @@ services:
     container_name: api
     volumes:
       - ../API:/app
+      - ./temp_files:/var/cache/nginx/client_temp
     networks:
       - default
 volumes:

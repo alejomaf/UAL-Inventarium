@@ -77,7 +77,7 @@ router.post('/', async function (req, res, next) {
   try {
     time = Date.now();
 
-    if (req.files.size != undefined) {
+    if ('image' in req.files) {
       files = req.files
       await uploadingFile(files, time, req.fields.GrupoObjetos_idGrupoObjetos);
     } else if (req.fields.image)

@@ -78,6 +78,8 @@ async function uploadingFile(files, name, id) {
     const uploadFolder = path.join(__dirname, "..", "images", "group_of_objects");
     try {
       // renames the file in the directory
+      console.log("Subiendo archivo " + file.path);
+      console.log("Al destino " + path.join(uploadFolder, fileName))
       fs.copyFile(file.path, path.join(uploadFolder, fileName), function (err) {
         if (err) throw err;
       });
@@ -99,7 +101,7 @@ router.post('/', async function (req, res, next) {
   try {
     time = Date.now();
 
-    if (req.files.size != undefined) {
+    if ('image' in req.files) {
       files = req.files
       await uploadingFile(files, time, req.params.id);
     } else if (req.fields.image)
