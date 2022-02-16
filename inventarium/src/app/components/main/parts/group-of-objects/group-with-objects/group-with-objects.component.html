@@ -33,12 +33,12 @@
 
 
             <!-- This divs is for the behaviour of the kits -->
-            <div *ngIf="go?.tipo==2 && !ruta_kits" class="btn btn-dark btn-block" routerLink="kits"
+            <button *ngIf="go?.tipo==2 && !ruta_kits" class="btn btn-dark btn-block" routerLink="kits"
                 (click)="ruta_kits=!ruta_kits">¿Qué contiene el kit?
-            </div>
-            <div *ngIf="go?.tipo==2 && ruta_kits" class="btn btn-dark btn-block"
+            </button>
+            <button *ngIf="go?.tipo==2 && ruta_kits" class="btn btn-dark btn-block"
                 routerLink="/group-of-object/{{go?.idGrupoObjetos}}" (click)="ruta_kits=!ruta_kits">Volver
-            </div>
+            </button>
         </div>
     </app-group-of-object>
 </div>
@@ -49,9 +49,9 @@
         <h2>¿Seguro que quiere borrar el grupo de objetos?</h2>
         <p>Si lo borra se cancelarán todos los objetos y los préstamos actuales relacionados con este. Luego de esta
             acción no se puede volver a recuperar el objeto.</p>
-        <div class="btn btn-success" boton (click)="borrarGrupoObjeto()">Borrar grupo de objetos
-        </div>
-        <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        <button class="btn btn-success" boton (click)="borrarGrupoObjeto()">Borrar grupo de objetos
+        </button>
+        <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
     </div>
 </ng-template>
 
@@ -105,9 +105,9 @@
         </div>
 
         <div class="d-grid gap-2">
-            <a class="btn btn-success" (click)="modificarGrupoObjeto()">Modificar
-                grupo de objetos</a>
-            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+            <button class="btn btn-success" (click)="modificarGrupoObjeto()">Modificar
+                grupo de objetos</button>
+            <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
         </div>
     </div>
 </ng-template>

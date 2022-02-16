@@ -10,10 +10,10 @@
         <span codigo>{{objeto?.codigo}}</span>
         <span mejorasEquipo>{{objeto?.mejorasEquipo}}</span>
         <div *ngIf="usuario?.rango==0" botones class="card-body d-grid gap-2">
-            <div class="btn btn-secondary btn-block" (click)="abrirModal(modifyObjectModal)">Modificar objeto
-            </div>
-            <div class="btn btn-danger btn-block" (click)="abrirModal(confirmationModal)">Borrar objeto
-            </div>
+            <button class="btn btn-secondary btn-block" (click)="abrirModal(modifyObjectModal)">Modificar objeto
+            </button>
+            <button class="btn btn-danger btn-block" (click)="abrirModal(confirmationModal)">Borrar objeto
+            </button>
         </div>
     </app-object>
 
@@ -31,9 +31,9 @@
             </li>
         </ul>
         <div class="card-body d-grid gap-2">
-            <div class="btn btn-primary btn-block" routerLink="/loans/{{objeto?.idObjeto!}}">Ver o solicitar
+            <button class="btn btn-primary btn-block" routerLink="/loans/{{objeto?.idObjeto!}}">Ver o solicitar
                 préstamos
-            </div>
+            </button>
         </div>
     </div>
 
@@ -79,10 +79,11 @@
             <a>: {{configuracion?.contrasena}}</a>
         </li>
         <div botones class="card-body d-grid gap-2">
-            <div class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Modificar configuración
-            </div>
-            <div class="btn btn-danger btn-block" (click)="borrarConfiguracion()">Borrar configuración
-            </div>
+            <button class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Modificar
+                configuración
+            </button>
+            <button class="btn btn-danger btn-block" (click)="borrarConfiguracion()">Borrar configuración
+            </button>
         </div>
     </app-configuration>
 
@@ -93,8 +94,8 @@
             </h5>
         </div>
         <div *ngIf="usuario?.rango==0" botones class="card-body d-grid gap-2">
-            <div class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Crear configuración
-            </div>
+            <button class="btn btn-primary btn-block" (click)="abrirModal(crearConfiguracionModal)">Crear configuración
+            </button>
         </div>
     </div>
 
@@ -134,11 +135,11 @@
             <input type="text" [formControl]="contrasena" placeholder="pass" class="form-control" />
         </div>
         <div class="d-grid gap-2">
-            <a *ngIf="configuracion!=null" class="btn btn-secondary" (click)="modificarConfiguracion()">Modificar
-                configuración</a>
-            <a *ngIf="configuracion==null" class="btn btn-secondary" (click)="crearConfiguracion()">Crear
-                configuración</a>
-            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+            <button *ngIf="configuracion!=null" class="btn btn-secondary" (click)="modificarConfiguracion()">Modificar
+                configuración</button>
+            <button *ngIf="configuracion==null" class="btn btn-secondary" (click)="crearConfiguracion()">Crear
+                configuración</button>
+            <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
         </div>
     </div>
 </ng-template>
@@ -149,9 +150,9 @@
         <h2>¿Seguro que quiere borrar objeto?</h2>
         <p>Si lo borra se cancelarán los préstamos actuales relacionados con este. Luego de esta
             acción no se puede volver a recuperar el objeto.</p>
-        <div class="btn btn-success" boton (click)="borrarObjeto()">Borrar objeto
-        </div>
-        <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+        <button class="btn btn-success" boton (click)="borrarObjeto()">Borrar objeto
+        </button>
+        <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
     </div>
 </ng-template>
 
@@ -204,9 +205,9 @@
             </app-modal-location-select>
         </div>
         <div class="d-grid gap-2">
-            <a class="btn btn-success" (click)="modificarObjeto()">Modificar
-                objeto</a>
-            <a class="btn btn-danger" (click)="cerrarModal()">Cancelar</a>
+            <button class="btn btn-success" (click)="modificarObjeto()">Modificar
+                objeto</button>
+            <button class="btn btn-danger" (click)="cerrarModal()">Cancelar</button>
         </div>
     </div>
 </ng-template>

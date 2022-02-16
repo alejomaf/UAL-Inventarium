@@ -1,15 +1,17 @@
 <div class="row d-flex-inline justify-content-center">
     <app-box-link style="width: fit-content;">
         <fa-icon imagen [icon]="activos"></fa-icon>
-        <a routerLink="/loan-requests/active-loans" botones class="btn btn-primary btn-block">Préstamos activos</a>
+        <button routerLink="/loan-requests/active-loans" botones class="btn btn-primary btn-block">Préstamos
+            activos</button>
     </app-box-link>
     <app-box-link style="width: fit-content;">
         <fa-icon imagen [icon]="pendientes"></fa-icon>
-        <a routerLink="/loan-requests/pending-loans" botones class="btn btn-primary btn-block">Préstamos pendientes</a>
+        <button routerLink="/loan-requests/pending-loans" botones class="btn btn-primary btn-block">Préstamos
+            pendientes</button>
     </app-box-link>
     <app-box-link style="width: fit-content;">
         <fa-icon imagen [icon]="devolver"></fa-icon>
-        <a routerLink="/loan-requests/expired-loans" botones class="btn btn-primary btn-block">Préstamos por
-            devolver</a>
+        <button routerLink="/loan-requests/expired-loans" botones class="btn btn-primary btn-block">Préstamos por
+            devolver</button>
     </app-box-link>
 </div>

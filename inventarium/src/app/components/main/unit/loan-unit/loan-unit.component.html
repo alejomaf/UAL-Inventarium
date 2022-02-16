@@ -7,8 +7,9 @@
         <span fechaSalida>{{prestamo?.fechaSalida}}</span>
         <span fechaEstimadaEntrega>{{prestamo?.fechaEstimadaEntrega}}</span>
         <div botones class="d-grid gap-2">
-            <div *ngIf="usuario?.rango==0" (click)="finalizarPrestamo()" type="btn" class="btn btn-primary btn-block">
-                Finalizar préstamo</div>
+            <button *ngIf="usuario?.rango==0" (click)="finalizarPrestamo()" type="btn"
+                class="btn btn-primary btn-block">
+                Finalizar préstamo</button>
         </div>
     </app-loan>
     <app-pending-loan *ngIf="prestamo?.estado==0">
@@ -22,12 +23,13 @@
             <button *ngIf="usuario?.rango==0" [disabled]="prestamo?.disponible==1" (click)="concederPrestamo()"
                 type="btn" class="btn btn-primary btn-block">
                 Conceder préstamo</button>
-            <div *ngIf="usuario?.rango==0" (click)="rechazarPrestamo()" type="btn" class="btn btn-secondary btn-block">
-                Rechazar préstamo</div>
-            <div *ngIf="usuario?.idUsuario==prestamo?.Usuario_idUsuario" (click)="cancelarPrestamo()" type="btn"
+            <button *ngIf="usuario?.rango==0" (click)="rechazarPrestamo()" type="btn"
+                class="btn btn-secondary btn-block">
+                Rechazar préstamo</button>
+            <button *ngIf="usuario?.idUsuario==prestamo?.Usuario_idUsuario" (click)="cancelarPrestamo()" type="btn"
                 class="btn btn-secondary btn-block">
                 Cancelar
-                préstamo</div>
+                préstamo</button>
         </div>
     </app-pending-loan>
     <app-completed-loan *ngIf="prestamo?.estado==-1">

@@ -13,21 +13,21 @@
             <span *ngIf="user?.departamento==4" departamento>Arquitectura y tecnología de computadores</span>
             <span telefono>{{user?.telefono}}</span>
             <div *ngIf="user?.rango==-1 && usuario?.rango==0" botones class="d-grid gap-2 my-2">
-                <div class="btn btn-primary" (click)="darAlta()">Dar de alta</div>
-                <div class="btn btn-secondary" (click)="rechazarUsuario()">Rechazar usuario</div>
+                <button class="btn btn-primary" (click)="darAlta()">Dar de alta</button>
+                <button class="btn btn-secondary" (click)="rechazarUsuario()">Rechazar usuario</button>
             </div>
             <span *ngIf="user?.rango==-1" rango>Solicitud pendiente</span>
             <div *ngIf="user?.rango==-2 && usuario?.rango==0" botones class="d-grid gap-2 my-2">
-                <div class="btn btn-primary" (click)="darAlta()">Dar de alta</div>
+                <button class="btn btn-primary" (click)="darAlta()">Dar de alta</button>
             </div>
             <span *ngIf="user?.rango==-2" rango>Usuario cancelado</span>
             <div *ngIf="user?.rango==1 && usuario?.rango==0" botones class="d-grid gap-2 my-2">
-                <div class="btn btn-primary" (click)="convertirEnTecnico()">Convertir en técnico</div>
-                <div class="btn btn-secondary" (click)="rechazarUsuario()">Eliminar usuario</div>
+                <button class="btn btn-primary" (click)="convertirEnTecnico()">Convertir en técnico</button>
+                <button class="btn btn-secondary" (click)="rechazarUsuario()">Eliminar usuario</button>
             </div>
             <span *ngIf="user?.rango==1" rango>Usuario</span>
             <div *ngIf="user?.rango==0 && usuario?.rango==0 && user?.idUsuario!=1" botones class="d-grid gap-2 my-2">
-                <div class="btn btn-secondary" (click)="rechazarUsuario()">Eliminar usuario</div>
+                <button class="btn btn-secondary" (click)="rechazarUsuario()">Eliminar usuario</button>
             </div>
             <span *ngIf="user?.rango==0" rango>Técnico</span>
         </app-user>
@@ -40,9 +40,9 @@
             </h5>
         </div>
         <div class="card-body d-grid gap-2">
-            <div class="btn btn-primary btn-block" routerLink="/loans/user/{{user?.idUsuario}}">
+            <button class="btn btn-primary btn-block" routerLink="/loans/user/{{user?.idUsuario}}">
                 Ver préstamos
-            </div>
+            </button>
         </div>
     </div>
 </div>

@@ -6,22 +6,22 @@
             </h5>
         </div>
         <div class="d-grid gap-2">
-            <div *ngIf="this.activas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=1">Ver
+            <button *ngIf="this.activas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=1">Ver
                 solicitudes
                 activas
-            </div>
-            <div *ngIf="this.pendientes" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=0">Ver
+            </button>
+            <button *ngIf="this.pendientes" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=0">Ver
                 solicitudes
                 pendientes
-            </div>
-            <div *ngIf="this.pasadas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-1">Ver
+            </button>
+            <button *ngIf="this.pasadas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-1">Ver
                 solicitudes
                 pasadas
-            </div>
-            <div *ngIf="this.rechazadas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-2">Ver
+            </button>
+            <button *ngIf="this.rechazadas" class="btn btn-secondary btn-block" (click)="this.tipoSolicitud=-2">Ver
                 solicitudes
                 rechazadas
-            </div>
+            </button>
         </div>
     </div>
 </div>
