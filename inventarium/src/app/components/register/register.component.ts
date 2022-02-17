@@ -68,7 +68,7 @@ export class RegisterComponent implements OnInit {
     this.userS.addUser(formData).subscribe(
       (res: any) => {
         console.log(res);
-        if (res.message) {
+        if (res.successfull) {
           this.router.navigateByUrl("/register-completed");
         } else if (res.error) {
           console.log(res.error)
