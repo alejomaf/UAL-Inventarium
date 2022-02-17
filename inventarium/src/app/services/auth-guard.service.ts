@@ -22,6 +22,10 @@ export class AuthGuardService implements CanActivateChild, CanActivate {
     return this.checkLoginPromise();
   }
 
+  isLogged(): Promise<boolean> {
+    return this.checkLoginPromise();
+  }
+
   getCurrentUser(): Usuario {
     return this.usuario!;
   }

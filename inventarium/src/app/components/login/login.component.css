@@ -1,9 +1,11 @@
 #formularioLogin {
-    width : 40%;  
+    width: 50vh;
 }
+
 h1, label {
     color: white;
 }
+
 a {
     color: aqua;
 }

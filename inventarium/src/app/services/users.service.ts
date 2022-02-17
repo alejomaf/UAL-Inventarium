@@ -56,9 +56,10 @@ export class UsersService {
     return this.http.post(this._url + "/action/" + userId + "/2", null, { headers: header });
   }
 
-  confirmarUsuario(token: string, number: string, userId: number) {
-    let header = new HttpHeaders(({ "usertoken": this.userService.getToken() }));
-    return this.http.post(this._url + "/confirmar-registro/" + token + "/" + number + "/" + userId, null);
+  confirmarUsuario(token: string) {
+    let formData = new FormData();
+    formData.append("token", token);
+    return this.http.post(this._url + "/confirmar-registro", formData);
   }
 
   cambiarContrasena(user: FormData) {

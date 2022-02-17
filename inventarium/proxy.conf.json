@@ -95,7 +95,7 @@
     "logLevel": "debug",
     "changeOrigin": true
   },
-  "/api/users/confirmar-registro/*/*/*": {
+  "/api/users/confirmar-registro": {
     "target": "http://localhost:3000",
     "secure": false,
     "logLevel": "debug",
@@ -167,7 +167,7 @@
     "logLevel": "debug",
     "changeOrigin": true
   },
-  "/images*": {
+  "/images/*": {
     "target": "http://localhost:3000",
     "secure": false,
     "logLevel": "debug",

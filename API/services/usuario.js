@@ -74,7 +74,8 @@ async function create(usuario) {
 
   if (result.affectedRows) {
     message = 'usuario created successfully';
-    await transporter.registro_creado(usuario.correoElectronico, "http://" + process.env.HOST + "/register-confirmed/" + result.insertId + '/' + usuario.telefono + '/' + bcrypt.hashSync(usuario.telefono, 3), usuario.nombre);
+    id = result.insertId;
+    return { message, id };
   }
 
   return { message };

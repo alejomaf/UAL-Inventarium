@@ -31,7 +31,7 @@ router.post('/login', async function (req, res, next) {
 
 router.post('/request-password', async function (req, res, next) {
   const usuario = await usuarios.getByEmail(req.fields.email);
-  console.log("Entra")
+
   if (usuario === undefined) {
     // User didn't found
     console.log("Usuario no encontrado")
@@ -78,36 +78,46 @@ const createToken = (usuario) => {
 
 router.post('/', async function (req, res, next) {
   try {
+    const usuarioAux = await usuarios.getByEmail(req.fields.correoElectronico);
+    if (!(usuarioAux === undefined)) return res.json({ error: "Email is registered" });
+
     req.fields.contrasena = bcrypt.hashSync(req.fields.contrasena, 10); //ENCRIPTACIÓN DE LA CONTRASEÑA ACTIVADA
-    res.json(await usuarios.create(req.fields));
+    let idUsuario = (await usuarios.create(req.fields)).id;
+    let usuario = await usuarios.getById(idUsuario);
+    let token = createToken(usuario);
+
+    await transporter.registro_creado(usuario.correoElectronico, "http://" + process.env.HOST + "/register-confirmed/" + token, usuario.nombre);
+
+    return res.json({ successfull: "Register created" });
   } catch (err) {
     console.error(`Error while creating usuario`, err.message);
     next(err);
   }
 });
 
-router.post('/confirmar-registro/:token/:number/:id', async function (req, res, next) {
+router.post('/confirmar-registro', async function (req, res, next) {
   try {
-    const usuario = await usuarios.getById(req.params.id);
-    if (usuario.rango == 0 || usuario.rango == -2) {
-      res.json({
-        error: "200"
+    if (!req.fields.token)
+      return res.json({
+        error: "You must include the data"
       });
-      return;
+
+    const token = req.fields.token;
+    let payload = null
+    try {
+      payload = jwt.decode(token, process.env.TOKEN_KEY);
+    } catch (err) {
+      return res.json({
+        error: "Invalid token"
+      });
     }
-    if (usuario.telefono != req.params.number) {
-      res.json({
-        error: "201"
-      });
-      return;
-    }
-    if (!bcrypt.compareSync(req.params.number, req.params.token)) {
-      res.json({
-        error: "Error, email or password not found"
-      });
-      return;
-    }//ENCRIPTACIÓN DE LA CONTRASEÑA ACTIVADA
-    res.json(await usuarios.confirmarRegistro(req.params.id));
+
+    if (moment().unix() > payload.expiresAt) {
+      return res.json({ error: "Expired token" });
+    };
+
+    return res.json(await usuarios.confirmarRegistro(payload.userId));
+
   } catch (err) {
     console.error(`Error while creating usuario`, err.message);
     next(err);

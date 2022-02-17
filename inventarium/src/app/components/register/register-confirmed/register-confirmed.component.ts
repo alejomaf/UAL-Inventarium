@@ -17,15 +17,13 @@ export class RegisterConfirmedComponent implements OnInit {
   fallo = false;
 
   constructor(private router: Router, private route: ActivatedRoute, private usersS: UsersService) {
-    this.idUsuario = route.snapshot.params['id'];
     this.token_number = route.snapshot.params['token'];
-    this.number = route.snapshot.params['number'];
 
     this.comprobarUsuario();
   }
 
   comprobarUsuario() {
-    this.usersS.confirmarUsuario(this.token_number!, this.number!, this.idUsuario!).subscribe(
+    this.usersS.confirmarUsuario(this.token_number!).subscribe(
       (res: any) => {
         console.log(res);
         if (res.message) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -15,8 +16,9 @@ export class ResetPasswordComponent implements OnInit {
   alertEmail = "";
   hash = "";
 
-  constructor(private route: ActivatedRoute, private userS: UsersService, private router: Router) {
+  constructor(private route: ActivatedRoute, private userS: UsersService, private router: Router, private loginS: UserService) {
     this.hash = route.snapshot.params['hash'];
+    if (this.loginS.getToken() != null) router.navigateByUrl("/dashboard");
   }
 
   ngOnInit(): void {

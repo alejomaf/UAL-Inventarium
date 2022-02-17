@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -14,7 +15,9 @@ export class LoginComponent implements OnInit {
   password = new FormControl("");
   error = false;
 
-  constructor(private loginS: UserService, private router: Router) { }
+  constructor(private loginS: UserService, private router: Router, private authS: AuthGuardService) {
+    if (this.loginS.getToken() != null) router.navigateByUrl("/dashboard");
+  }
 
   ngOnInit(): void {
   }

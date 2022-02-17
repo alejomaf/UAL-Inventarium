@@ -17,8 +17,8 @@
     <!--Contenido-->
     <div *ngFor="let kit of object_kits">
         <app-kit>
-            <img imagen class="card-img-top rounded-circle" src="{{weblink}}/images/{{kit.imagen}}.jpg"
-                onerror="this.src='./assets/icons/no-photo.svg'" />
+            <img imagen class="card-img-top rounded-circle" style="object-fit: contain; height:190px;"
+                src="{{weblink}}/images/{{kit.imagen}}.jpg" onerror="this.src='./assets/icons/no-photo.svg'" />
             <h5 nombre class="card-title text-dark text-center">{{kit.nombre}}</h5>
             <span cantidad>{{kit.cantidad}}</span>
             <span observaciones>{{kit.observaciones}}</span>

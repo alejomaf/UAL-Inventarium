@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 import { UsersService } from 'src/app/services/users.service';
 
 @Component({
@@ -28,7 +29,9 @@ export class RegisterComponent implements OnInit {
   alert = "";
   alertEmail = "";
 
-  constructor(private router: Router, private userS: UsersService) { }
+  constructor(private router: Router, private userS: UsersService, private loginS: UserService) {
+    if (this.loginS.getToken() != null) router.navigateByUrl("/dashboard");
+  }
 
   ngOnInit(): void {
   }

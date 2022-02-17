@@ -7,8 +7,24 @@
         <span planta>{{objeto?.planta}}</span>
         <span edificio>{{objeto?.edificio}}</span>
         <span fechaAdquisicion>{{objeto?.fechaAdquisicion}}</span>
-        <span codigo>{{objeto?.codigo}}</span>
-        <span mejorasEquipo>{{objeto?.mejorasEquipo}}</span>
+        <span codigo *ngIf="objeto?.codigo!=''">{{objeto?.codigo}}</span>
+        <span codigo *ngIf="objeto?.codigo==''">No asignado</span>
+        <span mejorasEquipo *ngIf="objeto?.mejorasEquipo!=''">{{objeto?.mejorasEquipo}}</span>
+        <span mejorasEquipo *ngIf="objeto?.mejorasEquipo==''">Ninguna mejora</span>
+        <li area class="list-group-item bg-light">
+            <b>Área</b>
+            <a>: <span *ngIf="objeto?.organizativa=='0'">Departamento de informática</span>
+                <span *ngIf="objeto?.organizativa=='1'">Ingeniería de sistemas y automática</span>
+                <span *ngIf="objeto?.organizativa=='2'">Lenguaje y sistemas informáticos</span>
+                <span *ngIf="objeto?.organizativa=='3'">Ciencias de la computación e inteligencia
+                    artificial</span>
+                <span *ngIf="objeto?.organizativa=='4'">Arquitectura y tecnología de computadores</span>
+            </a>
+        </li>
+        <li observaciones *ngIf="objeto?.observaciones!=''" class="list-group-item bg-light">
+            <b>Observaciones</b>
+            <a>: {{objeto?.observaciones}}</a>
+        </li>
         <div *ngIf="usuario?.rango==0" botones class="card-body d-grid gap-2">
             <button class="btn btn-secondary btn-block" (click)="abrirModal(modifyObjectModal)">Modificar objeto
             </button>
@@ -45,8 +61,10 @@
         <h5 nombre [routerLink]="['/group-of-object', grupoObjeto?.idGrupoObjetos]" style="cursor:pointer"
             class="card-title text-dark text-center">{{grupoObjeto?.nombre}}</h5>
         <span cantidad>{{grupoObjeto?.cantidad}}</span>
-        <span marca>{{grupoObjeto?.marca}}</span>
-        <span modelo>{{grupoObjeto?.modelo}}</span>
+        <span marca *ngIf="grupoObjeto?.marca!=''">{{grupoObjeto?.marca}}</span>
+        <span marca *ngIf="grupoObjeto?.marca==''">No definida</span>
+        <span modelo *ngIf="grupoObjeto?.modelo!=''">{{grupoObjeto?.modelo}}</span>
+        <span modelo *ngIf="grupoObjeto?.modelo==''">No definido</span>
         <span cantidadDisponible>{{grupoObjeto?.cantidadDisponible}}</span>
         <span *ngIf="grupoObjeto?.tipo==0" tipo>Inventario</span>
         <span *ngIf="grupoObjeto?.tipo==1" tipo>Fungible</span>

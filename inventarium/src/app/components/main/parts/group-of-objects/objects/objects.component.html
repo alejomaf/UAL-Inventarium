@@ -10,8 +10,10 @@
             <span planta>{{o.planta}}</span>
             <span edificio>{{o.edificio}}</span>
             <span fechaAdquisicion>{{o.fechaAdquisicion}}</span>
-            <span codigo>{{o.codigo}}</span>
-            <span mejorasEquipo>{{o.mejorasEquipo}}</span>
+            <span codigo *ngIf="o.codigo!=''">{{o.codigo}}</span>
+            <span codigo *ngIf="o.codigo==''">No asignado</span>
+            <span mejorasEquipo *ngIf="o.mejorasEquipo!=''">{{o.mejorasEquipo}}</span>
+            <span mejorasEquipo *ngIf="o.mejorasEquipo==''">Ninguna mejora</span>
         </app-object>
     </div>
 </div>

@@ -39,8 +39,10 @@
             <h5 nombre [routerLink]="['/group-of-object', go.idGrupoObjetos]" style="cursor:pointer"
                 class="card-title text-dark text-center">{{go.nombre}}</h5>
             <span cantidad>{{go.cantidad}}</span>
-            <span marca>{{go.marca}}</span>
-            <span modelo>{{go.modelo}}</span>
+            <span marca *ngIf="go.marca!=''">{{go?.marca}}</span>
+            <span marca *ngIf="go.marca==''">No definida</span>
+            <span modelo *ngIf="go.modelo!=''">{{go?.modelo}}</span>
+            <span modelo *ngIf="go.modelo==''">No definido</span>
             <span cantidadDisponible>{{go.cantidadDisponible}}</span>
             <span *ngIf="go.tipo==0" tipo>Inventario</span>
             <span *ngIf="go.tipo==1" tipo>Fungible</span>

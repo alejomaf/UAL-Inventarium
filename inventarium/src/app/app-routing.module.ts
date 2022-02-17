@@ -84,7 +84,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'register-completed', component: RegisterCompletedComponent },
-  { path: 'register-confirmed/:id/:number/:token', component: RegisterConfirmedComponent },
+  { path: 'register-confirmed/:token', component: RegisterConfirmedComponent },
   { path: 'register-recover', component: RegisterRecoverComponent },
   { path: 'register-recover-finish', component: RegisterRecoverFinishComponent },
   { path: 'password-recovery', component: RecoverPasswordComponent },

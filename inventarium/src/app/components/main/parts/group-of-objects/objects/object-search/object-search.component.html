@@ -61,8 +61,10 @@
             <span planta>{{obj.planta}}</span>
             <span edificio>{{obj.edificio}}</span>
             <span fechaAdquisicion>{{obj.fechaAdquisicion}}</span>
-            <span codigo>{{obj.codigo}}</span>
-            <span mejorasEquipo>{{obj.mejorasEquipo}}</span>
+            <span codigo *ngIf="obj.codigo!=''">{{obj.codigo}}</span>
+            <span codigo *ngIf="obj.codigo==''">No asignado</span>
+            <span mejorasEquipo *ngIf="obj.mejorasEquipo!=''">{{obj.mejorasEquipo}}</span>
+            <span mejorasEquipo *ngIf="obj.mejorasEquipo==''">Ninguna mejora</span>
         </app-object>
     </div>
 </div>
