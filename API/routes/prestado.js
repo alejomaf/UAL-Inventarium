@@ -4,6 +4,9 @@ const prestado = require('../services/prestado');
 const middleware = require('./middleware');
 const transporter = require('../mails/mailer');
 router.use(middleware.checkToken);
+const usuarios = require('../services/usuario');
+const objeto = require('../services/objeto');
+const group_of_objects = require('../services/grupo_objetos');
 
 
 /* GET prestado. */
@@ -81,12 +84,15 @@ router.post('/action/:idPrestamo/:accion', async function (req, res, next) {
     id = req.params.idPrestamo;
     accion = req.params.accion;
     if (accion == 0) {
-      res.json(await prestado.concederPrestamo(id));
-
+      let prestamo = (await prestado.getById(req.params.idPrestamo)).data[0];
+      await transporter.prestamo_concedido(prestamo.correoElectronico, prestamo.Objeto_idObjeto, prestamo.nombre_grupo_objetos, prestamo.nombre);
+      return res.json(await prestado.concederPrestamo(id));
     } else if (accion == 1) {
-      res.json(await prestado.finalizarPrestamo(id));
+      return res.json(await prestado.finalizarPrestamo(id));
     } else if (accion == 2) {
-      res.json(await prestado.rechazarPrestamo(id));
+      let prestamo = (await prestado.getById(req.params.idPrestamo)).data[0];
+      await transporter.prestamo_rechazado(prestamo.correoElectronico, prestamo.Objeto_idObjeto, prestamo.nombre_grupo_objetos, prestamo.nombre);
+      return res.json(await prestado.rechazarPrestamo(id));
     }
   } catch (err) {
     console.error(`Error while creating prestado`, err.message);

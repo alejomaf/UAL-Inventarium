@@ -39,7 +39,7 @@ async function getMultipleByObject(idObjeto, page = 1) {
 async function getById(idPrestamo) {
   const rows = await db.query(
     `SELECT disponible, date_format(fechaSalida, '%d-%m-%y') as 'fechaSalida', date_format(fechaEntrega, '%d-%m-%y') as 'fechaEntrega', date_format(fechaEstimadaEntrega, '%d-%m-%y') as 'fechaEstimadaEntrega',
-    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, usuario.nombre, idPrestado, grupoobjetos.nombre as 'nombre_grupo_objetos'
+    date_format(solicitado, '%d-%m-%y') as 'solicitado', retiradoPor, Usuario_idUsuario, Objeto_idObjeto, estado, usuario.nombre, idPrestado, grupoobjetos.nombre as 'nombre_grupo_objetos', correoElectronico
     FROM prestado, usuario, grupoobjetos, objeto WHERE idPrestado = ? AND prestado.Objeto_idObjeto = objeto.idObjeto AND prestado.Usuario_idUsuario = usuario.idUsuario AND grupoobjetos.idGrupoObjetos = objeto.GrupoObjetos_idGrupoObjetos`,
     [idPrestamo]
   );

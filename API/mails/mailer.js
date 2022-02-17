@@ -59,12 +59,12 @@ async function registro_alta(direccion, nombre) {
     });
 }
 
-async function prestamo_concedido(direccion, id, objeto, nombre) {
+async function prestamo_concedido(direccion, idObjeto, nombreObjeto, nombre) {
     var mailOptions = {
         from: 'UAL Inventarium',
         to: direccion,
         subject: 'Préstamo concedido',
-        html: 'Estimado ' + nombre + '<br>Su solicitud de préstamo para el objeto ' + objeto + ' con id ' + id + ' ha sido concedido<br>Por favor, póngase en contacto con un técnico para que se lo pueda entregar.<br><br>Un cordial saludo,<br>El equipo de UAL-Inventarium'
+        html: 'Estimado ' + nombre + '<br>Su solicitud de préstamo para el objeto ' + nombreObjeto + ' con id ' + idObjeto + ' ha sido concedido<br>Por favor, póngase en contacto con un técnico para que se lo pueda entregar.<br><br>Un cordial saludo,<br>El equipo de UAL-Inventarium'
     };
 
     transporter.sendMail(mailOptions, function (error, info) {
@@ -76,12 +76,12 @@ async function prestamo_concedido(direccion, id, objeto, nombre) {
     });
 }
 
-async function prestamo_rechazado(direccion, objeto, id, nombre) {
+async function prestamo_rechazado(direccion, idObjeto, nombreObjeto, nombre) {
     var mailOptions = {
         from: 'UAL Inventarium',
         to: direccion,
         subject: 'Préstamo rechazado',
-        html: 'Estimado ' + nombre + '<br>Su solicitud de préstamo para el objeto ' + objeto + ' con id ' + id + ' ha sido rechazado.<br><br>Un cordial saludo,<br>El equipo de UAL-Inventarium'
+        html: 'Estimado ' + nombre + '<br>Su solicitud de préstamo para el objeto ' + nombreObjeto + ' con id ' + idObjeto + ' ha sido rechazado.<br><br>Un cordial saludo,<br>El equipo de UAL-Inventarium'
     };
 
     transporter.sendMail(mailOptions, function (error, info) {

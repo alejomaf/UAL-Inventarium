@@ -137,6 +137,8 @@ router.post('/action/:userId/:id', async function (req, res, next) {
     if (tipo_consulta == 0) {
       res.json(await usuarios.darDeBaja(req.params.userId));
     } else if (tipo_consulta == 1) {
+      let user = await usuarios.getById(req.params.userId);
+      await transporter.registro_alta(user.correoElectronico, user.nombre);
       res.json(await usuarios.darDeAlta(req.params.userId));
     } else {
       res.json(await usuarios.convertirEnTecnico(req.params.userId));

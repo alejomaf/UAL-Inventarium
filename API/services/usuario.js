@@ -132,10 +132,10 @@ async function remove(id) {
 }
 
 async function administrador() {
-  const usuario = await this.getById(1);
+  const usuario = await getById(1);
 
   if (usuario === undefined) {
-    contrasena = bcrypt.hashSync("admin", 10)
+    contrasena = bcrypt.hashSync("admin", 10);
     await create({ "nombre": "admin", "contrasena": contrasena, "correoElectronico": "ualinventarium@gmail.com", "rango": "0", "departamento": "0", "telefono": "674915779" });
   }
 }
