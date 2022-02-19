@@ -21,6 +21,7 @@ export class AddDataComponent implements OnInit {
   processed_objects: GrupoObjetosProcesados[] = [];
   object_visualizer: any;
   ultimoObjeto = "";
+  uploadSuccess = "";
 
   constructor(private groupObjectS: GroupOfObjectsService, private objectS: ObjectsService, private configS: ConfigurationsService, private kitS: KitObjectsService) { }
 
@@ -236,5 +237,6 @@ export class AddDataComponent implements OnInit {
         }
       )
     }
+    this.uploadSuccess = "Datos cargados correctamente";
   }
 }

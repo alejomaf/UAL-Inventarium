@@ -32,13 +32,8 @@
             {{processed_objects.length}}
         </div>
     </div>
-    <div class="row g-3 align-items-center">
-        <div class="col-auto">
-            <label class="col-form-label">Número de kits</label>
-        </div>
-        <div class="col-auto">
-            0
-        </div>
-    </div>
     <button type="button" class="btn btn-primary" (click)="uploadingData()">Crear objetos</button>
+    <div *ngIf="uploadSuccess!=''" class="alert alert-success my-2" role="alert">
+        {{uploadSuccess}}
+    </div>
 </div>
