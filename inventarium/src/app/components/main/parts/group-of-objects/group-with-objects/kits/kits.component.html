@@ -21,7 +21,8 @@
                 src="{{weblink}}/images/{{kit.imagen}}.jpg" onerror="this.src='./assets/icons/no-photo.svg'" />
             <h5 nombre class="card-title text-dark text-center">{{kit.nombre}}</h5>
             <span cantidad>{{kit.cantidad}}</span>
-            <span observaciones>{{kit.observaciones}}</span>
+            <span observaciones *ngIf="kit.observaciones!=''">{{kit.observaciones}}</span>
+            <span observaciones *ngIf="kit.observaciones==''">Ninguna</span>
             <div *ngIf="usuario?.rango==0" botones class="card-body d-grid gap-2">
                 <button class="btn btn-secondary btn-block" (click)="modalModificarKit(crearKitModal, kit)">
                     Modificar kit

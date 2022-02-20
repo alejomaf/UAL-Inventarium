@@ -94,7 +94,7 @@ async function uploadingFile(files, name, id) {
 async function uploadFileFromInternet(file, name, id) {
   parts_of_file = file.split("/");
   id_file = "https://drive.google.com/uc?export=download&id=" + parts_of_file[parts_of_file.length - 2]
-  await download(id_file, '__dirname/../images/group_of_objects/' + name + ".jpg", function () { console.log("Upload from internet successfully") });
+  await download(id_file, path.join(__dirname, "..", "images", "group_of_objects", name + ".jpg"), function () { console.log("Upload from internet successfully") });
 }
 
 router.post('/', async function (req, res, next) {

@@ -171,7 +171,7 @@ export class AddDataComponent implements OnInit {
     for (let op of this.processed_objects) {
       let formDataGO = new FormData();
       formDataGO.append("nombre", op.nombre == undefined ? "Sin nombre" : op.nombre);
-      if (op.imagen != undefined) formDataGO.append("imagen", op.imagen);
+      if (op.imagen != undefined) formDataGO.append("image", op.imagen);
       formDataGO.append("marca", op.marca == undefined ? "" : op.marca);
       formDataGO.append("modelo", op.modelo == undefined ? "" : op.modelo);
       formDataGO.append("tipo", String(op.tipo));
@@ -223,7 +223,7 @@ export class AddDataComponent implements OnInit {
               let formDataK = new FormData();
               formDataK.append("nombre", kit.nombre == undefined ? "" : kit.nombre);
               formDataK.append("cantidad", String(kit.cantidad == undefined ? 1 : kit.cantidad));
-              if (kit.imagen != undefined) formDataK.append("imagen", kit.imagen);
+              if (kit.imagen != undefined) formDataK.append("image", kit.imagen);
               formDataK.append("observaciones", kit.observaciones == undefined ? "" : kit.observaciones);
               formDataK.append("GrupoObjetos_idGrupoObjetos", idGO);
 
