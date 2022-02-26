@@ -1,0 +1,3 @@
+[submodule "Inventarium"]
+	path = Inventarium
+	url = git@github.com:alejomaf/Inventarium.git
